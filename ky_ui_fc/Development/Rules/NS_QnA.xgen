@@ -13,12 +13,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the mental health restriction',singular),o('lifted'))</parse>
         </text>
       </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's mental health restriction prevents them from obtaining work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s mental health restriction',singular),o('them from obtaining work'))</parse>
-        </text>
-      </attribute>
       <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a physical health restriction</base>
@@ -29,12 +23,6 @@
         <text lang="en-US">
           <base>the physical health restriction has been lifted</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the physical health restriction',singular),o('lifted'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's physical health restriction prevents them from obtaining work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s physical health restriction',singular),o('them from obtaining work'))</parse>
         </text>
       </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -55,6 +43,30 @@
       <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the physical health restriction ends</base>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('making a reasonable search for work as might be expected of a prudent person in like circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is making an honest effort to find work</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('making an honest effort to find work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a genuine attachment to the labor market as might be expected of a prudent person in like circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is applying for jobs for which they are qualified to perform</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('applying for jobs for which they are qualified to perform'))</parse>
         </text>
       </attribute>
     </entity>
@@ -107,16 +119,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant's mental health restriction prevents them from obtaining work" ruleburst="true" concludes="b6" folder="0" source-offset="808">
-      <rule-xml>
-        <conclude attr-id="b6" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the claimant has a physical health restriction" ruleburst="true" concludes="b7" folder="0" source-offset="889">
+    <rule id="2" name="the claimant has a physical health restriction" ruleburst="true" concludes="b7" folder="0" source-offset="808">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -139,7 +142,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b8" folder="0" source-offset="1096">
+    <rule id="3" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b8" folder="0" source-offset="1015">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -162,12 +165,33 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant's physical health restriction prevents them from obtaining work" ruleburst="true" concludes="b9" folder="0" source-offset="1318">
+    <rule id="4" name="the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b9" folder="0" source-offset="1927">
       <rule-xml>
         <conclude attr-id="b9" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
+          <condition>
+            <attribute attr-id="b10" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b11" folder="0" source-offset="2095">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b12" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
         </conclude>
       </rule-xml>
     </rule>
