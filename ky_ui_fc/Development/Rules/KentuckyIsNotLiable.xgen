@@ -1,0 +1,47 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>kentucky is liable for the claim</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('kentucky',singular),o('liable for the claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant worked in Kentucky during the base period</base>
+          <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a claim in another state</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a claim in another state'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="kentucky is liable for the claim" ruleburst="true" concludes="b1" folder="0">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b4" />
+              <not>
+                <attribute attr-id="b5" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

@@ -1,0 +1,1559 @@
+<root schema-version="1" product-version="10.4.0.145">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" public-name="opa_claim_current">
+        <text>
+          <base>your unemployment insurance claim is current</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your unemployment insurance claim',singular),o('current'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="date" public-name="i_eri_date">
+        <text>
+          <base>the current eligibility review interview date</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="text" public-name="i_fips_code">
+        <text>
+          <base>the FIPS code</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="date" public-name="i_claim_effective_date">
+        <text>
+          <base>the claim's effective date</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" public-name="i_system_override_date">
+        <text>
+          <base>the system processing override date</base>
+        </text>
+      </attribute>
+      <attribute name="p6" type="date" public-name="opa_interview_processing_date">
+        <text>
+          <base>the interview processing date</base>
+        </text>
+      </attribute>
+      <attribute name="p7" type="date" public-name="opa_eri_next_interview_date">
+        <text>
+          <base>the next interview date</base>
+        </text>
+      </attribute>
+      <attribute name="p13" type="text" public-name="opa_contact_minimum">
+        <text>
+          <base>the minimum number of contacts</base>
+        </text>
+      </attribute>
+      <attribute name="p17" type="number" public-name="opa_contact_count">
+        <text>
+          <base>the count of contact's listed</base>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" public-name="rb_add_contacts">
+        <text>
+          <base>you wish to add more job contacts</base>
+          <parse>s(v(wish,t(simple,present,normal)),sb('you',plural),o('to add more job contacts'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" public-name="rb_label_04">
+        <text>
+          <base>the warning label #04 ( insufficient job contacts ) should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the warning label #04 ( insufficient job contacts )',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p22" type="text" public-name="opa_selected_naics_category">
+        <text>
+          <base>the selected naics category of work</base>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" public-name="opa_high_school_diploma">
+        <text>
+          <base>you have a high school diploma</base>
+          <parse>s(v(have,t(simple,present,normal)),sb('you',plural),o('a high school diploma'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" public-name="opa_opt_in_diploma_info">
+        <text>
+          <base>you need information about earning a diploma</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('information about earning a diploma'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" public-name="opa_cq_st_in_training">
+        <text>
+          <base>you are enrolled in school or training</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('enrolled in school or training'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p32" type="text" public-name="opa_cq_st_offered_work">
+        <text>
+          <base>what would you do if offered full time work during your school hours</base>
+          <override>
+            <n>what would you not do if offered full time work during your school hours.</n>
+            <u>what might you do if offered full time work during your school hours.</u>
+            <q>what would you do if offered full time work during your school hours?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" public-name="opa_opt_in_training_info">
+        <text>
+          <base>you need information about school or training</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('information about school or training'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" public-name="opa_impairments">
+        <text>
+          <base>you have any impairments or diabilities</base>
+          <parse>s(v(have,t(simple,present,normal)),sb('you',plural),o('any impairments or diabilities'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b18" type="boolean" public-name="opa_visual_impairment">
+        <text>
+          <base>you have a visual impairment</base>
+          <parse>s(v(have,t(simple,present,normal)),sb('you',plural),o('a visual impairment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" public-name="opa_blind_info_request">
+        <text>
+          <base>you would like to receive additional information from the Office for the Blind</base>
+          <parse>s(v(like+would,t(simple,modal,normal)),sb('you',plural),o('to receive additional information from the Office for the Blind'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" public-name="opa_functional_limitation">
+        <text>
+          <base>you have any limitations that keep you from being available to work full time</base>
+          <parse>s(v(have,t(simple,present,normal)),sb('you',plural),o('any limitations that keep you from being available to work full time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" public-name="opa_vocational_info_request">
+        <text>
+          <base>you want information about overcoming working limitations</base>
+          <parse>s(v(want,t(simple,present,normal)),sb('you',plural),o('information about overcoming working limitations'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" public-name="opa_resume_assistance">
+        <text>
+          <base>you need help to create a resume</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('help to create a resume'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b23" type="boolean" public-name="opa_interview_prep">
+        <text>
+          <base>you need help to prepare for an interview</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('help to prepare for an interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b24" type="boolean" public-name="opa_job_email_help">
+        <text>
+          <base>you need help setting up a service to contact you by email about jobs</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('help setting up a service to contact you by email about jobs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b25" type="boolean" public-name="opa_job_location_help">
+        <text>
+          <base>you need help to locate job openings</base>
+          <parse>s(v(need,t(simple,present,normal)),sb('you',plural),o('help to locate job openings'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p33" type="text" public-name="opa_other_job_help">
+        <text>
+          <base>describe another type of help we can provide</base>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" public-name="opa_you_are_veteran">
+        <text>
+          <base>you are a veteran</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('a veteran'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" public-name="opa_separated_3_years">
+        <text>
+          <base>you have left the military within the last three (3) years</base>
+          <parse>s(v(leave,t(simple,present,perfect)),sb('you',plural),o('the military within the last three (3) years'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" public-name="opa_disabled_veteran">
+        <text>
+          <base>you are a disabled veteran</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('a disabled veteran'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" public-name="opa_returning_to_most_recent">
+        <text>
+          <base>you are returning to work with your most recent employer</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('returning to work with your most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p35" type="date" public-name="opa_return_to_prior_emp_date">
+        <text>
+          <base>the date you expect to return to work with your prior employer</base>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" public-name="opa_assisted_by_labor_union">
+        <text>
+          <base>you have a labor union to assist you with finding employment</base>
+          <parse>s(v(have,t(simple,present,normal)),sb('you',plural),o('a labor union to assist you with finding employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" public-name="opa_unemp_labor_dispute">
+        <text>
+          <base>your unemployment is due to a labor dispute with your prior employer</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your unemployment',singular),o('due to a labor dispute with your prior employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p36" type="date" public-name="i_most_recent_claim_date">
+        <text>
+          <base>the file date of the most recent claim</base>
+        </text>
+      </attribute>
+      <attribute name="p38" type="text" public-name="opa_union_hall">
+        <text>
+          <base>your union hall name and number</base>
+        </text>
+      </attribute>
+      <attribute name="p39" type="text" public-name="opa_union_hall_phone_number" regexp="(^?\z)|(^\(?([2-9][0-8][0-9])\)?[-. ]?([2-9][0-9]{2})[-. ]?([0-9]{4})$)">
+        <text>
+          <base>your union hall phone number</base>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" public-name="opa_class_code_changed_to_a">
+        <text>
+          <base>your effective class code has changed from B to A</base>
+          <parse>s(v(change,t(simple,present,perfect)),sb('your effective class code',singular),o('from B to A'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p43" type="date" public-name="i_benefit_year_end_date">
+        <text>
+          <base>the benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p45" type="text" public-name="i_program_code">
+        <text>
+          <base>the claimant's program code</base>
+        </text>
+      </attribute>
+      <attribute name="p46" type="date" public-name="i_ebr_end_date">
+        <text>
+          <base>the extended benefit range end date</base>
+        </text>
+      </attribute>
+      <attribute name="p47" type="date" public-name="i_euc_end_date">
+        <text>
+          <base>the emergency unemployment compensation end date</base>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" public-name="opa_cq_st_enroll_undef">
+        <text>
+          <base>your enrolment in school or training is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your enrolment in school or training',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" public-name="opa_cq_ab_able_to_work">
+        <text>
+          <base>you are physically and mentally able to hold a job</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('physically and mentally able to hold a job'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" public-name="opa_reasonable_effort" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true">
+        <text>
+          <base>you are making a "reasonable effort" to find work, as expected of a prudent person in your circumstances</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('making a "reasonable effort" to find work, as expected of a prudent person in your circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" public-name="opa_cq_av_for_work">
+        <text>
+          <base>you are available to work full time</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('available to work full time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" public-name="opa_cq_ro_refused_work">
+        <text>
+          <base>you have refused a job offer or referral</base>
+          <parse>s(v(refuse,t(simple,present,perfect)),sb('you',plural),o('a job offer or referral'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p48" type="date" public-name="opa_earliest_contact_date">
+        <text>
+          <base>the earliest acceptable contact date</base>
+        </text>
+      </attribute>
+      <attribute name="p49" type="date" public-name="opa_latest_contact_date">
+        <text>
+          <base>the latest acceptable contact date</base>
+        </text>
+      </attribute>
+      <attribute name="p51" type="text" public-name="rb_entity_date_range_msg">
+        <text>
+          <base>the date range error message</base>
+        </text>
+      </attribute>
+      <attribute name="p52" type="number" public-name="opa_arp_contact_count">
+        <text>
+          <base>the count of contacts within the acceptable review period</base>
+        </text>
+      </attribute>
+      <attribute name="p53" type="date" public-name="i_interstate_registration_date">
+        <text>
+          <base>the interstate registration date</base>
+        </text>
+      </attribute>
+      <attribute name="p55" type="text" public-name="opa_registration_addr_line1">
+        <text>
+          <base>your interstate registration address line 1</base>
+        </text>
+      </attribute>
+      <attribute name="p56" type="text" public-name="opa_registration_add_line2">
+        <text>
+          <base>your interstate registration address line 2</base>
+        </text>
+      </attribute>
+      <attribute name="p57" type="text" public-name="opa_registration_town_city">
+        <text>
+          <base>your interstate registration address town</base>
+        </text>
+      </attribute>
+      <attribute name="p58" type="text" public-name="opa_registration_state">
+        <text>
+          <base>your interstate registration address state</base>
+        </text>
+      </attribute>
+      <attribute name="p59" type="text" public-name="opa_registration_phone_number" regexp="(^?\z)|(^\(?([2-9][0-8][0-9])\)?[-. ]?([2-9][0-9]{2})[-. ]?([0-9]{4})$)">
+        <text>
+          <base>your interstate registration address phone number</base>
+        </text>
+      </attribute>
+      <attribute name="p61" type="date" public-name="opa_interstate_register_date">
+        <text>
+          <base>your interstate registration date</base>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" public-name="opa_registration_was_online">
+        <text>
+          <base>you registered online at a web site</base>
+          <parse>s(v(register,t(simple,past,normal)),sb('you',plural),o('online at a web site'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p62" type="text" public-name="opa_cq_ab_why">
+        <text>
+          <base>you are not able to work</base>
+          <override>
+            <q>Why are you not able to work?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p63" type="text" public-name="opa_cq_ab_explanation_detail">
+        <text>
+          <base>explain in detail what attempts you made to resolve the problem</base>
+          <override>
+            <q>Explain in detail what attempts you made to resolve the problem?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p64" type="date" public-name="opa_cq_ab_date_change">
+        <text>
+          <base>the date you expect the problem to end or the conditions to change</base>
+          <override>
+            <q>When do you expect the problem to end or the conditions to change?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" public-name="opa_cq_sk_temp_layoff">
+        <text>
+          <base>you are on a temporary layoff with your last employer</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('on a temporary layoff with your last employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" public-name="opa_cq_ab_doctors_care">
+        <text>
+          <base>you are under the care of a medical doctor</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('under the care of a medical doctor'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p65" type="text" public-name="opa_cq_ab_work_restrictions">
+        <text>
+          <base>your work restrictions</base>
+          <override>
+            <q>What are your work restrictions?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" public-name="opa_cq_ab_released_to_work">
+        <text>
+          <base>you have been released to work</base>
+          <parse>s(v(be,t(simple,present,perfect)),sb('you',plural),o('released to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p66" type="date" public-name="opa_cq_ab_released_date">
+        <text>
+          <base>your released to work date</base>
+          <override>
+            <q>What was the release date?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" public-name="opa_cq_ab_notification">
+        <text>
+          <base>you notified your employer, if you expect recall to your regular employer</base>
+          <parse>s(v(notify,t(simple,past,normal)),sb('you',plural),o('your employer, if you expect recall to your regular employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p67" type="date" public-name="opa_cq_ab_release_date">
+        <text>
+          <base>the date you will be released to work</base>
+        </text>
+      </attribute>
+      <attribute name="p68" type="date" public-name="opa_cq_sk_layoff_return_date">
+        <text>
+          <base>your temporary lay off, expected return to work date</base>
+        </text>
+      </attribute>
+      <attribute name="p69" type="text" public-name="opa_cq_sk_additional_info">
+        <text>
+          <base>any additional information</base>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" public-name="rb_8_contacts">
+        <text>
+          <base>the eligibility review requires at least eight job contacts</base>
+          <parse>s(v(require,t(simple,present,normal)),sb('the eligibility review',singular),o('at least eight job contacts'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" public-name="rb_6_contacts">
+        <text>
+          <base>the eligibility review requires at least six job contacts</base>
+          <parse>s(v(require,t(simple,present,normal)),sb('the eligibility review',singular),o('at least six job contacts'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" public-name="rb_registration_date_defined">
+        <text>
+          <base>this is an interstate claim with an undefined registration date</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an interstate claim with an undefined registration date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b52" type="boolean" public-name="rb_label_01">
+        <text>
+          <base>the label #01, next review date, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #01, next review date,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" public-name="rb_label_02">
+        <text>
+          <base>the label #02, minimum six contacts, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #02, minimum six contacts,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" public-name="rb_label_07">
+        <text>
+          <base>the label #07, interview instructions, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #07, interview instructions,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" public-name="rb_label_09">
+        <text>
+          <base>the label #09, claim is not current, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #09, claim is not current,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" public-name="rb_label_10">
+        <text>
+          <base>the label #10, too few instances within arp, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #10, too few instances within arp,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b63" type="boolean" public-name="opa_ready_to_work">
+        <text>
+          <base>you are ready to work</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('ready to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b64" type="boolean" public-name="rb_link_06_display">
+        <text>
+          <base>the link to the main interview flow, #06, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the link to the main interview flow, #06,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p71" type="text" public-name="opa_cq_sk_fulltime_work">
+        <text>
+          <base>explain why you are not seeking full-time work</base>
+          <override>
+            <q>Explain why you are not seeking full-time work?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p72" type="date" public-name="opa_cq_sk_problem_end_date">
+        <text>
+          <base>when do you expect the problem to end or the condition to change</base>
+          <override>
+            <q>When do you expect the problem to end or the condition to change?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p73" type="text" public-name="opa_cq_sk_any_employment">
+        <text>
+          <base>efforts you have made to seek any employment</base>
+          <override>
+            <q>What efforts have you made to seek any employment?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p74" type="text" public-name="opa_registration_zipcode" regexp="(^?\z)|(^\d{5})(([ _-]?[\s]?)?(\d{4}))?$">
+        <text>
+          <base>your interstate registration address zip code</base>
+        </text>
+      </attribute>
+      <attribute name="b65" type="boolean" public-name="rb_asserted_class_b_claim">
+        <text>
+          <base>this was asserted to be a class B claim</base>
+          <parse>s(v(assert,t(simple,past,normal)),ob('this',singular),o('to be a class B claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b66" type="boolean" public-name="opa_minimum_contacts_in_arp">
+        <text>
+          <base>you sought work with the minimum required number of employers within the acceptable review period</base>
+          <parse>s(v(seek,t(simple,past,normal)),sb('you',plural),o('work with the minimum required number of employers within the acceptable review period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p75" type="text" public-name="opa_cq_av_limitations">
+        <text>
+          <base>your limitations</base>
+          <override>
+            <p>your limitations are %opa_availability_limitations%.</p>
+            <q>What are your limitations?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p76" type="date" public-name="opa_cq_av_imitation_start_date">
+        <text>
+          <base>the date that these limitations began</base>
+          <override>
+            <q>What date did these limitations begin?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p77" type="date" public-name="opa_cq_av_limitation_end_date">
+        <text>
+          <base>the date you expect the situation to end</base>
+        </text>
+      </attribute>
+      <attribute name="p78" type="text" public-name="opa_cq_av_alternatives">
+        <text>
+          <base>alternatives do you have to deal with these limitations</base>
+          <override>
+            <p>the alternatives you have to deal with these limitations are %opa_availability_alternatives%.</p>
+            <q>What alternatives do you have to deal with these limitations?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p79" type="text" public-name="opa_cq_av_arrangements">
+        <text>
+          <base>arrangements you have made to use these alternatives</base>
+          <override>
+            <q>What arrangements you have made to use these alternatives?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p81" type="text" public-name="opa_cq_av_additional_info">
+        <text>
+          <base>provide any additional information regarding the limitations</base>
+          <override>
+            <q>provide any additional information regarding the limitations?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p82" type="date" public-name="opa_cq_ro_offer_date">
+        <text>
+          <base>the date you were offerred a job or referral</base>
+          <override>
+            <q>What date you were offerred a job or referral?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p83" type="text" public-name="opa_cq_ro_offering_employer">
+        <text>
+          <base>the employer that offerred the job or referral</base>
+        </text>
+      </attribute>
+      <attribute name="p84" type="text" public-name="opa_cq_ro_individual_name">
+        <text>
+          <base>the name of the individual who offered the job or gave the referral</base>
+        </text>
+      </attribute>
+      <attribute name="p85" type="text" public-name="opa_cq_ro_offer_method">
+        <text>
+          <base>how was the job or referral offered to you</base>
+          <override>
+            <q>How was the job or referral offered to you?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p87" type="text" public-name="opa_cq_ro_job_referral">
+        <text>
+          <base>you were offered a job or a referral</base>
+          <override>
+            <q>Were you offered a job or a referral?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p88" type="date" public-name="opa_cq_ro_job_start_date">
+        <text>
+          <base>the date the job was to begin</base>
+        </text>
+      </attribute>
+      <attribute name="p89" type="date" public-name="opa_cq_ro_ref_int_date">
+        <text>
+          <base>the date of the referral interview</base>
+          <override>
+            <q>What was the date of the referral interview?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p90" type="text" public-name="opa_cq_ro_job_title">
+        <text>
+          <base>the job title offered</base>
+        </text>
+      </attribute>
+      <attribute name="p92" type="text" public-name="opa_cq_ro_job_duties">
+        <text>
+          <base>the specific job duties</base>
+          <override>
+            <q>What were the specific job duties?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p93" type="text" public-name="opa_cq_ro_starting_pay">
+        <text>
+          <base>the starting pay</base>
+          <override>
+            <q>What was the starting pay?</q>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="p94" type="text" public-name="opa_cq_ro_hours_shift">
+        <text>
+          <base>the hours you would have worked</base>
+        </text>
+      </attribute>
+      <attribute name="p95" type="text" public-name="opa_cq_ro_days_tobe_worked">
+        <text>
+          <base>the days you would have worked</base>
+        </text>
+      </attribute>
+      <attribute name="p96" type="text" public-name="opa_cq_ro_permanent_job">
+        <text>
+          <base>was the job permanent or temporary</base>
+        </text>
+      </attribute>
+      <attribute name="b70" type="boolean" public-name="opa_exempt_by_return_to_prior">
+        <text>
+          <base>you are exempted from work search by your expected return to work with a prior employer</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('exempted from work search by your expected return to work with a prior employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p97" type="date" public-name="opa_cq_ro_temp_job_end_date">
+        <text>
+          <base>the end date of the temporary job</base>
+        </text>
+      </attribute>
+      <attribute name="p98" type="text" public-name="opa_cq_ro_experience">
+        <text>
+          <base>your experience in the line of work offered</base>
+        </text>
+      </attribute>
+      <attribute name="p99" type="text" public-name="opa_cq_ro_skills">
+        <text>
+          <base>your skills and training in the line of work offered</base>
+        </text>
+      </attribute>
+      <attribute name="p100" type="number" public-name="opa_cq_ro_prior_emp_distance">
+        <text>
+          <base>the distance (in miles) you had to travel to work with your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p101" type="text" public-name="opa_cq_ro_days_per_week">
+        <text>
+          <base>the days you worked per week with your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p102" type="text" public-name="opa_cq_ro_prior_emp_shift">
+        <text>
+          <base>the shift you worked with your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p103" type="number" public-name="opa_cq_ro_hrs_per_week">
+        <text>
+          <base>the number of hours you worked per week with your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p104" type="currency" public-name="opa_cq_ro_pe_rate_of_pay">
+        <text>
+          <base>your normal rate of pay with previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p105" type="text" public-name="opa_cq_ro_tools_equip_licenses">
+        <text>
+          <base>the tools, equipment or licenses would you be required to provide if you accepted this job</base>
+        </text>
+      </attribute>
+      <attribute name="b72" type="boolean" public-name="opa_cq_ro_fam_shifts">
+        <text>
+          <base>your care of children or family members restricted the location, hours, days or shifts you were available to work during your previous employment</base>
+          <parse>s(v(restrict,t(simple,past,normal)),sb('your care of children or family members',plural),o('the location, hours, days or shifts you were available to work during your previous employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p106" type="text" public-name="opa_cq_ro_reason_for_refusal">
+        <text>
+          <base>the reason you refused this job or referral</base>
+        </text>
+      </attribute>
+      <attribute name="p107" type="text" public-name="opa_cq_ro_period_unemployed">
+        <text>
+          <base>the length of time you have been unemployed</base>
+        </text>
+      </attribute>
+      <attribute name="p108" type="text" public-name="opa_cq_ro_other_local_jobs">
+        <text>
+          <base>the other jobs available to you in the local job market</base>
+        </text>
+      </attribute>
+      <attribute name="p110" type="text" public-name="opa_cq_ro_limitations">
+        <text>
+          <base>the reason that child or family care limited your availability to work</base>
+        </text>
+      </attribute>
+      <attribute name="p111" type="text" public-name="opa_cq_st_facility_name">
+        <text>
+          <base>the name of the facility you are currently attending</base>
+        </text>
+      </attribute>
+      <attribute name="p112" type="text" public-name="opa_cq_st_addr_l1">
+        <text>
+          <base>the facility address line 1</base>
+        </text>
+      </attribute>
+      <attribute name="p113" type="text" public-name="opa_cq_st_addr_l2">
+        <text>
+          <base>the facility address line 2</base>
+        </text>
+      </attribute>
+      <attribute name="p114" type="text" public-name="opa_cq_st_addr_city">
+        <text>
+          <base>the facility city</base>
+        </text>
+      </attribute>
+      <attribute name="p115" type="text" public-name="opa_cq_st_zipcode" regexp="(^?\z)|(^\d{5})(([ _-]?[\s]?)?(\d{4}))?$">
+        <text>
+          <base>the facility zip code</base>
+        </text>
+      </attribute>
+      <attribute name="p116" type="text" public-name="opa_cq_st_state">
+        <text>
+          <base>the facility state</base>
+        </text>
+      </attribute>
+      <attribute name="p117" type="text" public-name="opa_cq_st_cc_facility">
+        <text>
+          <base>the merged training facilities name and address</base>
+        </text>
+      </attribute>
+      <attribute name="p118" type="date" public-name="opa_cq_st_enrollment_date">
+        <text>
+          <base>the date of your enrollment</base>
+        </text>
+      </attribute>
+      <attribute name="p119" type="date" public-name="opa_cq_st_completion_date">
+        <text>
+          <base>the scheduled completion date</base>
+        </text>
+      </attribute>
+      <attribute name="p120" type="text" public-name="opa_cq_st_cc_dates">
+        <text>
+          <base>the merged enrollment and completion dates</base>
+        </text>
+      </attribute>
+      <attribute name="b73" type="boolean" public-name="opa_cq_st_prior_emp_training">
+        <text>
+          <base>you attended school or training while working with your last employer</base>
+          <parse>s(v(attend,t(simple,past,normal)),sb('you',plural),o('school or training while working with your last employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p122" type="date" public-name="opa_cq_st_emp_train_start">
+        <text>
+          <base>the start date of school or training with your last employer</base>
+        </text>
+      </attribute>
+      <attribute name="p123" type="date" public-name="opa_cq_st_emp_train_end">
+        <text>
+          <base>the end date of school or training with your last employer</base>
+        </text>
+      </attribute>
+      <attribute name="p124" type="text" public-name="opa_cq_st_cc_emp_start_end">
+        <text>
+          <base>the merged start and end dates of school or training</base>
+        </text>
+      </attribute>
+      <attribute name="p125" type="text" public-name="opa_cq_st_affect">
+        <text>
+          <base>the affect of school or training on your seeking and accepting full time employment</base>
+        </text>
+      </attribute>
+      <attribute name="p126" type="text" public-name="opa_cq_st_additional_info">
+        <text>
+          <base>any additional information about the school or training</base>
+        </text>
+      </attribute>
+      <attribute name="p127" type="text" public-name="rb_delimiter">
+        <text>
+          <base>delimiter</base>
+        </text>
+      </attribute>
+      <attribute name="p128" type="text" public-name="opa_cq_cc_title_duties">
+        <text>
+          <base>the merged job title and job duties</base>
+        </text>
+      </attribute>
+      <attribute name="p129" type="text" public-name="opa_cq_cc_emp_person">
+        <text>
+          <base>the merged employer and person names</base>
+        </text>
+      </attribute>
+      <attribute name="p130" type="text" public-name="opa_cq_cc_hours_days">
+        <text>
+          <base>the merged hours and days claimant would have worked</base>
+        </text>
+      </attribute>
+      <attribute name="p131" type="text" public-name="opa_cq_cc_temp_start_end_dates">
+        <text>
+          <base>the merged temporary job start and end dates</base>
+        </text>
+      </attribute>
+      <attribute name="b74" type="boolean" public-name="opa_cq_job_permanent">
+        <text>
+          <base>the job offered was permanent</base>
+          <parse>s(v(be,t(simple,past,normal)),sb('the job offered',singular),o('permanent'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p132" type="text" public-name="opa_cq_cc_payrate">
+        <text>
+          <base>the merged hours, days, shifts, and rate of pay</base>
+        </text>
+      </attribute>
+      <attribute name="p133" type="text" public-name="opa_cq_cc_childcare_exp">
+        <text>
+          <base>the merged childcare and explanation</base>
+        </text>
+      </attribute>
+      <attribute name="p134" type="text" public-name="opa_cq_ro_offered_location">
+        <text>
+          <base>the job location</base>
+        </text>
+      </attribute>
+      <attribute name="b75" type="boolean" public-name="rb_er_flow_displayed">
+        <text>
+          <base>the flow to start your eligibility review should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the flow to start your eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b76" type="boolean" public-name="opa_kentucky_liable_claim">
+        <text>
+          <base>this is an intrastate ( Kentucky liable ) claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an intrastate ( Kentucky liable ) claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b77" type="boolean" public-name="opa_job_offered">
+        <text>
+          <base>you were offered a job</base>
+          <parse>s(v(be,t(simple,past,normal)),sb('you',plural),o('offered a job'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b78" type="boolean" public-name="opa_referral_offered">
+        <text>
+          <base>you were offered a referral</base>
+          <parse>s(v(be,t(simple,past,normal)),sb('you',plural),o('offered a referral'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b79" type="boolean" public-name="rb_goal_save_displayed">
+        <text>
+          <base>the goal for save and continue should be displayed</base>
+          <parse>s(v(save,t(simple,present,normal)),sb('the goal for',plural),o('and continue should be displayed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b80" type="boolean" public-name="rb_goal_review_displayed">
+        <text>
+          <base>the goal to review entered data should be displayed</base>
+          <parse>s(v(enter,t(simple,past,normal)),sb('the goal to review',plural),o('data should be displayed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b82" type="boolean" public-name="opa_valid_review_period">
+        <text>
+          <base>the interview processing date is within the eligibility review period</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the interview processing date',singular),o('within the eligibility review period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p135" type="text" public-name="opa_naics_work_type_detail">
+        <text>
+          <base>the selected naics type of work</base>
+        </text>
+      </attribute>
+      <attribute name="p136" type="text" public-name="opa_naics_code">
+        <text>
+          <base>the naics code</base>
+        </text>
+      </attribute>
+      <attribute name="p138" type="text" public-name="rb_class_code">
+        <text>
+          <base>the naics class code</base>
+        </text>
+      </attribute>
+      <attribute name="p139" type="text" public-name="rb_detail_code">
+        <text>
+          <base>the naics detail code</base>
+        </text>
+      </attribute>
+      <attribute name="p140" type="text" public-name="opa_non_naics_detail">
+        <text>
+          <base>your description of your work</base>
+        </text>
+      </attribute>
+      <attribute name="b84" type="boolean" public-name="opa_finish_and_save_goal">
+        <text>
+          <base>the eligibility review should be saved</base>
+          <parse>s(v(save+should,t(simple,modal,normal)),ob('the eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b85" type="boolean" public-name="rb_fs_confirmed">
+        <text>
+          <base>finish and save the eligibility review is confirmed</base>
+          <parse>s(v(confirm,t(simple,present,normal)),ob('finish and save the eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b86" type="boolean" public-name="opa_subject_to_work_search" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true">
+        <text>
+          <base>you are subject to work search and registration requirements</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('subject to work search and registration requirements'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p141" type="text" public-name="rb_local_office_code">
+        <text>
+          <base>the local office code</base>
+        </text>
+      </attribute>
+      <attribute name="p142" type="text" public-name="rb_local_office_hours">
+        <text>
+          <base>the local office business hours</base>
+        </text>
+      </attribute>
+      <attribute name="p143" type="text" public-name="rb_local_office_branch">
+        <text>
+          <base>the local office branch</base>
+        </text>
+      </attribute>
+      <attribute name="p144" type="text" public-name="rb_local_office_phone_number" regexp="^([0-9]( |-)?)?(\(?[0-9]{3}\)?|[0-9]{3})( |-)?([0-9]{3}( |-)?[0-9]{4}|[a-zA-Z0-9]{7})$">
+        <text>
+          <base>the local office phone #</base>
+        </text>
+      </attribute>
+      <attribute name="p145" type="text" public-name="rb_local_office_city">
+        <text>
+          <base>the local office city</base>
+        </text>
+      </attribute>
+      <attribute name="p146" type="text" public-name="rb_local_office_state">
+        <text>
+          <base>the local office state</base>
+        </text>
+      </attribute>
+      <attribute name="p147" type="text" public-name="rb_local_office_zip" regexp="(^?\z)|(^\d{5})(([ _-]?[\s]?)?(\d{4}))?$">
+        <text>
+          <base>the local office zip code</base>
+        </text>
+      </attribute>
+      <attribute name="p148" type="text" public-name="rb_local_office_address">
+        <text>
+          <base>the local office address</base>
+        </text>
+      </attribute>
+      <attribute name="b87" type="boolean" public-name="rb_label12">
+        <text>
+          <base>the label #12, local office information, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #12, local office information,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b89" type="boolean" public-name="rb_screen_save_confirmation_displayed">
+        <text>
+          <base>the screen 'Save Confirmation' has been displayed</base>
+          <parse>s(v(display,t(simple,present,perfect)),ob('the screen ''Save Confirmation''',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b90" type="boolean" public-name="rb_ins_01">
+        <text>
+          <base>you have read an understood the instructions on the #01 screen</base>
+          <parse>s(v(read,t(simple,present,perfect)),sb('you',plural),o('an understood the instructions on the #01 screen'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p150" type="text" public-name="i_siebel_home_url">
+        <text>
+          <base>the siebel home url</base>
+        </text>
+      </attribute>
+      <attribute name="b91" type="boolean" public-name="rb_ccq_investigated">
+        <text>
+          <base>the continued claims questionnaire should be investigated</base>
+          <parse>s(v(investigate+should,t(simple,modal,normal)),ob('the continued claims questionnaire',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b93" type="boolean" public-name="rb_label_18">
+        <text>
+          <base>the label #18, review period has closed, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #18, review period has closed,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b94" type="boolean" public-name="rb_label_13">
+        <text>
+          <base>the label #13, ineligible until further review, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #13, ineligible until further review,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b95" type="boolean" public-name="rb_label_15">
+        <text>
+          <base>the label #15, eligibility review is not yet due, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #15, eligibility review is not yet due,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b96" type="boolean" public-name="rb_label_16">
+        <text>
+          <base>the label #16, training approval check, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #16, training approval check,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b97" type="boolean" public-name="rb_label_17">
+        <text>
+          <base>the label #17, interstate registration before review date, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #17, interstate registration before review date,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b98" type="boolean" public-name="rb_naics_details">
+        <text>
+          <base>the naics details should be collected</base>
+          <parse>s(v(collect+should,t(simple,modal,normal)),ob('the naics details',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b99" type="boolean" public-name="rb_finish_and_save_flow">
+        <text>
+          <base>the label #20, finish and save flow, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #20, finish and save flow,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p153" type="text" public-name="io_claim_id">
+        <text>
+          <base>the claim's Siebel row id</base>
+        </text>
+      </attribute>
+      <attribute name="b101" type="boolean" public-name="opa_raise_issue_01">
+        <text>
+          <base>opa issue #01, no reasonable effort to seek work, should be raised by Siebel</base>
+          <parse>s(v(be+should,t(simple,modal,normal)),sb('opa issue #01, no reasonable effort to seek work,',singular),o('raised by Siebel'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b102" type="boolean" public-name="opa_raise_issue_02">
+        <text>
+          <base>opa issue #02, unavailable for work, should be raised by Siebel</base>
+          <parse>s(v(be+should,t(simple,modal,normal)),sb('opa issue #02, unavailable for work,',singular),o('raised by Siebel'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b103" type="boolean" public-name="opa_raise_issue_03">
+        <text>
+          <base>opa issue #03, refused work, should be raised by Siebel</base>
+          <parse>s(v(be+should,t(simple,modal,normal)),sb('opa issue #03, refused work,',singular),o('raised by Siebel'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b104" type="boolean" public-name="opa_raise_issue_04">
+        <text>
+          <base>opa issue #04, in training, should be raised by Siebel</base>
+          <parse>s(v(be+should,t(simple,modal,normal)),sb('opa issue #04, in training,',singular),o('raised by Siebel'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b108" type="boolean" public-name="opa_raise_issue_05">
+        <text>
+          <base>opa issue #05, unable to work, should be raised by Siebel</base>
+          <parse>s(v(be+should,t(simple,modal,normal)),sb('opa issue #05, unable to work,',singular),o('raised by Siebel'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b111" type="boolean" public-name="rb_screen_intv_comp_disp">
+        <text>
+          <base>the screen 'Your Interview is almost complete' has been displayed</base>
+          <parse>s(v(display,t(simple,present,perfect)),ob('the screen ''Your Interview is almost complete''',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b112" type="boolean" public-name="rb_label_19">
+        <text>
+          <base>the label #19, B changing to A, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #19, B changing to A,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p154" type="text" public-name="opa_ck_av_effort_made">
+        <text>
+          <base>efforts you have made to find employment</base>
+        </text>
+      </attribute>
+      <attribute name="b113" type="boolean" public-name="opa_cq_ab_temp_layoff">
+        <text>
+          <base>your layoff with your last employer is temporary</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your layoff with your last employer',singular),o('temporary'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p155" type="text" public-name="opa_cq_ab_additional_info">
+        <text>
+          <base>any additional information about your inability to work</base>
+        </text>
+      </attribute>
+      <attribute name="p156" type="number" public-name="opa_cq_st_thu_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of thursday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p157" type="number" public-name="opa_cq_st_tue_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of tuesday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p158" type="number" public-name="opa_cq_st_wed_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of wednesday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p159" type="number" public-name="opa_cq_st_friday_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of friday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p160" type="number" public-name="opa_cq_st_mon_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of monday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p161" type="number" public-name="opa_cq_st_sat_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of saturday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p162" type="number" public-name="opa_cq_st_sun_hrs" min-value="0" max-value="24">
+        <text>
+          <base>the number of sunday training hours</base>
+        </text>
+      </attribute>
+      <attribute name="p163" type="text" public-name="opa_cq_ro_pay_freq">
+        <text>
+          <base>your pay period at your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="b114" type="boolean" public-name="opa_cq_ro_payperiod_undef">
+        <text>
+          <base>your pay period is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your pay period',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p164" type="date" public-name="i_eri_last_intvw_date">
+        <text>
+          <base>the last committed interview date</base>
+        </text>
+      </attribute>
+      <attribute name="b115" type="boolean" public-name="opa_prior_interview_in_period">
+        <text>
+          <base>you have completed another interview in this eligibility review period</base>
+          <parse>s(v(complete,t(simple,present,perfect)),sb('you',plural),o('another interview in this eligibility review period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b116" type="boolean" public-name="opa_label_21">
+        <text>
+          <base>the label #21, interview already completed in this review period, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #21, interview already completed in this review period,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b117" type="boolean" public-name="opa_rtw_date_err">
+        <text>
+          <base>your expected return to work date is more than two weeks prior to the Sunday on or before today's date</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your expected return to work date',singular),o('more than two weeks prior to the Sunday on or before today''s date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b118" type="boolean" public-name="opa_rtw_file_date_err">
+        <text>
+          <base>your expected return to work date is before the file of the most recent claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your expected return to work date',singular),o('before the file of the most recent claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b119" type="boolean" public-name="opa_cq_ro_try_change_circ">
+        <text>
+          <base>you tried to change the circumstances that prevented you from accepting the job or referral</base>
+          <parse>s(v(try,t(simple,past,normal)),sb('you',plural),o('to change the circumstances that prevented you from accepting the job or referral'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p165" type="text" public-name="i_ar_flag">
+        <text>
+          <base>the ar flag</base>
+        </text>
+      </attribute>
+      <attribute name="b120" type="boolean" public-name="rb_initial_claim">
+        <text>
+          <base>this is an initial claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an initial claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b122" type="boolean" public-name="opa_first_intrastate_review">
+        <text>
+          <base>this is the first intrastate eligibility review</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('the first intrastate eligibility review'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p169" type="timeofday" public-name="opa_time_at_interview_start">
+        <text>
+          <base>the current time at start of the interview</base>
+        </text>
+      </attribute>
+      <attribute name="b123" type="boolean" public-name="rb_save_confirmed">
+        <text>
+          <base>the eligibility review has been saved</base>
+          <parse>s(v(save,t(simple,present,perfect)),ob('the eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b124" type="boolean" public-name="opa_interstate_claim">
+        <text>
+          <base>this is an interstate claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an interstate claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b125" type="boolean" public-name="opa_return_employer_gt_12">
+        <text>
+          <base>your expected return to prior employment is more than twelve weeks from your most recent claim filing date</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your expected return to prior employment',singular),o('more than twelve weeks from your most recent claim filing date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b126" type="boolean" public-name="opa_interview_complete">
+        <text>
+          <base>the unemployment eligibility interview is complete</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the unemployment eligibility interview',singular),o('complete'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b127" type="boolean" public-name="rb_additional_claim">
+        <text>
+          <base>this is an additional claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an additional claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b128" type="boolean" public-name="rb_reactivation_claim">
+        <text>
+          <base>this is a reactivation claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('a reactivation claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b129" type="boolean" public-name="opa_type_01_current_claim">
+        <text>
+          <base>this is a type 01 current claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('a type 01 current claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b130" type="boolean" public-name="opa_type_02_current_claim">
+        <text>
+          <base>this is a type 02 current claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('a type 02 current claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b131" type="boolean" public-name="rb_dpw_undef">
+        <text>
+          <base>the days per week worked with previous employer is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the days per week worked with previous employer',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b132" type="boolean" public-name="opa_type_03_current_claim">
+        <text>
+          <base>this is a type 03 current claim</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('a type 03 current claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b133" type="boolean" public-name="rb_override_def">
+        <text>
+          <base>the system processing override date is defined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the system processing override date',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b134" type="boolean" public-name="rb_registration_state_undef">
+        <text>
+          <base>the registration state is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the registration state',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b135" type="boolean" public-name="rb_number_contacts_def">
+        <text>
+          <base>the number of contacts required is defined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the number of contacts required',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b136" type="boolean" public-name="rb_label_03">
+        <text>
+          <base>the label #03, minimum eight contacts, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #03, minimum eight contacts,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b137" type="boolean" public-name="rb_jome_url_undef">
+        <text>
+          <base>the Siebel home url is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the Siebel home url',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b138" type="boolean" public-name="opa_asserted_class_a_claim">
+        <text>
+          <base>this was asserted to be a class A claim</base>
+          <parse>s(v(assert,t(simple,past,normal)),ob('this',singular),o('to be a class A claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b139" type="boolean" public-name="opa_last_interview_undef">
+        <text>
+          <base>the last interview date is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the last interview date',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b141" type="boolean" public-name="rb_interstate_reg_undef">
+        <text>
+          <base>the interstate registration date is undefined</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the interstate registration date',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b142" type="boolean" public-name="rb_completed_6">
+        <text>
+          <base>you have completed at least six job contact forms</base>
+          <parse>s(v(complete,t(simple,present,perfect)),sb('you',plural),o('at least six job contact forms'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b143" type="boolean" public-name="opa_interview_unavailable">
+        <text>
+          <base>the unemployment eligibility interview is unavailable</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the unemployment eligibility interview',singular),o('unavailable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b144" type="boolean" public-name="rb_completed_8_contacts">
+        <text>
+          <base>you have completed at least eight job contact forms</base>
+          <parse>s(v(complete,t(simple,present,perfect)),sb('you',plural),o('at least eight job contact forms'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b145" type="boolean" public-name="opa_program_code_01">
+        <text>
+          <base>the claimant's program code is type 01</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the claimant''s program code',singular),o('type 01'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b146" type="boolean" public-name="opa_program_code_03">
+        <text>
+          <base>the claimant's program code is type 03</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the claimant''s program code',singular),o('type 03'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b147" type="boolean" public-name="opa_program_02">
+        <text>
+          <base>the claimant's program code is type 02</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the claimant''s program code',singular),o('type 02'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b148" type="boolean" public-name="opa_eligible_benefits">
+        <text>
+          <base>you are eligible to continue receiving benefits</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('you',plural),o('eligible to continue receiving benefits'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b149" type="boolean" public-name="rb_review_due">
+        <text>
+          <base>your eligibility review is due</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('your eligibility review',singular),o('due'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b150" type="boolean" public-name="rb_review_within_7_weeks">
+        <text>
+          <base>the review is within the first seven weeks from the most recent claim file date</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the review',singular),o('within the first seven weeks from the most recent claim file date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b151" type="boolean" public-name="rb_label_22">
+        <text>
+          <base>the label #22, first intrastate review, should be displayed</base>
+          <parse>s(v(display+should,t(simple,modal,normal)),ob('the label #22, first intrastate review,',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b152" type="boolean" public-name="rb_file_date_gt_321_from_bye">
+        <text>
+          <base>the file date is more than 321 days from the benefit year end</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the file date',singular),o('more than 321 days from the benefit year end'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b156" type="boolean" public-name="opa_classB_flow">
+        <text>
+          <base>this was asserted to be a class B flow</base>
+          <parse>s(v(assert,t(simple,past,normal)),ob('this',singular),o('to be a class B flow'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b157" type="boolean">
+        <text>
+          <base>your first eligibility review must be completed at your local office</base>
+          <parse>s(v(complete+must,t(simple,modal,normal)),ob('your first eligibility review',singular),o('at your local office'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p182" type="text" public-name="i_class_code">
+        <text>
+          <base>the asserted class code</base>
+        </text>
+      </attribute>
+      <attribute name="p183" type="text" public-name="i_class_code_change">
+        <text>
+          <base>the asserted class code change</base>
+        </text>
+      </attribute>
+      <attribute name="b163" type="boolean" public-name="b_ERI_unavailable">
+        <text>
+          <base>the unemployment ERI is unavailable</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the unemployment ERI',singular),o('unavailable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b164" type="boolean" public-name="b_intrastate_eri">
+        <text>
+          <base>this is intrastate ERI</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('intrastate ERI'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b165" type="boolean" public-name="b_interstate_eri">
+        <text>
+          <base>this is an interstate ERI</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('this',singular),o('an interstate ERI'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b166" type="boolean" public-name="rb_save_confirm">
+        <text>
+          <base>the screen 'Please click the Continue button to see the results of your Eligibility Review' has been displayed</base>
+          <parse>s(v(display,t(simple,present,perfect)),ob('the screen ''Please click the Continue  button to see the results of your Eligibility Review''',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b167" type="boolean">
+        <text>
+          <base>the asserted class is not B</base>
+          <parse>s(v(be,t(simple,present,normal)),sb('the asserted class',singular),o('not B'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b168" type="boolean" public-name="opa_blind_info_request_1">
+        <text>
+          <base>blind information request</base>
+          <parse>s(v(request,t(simple,present,normal)),sb('blind information',plural))</parse>
+        </text>
+      </attribute>
+      <attribute name="b169" type="boolean" public-name="opa_class_r">
+        <text>
+          <base>this was asserted to be a class R claim</base>
+          <parse>s(v(assert,t(simple,past,normal)),ob('this',singular),o('to be a class R claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p184" type="text" public-name="opa_cq_ro_pe_rate_freq_pay">
+        <text>
+          <base>the merged rate of pay and pay period at previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p186" type="date" public-name="opa_entry_date">
+        <text>
+          <base>entry date</base>
+        </text>
+      </attribute>
+      <attribute name="b170" type="boolean" public-name="opa_valid_claim">
+        <text>
+          <base>this is a valid claim</base>
+          <parse>s(ver('10.4.0.145'),v(be,t(simple,present,normal)),sb('this',singular),o('a valid claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b172" type="boolean" public-name="opa_issue_found">
+        <text>
+          <base>issue found during eri</base>
+          <parse>s(ver('10.4.0.145'),v(find,t(simple,past,normal)),sb('issue',plural),o('during eri'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="contact" name="the contact" public-id="the_contact" identifying-attribute-name="contact_employer_name" containment-relationship-id="contacts" containment-parent-id="global" identifying-attribute-text="the contact's employers company name">
+      <attribute name="p8" type="text" public-name="contact_employer_name">
+        <text>
+          <base>the contact's employers company name</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="date" public-name="contact_date">
+        <text>
+          <base>the date of the contact</base>
+        </text>
+      </attribute>
+      <attribute name="p10" type="text" public-name="contact_method">
+        <text>
+          <base>the contact method</base>
+        </text>
+      </attribute>
+      <attribute name="p11" type="text" public-name="contact_phone" regexp="(^?\z)|(^\(?([2-9][0-8][0-9])\)?[-. ]?([2-9][0-9]{2})[-. ]?([0-9]{4})$)">
+        <text>
+          <base>the contact's phone</base>
+        </text>
+      </attribute>
+      <attribute name="p14" type="text" public-name="contact_person_info">
+        <text>
+          <base>the contacted person's name</base>
+        </text>
+      </attribute>
+      <attribute name="p15" type="text" public-name="contact_applied_for">
+        <text>
+          <base>the contact's position applied for</base>
+        </text>
+      </attribute>
+      <attribute name="p18" type="text" public-name="contact_address_line1">
+        <text>
+          <base>the contact address line 1</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="text" public-name="contact_address_line2">
+        <text>
+          <base>the contact address line 2</base>
+        </text>
+      </attribute>
+      <attribute name="p20" type="text" public-name="contact_address_city">
+        <text>
+          <base>the contact address city</base>
+        </text>
+      </attribute>
+      <attribute name="p21" type="text" public-name="contact_address_zipcode" regexp="(^?\z)|(^\d{5})(([ _-]?[\s]?)?(\d{4}))?$">
+        <text>
+          <base>the contact address zip code</base>
+        </text>
+      </attribute>
+      <attribute name="p42" type="text" public-name="contact_state">
+        <text>
+          <base>the contact's state</base>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" public-name="rb_contact_within_arp">
+        <text>
+          <base>the contact was within the acceptable review period</base>
+          <parse>s(v(be,t(simple,past,normal)),sb('the contact',singular),o('within the acceptable review period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p137" type="text" public-name="contact_url" regexp="(^?\z)|(\w{3}).((\w+)|([\w+\.\w+])|([\w+\-\w+]+))*\.(\w{2,3}){1}">
+        <text>
+          <base>the contact url</base>
+        </text>
+      </attribute>
+      <attribute name="p152" type="text" public-name="contact_email" regexp="(^?\z)|((\w+)|([\w+\.\w+]+)|([\w+\-\w+]+))@((\w+)|([\w+\.\w+])|([-]))*\.(\w{2,3}){1}">
+        <text>
+          <base>the contact's email address</base>
+        </text>
+      </attribute>
+      <attribute name="p177" type="text" public-name="opa_contact_result">
+        <text>
+          <base>the result of the contact</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <rules />
+  <interactive-items>
+    <folders />
+    <screens />
+    <documents />
+  </interactive-items>
+  <relationships>
+    <relationship source="global" target="contact" text="the contact's" relationship-id="contacts" reverse-text="contacted" reverse-relationship-id="contacted" type="OneToMany" is-computed="false" is-containment="true" />
+  </relationships>
+  <rule-folders />
+</root>

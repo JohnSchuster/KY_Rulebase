@@ -1,0 +1,182 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a current benefit year</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the asserted processing override date is defined</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the asserted processing override date',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p2" type="number" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimant's current age in years</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimant's date of birth</base>
+        </text>
+      </attribute>
+      <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the most recent benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the processing date</base>
+        </text>
+      </attribute>
+      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the asserted processing override date</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date of the Sunday prior to filing</base>
+        </text>
+      </attribute>
+      <attribute name="p10" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the benefit year end date</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the claim" id="claim" containment-relationship-id="kewesrdebenefitclaims" containment-parent-id="global">
+      <attribute name="p5" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claim's bye date</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="OneToMany" relationship-id="kewesrdebenefitclaims" reverse-relationship-id="global_kewesrdebenefitclaims_rev" text="kewesrd ebenefit claims" source="global" target="claim" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the claimant's current age in years " ruleburst="true" concludes="p2 = YearDifference(p3,CurrentDate())" folder="0" source-offset="32">
+      <rule-xml>
+        <conclude attr-id="p2" entity-id="global" scope-id="global0">
+          <value>
+            <year-difference>
+              <attribute attr-id="p3" />
+              <current-date />
+            </year-difference>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the claimant has a current benefit year" ruleburst="true" concludes="b2" folder="0" source-offset="291">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <greater-than-equals>
+              <attribute attr-id="p6" />
+              <attribute attr-id="p9" />
+            </greater-than-equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the most recent benefit year end date " ruleburst="true" concludes="p6 = InstanceMaximum(kewesrdebenefitclaims,p5)" folder="0" source-offset="428">
+      <rule-xml>
+        <conclude attr-id="p6" entity-id="global" scope-id="global0">
+          <value>
+            <instance-maximum>
+              <relationship relationship-id="kewesrdebenefitclaims" target-entity-id="claim" />
+              <attribute attr-id="p5" />
+            </instance-maximum>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the asserted processing override date is defined" ruleburst="true" concludes="b3" folder="0" source-offset="628">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <not>
+              <unknown>
+                <attribute attr-id="p8" />
+              </unknown>
+            </not>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the processing date" ruleburst="true" concludes="p7" folder="0" source-offset="822">
+      <rule-xml>
+        <table-conclude attr-id="p7" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <current-date />
+            </value>
+            <condition>
+              <or>
+                <not>
+                  <attribute attr-id="b3" />
+                </not>
+                <uncertain>
+                  <attribute attr-id="p8" />
+                </uncertain>
+              </or>
+            </condition>
+          </row>
+          <otherwise>
+            <attribute attr-id="p8" />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the date of the Sunday prior to filing " ruleburst="true" concludes="p9 = NextDayOfTheWeek(NextDayOfTheWeek(AddDays(p7,-6),&quot;Sunday&quot;), &quot;Sunday&quot;)" folder="0" source-offset="1735">
+      <rule-xml>
+        <conclude attr-id="p9" entity-id="global" scope-id="global0">
+          <value>
+            <next-day-of-the-week>
+              <next-day-of-the-week>
+                <add-days>
+                  <attribute attr-id="p7" />
+                  <negate>
+                    <number-value>6</number-value>
+                  </negate>
+                </add-days>
+                <string-value>Sunday</string-value>
+              </next-day-of-the-week>
+              <string-value>Sunday</string-value>
+            </next-day-of-the-week>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the benefit year end date " ruleburst="true" concludes="p10 = AddWeeks(p9,52)" folder="0" source-offset="1943">
+      <rule-xml>
+        <conclude attr-id="p10" entity-id="global" scope-id="global0">
+          <value>
+            <add-weeks>
+              <attribute attr-id="p9" />
+              <number-value>52</number-value>
+            </add-weeks>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

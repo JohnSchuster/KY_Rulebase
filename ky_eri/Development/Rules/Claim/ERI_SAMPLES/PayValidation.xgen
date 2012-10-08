@@ -1,0 +1,234 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>your pay period at your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="currency" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>your normal rate of pay with previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the days you worked per week with your previous employer</base>
+        </text>
+      </attribute>
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>your pay period is undefined</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('your pay period',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the days per week worked with previous employer is undefined</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the days per week worked with previous employer',singular),o('undefined'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="error(&quot;You must select your pay period at your last employer. &quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You must select your pay period at your last employer. \&quot;)&quot;" folder="0" source-offset="139">
+      <rule-xml>
+        <event action="error(&quot;You must select your pay period at your last employer. &quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <attribute attr-id="b1" />
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="your pay period is undefined" ruleburst="true" concludes="b1" folder="0" source-offset="235">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p1" />
+              <string-value>Select One</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="error(&quot;Hourly Pay Rates must be between $4.90 and $168.27&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Hourly Pay Rates must be between $4.90 and $168.27\&quot;)&quot;" folder="0" source-offset="323">
+      <rule-xml>
+        <event action="error(&quot;Hourly Pay Rates must be between $4.90 and $168.27&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Hourly</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>4.90</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>168.27</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="error(&quot;Daily Pay Rates must be between $39.20 and $1,346.15&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Daily Pay Rates must be between $39.20 and $1,346.15\&quot;)&quot;" folder="0" source-offset="561">
+      <rule-xml>
+        <event action="error(&quot;Daily Pay Rates must be between $39.20 and $1,346.15&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Daily</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>39.2</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>1346.15</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="error(&quot;Weekly Pay Rates must be between $192 and $6,730.77&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Weekly Pay Rates must be between $192 and $6,730.77\&quot;)&quot;" folder="0" source-offset="801">
+      <rule-xml>
+        <event action="error(&quot;Weekly Pay Rates must be between $192 and $6,730.77&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Weekly</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>196</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>6730.77</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="error(&quot;Bi-Weekly Pay Rates must be between $384 and $13,461.54&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Bi-Weekly Pay Rates must be between $384 and $13,461.54\&quot;)&quot;" folder="0" source-offset="1040">
+      <rule-xml>
+        <event action="error(&quot;Bi-Weekly Pay Rates must be between $384 and $13,461.54&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Bi-Weekly</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>384</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>13461.54</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="error(&quot;Monthly Pay Rates must be between $849.33 and $29,166.67&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Monthly Pay Rates must be between $849.33 and $29,166.67\&quot;)&quot;" folder="0" source-offset="1288">
+      <rule-xml>
+        <event action="error(&quot;Monthly Pay Rates must be between $849.33 and $29,166.67&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Monthly</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>849.33</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>29166.67</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="error(&quot;Yearly Pay Rates must be between $10,192 and $350,000&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Yearly Pay Rates must be between $10,192 and $350,000\&quot;)&quot;" folder="0" source-offset="1537">
+      <rule-xml>
+        <event action="error(&quot;Yearly Pay Rates must be between $10,192 and $350,000&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>Yearly</string-value>
+              </equals>
+              <or>
+                <less-than>
+                  <attribute attr-id="p2" />
+                  <number-value>10192</number-value>
+                </less-than>
+                <greater-than>
+                  <attribute attr-id="p2" />
+                  <number-value>350000</number-value>
+                </greater-than>
+              </or>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="error(&quot;Please select the number of days you worked per week with your previous employer…&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;Please select the number of days you worked per week with your previous employer…\&quot;)&quot;" folder="0" source-offset="1779">
+      <rule-xml>
+        <event action="error(&quot;Please select the number of days you worked per week with your previous employer…&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <attribute attr-id="b2" />
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the days per week worked with previous employer is undefined" ruleburst="true" concludes="b2" folder="0" source-offset="1933">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p3" />
+              <string-value>Select One</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

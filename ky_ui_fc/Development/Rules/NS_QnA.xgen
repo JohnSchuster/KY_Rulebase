@@ -1,0 +1,86 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a documented physical medical restriction</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a documented physical medical restriction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the work restriction is documented by the claimants doctor</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the work restriction',singular),o('documented by the claimants doctor'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the documented restriction has been lifted</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the documented restriction',singular),o('lifted'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the restriction began</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the restriction ends</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the claimant has a documented physical medical restriction" ruleburst="true" concludes="b1" folder="0" source-offset="141">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b2" />
+              <and>
+                <less-than-equals>
+                  <attribute attr-id="p1" />
+                  <current-date />
+                </less-than-equals>
+                <not>
+                  <attribute attr-id="b3" />
+                </not>
+              </and>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the documented restriction has not been lifted" ruleburst="true" concludes="not b3" folder="0" source-offset="371">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <unknown>
+                <attribute attr-id="p2" />
+              </unknown>
+              <greater-than>
+                <attribute attr-id="p2" />
+                <current-date />
+              </greater-than>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

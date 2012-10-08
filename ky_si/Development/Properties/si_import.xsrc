@@ -1,0 +1,158 @@
+<root schema-version="1" product-version="10.4.1.1075">
+  <entities>
+    <entity ref="global">
+      <attribute name="EmailAddress" public-name="EmailAddress" type="text">
+        <text>
+          <base>email address</base>
+        </text>
+      </attribute>
+      <attribute name="FirstName" public-name="FirstName" type="text">
+        <text>
+          <base>first name</base>
+        </text>
+      </attribute>
+      <attribute name="HomePhoneNumber" public-name="HomePhoneNumber" type="text">
+        <text>
+          <base>home phone number</base>
+        </text>
+      </attribute>
+      <attribute name="LastName" public-name="LastName" type="text">
+        <text>
+          <base>last name</base>
+        </text>
+      </attribute>
+      <attribute name="SSN" public-name="SSN" type="text">
+        <text>
+          <base>ssn</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="claim" public-id="kewesrdebenefitclaim" name="the claim" singleton="false" containment-relationship-id="kewesrdebenefitclaims" containment-parent-id="global">
+      <attribute name="kewesrdebenefitclaim_BClaimantFlag" public-name="kewesrdebenefitclaim_BClaimantFlag" type="text">
+        <text>
+          <base>the claim's bclaimant flag</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_BYEDate" public-name="kewesrdebenefitclaim_BYEDate" type="date">
+        <text>
+          <base>the claim's bye date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_BasePeriod" public-name="kewesrdebenefitclaim_BasePeriod" type="text">
+        <text>
+          <base>the claim's base period</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_BasePeriodEndDate" public-name="kewesrdebenefitclaim_BasePeriodEndDate" type="date">
+        <text>
+          <base>the claim's base period end date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_BasePeriodStartDate" public-name="kewesrdebenefitclaim_BasePeriodStartDate" type="date">
+        <text>
+          <base>the claim's base period start date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_ClaimStatus" public-name="kewesrdebenefitclaim_ClaimStatus" type="text">
+        <text>
+          <base>the claim's claim status</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_ClaimType" public-name="kewesrdebenefitclaim_ClaimType" type="text">
+        <text>
+          <base>the claim's claim type</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_EUCEndDate" public-name="kewesrdebenefitclaim_EUCEndDate" type="date">
+        <text>
+          <base>the claim's euc end date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_FIPSCode" public-name="kewesrdebenefitclaim_FIPSCode" type="text">
+        <text>
+          <base>the claim's fipscode</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_FileDate" public-name="kewesrdebenefitclaim_FileDate" type="date">
+        <text>
+          <base>the claim's file date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_InterviewDate" public-name="kewesrdebenefitclaim_InterviewDate" type="date">
+        <text>
+          <base>the claim's interview date</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="kewesrdebenefitclaim_LocalOffice" public-name="kewesrdebenefitclaim_LocalOffice" type="text">
+        <text>
+          <base>the claim's local office</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="issue" public-id="action" name="the issue" singleton="false" containment-relationship-id="actions" containment-parent-id="claim">
+      <attribute name="action_ActivityCategory" public-name="action_ActivityCategory" type="text">
+        <text>
+          <base>the issue's activity category</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="action_ActivityUID" public-name="action_ActivityUID" type="text">
+        <text>
+          <base>the issue's activity uid</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="action_HistoryCategory" public-name="action_HistoryCategory" type="text">
+        <text>
+          <base>the issue's history category</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+      <attribute name="action_Type" public-name="action_Type" type="text">
+        <text>
+          <base>the issue's type</base>
+          <parse>
+          </parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship source="global" target="claim" text="kewesrd ebenefit claims" relationship-id="kewesrdebenefitclaims" reverse-relationship-id="global_kewesrdebenefitclaims_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="global2claim" reverse-public-id="claim2global" />
+    <relationship source="claim" target="issue" text="the actions" relationship-id="actions" reverse-relationship-id="claim_actions_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="claim2action" reverse-public-id="action2claim" />
+  </relationships>
+  <interactive-items>
+    <folders />
+    <screens />
+    <documents />
+  </interactive-items>
+  <rule-folders />
+  <rules />
+</root>

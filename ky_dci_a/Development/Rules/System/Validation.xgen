@@ -1,0 +1,40 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the default training authorization start date</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the default training authorization end date</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the default training authorization start date " ruleburst="true" concludes="p1 = CurrentDate()" folder="0" source-offset="1">
+      <rule-xml>
+        <conclude attr-id="p1" entity-id="global" scope-id="global0">
+          <value>
+            <current-date />
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the default training authorization end date " ruleburst="true" concludes="p2 = AddYears(CurrentDate(),1)" folder="0" source-offset="67">
+      <rule-xml>
+        <conclude attr-id="p2" entity-id="global" scope-id="global0">
+          <value>
+            <add-years>
+              <current-date />
+              <number-value>1</number-value>
+            </add-years>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

@@ -1,0 +1,79 @@
+<root schema-version="1" product-version="10.4.1.60">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the eligibility review should be saved</base>
+          <parse>s(ver('10.4.1.60'),v(save+should,t(simple,modal,normal)),ob('the eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the screen 'Your Interview is almost complete' has been displayed</base>
+          <parse>s(ver('10.4.1.60'),v(display,t(simple,present,perfect)),ob('the screen ''Your Interview is almost complete''',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>finish and save the eligibility review is confirmed</base>
+          <parse>s(ver('10.4.1.60'),v(save,t(simple,present,normal)),sb('finish and',plural),o('the eligibility review is confirmed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the eligibility review has been saved</base>
+          <parse>s(ver('10.4.1.60'),v(save,t(simple,present,perfect)),ob('the eligibility review',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the screen 'Save Confirmation' has been displayed</base>
+          <parse>s(ver('10.4.1.60'),v(display,t(simple,present,perfect)),ob('the screen ''Save Confirmation''',singular))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the eligibility review should be saved" ruleburst="true" concludes="b1" folder="0" source-offset="1011">
+      <rule-xml>
+        <table-conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <and>
+                <attribute attr-id="b2" />
+                <attribute attr-id="b3" />
+              </and>
+            </condition>
+          </row>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the eligibility review has been saved" ruleburst="true" concludes="b4" folder="0" source-offset="1251">
+      <rule-xml>
+        <table-conclude attr-id="b4" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <and>
+                <attribute attr-id="b1" />
+                <attribute attr-id="b5" />
+              </and>
+            </condition>
+          </row>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
