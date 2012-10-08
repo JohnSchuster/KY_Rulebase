@@ -1,56 +1,81 @@
 <root schema-version="1" product-version="10.4.1.60">
   <entities>
     <entity ref="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant has a documented physical medical restriction</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a documented physical medical restriction'))</parse>
+          <base>the claimant has a mental health restriction</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a mental health restriction'))</parse>
         </text>
       </attribute>
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the work restriction is documented by the claimants doctor</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the work restriction',singular),o('documented by the claimants doctor'))</parse>
+          <base>the mental health restriction has been lifted</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the mental health restriction',singular),o('lifted'))</parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the documented restriction has been lifted</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the documented restriction',singular),o('lifted'))</parse>
+          <base>the claimant's mental health restriction prevents them from obtaining work</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s mental health restriction',singular),o('them from obtaining work'))</parse>
         </text>
       </attribute>
-      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the date the restriction began</base>
+          <base>the claimant has a physical health restriction</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a physical health restriction'))</parse>
         </text>
       </attribute>
-      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the date the restriction ends</base>
+          <base>the physical health restriction has been lifted</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the physical health restriction',singular),o('lifted'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's physical health restriction prevents them from obtaining work</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s physical health restriction',singular),o('them from obtaining work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the mental health restriction began</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the mental health restriction ends</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the physical health restriction began</base>
+        </text>
+      </attribute>
+      <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the physical health restriction ends</base>
         </text>
       </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the claimant has a documented physical medical restriction" ruleburst="true" concludes="b1" folder="0" source-offset="141">
+    <rule id="0" name="the claimant has a mental health restriction" ruleburst="true" concludes="b4" folder="0" source-offset="391">
       <rule-xml>
-        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+        <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b2" />
-              <and>
-                <less-than-equals>
-                  <attribute attr-id="p1" />
-                  <current-date />
-                </less-than-equals>
-                <not>
-                  <attribute attr-id="b3" />
-                </not>
-              </and>
+              <less-than-equals>
+                <attribute attr-id="p3" />
+                <current-date />
+              </less-than-equals>
+              <not>
+                <attribute attr-id="b5" />
+              </not>
             </and>
           </condition>
           <otherwise>
@@ -59,19 +84,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the documented restriction has not been lifted" ruleburst="true" concludes="not b3" folder="0" source-offset="371">
+    <rule id="1" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="592">
       <rule-xml>
-        <conclude attr-id="b3" entity-id="global" scope-id="global0">
+        <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
             <false-value />
           </value>
           <condition>
             <or>
               <unknown>
-                <attribute attr-id="p2" />
+                <attribute attr-id="p4" />
               </unknown>
               <greater-than>
-                <attribute attr-id="p2" />
+                <attribute attr-id="p4" />
                 <current-date />
               </greater-than>
             </or>
@@ -79,6 +104,70 @@
           <otherwise>
             <true-value />
           </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant's mental health restriction prevents them from obtaining work" ruleburst="true" concludes="b6" folder="0" source-offset="808">
+      <rule-xml>
+        <conclude attr-id="b6" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant has a physical health restriction" ruleburst="true" concludes="b7" folder="0" source-offset="889">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <less-than-equals>
+                <attribute attr-id="p5" />
+                <current-date />
+              </less-than-equals>
+              <not>
+                <attribute attr-id="b8" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b8" folder="0" source-offset="1096">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <unknown>
+                <attribute attr-id="p6" />
+              </unknown>
+              <greater-than>
+                <attribute attr-id="p6" />
+                <current-date />
+              </greater-than>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant's physical health restriction prevents them from obtaining work" ruleburst="true" concludes="b9" folder="0" source-offset="1318">
+      <rule-xml>
+        <conclude attr-id="b9" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
         </conclude>
       </rule-xml>
     </rule>
