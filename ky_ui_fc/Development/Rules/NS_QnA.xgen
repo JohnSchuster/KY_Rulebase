@@ -49,6 +49,48 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('applying for jobs for which they are qualified to perform'))</parse>
         </text>
       </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>kentucky is liable for the assertion</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('kentucky',singular),o('liable for the assertion'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant worked in Kentucky during the base period</base>
+          <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a claim in another state</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a claim in another state'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's incarceration prevents a suitable work search</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the incarceration has been lifted</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the incarceration',singular),o('lifted'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is responsible for the care of (child, elder, spouse)</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('responsible for the care of (child, elder, spouse)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the responsibility of care has ended</base>
+          <parse>s(ver('10.4.1.60'),v(end,t(simple,present,perfect)),sb('the responsibility of care',singular))</parse>
+        </text>
+      </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the mental health restriction began</base>
@@ -69,11 +111,51 @@
           <base>the date the physical health restriction ends</base>
         </text>
       </attribute>
+      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the incarceration began</base>
+        </text>
+      </attribute>
+      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the incarceration ends</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the responsibility of care began</base>
+        </text>
+      </attribute>
+      <attribute name="p10" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the responsibility of care ends</base>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the claimant has a mental health restriction" ruleburst="true" concludes="b4" folder="0" source-offset="391">
+    <rule id="0" name="kentucky is liable for the assertion" ruleburst="true" concludes="b13" folder="0">
+      <rule-xml>
+        <conclude attr-id="b13" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b14" />
+              <not>
+                <attribute attr-id="b15" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the claimant has a mental health restriction" ruleburst="true" concludes="b4" folder="0" source-offset="562">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -96,7 +178,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="592">
+    <rule id="2" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="763">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -119,7 +201,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant has a physical health restriction" ruleburst="true" concludes="b7" folder="0" source-offset="808">
+    <rule id="3" name="the claimant has a physical health restriction" ruleburst="true" concludes="b7" folder="0" source-offset="979">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -142,7 +224,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b8" folder="0" source-offset="1015">
+    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b8" folder="0" source-offset="1186">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -165,7 +247,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b9" folder="0" source-offset="1927">
+    <rule id="5" name="the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b9" folder="0" source-offset="2098">
       <rule-xml>
         <conclude attr-id="b9" entity-id="global" scope-id="global0">
           <value>
@@ -180,7 +262,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b11" folder="0" source-offset="2106">
+    <rule id="6" name="the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b11" folder="0" source-offset="2277">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -191,6 +273,98 @@
           </condition>
           <otherwise>
             <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the claimant is responsible for the care of (child, elder, spouse)" ruleburst="true" concludes="b18" folder="0" source-offset="2863">
+      <rule-xml>
+        <conclude attr-id="b18" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <less-than-equals>
+                <attribute attr-id="p9" />
+                <current-date />
+              </less-than-equals>
+              <not>
+                <attribute attr-id="b19" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the responsibility of care has not ended" ruleburst="true" concludes="not b19" folder="0" source-offset="3075">
+      <rule-xml>
+        <conclude attr-id="b19" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <unknown>
+                <attribute attr-id="p10" />
+              </unknown>
+              <greater-than>
+                <attribute attr-id="p10" />
+                <current-date />
+              </greater-than>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the claimant's incarceration prevents a suitable work search" ruleburst="true" concludes="b16" folder="0" source-offset="3683">
+      <rule-xml>
+        <conclude attr-id="b16" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <less-than-equals>
+                <attribute attr-id="p7" />
+                <current-date />
+              </less-than-equals>
+              <not>
+                <attribute attr-id="b17" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the incarceration has not been lifted" ruleburst="true" concludes="not b17" folder="0" source-offset="3879">
+      <rule-xml>
+        <conclude attr-id="b17" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <unknown>
+                <attribute attr-id="p8" />
+              </unknown>
+              <greater-than>
+                <attribute attr-id="p8" />
+                <current-date />
+              </greater-than>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
           </otherwise>
         </conclude>
       </rule-xml>
