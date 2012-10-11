@@ -256,25 +256,30 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant has a current benefit year" ruleburst="true" concludes="b2" folder="0" source-offset="830">
+    <rule id="4" name="the claimant does not have a current benefit year" ruleburst="true" concludes="not b2" folder="0" source-offset="830">
       <rule-xml>
         <conclude attr-id="b2" entity-id="global" scope-id="global0">
           <value>
-            <true-value />
+            <false-value />
           </value>
           <condition>
-            <greater-than-equals>
-              <attribute attr-id="p3" />
-              <attribute attr-id="p7" />
-            </greater-than-equals>
+            <or>
+              <uncertain>
+                <attribute attr-id="p3" />
+              </uncertain>
+              <less-than>
+                <attribute attr-id="p3" />
+                <attribute attr-id="p7" />
+              </less-than>
+            </or>
           </condition>
           <otherwise>
-            <false-value />
+            <true-value />
           </otherwise>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the date of the Sunday prior to filing " ruleburst="true" concludes="p7 = NextDayOfTheWeek(AddDays(p6, -6), &quot;Sunday&quot;)" folder="0" source-offset="1876">
+    <rule id="5" name="the date of the Sunday prior to filing " ruleburst="true" concludes="p7 = NextDayOfTheWeek(AddDays(p6, -6), &quot;Sunday&quot;)" folder="0" source-offset="1939">
       <rule-xml>
         <conclude attr-id="p7" entity-id="global" scope-id="global0">
           <value>
@@ -291,7 +296,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the filing effective date " ruleburst="true" concludes="p8 = p7" folder="0" source-offset="2051">
+    <rule id="6" name="the filing effective date " ruleburst="true" concludes="p8 = p7" folder="0" source-offset="2114">
       <rule-xml>
         <conclude attr-id="p8" entity-id="global" scope-id="global0">
           <value>
@@ -300,7 +305,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the filing year " ruleburst="true" concludes="p9 = ExtractYear(p8)" folder="0" source-offset="2119">
+    <rule id="7" name="the filing year " ruleburst="true" concludes="p9 = ExtractYear(p8)" folder="0" source-offset="2182">
       <rule-xml>
         <conclude attr-id="p9" entity-id="global" scope-id="global0">
           <value>
@@ -311,7 +316,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the January quarter first week end date " ruleburst="true" concludes="p10 = MakeDate(p9,1,7)" folder="0" source-offset="2215">
+    <rule id="8" name="the January quarter first week end date " ruleburst="true" concludes="p10 = MakeDate(p9,1,7)" folder="0" source-offset="2278">
       <rule-xml>
         <conclude attr-id="p10" entity-id="global" scope-id="global0">
           <value>
@@ -324,7 +329,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the April quarter first week end date " ruleburst="true" concludes="p11 = MakeDate(p9,4,7)" folder="0" source-offset="2289">
+    <rule id="9" name="the April quarter first week end date " ruleburst="true" concludes="p11 = MakeDate(p9,4,7)" folder="0" source-offset="2352">
       <rule-xml>
         <conclude attr-id="p11" entity-id="global" scope-id="global0">
           <value>
@@ -337,7 +342,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the July quarter first week end date " ruleburst="true" concludes="p12 = MakeDate(p9,7,7)" folder="0" source-offset="2361">
+    <rule id="10" name="the July quarter first week end date " ruleburst="true" concludes="p12 = MakeDate(p9,7,7)" folder="0" source-offset="2424">
       <rule-xml>
         <conclude attr-id="p12" entity-id="global" scope-id="global0">
           <value>
@@ -350,7 +355,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the October quarter first week end date " ruleburst="true" concludes="p13 = MakeDate(p9,10,7)" folder="0" source-offset="2432">
+    <rule id="11" name="the October quarter first week end date " ruleburst="true" concludes="p13 = MakeDate(p9,10,7)" folder="0" source-offset="2495">
       <rule-xml>
         <conclude attr-id="p13" entity-id="global" scope-id="global0">
           <value>
@@ -363,7 +368,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the January quarter start date " ruleburst="true" concludes="p14 = MakeDate(p9,1,1)" folder="0" source-offset="2528">
+    <rule id="12" name="the January quarter start date " ruleburst="true" concludes="p14 = MakeDate(p9,1,1)" folder="0" source-offset="2591">
       <rule-xml>
         <conclude attr-id="p14" entity-id="global" scope-id="global0">
           <value>
@@ -376,7 +381,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the April quarter start date " ruleburst="true" concludes="p15 = MakeDate(p9,4,1)" folder="0" source-offset="2594">
+    <rule id="13" name="the April quarter start date " ruleburst="true" concludes="p15 = MakeDate(p9,4,1)" folder="0" source-offset="2657">
       <rule-xml>
         <conclude attr-id="p15" entity-id="global" scope-id="global0">
           <value>
@@ -389,7 +394,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the July quarter start date " ruleburst="true" concludes="p16 = MakeDate(p9,7,1)" folder="0" source-offset="2657">
+    <rule id="14" name="the July quarter start date " ruleburst="true" concludes="p16 = MakeDate(p9,7,1)" folder="0" source-offset="2720">
       <rule-xml>
         <conclude attr-id="p16" entity-id="global" scope-id="global0">
           <value>
@@ -402,7 +407,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the October quarter start date " ruleburst="true" concludes="p17 = MakeDate(p9,10,1)" folder="0" source-offset="2719">
+    <rule id="15" name="the October quarter start date " ruleburst="true" concludes="p17 = MakeDate(p9,10,1)" folder="0" source-offset="2782">
       <rule-xml>
         <conclude attr-id="p17" entity-id="global" scope-id="global0">
           <value>
@@ -415,7 +420,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the January quarter end date " ruleburst="true" concludes="p18 = MakeDate(p9,3,31)" folder="0" source-offset="2824">
+    <rule id="16" name="the January quarter end date " ruleburst="true" concludes="p18 = MakeDate(p9,3,31)" folder="0" source-offset="2867">
       <rule-xml>
         <conclude attr-id="p18" entity-id="global" scope-id="global0">
           <value>
@@ -428,7 +433,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the April quarter end date " ruleburst="true" concludes="p19 = MakeDate(p9,6,30)" folder="0" source-offset="2889">
+    <rule id="17" name="the April quarter end date " ruleburst="true" concludes="p19 = MakeDate(p9,6,30)" folder="0" source-offset="2932">
       <rule-xml>
         <conclude attr-id="p19" entity-id="global" scope-id="global0">
           <value>
@@ -441,7 +446,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the July quarter end date " ruleburst="true" concludes="p20 = MakeDate(p9,9,30)" folder="0" source-offset="2951">
+    <rule id="18" name="the July quarter end date " ruleburst="true" concludes="p20 = MakeDate(p9,9,30)" folder="0" source-offset="2994">
       <rule-xml>
         <conclude attr-id="p20" entity-id="global" scope-id="global0">
           <value>
@@ -454,7 +459,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the October quarter end date " ruleburst="true" concludes="p21 = MakeDate(p9,12,31)" folder="0" source-offset="3012">
+    <rule id="19" name="the October quarter end date " ruleburst="true" concludes="p21 = MakeDate(p9,12,31)" folder="0" source-offset="3055">
       <rule-xml>
         <conclude attr-id="p21" entity-id="global" scope-id="global0">
           <value>
@@ -467,7 +472,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the filing is within the first week of the January Quarter" ruleburst="true" concludes="b3" folder="0" source-offset="3123">
+    <rule id="20" name="the filing is within the first week of the January Quarter" ruleburst="true" concludes="b3" folder="0" source-offset="3166">
       <rule-xml>
         <conclude attr-id="b3" entity-id="global" scope-id="global0">
           <value>
@@ -491,7 +496,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the filing is within the first week of the April Quarter" ruleburst="true" concludes="b4" folder="0" source-offset="3317">
+    <rule id="21" name="the filing is within the first week of the April Quarter" ruleburst="true" concludes="b4" folder="0" source-offset="3360">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -515,7 +520,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the filing is within the first week of the July Quarter" ruleburst="true" concludes="b5" folder="0" source-offset="3505">
+    <rule id="22" name="the filing is within the first week of the July Quarter" ruleburst="true" concludes="b5" folder="0" source-offset="3548">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -539,7 +544,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the filing is within the first week of the October Quarter" ruleburst="true" concludes="b6" folder="0" source-offset="3690">
+    <rule id="23" name="the filing is within the first week of the October Quarter" ruleburst="true" concludes="b6" folder="0" source-offset="3733">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -563,7 +568,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="24" name="the benefit year end date" ruleburst="true" concludes="p22" folder="0" source-offset="3941">
+    <rule id="24" name="the benefit year end date" ruleburst="true" concludes="p22" folder="0" source-offset="3984">
       <rule-xml>
         <table-conclude attr-id="p22" entity-id="global" scope-id="global0">
           <row>
@@ -644,7 +649,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the filing falls within the January Quarter" ruleburst="true" concludes="b7" folder="0" source-offset="5078">
+    <rule id="25" name="the filing falls within the January Quarter" ruleburst="true" concludes="b7" folder="0" source-offset="5121">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -668,7 +673,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="26" name="the filing falls within the April Quarter" ruleburst="true" concludes="b8" folder="0" source-offset="5246">
+    <rule id="26" name="the filing falls within the April Quarter" ruleburst="true" concludes="b8" folder="0" source-offset="5289">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -692,7 +697,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="27" name="the filing falls within the July Quarter" ruleburst="true" concludes="b9" folder="0" source-offset="5408">
+    <rule id="27" name="the filing falls within the July Quarter" ruleburst="true" concludes="b9" folder="0" source-offset="5451">
       <rule-xml>
         <conclude attr-id="b9" entity-id="global" scope-id="global0">
           <value>
@@ -716,7 +721,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="28" name="the filing falls within the October Quarter" ruleburst="true" concludes="b10" folder="0" source-offset="5567">
+    <rule id="28" name="the filing falls within the October Quarter" ruleburst="true" concludes="b10" folder="0" source-offset="5610">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -740,7 +745,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="29" name="the base period start date" ruleburst="true" concludes="p23" folder="0" source-offset="5735">
+    <rule id="29" name="the base period start date" ruleburst="true" concludes="p23" folder="0" source-offset="5778">
       <rule-xml>
         <table-conclude attr-id="p23" entity-id="global" scope-id="global0">
           <row>
@@ -793,7 +798,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="30" name="the base period end date " ruleburst="true" concludes="p24 = AddMonths(p23, 12)" folder="0" source-offset="6128">
+    <rule id="30" name="the base period end date " ruleburst="true" concludes="p24 = AddMonths(p23, 12)" folder="0" source-offset="6171">
       <rule-xml>
         <conclude attr-id="p24" entity-id="global" scope-id="global0">
           <value>

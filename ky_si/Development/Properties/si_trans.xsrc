@@ -7,11 +7,6 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
         </text>
       </attribute>
-      <attribute name="p1" type="date" public-name="si_byed">
-        <text>
-          <base>the asserted benefit year end date</base>
-        </text>
-      </attribute>
       <attribute name="p2" type="date" public-name="si_claimant_dob">
         <text>
           <base>the claimant's date of birth</base>
@@ -134,7 +129,7 @@
           <parse>s(ver('10.4.1.60'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the April Quarter'))</parse>
         </text>
       </attribute>
-      <attribute name="p39" type="number" public-name="fpr_filing_year">
+      <attribute name="p39" type="number" public-name="si_filing_year" display-unformatted="true">
         <text>
           <base>the filing year</base>
         </text>
@@ -175,9 +170,15 @@
           <parse>s(ver('10.4.1.60'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the July Quarter'))</parse>
         </text>
       </attribute>
+      <attribute name="b11" type="boolean" public-name="si_processing_date_asserted">
+        <text>
+          <base>the asserted processing override date is defined</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the asserted processing override date',singular),o('defined'))</parse>
+        </text>
+      </attribute>
     </entity>
-    <entity id="nod" name="the nod" identifying-attribute-name="the_nod_id_text" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="o_the_nod_doc">
-      <attribute name="p9" type="text" substitutable="true" default-gender="generic" public-name="the_nod_id_text">
+    <entity id="nod" name="the nod" identifying-attribute-name="o_nod_id_text" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="o_the_nod_doc">
+      <attribute name="p9" type="text" substitutable="true" default-gender="generic" public-name="o_nod_id_text">
         <text>
           <base>the nod</base>
         </text>
