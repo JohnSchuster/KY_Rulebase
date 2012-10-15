@@ -1,18 +1,6 @@
 <root schema-version="1" product-version="10.4.1.60">
   <entities>
     <entity ref="global">
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the reason for less than full time employment is qualifying</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the reason for less than full time employment',singular),o('qualifying'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is at fault for the separation</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation'))</parse>
-        </text>
-      </attribute>
       <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a quit exception</base>
@@ -487,33 +475,19 @@
           <parse>s(ver('10.4.1.60'),v(apply,t(simple,present,normal)),sb('KRS C.O. 109000A SIMS',singular))</parse>
         </text>
       </attribute>
+      <attribute name="b94" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is at fault for the separation from the most recent employer</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the most recent employer'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the reason for less than full time employment is qualifying" ruleburst="true" concludes="b3" folder="0" source-offset="613">
+    <rule id="0" name="the claimant is not at fault for the separation from the most recent employer" ruleburst="true" concludes="not b94" folder="0" source-offset="723">
       <rule-xml>
-        <conclude attr-id="b3" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <not>
-                <attribute attr-id="b7" />
-              </not>
-              <attribute attr-id="b8" />
-            </or>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="1" name="the claimant is not at fault for the separation" ruleburst="true" concludes="not b7" folder="0" source-offset="889">
-      <rule-xml>
-        <table-conclude attr-id="b7" entity-id="global" scope-id="global0">
+        <table-conclude attr-id="b94" entity-id="global" scope-id="global0">
           <row>
             <value>
               <true-value />
@@ -559,7 +533,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant voluntarily quit due to a reduction in workforce plan initiated by the employer" ruleburst="true" concludes="b75" folder="0" source-offset="1702">
+    <rule id="1" name="the claimant voluntarily quit due to a reduction in workforce plan initiated by the employer" ruleburst="true" concludes="b75" folder="0" source-offset="1567">
       <rule-xml>
         <conclude attr-id="b75" entity-id="global" scope-id="global0">
           <value>
@@ -583,7 +557,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant has not pursued reasonable alternatives other than quitting" ruleburst="true" concludes="not b17" folder="0" source-offset="2228" question-search="false">
+    <rule id="2" name="the claimant has not pursued reasonable alternatives other than quitting" ruleburst="true" concludes="not b17" folder="0" source-offset="2093" question-search="false">
       <rule-xml>
         <conclude attr-id="b17" entity-id="global" scope-id="global0">
           <value>
@@ -597,7 +571,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant did not have good cause (to quit)" ruleburst="true" concludes="not b72" folder="0" source-offset="2540" question-search="false">
+    <rule id="3" name="the claimant did not have good cause (to quit)" ruleburst="true" concludes="not b72" folder="0" source-offset="3019" question-search="false">
       <rule-xml>
         <conclude attr-id="b72" entity-id="global" scope-id="global0">
           <value>
@@ -624,7 +598,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant's separation falls within the SIMS precedent" ruleburst="true" concludes="b89" folder="0" source-offset="3127">
+    <rule id="4" name="the claimant's separation falls within the SIMS precedent" ruleburst="true" concludes="b89" folder="0" source-offset="3606">
       <rule-xml>
         <conclude attr-id="b89" entity-id="global" scope-id="global0">
           <value>
@@ -653,7 +627,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the SIMS precedent is not disqualifying" ruleburst="true" concludes="not b91" folder="0" source-offset="3467">
+    <rule id="5" name="the SIMS precedent is not disqualifying" ruleburst="true" concludes="not b91" folder="0" source-offset="3946">
       <rule-xml>
         <conclude attr-id="b91" entity-id="global" scope-id="global0">
           <value>
@@ -671,7 +645,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant's reason is attributable to the employment" ruleburst="true" concludes="b19" folder="0" source-offset="3654" question-search="false">
+    <rule id="6" name="the claimant's reason is attributable to the employment" ruleburst="true" concludes="b19" folder="0" source-offset="4133" question-search="false">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -688,7 +662,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant has quit" ruleburst="true" concludes="b16" folder="0" source-offset="4242">
+    <rule id="7" name="the claimant has quit" ruleburst="true" concludes="b16" folder="0" source-offset="4338">
       <rule-xml>
         <conclude attr-id="b16" entity-id="global" scope-id="global0">
           <value>
@@ -723,7 +697,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the separation was not initiated by the employer" ruleburst="true" concludes="not b24" folder="0" source-offset="4588" question-search="false">
+    <rule id="8" name="the separation was not initiated by the employer" ruleburst="true" concludes="not b24" folder="0" source-offset="4684" question-search="false">
       <rule-xml>
         <conclude attr-id="b24" entity-id="global" scope-id="global0">
           <value>
@@ -735,7 +709,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant is suspended for misconduct" ruleburst="true" concludes="b10" folder="0" source-offset="4722">
+    <rule id="9" name="the claimant is suspended for misconduct" ruleburst="true" concludes="b10" folder="0" source-offset="4818">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -753,7 +727,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant's work related actions is deemed misconduct within the meaning of the statute" ruleburst="true" concludes="b15" folder="0" source-offset="4913">
+    <rule id="10" name="the claimant's work related actions is deemed misconduct within the meaning of the statute" ruleburst="true" concludes="b15" folder="0" source-offset="5009">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -772,7 +746,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant's action does not demonstrate a willful disregard of the employer's business interests" ruleburst="true" concludes="not b29" folder="0" source-offset="5252">
+    <rule id="11" name="the claimant's action does not demonstrate a willful disregard of the employer's business interests" ruleburst="true" concludes="not b29" folder="0" source-offset="5348">
       <rule-xml>
         <conclude attr-id="b29" entity-id="global" scope-id="global0">
           <value>
@@ -794,7 +768,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant's action demonstrated a substantial disregard of the employer's business interests" ruleburst="true" concludes="b30" folder="0" source-offset="5528">
+    <rule id="12" name="the claimant's action demonstrated a substantial disregard of the employer's business interests" ruleburst="true" concludes="b30" folder="0" source-offset="5624">
       <rule-xml>
         <conclude attr-id="b30" entity-id="global" scope-id="global0">
           <value>
@@ -818,7 +792,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant's action was not willful" ruleburst="true" concludes="not b31" folder="0" source-offset="5964">
+    <rule id="13" name="the claimant's action was not willful" ruleburst="true" concludes="not b31" folder="0" source-offset="6060">
       <rule-xml>
         <conclude attr-id="b31" entity-id="global" scope-id="global0">
           <value>
@@ -837,7 +811,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimants actions did not meet the employers standard of behavior" ruleburst="true" concludes="not b39" folder="0" source-offset="6551">
+    <rule id="14" name="the claimants actions did not meet the employers standard of behavior" ruleburst="true" concludes="not b39" folder="0" source-offset="6647">
       <rule-xml>
         <conclude attr-id="b39" entity-id="global" scope-id="global0">
           <value>
@@ -858,7 +832,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant's action warrants termination of employment without prior warning" ruleburst="true" concludes="b45" folder="0" source-offset="7438">
+    <rule id="15" name="the claimant's action warrants termination of employment without prior warning" ruleburst="true" concludes="b45" folder="0" source-offset="7534">
       <rule-xml>
         <conclude attr-id="b45" entity-id="global" scope-id="global0">
           <value>
@@ -881,7 +855,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the claimant's action is negligent" ruleburst="true" concludes="b46" folder="0" source-offset="7974">
+    <rule id="16" name="the claimant's action is negligent" ruleburst="true" concludes="b46" folder="0" source-offset="8070">
       <rule-xml>
         <conclude attr-id="b46" entity-id="global" scope-id="global0">
           <value>
@@ -896,7 +870,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the claimants' performance failed to meet the employers standard" ruleburst="true" concludes="b40" folder="0" source-offset="8159">
+    <rule id="17" name="the claimants' performance failed to meet the employers standard" ruleburst="true" concludes="b40" folder="0" source-offset="8255">
       <rule-xml>
         <conclude attr-id="b40" entity-id="global" scope-id="global0">
           <value>
@@ -915,7 +889,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the claimant's employment was terminated for alleged misconduct" ruleburst="true" concludes="b12" folder="0" source-offset="8622" question-search="false">
+    <rule id="18" name="the claimant's employment was terminated for alleged misconduct" ruleburst="true" concludes="b12" folder="0" source-offset="8718" question-search="false">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
@@ -954,7 +928,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the claimant was working under the influence" ruleburst="true" concludes="b60" folder="0" source-offset="9737">
+    <rule id="19" name="the claimant was working under the influence" ruleburst="true" concludes="b60" folder="0" source-offset="9833">
       <rule-xml>
         <conclude attr-id="b60" entity-id="global" scope-id="global0">
           <value>
@@ -972,7 +946,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the claimant has a quit exception" ruleburst="true" concludes="b8" folder="0" source-offset="10084">
+    <rule id="20" name="the claimant has a quit exception" ruleburst="true" concludes="b8" folder="0" source-offset="10180">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
