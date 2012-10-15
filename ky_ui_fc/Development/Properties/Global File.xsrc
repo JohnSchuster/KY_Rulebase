@@ -234,16 +234,6 @@
           <base>The claimant electronic signature</base>
         </text>
       </attribute>
-      <attribute name="p59" type="date" public-name="fc_in_jail_start">
-        <text>
-          <base>the date the incarceration began</base>
-        </text>
-      </attribute>
-      <attribute name="p60" type="date" public-name="fc_in_jail_end">
-        <text>
-          <base>the date the incarceration ends</base>
-        </text>
-      </attribute>
       <attribute name="p61" type="text" public-name="i_incarcerated_at">
         <text>
           <base>the claiments place of incarceration</base>
@@ -356,6 +346,12 @@
         <text>
           <base>the claimants curfew restricts (confines) them during their normal working hours</base>
           <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimants curfew',singular),o('(confines) them during their normal working hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" public-name="fc_po_box">
+        <text>
+          <base>the claimant has a po box address</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a po box address'))</parse>
         </text>
       </attribute>
     </entity>
