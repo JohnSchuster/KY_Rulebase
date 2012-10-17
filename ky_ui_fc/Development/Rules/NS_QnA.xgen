@@ -105,13 +105,20 @@
       </attribute>
       <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimants curfew restricts (confines) them during their normal working hours</base>
+          <base>the claimant has been offered the ability to telework</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the claimant',singular),o('offered the ability to telework'))</parse>
         </text>
       </attribute>
       <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimants is allowed to leave their residence</base>
           <parse>s(ver('10.4.1.60'),v(allow,t(simple,present,normal)),ob('the claimants',singular),o('to leave their residence'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is in a work release program</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in a work release program'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -344,7 +351,12 @@
           </value>
           <condition>
             <or>
-              <attribute attr-id="b15" />
+              <and>
+                <attribute attr-id="b15" />
+                <not>
+                  <attribute attr-id="b20" />
+                </not>
+              </and>
               <and>
                 <attribute attr-id="b16" />
                 <attribute attr-id="b17" />
@@ -357,19 +369,21 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant's house arrest prevents a suitable work search" ruleburst="true" concludes="b17" folder="0" source-offset="2131">
+    <rule id="10" name="the claimant's house arrest prevents a suitable work search" ruleburst="true" concludes="b17" folder="0" source-offset="2196">
       <rule-xml>
         <conclude attr-id="b17" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <or>
-              <attribute attr-id="b18" />
+            <and>
+              <not>
+                <attribute attr-id="b18" />
+              </not>
               <not>
                 <attribute attr-id="b19" />
               </not>
-            </or>
+            </and>
           </condition>
           <otherwise>
             <false-value />

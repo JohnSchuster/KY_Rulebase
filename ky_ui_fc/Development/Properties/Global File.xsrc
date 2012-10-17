@@ -234,7 +234,7 @@
           <base>The claimant electronic signature</base>
         </text>
       </attribute>
-      <attribute name="p61" type="text" public-name="i_incarcerated_at">
+      <attribute name="p61" type="text" public-name="fc_incarcerated_at">
         <text>
           <base>the claiments place of incarceration</base>
         </text>
@@ -332,26 +332,40 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('under house arrest'))</parse>
         </text>
       </attribute>
-      <attribute name="p77" type="date" public-name="fc_house_arrest_start">
-        <text>
-          <base>the date the house arrest began</base>
-        </text>
-      </attribute>
-      <attribute name="p78" type="date" public-name="fc_house_arrest_end">
-        <text>
-          <base>the date the house arrest ends</base>
-        </text>
-      </attribute>
-      <attribute name="b29" type="boolean" public-name="fc_curfew_restricts">
-        <text>
-          <base>the claimants curfew restricts (confines) them during their normal working hours</base>
-          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimants curfew',singular),o('(confines) them during their normal working hours'))</parse>
-        </text>
-      </attribute>
       <attribute name="b30" type="boolean" public-name="fc_po_box">
         <text>
           <base>the claimant has a po box address</base>
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a po box address'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" public-name="fc_work_release">
+        <text>
+          <base>the claimant is in a work release program</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in a work release program'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" public-name="fp_cannot_leave_house">
+        <text>
+          <base>the claimant's house arrest prevents a suitable work search</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s house arrest',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" public-name="fc_can_telework">
+        <text>
+          <base>the claimant has been offered the ability to telework</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the claimant',singular),o('offered the ability to telework'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" public-name="fc_kentucky_is_liable">
+        <text>
+          <base>kentucky is liable for the assertion</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('kentucky',singular),o('liable for the assertion'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" public-name="fc_allowed_to_leave">
+        <text>
+          <base>the claimants is allowed to leave their residence</base>
+          <parse>s(ver('10.4.1.60'),v(allow,t(simple,present,normal)),ob('the claimants',singular),o('to leave their residence'))</parse>
         </text>
       </attribute>
     </entity>
