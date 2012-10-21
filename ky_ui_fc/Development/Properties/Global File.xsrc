@@ -1,7 +1,7 @@
 <root schema-version="1" product-version="10.4.1.60">
   <entities>
     <entity ref="global">
-      <attribute name="p5" type="text" public-name="i_gender">
+      <attribute name="p5" type="text" public-name="fc_gender">
         <text>
           <base>Your Gender</base>
         </text>
@@ -11,9 +11,9 @@
           <base>Your Home Phone</base>
         </text>
       </attribute>
-      <attribute name="p7" type="text" public-name="i_ethnicity">
+      <attribute name="p7" type="text" public-name="fc_ethnic_group">
         <text>
-          <base>Ethnic Group</base>
+          <base>you ethnic group</base>
         </text>
       </attribute>
       <attribute name="p8" type="text" public-name="i_race">
@@ -21,19 +21,18 @@
           <base>Race</base>
         </text>
       </attribute>
-      <attribute name="b2" type="boolean" public-name="i_disability">
+      <attribute name="b2" type="boolean" public-name="fc_disability">
         <text>
-          <base>Disability</base>
-          <parse>
-          </parse>
+          <base>you have a Disability</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('you',plural),o('a Disability'))</parse>
         </text>
       </attribute>
-      <attribute name="p9" type="text" public-name="i_email">
+      <attribute name="p9" type="text" public-name="fc_email">
         <text>
-          <base>E-Mail</base>
+          <base>your e-mail</base>
         </text>
       </attribute>
-      <attribute name="p10" type="date" public-name="i_claimant_birthday">
+      <attribute name="p10" type="date" public-name="fc_claimant_birthday">
         <text>
           <base>Your Birthday</base>
         </text>
@@ -49,7 +48,7 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('You',plural),o('currently a resident of Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b5" type="boolean" public-name="i_federal_tax">
+      <attribute name="b5" type="boolean" public-name="fc_federal_tax">
         <text>
           <base>You want 10 percent of your benifit check withheld for federal Taxes</base>
           <parse>s(ver('10.4.1.60'),v(want,t(simple,present,normal)),sb('You',plural),o('10 percent of your benifit check withheld for federal Taxes'))</parse>
@@ -67,34 +66,10 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving a pension check'))</parse>
         </text>
       </attribute>
-      <attribute name="b8" type="boolean" public-name="i_workers_comp">
+      <attribute name="b8" type="boolean" public-name="fc_workers_comp">
         <text>
           <base>you are receiving workers compensation payments</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving workers compensation payments'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b9" type="boolean" public-name="i_us_citizen">
-        <text>
-          <base>you are a US citizen</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('a US citizen'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b10" type="boolean" public-name="i_legal_alien">
-        <text>
-          <base>you are a legal alien</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('a legal alien'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b11" type="boolean" public-name="i_spouse_of_citizen">
-        <text>
-          <base>you are the spouse of a US citizen</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('the spouse of a US citizen'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b12" type="boolean" public-name="i_spouse_legal_alien">
-        <text>
-          <base>you are the spouse of a legal alien</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('the spouse of a legal alien'))</parse>
         </text>
       </attribute>
       <attribute name="p24" type="text" public-name="i_payment_method">
@@ -102,7 +77,7 @@
           <base>Your preferred method of payment</base>
         </text>
       </attribute>
-      <attribute name="b14" type="boolean" public-name="i_armed_forces">
+      <attribute name="b14" type="boolean" public-name="fc_armed_forces">
         <text>
           <base>you served in the military during the base period</base>
           <parse>s(ver('10.4.1.60'),v(serve,t(simple,past,normal)),sb('you',plural),o('in the military during the base period'))</parse>
@@ -114,29 +89,28 @@
           <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('you',plural),o('for the US Post office during the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b16" type="boolean" public-name="i_federal">
+      <attribute name="b16" type="boolean" public-name="fc_federal">
         <text>
           <base>you were employed by the Federal government deuring the base period</base>
           <parse>s(ver('10.4.1.60'),v(employ,t(simple,past,normal)),ob('you',plural),o('by the Federal government deuring the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b17" type="boolean" public-name="i_union_member">
+      <attribute name="b17" type="boolean" public-name="fc_union_member">
         <text>
           <base>You are a member of a Labor Union</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('You',plural),o('a member of a Labor Union'))</parse>
         </text>
       </attribute>
-      <attribute name="b18" type="boolean" public-name="i_union_work">
+      <attribute name="b18" type="boolean" public-name="fc_union_work">
         <text>
           <base>A Labor Union finds work for you</base>
           <parse>s(ver('10.4.1.60'),v(find,t(simple,present,normal)),sb('A Labor Union',singular),o('work for you'))</parse>
         </text>
       </attribute>
-      <attribute name="b20" type="boolean" public-name="i_work_in_other_state">
+      <attribute name="b20" type="boolean" public-name="fc_work_in_other_state">
         <text>
-          <base>Work in a State other than Kentucky</base>
-          <parse>
-          </parse>
+          <base>you worked in a State other than Kentucky</base>
+          <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('you',plural),o('in a State other than Kentucky'))</parse>
         </text>
       </attribute>
       <attribute name="p37" type="text" public-name="i_access_pam">
@@ -154,27 +128,17 @@
           <base>Understand Waiting</base>
         </text>
       </attribute>
-      <attribute name="p40" type="date" public-name="i_base_start">
-        <text>
-          <base>Base period start date</base>
-        </text>
-      </attribute>
-      <attribute name="p41" type="date" public-name="i_base_end">
-        <text>
-          <base>base period end date</base>
-        </text>
-      </attribute>
-      <attribute name="p42" type="text" public-name="i_cell_phone">
+      <attribute name="p42" type="text" public-name="fc_cell_phone">
         <text>
           <base>Cell phone</base>
         </text>
       </attribute>
-      <attribute name="p43" type="text" public-name="i_first_name">
+      <attribute name="p43" type="text" public-name="fc_first_name">
         <text>
           <base>your first name</base>
         </text>
       </attribute>
-      <attribute name="p44" type="text" public-name="i_last_name">
+      <attribute name="p44" type="text" public-name="fc_last_name">
         <text>
           <base>Your last name</base>
         </text>
@@ -252,12 +216,6 @@
       <attribute name="p64" type="text" public-name="fc_care_for">
         <text>
           <base>your relationship to the person being cared for</base>
-        </text>
-      </attribute>
-      <attribute name="b26" type="boolean" public-name="fc_agree_to_procede">
-        <text>
-          <base>I have read the policy</base>
-          <parse>s(ver('10.4.1.60'),v(read,t(simple,present,perfect)),sb('I',plural),o('the policy'))</parse>
         </text>
       </attribute>
       <attribute name="p65" type="text" public-name="fc_mailing_address">
@@ -366,6 +324,83 @@
         <text>
           <base>the claimants is allowed to leave their residence</base>
           <parse>s(ver('10.4.1.60'),v(allow,t(simple,present,normal)),ob('the claimants',singular),o('to leave their residence'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" public-name="fc_transportation_restricts">
+        <text>
+          <base>the claimant's transportation restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" public-name="fc_claimant_owns_vehicle">
+        <text>
+          <base>the claimant owns a reliable vehicle</base>
+          <parse>s(ver('10.4.1.60'),v(own,t(simple,present,normal)),sb('the claimant',singular),o('a reliable vehicle'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" public-name="fc_claimant_valid_license">
+        <text>
+          <base>the claimant has a valid driver's license</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a valid driver''s license'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p77" type="text" public-name="fc_alien_registration_no">
+        <text>
+          <base>the claimants alien registration number</base>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" public-name="fc_claimant_is_alien">
+        <text>
+          <base>the claimant is an alien</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" public-name="fc_interpretor_needed">
+        <text>
+          <base>an interpretor is needed</base>
+          <parse>s(ver('10.4.1.60'),v(need,t(simple,present,normal)),ob('an interpretor',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p78" type="text" public-name="fc_interpretor_language">
+        <text>
+          <base>the prefered language of the interpretor</base>
+        </text>
+      </attribute>
+      <attribute name="p79" type="text" public-name="fc_bankholder_name">
+        <text>
+          <base>the direct deposit bank account holders name</base>
+        </text>
+      </attribute>
+      <attribute name="p80" type="text" public-name="fc_bankholder_bank">
+        <text>
+          <base>the direct deposit banks name</base>
+        </text>
+      </attribute>
+      <attribute name="p81" type="number" public-name="fc_bankholder_routing_number" min-value="000000000" max-value="999999999" validation-message="Invalid Value.">
+        <text>
+          <base>the direct deposit bank routing number</base>
+        </text>
+      </attribute>
+      <attribute name="p82" type="number" public-name="fc_bankholder_acct_number">
+        <text>
+          <base>the direct deposit bank account number</base>
+        </text>
+      </attribute>
+      <attribute name="p83" type="text" public-name="fc_bankholder_account_type">
+        <text>
+          <base>the direct deposit bank account account type</base>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" public-name="fc_alien_is_valid">
+        <text>
+          <base>the claimant has a valid alien registration number</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a valid alien registration number'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" public-name="fc_continue_interview">
+        <text>
+          <base>the interview can continue</base>
+          <parse>s(ver('10.4.1.60'),v(continue+can,t(simple,modal,normal)),sb('the interview',plural))</parse>
         </text>
       </attribute>
     </entity>
