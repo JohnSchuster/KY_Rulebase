@@ -115,11 +115,41 @@
           <parse>s(ver('10.4.1.60'),v(earn,t(simple,past,normal)),sb('the claimant',plural),o('(national guard, armed forces reserve) pay'))</parse>
         </text>
       </attribute>
+      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant received deductible pay for (sick days, public holiday)</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('deductible pay for (sick days, public holiday)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant received deductible back pay</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('deductible back pay'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is due pay for (sick days, public holiday)</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('due pay for (sick days, public holiday)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's (sick days, public holiday) was taken during a week in which benefits were claimed</base>
+          <parse>s(ver('10.4.1.60'),v(take,t(simple,past,normal)),ob('the claimant''s (sick days, public holiday)',singular),o('during a week in which benefits were claimed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the (sick days, public holiday) occurred prior to separation</base>
+          <parse>s(ver('10.4.1.60'),v(occur,t(simple,past,normal)),sb('the (sick days, public holiday)',plural),o('prior to separation'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the claimant's income is deductible from a benefit amount" ruleburst="true" concludes="b17" folder="0" source-offset="993">
+    <rule id="0" name="the claimant's income is deductible from a benefit amount" ruleburst="true" concludes="b17" folder="0" source-offset="1098">
       <rule-xml>
         <conclude attr-id="b17" entity-id="global" scope-id="global0">
           <value>
@@ -132,6 +162,8 @@
               <attribute attr-id="b22" />
               <attribute attr-id="b5" />
               <attribute attr-id="b33" />
+              <attribute attr-id="b43" />
+              <attribute attr-id="b44" />
               <attribute attr-id="b42" />
             </or>
           </condition>
@@ -141,7 +173,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant received a (100%) deductible pension" ruleburst="true" concludes="b19" folder="0" source-offset="1508">
+    <rule id="1" name="the claimant received a (100%) deductible pension" ruleburst="true" concludes="b19" folder="0" source-offset="1670">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -163,14 +195,17 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant earned (80%) deductible wages" ruleburst="true" concludes="b34" folder="0" source-offset="1841">
+    <rule id="2" name="the claimant earned (80%) deductible wages" ruleburst="true" concludes="b34" folder="0" source-offset="2003">
       <rule-xml>
         <conclude attr-id="b34" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b35" />
+            <or>
+              <attribute attr-id="b35" />
+              <attribute attr-id="b43" />
+            </or>
           </condition>
           <otherwise>
             <false-value />
@@ -178,7 +213,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant received wages in lieu of notice" ruleburst="true" concludes="b22" folder="0" source-offset="1979">
+    <rule id="3" name="the claimant received wages in lieu of notice" ruleburst="true" concludes="b22" folder="0" source-offset="2219">
       <rule-xml>
         <conclude attr-id="b22" entity-id="global" scope-id="global0">
           <value>
@@ -201,7 +236,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant received deductible vacation pay" ruleburst="true" concludes="b5" folder="0" source-offset="2247">
+    <rule id="4" name="the claimant received deductible vacation pay" ruleburst="true" concludes="b5" folder="0" source-offset="2487">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -215,6 +250,25 @@
               <not>
                 <attribute attr-id="b31" />
               </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant received deductible pay for (sick days, public holiday)" ruleburst="true" concludes="b43" folder="0" source-offset="2847">
+      <rule-xml>
+        <conclude attr-id="b43" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b45" />
+              <attribute attr-id="b46" />
+              <attribute attr-id="b47" />
             </and>
           </condition>
           <otherwise>
