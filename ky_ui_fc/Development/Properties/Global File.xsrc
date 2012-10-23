@@ -83,7 +83,7 @@
           <parse>s(ver('10.4.1.60'),v(serve,t(simple,past,normal)),sb('you',plural),o('in the military during the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b15" type="boolean" public-name="i_postal">
+      <attribute name="b15" type="boolean" public-name="fc_postal">
         <text>
           <base>you worked for the US Post office during the base period</base>
           <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('you',plural),o('for the US Post office during the base period'))</parse>
@@ -91,8 +91,8 @@
       </attribute>
       <attribute name="b16" type="boolean" public-name="fc_federal">
         <text>
-          <base>you were employed by the Federal government deuring the base period</base>
-          <parse>s(ver('10.4.1.60'),v(employ,t(simple,past,normal)),ob('you',plural),o('by the Federal government deuring the base period'))</parse>
+          <base>you were employed by the Federal government during the base period</base>
+          <parse>s(ver('10.4.1.60'),v(employ,t(simple,past,normal)),ob('you',plural),o('by the Federal government during the base period'))</parse>
         </text>
       </attribute>
       <attribute name="b17" type="boolean" public-name="fc_union_member">
@@ -332,18 +332,6 @@
           <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
         </text>
       </attribute>
-      <attribute name="b38" type="boolean" public-name="fc_claimant_owns_vehicle">
-        <text>
-          <base>the claimant owns a reliable vehicle</base>
-          <parse>s(ver('10.4.1.60'),v(own,t(simple,present,normal)),sb('the claimant',singular),o('a reliable vehicle'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b39" type="boolean" public-name="fc_claimant_valid_license">
-        <text>
-          <base>the claimant has a valid driver's license</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a valid driver''s license'))</parse>
-        </text>
-      </attribute>
       <attribute name="p77" type="text" public-name="fc_alien_registration_no">
         <text>
           <base>the claimants alien registration number</base>
@@ -397,10 +385,94 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a valid alien registration number'))</parse>
         </text>
       </attribute>
-      <attribute name="b46" type="boolean" public-name="fc_continue_interview">
+      <attribute name="b47" type="boolean" public-name="fc_ui_rec_from_other_state">
         <text>
-          <base>the interview can continue</base>
-          <parse>s(ver('10.4.1.60'),v(continue+can,t(simple,modal,normal)),sb('the interview',plural))</parse>
+          <base>the claimant is receiving unemployment benefits from a state other than Kentucky</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving unemployment benefits from a state other than Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" public-name="fc_ui_app_from_other_state">
+        <text>
+          <base>you have applied for unemployment benefits in a state other than Kentucky in the last 12 months</base>
+          <parse>s(ver('10.4.1.60'),v(apply,t(simple,present,perfect)),sb('you',plural),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" public-name="fc_physical_work_type_seeking">
+        <text>
+          <base>you are seeking this type of physical work</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('seeking this type of physical work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" public-name="fc_shift_type_seeking">
+        <text>
+          <base>you are seeking this shft to work</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('seeking this shft to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p84" type="text" public-name="fc_industry">
+        <text>
+          <base>the field or industry you are seeking work in</base>
+        </text>
+      </attribute>
+      <attribute name="b52" type="boolean" public-name="fc_ru_receiving_ss">
+        <text>
+          <base>you are receiving</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" public-name="fc_ur_getting_social_sec">
+        <text>
+          <base>you are receiving Social Security</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving Social Security'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p85" type="text" public-name="fc_work_physically_able">
+        <text>
+          <base>the type of work you are physically able to perform</base>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" public-name="fc_physical_type_is_available">
+        <text>
+          <base>this type of physical work is available in your area</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('this type of physical work',singular),o('available in your area'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b56" type="boolean" public-name="fc_mental_work_type_seeking">
+        <text>
+          <base>you are seeking this type of work</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('seeking this type of work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p86" type="text" public-name="fc_work_mentally_able">
+        <text>
+          <base>the type of work you are mentally able to perform</base>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" public-name="fc_mental_type_is_available">
+        <text>
+          <base>this type of work is available in your area</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('this type of work',singular),o('available in your area'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p87" type="date" public-name="fc_tran_restrict_start">
+        <text>
+          <base>the date the transportation restriction began</base>
+        </text>
+      </attribute>
+      <attribute name="p88" type="date" public-name="fc_tran_restrict_end">
+        <text>
+          <base>the date the transportation restriction ends</base>
+        </text>
+      </attribute>
+      <attribute name="p89" type="text" public-name="fc_self_employed_hours">
+        <text>
+          <base>the number of hours you devote to your self employment</base>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" public-name="fc_claimant_will_give_up_se">
+        <text>
+          <base>you are willing to give up your self employment to accept full time work</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('you',plural),o('willing to give up your self employment to accept full time work'))</parse>
         </text>
       </attribute>
     </entity>
