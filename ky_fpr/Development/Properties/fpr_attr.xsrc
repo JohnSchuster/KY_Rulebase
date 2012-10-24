@@ -73,12 +73,6 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the employer',singular),o('the weight of evidence'))</parse>
         </text>
       </attribute>
-      <attribute name="b16" type="boolean" public-name="fpr_in_labor_dispute">
-        <text>
-          <base>the claimant is involved in a labor dispute that caused loss of employment</base>
-          <parse>s(ver('10.4.1.60'),v(involve,t(simple,present,normal)),ob('the claimant',singular),o('in a labor dispute that caused loss of employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b17" type="boolean" public-name="fpr_requested_reduction">
         <text>
           <base>the claimant requested a reduction to part time</base>
@@ -418,12 +412,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('incarcerated'))</parse>
         </text>
       </attribute>
-      <attribute name="b72" type="boolean" public-name="fpr_looking_for_work">
-        <text>
-          <base>the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('making a reasonable search for work as might be expected of a prudent person in like circumstances'))</parse>
-        </text>
-      </attribute>
       <attribute name="b73" type="boolean" public-name="fpr_mentally_able">
         <text>
           <base>the claimant is mentally able to work</base>
@@ -496,7 +484,7 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unable to perform their regular job due to illness or injury'))</parse>
         </text>
       </attribute>
-      <attribute name="b85" type="boolean" public-name="fpr_return_after_break">
+      <attribute name="b85" type="boolean" public-name="fpr_return_after_cont_break">
         <text>
           <base>the claimant is under contract to return following the scheduled break</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('under contract to return following the scheduled break'))</parse>
@@ -976,12 +964,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('able to provide credible witnesses to the misconduct'))</parse>
         </text>
       </attribute>
-      <attribute name="b167" type="boolean" public-name="fpr_employer_is_chargeable">
-        <text>
-          <base>the employer is eligible to be charged for the current claim</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('eligible to be charged for the current claim'))</parse>
-        </text>
-      </attribute>
       <attribute name="b168" type="boolean" public-name="fpr_no_work_for_dim">
         <text>
           <base>the employer is unable to provide work within the claimant's diminished capabilities</base>
@@ -1132,9 +1114,421 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('job connected'))</parse>
         </text>
       </attribute>
+      <attribute name="b194" type="boolean" public-name="fpr_recall_in_twelve">
+        <text>
+          <base>the recall date is within twelve weeks of the filing date</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the recall date',singular),o('within twelve weeks of the filing date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b195" type="boolean" public-name="fpr_employer_is_chargeable">
+        <text>
+          <base>the employer is chargeable</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('chargeable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b196" type="boolean" public-name="fpr_authorized_alien">
+        <text>
+          <base>the claimant is an alien authorized to work in the United States</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien authorized to work in the United States'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b197" type="boolean" public-name="fpr_Is_school_employee">
+        <text>
+          <base>the claimant is a school employee</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a school employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b198" type="boolean" public-name="fpr_in_labor_dispute">
+        <text>
+          <base>the claimant is involved in a labor dispute</base>
+          <parse>s(ver('10.4.1.60'),v(involve,t(simple,present,normal)),ob('the claimant',singular),o('in a labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b199" type="boolean" public-name="fpr_works_for_a_school">
+        <text>
+          <base>the claimant's employer is an educational institution</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s employer',singular),o('an educational institution'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b200" type="boolean" public-name="fpr_employer_sb_relieved">
+        <text>
+          <base>the employer should be relieved of chargeability</base>
+          <parse>s(ver('10.4.1.60'),v(relieve+should,t(simple,modal,normal)),ob('the employer',singular),o('of chargeability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b201" type="boolean" public-name="fpr_claimant_is_employed_ft">
+        <text>
+          <base>the claimant is employed full time</base>
+          <parse>s(ver('10.4.1.60'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b202" type="boolean" public-name="fpr_employer_is_reimbursing">
+        <text>
+          <base>the employer is a reimbursing employer</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a reimbursing employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b203" type="boolean" public-name="fpr_received_ded_vac_pay">
+        <text>
+          <base>the claimant received deductible vacation pay</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('deductible vacation pay'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b204" type="boolean" public-name="fpr_meets_all_other_cond">
+        <text>
+          <base>the claimant meets all other conditions to qualify for benefits</base>
+          <parse>s(ver('10.4.1.60'),v(meet,t(simple,present,normal)),sb('the claimant',singular),o('all other conditions to qualify for benefits'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b206" type="boolean" public-name="fpr_tran_restricts_avail">
+        <text>
+          <base>the claimant's transportation restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b207" type="boolean" public-name="fpr_return_after_break">
+        <text>
+          <base>the claimant has reasonable assurance of returning to a like position after a scheduled break</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to a like position after a scheduled break'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b208" type="boolean" public-name="fpr_meet_non_sep_req">
+        <text>
+          <base>the claimant has met the non-separation eligibility requirements</base>
+          <parse>s(ver('10.4.1.60'),v(meet,t(simple,present,perfect)),sb('the claimant',singular),o('the non-separation eligibility requirements'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b209" type="boolean" public-name="fpr_emp_out_of_state">
+        <text>
+          <base>the employer is an out of state employer</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an out of state employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b210" type="boolean" public-name="fpr_on_leave_of_absence">
+        <text>
+          <base>the claimant is on a leave of absence</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on a leave of absence'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b211" type="boolean" public-name="fpr_refused_suitable_work">
+        <text>
+          <base>the claimant has refused suitable work</base>
+          <parse>s(ver('10.4.1.60'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b212" type="boolean" public-name="fpr_susp_for_misconduct">
+        <text>
+          <base>the claimant is suspended for misconduct</base>
+          <parse>s(ver('10.4.1.60'),v(suspend,t(simple,present,normal)),ob('the claimant',singular),o('for misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b213" type="boolean" public-name="fpr_claimant_is_an_alien">
+        <text>
+          <base>the claimant is an alien</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b214" type="boolean" public-name="fpr_looking_for_work">
+        <text>
+          <base>the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('making a reasonable search for work as might be expected of a prudent person in like circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b215" type="boolean" public-name="fpr_is_authorized_in_us">
+        <text>
+          <base>the claimant is authorized to work in the United States</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('authorized to work in the United States'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b216" type="boolean" public-name="fpr_laid_off">
+        <text>
+          <base>the claimant was laid off</base>
+          <parse>s(ver('10.4.1.60'),v(lay,t(simple,past,normal)),ob('the claimant',singular),o('off'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b217" type="boolean" public-name="fpr_has_quit_exception">
+        <text>
+          <base>the claimant has a quit exception</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b218" type="boolean" public-name="fpr_is_part_time_employee">
+        <text>
+          <base>the claimant is a part time employee</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a part time employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b219" type="boolean" public-name="fpr_forced_retirement">
+        <text>
+          <base>the claimant was subject to mandatory retirement</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('subject to mandatory retirement'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b220" type="boolean" public-name="fpr_misconduct_by_statute">
+        <text>
+          <base>the claimant's work related actions is deemed misconduct within the meaning of the statute</base>
+          <parse>s(ver('10.4.1.60'),v(deem,t(simple,present,normal)),ob('the claimant''s work related actions',singular),o('misconduct within the meaning of the statute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b221" type="boolean" public-name="fpr_is_pro_athlete">
+        <text>
+          <base>the claimant is a professional athlete</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a professional athlete'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b222" type="boolean" public-name="fpr_income_ded_from_benefit">
+        <text>
+          <base>the claimant's income is deductible from a benefit amount</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s income',singular),o('deductible from a benefit amount'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b223" type="boolean" public-name="fpr_connect_to_employment">
+        <text>
+          <base>the claimant is connected to employment</base>
+          <parse>s(ver('10.4.1.60'),v(connect,t(simple,present,normal)),ob('the claimant',singular),o('to employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b225" type="boolean" public-name="fpr_school_restricts_avail">
+        <text>
+          <base>the claimant's (school, training) restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b226" type="boolean" public-name="fpr_received_100_ded_pen">
+        <text>
+          <base>the claimant received a (100%) deductible pension</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a (100%) deductible pension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b227" type="boolean" public-name="fpr_spouse_ass_sub_sim_stat">
+        <text>
+          <base>the claimant's spouse was assigned by a branch of service to a state with a substantially similar re-assignment statute</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service to a state with a substantially similar re-assignment statute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b228" type="boolean" public-name="fpr_money_not_notice">
+        <text>
+          <base>the claimant received wages in lieu of notice</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('wages in lieu of notice'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b230" type="boolean" public-name="fpr_claimant_at_fault_mre">
+        <text>
+          <base>the claimant is at fault for the separation from the most recent employer</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b231" type="boolean" public-name="fpr_emp_supports_misconduct">
+        <text>
+          <base>the employer has provided sufficient evidence supporting the misconduct</base>
+          <parse>s(ver('10.4.1.60'),v(provide,t(simple,present,perfect)),sb('the employer',singular),o('sufficient evidence supporting the misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b232" type="boolean" public-name="fpr_dep_care_rest_avail">
+        <text>
+          <base>the claimant's duty of dependent care restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b233" type="boolean" public-name="fpr_jail_restricts_avail">
+        <text>
+          <base>the claimant's incarceration restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b234" type="boolean" public-name="fpr_emp_bears_lbs_miscon">
+        <text>
+          <base>the employer bears the weight of evidence of misconduct</base>
+          <parse>s(ver('10.4.1.60'),v(bear,t(simple,present,normal)),sb('the employer',singular),o('the weight of evidence of misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b235" type="boolean" public-name="fpr_choose_between_jobs">
+        <text>
+          <base>the claimant's situation permits them some reasonable selection between job offers</base>
+          <parse>s(ver('10.4.1.60'),v(permit,t(simple,present,normal)),sb('the claimant''s situation',singular),o('them some reasonable selection between job offers'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b237" type="boolean" public-name="fpr_retired_voluntarily">
+        <text>
+          <base>the claimant retired voluntarily</base>
+          <parse>s(ver('10.4.1.60'),v(retire,t(simple,past,normal)),sb('the claimant',plural),o('voluntarily'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b238" type="boolean" public-name="fpr_suspend_from_work">
+        <text>
+          <base>the claimant is suspended from work</base>
+          <parse>s(ver('10.4.1.60'),v(suspend,t(simple,present,normal)),ob('the claimant',singular),o('from work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b239" type="boolean" public-name="fpr_acted_on_by_choice">
+        <text>
+          <base>there was an act of volition on the part of the claimant</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('there',singular),o('an act of volition on the part of the claimant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b240" type="boolean" public-name="fpr_disregard_emp_int">
+        <text>
+          <base>the claimant's action demonstrates a willful disregard of the employer's business interests</base>
+          <parse>s(ver('10.4.1.60'),v(demonstrate,t(simple,present,normal)),sb('the claimant''s action',singular),o('a willful disregard of the employer''s business interests'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b241" type="boolean" public-name="fpr_sub_disregard_int">
+        <text>
+          <base>the claimant's action demonstrated a substantial disregard of the employer's business interests</base>
+          <parse>s(ver('10.4.1.60'),v(demonstrate,t(simple,past,normal)),sb('the claimant''s action',plural),o('a substantial disregard of the employer''s business interests'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b242" type="boolean" public-name="fpr_willful_action">
+        <text>
+          <base>the claimant's action was willful</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s action',singular),o('willful'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b243" type="boolean" public-name="fpr_at_80_deduct_of_wage">
+        <text>
+          <base>the claimant earned (80%) deductible wages</base>
+          <parse>s(ver('10.4.1.60'),v(earn,t(simple,past,normal)),sb('the claimant',plural),o('(80%) deductible wages'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b244" type="boolean" public-name="fpr_se_restricts_avail">
+        <text>
+          <base>the claimant's (self-employment, commission work, corporate officer, membership) restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work, corporate officer, membership)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b245" type="boolean" public-name="fpr_meet_standard">
+        <text>
+          <base>the claimants actions met the employers standard of behavior</base>
+          <parse>s(ver('10.4.1.60'),v(meet,t(simple,past,normal)),sb('the claimants actions',plural),o('the employers standard of behavior'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b246" type="boolean" public-name="fpr_did_not_meet_standard">
+        <text>
+          <base>the claimants' performance failed to meet the employers standard</base>
+          <parse>s(ver('10.4.1.60'),v(fail,t(simple,past,normal)),sb('the claimants'' performance',plural),o('to meet the employers standard'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b247" type="boolean" public-name="fpr_has_memtal_restriction">
+        <text>
+          <base>the claimant has a mental health restriction</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a mental health restriction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b248" type="boolean" public-name="fpr_mental_prevents_working">
+        <text>
+          <base>the claimant's mental health restriction prevents them from obtaining work</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s mental health restriction',singular),o('them from obtaining work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b249" type="boolean" public-name="fpr_got_holiday_pay">
+        <text>
+          <base>the claimant received deductible pay for (sick days, public holiday)</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('deductible pay for (sick days, public holiday)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b250" type="boolean" public-name="fpr_physical_cant_work">
+        <text>
+          <base>the claimant's physical health restriction prevents them from obtaining work</base>
+          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s physical health restriction',singular),o('them from obtaining work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b251" type="boolean" public-name="fpr_due_holiday_pay">
+        <text>
+          <base>the claimant is due pay for (sick days, public holiday)</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('due pay for (sick days, public holiday)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b253" type="boolean" public-name="fpr_terminate_immediate">
+        <text>
+          <base>the claimant's action warrants termination of employment without prior warning</base>
+          <parse>s(ver('10.4.1.60'),v(action,t(simple,present,normal)),sb('the claimant''s',plural),o('warrants termination of employment without prior warning'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b254" type="boolean" public-name="fpr_holiday_and_benefits">
+        <text>
+          <base>the claimant's (sick days, public holiday) was taken during a week in which benefits were claimed</base>
+          <parse>s(ver('10.4.1.60'),v(take,t(simple,past,normal)),ob('the claimant''s (sick days, public holiday)',singular),o('during a week in which benefits were claimed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b255" type="boolean" public-name="fpr_action_is_negligent">
+        <text>
+          <base>the claimant's action is negligent</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s action',singular),o('negligent'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b256" type="boolean" public-name="fpr_laid_off_with_recall">
+        <text>
+          <base>the claimant was laid off with definite recall</base>
+          <parse>s(ver('10.4.1.60'),v(lay,t(simple,past,normal)),ob('the claimant',singular),o('off with definite recall'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b257" type="boolean" public-name="fpr_holiday_prior_to_sep">
+        <text>
+          <base>the (sick days, public holiday) occurred prior to separation</base>
+          <parse>s(ver('10.4.1.60'),v(occur,t(simple,past,normal)),sb('the (sick days, public holiday)',plural),o('prior to separation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b258" type="boolean" public-name="fpr_wui">
+        <text>
+          <base>the claimant was working under the influence</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('working under the influence'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b259" type="boolean" public-name="fpr_temp_sep_emp">
+        <text>
+          <base>the claimant is temporarily separated from employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('temporarily separated from employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b260" type="boolean" public-name="fpr_emp_not_full_time">
+        <text>
+          <base>the claimant is employed less than full time</base>
+          <parse>s(ver('10.4.1.60'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('less than full time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b261" type="boolean" public-name="fpr_quit_wrp_init_by_emp">
+        <text>
+          <base>the claimant voluntarily quit due to a reduction in workforce plan initiated by the employer</base>
+          <parse>s(ver('10.4.1.60'),v(initiate,t(simple,past,normal)),sb('the claimant voluntarily quit due to a reduction in workforce plan',plural),o('by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b262" type="boolean" public-name="fpr_is_sim">
+        <text>
+          <base>the claimant's separation falls within the SIMS precedent</base>
+          <parse>s(ver('10.4.1.60'),v(fall,t(simple,present,normal)),sb('the claimant''s separation',singular),o('within the SIMS precedent'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b263" type="boolean" public-name="fpr_sim_is_disqualified">
+        <text>
+          <base>the SIMS precedent is disqualifying</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the SIMS precedent',singular),o('disqualifying'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b264" type="boolean" public-name="fprd_looking_for_work">
+        <text>
+          <base>the claimant is making a reasonable search for work with a genuine attachment to the labor market, as might be expected of a prudent person in a like circumstances</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('making a reasonable search for work with a genuine attachment to the labor market, as might be expected of a prudent person in a like circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b265" type="boolean" public-name="fprd_se_restricts_avail">
+        <text>
+          <base>the claimant's (self-employment, commission work) restricts their availability</base>
+          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="claim" name="the claim" containment-parent-id="global" containment-relationship-id="kewesrdebenefitclaims">
+      <attribute name="b229" type="boolean" public-name="fpr_employer_is_chargable">
+        <text>
+          <base>the employer is eligible to be charged for the claim</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employer',singular),o('eligible to be charged for the claim'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
-  <relationships />
+  <relationships>
+    <relationship source="global" target="claim" is-containment="true" public-id="global2claim" reverse-public-id="claim2global" text="kewesrd ebenefit claims" relationship-id="kewesrdebenefitclaims" reverse-relationship-id="global_kewesrdebenefitclaims_rev" reverse-text="" type="OneToMany" is-computed="false" />
+  </relationships>
   <rules />
   <interactive-items>
     <folders />
