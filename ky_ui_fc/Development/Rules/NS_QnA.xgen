@@ -188,6 +188,17 @@
           <base>the claimants alien registration number</base>
         </text>
       </attribute>
+      <attribute name="p13" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the preferred method of payment</base>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the direct deposit screen should be shown</base>
+          <parse>s(ver('10.4.1.60'),v(show+should,t(simple,modal,normal)),ob('the direct deposit screen',singular))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
@@ -212,7 +223,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant has a mental health restriction" ruleburst="true" concludes="b4" folder="0" source-offset="236">
+    <rule id="1" name="the claimant has a mental health restriction" ruleburst="true" concludes="b4" folder="0" source-offset="217">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -235,7 +246,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="437">
+    <rule id="2" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="382">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -258,7 +269,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant has a physical health restriction" ruleburst="true" concludes="b6" folder="0" source-offset="668">
+    <rule id="3" name="the claimant has a physical health restriction" ruleburst="true" concludes="b6" folder="0" source-offset="570">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -281,7 +292,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b7" folder="0" source-offset="875">
+    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b7" folder="0" source-offset="741">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -304,7 +315,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b8" folder="0" source-offset="1112">
+    <rule id="5" name="the claimant is making a reasonable search for work as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b8" folder="0" source-offset="935">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -319,7 +330,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b10" folder="0" source-offset="1290">
+    <rule id="6" name="the claimant has a genuine attachment to the labor market as might be expected of a prudent person in like circumstances" ruleburst="true" concludes="b10" folder="0" source-offset="1103">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -334,7 +345,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant is responsible for the care of (child, elder, spouse)" ruleburst="true" concludes="b12" folder="0" source-offset="1514">
+    <rule id="7" name="the claimant is responsible for the care of (child, elder, spouse)" ruleburst="true" concludes="b12" folder="0" source-offset="1315">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
@@ -357,7 +368,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the responsibility of care has not ended" ruleburst="true" concludes="not b13" folder="0" source-offset="1726">
+    <rule id="8" name="the responsibility of care has not ended" ruleburst="true" concludes="not b13" folder="0" source-offset="1489">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -380,7 +391,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant is incarcerated" ruleburst="true" concludes="b14" folder="0" source-offset="1942">
+    <rule id="9" name="the claimant is incarcerated" ruleburst="true" concludes="b14" folder="0" source-offset="1661">
       <rule-xml>
         <conclude attr-id="b14" entity-id="global" scope-id="global0">
           <value>
@@ -400,7 +411,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant is in prison" ruleburst="true" concludes="b15" folder="0" source-offset="2071">
+    <rule id="10" name="the claimant is in prison" ruleburst="true" concludes="b15" folder="0" source-offset="1768">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -422,7 +433,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the prison term has not ended" ruleburst="true" concludes="not b33" folder="0" source-offset="2201">
+    <rule id="11" name="the prison term has not ended" ruleburst="true" concludes="not b33" folder="0" source-offset="1870">
       <rule-xml>
         <conclude attr-id="b33" entity-id="global" scope-id="global0">
           <value>
@@ -445,7 +456,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant's transportation prevents a suitable work search" ruleburst="true" concludes="b21" folder="0" source-offset="2670">
+    <rule id="12" name="the claimant's transportation prevents a suitable work search" ruleburst="true" concludes="b21" folder="0" source-offset="2293">
       <rule-xml>
         <conclude attr-id="b21" entity-id="global" scope-id="global0">
           <value>
@@ -468,7 +479,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the transportation restriction has not been lifted" ruleburst="true" concludes="not b32" folder="0" source-offset="2893">
+    <rule id="13" name="the transportation restriction has not been lifted" ruleburst="true" concludes="not b32" folder="0" source-offset="2478">
       <rule-xml>
         <conclude attr-id="b32" entity-id="global" scope-id="global0">
           <value>
@@ -491,7 +502,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the clamour for unemployment benefits can continue" ruleburst="true" concludes="b34" folder="0" source-offset="3226">
+    <rule id="14" name="the clamour for unemployment benefits can continue" ruleburst="true" concludes="b34" folder="0" source-offset="2767">
       <rule-xml>
         <conclude attr-id="b34" entity-id="global" scope-id="global0">
           <value>
@@ -506,7 +517,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b36" folder="0" source-offset="3346">
+    <rule id="15" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b36" folder="0" source-offset="2875">
       <rule-xml>
         <conclude attr-id="b36" entity-id="global" scope-id="global0">
           <value>
@@ -516,6 +527,24 @@
             <known>
               <attribute attr-id="p12" />
             </known>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="16" name="the direct deposit screen should be shown" ruleburst="true" concludes="b37" folder="0" source-offset="3000">
+      <rule-xml>
+        <conclude attr-id="b37" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p13" />
+              <string-value>Dir</string-value>
+            </starts-with>
           </condition>
           <otherwise>
             <false-value />
