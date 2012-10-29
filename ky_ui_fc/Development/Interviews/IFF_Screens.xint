@@ -23,18 +23,20 @@
             </control-properties>
             <caption>&lt;p class="note"&gt;You are about to file an application for Unemployment Insurance benefits.
 This process may take thirty(30) minutes or more to complete. 
-Please allow enough time to complete the application.&lt;/h2&gt;
+Please allow enough time to complete the entire application.&lt;/h2&gt;
 
 &lt;p class="pb"&gt;Knowingly submitting false information to obtain benefits is a criminal act.
 Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;
 
 
-&lt;p class="note"&gt;Upon the completion of the application, you will receive a confirmation page.
-This confirmation page contains important instructions on what to do after the claim has been filed.
+&lt;p class="note"&gt;When you complete the application, you will see a confirmation page.
+The confirmation page contains important instructions on what to do after the claim has been filed.
 Please note: If you do not see a confirmation page, your claim will not be processed.&lt;/p&gt;
 
 &lt;p class="pb"&gt;You are responsible for reading and understanding the Rights and Responsibilities pamphlet (PAM-UI-400)&lt;/p&gt;
-&lt;p class="pb"&gt;You may access The Rights and Responsibilities pamphlet (PAM-UI-400) by clicking &lt;a href="https://uiclaims.des.ky.gov/eBenefits_enu/help/PAM_UI_400.htm"&gt;here&lt;/a&gt;&lt;/p&gt; &lt;br&gt;</caption>
+&lt;p class="pb"&gt;You may access The Rights and Responsibilities pamphlet (PAM-UI-400) by clicking &lt;a href="https://uiclaims.des.ky.gov/eBenefits_enu/help/PAM_UI_400.htm"&gt;here&lt;/a&gt;&lt;/p&gt;&lt;br&gt;
+&lt;p&gt;Please take the time to carefully review the next few pages. They contain important information that will help you to successfully complete the interview&lt;/p&gt;
+&lt;p&gt;Click on 'Start' to begin your interview&lt;/p&gt;&lt;br&gt;</caption>
           </label>
           <flow name="Main Flow" default-state="enabled">
             <control-properties>
@@ -852,7 +854,7 @@ Personal vehicle, Public transportation etc.)&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant's duty of dependent care prevents obtaining (acceptance) of suitable work">
-              <doc-attr id="b217@kyfpr_rmod" />
+              <doc-attr id="b200@kyfpr_rmod" />
               <doc-attr id="fpr_caregiver_prevent_obtain" />
             </input-attr>
             <caption>&lt;p&gt;Does your dependent care responsibility prevent you from working?&lt;/p&gt;</caption>
@@ -866,7 +868,7 @@ Personal vehicle, Public transportation etc.)&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has an alternative means of dependent care">
-              <doc-attr id="b215@kyfpr_rmod" />
+              <doc-attr id="b198@kyfpr_rmod" />
               <doc-attr id="fpr_alternate_dep_care" />
             </input-attr>
             <caption>&lt;p&gt;Do you have any alternative means of dependent care?&lt;br&gt;
@@ -909,6 +911,27 @@ Personal vehicle, Public transportation etc.)&lt;/p&gt;
             <props>
               <prop name="UseCalendarDateControl">True</prop>
             </props>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the number of hours per week you are available for work">
+              <doc-attr id="p100@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_dependent_care_hrs" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the number of hours per week you are available for work?&lt;/p&gt;</caption>
+            <values>
+              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
+              <value code="11 -20" default-visibility="enabled">11 -20</value>
+              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
+              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
+              <value code="&gt; 40" default-visibility="enabled">&gt; 40</value>
+            </values>
           </input>
         </controls>
       </screen>
@@ -1975,16 +1998,18 @@ If this information changes at some point in the future, you will be required to
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;Facts About checks:&lt;/p&gt;
+            <caption>&lt;p class="pb"&gt;Information about checks:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;If you are found payable, you should receive your check within 3–4 business days of making your claim for benefit.&lt;/li&gt;
+  &lt;li&gt;Requesting payments by check is not a request for benefits.&lt;/li&gt;
   &lt;li&gt;You must make your request for benefits on the date you are given at the completion of this claim interview and every 2 weeks thereafter.&lt;/li&gt;
   &lt;li&gt;To have Unemployment Insurance payment checks mailed to your residence, select Check from the list below.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p class="pb"&gt;Facts About Direct Deposit:&lt;/p&gt;
+&lt;p class="pb"&gt;Information about direct deposit:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Enrolment in direct Deposit is not a request for benefits. You must make your request for benefits on the date you are given at the completion of this claim interview - and every 2 weeks thereafter.&lt;/li&gt;
   &lt;li&gt;If you are found payable, you should expect a deposit in your account within 3-4 business days after requesting your benefits.&lt;/li&gt;
+  &lt;li&gt;Enrolment in direct Deposit is not a request for benefits.&lt;/li&gt;
+  &lt;li&gt;You must make your request for benefits on the date you are given at the completion of this claim interview - and every 2 weeks thereafter.&lt;/li&gt;
   &lt;li&gt;You can confirm deposit of your unemployment insurance benefits by contacting your bank.&lt;/li&gt;
   &lt;li&gt;New or changed direct deposits will result in one paper check after submission.&lt;/li&gt;
   &lt;li&gt;The Office of Employment and Training must be notified of any account changes immediately in order to ensure proper payment of funds.&lt;/li&gt;
@@ -2311,8 +2336,6 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the field or industry you are seeking work in">
               <doc-attr id="p84@Properties_GlobalFile_xsrc" />
@@ -2347,36 +2370,6 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <value code="Wood Product Manufacturing" default-visibility="enabled">Wood Product Manufacturing</value>
             </values>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="you are seeking this type of work">
-              <doc-attr id="b56@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_mental_work_type_seeking" />
-            </input-attr>
-            <caption>&lt;p&gt;What type of work are you looking for?&lt;/p&gt;</caption>
-            <mandatory-attr text="" />
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="you are seeking this shft to work">
-              <doc-attr id="b51@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_shift_type_seeking" />
-            </input-attr>
-            <caption>&lt;p&gt;What shft(s) are you looking for?&lt;/p&gt;</caption>
-            <mandatory-attr text="" />
-          </input>
         </controls>
       </screen>
       <screen type="Question" id="s45" name="Benefit Year" public-id="" order="2" folder="1">
@@ -2393,7 +2386,8 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
             <caption>&lt;br&gt;&lt;p&gt;You will receive notice of the weekly amount of your claim and the maximum amount of money you can receive.&lt;br&gt;
 This amount is only applicable until your benefit year expiration date.&lt;/p&gt;
 &lt;br&gt;
-&lt;p class="pb"&gt;Your benefit year start date is: %fpr_claim_filing_effective_date%&lt;/p&gt;&lt;br&gt;
+&lt;p class="pb"&gt;Your benefit year start date is: %fpr_claim_filing_effective_date%&lt;/p&gt;
+&lt;p class="pb"&gt;Your benefit year end date is: %fpr_new_claim_byed%&lt;/p&gt;&lt;br&gt;
 &lt;h1&gt;&lt;u&gt;Base Period&lt;/u&gt;&lt;/h1&gt;&lt;br&gt;
 &lt;ul&gt; 
   &lt;li&gt;The base period beginning date is the start of a base period year. The base period ending date is 12 month minus one day later.&lt;/li&gt;
@@ -2569,6 +2563,59 @@ Selecting No for these questions will not relieve you of your obligation to pay 
           </label>
         </controls>
       </screen>
+      <screen type="Question" id="s244" name="Non Approved Training" public-id="" folder="1" order="29">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the number of hours dedicated to school or training">
+              <doc-attr id="p99@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_non_approved_train_hrs" />
+            </input-attr>
+            <caption>&lt;p&gt;How many hours do you dedicated to your school or training program each week?&lt;/p&gt;</caption>
+            <values>
+              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
+              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
+              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
+              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
+              <value code="&gt; 40" default-visibility="enabled">&gt; 40</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="you are willing to change your class schedule to accept work">
+              <doc-attr id="b76@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_will_change_class_sched" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you willing to change your class schedule to accept suitable work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="you are willing to quit school to accept work">
+              <doc-attr id="b77@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_will_quit_class_for_work" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you willing to quit school to accept suitable work?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
     </screens>
     <documents />
     <screen-orders>
@@ -2625,7 +2672,7 @@ Selecting No for these questions will not relieve you of your obligation to pay 
         </connections>
       </flow>
       <flow folder="3" order="7" name="School Flow" id="f3" entity="global" public-id="" error="false" entry-node-id="0">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -2633,6 +2680,7 @@ Selecting No for these questions will not relieve you of your obligation to pay 
           <node node-id="3" node-type="screen" screen-id="s177" mandatory="true" />
           <node node-id="4" node-type="decision" attribute-id="the claimant is in a training program that has been approved by the division of unemployment insurance" />
           <node node-id="5" node-type="screen" screen-id="s241" mandatory="true" />
+          <node node-id="6" node-type="screen" screen-id="s244" mandatory="true" />
         </nodes>
         <connections>
           <connection from="0" to="2" />
@@ -2647,17 +2695,18 @@ Selecting No for these questions will not relieve you of your obligation to pay 
             </condition>
           </connection>
           <connection from="3" to="4" />
-          <connection from="4" to="1">
-            <condition operator="equals">
-              <boolean-val>false</boolean-val>
-            </condition>
-          </connection>
           <connection from="4" to="5">
             <condition operator="equals">
               <boolean-val>true</boolean-val>
             </condition>
           </connection>
+          <connection from="4" to="6">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
           <connection from="5" to="1" />
+          <connection from="6" to="1" />
         </connections>
       </flow>
       <flow folder="3" order="8" name="Dependent Care flow" id="f4" entity="global" public-id="" error="false" entry-node-id="0">
