@@ -55,30 +55,6 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a genuine attachment to the labor market as might be expected of a prudent person in like circumstances'))</parse>
         </text>
       </attribute>
-      <attribute name="b12" type="boolean" ruleburst="true" is-used="False">
-        <text lang="en-US">
-          <base>the claimant has a documented mental medical restriction</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a documented mental medical restriction'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b13" type="boolean" ruleburst="true" is-used="False">
-        <text lang="en-US">
-          <base>the claimant's mental medical restriction prevents them from obtaining suitable work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s mental medical restriction',singular),o('them from obtaining suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b14" type="boolean" ruleburst="true" is-used="False">
-        <text lang="en-US">
-          <base>the claimant has a documented physical medical restriction</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a documented physical medical restriction'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b15" type="boolean" ruleburst="true" is-used="False">
-        <text lang="en-US">
-          <base>the claimant's physical medical restriction prevents them from obtaining suitable work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s physical medical restriction',singular),o('them from obtaining suitable work'))</parse>
-        </text>
-      </attribute>
       <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has an alternative means of transportation</base>
@@ -131,12 +107,6 @@
         <text lang="en-US">
           <base>the claimant's incarceration restricts their availability</base>
           <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('their availability'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b25" type="boolean" ruleburst="true" is-used="False">
-        <text lang="en-US">
-          <base>the claimant's (self-employment, commission work) restricts their availability</base>
-          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('their availability'))</parse>
         </text>
       </attribute>
       <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
@@ -247,12 +217,6 @@
           <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimant''s physical health restriction',singular),o('them from obtaining work'))</parse>
         </text>
       </attribute>
-      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's (self-employment, corporate officer, commission work) restricts their availability</base>
-          <parse>s(ver('10.4.1.60'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer, commission work)',singular),o('their availability'))</parse>
-        </text>
-      </attribute>
     </entity>
   </entities>
   <relationships />
@@ -277,7 +241,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is not available for suitable work" ruleburst="true" concludes="not b4" folder="0" source-offset="398" question-search="false">
+    <rule id="1" name="the claimant is not available for suitable work" ruleburst="true" concludes="not b4" folder="0" source-offset="424" question-search="false">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -289,13 +253,13 @@
               <attribute attr-id="b17" />
               <attribute attr-id="b23" />
               <attribute attr-id="b24" />
-              <attribute attr-id="b44" />
+              <attribute attr-id="b38" />
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant's (self-employment, commission work, corporate officer, membership) restricts their availability" ruleburst="true" concludes="b38" folder="0" source-offset="807">
+    <rule id="2" name="the claimant's (self-employment, commission work, corporate officer, membership) restricts their availability" ruleburst="true" concludes="b38" folder="0" source-offset="883">
       <rule-xml>
         <conclude attr-id="b38" entity-id="global" scope-id="global0">
           <value>
@@ -320,7 +284,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant's incarceration restricts their availability" ruleburst="true" concludes="b24" folder="0" source-offset="1342">
+    <rule id="3" name="the claimant's incarceration restricts their availability" ruleburst="true" concludes="b24" folder="0" source-offset="1454">
       <rule-xml>
         <conclude attr-id="b24" entity-id="global" scope-id="global0">
           <value>
@@ -341,7 +305,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant's duty of dependent care restricts their availability" ruleburst="true" concludes="b23" folder="0" source-offset="1586">
+    <rule id="4" name="the claimant's duty of dependent care restricts their availability" ruleburst="true" concludes="b23" folder="0" source-offset="1722">
       <rule-xml>
         <conclude attr-id="b23" entity-id="global" scope-id="global0">
           <value>
@@ -365,7 +329,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant's (school, training) restricts their availability" ruleburst="true" concludes="b17" folder="0" source-offset="1999">
+    <rule id="5" name="the claimant's (school, training) restricts their availability" ruleburst="true" concludes="b17" folder="0" source-offset="2169">
       <rule-xml>
         <conclude attr-id="b17" entity-id="global" scope-id="global0">
           <value>
@@ -392,7 +356,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant is not mentally able to work" ruleburst="true" concludes="not b3" folder="0" source-offset="2418" question-search="false">
+    <rule id="6" name="the claimant is not mentally able to work" ruleburst="true" concludes="not b3" folder="0" source-offset="2632" question-search="false">
       <rule-xml>
         <conclude attr-id="b3" entity-id="global" scope-id="global0">
           <value>
@@ -407,7 +371,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant is not physically able to work" ruleburst="true" concludes="not b2" folder="0" source-offset="2599" question-search="false">
+    <rule id="7" name="the claimant is not physically able to work" ruleburst="true" concludes="not b2" folder="0" source-offset="2834" question-search="false">
       <rule-xml>
         <conclude attr-id="b2" entity-id="global" scope-id="global0">
           <value>
@@ -422,7 +386,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant's transportation restricts their availability" ruleburst="true" concludes="b6" folder="0" source-offset="2772">
+    <rule id="8" name="the claimant's transportation restricts their availability" ruleburst="true" concludes="b6" folder="0" source-offset="3028">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -445,7 +409,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant is making a reasonable search for work with a genuine attachment to the labor market, as might be expected of a prudent person in a like circumstances" ruleburst="true" concludes="b5" folder="0" source-offset="3054">
+    <rule id="9" name="the claimant is making a reasonable search for work with a genuine attachment to the labor market, as might be expected of a prudent person in a like circumstances" ruleburst="true" concludes="b5" folder="0" source-offset="3335">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
