@@ -220,21 +220,45 @@ Kentucky Unemployment Insurance Law requires one (waiting week) per benifit year
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>
-&lt;h2&gt;Your claim interview process is now complete&lt;/h2&gt;
+            <caption>&lt;h2&gt;Your interview process is now complete&lt;/h2&gt;
+&lt;p&gt;In order to complete your application to receive unemployment benefits you are required&lt;br&gt;
+   to register for work with our online job registration system, Focus/Career.&lt;/p&gt;&lt;br&gt;
+&lt;p style="font-size: 23px; font-weight:bold;"&gt;Pursuant to Kentucky Revised Statuses (KRS) 341.350, failure to register for work&lt;br&gt;
+will prevent you from receiving Unemployment Benefits&lt;/p&gt;&lt;br&gt;
+&lt;p&gt;Kentucky's Focus/Career will help you create a professional resume and match you with job leads.&lt;br&gt;
+Job Alerts, which are created when your experience and skills match those of job orders contained in our system, will be&lt;br&gt;
+sent to you by e-mail.&lt;/p&gt;
+&lt;hr&gt;  
 &lt;ul&gt;
-&lt;li&gt;Your reference number is: A1234&lt;/li&gt;
+&lt;li&gt;Your reference number is: 2-M0724L&lt;/li&gt;
 &lt;li&gt;The time frame to request your benefit checks is &lt;font color="green"&gt;every two weeks&lt;/font&gt;&lt;/li&gt;
 &lt;li&gt;The date to request your first check for Unemployment Insurance benefits is :28-OCT-2012&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;A letter will be sent to notify you of the date, time and place for a Career Services orientation.&lt;br&gt;
+You must attend this orientation in order to remain eligible for Unemployment Benefits.&lt;/p&gt;
+&lt;hr&gt;
 &lt;br&gt;
-&lt;p&gt;All Unemployment Insurance claimants needing to request a benefit check
-may may do so by clicking &lt;a href="https://uiclaims.des.ky.gov/ebenefit/"&gt;Here&lt;/a&gt;&lt;/p&gt;&lt;br&gt;
+&lt;p&gt;All Unemployment Insurance claimants must request a benefit check every two(2) weeks
+You may do so via the interet by clicking &lt;a href="https://uiclaims.des.ky.gov/ebenefit/"&gt;Here&lt;/a&gt;&lt;/p&gt;&lt;br&gt;
 &lt;p&gt;Unemployment Insurance (UI) and Emergency Unemployment Compensation (EUC)&lt;/p&gt;
-&lt;p&gt;claimants may also use the phone system by calling (877) 365.5534&lt;/p&gt;
+&lt;p&gt;claimants may also use the phone system by calling (877)369.5984&lt;/p&gt;
 
-&lt;p class="note"&gt;If issues with your claim are detected, you may be contacted by an Unemployment Insurance representitive for further information&lt;p&gt;
-</caption>
+&lt;p class="note"&gt;If issues with your claim are detected, you may be contacted by an&lt;br&gt;
+ Unemployment Insurance representitive for further information&lt;p&gt;&lt;br&gt;
+  &lt;table&gt;
+  &lt;tr&gt;
+     &lt;th&gt;
+         &lt;p class="pb"&gt;Before proceeding to Focus/Career,&lt;br&gt;
+            PLEASE &lt;input type="button"onClick="window.print()"value="Print This Page"/&gt; or make note&lt;br&gt;
+            of this important information&lt;p&gt;
+  	 &lt;/th&gt;
+     &lt;th&gt;
+	     &lt;p class="pb"&gt;You may procede to the Focus/Career Website&lt;br&gt;
+	        by clicking&lt;a href="https://focuscareer.ky.gov/career/"&gt; here&lt;/a&gt;&lt;/p&gt;
+	 &lt;/th&gt;
+   &lt;/tr&gt;
+  &lt;/table&gt;	 </caption>
           </label>
         </controls>
       </screen>
@@ -2385,19 +2409,20 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
       </screen>
       <screen type="Question" id="s12" name="Residency and work locations" public-id="" order="11" folder="1">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">true</property>
+              <property name="IsHTML" type="boolean">false</property>
             </control-properties>
-            <input-attr text="You are currently a resident of Kentucky">
-              <doc-attr id="b4@Properties_GlobalFile_xsrc" />
-              <doc-attr id="i_in_kentucky_filing" />
+            <input-attr text="the claimant is a resident of Kentucky">
+              <doc-attr id="b45@Rules_NSQnA_doc" />
+              <doc-attr id="b80@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fpr_is_kentucky_resident" />
             </input-attr>
-            <caption>&lt;p&gt;Are You currently a resident of Kentucky?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Are you a resident of Kentucky?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
@@ -2409,26 +2434,13 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
             </control-properties>
             <input-attr text="the claimant worked in Kentucky during the base period">
               <doc-attr id="b2@Rules_NSQnA_doc" />
+              <doc-attr id="b79@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fpr_worked_in_kentucky" />
             </input-attr>
             <caption>&lt;p&gt;Did you work in Kentucky between %fpr_base_period_start_date% and %fpr_base_period_end_date% ?&lt;/p&gt;
 </caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="you worked in a State other than Kentucky">
-              <doc-attr id="b20@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_work_in_other_state" />
-            </input-attr>
-            <caption>&lt;p&gt;Did you work in a State other than Kentucky between %fpr_base_period_start_date% and %fpr_base_period_end_date% ?&lt;/p&gt;
-</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2437,12 +2449,13 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is receiving unemployment benefits from a state other than Kentucky">
-              <doc-attr id="b47@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_ui_rec_from_other_state" />
+              <doc-attr id="b46@Rules_NSQnA_doc" />
+              <doc-attr id="b81@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fpr_ui_from_other_state" />
             </input-attr>
             <caption>&lt;p&gt;Are you receiving unemployment benefits from a state other than Kentucky?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2450,11 +2463,12 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="you have applied for unemployment benefits in a state other than Kentucky in the last 12 months">
-              <doc-attr id="b48@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_ui_app_from_other_state" />
+            <input-attr text="the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months">
+              <doc-attr id="b47@Rules_NSQnA_doc" />
+              <doc-attr id="b82@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fpr_filed_ui_in_another_state" />
             </input-attr>
-            <caption>&lt;p&gt;Have you applied for unemployment benefits in a state other than Kentucky in the last 12 months?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Have you applied for unemployment benefits in a state other than Kentucky in the last 12 months?&lt;/P&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>

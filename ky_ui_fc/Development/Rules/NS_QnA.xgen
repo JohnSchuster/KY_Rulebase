@@ -13,12 +13,6 @@
           <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has a claim in another state</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a claim in another state'))</parse>
-        </text>
-      </attribute>
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the mental health restriction has been lifted</base>
@@ -115,6 +109,24 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to give up their self-employment to accept full time work'))</parse>
         </text>
       </attribute>
+      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a resident of Kentucky</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a resident of Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is receiving unemployment benefits from a state other than Kentucky</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving unemployment benefits from a state other than Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months</base>
+          <parse>s(ver('10.4.1.60'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the mental health restriction began</base>
@@ -187,10 +199,16 @@
           </value>
           <condition>
             <and>
+              <attribute attr-id="b45" />
               <attribute attr-id="b2" />
-              <not>
-                <attribute attr-id="b3" />
-              </not>
+              <or>
+                <not>
+                  <attribute attr-id="b46" />
+                </not>
+                <not>
+                  <attribute attr-id="b47" />
+                </not>
+              </or>
             </and>
           </condition>
           <otherwise>
@@ -199,7 +217,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimants mental health restriction prevents them from obtaining work" ruleburst="true" concludes="b38" folder="0" source-offset="208">
+    <rule id="1" name="the claimants mental health restriction prevents them from obtaining work" ruleburst="true" concludes="b38" folder="0" source-offset="403">
       <rule-xml>
         <conclude attr-id="b38" entity-id="global" scope-id="global0">
           <value>
@@ -222,7 +240,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="402">
+    <rule id="2" name="the mental health restriction has not been lifted" ruleburst="true" concludes="not b5" folder="0" source-offset="597">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -245,7 +263,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimants physical health restriction prevents them from obtaining work" ruleburst="true" concludes="b39" folder="0" source-offset="589">
+    <rule id="3" name="the claimants physical health restriction prevents them from obtaining work" ruleburst="true" concludes="b39" folder="0" source-offset="784">
       <rule-xml>
         <conclude attr-id="b39" entity-id="global" scope-id="global0">
           <value>
@@ -268,7 +286,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b7" folder="0" source-offset="789">
+    <rule id="4" name="the physical health restriction has not been lifted" ruleburst="true" concludes="not b7" folder="0" source-offset="984">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -291,7 +309,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimants duty of dependent care prevents accepting suitable work" ruleburst="true" concludes="b40" folder="0" source-offset="985">
+    <rule id="5" name="the claimants duty of dependent care prevents accepting suitable work" ruleburst="true" concludes="b40" folder="0" source-offset="1180">
       <rule-xml>
         <conclude attr-id="b40" entity-id="global" scope-id="global0">
           <value>
@@ -314,7 +332,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the responsibility of care has not ended" ruleburst="true" concludes="not b13" folder="0" source-offset="1162">
+    <rule id="6" name="the responsibility of care has not ended" ruleburst="true" concludes="not b13" folder="0" source-offset="1357">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -337,7 +355,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimants incarceration prevents accepting suitable work" ruleburst="true" concludes="b41" folder="0" source-offset="1333">
+    <rule id="7" name="the claimants incarceration prevents accepting suitable work" ruleburst="true" concludes="b41" folder="0" source-offset="1528">
       <rule-xml>
         <conclude attr-id="b41" entity-id="global" scope-id="global0">
           <value>
@@ -360,7 +378,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the prison term has not ended" ruleburst="true" concludes="not b33" folder="0" source-offset="1479">
+    <rule id="8" name="the prison term has not ended" ruleburst="true" concludes="not b33" folder="0" source-offset="1674">
       <rule-xml>
         <conclude attr-id="b33" entity-id="global" scope-id="global0">
           <value>
@@ -383,7 +401,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimants lack of transportation prevents accepting suitable work" ruleburst="true" concludes="b42" folder="0" source-offset="1619">
+    <rule id="9" name="the claimants lack of transportation prevents accepting suitable work" ruleburst="true" concludes="b42" folder="0" source-offset="1814">
       <rule-xml>
         <conclude attr-id="b42" entity-id="global" scope-id="global0">
           <value>
@@ -406,7 +424,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the transportation restriction has not been lifted" ruleburst="true" concludes="not b32" folder="0" source-offset="1810">
+    <rule id="10" name="the transportation restriction has not been lifted" ruleburst="true" concludes="not b32" folder="0" source-offset="2005">
       <rule-xml>
         <conclude attr-id="b32" entity-id="global" scope-id="global0">
           <value>
@@ -429,7 +447,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimants (self-employment, commission work, corporate officer) prevents accepting suitable work" ruleburst="true" concludes="b43" folder="0" source-offset="2001">
+    <rule id="11" name="the claimants (self-employment, commission work, corporate officer) prevents accepting suitable work" ruleburst="true" concludes="b43" folder="0" source-offset="2196">
       <rule-xml>
         <conclude attr-id="b43" entity-id="global" scope-id="global0">
           <value>
@@ -446,7 +464,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the clamour for unemployment benefits can continue" ruleburst="true" concludes="b34" folder="0" source-offset="2301">
+    <rule id="12" name="the clamour for unemployment benefits can continue" ruleburst="true" concludes="b34" folder="0" source-offset="2496">
       <rule-xml>
         <conclude attr-id="b34" entity-id="global" scope-id="global0">
           <value>
@@ -461,7 +479,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b36" folder="0" source-offset="2408">
+    <rule id="13" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b36" folder="0" source-offset="2603">
       <rule-xml>
         <conclude attr-id="b36" entity-id="global" scope-id="global0">
           <value>
@@ -478,7 +496,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the direct deposit screen should be shown" ruleburst="true" concludes="b37" folder="0" source-offset="2547">
+    <rule id="14" name="the direct deposit screen should be shown" ruleburst="true" concludes="b37" folder="0" source-offset="2742">
       <rule-xml>
         <conclude attr-id="b37" entity-id="global" scope-id="global0">
           <value>
