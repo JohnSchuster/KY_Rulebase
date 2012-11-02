@@ -50,7 +50,7 @@ Please note: If you do not see a confirmation page, your claim will not be proce
           </flow>
         </controls>
       </screen>
-      <screen type="Question" id="s122" name="Pension and other Compensation" public-id="" folder="1" order="26">
+      <screen type="Question" id="s122" name="Pension and other Compensation" public-id="" folder="1" order="27">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -86,7 +86,7 @@ Please note: If you do not see a confirmation page, your claim will not be proce
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s134" name="Rights and Responsibilities" public-id="" order="27" folder="1">
+      <screen type="Question" id="s134" name="Rights and Responsibilities" public-id="" order="28" folder="1">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -209,7 +209,7 @@ Kentucky Unemployment Insurance Law requires one (waiting week) per benifit year
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s138" name="Confirmation" public-id="" folder="1" order="28">
+      <screen type="Question" id="s138" name="Confirmation" public-id="" folder="1" order="29">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -262,7 +262,7 @@ You may do so via the interet by clicking &lt;a href="https://uiclaims.des.ky.go
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s64" name="Disqualified" public-id="" entity="global" order="29" folder="1">
+      <screen type="Question" id="s64" name="Disqualified" public-id="" entity="global" order="30" folder="1">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -312,7 +312,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Are you receiving, or have you applied for,  Social Security disability payments?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -321,12 +321,12 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is physically able to work">
-              <doc-attr id="b167@kyfpr_rmod" />
-              <doc-attr id="fpr_physically_able_to_work" />
+              <doc-attr id="b220@kyfpr_rmod" />
+              <doc-attr id="fpr_can_work_physically" />
             </input-attr>
             <caption>&lt;p&gt;Are you physically able to work?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -335,8 +335,8 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is mentally able to work">
-              <doc-attr id="b168@kyfpr_rmod" />
-              <doc-attr id="fpr_mentally_able" />
+              <doc-attr id="b221@kyfpr_rmod" />
+              <doc-attr id="fpr_can_work_mentally" />
             </input-attr>
             <caption>&lt;p&gt;Are you mentally able to work?&lt;/p&gt;</caption>
           </input>
@@ -353,8 +353,8 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is physically able to work">
-              <doc-attr id="b184@kyfpr_rmod" />
-              <doc-attr id="fpr_physically_able_to_work" />
+              <doc-attr id="b220@kyfpr_rmod" />
+              <doc-attr id="fpr_can_work_physically" />
             </input-attr>
             <caption>&lt;p&gt;Are you physically able to do any work?&lt;/p&gt;</caption>
           </input>
@@ -367,7 +367,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant's physical medical restriction prevents them from obtaining suitable work">
-              <doc-attr id="b196@kyfpr_rmod" />
+              <doc-attr id="b274@kyfpr_rmod" />
               <doc-attr id="fpr_physical_prevents_work" />
             </input-attr>
             <caption>&lt;p&gt;Does your physical health condition limit your ability to work?&lt;/p&gt;</caption>
@@ -387,9 +387,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_physical_start" />
             </input-attr>
             <caption>&lt;p&gt;When did your physical health restriction begin?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -406,9 +403,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_physical_end" />
             </input-attr>
             <caption>&lt;p&gt;When do you expect the restriction to end?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="Bartender">
             <control-properties>
@@ -417,8 +411,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the type of work you are physically able to perform">
               <doc-attr id="p85@Properties_GlobalFile_xsrc" />
@@ -506,9 +498,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_mental_start" />
             </input-attr>
             <caption>&lt;p&gt;When did your mental health restrictions began?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -525,9 +514,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_mental_end" />
             </input-attr>
             <caption>&lt;p&gt;When do you expect the restriction to end ?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
@@ -578,7 +564,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
       </screen>
       <screen type="Question" id="s159" name="Availability to work" public-id="" order="18" folder="1">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -593,7 +579,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
             <caption>&lt;p&gt;Do you have reliable transportation to look for or accept work?&lt;br&gt;
 (Personal vehicle, Public transportation, etc.)&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -607,7 +593,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Are you in school or a training program?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -622,7 +608,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
             <caption>&lt;p&gt;Are you responsible for the dependent care of another?&lt;br&gt;
 (Child care, Elder care, Care of family member, etc.)&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -636,7 +622,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Are you self-employment, working on commission or an officer in a closly held corporation?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -645,7 +631,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is incarcerated">
-              <doc-attr id="b14@Rules_NSQnA_doc" />
               <doc-attr id="b232@kyfpr_rmod" />
               <doc-attr id="fpr_in_jail" />
             </input-attr>
@@ -713,9 +698,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_school_start_date" />
             </input-attr>
             <caption>&lt;p&gt;When did you begin the school or training program?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -730,9 +712,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_school_end_date" />
             </input-attr>
             <caption>&lt;p&gt;When do you expect to complete the school or training program?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -764,7 +743,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s178" name="Incarceration" public-id="" order="25" folder="1">
+      <screen type="Question" id="s178" name="Incarceration" public-id="" order="26" folder="1">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -809,9 +788,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_prison_start_date" />
             </input-attr>
             <caption>&lt;p&gt;When did your incarceration begin - or - when are you due to report?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -827,13 +803,10 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_prison_end_date" />
             </input-attr>
             <caption>&lt;p&gt;When do you expect the incarceration to end?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s179" name="Dependent Care" public-id="" order="22" folder="1">
+      <screen type="Question" id="s179" name="Dependent Care" public-id="" order="23" folder="1">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -844,6 +817,7 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants duty of dependent care prevents accepting suitable work">
+              <doc-attr id="b40@Rules_NSQnA_doc" />
               <doc-attr id="b238@kyfpr_rmod" />
               <doc-attr id="fpr_care_no_can_work" />
             </input-attr>
@@ -879,9 +853,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_care_date_start" />
             </input-attr>
             <caption>&lt;p&gt;When did your dependent care restriction began?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -898,9 +869,6 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               <doc-attr id="fc_care_date_end" />
             </input-attr>
             <caption>&lt;p&gt;When do you expect your dependent care restrictions to end?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
@@ -1057,21 +1025,18 @@ indicate why your protest was not on time.&lt;/p&gt;</caption>
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="IsHTML" type="boolean">true</property>
               <property name="__input-style" type="string">d</property>
             </control-properties>
             <input-attr text="Your Birthday">
               <doc-attr id="p10@Properties_GlobalFile_xsrc" />
               <doc-attr id="fc_claimant_birthday" />
             </input-attr>
-            <caption>When is Your Birthday?</caption>
+            <caption>&lt;p&gt;When is Your Birthday?&lt;/p&gt;</caption>
             <dynamic-default-attr text="Your Birthday">
               <doc-attr id="p10@Properties_GlobalFile_xsrc" />
               <doc-attr id="fc_claimant_birthday" />
             </dynamic-default-attr>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -1840,9 +1805,6 @@ If this information changes at some point in the future, you will be required to
               <doc-attr id="fc_tran_restrict_start" />
             </input-attr>
             <caption>&lt;p&gt;When did the restriction on your transportation began?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2014-07-05">
             <control-properties>
@@ -1858,9 +1820,6 @@ If this information changes at some point in the future, you will be required to
               <doc-attr id="fc_tran_restrict_end" />
             </input-attr>
             <caption>&lt;p&gt;When does the restriction on your transportation end?&lt;/p&gt;</caption>
-            <props>
-              <prop name="UseCalendarDateControl">True</prop>
-            </props>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -1936,7 +1895,7 @@ If this information changes at some point in the future, you will be required to
             <caption>&lt;p&gt;Family member&lt;/p&gt;</caption>
             <mandatory-attr text="" />
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+          <input default-visibility="enabled" read-only-expr="true" allow-uncertain="true" type="checkbox">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2205,7 +2164,7 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s215" name="Self Employment or Corporate Officer" public-id="" order="24" folder="1">
+      <screen type="Question" id="s215" name="Self Employment or Corporate Officer" public-id="" order="25" folder="1">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="1 - 10">
             <control-properties>
@@ -2214,6 +2173,8 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the number of hours the claimant devotes to their self employment">
               <doc-attr id="p89@Properties_GlobalFile_xsrc" />
@@ -2280,7 +2241,7 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
       </screen>
       <screen type="Question" id="s158" name="Current work search" public-id="" order="14" folder="1">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2289,12 +2250,12 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is making a reasonable search for work">
-              <doc-attr id="b216@kyfpr_rmod" />
+              <doc-attr id="b182@kyfpr_rmod" />
               <doc-attr id="fpr_is_looking_for_work" />
             </input-attr>
             <caption>&lt;p&gt;Are you looking for work?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2303,8 +2264,8 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has a genuine attachment to the labor market">
-              <doc-attr id="b217@kyfpr_rmod" />
-              <doc-attr id="fpr_looking_for_work_can_do" />
+              <doc-attr id="b183@kyfpr_rmod" />
+              <doc-attr id="fpr_attached_to_labor" />
             </input-attr>
             <caption>&lt;p&gt;Are you looking for work you can do?&lt;/p&gt;</caption>
           </input>
@@ -2315,8 +2276,6 @@ You are responsible for the accuracy of the following information.&lt;/p&gt;&lt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the field or industry you are seeking work in">
               <doc-attr id="p84@Properties_GlobalFile_xsrc" />
@@ -2409,13 +2368,13 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
       </screen>
       <screen type="Question" id="s12" name="Residency and work locations" public-id="" order="11" folder="1">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is a resident of Kentucky">
               <doc-attr id="b45@Rules_NSQnA_doc" />
@@ -2440,7 +2399,7 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
             <caption>&lt;p&gt;Did you work in Kentucky between %fpr_base_period_start_date% and %fpr_base_period_end_date% ?&lt;/p&gt;
 </caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2455,7 +2414,7 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
             </input-attr>
             <caption>&lt;p&gt;Are you receiving unemployment benefits from a state other than Kentucky?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2470,7 +2429,7 @@ This amount is only applicable until your benefit year expiration date.&lt;/p&gt
             </input-attr>
             <caption>&lt;p&gt;Have you applied for unemployment benefits in a state other than Kentucky in the last 12 months?&lt;/P&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2534,60 +2493,7 @@ Selecting No for these questions will not relieve you of your obligation to pay 
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s244" name="Non Approved Training" public-id="" folder="1" order="30">
-        <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the number of hours dedicated to school or training">
-              <doc-attr id="p99@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_non_approved_train_hrs" />
-            </input-attr>
-            <caption>&lt;p&gt;How many hours do you dedicated to your school or training program each week?&lt;/p&gt;</caption>
-            <values>
-              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
-              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
-              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
-              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
-              <value code="&gt; 40" default-visibility="enabled">&gt; 40</value>
-            </values>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="you are willing to change your class schedule to accept work">
-              <doc-attr id="b76@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_will_change_class_sched" />
-            </input-attr>
-            <caption>&lt;p&gt;Are you willing to change your class schedule to accept suitable work?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="you are willing to quit school to accept work">
-              <doc-attr id="b77@Properties_GlobalFile_xsrc" />
-              <doc-attr id="fc_will_quit_class_for_work" />
-            </input-attr>
-            <caption>&lt;p&gt;Are you willing to quit school to accept suitable work?&lt;/p&gt;</caption>
-          </input>
-        </controls>
-      </screen>
-      <screen type="Question" id="s245" name="Self Employed, Commision or Officer" public-id="" order="23" folder="1">
+      <screen type="Question" id="s245" name="Self Employed, Commision or Officer" public-id="" order="24" folder="1">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -2630,6 +2536,61 @@ Selecting No for these questions will not relieve you of your obligation to pay 
               <doc-attr id="fpr_is_corp_officer" />
             </input-attr>
             <caption>&lt;p&gt;Are you a corporate officer (member) of a closely held corporation?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s244" name="Non Approved Training" public-id="" order="22" folder="1">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the number of hours dedicated to school or training">
+              <doc-attr id="p99@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_non_approved_train_hrs" />
+            </input-attr>
+            <caption>&lt;p&gt;How many hours do you dedicated to your school or training program each week?&lt;/p&gt;</caption>
+            <values>
+              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
+              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
+              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
+              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
+              <value code="&gt; 40" default-visibility="enabled">&gt; 40</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="you are willing to change your class schedule to accept work">
+              <doc-attr id="b76@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_will_change_class_sched" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you willing to change your class schedule to accept suitable work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="you are willing to quit school to accept work">
+              <doc-attr id="b77@Properties_GlobalFile_xsrc" />
+              <doc-attr id="fc_will_quit_class_for_work" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you willing to quit school to accept suitable work?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
