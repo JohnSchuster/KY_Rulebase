@@ -474,25 +474,25 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an alternate means of transportation'))</parse>
         </text>
       </attribute>
-      <attribute name="b79" type="boolean" public-name="fpr_worked_in_kentucky">
+      <attribute name="b79" type="boolean" public-name="fc_worked_in_kentucky">
         <text>
           <base>the claimant worked in Kentucky during the base period</base>
           <parse>s(ver('10.4.1.60'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b80" type="boolean" public-name="fpr_is_kentucky_resident">
+      <attribute name="b80" type="boolean" public-name="fc_is_kentucky_resident">
         <text>
           <base>the claimant is a resident of Kentucky</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a resident of Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b81" type="boolean" public-name="fpr_ui_from_other_state">
+      <attribute name="b81" type="boolean" public-name="fc_ui_from_other_state">
         <text>
           <base>the claimant is receiving unemployment benefits from a state other than Kentucky</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving unemployment benefits from a state other than Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b82" type="boolean" public-name="fpr_filed_ui_in_another_state">
+      <attribute name="b82" type="boolean" public-name="fc_filed_ui_in_another_state">
         <text>
           <base>the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months</base>
           <parse>s(ver('10.4.1.60'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
@@ -559,6 +559,24 @@
         <text>
           <base>you would gladly be paid on Tuesday for a hamburger today</base>
           <parse>s(ver('10.4.1.60'),v(pay,t(simple,past,normal)),sb('you would gladly be',plural),o('on Tuesday for a hamburger today'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b103" type="boolean" public-name="fc_confirm_residence">
+        <text>
+          <base>this is the physical address where you live</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('this',singular),o('the physical address where you live'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b104" type="boolean" public-name="fc_is_legal_alien">
+        <text>
+          <base>the claimant is a legal alien</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a legal alien'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b105" type="boolean" public-name="fc_continue_past_alien">
+        <text>
+          <base>the interview can continue past the alien status screen</base>
+          <parse>s(ver('10.4.1.60'),v(continue+can,t(simple,modal,normal)),sb('the interview',plural),o('past the alien status screen'))</parse>
         </text>
       </attribute>
     </entity>
@@ -648,6 +666,41 @@
       <attribute name="p112" type="number" public-name="fc_weeks_worked">
         <text>
           <base>the employment's nominal weeks worked</base>
+        </text>
+      </attribute>
+      <attribute name="b98" type="boolean" public-name="fc_emp_has_chargeable_sep">
+        <text>
+          <base>the employment has employment chargeability and a separation determination</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the employment',singular),o('employment chargeability and a separation determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b99" type="boolean" public-name="fc_emp_is_pcce">
+        <text>
+          <base>the employment is a PCCE, Potentially Chargeable Concurrent Employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a PCCE, Potentially Chargeable Concurrent Employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b100" type="boolean" public-name="fc_emp_most_recent_sep">
+        <text>
+          <base>the employment instance is the most recent, separated, employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the most recent, separated, employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b101" type="boolean" public-name="fc_emp_is_next_mrecent_sep">
+        <text>
+          <base>the employment instance is the next most recent, separated, employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the next most recent, separated, employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b102" type="boolean" public-name="fc_emp_is_ten_week_sep">
+        <text>
+          <base>the employment instance is a ten week, separated, employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('a ten week, separated, employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p113" type="text" public-name="fc_emp_tag">
+        <text>
+          <base>the employment's tag</base>
         </text>
       </attribute>
     </entity>
