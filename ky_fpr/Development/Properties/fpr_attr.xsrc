@@ -1617,24 +1617,15 @@
           <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the separation sub interviews'))</parse>
         </text>
       </attribute>
-    </entity>
-    <entity id="employment" name="the employment" containment-parent-id="global" containment-relationship-id="allemploymentslisted">
-      <attribute name="b349" type="boolean" public-name="fpr_federal_govt_empl">
+      <attribute name="b351" type="boolean">
         <text>
-          <base>the employment was the federal (government) agency for ui purposes</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employment',singular),o('the federal (government) agency for ui purposes'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b350" type="boolean" public-name="fpr_fed_agency">
-        <text>
-          <base>the employment was a the federal (government) agency for ui purposes</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employment',singular),o('a the federal (government) agency for ui purposes'))</parse>
+          <base>the claimant has quit the employment voluntarily due to their employer's workforce reduction plan</base>
+          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the claimant',singular),o('the employment voluntarily due to their employer''s workforce reduction plan'))</parse>
         </text>
       </attribute>
     </entity>
   </entities>
   <relationships>
-    <relationship source="global" target="employment" is-containment="true" public-id="global2employment" reverse-public-id="employment2global" text="all employment's listed" relationship-id="allemploymentslisted" reverse-relationship-id="globalsingletonfortheemployment" reverse-text="the global singleton for the employment" type="OneToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
