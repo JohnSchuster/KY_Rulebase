@@ -498,43 +498,10 @@
           <parse>s(ver('10.4.1.60'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
         </text>
       </attribute>
-      <attribute name="b83" type="boolean" public-name="fc_qualifying_sep_goal">
-        <text>
-          <base>the claimant has at least one chargeable separation event in the required period of time</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('at least one chargeable separation event in the required period of time'))</parse>
-        </text>
-      </attribute>
       <attribute name="b84" type="boolean" public-name="fc_is_valid_status">
         <text>
           <base>the claimant's status is valid</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s status',singular),o('valid'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p101" type="text" public-name="fc_workstation_id">
-        <text>
-          <base>the workstation id</base>
-        </text>
-      </attribute>
-      <attribute name="p102" type="date" public-name="fc_global_mre_date">
-        <text>
-          <base>the most recent employment date</base>
-        </text>
-      </attribute>
-      <attribute name="p103" type="date" public-name="fc_global_mre_sep_date">
-        <text>
-          <base>the most recent employment separation date</base>
-        </text>
-      </attribute>
-      <attribute name="b85" type="boolean" public-name="fc_zero_employments">
-        <text>
-          <base>the claimant entered zero instances of employment</base>
-          <parse>s(ver('10.4.1.60'),v(enter,t(simple,past,normal)),sb('the claimant',plural),o('zero instances of employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b86" type="boolean" public-name="fc_sep_sub_completed">
-        <text>
-          <base>the claimant has completed the separation sub interviews</base>
-          <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the separation sub interviews'))</parse>
         </text>
       </attribute>
       <attribute name="b94" type="boolean" public-name="js_1">
@@ -580,133 +547,8 @@
         </text>
       </attribute>
     </entity>
-    <entity id="employment" name="the employment" identifying-attribute-name="fc_employer" identifying-attribute-text="the employment" containment-relationship-id="allemploymentslisted" containment-parent-id="global">
-      <attribute name="p104" type="text" substitutable="true" default-gender="generic" public-name="fc_employer">
-        <text>
-          <base>the employment</base>
-        </text>
-      </attribute>
-      <attribute name="p105" type="text" public-name="fc_employment_company_name">
-        <text>
-          <base>the employment's company name</base>
-        </text>
-      </attribute>
-      <attribute name="b87" type="boolean" public-name="fc_federal_employer">
-        <text>
-          <base>the employment was either federal, military, or usps</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employment',singular),o('either federal, military, or usps'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b88" type="boolean" public-name="fc_claimant_separation_fault">
-        <text>
-          <base>the claimant is at fault for the separation from the employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b89" type="boolean" public-name="fc_current_employer">
-        <text>
-          <base>the employment is current</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b90" type="boolean" public-name="fc_most_recent_employment">
-        <text>
-          <base>the employment instance is the most recent</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the most recent'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b91" type="boolean" public-name="fc_next_most_recent_employment">
-        <text>
-          <base>the employment instance is the next most recent</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the next most recent'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b92" type="boolean" public-name="fc_sep_sub_interview_complete">
-        <text>
-          <base>the employment's separation investigation is satisfied</base>
-          <parse>s(ver('10.4.1.60'),v(satisfy,t(simple,present,normal)),ob('the employment''s separation investigation',singular))</parse>
-        </text>
-      </attribute>
-      <attribute name="p106" type="text" public-name="fc_fed_emp_workstation">
-        <text>
-          <base>the employment's federal workstation identifier for the claimant</base>
-        </text>
-      </attribute>
-      <attribute name="p107" type="date" public-name="fc_date_first_earned_income">
-        <text>
-          <base>the date the claimant first earned income from the employment</base>
-        </text>
-      </attribute>
-      <attribute name="p108" type="date" public-name="fc_date_last_earned_income">
-        <text>
-          <base>the date the claimant last earned income from the employment</base>
-        </text>
-      </attribute>
-      <attribute name="p109" type="number" public-name="fc_ldw_to_fed">
-        <text>
-          <base>the employment's difference between the ldw and fed in days</base>
-        </text>
-      </attribute>
-      <attribute name="p110" type="number" public-name="fc_separation_sequence">
-        <text>
-          <base>the employment's separation sequence</base>
-        </text>
-      </attribute>
-      <attribute name="b93" type="boolean" public-name="fc_ten_week_employer">
-        <text>
-          <base>the employment occurred during a period of at least ten separable weeks</base>
-          <parse>s(ver('10.4.1.60'),v(occur,t(simple,past,normal)),sb('the employment',plural),o('during a period of at least ten separable weeks'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p111" type="number" public-name="fc_weeks_not_worked">
-        <text>
-          <base>the number of weeks you did not work</base>
-        </text>
-      </attribute>
-      <attribute name="p112" type="number" public-name="fc_weeks_worked">
-        <text>
-          <base>the employment's nominal weeks worked</base>
-        </text>
-      </attribute>
-      <attribute name="b98" type="boolean" public-name="fc_emp_has_chargeable_sep">
-        <text>
-          <base>the employment has employment chargeability and a separation determination</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the employment',singular),o('employment chargeability and a separation determination'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b99" type="boolean" public-name="fc_emp_is_pcce">
-        <text>
-          <base>the employment is a PCCE, Potentially Chargeable Concurrent Employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a PCCE, Potentially Chargeable Concurrent Employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b100" type="boolean" public-name="fc_emp_most_recent_sep">
-        <text>
-          <base>the employment instance is the most recent, separated, employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the most recent, separated, employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b101" type="boolean" public-name="fc_emp_is_next_mrecent_sep">
-        <text>
-          <base>the employment instance is the next most recent, separated, employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('the next most recent, separated, employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b102" type="boolean" public-name="fc_emp_is_ten_week_sep">
-        <text>
-          <base>the employment instance is a ten week, separated, employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the employment instance',singular),o('a ten week, separated, employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p113" type="text" public-name="fc_emp_tag">
-        <text>
-          <base>the employment's tag</base>
-        </text>
-      </attribute>
-    </entity>
   </entities>
   <relationships>
-    <relationship source="global" target="employment" text="all employment's listed" relationship-id="allemploymentslisted" reverse-relationship-id="globalsingletonfortheemployment" reverse-text="the global singleton for the employment" type="OneToMany" is-computed="false" is-containment="true" public-id="global2employment" reverse-public-id="employment2global" />
   </relationships>
   <rules />
   <interactive-items>
