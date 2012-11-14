@@ -7,24 +7,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien authorized to work in the United States'))</parse>
         </text>
       </attribute>
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is involved in a labor dispute</base>
-          <parse>s(ver('10.4.1.60'),v(involve,t(simple,present,normal)),ob('the claimant',singular),o('in a labor dispute'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is on strike</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on strike'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is subject to an employer lockout</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('subject to an employer lockout'))</parse>
-        </text>
-      </attribute>
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant was lawfully admitted for residence at the time work was performed</base>
@@ -133,24 +115,6 @@
             <not>
               <attribute attr-id="b9" />
             </not>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the claimant is involved in a labor dispute" ruleburst="true" concludes="b2" folder="0" source-offset="1793">
-      <rule-xml>
-        <conclude attr-id="b2" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <attribute attr-id="b3" />
-              <attribute attr-id="b4" />
-            </or>
           </condition>
           <otherwise>
             <false-value />

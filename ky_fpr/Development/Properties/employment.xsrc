@@ -11,6 +11,18 @@
           <base>the most recent employment separation date</base>
         </text>
       </attribute>
+      <attribute name="b81" type="boolean" public-name="fpr_chargeability_done">
+        <text>
+          <base>the claimant has completed the chargeability sub interviews</base>
+          <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the chargeability sub interviews'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b82" type="boolean" public-name="fpr_zero_employment_entered">
+        <text>
+          <base>the claimant entered zero instances of employment</base>
+          <parse>s(ver('10.4.1.60'),v(enter,t(simple,past,normal)),sb('the claimant',plural),o('zero instances of employment'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employment" name="the employment" identifying-attribute-name="fpr_employment" identifying-attribute-text="the employment" containment-relationship-id="allemploymentslisted" containment-parent-id="global" public-id="the_employment">
       <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="fpr_employment">
@@ -177,6 +189,456 @@
         <text>
           <base>the claimant violated ( knowingly ) the employer's reasonable and uniformly enforced rule during the employment</base>
           <parse>s(ver('10.4.1.60'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('( knowingly ) the employer''s reasonable and uniformly enforced rule during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" public-name="fpr_discharged_dishonest">
+        <text>
+          <base>the claimant was (discharged, suspended) from the employment due to dishonesty</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, suspended) from the employment due to dishonesty'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" public-name="fpr_discharged">
+        <text>
+          <base>the claimant was (discharged, suspended) from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, suspended) from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" public-name="fpr_action_dishonest">
+        <text>
+          <base>the claimant's action in connection to the employment is deemed dishonest</base>
+          <parse>s(ver('10.4.1.60'),v(deem,t(simple,present,normal)),ob('the claimant''s action in connection to the employment',singular),o('dishonest'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" public-name="fpr_discharged_misconduct">
+        <text>
+          <base>341.370(6) the claimant was (discharged, suspended) from the employment due to misconduct</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('341.370(6) the claimant',singular),o('(discharged, suspended) from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b23" type="boolean" public-name="fpr_misconduct_by_meaning">
+        <text>
+          <base>the claimant's action in connection to the employment is deemed misconduct within the meaning of the statute</base>
+          <parse>s(ver('10.4.1.60'),v(deem,t(simple,present,normal)),ob('the claimant''s action in connection to the employment',singular),o('misconduct within the meaning of the statute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b24" type="boolean" public-name="fpr_falsified_application">
+        <text>
+          <base>the claimant has falsified an application for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('falsified an application for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b25" type="boolean" public-name="fpr_violated_uniform_rule">
+        <text>
+          <base>the claimant has knowingly violated the employer's reasonable and uniformly enforced rule during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(violate,t(simple,past,normal)),sb('the claimant has knowingly',plural),o('the employer''s reasonable and uniformly enforced rule during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" public-name="fpr_bad_attendance_record">
+        <text>
+          <base>the claimant has an unsatisfactory attendance record during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" public-name="fpr_damaged_gross_property">
+        <text>
+          <base>the claimant has damaged the employers property through gross negligence during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('damaged the employers property through gross negligence during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" public-name="fpr_no_listen_to_reason">
+        <text>
+          <base>the claimant has refused to obey reasonable instructions during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('to obey reasonable instructions during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" public-name="fpr_wui_during_employment">
+        <text>
+          <base>the claimant was working under the influence during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('working under the influence during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" public-name="fpr_endangered_conduct">
+        <text>
+          <base>the claimant engaged in conduct that endangered themselves or others during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(engage,t(simple,past,normal)),sb('the claimant',plural),o('in conduct that endangered themselves or others during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" public-name="fpr_in_can_five_during_employment">
+        <text>
+          <base>the claimant was incarcerated for a conviction, for a period of at least five (5) days of work during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for a conviction, for a period of at least five (5) days of work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" public-name="fpr_behaving_faulty">
+        <text>
+          <base>the claimant's behavior during the employment was unsatisfactory</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s behavior during the employment',singular),o('unsatisfactory'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" public-name="fpr_unsatisfactory_performance">
+        <text>
+          <base>the claimant's work performance during the employment was unsatisfactory</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s work performance during the employment',singular),o('unsatisfactory'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" public-name="fpr_no_required_driver_license">
+        <text>
+          <base>the claimant failed to maintain a valid driver's license as required for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to maintain a valid driver''s license as required for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" public-name="fpr_no_required_insurance">
+        <text>
+          <base>the claimant failed to remain an insurable driver as required for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to remain an insurable driver as required for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" public-name="fpr_negligent_actions">
+        <text>
+          <base>the claimant's actions were negligent in connection to the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s actions',plural),o('negligent in connection to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" public-name="fpr_demonstrated_misconduct">
+        <text>
+          <base>the claimant's work related action in connection to the employment demonstrates misconduct within the meaning of the statute</base>
+          <parse>s(ver('10.4.1.60'),v(demonstrate,t(simple,present,normal)),sb('the claimant''s work related action in connection to the employment',singular),o('misconduct within the meaning of the statute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" public-name="fpr_adverse_effect_on_employer">
+        <text>
+          <base>the conduct had an adverse effect on the employer during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,past,normal)),sb('the conduct',plural),o('an adverse effect on the employer during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" public-name="fpr_violated_the_rule">
+        <text>
+          <base>the claimant violated the employer's rule during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the employer''s rule during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" public-name="fpr_claimant_chose_to_quit">
+        <text>
+          <base>the claimant chose to end the employment</base>
+          <parse>s(ver('10.4.1.60'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to end the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" public-name="fpr_on_leave_of_absence">
+        <text>
+          <base>the claimant is on a leave of absence from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on a leave of absence from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b42" type="boolean" public-name="fpr_aware_of_the_rule">
+        <text>
+          <base>the claimant was aware of the employer's rule during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employer''s rule during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" public-name="fpr_rule_is_reasonable">
+        <text>
+          <base>the rule was reasonable for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the rule',singular),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" public-name="fpr_rule_is_uniform">
+        <text>
+          <base>the rule was uniformly enforced during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the rule',singular),o('uniformly enforced during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" public-name="fpr_good_cause_skip_work">
+        <text>
+          <base>the claimant had good cause for the majority of attendance incidents during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause for the majority of attendance incidents during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" public-name="fpr_gross_damage_negligent">
+        <text>
+          <base>the claimant has damaged the employer's property through gross negligence during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('damaged the employer''s property through gross negligence during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" public-name="fpr_actions_damaged">
+        <text>
+          <base>the claimant's actions resulted in damage of the employer's property during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(result,t(simple,past,normal)),sb('the claimant''s actions',plural),o('in damage of the employer''s property during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" public-name="fpr_gross_neglignce_action">
+        <text>
+          <base>the claimant's actions constitute gross negligence during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(constitute,t(simple,present,normal)),sb('the claimant''s actions',plural),o('gross negligence during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" public-name="fpr_disobeyed_instructions">
+        <text>
+          <base>the claimant refused to obey an instruction during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(refuse,t(simple,past,normal)),sb('the claimant',plural),o('to obey an instruction during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" public-name="fpr_reasonable_instruction">
+        <text>
+          <base>the instruction by the employer was reasonable for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the instruction by the employer',singular),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b52" type="boolean" public-name="fpr_reported_wui">
+        <text>
+          <base>the claimant reported to work under the influence of (alcohol, drugs) during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence of (alcohol, drugs) during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" public-name="fpr_consumed_premises">
+        <text>
+          <base>the claimant consumed (alcohol, drugs) on the employer's premises during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(consume,t(simple,past,normal)),sb('the claimant',plural),o('(alcohol, drugs) on the employer''s premises during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b54" type="boolean" public-name="fpr_consumed_hours">
+        <text>
+          <base>the claimant consumed (alcohol, drugs) during working hours during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(consume,t(simple,past,normal)),sb('the claimant',plural),o('(alcohol, drugs) during working hours during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" public-name="fpr_endangered_during">
+        <text>
+          <base>the claimant engaged in conduct during the employment that endangered themselves</base>
+          <parse>s(ver('10.4.1.60'),v(engage,t(simple,past,normal)),sb('the claimant',plural),o('in conduct during the employment that endangered themselves'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b56" type="boolean" public-name="fpr_engaged_during_others">
+        <text>
+          <base>the claimant engaged in conduct during the employment that endangered others</base>
+          <parse>s(ver('10.4.1.60'),v(engage,t(simple,past,normal)),sb('the claimant',plural),o('in conduct during the employment that endangered others'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" public-name="fpr_incarcerated_during">
+        <text>
+          <base>the claimant was incarcerated for a conviction during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for a conviction during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" public-name="fpr_incarcerated_five_during">
+        <text>
+          <base>the claimant was incarcerated for at least five (5) days of work during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for at least five (5) days of work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b59" type="boolean" public-name="fpr_inappropriate_standards">
+        <text>
+          <base>the claimant's behaviour during the employment was inappropriate according to the employer's standards</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s behaviour during the employment',singular),o('inappropriate according to the employer''s standards'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b60" type="boolean" public-name="fpr_reasonable_standards">
+        <text>
+          <base>the employer's standard of behavior was reasonable for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employer''s standard of behavior',singular),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b61" type="boolean" public-name="fpr_willful_actions">
+        <text>
+          <base>the claimant's actions during the employment was willful</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s actions during the employment',singular),o('willful'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b62" type="boolean" public-name="fpr_received_prior_warning">
+        <text>
+          <base>the claimant had received prior warning for the behavior during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,past,perfect)),sb('the claimant',singular),o('prior warning for the behavior during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b63" type="boolean" public-name="fpr_work_within_ability">
+        <text>
+          <base>the work during the employment was within the claimant's proven ability</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the work during the employment',singular),o('within the claimant''s proven ability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b64" type="boolean" public-name="fpr_aware_responsibilities">
+        <text>
+          <base>the claimant was aware of the job responsibilities for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the job responsibilities for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b65" type="boolean" public-name="fpr_failed_to_perform">
+        <text>
+          <base>the claimant failed to perform the work satisfactory during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to perform the work satisfactory during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b66" type="boolean" public-name="fpr_willful_in_connection">
+        <text>
+          <base>the claimant's action was willful in connection to the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s action',singular),o('willful in connection to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b67" type="boolean" public-name="fpr_negligent_in_connection">
+        <text>
+          <base>the claimant was negligent in connection to the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('negligent in connection to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b68" type="boolean" public-name="fpr_license_required">
+        <text>
+          <base>the claimant was required to maintain a valid driver's license for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to maintain a valid driver''s license for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b69" type="boolean" public-name="fpr_failed_license">
+        <text>
+          <base>the claimant failed to maintain a valid driver's license for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to maintain a valid driver''s license for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b70" type="boolean" public-name="fpr_uninsured_driver">
+        <text>
+          <base>the claimant's action led directly to becoming uninsurable as a driver for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(lead,t(simple,past,normal)),sb('the claimant''s action',plural),o('directly to becoming uninsurable as a driver for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b71" type="boolean" public-name="fpr_motor_required">
+        <text>
+          <base>the claimant's job duties required the operation of a motor vehicle for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the operation of a motor vehicle for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b72" type="boolean" public-name="fpr_insurance_required">
+        <text>
+          <base>the claimant's job duties required insurability as a driver for the employment</base>
+          <parse>s(ver('10.4.1.60'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('insurability as a driver for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b73" type="boolean" public-name="fpr_carelessness_demo">
+        <text>
+          <base>the claimant demonstrated excessive (carelessness, inefficiency) in connection to the employment</base>
+          <parse>s(ver('10.4.1.60'),v(demonstrate,t(simple,past,normal)),sb('the claimant',plural),o('excessive (carelessness, inefficiency) in connection to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b74" type="boolean" public-name="fpr_recurrent_actions">
+        <text>
+          <base>the claimant's actions were recurrent during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s actions',plural),o('recurrent during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b75" type="boolean" public-name="fpr_excessive_actions">
+        <text>
+          <base>the claimant's actions were excessive during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s actions',plural),o('excessive during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b76" type="boolean" public-name="fpr_wui_during">
+        <text>
+          <base>the claimant was working under the influence of (alcohol, drugs) during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('working under the influence of (alcohol, drugs) during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b77" type="boolean" public-name="fpr_behaving_unwise">
+        <text>
+          <base>the claimant's behavior during the employment was inappropriate</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s behavior during the employment',singular),o('inappropriate'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b78" type="boolean" public-name="fpr_volunteer_quit_reduction">
+        <text>
+          <base>the claimant has quit suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the claimant',singular),o('suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b79" type="boolean" public-name="fpr_on_strike">
+        <text>
+          <base>the claimant is on strike from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on strike from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b84" type="boolean" public-name="fpr_done_with_chargeable">
+        <text>
+          <base>the employment's chargeability investigation is satisfied</base>
+          <parse>s(ver('10.4.1.60'),v(satisfy,t(simple,present,normal)),ob('the employment''s chargeability investigation',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b85" type="boolean" public-name="fpr_done_due_to_misdeeds">
+        <text>
+          <base>the claimant was (discharged, suspended) from the employment due to misconduct</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, suspended) from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b86" type="boolean" public-name="fpr_fed_workstation_collected">
+        <text>
+          <base>the employment's federal workstation identifier has been collected</base>
+          <parse>s(ver('10.4.1.60'),v(collect,t(simple,present,perfect)),ob('the employment''s federal workstation identifier',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b87" type="boolean" public-name="fpr_voluntary_retirement">
+        <text>
+          <base>the employment ended due to the claimant's voluntary participation in the employer's retirement policy</base>
+          <parse>s(ver('10.4.1.60'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the claimant''s voluntary participation in the employer''s retirement policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b88" type="boolean" public-name="fpr_employed_by_feds">
+        <text>
+          <base>the employment was the federal (government) agency for ui purposes</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employment',singular),o('the federal (government) agency for ui purposes'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b89" type="boolean" public-name="fpr_laid_off">
+        <text>
+          <base>the claimant was laid off from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(lay,t(simple,past,normal)),ob('the claimant',singular),o('off from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b90" type="boolean" public-name="fpr_employer_is_fed">
+        <text>
+          <base>the employment was a the federal (government) agency for ui purposes</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the employment',singular),o('a the federal (government) agency for ui purposes'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b91" type="boolean" public-name="fpr_unvoluntary_retirement">
+        <text>
+          <base>the the employment ended due to the employer's mandatory retirement program in which the claimant did not voluntarily participate</base>
+          <parse>s(ver('10.4.1.60'),v(end,t(simple,past,normal)),sb('the the employment',plural),o('due to the employer''s mandatory retirement program in which the claimant did not voluntarily participate'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b92" type="boolean" public-name="fpr_lockout">
+        <text>
+          <base>the claimant is subject to a lockout from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('subject to a lockout from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b93" type="boolean" public-name="fpr_payable_sims">
+        <text>
+          <base>the claimant's separation from the employment is payable within the SIMS precedent</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b94" type="boolean" public-name="fpr_quit">
+        <text>
+          <base>the employment ended because the claimant has quit suitable work</base>
+          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the employment ended because the claimant',singular),o('suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b95" type="boolean" public-name="fpr_exhausted_than_quit">
+        <text>
+          <base>the claimant has exhausted all reasonable alternatives other than quitting the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('exhausted all reasonable alternatives other than quitting the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b96" type="boolean" public-name="fpr_good_cause_to_quit">
+        <text>
+          <base>the claimant had good cause to quit the employment</base>
+          <parse>s(ver('10.4.1.60'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause to quit the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b97" type="boolean" public-name="fpr_been_warned">
+        <text>
+          <base>the claimant has received prior warning for the behavior during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(receive,t(simple,present,perfect)),sb('the claimant',singular),o('prior warning for the behavior during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b98" type="boolean" public-name="fpr_been_warned_before">
+        <text>
+          <base>the claimant has been previously warned that the employment was in jeopardy</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the claimant',singular),o('previously warned that the employment was in jeopardy'))</parse>
         </text>
       </attribute>
     </entity>
