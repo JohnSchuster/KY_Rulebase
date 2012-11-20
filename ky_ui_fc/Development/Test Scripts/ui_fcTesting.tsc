@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <test-script product-version="10.4.1.60" schema-version="4">
   <test-case-set>
-    <test-case name="client_tt_07" notes="">
+    <test-case name="client_tt_01" notes="">
       <ent-set entity-type="global" entity-text="Global">
         <ent-inst id="global 1">
           <attr-inst name="fc_mailing_zip_code" text="your zip code" type="text">
@@ -44,9 +44,9 @@
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fc_postal" text="you worked for the US Post office during the base period" type="boolean">
+          <attr-inst name="fpr_is_us_citizen" text="the claimant is a US Citizen" type="boolean">
             <val>
-              <boolean-val>false</boolean-val>
+              <boolean-val>true</boolean-val>
             </val>
           </attr-inst>
           <attr-inst name="fc_cell_phone" text="Cell phone" type="text">
@@ -219,11 +219,6 @@
               <boolean-val>true</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_is_us_citizen" text="the claimant is a US Citizen" type="boolean">
-            <val>
-              <boolean-val>true</boolean-val>
-            </val>
-          </attr-inst>
           <attr-inst name="fpr_is_pro_athlete" text="the claimant is a professional athlete" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
@@ -257,6 +252,11 @@
           <attr-inst name="fc_home_phone" text="Your Home Phone" type="text">
             <val>
               <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fc_postal" text="you worked for the US Post office during the base period" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
           <attr-inst name="fpr_self_empl_restricts_avail" text="the claimants (self-employment, commission work, corporate officer) restricts their availability" type="boolean">
@@ -299,13 +299,46 @@
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_claimant_is_payable" text="the claimant is payable (qualifying)" type="boolean">
+          <attr-inst name="fpr_employer_is_reimbursing" text="the employer is a reimbursing employer" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_employer_sb_relieved" text="the employer should be relieved of chargeability" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
             </val>
-            <expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_employer_made_protest" text="the employer made a timely protest" type="boolean">
+            <val>
               <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_employer_is_chargeable" text="the employer is chargeable" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_reason_attach_labor" text="the claimant is making a reasonable search for work with a genuine attachment to the labor market" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
             </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_payable" text="the claimant is payable (qualifying)" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_meets_all_other_cond" text="the claimant meets all other conditions to qualify for benefits" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
           </attr-inst>
           <attr-inst name="fpr_available_for_work" text="the claimant is available for suitable work" type="boolean">
             <expected-val>
@@ -315,16 +348,6 @@
           <attr-inst name="fpr_meets_sep_requirements" text="the claimant has met the non-separation eligibility requirements" type="boolean">
             <expected-val>
               <boolean-val>true</boolean-val>
-            </expected-val>
-          </attr-inst>
-          <attr-inst name="fpr_reason_attach_labor" text="the claimant is making a reasonable search for work with a genuine attachment to the labor market" type="boolean">
-            <expected-val>
-              <boolean-val>true</boolean-val>
-            </expected-val>
-          </attr-inst>
-          <attr-inst name="fpr_meets_all_other_cond" text="the claimant meets all other conditions to qualify for benefits" type="boolean">
-            <expected-val>
-              <unknown-val />
             </expected-val>
           </attr-inst>
           <attr-inst name="fpr_one_chargeable_event" text="the claimant has at least one chargeable separation event in the required period of time" type="boolean">
@@ -341,14 +364,18 @@
             <relationship-inst type="global2claim" complete="false" />
             <relationship-inst type="global2nod" complete="false" />
             <relationship-inst type="global2employment" complete="true">
-              <ent-inst-ref ref-id="#2" />
               <ent-inst-ref ref-id="#1" />
             </relationship-inst>
           </relationship-set>
         </ent-inst>
       </ent-set>
       <ent-set entity-type="the_employment" entity-text="the employment">
-        <ent-inst id="#2">
+        <ent-inst id="#1">
+          <attr-inst name="fpr_federal_employer" text="the employment was either federal, military, or usps" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
           <attr-inst name="fpr_claimant_separation_fault" text="the claimant is at fault for the separation from the employment" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
@@ -356,7 +383,17 @@
           </attr-inst>
           <attr-inst name="fpr_date_first_earned_income" text="the date the claimant first earned income from the employment" type="date">
             <val>
-              <date-val>2012-09-23</date-val>
+              <date-val>2005-05-19</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_weeks_not_worked" text="the number of weeks you did not work" type="number">
+            <val>
+              <number-val>16.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_employment_company_name" text="the employment's company name" type="text">
+            <val>
+              <text-val>Smuckers</text-val>
             </val>
           </attr-inst>
           <attr-inst name="fpr_date_last_earned_income" text="the date the claimant last earned income from the employment" type="date">
@@ -364,84 +401,42 @@
               <date-val>2012-10-31</date-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_employment_company_name" text="the employment's company name" type="text">
-            <val>
-              <text-val>Coca Cola</text-val>
-            </val>
-          </attr-inst>
           <attr-inst name="fpr_current_employer" text="the employment is current" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_weeks_not_worked" text="the number of weeks you did not work" type="number">
-            <val>
-              <number-val>0.0</number-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_federal_employer" text="the employment was either federal, military, or usps" type="boolean">
-            <val>
+          <attr-inst name="fpr_next_most_recent_employment" text="the employment instance is the next most recent" type="boolean">
+            <expected-val>
               <boolean-val>false</boolean-val>
-            </val>
+            </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_emp_has_chargeable_sep" text="the employment has employment chargeability and a separation determination" type="boolean">
+          <attr-inst name="fpr_emp_most_recent_sep" text="the employment instance is the most recent, separated, employment" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emp_is_next_mrecent_sep" text="the employment instance is the next most recent, separated, employment" type="boolean">
             <expected-val>
               <boolean-val>false</boolean-val>
             </expected-val>
           </attr-inst>
           <attr-inst name="fpr_ten_week_employer" text="the employment occurred during a period of at least ten separable weeks" type="boolean">
             <expected-val>
-              <boolean-val>false</boolean-val>
+              <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_sep_sub_interview_complete" text="the employment's separation investigation is satisfied" type="boolean">
+          <attr-inst name="fpr_most_recent_employment" text="the employment instance is the most recent" type="boolean">
             <expected-val>
               <boolean-val>true</boolean-val>
             </expected-val>
-          </attr-inst>
-        </ent-inst>
-        <ent-inst id="#1">
-          <attr-inst name="fpr_claimant_separation_fault" text="the claimant is at fault for the separation from the employment" type="boolean">
-            <val>
-              <boolean-val>true</boolean-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_date_first_earned_income" text="the date the claimant first earned income from the employment" type="date">
-            <val>
-              <date-val>2011-05-11</date-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_date_last_earned_income" text="the date the claimant last earned income from the employment" type="date">
-            <val>
-              <date-val>2012-07-14</date-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_employment_company_name" text="the employment's company name" type="text">
-            <val>
-              <text-val>Samsung</text-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_current_employer" text="the employment is current" type="boolean">
-            <val>
-              <boolean-val>false</boolean-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_weeks_not_worked" text="the number of weeks you did not work" type="number">
-            <val>
-              <number-val>2.0</number-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_federal_employer" text="the employment was either federal, military, or usps" type="boolean">
-            <val>
-              <boolean-val>false</boolean-val>
-            </val>
           </attr-inst>
           <attr-inst name="fpr_emp_has_chargeable_sep" text="the employment has employment chargeability and a separation determination" type="boolean">
             <expected-val>
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_ten_week_employer" text="the employment occurred during a period of at least ten separable weeks" type="boolean">
+          <attr-inst name="fpr_emp_is_ten_week_sep" text="the employment instance is a ten week, separated, employment" type="boolean">
             <expected-val>
               <boolean-val>true</boolean-val>
             </expected-val>
@@ -497,9 +492,9 @@
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fc_postal" text="you worked for the US Post office during the base period" type="boolean">
+          <attr-inst name="fpr_is_us_citizen" text="the claimant is a US Citizen" type="boolean">
             <val>
-              <boolean-val>false</boolean-val>
+              <boolean-val>true</boolean-val>
             </val>
           </attr-inst>
           <attr-inst name="fc_cell_phone" text="Cell phone" type="text">
@@ -672,11 +667,6 @@
               <boolean-val>true</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_is_us_citizen" text="the claimant is a US Citizen" type="boolean">
-            <val>
-              <boolean-val>true</boolean-val>
-            </val>
-          </attr-inst>
           <attr-inst name="fpr_is_pro_athlete" text="the claimant is a professional athlete" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
@@ -710,6 +700,11 @@
           <attr-inst name="fc_home_phone" text="Your Home Phone" type="text">
             <val>
               <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fc_postal" text="you worked for the US Post office during the base period" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
           <attr-inst name="fpr_self_empl_restricts_avail" text="the claimants (self-employment, commission work, corporate officer) restricts their availability" type="boolean">
@@ -752,14 +747,36 @@
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_reason_attach_labor" text="the claimant is making a reasonable search for work with a genuine attachment to the labor market" type="boolean">
+          <attr-inst name="fpr_employer_made_protest" text="the employer made a timely protest" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+            <expected-val>
+              <boolean-val>false</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_employer_is_chargeable" text="the employer is chargeable" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
             <expected-val>
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_meets_all_other_cond" text="the claimant meets all other conditions to qualify for benefits" type="boolean">
+          <attr-inst name="fpr_employer_sb_relieved" text="the employer should be relieved of chargeability" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
             <expected-val>
-              <unknown-val />
+              <boolean-val>false</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_meets_all_other_cond" text="the claimant meets all other conditions to qualify for benefits" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+            <expected-val>
+              <boolean-val>false</boolean-val>
             </expected-val>
           </attr-inst>
           <attr-inst name="fpr_sep_sub_done" text="the claimant has completed the separation sub interviews" type="boolean">
@@ -767,14 +784,14 @@
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_one_chargeable_event" text="the claimant has at least one chargeable separation event in the required period of time" type="boolean">
+          <attr-inst name="fpr_reason_attach_labor" text="the claimant is making a reasonable search for work with a genuine attachment to the labor market" type="boolean">
             <expected-val>
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_claimant_is_payable" text="the claimant is payable (qualifying)" type="boolean">
+          <attr-inst name="fpr_one_chargeable_event" text="the claimant has at least one chargeable separation event in the required period of time" type="boolean">
             <expected-val>
-              <unknown-val />
+              <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
           <attr-inst name="fpr_available_for_work" text="the claimant is available for suitable work" type="boolean">
@@ -787,6 +804,15 @@
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
+          <attr-inst name="fpr_claimant_is_payable" text="the claimant is payable (qualifying)" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+            <expected-val>
+              <boolean-val>false</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_employer_is_reimbursing" text="the employer is a reimbursing employer" type="boolean" />
           <relationship-set>
             <relationship-inst type="global2claim" complete="false" />
             <relationship-inst type="global2nod" complete="false" />
@@ -798,6 +824,11 @@
       </ent-set>
       <ent-set entity-type="the_employment" entity-text="the employment">
         <ent-inst id="#1">
+          <attr-inst name="fpr_federal_employer" text="the employment was either federal, military, or usps" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
           <attr-inst name="fpr_claimant_separation_fault" text="the claimant is at fault for the separation from the employment" type="boolean">
             <val>
               <boolean-val>true</boolean-val>
@@ -805,22 +836,7 @@
           </attr-inst>
           <attr-inst name="fpr_date_first_earned_income" text="the date the claimant first earned income from the employment" type="date">
             <val>
-              <date-val>2012-02-18</date-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_date_last_earned_income" text="the date the claimant last earned income from the employment" type="date">
-            <val>
-              <date-val>2012-11-09</date-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_employment_company_name" text="the employment's company name" type="text">
-            <val>
-              <text-val>KFC</text-val>
-            </val>
-          </attr-inst>
-          <attr-inst name="fpr_current_employer" text="the employment is current" type="boolean">
-            <val>
-              <boolean-val>false</boolean-val>
+              <date-val>2012-04-15</date-val>
             </val>
           </attr-inst>
           <attr-inst name="fpr_weeks_not_worked" text="the number of weeks you did not work" type="number">
@@ -828,19 +844,24 @@
               <number-val>1.0</number-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_federal_employer" text="the employment was either federal, military, or usps" type="boolean">
+          <attr-inst name="fpr_employment_company_name" text="the employment's company name" type="text">
+            <val>
+              <text-val>Acme</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_date_last_earned_income" text="the date the claimant last earned income from the employment" type="date">
+            <val>
+              <date-val>2012-10-15</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_current_employer" text="the employment is current" type="boolean">
             <val>
               <boolean-val>false</boolean-val>
             </val>
           </attr-inst>
-          <attr-inst name="fpr_sep_sub_interview_complete" text="the employment's separation investigation is satisfied" type="boolean">
+          <attr-inst name="fpr_next_most_recent_employment" text="the employment instance is the next most recent" type="boolean">
             <expected-val>
-              <boolean-val>true</boolean-val>
-            </expected-val>
-          </attr-inst>
-          <attr-inst name="fpr_emp_has_chargeable_sep" text="the employment has employment chargeability and a separation determination" type="boolean">
-            <expected-val>
-              <boolean-val>true</boolean-val>
+              <boolean-val>false</boolean-val>
             </expected-val>
           </attr-inst>
           <attr-inst name="fpr_ten_week_employer" text="the employment occurred during a period of at least ten separable weeks" type="boolean">
@@ -853,9 +874,29 @@
               <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
-          <attr-inst name="fpr_next_most_recent_employment" text="the employment instance is the next most recent" type="boolean">
+          <attr-inst name="fpr_emp_is_ten_week_sep" text="the employment instance is a ten week, separated, employment" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emp_is_next_mrecent_sep" text="the employment instance is the next most recent, separated, employment" type="boolean">
             <expected-val>
               <boolean-val>false</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emp_most_recent_sep" text="the employment instance is the most recent, separated, employment" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_sep_sub_interview_complete" text="the employment's separation investigation is satisfied" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emp_has_chargeable_sep" text="the employment has employment chargeability and a separation determination" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
             </expected-val>
           </attr-inst>
         </ent-inst>
@@ -934,6 +975,26 @@
       </default-change-points>
     </outcome>
     <outcome name="fpr_emp_is_next_mrecent_sep" display-name="The employment is the next most recent separated" text="the employment instance is the next most recent, separated, employment" type="boolean" entity-type="the_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_employer_is_reimbursing" display-name="The employer is a reimbursing employer" text="the employer is a reimbursing employer" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_employer_is_chargeable" display-name="The employer is chargeable" text="the employer is chargeable" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_employer_made_protest" display-name="The employer made a timely protest" text="the employer made a timely protest" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_employer_sb_relieved" display-name="The employer should be relieved of chargeability" text="the employer should be relieved of chargeability" type="boolean" entity-type="global" entity-text="Global">
       <default-change-points>
         <unknown-val />
       </default-change-points>

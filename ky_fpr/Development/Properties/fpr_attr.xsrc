@@ -43,12 +43,6 @@
           <parse>s(ver('10.4.1.60'),v(fall,t(simple,present,normal)),sb('the claimant',singular),o('under KRS 341.370(c)'))</parse>
         </text>
       </attribute>
-      <attribute name="b10" type="boolean" public-name="fpr_claimant_at_fault_for_sep">
-        <text>
-          <base>the claimant is at fault for the separation</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation'))</parse>
-        </text>
-      </attribute>
       <attribute name="b12" type="boolean" public-name="fpr_terminated_employment">
         <text>
           <base>the claimant has ended their employment</base>
@@ -1228,12 +1222,6 @@
           <parse>s(ver('10.4.1.60'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('less than full time'))</parse>
         </text>
       </attribute>
-      <attribute name="b261" type="boolean" public-name="fpr_quit_wrp_init_by_emp">
-        <text>
-          <base>the claimant voluntarily quit due to a reduction in workforce plan initiated by the employer</base>
-          <parse>s(ver('10.4.1.60'),v(initiate,t(simple,past,normal)),sb('the claimant voluntarily quit due to a reduction in workforce plan',plural),o('by the employer'))</parse>
-        </text>
-      </attribute>
       <attribute name="b262" type="boolean" public-name="fpr_is_sim">
         <text>
           <base>the claimant's separation falls within the SIMS precedent</base>
@@ -1593,9 +1581,36 @@
           <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the separation sub interviews'))</parse>
         </text>
       </attribute>
+      <attribute name="b349" type="boolean" public-name="fpr_most_recent_complete">
+        <text>
+          <base>the claimant has completed the most recent sub interview</base>
+          <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the most recent sub interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b350" type="boolean" public-name="fpr_ten_week_completed">
+        <text>
+          <base>the claimant has completed the ten week sub interview</base>
+          <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the ten week sub interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b351" type="boolean" public-name="fpr_next_most_recent_completed">
+        <text>
+          <base>the claimant has completed the next most recent sub interview</base>
+          <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the next most recent sub interview'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="employment" name="the employment" containment-parent-id="global" containment-relationship-id="allemploymentslisted">
+      <attribute name="b352" type="boolean" public-name="fpr_claimant_is_at_fault">
+        <text>
+          <base>the claimant is at fault for the separation from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
+    <relationship source="global" target="employment" is-containment="true" public-id="global2employment" reverse-public-id="employment2global" text="all employment's listed" relationship-id="allemploymentslisted" reverse-relationship-id="globalsingletonfortheemployment" reverse-text="the global singleton for the employment" type="OneToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>

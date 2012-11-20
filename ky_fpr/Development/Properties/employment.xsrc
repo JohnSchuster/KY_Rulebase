@@ -32,12 +32,6 @@
           </parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" public-name="fpr_claimant_separation_fault">
-        <text>
-          <base>the claimant is at fault for the separation from the employment</base>
-          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b4" type="boolean" public-name="fpr_current_employer">
         <text>
           <base>the employment is current</base>
@@ -165,12 +159,6 @@
           <base>the employment's nominal weeks worked</base>
           <parse>
           </parse>
-        </text>
-      </attribute>
-      <attribute name="b15" type="boolean" public-name="fpr_quit_voluntary_reduction">
-        <text>
-          <base>the claimant has quit the employment voluntarily, due to a workforce reduction plan initiated by the employer</base>
-          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the claimant',singular),o('the employment voluntarily, due to a workforce reduction plan initiated by the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b16" type="boolean" public-name="fpr_demo_adequate_capable">
@@ -315,12 +303,6 @@
         <text>
           <base>the claimant violated the employer's rule during the employment</base>
           <parse>s(ver('10.4.1.60'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the employer''s rule during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b40" type="boolean" public-name="fpr_claimant_chose_to_quit">
-        <text>
-          <base>the claimant chose to end the employment</base>
-          <parse>s(ver('10.4.1.60'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to end the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b41" type="boolean" public-name="fpr_on_leave_of_absence">
@@ -539,12 +521,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,past,normal)),sb('the claimant''s behavior during the employment',singular),o('inappropriate'))</parse>
         </text>
       </attribute>
-      <attribute name="b78" type="boolean" public-name="fpr_volunteer_quit_reduction">
-        <text>
-          <base>the claimant has quit suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment</base>
-          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the claimant',singular),o('suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b79" type="boolean" public-name="fpr_on_strike">
         <text>
           <base>the claimant is on strike from the employment</base>
@@ -611,10 +587,10 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
         </text>
       </attribute>
-      <attribute name="b94" type="boolean" public-name="fpr_quit">
+      <attribute name="b94" type="boolean" public-name="fpr_suitable_quit">
         <text>
           <base>the employment ended because the claimant has quit suitable work</base>
-          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the employment ended because the claimant',singular),o('suitable work'))</parse>
+          <parse>s(ver('10.4.1.60'),v(end,t(simple,past,normal)),sb('the employment',plural),o('because the claimant has quit suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="b95" type="boolean" public-name="fpr_exhausted_than_quit">
@@ -639,6 +615,66 @@
         <text>
           <base>the claimant has been previously warned that the employment was in jeopardy</base>
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,perfect)),sb('the claimant',singular),o('previously warned that the employment was in jeopardy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b99" type="boolean" public-name="fpr_quit_voluntarily_workforce">
+        <text>
+          <base>the claimant has quit suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment</base>
+          <parse>s(ver('10.4.1.60'),v(quit,t(simple,present,perfect)),sb('the claimant',singular),o('suitable work voluntarily due to a reduction in workforce plan initiated by the employer during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b100" type="boolean" public-name="fpr_is_part_time">
+        <text>
+          <base>the claimant is a part time employee with the employment</base>
+          <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a part time employee with the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b101" type="boolean" public-name="fpr_requested_red_to_pt">
+        <text>
+          <base>the claimant requested a reduction to part time from the employment</base>
+          <parse>s(ver('10.4.1.60'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction to part time from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b102" type="boolean" public-name="fpr_action_deemed_misconduct">
+        <text>
+          <base>the claimant's work related actions is deemed misconduct within the meaning of the statute by the employment</base>
+          <parse>s(ver('10.4.1.60'),v(deem,t(simple,present,normal)),ob('the claimant''s work related actions',singular),o('misconduct within the meaning of the statute by the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b103" type="boolean" public-name="fpr_display_no_fault">
+        <text>
+          <base>the employment no-fault screen should be displayed</base>
+          <parse>s(ver('10.4.1.60'),v(display+should,t(simple,modal,normal)),ob('the employment no-fault screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b104" type="boolean" public-name="fpr_most_recent_satisfied">
+        <text>
+          <base>the employment's most recent investigation is satisfied</base>
+          <parse>s(ver('10.4.1.60'),v(satisfy,t(simple,present,normal)),ob('the employment''s most recent investigation',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b109" type="boolean" public-name="fpr_claimant_quit">
+        <text>
+          <base>the claimant chose to end the employment</base>
+          <parse>s(ver('10.4.1.60'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to end the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b110" type="boolean" public-name="fpr_not_volunter_for_retire">
+        <text>
+          <base>the employment ended due to the employer's mandatory retirement program in which the claimant did not voluntarily participate</base>
+          <parse>s(ver('10.4.1.60'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the employer''s mandatory retirement program in which the claimant did not voluntarily participate'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b111" type="boolean" public-name="fpr_ten_week_satisfied">
+        <text>
+          <base>the employment's ten week investigation is satisfied</base>
+          <parse>s(ver('10.4.1.60'),v(satisfy,t(simple,present,normal)),ob('the employment''s ten week investigation',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b112" type="boolean" public-name="fpr_nmr_satisfied">
+        <text>
+          <base>the employment's next most recent investigation is satisfied</base>
+          <parse>s(ver('10.4.1.60'),v(satisfy,t(simple,present,normal)),ob('the employment''s next most recent investigation',singular))</parse>
         </text>
       </attribute>
     </entity>
