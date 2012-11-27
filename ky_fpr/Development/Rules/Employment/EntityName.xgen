@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.1.60">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
       <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
@@ -48,7 +48,7 @@
     <relationship type="OneToMany" relationship-id="allemploymentslisted" reverse-relationship-id="globalsingletonfortheemployment" text="all employment's listed" reverse-text="the global singleton for the employment" source="global" target="employment" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment " ruleburst="true" concludes="p1 = p2 &amp; p3" folder="0" source-offset="37">
+    <rule id="0" name="the employment " ruleburst="true" concludes="p1 = p2 &amp; p3" folder="0" source-offset="42">
       <rule-xml>
         <conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <value>
@@ -60,7 +60,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's tag" ruleburst="true" concludes="p2" folder="0" source-offset="108">
+    <rule id="1" name="the employment's tag" ruleburst="true" concludes="p2" folder="0" source-offset="128">
       <rule-xml>
         <table-conclude attr-id="p2" entity-id="employment" scope-id="employment0">
           <row>
@@ -93,7 +93,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="warning(&quot;You Have Entered Zero Periods Of Employment.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You Have Entered Zero Periods Of Employment.\&quot;)&quot;" folder="0" source-offset="333">
+    <rule id="2" name="warning(&quot;You Have Entered Zero Periods Of Employment.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You Have Entered Zero Periods Of Employment.\&quot;)&quot;" folder="0" source-offset="406">
       <rule-xml>
         <event action="warning(&quot;You Have Entered Zero Periods Of Employment.&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -102,7 +102,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant entered zero instances of employment" ruleburst="true" concludes="b4" folder="0" source-offset="440">
+    <rule id="3" name="the claimant entered zero instances of employment" ruleburst="true" concludes="b4" folder="0" source-offset="591">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>

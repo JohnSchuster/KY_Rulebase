@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.1.60">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity name="the employment" id="employment" containment-relationship-id="allemploymentslisted" containment-parent-id="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -176,12 +176,14 @@
             </condition>
           </row>
           <otherwise>
-            <true-value />
+            <not>
+              <uncertain-value />
+            </not>
           </otherwise>
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment no-fault screen should not be displayed" ruleburst="true" concludes="not b22" folder="0" source-offset="1528">
+    <rule id="2" name="the employment no-fault screen should not be displayed" ruleburst="true" concludes="not b22" folder="0" source-offset="1532">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>

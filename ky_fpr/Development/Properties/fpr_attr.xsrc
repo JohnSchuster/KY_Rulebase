@@ -1599,6 +1599,33 @@
           <parse>s(ver('10.4.1.60'),v(complete,t(simple,present,perfect)),sb('the claimant',singular),o('the next most recent sub interview'))</parse>
         </text>
       </attribute>
+      <attribute name="p18" type="number" public-name="fpr_mre_sequence" min-value="0" validation-message="Invalid Value.">
+        <text>
+          <base>the most recent separation sequence</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="number" public-name="fpr_nmr_sequence" min-value="0" validation-message="Invalid Value.">
+        <text>
+          <base>the next most recent separation sequence</base>
+        </text>
+      </attribute>
+      <attribute name="p20" type="number" public-name="fpr_ten_sequence" min-value="0" validation-message="Invalid Value.">
+        <text>
+          <base>the ten week separation sequence</base>
+        </text>
+      </attribute>
+      <attribute name="b353" type="boolean" public-name="fpr_partA_displayed">
+        <text>
+          <base>the screen 'Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part A' has been displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display,t(simple,present,perfect)),ob('the screen ''Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part A''',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b354" type="boolean" public-name="fpr_partB_displayed">
+        <text>
+          <base>the screen 'Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part B' has been displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display,t(simple,present,perfect)),ob('the screen ''Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part B''',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employment" name="the employment" containment-parent-id="global" containment-relationship-id="allemploymentslisted">
       <attribute name="b352" type="boolean" public-name="fpr_claimant_is_at_fault">
