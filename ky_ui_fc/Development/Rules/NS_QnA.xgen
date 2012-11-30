@@ -121,12 +121,6 @@
           <parse>s(ver('10.4.1.60'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a US Citizen'))</parse>
         </text>
       </attribute>
-      <attribute name="b50" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has entered their alien registration number</base>
-          <parse>s(ver('10.4.1.60'),v(enter,t(simple,present,perfect)),sb('the claimant',singular),o('their alien registration number'))</parse>
-        </text>
-      </attribute>
       <attribute name="b51" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>this is a b claim</base>
@@ -143,6 +137,12 @@
         <text lang="en-US">
           <base>a Labor Union finds work for the claimant</base>
           <parse>s(ver('10.4.1.60'),v(find,t(simple,present,normal)),sb('a Labor Union',singular),o('work for the claimant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has provided their (valid, current) alien registration number</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('their (valid, current) alien registration number'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -491,7 +491,7 @@
           <condition>
             <or>
               <attribute attr-id="b49" />
-              <attribute attr-id="b50" />
+              <attribute attr-id="b54" />
             </or>
           </condition>
           <otherwise>
@@ -500,9 +500,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant has entered their alien registration number" ruleburst="true" concludes="b50" folder="0" source-offset="3148">
+    <rule id="13" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b54" folder="0" source-offset="3166">
       <rule-xml>
-        <conclude attr-id="b50" entity-id="global" scope-id="global0">
+        <conclude attr-id="b54" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -520,7 +520,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the direct deposit screen should be shown" ruleburst="true" concludes="b37" folder="0" source-offset="3367">
+    <rule id="14" name="the direct deposit screen should be shown" ruleburst="true" concludes="b37" folder="0" source-offset="3403">
       <rule-xml>
         <conclude attr-id="b37" entity-id="global" scope-id="global0">
           <value>
@@ -538,7 +538,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="this is a b claim" ruleburst="true" concludes="b51" folder="0" source-offset="3511">
+    <rule id="15" name="this is a b claim" ruleburst="true" concludes="b51" folder="0" source-offset="3547">
       <rule-xml>
         <conclude attr-id="b51" entity-id="global" scope-id="global0">
           <value>

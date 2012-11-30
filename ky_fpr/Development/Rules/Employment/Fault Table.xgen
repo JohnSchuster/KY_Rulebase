@@ -109,6 +109,36 @@
           <parse>s(ver('10.4.1.60'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the employer''s mandatory retirement program in which the claimant did not voluntarily participate'))</parse>
         </text>
       </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unable to return to the employment position</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unable to return to the employment position'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was unable to accommodate the claimant's diminished health capabilities</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('unable to accommodate the claimant''s diminished health capabilities'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has diminished health capabilities attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('diminished health capabilities attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the diminished health capabilities were the result of a work related injury attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the diminished health capabilities',plural),o('the result of a work related injury attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the diminished health capabilities were the result of the work environment attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the diminished health capabilities',plural),o('the result of the work environment attributable to the employment'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
   </entities>
@@ -133,7 +163,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant did not choose to end the employment" ruleburst="true" concludes="not b1" folder="0" source-offset="160">
+    <rule id="1" name="the claimant did not choose to end the employment" ruleburst="true" concludes="not b1" folder="0" source-offset="179">
       <rule-xml>
         <table-conclude attr-id="b1" entity-id="employment" scope-id="employment0">
           <row>
@@ -183,7 +213,30 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment no-fault screen should not be displayed" ruleburst="true" concludes="not b22" folder="0" source-offset="1532">
+    <rule id="2" name="the claimant's separation from the employment is payable within the SIMS precedent" ruleburst="true" concludes="b11" folder="0" source-offset="2918">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b33" />
+              <attribute attr-id="b28" />
+              <attribute attr-id="b29" />
+              <or>
+                <attribute attr-id="b34" />
+                <attribute attr-id="b35" />
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employment no-fault screen should not be displayed" ruleburst="true" concludes="not b22" folder="0" source-offset="3516">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>
