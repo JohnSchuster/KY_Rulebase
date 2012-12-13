@@ -37,18 +37,6 @@
           <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('at least one chargeable separation event in the required period of time'))</parse>
         </text>
       </attribute>
-      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the screen 'Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part A' has been displayed</base>
-          <parse>s(ver('10.4.2.18'),v(display,t(simple,present,perfect)),ob('the screen ''Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part A''',singular))</parse>
-        </text>
-      </attribute>
-      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the screen 'Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part B' has been displayed</base>
-          <parse>s(ver('10.4.2.18'),v(display,t(simple,present,perfect)),ob('the screen ''Separation From - %fpr_employment_company_name% - %fpr_date_first_earned_income% Through %fpr_date_last_earned_income% Part B''',singular))</parse>
-        </text>
-      </attribute>
       <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is at fault for the separation</base>
@@ -196,18 +184,6 @@
           <parse>s(ver('10.4.2.18'),v(reach,t(simple,present,perfect)),ob('the employment''s separation determination',singular))</parse>
         </text>
       </attribute>
-      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant chose to end the employment</base>
-          <parse>s(ver('10.4.2.18'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to end the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment protest form was returned within the 15 day period</base>
-          <parse>s(ver('10.4.2.18'),v(return,t(simple,past,normal)),ob('the employment protest form',singular),o('within the 15 day period'))</parse>
-        </text>
-      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's federal workstation identifier for the claimant</base>
@@ -267,7 +243,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's chargeability investigation is satisfied" ruleburst="true" concludes="b2" folder="0" source-offset="426">
+    <rule id="1" name="the employment's chargeability investigation is satisfied" ruleburst="true" concludes="b2" folder="0" source-offset="465">
       <rule-xml>
         <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
           <value>
@@ -284,7 +260,48 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant has completed the separation sub interviews" ruleburst="true" concludes="b8" folder="0" source-offset="723">
+    <rule id="2" name="the employment's federal workstation identifier has been collected" ruleburst="true" concludes="b4" folder="0" source-offset="632">
+      <rule-xml>
+        <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b5" />
+              <or>
+                <and>
+                  <attribute attr-id="b6" />
+                  <known>
+                    <attribute attr-id="p1" />
+                  </known>
+                </and>
+                <not>
+                  <attribute attr-id="b7" />
+                </not>
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the workstation id " ruleburst="true" concludes="p2 = InstanceValueIf(allemploymentslisted,p1,b5)" folder="0" source-offset="1163">
+      <rule-xml>
+        <conclude attr-id="p2" entity-id="global" scope-id="global0">
+          <value>
+            <instance-value-if>
+              <relationship relationship-id="allemploymentslisted" target-entity-id="employment" />
+              <attribute attr-id="p1" />
+              <attribute attr-id="b5" />
+            </instance-value-if>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant has completed the separation sub interviews" ruleburst="true" concludes="b8" folder="0" source-offset="1425">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -318,7 +335,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant has completed the most recent sub interview" ruleburst="true" concludes="b9" folder="0" source-offset="1179">
+    <rule id="5" name="the claimant has completed the most recent sub interview" ruleburst="true" concludes="b9" folder="0" source-offset="1939">
       <rule-xml>
         <conclude attr-id="b9" entity-id="global" scope-id="global0">
           <value>
@@ -339,7 +356,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employment's most recent investigation is satisfied" ruleburst="true" concludes="b12" folder="0" source-offset="1339">
+    <rule id="6" name="the employment's most recent investigation is satisfied" ruleburst="true" concludes="b12" folder="0" source-offset="2152">
       <rule-xml>
         <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
           <value>
@@ -352,14 +369,11 @@
                 <known>
                   <attribute attr-id="b24" />
                 </known>
-                <and>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b25" />
-                  </scope-for>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b26" />
-                  </scope-for>
-                </and>
+                <uncertain>
+                  <not>
+                    <attribute attr-id="b24" />
+                  </not>
+                </uncertain>
               </or>
             </and>
           </condition>
@@ -369,7 +383,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant has completed the next most recent sub interview" ruleburst="true" concludes="b10" folder="0" source-offset="1890">
+    <rule id="7" name="the claimant has completed the next most recent sub interview" ruleburst="true" concludes="b10" folder="0" source-offset="2839">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -390,7 +404,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the employment's next most recent investigation is satisfied" ruleburst="true" concludes="b15" folder="0" source-offset="2059">
+    <rule id="8" name="the employment's next most recent investigation is satisfied" ruleburst="true" concludes="b15" folder="0" source-offset="3062">
       <rule-xml>
         <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
           <value>
@@ -403,14 +417,11 @@
                 <known>
                   <attribute attr-id="b24" />
                 </known>
-                <and>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b25" />
-                  </scope-for>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b26" />
-                  </scope-for>
-                </and>
+                <uncertain>
+                  <not>
+                    <attribute attr-id="b24" />
+                  </not>
+                </uncertain>
               </or>
             </and>
           </condition>
@@ -420,30 +431,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant is not at fault for the separation" ruleburst="true" concludes="not b27" folder="0" source-offset="2620">
-      <rule-xml>
-        <conclude attr-id="b27" entity-id="global" scope-id="global0">
-          <value>
-            <false-value />
-          </value>
-          <condition>
-            <greater-than>
-              <instance-count-if>
-                <relationship relationship-id="allemploymentslisted" target-entity-id="employment" />
-                <not>
-                  <attribute attr-id="b30" />
-                </not>
-              </instance-count-if>
-              <number-value>0</number-value>
-            </greater-than>
-          </condition>
-          <otherwise>
-            <true-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="8" name="the claimant has completed the ten week sub interview" ruleburst="true" concludes="b11" folder="0" source-offset="2764">
+    <rule id="9" name="the claimant has completed the ten week sub interview" ruleburst="true" concludes="b11" folder="0" source-offset="3759">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -461,7 +449,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment's ten week investigation is satisfied" ruleburst="true" concludes="b17" folder="0" source-offset="2904">
+    <rule id="10" name="the employment's ten week investigation is satisfied" ruleburst="true" concludes="b17" folder="0" source-offset="3940">
       <rule-xml>
         <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
           <value>
@@ -476,7 +464,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant has at least one chargeable separation event in the required period of time" ruleburst="true" concludes="b19" folder="0" source-offset="3163">
+    <rule id="11" name="the claimant has at least one chargeable separation event in the required period of time" ruleburst="true" concludes="b19" folder="0" source-offset="4196">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -494,27 +482,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the employment's federal workstation identifier has been collected" ruleburst="true" concludes="b4" folder="0" source-offset="3361">
+    <rule id="12" name="the claimant is at fault for the separation" ruleburst="true" concludes="b27" folder="0" source-offset="4434">
       <rule-xml>
-        <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b27" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <and>
-              <attribute attr-id="b5" />
-              <or>
-                <and>
-                  <attribute attr-id="b6" />
-                  <known>
-                    <attribute attr-id="p1" />
-                  </known>
-                </and>
-                <not>
-                  <attribute attr-id="b7" />
-                </not>
-              </or>
-            </and>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemploymentslisted" target-entity-id="employment" />
+              <certain>
+                <attribute attr-id="b24" />
+              </certain>
+            </exists>
           </condition>
           <otherwise>
             <false-value />
@@ -522,20 +502,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the workstation id " ruleburst="true" concludes="p2 = InstanceValueIf(allemploymentslisted,p1,b5)" folder="0" source-offset="3857">
-      <rule-xml>
-        <conclude attr-id="p2" entity-id="global" scope-id="global0">
-          <value>
-            <instance-value-if>
-              <relationship relationship-id="allemploymentslisted" target-entity-id="employment" />
-              <attribute attr-id="p1" />
-              <attribute attr-id="b5" />
-            </instance-value-if>
-          </value>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="13" name="the employment is a PCCE, Potentially Chargeable Concurrent Employment" ruleburst="true" concludes="b20" folder="0" source-offset="4580">
+    <rule id="13" name="the employment is a PCCE, Potentially Chargeable Concurrent Employment" ruleburst="true" concludes="b20" folder="0" source-offset="5043">
       <rule-xml>
         <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
           <value>
@@ -553,7 +520,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the most recent employment separation date " ruleburst="true" concludes="p3 = InstanceMaximumIf(allemploymentslisted,p4,not b21)" folder="0" source-offset="4856">
+    <rule id="14" name="the most recent employment separation date " ruleburst="true" concludes="p3 = InstanceMaximumIf(allemploymentslisted,p4,not b21)" folder="0" source-offset="5336">
       <rule-xml>
         <conclude attr-id="p3" entity-id="global" scope-id="global0">
           <value>
@@ -568,7 +535,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the most recent employment date " ruleburst="true" concludes="p5 = InstanceMaximum(allemploymentslisted,p4)" folder="0" source-offset="5038">
+    <rule id="15" name="the most recent employment date " ruleburst="true" concludes="p5 = InstanceMaximum(allemploymentslisted,p4)" folder="0" source-offset="5576">
       <rule-xml>
         <conclude attr-id="p5" entity-id="global" scope-id="global0">
           <value>
@@ -580,7 +547,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the employment's difference between the ldw and fed in days " ruleburst="true" concludes="p6 = DayDifferenceExclusive(p4,p7)" folder="0" source-offset="5176">
+    <rule id="16" name="the employment's difference between the ldw and fed in days " ruleburst="true" concludes="p6 = DayDifferenceExclusive(p4,p7)" folder="0" source-offset="5762">
       <rule-xml>
         <conclude attr-id="p6" entity-id="employment" scope-id="employment0">
           <value>
@@ -594,7 +561,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the employment instance is the most recent" ruleburst="true" concludes="b22" folder="0" source-offset="5351">
+    <rule id="17" name="the employment instance is the most recent" ruleburst="true" concludes="b22" folder="0" source-offset="5974">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>
@@ -614,7 +581,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the employment instance is the most recent, separated, employment" ruleburst="true" concludes="b13" folder="0" source-offset="5490">
+    <rule id="18" name="the employment instance is the most recent, separated, employment" ruleburst="true" concludes="b13" folder="0" source-offset="6129">
       <rule-xml>
         <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
           <value>
@@ -639,7 +606,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the employment instance is the next most recent" ruleburst="true" concludes="b23" folder="0" source-offset="5797">
+    <rule id="19" name="the employment instance is the next most recent" ruleburst="true" concludes="b23" folder="0" source-offset="6462">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employment" scope-id="employment0">
           <value>
@@ -669,7 +636,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the employment instance is the next most recent, separated, employment" ruleburst="true" concludes="b16" folder="0" source-offset="6035">
+    <rule id="20" name="the employment instance is the next most recent, separated, employment" ruleburst="true" concludes="b16" folder="0" source-offset="6765">
       <rule-xml>
         <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
           <value>
@@ -689,7 +656,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the employment occurred during a period of at least ten separable weeks" ruleburst="true" concludes="b3" folder="0" source-offset="6189">
+    <rule id="21" name="the employment occurred during a period of at least ten separable weeks" ruleburst="true" concludes="b3" folder="0" source-offset="6941">
       <rule-xml>
         <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
           <value>
@@ -707,7 +674,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the employment instance is a ten week, separated, employment" ruleburst="true" concludes="b18" folder="0" source-offset="6307">
+    <rule id="22" name="the employment instance is a ten week, separated, employment" ruleburst="true" concludes="b18" folder="0" source-offset="7075">
       <rule-xml>
         <conclude attr-id="b18" entity-id="employment" scope-id="employment0">
           <value>
@@ -727,7 +694,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the employment's nominal weeks worked" ruleburst="true" concludes="p8" folder="0" source-offset="6856">
+    <rule id="23" name="the employment's nominal weeks worked" ruleburst="true" concludes="p8" folder="0" source-offset="7645">
       <rule-xml>
         <table-conclude attr-id="p8" entity-id="employment" scope-id="employment0">
           <row>
@@ -831,7 +798,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="24" name="the employment has employment chargeability and a separation determination" ruleburst="true" concludes="b5" folder="0" source-offset="8252">
+    <rule id="24" name="the employment has employment chargeability and a separation determination" ruleburst="true" concludes="b5" folder="0" source-offset="9272">
       <rule-xml>
         <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
           <value>
@@ -849,7 +816,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the employment's separation determination has been reached" ruleburst="true" concludes="b29" folder="0" source-offset="8464">
+    <rule id="25" name="the employment's separation determination has been reached" ruleburst="true" concludes="b29" folder="0" source-offset="9500">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
           <value>
@@ -874,15 +841,6 @@
           <otherwise>
             <false-value />
           </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="26" name="the employment protest form was returned within the 15 day period" ruleburst="true" concludes="b32" folder="0" source-offset="8714">
-      <rule-xml>
-        <conclude attr-id="b32" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
         </conclude>
       </rule-xml>
     </rule>

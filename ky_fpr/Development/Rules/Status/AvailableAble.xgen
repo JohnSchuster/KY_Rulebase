@@ -163,30 +163,6 @@
           <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimants schooling',singular),o('accepting suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has a mental health restriction</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a mental health restriction'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimants mental health restriction prevents them from obtaining work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimants mental health restriction',singular),o('them from obtaining work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has a physical health restriction</base>
-          <parse>s(ver('10.4.1.60'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a physical health restriction'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimants physical health restriction prevents them from obtaining work</base>
-          <parse>s(ver('10.4.1.60'),v(prevent,t(simple,present,normal)),sb('the claimants physical health restriction',singular),o('them from obtaining work'))</parse>
-        </text>
-      </attribute>
       <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a reliable means of transportation</base>
@@ -229,58 +205,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is not physically able to work" ruleburst="true" concludes="not b2" folder="0" source-offset="357" question-search="false">
-      <rule-xml>
-        <conclude attr-id="b2" entity-id="global" scope-id="global0">
-          <value>
-            <false-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b32" />
-              <attribute attr-id="b33" />
-            </and>
-          </condition>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the claimant is not mentally able to work" ruleburst="true" concludes="not b3" folder="0" source-offset="564" question-search="false">
-      <rule-xml>
-        <conclude attr-id="b3" entity-id="global" scope-id="global0">
-          <value>
-            <false-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b30" />
-              <attribute attr-id="b31" />
-            </and>
-          </condition>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the claimant is not available for suitable work" ruleburst="true" concludes="not b4" folder="0" source-offset="833">
-      <rule-xml>
-        <conclude attr-id="b4" entity-id="global" scope-id="global0">
-          <value>
-            <false-value />
-          </value>
-          <condition>
-            <or>
-              <attribute attr-id="b6" />
-              <attribute attr-id="b24" />
-              <attribute attr-id="b8" />
-              <attribute attr-id="b9" />
-              <attribute attr-id="b11" />
-            </or>
-          </condition>
-          <otherwise>
-            <true-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the claimants transportation restricts their availability" ruleburst="true" concludes="b6" folder="0" source-offset="1261">
+    <rule id="1" name="the claimants transportation restricts their availability" ruleburst="true" concludes="b6" folder="0" source-offset="1261">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -303,7 +228,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimants schooling restricts their availability" ruleburst="true" concludes="b24" folder="0" source-offset="1562">
+    <rule id="2" name="the claimants schooling restricts their availability" ruleburst="true" concludes="b24" folder="0" source-offset="1562">
       <rule-xml>
         <conclude attr-id="b24" entity-id="global" scope-id="global0">
           <value>
@@ -330,7 +255,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimants duty of dependent care restricts their availability" ruleburst="true" concludes="b8" folder="0" source-offset="1918">
+    <rule id="3" name="the claimants duty of dependent care restricts their availability" ruleburst="true" concludes="b8" folder="0" source-offset="1918">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -354,7 +279,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimants incarceration restricts their availability" ruleburst="true" concludes="b9" folder="0" source-offset="2300">
+    <rule id="4" name="the claimants incarceration restricts their availability" ruleburst="true" concludes="b9" folder="0" source-offset="2300">
       <rule-xml>
         <conclude attr-id="b9" entity-id="global" scope-id="global0">
           <value>
@@ -375,7 +300,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimants (self-employment, commission work, corporate officer) restricts their availability" ruleburst="true" concludes="b11" folder="0" source-offset="2546">
+    <rule id="5" name="the claimants (self-employment, commission work, corporate officer) restricts their availability" ruleburst="true" concludes="b11" folder="0" source-offset="2546">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
