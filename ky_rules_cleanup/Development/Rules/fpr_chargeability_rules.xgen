@@ -7,12 +7,6 @@
           <parse>s(ver('10.4.2.18'),v(relieve,t(simple,present,normal)),ob('the employer',singular),o('of charges'))</parse>
         </text>
       </attribute>
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer has filed a timely protest</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('filed a timely protest'))</parse>
-        </text>
-      </attribute>
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is the claimant's most-recent employer that employed the worker in at least ten weeks (whether or not consecutive) back to the beginning of the base period</base>
@@ -59,18 +53,6 @@
         <text lang="en-US">
           <base>the employer is a reimbursing employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a reimbursing employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer continues to provide the claimant with part-time employment without interruption to the same extent as</base>
-          <parse>s(ver('10.4.2.18'),v(continue,t(simple,present,normal)),sb('the employer',singular),o('to provide the claimant with part-time employment without interruption to the same extent as'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>provided from hire</base>
-          <parse>s(ver('10.4.2.18'),v(hire,t(simple,present,normal)),sb('provided from',plural))</parse>
         </text>
       </attribute>
       <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
@@ -121,11 +103,23 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('part-time since the date of hire'))</parse>
         </text>
       </attribute>
+      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer continues to provide the claimant with part-time employment without interruption to the same extent as provided from hire</base>
+          <parse>s(ver('10.4.2.18'),v(continue,t(simple,present,normal)),sb('the employer',singular),o('to provide the claimant with part-time employment without interruption to the same extent as provided from hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer filed a timely protest</base>
+          <parse>s(ver('10.4.2.18'),v(file,t(simple,past,normal)),sb('the employer',plural),o('a timely protest'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the employer is relieved of charges" ruleburst="true" concludes="b1" folder="0" source-offset="1034">
+    <rule id="0" name="the employer is relieved of charges" ruleburst="true" concludes="b1" folder="0" source-offset="1054">
       <rule-xml>
         <conclude attr-id="b1" entity-id="global" scope-id="global0">
           <value>
@@ -133,7 +127,7 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b2" />
+              <attribute attr-id="b22" />
               <attribute attr-id="b3" />
               <or>
                 <attribute attr-id="b4" />
@@ -147,7 +141,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employer is deemed the chargeable employer" ruleburst="true" concludes="b6" folder="0" source-offset="1531">
+    <rule id="1" name="the employer is deemed the chargeable employer" ruleburst="true" concludes="b6" folder="0" source-offset="1542">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -165,8 +159,7 @@
                 </or>
               </and>
               <and>
-                <attribute attr-id="b11" />
-                <attribute attr-id="b12" />
+                <attribute attr-id="b21" />
                 <attribute attr-id="b9" />
               </and>
             </or>
@@ -177,7 +170,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="no ruling as to chargeability is being made at this time" ruleburst="true" concludes="b13" folder="0" source-offset="2213">
+    <rule id="2" name="no ruling as to chargeability is being made at this time" ruleburst="true" concludes="b13" folder="0" source-offset="2196">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -197,7 +190,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b10" folder="0" source-offset="2557">
+    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b10" folder="0" source-offset="2539">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -212,7 +205,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b14" folder="0" source-offset="2708">
+    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b14" folder="0" source-offset="2698">
       <rule-xml>
         <conclude attr-id="b14" entity-id="global" scope-id="global0">
           <value>
@@ -230,7 +223,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b5" folder="0" source-offset="2941">
+    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b5" folder="0" source-offset="2933">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
