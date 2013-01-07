@@ -175,11 +175,59 @@
           <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant''s requested (school, training)',singular),o('the criteria established for training approval'))</parse>
         </text>
       </attribute>
+      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's request for an extended base period is denied</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s request for an extended base period',singular),o('denied'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has requested an extended base period</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,present,perfect)),sb('the claimant',singular),o('an extended base period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant previously established a claim with an extended base period for a job related injury</base>
+          <parse>s(ver('10.4.2.18'),v(establish,t(simple,past,normal)),sb('the claimant previously',plural),o('a claim with an extended base period for a job related injury'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had at least seven (7) weeks of lost wages due to a job related injury in the quarter/quarters sought to be substituted</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('at least seven (7) weeks of lost wages due to a job related injury in the quarter/quarters sought to be substituted'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had wages in the quarter/quarters to be substituted</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('wages in the quarter/quarters to be substituted'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's Unemployment Insurance benefits claim was filed in timely manner, as required by law</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s Unemployment Insurance benefits claim',singular),o('filed in timely manner, as required by law'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has received worker's compensation for the injury</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,present,perfect)),sb('the claimant',singular),o('worker''s compensation for the injury'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was eligible to receive worker's compensation for the injury</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('eligible to receive worker''s compensation for the injury'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
   <rules>
-    <rule id="0" name="the claimant is employed full-time in accordance with the employments customary work schedule" ruleburst="true" concludes="b1" folder="0" source-offset="89">
+    <rule id="0" name="the claimant is employed full-time in accordance with the employments customary work schedule" ruleburst="true" concludes="b1" folder="0" source-offset="115">
       <rule-xml>
         <conclude attr-id="b1" entity-id="global" scope-id="global0">
           <value>
@@ -202,7 +250,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is being paid regular salary during a Federal Government shutdown" ruleburst="true" concludes="b4" folder="0" source-offset="572">
+    <rule id="1" name="the claimant is being paid regular salary during a Federal Government shutdown" ruleburst="true" concludes="b4" folder="0" source-offset="598">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -221,7 +269,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is a waterway employee who is considered fully employed" ruleburst="true" concludes="b5" folder="0" source-offset="812">
+    <rule id="2" name="the claimant is a waterway employee who is considered fully employed" ruleburst="true" concludes="b5" folder="0" source-offset="838">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -239,7 +287,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b6" folder="0" source-offset="997">
+    <rule id="3" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b6" folder="0" source-offset="1023">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -261,7 +309,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant is ineligible to establish a new benefit year in accordance with KRS 341.355" ruleburst="true" concludes="b16" folder="0" source-offset="1338">
+    <rule id="4" name="the claimant is ineligible to establish a new benefit year in accordance with KRS 341.355" ruleburst="true" concludes="b16" folder="0" source-offset="1364">
       <rule-xml>
         <conclude attr-id="b16" entity-id="global" scope-id="global0">
           <value>
@@ -286,7 +334,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant has exhausted their EUC entitlement" ruleburst="true" concludes="b20" folder="0" source-offset="1800">
+    <rule id="5" name="the claimant has exhausted their EUC entitlement" ruleburst="true" concludes="b20" folder="0" source-offset="1826">
       <rule-xml>
         <conclude attr-id="b20" entity-id="global" scope-id="global0">
           <value>
@@ -304,7 +352,44 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant's request to cancel the claim is denied" ruleburst="true" concludes="b23" folder="0" source-offset="2648">
+    <rule id="6" name="the claimant's request for an extended base period is denied" ruleburst="true" concludes="b30" folder="0" source-offset="2008">
+      <rule-xml>
+        <conclude attr-id="b30" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b31" />
+              <or>
+                <attribute attr-id="b32" />
+                <not>
+                  <attribute attr-id="b33" />
+                </not>
+                <not>
+                  <attribute attr-id="b34" />
+                </not>
+                <not>
+                  <attribute attr-id="b35" />
+                </not>
+                <or>
+                  <not>
+                    <attribute attr-id="b36" />
+                  </not>
+                  <not>
+                    <attribute attr-id="b37" />
+                  </not>
+                </or>
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the claimant's request to cancel the claim is denied" ruleburst="true" concludes="b23" folder="0" source-offset="2923">
       <rule-xml>
         <conclude attr-id="b23" entity-id="global" scope-id="global0">
           <value>
@@ -322,7 +407,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant's request for approved training is denied" ruleburst="true" concludes="b26" folder="0" source-offset="2789">
+    <rule id="8" name="the claimant's request for approved training is denied" ruleburst="true" concludes="b26" folder="0" source-offset="3064">
       <rule-xml>
         <conclude attr-id="b26" entity-id="global" scope-id="global0">
           <value>
