@@ -1,0 +1,123 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is suitable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('suitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's situation permits them some reasonable selection between job offers</base>
+          <parse>s(ver('10.4.2.18'),v(permit,t(simple,present,normal)),sb('the claimant''s situation',singular),o('them some reasonable selection between job offers'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the work involved a degree of risk to the claimant's health</base>
+          <parse>s(ver('10.4.2.18'),v(involve,t(simple,past,normal)),sb('the work',plural),o('a degree of risk to the claimant''s health'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the degree of risk involved the claimant's (health, safety, morals)</base>
+          <parse>s(ver('10.4.2.18'),v(involve,t(simple,past,normal)),sb('the degree of risk',plural),o('the claimant''s (health, safety, morals)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's physical fitness is inadequate to perform the work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s physical fitness',singular),o('inadequate to perform the work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's prior training is inapplicable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s prior training',singular),o('inapplicable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's experience is comparable with the work offered</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s experience',singular),o('comparable with the work offered'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's prior earnings are comparable with the work offered</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s prior earnings',plural),o('comparable with the work offered'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the secretary has considered another pertinent condition</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,perfect)),sb('the secretary',singular),o('another pertinent condition'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the position offered is vacant due directly to a strike, lock-out or other labor dispute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the position offered',singular),o('vacant due directly to a strike, lock-out or other labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the (wages, hours, other conditions) are substantially less favorable than those prevailing for similar work in the locality</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the (wages, hours, other conditions)',plural),o('substantially less favorable than those prevailing for similar work in the locality'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant would be required to join a company union or to resign or refrain from joining any bona fide labor organization</base>
+          <parse>s(ver('10.4.2.18'),v(require+would,t(simple,modal,normal)),ob('the claimant',singular),o('to join a company union or to resign or refrain from joining any bona fide labor organization'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's acceptance of such work would be prejudicial to the continuance of an established employer-employee relationship to which the claimant is a party</base>
+          <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,normal)),sb('the claimant''s acceptance of such work',singular),o('prejudicial to the continuance of an established employer-employee relationship to which the claimant is a party'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the employment is not suitable" ruleburst="true" concludes="not b1" folder="0" source-offset="255">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <attribute attr-id="b2" />
+              <or>
+                <attribute attr-id="b3" />
+                <attribute attr-id="b4" />
+                <attribute attr-id="b5" />
+                <attribute attr-id="b6" />
+                <not>
+                  <attribute attr-id="b7" />
+                </not>
+                <not>
+                  <attribute attr-id="b8" />
+                </not>
+                <attribute attr-id="b9" />
+              </or>
+              <or>
+                <attribute attr-id="b10" />
+                <attribute attr-id="b11" />
+                <attribute attr-id="b12" />
+                <attribute attr-id="b13" />
+              </or>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
