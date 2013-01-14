@@ -1,0 +1,103 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment dates are valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment dates',plural),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment first day worked date is valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment first day worked date',singular),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment last day worked date is valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment last day worked date',singular),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the last day worked date is greater than or equal to the base period start date</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the last day worked date',singular),o('greater than or equal to the base period start date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the first day worked date is less than or equal to the base period end date</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the first day worked date',singular),o('less than or equal to the base period end date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the first day worked date</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the employment dates are valid" ruleburst="true" concludes="b1" folder="0" source-offset="49">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b2" />
+              <attribute attr-id="b3" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employment last day worked date is valid" ruleburst="true" concludes="b3" folder="0" source-offset="191">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b4" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment first day worked date is valid" ruleburst="true" concludes="b2" folder="0" source-offset="327">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b5" />
+              <less-than-equals>
+                <attribute attr-id="p2" />
+                <attribute attr-id="p1" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
