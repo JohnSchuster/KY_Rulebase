@@ -19,26 +19,22 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment last day worked date',singular),o('valid'))</parse>
         </text>
       </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the last day worked date is greater than or equal to the base period start date</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the last day worked date',singular),o('greater than or equal to the base period start date'))</parse>
+          <base>the last day worked date is on or later than the base period start date</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the last day worked date',singular),o('on or later than the base period start date'))</parse>
         </text>
       </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the first day worked date is less than or equal to the base period end date</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the first day worked date',singular),o('less than or equal to the base period end date'))</parse>
+          <base>the first day worked date is on or earlier than the base period end date</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the first day worked date',singular),o('on or earlier than the base period end date'))</parse>
         </text>
       </attribute>
-      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the last day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the first day worked date</base>
+          <base>the first day worked date is on or earlier than the last day worked date</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the first day worked date',singular),o('on or earlier than the last day worked date'))</parse>
         </text>
       </attribute>
     </entity>
@@ -70,7 +66,7 @@
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b4" />
+            <attribute attr-id="b6" />
           </condition>
           <otherwise>
             <false-value />
@@ -78,7 +74,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment first day worked date is valid" ruleburst="true" concludes="b2" folder="0" source-offset="327">
+    <rule id="2" name="the employment first day worked date is valid" ruleburst="true" concludes="b2" folder="0" source-offset="319">
       <rule-xml>
         <conclude attr-id="b2" entity-id="global" scope-id="global0">
           <value>
@@ -86,11 +82,8 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b5" />
-              <less-than-equals>
-                <attribute attr-id="p2" />
-                <attribute attr-id="p1" />
-              </less-than-equals>
+              <attribute attr-id="b7" />
+              <attribute attr-id="b8" />
             </and>
           </condition>
           <otherwise>
