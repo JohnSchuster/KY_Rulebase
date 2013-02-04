@@ -1,0 +1,836 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="p4" type="date" public-name="g01_base_period_start_date">
+        <text>
+          <base>the base period start date</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" public-name="g01_base_period_end_date">
+        <text>
+          <base>the base period end date</base>
+        </text>
+      </attribute>
+      <attribute name="p11" type="text" public-name="g01_base_scenario_id">
+        <text>
+          <base>the scenario id</base>
+        </text>
+      </attribute>
+      <attribute name="p12" type="text" public-name="g01_mre_pattern_code">
+        <text>
+          <base>the mre pattern code</base>
+        </text>
+      </attribute>
+      <attribute name="p13" type="text" public-name="g01_nmre_pattern_code">
+        <text>
+          <base>the nmre pattern code</base>
+        </text>
+      </attribute>
+      <attribute name="p14" type="text" public-name="g01_bptw_pattern_code">
+        <text>
+          <base>the bptw pattern code</base>
+        </text>
+      </attribute>
+      <attribute name="p17" type="date" public-name="mre_last_day_worked">
+        <text>
+          <base>the most recent employment's last day worked</base>
+        </text>
+      </attribute>
+      <attribute name="p18" type="date" public-name="g01_most_recent_ldw">
+        <text>
+          <base>the most recent last day worked of any employment</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="date" public-name="g01_effective_date">
+        <text>
+          <base>the effective date</base>
+        </text>
+      </attribute>
+      <attribute name="p21" type="date" public-name="mr_byed">
+        <text>
+          <base>the most recent benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p22" type="date" public-name="g01_asserted_override_date">
+        <text>
+          <base>the asserted processing override date</base>
+        </text>
+      </attribute>
+      <attribute name="p23" type="date" public-name="g01_filing_date">
+        <text>
+          <base>the filing date</base>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" public-name="no_current_benefit_year">
+        <text>
+          <base>the claimant does not have a current benefit year</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p24" type="number" public-name="filing_year">
+        <text>
+          <base>the filing year</base>
+        </text>
+      </attribute>
+      <attribute name="p26" type="date" public-name="jan_first_week_date">
+        <text>
+          <base>the january quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p27" type="date" public-name="april_first_week_date">
+        <text>
+          <base>the april quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p28" type="date" public-name="july_first_week_date">
+        <text>
+          <base>the july quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p29" type="date" public-name="october_first_week_date">
+        <text>
+          <base>the october quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p30" type="date" public-name="jan_qtr_start_date">
+        <text>
+          <base>the january quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p31" type="date" public-name="apr_qtr_start_date">
+        <text>
+          <base>the april quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p32" type="date" public-name="oct_qtr_start_date">
+        <text>
+          <base>the october quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p33" type="date" public-name="jul_qtr_start_date">
+        <text>
+          <base>the july quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p34" type="date" public-name="jul_qtr_end_date">
+        <text>
+          <base>the july quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p35" type="date" public-name="jan_qtr_end_date">
+        <text>
+          <base>the january quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p36" type="date" public-name="apr_qtr_end_date">
+        <text>
+          <base>the april quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p37" type="date" public-name="oct_qtr_end_date">
+        <text>
+          <base>the october quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" public-name="oct_qtr_filing_fw">
+        <text>
+          <base>the filing is within the first week of the october quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the october quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b18" type="boolean" public-name="apr_qtr_filing_fw">
+        <text>
+          <base>the filing is within the first week of the april quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the april quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" public-name="jan_qtr_filing_fw">
+        <text>
+          <base>the filing is within the first week of the january quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the january quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" public-name="jul_qtr_filing_fw">
+        <text>
+          <base>the filing is within the first week of the july quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the july quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" public-name="claimant_has_curr_benefit_year">
+        <text>
+          <base>the claimant has a current benefit year</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p38" type="date" public-name="benefit_year_end_date">
+        <text>
+          <base>the benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="b23" type="boolean" public-name="claimant_trans_restricts_avail">
+        <text>
+          <base>the claimant's transportation restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b24" type="boolean" public-name="claimants_sch_tr_restricts_avail">
+        <text>
+          <base>the claimant's (school, training) restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b25" type="boolean" public-name="claimants_ddc_restricts_avail">
+        <text>
+          <base>the claimant's duty of dependent care restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" public-name="claimant_incarceration_restricts">
+        <text>
+          <base>the claimant's incarceration restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" public-name="claimant_corp_restricts_avail">
+        <text>
+          <base>the claimant's (self-employment, corporate officer position, commission work) restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" public-name="claimant_alien_status_restricts">
+        <text>
+          <base>the claimant's alien status restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s alien status',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" public-name="claimant_is_an_alien">
+        <text>
+          <base>the claimant is an alien</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" public-name="claimant_auth_work_in_us">
+        <text>
+          <base>the claimant is authorized to work in the United States</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('authorized to work in the United States'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" public-name="fpr_claimant_is_citizen">
+        <text>
+          <base>the claimant is a US Citizen</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a US Citizen'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" public-name="fpr_claimant_has_alien_nbr">
+        <text>
+          <base>the claimant has provided their (valid, current) alien registration number</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('their (valid, current) alien registration number'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" public-name="fpr_alien_admitted_work">
+        <text>
+          <base>the claimant was lawfully admitted for residence at the time work was performed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('lawfully admitted for residence at the time work was performed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" public-name="fpr_alien_present_working">
+        <text>
+          <base>the claimant was lawfully present for the purposes of performing work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('lawfully present for the purposes of performing work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" public-name="fpr_alien_under_color">
+        <text>
+          <base>the claimant was residing in the United States under the color of law at the time work was performed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('residing in the United States under the color of law at the time work was performed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" public-name="fpr_alien_bunch_of_numbers">
+        <text>
+          <base>the claimant was lawfully present in the United States as a result of the provisions of (INA 203(a)(7), INA 212(d)(5)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('lawfully present in the United States as a result of the provisions of (INA 203(a)(7), INA 212(d)(5)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" public-name="fpr_claimant_has_alt_trans">
+        <text>
+          <base>the claimant has an alternative means of transportation</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an alternative means of transportation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" public-name="fpr_claimant_trans_no_good">
+        <text>
+          <base>the claimant's transportation prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" public-name="fpr_claimants_trans_no_work">
+        <text>
+          <base>the claimant's transportation prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" public-name="fpr_claimant_is_in_school">
+        <text>
+          <base>the claimant is enrolled in a (school, training) program</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('enrolled in a (school, training) program'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" public-name="fpr_claimant_is_apprentice">
+        <text>
+          <base>the claimant is in an apprentice program</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in an apprentice program'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b42" type="boolean" public-name="fpr_claimants_school_is_ok">
+        <text>
+          <base>the claimant's (school, training) has been approved by this Division</base>
+          <parse>s(ver('10.4.2.18'),v(approve,t(simple,present,perfect)),ob('the claimant''s (school, training)',singular),o('by this Division'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" public-name="fpr_claimant_gives_up_school">
+        <text>
+          <base>the claimant is willing to give up their school or training in favor of suitable employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to give up their school or training in favor of suitable employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" public-name="fpr_claimant_school_no_look">
+        <text>
+          <base>the claimant's (school, training) prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" public-name="fpr_claimant_school_no_work">
+        <text>
+          <base>the claimant's (school, training) prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" public-name="fpr_claimant_cares">
+        <text>
+          <base>the claimant is responsible for the care of (child, elder, spouse, family member)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('responsible for the care of (child, elder, spouse, family member)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" public-name="fpr_claimant_cares_alternatly">
+        <text>
+          <base>the claimant has an alternative means of dependent care</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an alternative means of dependent care'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" public-name="fpr_claimant_care_no_look">
+        <text>
+          <base>the claimant's duty of dependent care prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" public-name="fpr_claimant_care_no_work">
+        <text>
+          <base>the claimant's duty of dependent care prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" public-name="fpr_claimant_in_jail">
+        <text>
+          <base>the claimant is incarcerated</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('incarcerated'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" public-name="fpr_claimant_jail_no_look">
+        <text>
+          <base>the claimant's incarceration prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b52" type="boolean" public-name="fpr_claimant_jail_no_work">
+        <text>
+          <base>the claimant's incarceration prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" public-name="fpr_claimant_is_self_employed">
+        <text>
+          <base>the claimant is self-employed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('self-employed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b54" type="boolean" public-name="fpr_claimant_on_commission">
+        <text>
+          <base>the claimant is employed on a commission basis</base>
+          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('on a commission basis'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" public-name="fpr_claimant_is_closely_held">
+        <text>
+          <base>the claimant is a corporate officer in a closely-held corporation</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer in a closely-held corporation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b56" type="boolean" public-name="fpr_claimant_secopcw_no_look">
+        <text>
+          <base>the claimant's (self-employment, corporate officer position, commission work) prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" public-name="fpr_claimant_secopcw_no_work">
+        <text>
+          <base>the claimant's (self-employment, corporate officer position, commission work) prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" public-name="fpr_claimant_length_considered">
+        <text>
+          <base>the claimant's length of unemployment has been considered</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,perfect)),ob('the claimant''s length of unemployment',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b59" type="boolean" public-name="fpr_claimant_prospects_ok">
+        <text>
+          <base>the prospects of securing local work in the claimant's customary occupation is reasonable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the prospects of securing local work in the claimant''s customary occupation',singular),o('reasonable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b60" type="boolean" public-name="fpr_claimant_reasonable_drive">
+        <text>
+          <base>the distance to available work from the claimant's residence is within a reasonable commute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the distance to available work from the claimant''s residence',singular),o('within a reasonable commute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b61" type="boolean" public-name="fpr_claimant_risky_healty">
+        <text>
+          <base>the work involved a degree of risk to the claimant's health</base>
+          <parse>s(ver('10.4.2.18'),v(involve,t(simple,past,normal)),sb('the work',plural),o('a degree of risk to the claimant''s health'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b62" type="boolean" public-name="fpr_claimant_risk_involved">
+        <text>
+          <base>the degree of risk involved the claimant's (health, safety, morals)</base>
+          <parse>s(ver('10.4.2.18'),v(involve,t(simple,past,normal)),sb('the degree of risk',plural),o('the claimant''s (health, safety, morals)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b63" type="boolean" public-name="fpr_claimant_not_fit">
+        <text>
+          <base>the claimant's physical fitness is inadequate to perform the work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s physical fitness',singular),o('inadequate to perform the work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b64" type="boolean" public-name="fpr_claimant_training_no_good">
+        <text>
+          <base>the claimant's prior training is inapplicable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s prior training',singular),o('inapplicable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b65" type="boolean" public-name="fpr_claimant_no_experience">
+        <text>
+          <base>the claimant's experience is not comparable with the work offered</base>
+          <parse>s(ver('10.4.2.18'),v(experience,t(simple,present,normal)),sb('the claimant''s',plural),o('is not comparable with the work offered'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b66" type="boolean" public-name="fpr_claimant_dollars_ok">
+        <text>
+          <base>the claimant's prior earnings are comparable with the work offered</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s prior earnings',plural),o('comparable with the work offered'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b67" type="boolean" public-name="fpr_claimant_secretary_condition">
+        <text>
+          <base>the secretary has considered another pertinent condition</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,perfect)),sb('the secretary',singular),o('another pertinent condition'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b68" type="boolean" public-name="fpr_claimant_vacant_lock_out">
+        <text>
+          <base>the position offered is vacant due directly to a strike, lock-out or other labor dispute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the position offered',singular),o('vacant due directly to a strike, lock-out or other labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b69" type="boolean" public-name="fpr_claimant_wages_no_good">
+        <text>
+          <base>the (wages, hours, other conditions) are substantially less favorable than those prevailing for similar work in the locality</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the (wages, hours, other conditions)',plural),o('substantially less favorable than those prevailing for similar work in the locality'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b70" type="boolean" public-name="fpr_claimant_no_real_union">
+        <text>
+          <base>the claimant would be required to join a company union or to resign or refrain from joining any bona fide labor organization</base>
+          <parse>s(ver('10.4.2.18'),v(require+would,t(simple,modal,normal)),ob('the claimant',singular),o('to join a company union or to resign or refrain from joining any bona fide labor organization'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b71" type="boolean" public-name="fpr_claimant_prejudicial">
+        <text>
+          <base>the claimant's acceptance of such work would be prejudicial to the continuance of an established employer-employee relationship to which the claimant is a party</base>
+          <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,normal)),sb('the claimant''s acceptance of such work',singular),o('prejudicial to the continuance of an established employer-employee relationship to which the claimant is a party'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b76" type="boolean" public-name="g01_gbl_claimant_is_payable">
+        <text>
+          <base>the claimant is payable (qualifying)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('payable (qualifying)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b77" type="boolean" public-name="g01_gbl_status_eligible">
+        <text>
+          <base>the claimant's status has met the conditions of eligibility</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,perfect)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b78" type="boolean" public-name="fpr_override_date_defined">
+        <text>
+          <base>the asserted processing override date is defined</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the asserted processing override date',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b81" type="boolean" public-name="g01_inv_sep_complete">
+        <text>
+          <base>the necessary investigation of separation's is complete</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the necessary investigation of separation''s',singular),o('complete'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p43" type="date" public-name="g01_mre_ldw">
+        <text>
+          <base>the mre last day worked</base>
+        </text>
+      </attribute>
+      <attribute name="b91" type="boolean" public-name="g01_mre_was_twe">
+        <text>
+          <base>the most recent employment was for a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the most recent employment',singular),o('for a ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b92" type="boolean" public-name="g01_nmre_was_twe">
+        <text>
+          <base>the next most recent employment was for a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the next most recent employment',singular),o('for a ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b93" type="boolean" public-name="g01_interviews_sufficient">
+        <text>
+          <base>the candidate investigation interviews are sufficient</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the candidate investigation interviews',plural),o('sufficient'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b95" type="boolean" public-name="claimant_receiving_pernsion">
+        <text>
+          <base>the claimant is receiving (received) a non-deductible pension</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) a non-deductible pension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b96" type="boolean" public-name="claimant_receive_nd_vac_pay">
+        <text>
+          <base>the claimant is receiving (received) non-deductible vacation pay</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) non-deductible vacation pay'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b97" type="boolean" public-name="claimant_receives_sev_pay">
+        <text>
+          <base>the claimant is receiving (received) severance pay</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) severance pay'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b98" type="boolean" public-name="claimant_remuneration_in_lieu">
+        <text>
+          <base>the claimant is receiving (received) remuneration in lieu of notice</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) remuneration in lieu of notice'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p44" type="date" public-name="g01_nmre_ldw">
+        <text>
+          <base>the nmre last day worked</base>
+        </text>
+      </attribute>
+      <attribute name="p46" type="date" public-name="g01_max_nmre_ldw">
+        <text>
+          <base>the maximum nmre ldw</base>
+        </text>
+      </attribute>
+      <attribute name="p47" type="date" public-name="g01_max_bptw_ldw">
+        <text>
+          <base>the maximum bptw ldw</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
+      <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
+        <text>
+          <base>the employer</base>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" public-name="g01_ten_week_employer">
+        <text>
+          <base>the employer is a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" public-name="g01_mre_employer">
+        <text>
+          <base>the employer is the most recent employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" public-name="g01_nmre_employer">
+        <text>
+          <base>the employer is the next most recent employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the next most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" public-name="g01_na_twe_employer">
+        <text>
+          <base>the employer is a non adjudicated ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a non adjudicated ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p16" type="number" public-name="g01_employer_num_separate_weeks">
+        <text>
+          <base>the employer's total number of separable weeks worked</base>
+        </text>
+      </attribute>
+      <attribute name="b74" type="boolean" public-name="emp_claimant_prevent_convey">
+        <text>
+          <base>the claimant prevented the employer from conveying the details of the job</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,past,normal)),sb('the claimant',plural),o('the employer from conveying the details of the job'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b75" type="boolean" public-name="fpr_emp_bona_fide_offer">
+        <text>
+          <base>the claimant was given a bona fide offer of work by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a bona fide offer of work by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b79" type="boolean" public-name="g01_emp_current_employer">
+        <text>
+          <base>the claimant currently works for the employer</base>
+          <parse>s(ver('10.4.2.18'),v(work,t(simple,present,normal)),sb('the claimant currently',singular),o('for the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p39" type="text" public-name="g01_emp_categorization_code">
+        <text>
+          <base>the employer's categorization code</base>
+        </text>
+      </attribute>
+      <attribute name="b82" type="boolean" public-name="emp_is_reimbursing">
+        <text>
+          <base>the employer is reimbursing</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('reimbursing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b83" type="boolean" public-name="emp_assert_reimbursing">
+        <text>
+          <base>the employer was asserted to be reimbursing</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employer',singular),o('asserted to be reimbursing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b85" type="boolean" public-name="g01_emp_timely_protest">
+        <text>
+          <base>the employer has a timely protest</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('a timely protest'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b86" type="boolean" public-name="emp_potentially_chargeable">
+        <text>
+          <base>the employer is potentially chargeable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('potentially chargeable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b94" type="boolean" public-name="emp_claimant_refused_work">
+        <text>
+          <base>the claimant has refused an offer of suitable work with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('an offer of suitable work with the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b101" type="boolean" public-name="g01_emp_cont_pt_empt_from_hire">
+        <text>
+          <base>the employer continues to provide you with part-time employment without interruption to the same extent as was provided from hire</base>
+          <parse>s(ver('10.4.2.18'),v(continue,t(simple,present,normal)),sb('the employer',singular),o('to provide you with part-time employment without interruption to the same extent as was provided from hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b102" type="boolean" public-name="emp_vacation_pay">
+        <text>
+          <base>you are receiving (received) deductible vacation pay from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving (received) deductible vacation pay from the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b104" type="boolean" public-name="emp_non_deduct_pension">
+        <text>
+          <base>you are receiving (received) a non-deductible pension from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving (received) a non-deductible pension from the employer'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="employment" name="the employment" identifying-attribute-name="employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
+      <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="employment_instance_id">
+        <text>
+          <base>the employment</base>
+        </text>
+      </attribute>
+      <attribute name="b1" type="boolean" public-name="employment_suitable">
+        <text>
+          <base>the employment is suitable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('suitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" public-name="g01_empt_active_within_ip">
+        <text>
+          <base>the employment was active within the investigative period</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" public-name="last_day_worked_valid">
+        <text>
+          <base>the employment's last day worked is valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s last day worked',singular),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" public-name="first_day_worked_valid">
+        <text>
+          <base>the employment's first day worked is valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s first day worked',singular),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p6" type="date" public-name="g01_last_day_worked_date">
+        <text>
+          <base>the employment's last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p7" type="date" public-name="g01_first_day_worked_date">
+        <text>
+          <base>the employment's first day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" public-name="g01_most_recent_employment">
+        <text>
+          <base>the employment is the most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" public-name="g01_next_most_recent">
+        <text>
+          <base>the employment is the next most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" public-name="g01_most_recent_na_twe">
+        <text>
+          <base>the employment is the most recent non adjudicated ten week employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent non adjudicated ten week employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p9" type="text" public-name="pattern_code">
+        <text>
+          <base>the employment's pattern code</base>
+        </text>
+      </attribute>
+      <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
+        <text>
+          <base>the employment's net number of discrete weeks worked within the base period</base>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" public-name="g01_employment_is_current">
+        <text>
+          <base>the employment is current</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" public-name="g01_nmr_sep_employment">
+        <text>
+          <base>the employment is the next most recent, separated, employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent, separated, employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p20" type="number" public-name="g01_empt_weeks_not_worked">
+        <text>
+          <base>the employment's number of discrete weeks not worked by the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" public-name="g01_empt_mr_sep_empt">
+        <text>
+          <base>the employment is the most recent, separated, employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent, separated, employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b73" type="boolean" public-name="empt_claimant_sep_fault">
+        <text>
+          <base>the claimant is at fault for the separation from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p40" type="text" public-name="empt_employer_name">
+        <text>
+          <base>the employment's employer name</base>
+        </text>
+      </attribute>
+      <attribute name="b80" type="boolean" public-name="g01_empt_mr_na_sep_empt">
+        <text>
+          <base>the employment is the most recent non adjudicated, separated, ten week employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent non adjudicated, separated, ten week employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p42" type="text" public-name="g01_emp_separation_det">
+        <text>
+          <base>the employment's separation determination</base>
+        </text>
+      </attribute>
+      <attribute name="b84" type="boolean" public-name="g01_empt_has_special_factor_code">
+        <text>
+          <base>the employment has a special factor code</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('a special factor code'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b87" type="boolean" public-name="work_dates_valid">
+        <text>
+          <base>the employment's work dates are valid</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s work dates',plural),o('valid'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b88" type="boolean" public-name="g01_work_dates_range">
+        <text>
+          <base>the employment's work dates are within an acceptable range</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s work dates',plural),o('within an acceptable range'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b89" type="boolean" public-name="g01_worked_dates_seq">
+        <text>
+          <base>the employment's worked dates are sequential</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s worked dates',plural),o('sequential'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b90" type="boolean" public-name="g01_empt_is_rce">
+        <text>
+          <base>the employment is a recent concurrent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b99" type="boolean" public-name="g01_empt_wages_from_hire">
+        <text>
+          <base>the employment's wages were provided to the claimant without interruption since the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the employment''s wages',plural),o('to the claimant without interruption since the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b100" type="boolean" public-name="empt_pt_from_date_of_hire">
+        <text>
+          <base>the employment was part-time since the date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('part-time since the date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b103" type="boolean" public-name="g01_empt_ongoing_vaca_pay">
+        <text>
+          <base>the vacation pay was received while the employment was ongoing with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),ob('the vacation pay',singular),o('while the employment was ongoing with the employer'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="global_cont_employer" reverse-public-id="employer_cby_global" />
+    <relationship source="employer" target="employment" text="all employer instances of employment" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" reverse-text="employment to employer instance" type="OneToMany" is-computed="false" is-containment="true" public-id="employer_cont_employment" reverse-public-id="employment_cby_employer" />
+    <relationship source="global" target="employment" is-containment="false" public-id="global_inf_employment" reverse-public-id="employment_inf_global" text="all inferred instances of the employment" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" reverse-text="each employment to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="global2candidatesep" reverse-public-id="candidatesep2global" text="all candidate separation interview employments" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" reverse-text="each candidate separation to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
+  </relationships>
+  <rules />
+  <interactive-items>
+    <folders />
+    <screens />
+    <documents />
+  </interactive-items>
+  <rule-folders />
+</root>
