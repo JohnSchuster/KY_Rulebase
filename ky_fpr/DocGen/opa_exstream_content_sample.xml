@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!-- 
+	Content Model:  Does not transfer templates, styles, fonts, etc.  Just the Facts.  	
+
+	The Document id, Section Id and Attribute Id's require mapped syntax and share semantics (common meaning) between OPA and Exstream.
+	This is minimalist, the schema may need to be extended / adapted as requirements surface
+	I am not necessarily suggesting that Siebel and Exstream exchange messages in this exact xml form, 
+		but rather describing the necessary logical structures and elements required.
+	
+	From the OPA system interface perspective, once any Case's message data has been commited to the database (or Siebel)  
+	in the agreed logical representation, the interface requirements are satisfied.
+
+	Stephen Doody: xRulz for Hp Exstream
+
+	-->
+<!-- Example of a populated xml message document; for design discussion -->
+<opa_exstream> <!-- root element in each message, may contain one or more cases -->
+	<case id="uuid_123_abc"> <!-- the case, for use by Siebel and Exstream logging, etc. -->
+		<!-- the document id uniquely identifies the document template to be instantiated by exstream -->
+		<!-- user_edit is a boolean Y|N, Y indicates the document should be held available for a manual edit, prior to transport -->
+		<document id="Template1" user_edit="N">
+			<!-- transport_protocol omitted if default assumed (usps) -->
+			<!-- opa (or user) selected method of delivery and provides transport details, email, etc -->
+			<!-- method(email, sms, none, ...) target(email_address, phone_number) smscarrier(att, sprint, verizon, ...) -->
+			<transport_protocol method="usps" target="" smscarrier="" />
+			<!-- section is a the container element for attribute name, value, type elements -->
+			<!-- if there are no merged values, this element may be omitted and the default content assumed for standard template sections -->
+			<section id="claimant_address">
+				<attribute exstream_name="addr1" opa_value="123 somewhere st" opa_type="text"/>
+				<attribute exstream_name="zipplus4" opa_value="23456-1234" opa_type="text"/>
+				<!-- snip -->
+			</section>
+			<section id="employer_address">
+				<attribute exstream_name="addr1" opa_value="123 somewhere st" opa_type="text"/>
+				<attribute exstream_name="zipplus4" opa_value="34567-1234" opa_type="text"/>
+				<!-- snip -->
+			</section>
+			<section id="std_para1">
+				<attribute exstream_name="response_deadline" opa_value="2012-11-17" opa_type="isodate"/>
+				<attribute exstream_name="response_phone" opa_value="123-456-7890" opa_type="text"/>
+				<!-- snip -->
+			</section>
+			<!-- referencing an optional paragraph id causes the content to be included in the document at it's default location -->
+			<section id="op_para6">
+				<!-- snip -->
+			</section>
+			<!-- optionally, attribute values may be included for merge -->
+			<section id="op_para7">
+				<attribute exstream_name="amount_due" opa_value="1234.56" opa_type="usd"/>
+				<attribute exstream_name="minimum_payment" opa_value="222.33" opa_type="usd"/>
+				<!-- snip -->
+			</section>
+		</document>
+	</case>
+</opa_exstream>
+
+

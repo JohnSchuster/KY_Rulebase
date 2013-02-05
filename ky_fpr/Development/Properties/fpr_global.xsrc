@@ -547,6 +547,30 @@
           <base>the maximum bptw ldw</base>
         </text>
       </attribute>
+      <attribute name="b105" type="boolean" public-name="claimant_nod">
+        <text>
+          <base>the claimant should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the claimant',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b106" type="boolean" public-name="mre_nod">
+        <text>
+          <base>the mre should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b107" type="boolean" public-name="nmre_nod">
+        <text>
+          <base>the nmr should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the nmr',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b108" type="boolean" public-name="bptw_nod">
+        <text>
+          <base>the bptw should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the bptw',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -817,6 +841,23 @@
         </text>
       </attribute>
     </entity>
+    <entity id="document" name="the document" identifying-attribute-name="the_document" identifying-attribute-text="the document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global" public-id="inferred_document">
+      <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_document">
+        <text>
+          <base>the document</base>
+        </text>
+      </attribute>
+      <attribute name="p49" type="text" public-name="doc_map_code">
+        <text>
+          <base>the document's map code</base>
+        </text>
+      </attribute>
+      <attribute name="p50" type="text" public-name="doc_template_code">
+        <text>
+          <base>the document's template code</base>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
     <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="global_cont_employer" reverse-public-id="employer_cby_global" />
@@ -825,6 +866,8 @@
     <relationship source="global" target="employment" is-containment="false" public-id="global2candidatesep" reverse-public-id="candidatesep2global" text="all candidate separation interview employments" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" reverse-text="each candidate separation to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="document" text="all instances of the document" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" reverse-text="each document to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
+    <relationship source="global" target="document" is-containment="false" public-id="inferreddocument" reverse-public-id="documentinferred" text="any inferred document" relationship-id="anyinferreddocument" reverse-relationship-id="documentsinferred" reverse-text="documents inferred" type="OneToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
