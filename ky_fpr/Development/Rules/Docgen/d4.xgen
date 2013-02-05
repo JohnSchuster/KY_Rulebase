@@ -15,17 +15,12 @@
       </attribute>
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the nmr should receive a notice of determination</base>
-          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the nmr',plural),o('a notice of determination'))</parse>
+          <base>the bptw should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the bptw',plural),o('a notice of determination'))</parse>
         </text>
       </attribute>
     </entity>
     <entity name="the document" id="document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global">
-      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the document's map code</base>
-        </text>
-      </attribute>
       <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the document's template code</base>
@@ -36,6 +31,11 @@
           <base>the document</base>
         </text>
       </attribute>
+      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the document's section id</base>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
@@ -43,7 +43,7 @@
     <relationship type="OneToMany" relationship-id="anyinferreddocument" reverse-relationship-id="documentsinferred" text="any inferred document" reverse-text="documents inferred" source="global" target="document" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule id="0" name="any inferred document" ruleburst="true" concludes="InferInstance(anyinferreddocument)" folder="0" source-offset="1279">
+    <rule id="0" name="any inferred document" ruleburst="true" concludes="InferInstance(anyinferreddocument)" folder="0" source-offset="468">
       <rule-xml>
         <table-conclude-instance relationship-id="anyinferreddocument" source="global" source-scope-id="global0">
           <row>
@@ -81,7 +81,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="1" name="the document's template code " ruleburst="true" concludes="p3 = &quot;Template_01&quot;" folder="0" source-offset="1557">
+    <rule id="1" name="the document's template code " ruleburst="true" concludes="p3 = &quot;Template_01&quot;" folder="0" source-offset="857">
       <rule-xml>
         <conclude attr-id="p3" entity-id="document" scope-id="document0">
           <value>
@@ -90,9 +90,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the document's map code " ruleburst="true" concludes="p2 = &quot;d_4_aa_01&quot;" folder="0" source-offset="1617" question-search="false">
+    <rule id="2" name="the document's section id " ruleburst="true" concludes="p5 = &quot;d_4_aa_01&quot;" folder="0" source-offset="938" question-search="false">
       <rule-xml>
-        <conclude attr-id="p2" entity-id="document" scope-id="document0">
+        <conclude attr-id="p5" entity-id="document" scope-id="document0">
           <value>
             <string-value>d_4_aa_01</string-value>
           </value>
