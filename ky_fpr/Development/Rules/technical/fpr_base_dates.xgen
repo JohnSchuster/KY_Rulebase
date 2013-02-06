@@ -1,0 +1,716 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a current benefit year</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing is within the first week of the january quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the january quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing is within the first week of the april quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the april quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing is within the first week of the july quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the july quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing is within the first week of the october quarter</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the filing',singular),o('within the first week of the october quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing falls within the january quarter</base>
+          <parse>s(ver('10.4.2.18'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the january quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing falls within the april quarter</base>
+          <parse>s(ver('10.4.2.18'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the april quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing falls within the july quarter</base>
+          <parse>s(ver('10.4.2.18'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the july quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the filing falls within the october quarter</base>
+          <parse>s(ver('10.4.2.18'),v(fall,t(simple,present,normal)),sb('the filing',singular),o('within the october quarter'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the most recent benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="number" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the filing year</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the january quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the april quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the july quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the october quarter first week end date</base>
+        </text>
+      </attribute>
+      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the january quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the april quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the july quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p10" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the october quarter start date</base>
+        </text>
+      </attribute>
+      <attribute name="p11" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the january quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p12" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the april quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p13" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the july quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p14" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the october quarter end date</base>
+        </text>
+      </attribute>
+      <attribute name="p15" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p16" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the base period start date</base>
+        </text>
+      </attribute>
+      <attribute name="p17" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the base period end date</base>
+        </text>
+      </attribute>
+      <attribute name="p18" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the effective date</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the filing date</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the claimant does not have a current benefit year" ruleburst="true" concludes="not b1" folder="0" source-offset="177">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <uncertain>
+                <attribute attr-id="p1" />
+              </uncertain>
+              <less-than>
+                <attribute attr-id="p1" />
+                <attribute attr-id="p18" />
+              </less-than>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the effective date " ruleburst="true" concludes="p18 = NextDayOfTheWeek(AddDays(p19, -6), &quot;Sunday&quot;)" folder="0" source-offset="1349">
+      <rule-xml>
+        <conclude attr-id="p18" entity-id="global" scope-id="global0">
+          <value>
+            <next-day-of-the-week>
+              <add-days>
+                <attribute attr-id="p19" />
+                <negate>
+                  <number-value>6</number-value>
+                </negate>
+              </add-days>
+              <string-value>Sunday</string-value>
+            </next-day-of-the-week>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the filing year " ruleburst="true" concludes="p2 = ExtractYear(p18)" folder="0" source-offset="1464">
+      <rule-xml>
+        <conclude attr-id="p2" entity-id="global" scope-id="global0">
+          <value>
+            <extract-year>
+              <attribute attr-id="p18" />
+            </extract-year>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the january quarter first week end date " ruleburst="true" concludes="p3 = MakeDate(p2,1,7)" folder="0" source-offset="1577">
+      <rule-xml>
+        <conclude attr-id="p3" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>1</number-value>
+              <number-value>7</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the april quarter first week end date " ruleburst="true" concludes="p4 = MakeDate(p2,4,7)" folder="0" source-offset="1675">
+      <rule-xml>
+        <conclude attr-id="p4" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>4</number-value>
+              <number-value>7</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the july quarter first week end date " ruleburst="true" concludes="p5 = MakeDate(p2,7,7)" folder="0" source-offset="1771">
+      <rule-xml>
+        <conclude attr-id="p5" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>7</number-value>
+              <number-value>7</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the october quarter first week end date " ruleburst="true" concludes="p6 = MakeDate(p2,10,7)" folder="0" source-offset="1866">
+      <rule-xml>
+        <conclude attr-id="p6" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>10</number-value>
+              <number-value>7</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the january quarter start date " ruleburst="true" concludes="p7 = MakeDate(p2,1,1)" folder="0" source-offset="1987">
+      <rule-xml>
+        <conclude attr-id="p7" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>1</number-value>
+              <number-value>1</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the april quarter start date " ruleburst="true" concludes="p8 = MakeDate(p2,4,1)" folder="0" source-offset="2077">
+      <rule-xml>
+        <conclude attr-id="p8" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>4</number-value>
+              <number-value>1</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the july quarter start date " ruleburst="true" concludes="p9 = MakeDate(p2,7,1)" folder="0" source-offset="2164">
+      <rule-xml>
+        <conclude attr-id="p9" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>7</number-value>
+              <number-value>1</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the october quarter start date " ruleburst="true" concludes="p10 = MakeDate(p2,10,1)" folder="0" source-offset="2250">
+      <rule-xml>
+        <conclude attr-id="p10" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>10</number-value>
+              <number-value>1</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the january quarter end date " ruleburst="true" concludes="p11 = MakeDate(p2,3,31)" folder="0" source-offset="2361">
+      <rule-xml>
+        <conclude attr-id="p11" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>3</number-value>
+              <number-value>31</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="the april quarter end date " ruleburst="true" concludes="p12 = MakeDate(p2,6,30)" folder="0" source-offset="2452">
+      <rule-xml>
+        <conclude attr-id="p12" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>6</number-value>
+              <number-value>30</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="13" name="the july quarter end date " ruleburst="true" concludes="p13 = MakeDate(p2,9,30)" folder="0" source-offset="2540">
+      <rule-xml>
+        <conclude attr-id="p13" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>9</number-value>
+              <number-value>30</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the october quarter end date " ruleburst="true" concludes="p14 = MakeDate(p2,12,31)" folder="0" source-offset="2627">
+      <rule-xml>
+        <conclude attr-id="p14" entity-id="global" scope-id="global0">
+          <value>
+            <make-date>
+              <attribute attr-id="p2" />
+              <number-value>12</number-value>
+              <number-value>31</number-value>
+            </make-date>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the filing is within the first week of the january quarter" ruleburst="true" concludes="b2" folder="0" source-offset="2765">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p7" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p3" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="16" name="the filing is within the first week of the april quarter" ruleburst="true" concludes="b3" folder="0" source-offset="2974">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p8" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p4" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="17" name="the filing is within the first week of the july quarter" ruleburst="true" concludes="b4" folder="0" source-offset="3177">
+      <rule-xml>
+        <conclude attr-id="b4" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p9" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p5" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="18" name="the filing is within the first week of the october quarter" ruleburst="true" concludes="b5" folder="0" source-offset="3377">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p10" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p6" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="19" name="the benefit year end date" ruleburst="true" concludes="p15" folder="0" source-offset="3644">
+      <rule-xml>
+        <table-conclude attr-id="p15" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <attribute attr-id="p1" />
+            </value>
+            <condition>
+              <attribute attr-id="b1" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-days>
+                <add-weeks>
+                  <attribute attr-id="p18" />
+                  <number-value>53</number-value>
+                </add-weeks>
+                <negate>
+                  <number-value>1</number-value>
+                </negate>
+              </add-days>
+            </value>
+            <condition>
+              <attribute attr-id="b2" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-days>
+                <add-weeks>
+                  <attribute attr-id="p18" />
+                  <number-value>53</number-value>
+                </add-weeks>
+                <negate>
+                  <number-value>1</number-value>
+                </negate>
+              </add-days>
+            </value>
+            <condition>
+              <attribute attr-id="b3" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-days>
+                <add-weeks>
+                  <attribute attr-id="p18" />
+                  <number-value>53</number-value>
+                </add-weeks>
+                <negate>
+                  <number-value>1</number-value>
+                </negate>
+              </add-days>
+            </value>
+            <condition>
+              <attribute attr-id="b4" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-days>
+                <add-weeks>
+                  <attribute attr-id="p18" />
+                  <number-value>53</number-value>
+                </add-weeks>
+                <negate>
+                  <number-value>1</number-value>
+                </negate>
+              </add-days>
+            </value>
+            <condition>
+              <attribute attr-id="b4" />
+            </condition>
+          </row>
+          <otherwise>
+            <add-days>
+              <add-weeks>
+                <attribute attr-id="p18" />
+                <number-value>52</number-value>
+              </add-weeks>
+              <negate>
+                <number-value>1</number-value>
+              </negate>
+            </add-days>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="20" name="the filing falls within the january quarter" ruleburst="true" concludes="b6" folder="0" source-offset="5016">
+      <rule-xml>
+        <conclude attr-id="b6" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p7" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p11" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="the filing falls within the april quarter" ruleburst="true" concludes="b7" folder="0" source-offset="5200">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p8" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p12" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="22" name="the filing falls within the july quarter" ruleburst="true" concludes="b8" folder="0" source-offset="5378">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p9" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p13" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="23" name="the filing falls within the october quarter" ruleburst="true" concludes="b9" folder="0" source-offset="5553">
+      <rule-xml>
+        <conclude attr-id="b9" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p10" />
+              </greater-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p18" />
+                <attribute attr-id="p14" />
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="24" name="the base period start date" ruleburst="true" concludes="p16" folder="0" source-offset="5796">
+      <rule-xml>
+        <table-conclude attr-id="p16" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <add-months>
+                <attribute attr-id="p7" />
+                <negate>
+                  <number-value>15</number-value>
+                </negate>
+              </add-months>
+            </value>
+            <condition>
+              <attribute attr-id="b6" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-months>
+                <attribute attr-id="p8" />
+                <negate>
+                  <number-value>15</number-value>
+                </negate>
+              </add-months>
+            </value>
+            <condition>
+              <attribute attr-id="b7" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <add-months>
+                <attribute attr-id="p9" />
+                <negate>
+                  <number-value>15</number-value>
+                </negate>
+              </add-months>
+            </value>
+            <condition>
+              <attribute attr-id="b8" />
+            </condition>
+          </row>
+          <otherwise>
+            <add-months>
+              <attribute attr-id="p10" />
+              <negate>
+                <number-value>15</number-value>
+              </negate>
+            </add-months>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="25" name="the base period end date " ruleburst="true" concludes="p17 = AddDays(AddMonths(p16, 12), -1)" folder="0" source-offset="6295">
+      <rule-xml>
+        <conclude attr-id="p17" entity-id="global" scope-id="global0">
+          <value>
+            <add-days>
+              <add-months>
+                <attribute attr-id="p16" />
+                <number-value>12</number-value>
+              </add-months>
+              <negate>
+                <number-value>1</number-value>
+              </negate>
+            </add-days>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

@@ -1,0 +1,109 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the claimant',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the mre should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the bptw should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the bptw',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the document" id="document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global">
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the document's template code</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the document</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the document's section id</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="OneToMany" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" text="all instances of the document" reverse-text="each document to global" source="global" target="document" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="anyinferreddocument" reverse-relationship-id="documentsinferred" text="any inferred document" reverse-text="documents inferred" source="global" target="document" is-implicit="false" is-containment="false" />
+  </relationships>
+  <rules>
+    <rule id="0" name="any inferred document" ruleburst="true" concludes="InferInstance(anyinferreddocument)" folder="0" source-offset="468">
+      <rule-xml>
+        <table-conclude-instance relationship-id="anyinferreddocument" source="global" source-scope-id="global0">
+          <row>
+            <identity>
+              <string-value>NoD_Claimant</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b1" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>NoD_MRE</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b2" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>NoD_NMR</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b3" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>NoD_BPTW</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b3" />
+            </condition>
+          </row>
+        </table-conclude-instance>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the document's template code " ruleburst="true" concludes="p3 = &quot;Template_01&quot;" folder="0" source-offset="857">
+      <rule-xml>
+        <conclude attr-id="p3" entity-id="document" scope-id="document0">
+          <value>
+            <string-value>Template_01</string-value>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the document's section id " ruleburst="true" concludes="p5 = &quot;d_4_aa_01&quot;" folder="0" source-offset="938" question-search="false">
+      <rule-xml>
+        <conclude attr-id="p5" entity-id="document" scope-id="document0">
+          <value>
+            <string-value>d_4_aa_01</string-value>
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>NoD_MRE</string-value>
+            </equals>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
