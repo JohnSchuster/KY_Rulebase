@@ -571,6 +571,12 @@
           <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the bptw',plural),o('a notice of determination'))</parse>
         </text>
       </attribute>
+      <attribute name="b110" type="boolean" public-name="return_to_work_prospect">
+        <text>
+          <base>the claimant has definite return prospects with their last employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('definite return prospects with their last employment'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -662,20 +668,20 @@
       </attribute>
       <attribute name="b101" type="boolean" public-name="g01_emp_cont_pt_empt_from_hire">
         <text>
-          <base>the employer continues to provide you with part-time employment without interruption to the same extent as was provided from hire</base>
-          <parse>s(ver('10.4.2.18'),v(continue,t(simple,present,normal)),sb('the employer',singular),o('to provide you with part-time employment without interruption to the same extent as was provided from hire'))</parse>
+          <base>the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire</base>
+          <parse>s(ver('10.4.2.18'),v(continue,t(simple,present,normal)),sb('the employer',singular),o('to provide the claimant with part-time employment without interruption to the same extent as was provided from hire'))</parse>
         </text>
       </attribute>
-      <attribute name="b102" type="boolean" public-name="emp_vacation_pay">
+      <attribute name="b111" type="boolean" public-name="out_of_state_employer">
         <text>
-          <base>you are receiving (received) deductible vacation pay from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving (received) deductible vacation pay from the employer'))</parse>
+          <base>the employer is an out-of-state employer that is not chargeable in the state of Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an out-of-state employer that is not chargeable in the state of Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b104" type="boolean" public-name="emp_non_deduct_pension">
+      <attribute name="b112" type="boolean" public-name="chargeability_ruling_deferred">
         <text>
-          <base>you are receiving (received) a non-deductible pension from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving (received) a non-deductible pension from the employer'))</parse>
+          <base>the employer's chargeability ruling is deferred</base>
+          <parse>s(ver('10.4.2.18'),v(defer,t(simple,present,normal)),ob('the employer''s chargeability ruling',singular))</parse>
         </text>
       </attribute>
     </entity>
@@ -840,6 +846,18 @@
           <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),ob('the vacation pay',singular),o('while the employment was ongoing with the employer'))</parse>
         </text>
       </attribute>
+      <attribute name="b109" type="boolean" public-name="empt_return_to_work_prospect">
+        <text>
+          <base>the employment has definite return to work prospects for the claimant</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work prospects for the claimant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b113" type="boolean" public-name="reported_under_the_influence">
+        <text>
+          <base>the claimant reported to work under the influence of (alcohol, drugs)</base>
+          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence of (alcohol, drugs)'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="document" name="the document" identifying-attribute-name="the_document" identifying-attribute-text="the document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global" public-id="inferred_document">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_document">
@@ -847,14 +865,43 @@
           <base>the document</base>
         </text>
       </attribute>
-      <attribute name="p49" type="text" public-name="doc_section_id">
+      <attribute name="b114" type="boolean" public-name="doc_section_01">
         <text>
-          <base>the document's section id</base>
+          <base>the document should include section 01</base>
+          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 01'))</parse>
         </text>
       </attribute>
-      <attribute name="p50" type="text" public-name="doc_template_code">
+      <attribute name="b115" type="boolean" public-name="doc_section_02">
         <text>
-          <base>the document's template code</base>
+          <base>the document should include section 02</base>
+          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 02'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b116" type="boolean" public-name="document_may_be_appealed">
+        <text>
+          <base>the document may be appealed</base>
+          <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the document',singular),o('appealed'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthedocument" containment-parent-id="document" public-id="the_section">
+      <attribute name="p51" type="text" substitutable="true" default-gender="generic" public-name="the_section_id">
+        <text>
+          <base>the section</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="issue" name="the issue" identifying-attribute-name="the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="the_issue">
+      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="the_issue_id">
+        <text>
+          <base>the issue</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity id="action" name="the action" identifying-attribute-name="the_action_id" identifying-attribute-text="the action" containment-relationship-id="allinstancesoftheaction" containment-parent-id="global" public-id="the_action">
+      <attribute name="p53" type="text" substitutable="true" default-gender="generic" public-name="the_action_id">
+        <text>
+          <base>the action</base>
         </text>
       </attribute>
     </entity>
@@ -867,7 +914,12 @@
     <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="document" text="all instances of the document" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" reverse-text="each document to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
-    <relationship source="global" target="document" is-containment="false" public-id="inferreddocument" reverse-public-id="documentinferred" text="any inferred document" relationship-id="anyinferreddocument" reverse-relationship-id="documentsinferred" reverse-text="documents inferred" type="OneToMany" is-computed="false" />
+    <relationship source="employer" target="document" is-containment="false" public-id="employertodocument" reverse-public-id="documenttoemployer" text="inferred employer document" relationship-id="inferredemployerdocument" reverse-relationship-id="documentinferredforemployer" reverse-text="document inferred for employer" type="OneToMany" is-computed="false" />
+    <relationship source="global" target="document" is-containment="false" public-id="claimanttodocument" reverse-public-id="documenttoclaimant" text="all inferred claimant documents" relationship-id="allinferredclaimantdocuments" reverse-relationship-id="documenttoclaimant" reverse-text="document to claimant" type="OneToMany" is-computed="false" />
+    <relationship source="document" target="section" text="all instances of the section for the document" relationship-id="allinstancesofthesectionforthedocument" reverse-relationship-id="document_allinstancesofthesectionforthedocument_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
+    <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="global_allinstancesoftheissue_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
+    <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="global_allinstancesoftheaction_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
+    <relationship source="document" target="section" is-containment="false" public-id="documenttosection" reverse-public-id="sectiontodocument" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
