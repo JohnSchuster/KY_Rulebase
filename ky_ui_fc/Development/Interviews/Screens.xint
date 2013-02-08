@@ -23,6 +23,28 @@
           </override>
         </text>
       </attribute>
+      <attribute name="b4" type="boolean">
+        <text>
+          <base>the screen 'Educational Employee Information (a)' has been displayed</base>
+          <parse>
+          </parse>
+          <override>
+            <q>has the screen 'Educational Employee Information (a)' been displayed?</q>
+            <p>the screen 'Educational Employee Information (a)' has been displayed</p>
+          </override>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean">
+        <text>
+          <base>the screen 'Educational Employee Information (b)' has been displayed</base>
+          <parse>
+          </parse>
+          <override>
+            <q>has the screen 'Educational Employee Information (b)' been displayed?</q>
+            <p>the screen 'Educational Employee Information (b)' has been displayed</p>
+          </override>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
@@ -41,6 +63,9 @@
       <folder id="10" text="Personal Information" order="2" parent="1" />
       <folder id="12" text="Able and Available" parent="1" order="5" />
       <folder id="13" text="Ability to Work" parent="1" order="6" />
+      <folder id="14" text="NotReadyForPrimeTimeEmploymentDetails" parent="1" order="7" />
+      <folder id="15" text="NotReadyForPrimeTimeSeparation" parent="1" order="8" />
+      <folder id="16" text="Final" parent="1" order="9" />
     </folders>
     <screens>
       <screen type="Summary" id="s1" public-id="summary" name="Assessment Summary" folder="0" order="1">
@@ -2246,7 +2271,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
       </screen>
       <screen type="Question" id="s42" name="Work Ability Information" public-id="" order="1" screen-attr="" folder="13">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2260,7 +2285,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Do you have a physical condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2274,7 +2299,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Do you have a mental health condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2288,7 +2313,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
             </input-attr>
             <caption>&lt;p&gt;Are you receiving or been approved for Social Security disability payments in the last 12 months?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -2617,6 +2642,1646 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
+      <screen type="Question" id="s48" name="Employment Address Details for WidgetsRus" public-id="" order="1" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="1">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the employments street address">
+              <doc-attr id="p1@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Street Address:&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="Avon">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the employments city">
+              <doc-attr id="p2@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_02" />
+            </input-attr>
+            <caption>&lt;p&gt;City:&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the employments state">
+              <doc-attr id="p3@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_03" />
+            </input-attr>
+            <caption>&lt;p&gt;State:&lt;/p&gt;</caption>
+            <values>
+              <value code="AL" default-visibility="enabled">ALABAMA</value>
+              <value code="AK" default-visibility="enabled">ALASKA</value>
+              <value code="AZ" default-visibility="enabled">ARIZONA</value>
+              <value code="AR" default-visibility="enabled">ARKANSAS</value>
+              <value code="CA" default-visibility="enabled">CALIFORNIA</value>
+              <value code="CO" default-visibility="enabled">COLORADO</value>
+              <value code="CT" default-visibility="enabled">CONNECTICUT</value>
+              <value code="DE" default-visibility="enabled">DELAWARE</value>
+              <value code="DC" default-visibility="enabled">DISTRICT OF COLUMBIA</value>
+              <value code="FL" default-visibility="enabled">FLORIDA</value>
+              <value code="GA" default-visibility="enabled">GEORGIA</value>
+              <value code="HI" default-visibility="enabled">HAWAII</value>
+              <value code="ID" default-visibility="enabled">IDAHO</value>
+              <value code="IL" default-visibility="enabled">ILLINOIS</value>
+              <value code="IN" default-visibility="enabled">INDIANA</value>
+              <value code="IA" default-visibility="enabled">IOWA</value>
+              <value code="KS" default-visibility="enabled">KANSAS</value>
+              <value code="KY" default-visibility="enabled">KENTUCKY</value>
+              <value code="LA" default-visibility="enabled">LOUISIANA</value>
+              <value code="ME" default-visibility="enabled">MAINE</value>
+              <value code="MD" default-visibility="enabled">MARYLAND</value>
+              <value code="MA" default-visibility="enabled">MASSACHUSETTS</value>
+              <value code="MI" default-visibility="enabled">MICHIGAN</value>
+              <value code="MN" default-visibility="enabled">MINNESOTA</value>
+              <value code="MS" default-visibility="enabled">MISSISSIPPI</value>
+              <value code="MO" default-visibility="enabled">MISSOURI</value>
+              <value code="MT" default-visibility="enabled">MONTANA</value>
+              <value code="NE" default-visibility="enabled">NEBRASKA</value>
+              <value code="NV" default-visibility="enabled">NEVADA</value>
+              <value code="NH" default-visibility="enabled">NEW HAMPSHIRE</value>
+              <value code="NJ" default-visibility="enabled">NEW JERSEY</value>
+              <value code="NM" default-visibility="enabled">NEW MEXICO</value>
+              <value code="NY" default-visibility="enabled">NEW YORK</value>
+              <value code="NC" default-visibility="enabled">NORTH CAROLINA</value>
+              <value code="ND" default-visibility="enabled">NORTH DAKOTA</value>
+              <value code="OH" default-visibility="enabled">OHIO</value>
+              <value code="OK" default-visibility="enabled">OKLAHOMA</value>
+              <value code="OR" default-visibility="enabled">OREGON</value>
+              <value code="PA" default-visibility="enabled">PENNSYLVANIA</value>
+              <value code="RI" default-visibility="enabled">RHODE ISLAND</value>
+              <value code="SC" default-visibility="enabled">SOUTH CAROLINA</value>
+              <value code="SD" default-visibility="enabled">SOUTH DAKOTA</value>
+              <value code="TN" default-visibility="enabled">TENNESSEE</value>
+              <value code="TX" default-visibility="enabled">TEXAS</value>
+              <value code="UT" default-visibility="enabled">UTAH</value>
+              <value code="VT" default-visibility="enabled">VERMONT</value>
+              <value code="VA" default-visibility="enabled">VIRGINIA</value>
+              <value code="WA" default-visibility="enabled">WASHINGTON</value>
+              <value code="WV" default-visibility="enabled">WEST VIRGINIA</value>
+              <value code="WI" default-visibility="enabled">WISCONSIN</value>
+              <value code="WY" default-visibility="enabled">WYOMING</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="1">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments zip code">
+              <doc-attr id="p4@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Zip Code&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="1">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments phone number">
+              <doc-attr id="p30@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Phone Number:&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="KY">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the employment state where the claimant worked">
+              <doc-attr id="p33@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s001_06" />
+            </input-attr>
+            <caption>&lt;p&gt;The State in which you worked&lt;/p&gt;</caption>
+            <values>
+              <value code="AL" default-visibility="enabled">ALABAMA</value>
+              <value code="AK" default-visibility="enabled">ALASKA</value>
+              <value code="AZ" default-visibility="enabled">ARIZONA</value>
+              <value code="AR" default-visibility="enabled">ARKANSAS</value>
+              <value code="CA" default-visibility="enabled">CALIFORNIA</value>
+              <value code="CO" default-visibility="enabled">COLORADO</value>
+              <value code="CT" default-visibility="enabled">CONNECTICUT</value>
+              <value code="DE" default-visibility="enabled">DELAWARE</value>
+              <value code="DC" default-visibility="enabled">DISTRICT OF COLUMBIA</value>
+              <value code="FL" default-visibility="enabled">FLORIDA</value>
+              <value code="GA" default-visibility="enabled">GEORGIA</value>
+              <value code="HI" default-visibility="enabled">HAWAII</value>
+              <value code="ID" default-visibility="enabled">IDAHO</value>
+              <value code="IL" default-visibility="enabled">ILLINOIS</value>
+              <value code="IN" default-visibility="enabled">INDIANA</value>
+              <value code="IA" default-visibility="enabled">IOWA</value>
+              <value code="KS" default-visibility="enabled">KANSAS</value>
+              <value code="KY" default-visibility="enabled">KENTUCKY</value>
+              <value code="LA" default-visibility="enabled">LOUISIANA</value>
+              <value code="ME" default-visibility="enabled">MAINE</value>
+              <value code="MD" default-visibility="enabled">MARYLAND</value>
+              <value code="MA" default-visibility="enabled">MASSACHUSETTS</value>
+              <value code="MI" default-visibility="enabled">MICHIGAN</value>
+              <value code="MN" default-visibility="enabled">MINNESOTA</value>
+              <value code="MS" default-visibility="enabled">MISSISSIPPI</value>
+              <value code="MO" default-visibility="enabled">MISSOURI</value>
+              <value code="MT" default-visibility="enabled">MONTANA</value>
+              <value code="NE" default-visibility="enabled">NEBRASKA</value>
+              <value code="NV" default-visibility="enabled">NEVADA</value>
+              <value code="NH" default-visibility="enabled">NEW HAMPSHIRE</value>
+              <value code="NJ" default-visibility="enabled">NEW JERSEY</value>
+              <value code="NM" default-visibility="enabled">NEW MEXICO</value>
+              <value code="NY" default-visibility="enabled">NEW YORK</value>
+              <value code="NC" default-visibility="enabled">NORTH CAROLINA</value>
+              <value code="ND" default-visibility="enabled">NORTH DAKOTA</value>
+              <value code="OH" default-visibility="enabled">OHIO</value>
+              <value code="OK" default-visibility="enabled">OKLAHOMA</value>
+              <value code="OR" default-visibility="enabled">OREGON</value>
+              <value code="PA" default-visibility="enabled">PENNSYLVANIA</value>
+              <value code="RI" default-visibility="enabled">RHODE ISLAND</value>
+              <value code="SC" default-visibility="enabled">SOUTH CAROLINA</value>
+              <value code="SD" default-visibility="enabled">SOUTH DAKOTA</value>
+              <value code="TN" default-visibility="enabled">TENNESSEE</value>
+              <value code="TX" default-visibility="enabled">TEXAS</value>
+              <value code="UT" default-visibility="enabled">UTAH</value>
+              <value code="VT" default-visibility="enabled">VERMONT</value>
+              <value code="VA" default-visibility="enabled">VIRGINIA</value>
+              <value code="WA" default-visibility="enabled">WASHINGTON</value>
+              <value code="WV" default-visibility="enabled">WEST VIRGINIA</value>
+              <value code="WI" default-visibility="enabled">WISCONSIN</value>
+              <value code="WY" default-visibility="enabled">WYOMING</value>
+            </values>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s49" name="Pension Income for Employer WidgetsRus" public-id="" order="2" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant contributed to the pension during their employment">
+              <doc-attr id="b2@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s002_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you contribute to this pension?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants pension is paid under either the Social Security Act or the Railroad Retirement Act of 1974">
+              <doc-attr id="b3@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s002_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Is this pension paid under the Social Security Act or the Railroad Retirement Act of 1974?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is receiving monthly benefits payments from a retirement plan">
+              <doc-attr id="b4@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s002_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you receiving monthly payments?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s50" name="13 A - monthly distribution" public-id="" order="3" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the monthly gross pension amount that the claiment receives">
+              <doc-attr id="p5@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s003_01" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the gross amount received monthly?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received their first pension benefit payment">
+              <doc-attr id="p6@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s003_02" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did you receive the first payment?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s51" name="13 B - lump sum distribution" public-id="" order="4" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants total lump sum retirement benefit amount">
+              <doc-attr id="p7@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s004_01" />
+            </input-attr>
+            <caption>&lt;p&gt;What was total lump sum amount?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received the lump sum retirement benefit amount">
+              <doc-attr id="p8@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s004_02" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did you receive the payment?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant had the option to receive monthly payments">
+              <doc-attr id="b5@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s004_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you have the option to receive monthly payments?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants optional monthly pension benefit amount">
+              <doc-attr id="p9@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s004_04" />
+            </input-attr>
+            <caption>&lt;p&gt;If Yes, what would have been the gross amount received monthly?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s52" name="Employment Details for WidgetsRus" public-id="" order="5" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments wage type">
+              <doc-attr id="p10@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Wage Type?&lt;/p&gt;</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Hourly" default-visibility="enabled">Hourly</value>
+              <value code="Salary" default-visibility="enabled">Salary</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments employment type">
+              <doc-attr id="p11@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Employment Type?&lt;/p&gt;</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Full-Time" default-visibility="enabled">Full-Time</value>
+              <value code="Part-Time" default-visibility="enabled">Part-Time</value>
+              <value code="As-Needed" default-visibility="enabled">As-Needed</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the employments job title">
+              <doc-attr id="p12@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Job Title?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the employments job duties">
+              <doc-attr id="p13@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Job Duties?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments rate of pay">
+              <doc-attr id="p14@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Rate of Pay?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Radiobutton">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments wage frequency">
+              <doc-attr id="p15@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_06" />
+            </input-attr>
+            <caption>&lt;p&gt;The rate of pay is...&lt;/p&gt;&lt;br&gt;&lt;hr&gt;</caption>
+            <values>
+              <value code="Per/hour" default-visibility="enabled">Per/hour</value>
+              <value code="Per/year" default-visibility="enabled">Per/year</value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>For this period of employment, were you:&lt;br&gt;&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is a business owner or an officer of a corporation">
+              <doc-attr id="b6@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_07" />
+            </input-attr>
+            <caption>&lt;p&gt;A business owner/officer of a corporation?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is a school employee">
+              <doc-attr id="b7@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_08" />
+            </input-attr>
+            <caption>&lt;p&gt;An educational employee?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is an athletic professional">
+              <doc-attr id="b8@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_09" />
+            </input-attr>
+            <caption>&lt;p&gt;An athletic professional?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is an employee on a craft designed for water transportation">
+              <doc-attr id="b9@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s005_10" />
+            </input-attr>
+            <caption>&lt;p&gt;A water transportation employee?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s53" name="Athletic Professional Information" public-id="" order="6" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is a paid professional athletic participant">
+              <doc-attr id="b10@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s006_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you paid to participate in athletic events?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is paid to train and prepare to be an athletic participant">
+              <doc-attr id="b11@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s006_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you paid to train or prepare to participate in athletic events?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is between seasons of athletic particpation">
+              <doc-attr id="b12@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s006_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you currently in between seasons?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the calimant has been given reasonable assurance they will be an athletic participant in the upcoming season">
+              <doc-attr id="b13@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s006_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Have you been given reasonable assurance that you will return in the upcoming season?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is under contract to be an athletic participant in the upcoming season">
+              <doc-attr id="b14@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s006_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you under contract for the upcoming season?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s54" name="Athletic Professional Information (a)" public-id="" order="7" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the organization the claimant intends to participate with in the upcoming season">
+              <doc-attr id="p16@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s007_01" />
+            </input-attr>
+            <caption>&lt;p&gt;With what organization to you intend to participate for the upcoming season?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who provided the claimant with reasonable assurance that they will be a participant in atletic events in the upcoming season">
+              <doc-attr id="p17@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s007_02" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the name and title of the individual who provided you reasonable assurance of your return?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants athletic event start date">
+              <doc-attr id="p18@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s007_03" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the last season end?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants athletic event end date">
+              <doc-attr id="p19@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s007_04" />
+            </input-attr>
+            <caption>&lt;p&gt;When does the upcoming season begin?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s55" name="Educational Employee Information" public-id="" order="8" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants employment is an educational institution">
+              <doc-attr id="b15@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s008_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Is your employer an educational institution or an educational service agency?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has been given reasonable assurance of returning in the upcoming academic year">
+              <doc-attr id="b16@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s008_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Have you been given reasonable assurance that you will be an educational employee in the upcoming academic year?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is under contract for the upcoming academic year">
+              <doc-attr id="b17@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s008_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you under contract for the upcoming academic year?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is expected to return to a like position in the upcoming achedemic year">
+              <doc-attr id="b18@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s008_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you expecting to return to a similar position in the upcoming academic year?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s56" name="Educational Employee Information (a)" public-id="" order="9" screen-attr="b4" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the educational institution or service agency that provided the claimant reasonable assurance">
+              <doc-attr id="p20@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_01" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the name of the educational institution or service agency that provided you reasonable assurance?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the phone number of the educational institution or service agency that provided the claimant reasonable assurance">
+              <doc-attr id="p21@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_02" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the phone number of the educational institution or service agency that provided you reasonable assurance?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the individual who provided the claimant reasonable assurance">
+              <doc-attr id="p22@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_03" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the name of the individual who provided you reasonable assurance?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the individual who provided the claimant reasonable assurance">
+              <doc-attr id="p23@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_04" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the title of the individual who provided you reasonable assurance?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date were you were provided reasonable assurance as an educational employee">
+              <doc-attr id="p24@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_05" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the date were you were provided reasonable assurance as an educational employee?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has accepted the offer for the upcoming academic year">
+              <doc-attr id="b19@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_06" />
+            </input-attr>
+            <caption>&lt;p&gt;Have you accepted the offer for the upcoming academic year?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation for not accepting the offer of reasonable assurance from an educational facility">
+              <doc-attr id="p25@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s009_07" />
+            </input-attr>
+            <caption>&lt;p&gt;If you did not accept the offer, please explain&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s57" name="Educational Employee Information (b)" public-id="" order="10" screen-attr="b3" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants current position">
+              <doc-attr id="p26@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s010_01" />
+            </input-attr>
+            <caption>&lt;p&gt;What is your current position?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the position the claimant has accepted for the upcoming academic year">
+              <doc-attr id="p27@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s010_02" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the position you have accepted for the upcoming academic year?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s58" name="Water Transportation Employment Information" public-id="" order="11" screen-attr="" folder="14">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is on a scheduled off-duty period from the watercraft transportation employment">
+              <doc-attr id="b20@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s011_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you on a scheduled off-duty period?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the claimants off-duty period from the water transportation employment began">
+              <doc-attr id="p28@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s011_02" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the off-duty period begin?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the claimants off-duty period from the water transportation employment ends">
+              <doc-attr id="p29@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s011_03" />
+            </input-attr>
+            <caption>&lt;p&gt;When are/were you scheduled to return from the off-duty period?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s59" name="Employment Status for WidgetsRus from 9/10/11 to 10/11/12" public-id="" order="1" screen-attr="" folder="15">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p&gt;Below are descriptions of several categories related to loss of employment.&lt;/p&gt;
+&lt;br&gt;
+&lt;ul&gt;
+  &lt;li class="tblue"&gt;Currently Employed (Full-time or part-time)&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) You continue working full-time in accordance with your employer's customary full-time work schedule or&lt;/li&gt;
+	  &lt;li class="ns"&gt;You are working part-time, working on-call, as needed, PRN status&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;li class="tblue"&gt;Leave of Absence&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) On FMLA, Short-term disability, etc.&lt;/li&gt;
+	  &lt;li class="ns"&gt;You are temporarily away from work for personal reasons and you are expected to return to your position&lt;/li&gt;
+	&lt;/ul&gt;  
+  &lt;li class="tblue"&gt;Suspension&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) You are temporarily away from work due to a diciplinary action or&lt;/li&gt;
+	  &lt;li class="ns"&gt;investigation initiated by your employer&lt;/li&gt;
+	&lt;/ul&gt;  
+  &lt;li class="tblue"&gt;Quit&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) An employee may choose to leave a job for changes in personal circumstances, working conditions, prospects of other work, etc.&lt;/li&gt;
+	&lt;/ul&gt;
+  &lt;li class="tblue"&gt;Retired (Voluntary or Involuntary)&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li class="ns"&gt;(eg.) You voluntarily retired from the workforce, you are  receiving retirement/pension or retainer benefits, or&lt;/li&gt;
+      &lt;li class="ns"&gt;you retired in accordance with the employer mandqatory retirement policy.&lt;/li&gt;
+    &lt;/ul&gt;	  
+  &lt;li class="tblue"&gt;Discharged (aka. Terminated, fired, let-go, sacked, canned, etc)&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) Employer chooses to require the employee to leave, generally, the employer states that it is the fault of the employee:&lt;/li&gt;
+	  &lt;li class="ns"&gt;attendance, policy violation, work performance, failed drug test, etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;li class="tblue"&gt;Laid Off&lt;/li&gt;
+    &lt;ul&gt;
+	  &lt;li class="ns"&gt;(eg.) Position eliminated or a business slow-down occured due to economic cycles or&lt;/li&gt;
+	  &lt;li class="ns"&gt;the company's need to restructure itself, the firm itself going out of business or a change in the function of the employer&lt;/li&gt;
+	     &lt;ul&gt;
+		   &lt;li class="ns"&gt;(eg.) A certain type of product or service is no longer offered by the company therefore jobs related to that product or service are no longer needed&lt;/li&gt;
+		&lt;/ul&gt;
+    &lt;/ul&gt;		
+&lt;/ul&gt;  &lt;br&gt;&lt;br&gt;
+&lt;p class="pg"&gt;ONLY THE QUIT OPTION WORKS FOR NOW&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants alleged status">
+              <doc-attr id="p5@Rules_uifcadditional_doc" />
+              <doc-attr id="p31@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s012_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Which of these categories best describes your circumstances with this employment?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="Currently Employed" default-visibility="enabled">Currently Employed</value>
+              <value code="Leave of Absence" default-visibility="enabled">Leave of Absence</value>
+              <value code="Suspension" default-visibility="enabled">Suspension</value>
+              <value code="Quit" default-visibility="enabled">Quit</value>
+              <value code="Retired" default-visibility="enabled">Retired</value>
+              <value code="Discharged" default-visibility="enabled">Discharged</value>
+              <value code="Laid Off" default-visibility="enabled">Laid Off</value>
+              <value code="..." default-visibility="enabled">...</value>
+            </values>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s60" name="Quit Details for WidgetsRus from  9/10/11 to 10/11/12" public-id="" order="2" screen-attr="" folder="15">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pr"&gt;What is the reason you left this employment?&lt;/p&gt;&lt;br&gt;&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is stating that they left the employment for personal reasons">
+              <doc-attr id="b21@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s013_01" />
+            </input-attr>
+            <caption>&lt;p&gt;I left the employment for personal reasons&lt;/p&gt;</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is stating that they left the employment for work related reasons">
+              <doc-attr id="b22@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s013_02" />
+            </input-attr>
+            <caption>&lt;p&gt;I left the employment for work related reasons&lt;/p&gt;</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is stating that they left the employment for prospects of other work">
+              <doc-attr id="b23@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s013_03" />
+            </input-attr>
+            <caption>&lt;p&gt;I left the employment for prospects of other work&lt;/p&gt;</caption>
+            <mandatory-attr text="" />
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s61" name="Quit Details (Personal) for WidgetsRus from  9/10/11 to 10/11/12" public-id="" order="3" screen-attr="" folder="15">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to a medical condition">
+              <doc-attr id="b24@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to a medical condition?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to religious beliefs">
+              <doc-attr id="b25@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to religious beliefs?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant failed or refused to return to work following a temporary layoff">
+              <doc-attr id="b26@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you fail/refuse to return to work following a temporary layoff?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to the employer's pay rate or pay practices">
+              <doc-attr id="b27@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to the employer’s pay rate or pay practices?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to the distance to work">
+              <doc-attr id="b28@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to the distance to work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant abandoned the employment">
+              <doc-attr id="b29@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_06" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you abandon the employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to the active duty military spouse being reassigned (Permanent Change of Station) to another state by a branch of the service">
+              <doc-attr id="b30@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_07" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to your active duty military spouse being reassigned (Permanent Change of Station) to another state by a branch of the service?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment in anticipation of layoff or discharge">
+              <doc-attr id="b31@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_08" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment in anticipation of layoff or discharge?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment to retire">
+              <doc-attr id="b32@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_09" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment to retire?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant requested a reduction in working hours from the employment">
+              <doc-attr id="b33@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s014_10" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you request a reduction in working hours from the employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s62" name="Quit Details (Work Related) for WidgetsRus from  9/10/11 to 10/11/12" public-id="" order="4" screen-attr="" folder="15">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment rather than take a drug/alcohol test as required by the employer">
+              <doc-attr id="b34@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment rather than take a drug/alcohol test as required by the employer?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to a dispute in the work place">
+              <doc-attr id="b35@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to a dispute in the work place?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to equipment problems">
+              <doc-attr id="b36@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to equipment problems?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to harassment">
+              <doc-attr id="b37@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to harassment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to lack of training or experience">
+              <doc-attr id="b38@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to lack of training or experience?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to working conditions">
+              <doc-attr id="b39@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_06" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to working conditions?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to disciplinary actions imposed by the employer">
+              <doc-attr id="b40@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_07" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to disciplinary actions imposed by the employer?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment due to working hours required by the employer">
+              <doc-attr id="b41@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_08" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment due to working hours required by the employer?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employer requested that the claimant resign">
+              <doc-attr id="b42@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s015_09" />
+            </input-attr>
+            <caption>&lt;p&gt;Did your employer request that you resign?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s63" name="Quit Details (Medical)  for WidgetsRus from  9/10/11 to 10/11/12" public-id="" order="5" screen-attr="" folder="15">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants medical condition was caused by the employment">
+              <doc-attr id="b43@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Was this medical condition caused by this employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has competent medical evidence to prove the work caused the medical condition">
+              <doc-attr id="b44@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have competent medical evidence to prove the work caused the medical condition?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant filed a claim for Worker's Compensation">
+              <doc-attr id="b45@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_03" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you file a claim for Worker’s Compensation?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants medical condition was caused by an event away from the workplace">
+              <doc-attr id="b46@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_04" />
+            </input-attr>
+            <caption>&lt;p&gt;Was the medical condition caused by an event away from the workplace?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has exhausted all available leave including any short term disability they may have had the option to take prior to leaving the employment">
+              <doc-attr id="b47@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_05" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you exhaust all available leave including any short term disability you may have had the option to take prior to leaving the employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has been released by a medical doctor to return to work either with or without restrictions">
+              <doc-attr id="b48@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_06" />
+            </input-attr>
+            <caption>&lt;p&gt;Have you been released by a medical doctor to return to work either with or without restrictions?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has exhausted all reasonable alternatives prior to leaving the employment">
+              <doc-attr id="b49@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_07" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you exhaust all reasonable alternatives prior to leaving the employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the medical conditions the claimant has that caused them to leave the employment">
+              <doc-attr id="p32@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s016_08" />
+            </input-attr>
+            <caption>&lt;p&gt;What medical conditions do you have that caused you to leave the employment?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s64" name="Quit Details (Prospects)  for WidgetsRus from  9/10/11 to 10/11/12" public-id="" order="6" screen-attr="" folder="15">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment to accept temporary or less than full-time employment">
+              <doc-attr id="b50@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s017_01" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment to accept temporary or less than full-time employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment for prospect of other work">
+              <doc-attr id="b51@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s017_02" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave the employment for prospect of other work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment to accept work less than 100 miles from their home">
+              <doc-attr id="b52@Properties_FCemploymentProperties_xsrc" />
+              <doc-attr id="fc_s017_03" />
+            </input-attr>
+            <caption>&lt;p&gt;If this employment was 100 miles or more from you home, did you  leave this employment to accept work less
+than 100 miles from your home?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s65" name="Claim Filing Certification and Authorization" public-id="" order="1" screen-attr="" folder="16">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>
+&lt;p class="tcr"&gt;Intentionally submitting false information is a criminal act.  Any violation will result in prosecution under KRS.341.370 (2).&lt;p&gt;
+&lt;br&gt;
+&lt;p class="tc"&gt;You may access the Rights and Responsibilities pamphlet (PAM-UI-400) by clicking &lt;a href="https://uiclaims.des.ky.gov/eBenefits_enu/help/PAM_UI_400.htm"&gt;here&lt;/a&gt; or at your local Unemployment Insurance Office.&lt;/p&gt;
+&lt;br&gt;
+&lt;p class="tc"&gt;Effective January 1, 2012, Kentucky Unemployment Insurance law requires a one week waiting period per Benefit Year.&lt;br&gt; 
+Your waiting period week will be your first payable week. 
+If you are found eligible for benefits you will request benefits for two week periods,&lt;br&gt;however your first check will only be for one week.&lt;/p&gt;
+&lt;br&gt;
+&lt;p class="tcr"&gt;Please type your initials in each box to acknowledge each statement.&lt;/p&gt;
+&lt;hr&gt;
+</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants PAM acceptance">
+              <doc-attr id="p1@Properties_Properties_xsrc" />
+              <doc-attr id="fc_001" />
+            </input-attr>
+            <caption>&lt;p&gt;I was given access to the PAM-UI-400, Rights and Responsibilities pamphlet.&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants wage reporting acceptance">
+              <doc-attr id="p2@Properties_Properties_xsrc" />
+              <doc-attr id="fc_002" />
+            </input-attr>
+            <caption>&lt;p&gt;I understand that I must report ALL WAGES EARNED.&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants job search acceptance">
+              <doc-attr id="p3@Properties_Properties_xsrc" />
+              <doc-attr id="fc_003" />
+            </input-attr>
+            <caption>&lt;p&gt;I understand that I must look for one or more jobs per week.&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants waiting period acceptance">
+              <doc-attr id="p4@Properties_Properties_xsrc" />
+              <doc-attr id="fc_004" />
+            </input-attr>
+            <caption>&lt;p&gt;I understand that there is a one week waiting period per Benefit Year.&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants employer release authorization">
+              <doc-attr id="p5@Properties_Properties_xsrc" />
+              <doc-attr id="fc_005" />
+            </input-attr>
+            <caption>&lt;p&gt;I authorize my former employer(s) to release all information requested in connection with my claim
+for unemployment insurance benefits.&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants information certification">
+              <doc-attr id="p6@Properties_Properties_xsrc" />
+              <doc-attr id="fc_006" />
+            </input-attr>
+            <caption>&lt;p&gt;I certify that the information I have provided on this claim for unemployment insurance benefits is true 
+and correct to the best of my knowledge.&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;&lt;p class ="pr"&gt;Please sign in box to the right to submit your application.&lt;/p&gt;
+&lt;p&gt;Use blue or black ink only&lt;/p&gt;&lt;br&gt;
+</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants rights and wishes">
+              <doc-attr id="p7@Properties_Properties_xsrc" />
+              <doc-attr id="fc_007" />
+            </input-attr>
+            <caption>&lt;p&gt;I understand my rights and wish to submit my application for unemployment insurance benefits.&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
     </screens>
     <documents />
     <screen-orders>
@@ -2630,7 +4295,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
     </screen-orders>
     <flows>
       <flow order="1" name="Main Flow" id="f3" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -2638,19 +4303,25 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
           <node node-id="3" node-type="sub-flow" flow-id="Employment Details Flow" relationship-id="global_cont_employer" />
           <node node-id="4" node-type="sub-flow" flow-id="SeparationInvestigations" />
           <node node-id="5" node-type="sub-flow" flow-id="Preamble Collection" />
-          <node node-id="6" node-type="sub-flow" flow-id="Personal Info collection" />
-          <node node-id="7" node-type="sub-flow" flow-id="Able and Available Collection" />
-          <node node-id="8" node-type="sub-flow" flow-id="Work Ability Collection" />
+          <node node-id="6" node-type="sub-flow" flow-id="Not Ready For Prime Time Employment Details" />
+          <node node-id="7" node-type="sub-flow" flow-id="Not Ready for Prime Time Collection" />
+          <node node-id="8" node-type="sub-flow" flow-id="Personal Info collection" />
+          <node node-id="9" node-type="sub-flow" flow-id="Able and Available Collection" />
+          <node node-id="10" node-type="sub-flow" flow-id="Work Ability Collection" />
+          <node node-id="11" node-type="sub-flow" flow-id="Final Collection" />
         </nodes>
         <connections>
           <connection from="0" to="5" />
           <connection from="2" to="3" />
           <connection from="3" to="4" />
-          <connection from="4" to="1" />
-          <connection from="5" to="6" />
+          <connection from="4" to="6" />
+          <connection from="5" to="8" />
           <connection from="6" to="7" />
-          <connection from="7" to="8" />
+          <connection from="7" to="9" />
           <connection from="8" to="2" />
+          <connection from="9" to="10" />
+          <connection from="10" to="11" />
+          <connection from="11" to="1" />
         </connections>
       </flow>
       <flow folder="3" order="4" name="Employer Details Flow" id="f4" entity="global" public-id="" error="false" entry-node-id="0">
@@ -3147,6 +4818,232 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <boolean-val>false</boolean-val>
             </condition>
           </connection>
+        </connections>
+      </flow>
+      <flow order="11" name="Not Ready For Prime Time Employment Details" id="f16" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="decision" attribute-id="the claimant is receiving (received) a non-deductible pension" />
+          <node node-id="3" node-type="screen" screen-id="s49" mandatory="true" />
+          <node node-id="4" node-type="screen" screen-id="s52" mandatory="true" />
+          <node node-id="5" node-type="screen" screen-id="s50" mandatory="true" />
+          <node node-id="6" node-type="screen" screen-id="s51" mandatory="true" />
+          <node node-id="7" node-type="decision" attribute-id="the pension question screen for monthly payments should be displayed" />
+          <node node-id="8" node-type="decision" attribute-id="the claimant is receiving monthly benefits payments from a retirement plan" />
+          <node node-id="9" node-type="screen" screen-id="s48" mandatory="true" />
+          <node node-id="10" node-type="decision" attribute-id="the claimant is a school employee" />
+          <node node-id="11" node-type="decision" attribute-id="the claimant is an athletic professional" />
+          <node node-id="12" node-type="decision" attribute-id="the claimant is an employee on a craft designed for water transportation" />
+          <node node-id="13" node-type="screen" screen-id="s55" mandatory="true" />
+          <node node-id="14" node-type="screen" screen-id="s53" mandatory="true" />
+          <node node-id="15" node-type="screen" screen-id="s58" mandatory="true" />
+          <node node-id="16" node-type="decision" attribute-id="the claimant has been given reasonable assurance of returning in the upcoming academic year" />
+          <node node-id="17" node-type="decision" attribute-id="the claimant is under contract for the upcoming academic year" />
+          <node node-id="18" node-type="decision" attribute-id="the claimant is expected to return to a like position in the upcoming achedemic year" />
+          <node node-id="19" node-type="screen" screen-id="s56" mandatory="true" />
+          <node node-id="20" node-type="decision" attribute-id="the screen 'Educational Employee Information (a)' has been displayed" />
+          <node node-id="21" node-type="screen" screen-id="s57" mandatory="true" />
+          <node node-id="22" node-type="decision" attribute-id="the calimant has been given reasonable assurance they will be an athletic participant in the upcoming season" />
+          <node node-id="23" node-type="screen" screen-id="s54" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="9" />
+          <connection from="2" to="3">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="2" to="4" />
+          <connection from="3" to="8" />
+          <connection from="4" to="10" />
+          <connection from="5" to="4" />
+          <connection from="6" to="4" />
+          <connection from="7" to="5">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="7" to="4">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="8" to="7">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="8" to="6">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="9" to="2" />
+          <connection from="10" to="13">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="10" to="11">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="14">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="12">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="12" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="12" to="15" />
+          <connection from="13" to="16" />
+          <connection from="14" to="22" />
+          <connection from="15" to="1" />
+          <connection from="16" to="17">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="16" to="19">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="17" to="20">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="17" to="18">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="18" to="21">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="18" to="11">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="19" to="18" />
+          <connection from="20" to="19">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="20" to="18">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="21" to="11" />
+          <connection from="22" to="23">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="22" to="12">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="23" to="12" />
+        </connections>
+      </flow>
+      <flow order="12" name="Not Ready for Prime Time Collection" id="f18" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s60" mandatory="true" />
+          <node node-id="3" node-type="screen" screen-id="s63" mandatory="true" />
+          <node node-id="4" node-type="decision" attribute-id="the claimant left the employment due to a medical condition" />
+          <node node-id="5" node-type="screen" screen-id="s64" mandatory="true" />
+          <node node-id="6" node-type="decision" attribute-id="the quit details screen should be displayed" />
+          <node node-id="7" node-type="decision" attribute-id="the claimant is stating that they left the employment for personal reasons" />
+          <node node-id="8" node-type="screen" screen-id="s61" mandatory="true" />
+          <node node-id="9" node-type="decision" attribute-id="the claimant is stating that they left the employment for work related reasons" />
+          <node node-id="10" node-type="decision" attribute-id="the claimant is stating that they left the employment for prospects of other work" />
+          <node node-id="11" node-type="screen" screen-id="s62" mandatory="true" />
+          <node node-id="12" node-type="screen" screen-id="s59" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="12" />
+          <connection from="2" to="7" />
+          <connection from="3" to="1" />
+          <connection from="4" to="3">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="4" to="1" />
+          <connection from="5" to="1" />
+          <connection from="6" to="2">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="6" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="7" to="8">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="7" to="9">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="8" to="4" />
+          <connection from="9" to="10">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="9" to="11">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="10" to="5">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="10" to="1" />
+          <connection from="11" to="1" />
+          <connection from="12" to="6" />
+        </connections>
+      </flow>
+      <flow folder="3" order="13" name="Final Collection" id="f19" entity="global" public-id="" error="false" entry-node-id="0">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s65" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="2" />
+          <connection from="2" to="1" />
         </connections>
       </flow>
     </flows>
