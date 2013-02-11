@@ -30,6 +30,12 @@
           <base>the scenario id</base>
         </text>
       </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en">
+          <base>the mre should receive a 412A</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a 412A'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the document" id="document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global">
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
@@ -219,7 +225,49 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the document should include section 01" id="5" concludes="b5">
+    <rule ruleburst="true" folder="0" name="the mre should receive a 412A" id="5" concludes="b7">
+      <rule-xml>
+        <table-conclude attr-id="b7" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>S001</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>S002</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>S008</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule ruleburst="true" folder="0" name="the document should include section 01" id="6" concludes="b5">
       <rule-xml>
         <table-conclude attr-id="b5" entity-id="document" scope-id="document0">
           <row>
@@ -270,7 +318,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the document should include section 02" id="6" concludes="b6">
+    <rule ruleburst="true" folder="0" name="the document should include section 02" id="7" concludes="b6">
       <rule-xml>
         <table-conclude attr-id="b6" entity-id="document" scope-id="document0">
           <row>
