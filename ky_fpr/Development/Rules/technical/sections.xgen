@@ -1,19 +1,19 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has an unsatisfactory attendance record</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record'))</parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the scenario id is "S003"</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the scenario id',singular),o('"S003"'))</parse>
         </text>
       </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the scenario id is "S008"</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the scenario id',singular),o('"S008"'))</parse>
@@ -21,7 +21,7 @@
       </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is receiving remuneration in lieu of notice from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving remuneration in lieu of notice from the employer'))</parse>
@@ -29,7 +29,7 @@
       </attribute>
     </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant voluntarily left the employment without good cause attributable to the employment</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without good cause attributable to the employment'))</parse>
@@ -37,44 +37,33 @@
       </attribute>
     </entity>
     <entity name="the document" id="document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the document section d_1_mc_02 should be included</base>
           <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),ob('the document section d_1_mc_02',singular))</parse>
         </text>
       </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the document section d_5_di_06, remuneration in lieu, should be included</base>
           <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),ob('the document section d_5_di_06, remuneration in lieu,',singular))</parse>
         </text>
       </attribute>
-      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the document should include section 01</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 01'))</parse>
-        </text>
-      </attribute>
     </entity>
     <entity name="the section" id="section" containment-relationship-id="allinstancesofthesectionforthedocument" containment-parent-id="document">
-      <attribute name="p1" type="number" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the section</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="number" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the section's substitution numeric attribute #01 value</base>
         </text>
       </attribute>
-      <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the section's substitution date attribute #01 value</base>
-        </text>
-      </attribute>
-      <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the section's finding</base>
-        </text>
-      </attribute>
-      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the section</base>
         </text>
       </attribute>
     </entity>
@@ -82,65 +71,45 @@
   <relationships>
     <relationship type="OneToMany" relationship-id="allinstancesofthesectionforthedocument" reverse-relationship-id="document_allinstancesofthesectionforthedocument_rev" text="all instances of the section for the document" source="document" target="section" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
-    <relationship type="OneToMany" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" text="all instances of the document" reverse-text="each document to global" source="global" target="document" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" text="all instances of the document" reverse-text="each document to global" source="global" target="document" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="inferredemployerdocument" reverse-relationship-id="documentinferredforemployer" text="inferred employer document" reverse-text="document inferred for employer" source="employer" target="document" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" text="all sections inferred" reverse-text="sections inferred for document" source="document" target="section" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule id="0" name="the section's finding" ruleburst="true" concludes="p4" folder="0" source-offset="1">
+    <rule id="0" name="all sections inferred" ruleburst="true" concludes="InferInstance(allsectionsinferred)" folder="0" source-offset="453">
       <rule-xml>
-        <table-conclude attr-id="p4" entity-id="section" scope-id="section0">
+        <table-conclude-instance relationship-id="allsectionsinferred" source="document" source-scope-id="document0">
           <row>
-            <value>
+            <identity>
               <string-value>d_2_vq_10</string-value>
-            </value>
+            </identity>
             <condition>
-              <and>
-                <for>
-                  <relationship relationship-id="document_allinstancesofthesectionforthedocument_rev" target-entity-id="document" />
-                  <attribute attr-id="b9" />
-                </for>
-                <for scope-id="document0">
-                  <relationship relationship-id="sectionsinferredfordocument" target-entity-id="document" />
-                  <and>
-                    <equals>
-                      <scope-for scope-ref="section0" target-entity-id="section">
-                        <attribute attr-id="p5" />
-                      </scope-for>
-                      <string-value>Section01</string-value>
-                    </equals>
-                    <for scope-id="employer0">
-                      <relationship relationship-id="documentinferredforemployer" target-entity-id="employer" />
-                      <for-all scope-id="employment0">
-                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
-                        <attribute attr-id="b11" />
-                      </for-all>
-                    </for>
-                  </and>
-                </for>
-              </and>
+              <for scope-id="employer0">
+                <relationship relationship-id="documentinferredforemployer" target-entity-id="employer" />
+                <for-all scope-id="employment0">
+                  <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                  <attribute attr-id="b1" />
+                </for-all>
+              </for>
             </condition>
           </row>
-          <otherwise>
-            <string-value>No Finding</string-value>
-          </otherwise>
-        </table-conclude>
+        </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="1" name="the document section d_1_mc_02 should be included" ruleburst="true" concludes="b1" folder="0" source-offset="599">
+    <rule id="1" name="the document section d_1_mc_02 should be included" ruleburst="true" concludes="b2" folder="0" source-offset="719">
       <rule-xml>
-        <conclude attr-id="b1" entity-id="document" scope-id="document0">
+        <conclude attr-id="b2" entity-id="document" scope-id="document0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
               <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="b2" />
+                <attribute attr-id="b3" />
               </scope-for>
               <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="b3" />
+                <attribute attr-id="b4" />
               </scope-for>
             </and>
           </condition>
@@ -150,20 +119,20 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the document section d_5_di_06, remuneration in lieu, should be included" ruleburst="true" concludes="b4" folder="0" source-offset="749">
+    <rule id="2" name="the document section d_5_di_06, remuneration in lieu, should be included" ruleburst="true" concludes="b5" folder="0" source-offset="854">
       <rule-xml>
-        <conclude attr-id="b4" entity-id="document" scope-id="document0">
+        <conclude attr-id="b5" entity-id="document" scope-id="document0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
               <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="b7" />
+                <attribute attr-id="b6" />
               </scope-for>
               <for scope-id="employer0">
                 <relationship relationship-id="documentinferredforemployer" target-entity-id="employer" />
-                <attribute attr-id="b8" />
+                <attribute attr-id="b7" />
               </for>
             </and>
           </condition>
@@ -173,9 +142,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the section's substitution numeric attribute #01 value" ruleburst="true" concludes="p1" folder="0" source-offset="1109">
+    <rule id="3" name="the section's substitution numeric attribute #01 value" ruleburst="true" concludes="p2" folder="0" source-offset="1159">
       <rule-xml>
-        <table-conclude attr-id="p1" entity-id="section" scope-id="section0">
+        <table-conclude attr-id="p2" entity-id="section" scope-id="section0">
           <row>
             <value>
               <number-value>3</number-value>
@@ -183,7 +152,7 @@
             <condition>
               <for>
                 <relationship relationship-id="document_allinstancesofthesectionforthedocument_rev" target-entity-id="document" />
-                <attribute attr-id="b4" />
+                <attribute attr-id="b5" />
               </for>
             </condition>
           </row>
@@ -193,9 +162,9 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the section's substitution date attribute #01 value" ruleburst="true" concludes="p2" folder="0" source-offset="1290">
+    <rule id="4" name="the section's substitution date attribute #01 value" ruleburst="true" concludes="p3" folder="0" source-offset="1314">
       <rule-xml>
-        <table-conclude attr-id="p2" entity-id="section" scope-id="section0">
+        <table-conclude attr-id="p3" entity-id="section" scope-id="section0">
           <row>
             <value>
               <current-date />
@@ -203,7 +172,7 @@
             <condition>
               <for>
                 <relationship relationship-id="document_allinstancesofthesectionforthedocument_rev" target-entity-id="document" />
-                <attribute attr-id="b4" />
+                <attribute attr-id="b5" />
               </for>
             </condition>
           </row>

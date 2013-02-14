@@ -911,11 +911,6 @@
           <base>the section's substitution date attribute #01 value</base>
         </text>
       </attribute>
-      <attribute name="p57" type="text" public-name="section_fnding">
-        <text>
-          <base>the section's finding</base>
-        </text>
-      </attribute>
     </entity>
     <entity id="issue" name="the issue" identifying-attribute-name="the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="the_issue">
       <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="the_issue_id">
@@ -941,11 +936,11 @@
     <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="document" text="all instances of the document" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" reverse-text="each document to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
     <relationship source="employer" target="document" is-containment="false" public-id="employertodocument" reverse-public-id="documenttoemployer" text="inferred employer document" relationship-id="inferredemployerdocument" reverse-relationship-id="documentinferredforemployer" reverse-text="document inferred for employer" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="document" is-containment="false" public-id="claimanttodocument" reverse-public-id="documenttoclaimant" text="all inferred claimant documents" relationship-id="allinferredclaimantdocuments" reverse-relationship-id="documenttoclaimant" reverse-text="document to claimant" type="OneToMany" is-computed="false" />
     <relationship source="document" target="section" text="all instances of the section for the document" relationship-id="allinstancesofthesectionforthedocument" reverse-relationship-id="document_allinstancesofthesectionforthedocument_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
     <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="global_allinstancesoftheissue_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
     <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="global_allinstancesoftheaction_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
     <relationship source="document" target="section" is-containment="false" public-id="documenttosection" reverse-public-id="sectiontodocument" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="document" is-containment="false" public-id="claimanttodocumnet" reverse-public-id="documenttoclaimant" text="all inferred claimant documents" relationship-id="allinferredclaimantdocuments" reverse-relationship-id="documentsinferredforclaimant" reverse-text="documents inferred for claimant" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
