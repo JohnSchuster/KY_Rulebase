@@ -582,6 +582,12 @@
           <base>the finding #01</base>
         </text>
       </attribute>
+      <attribute name="b118" type="boolean" public-name="claim_is_being_filed">
+        <text>
+          <base>the claim is being filed</base>
+          <parse>s(ver('10.4.2.18'),v(file,t(continuous,present,normal)),ob('the claim',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -870,32 +876,22 @@
         </text>
       </attribute>
     </entity>
-    <entity id="document" name="the document" identifying-attribute-name="the_document" identifying-attribute-text="the document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global" public-id="inferred_document">
-      <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_document">
+    <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="inferred_nod">
+      <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
         <text>
-          <base>the document</base>
+          <base>the nod</base>
+          <parse>
+          </parse>
         </text>
       </attribute>
-      <attribute name="b114" type="boolean" public-name="doc_section_01">
+      <attribute name="b116" type="boolean" public-name="nod_may_be_appealed">
         <text>
-          <base>the document should include section 01</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 01'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b115" type="boolean" public-name="doc_section_02">
-        <text>
-          <base>the document should include section 02</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 02'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b116" type="boolean" public-name="document_may_be_appealed">
-        <text>
-          <base>the document may be appealed</base>
-          <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the document',singular),o('appealed'))</parse>
+          <base>the nod may be appealed</base>
+          <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the nod',singular),o('appealed'))</parse>
         </text>
       </attribute>
     </entity>
-    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthedocument" containment-parent-id="document" public-id="the_section">
+    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthenod" containment-parent-id="nod" public-id="the_section">
       <attribute name="p51" type="text" substitutable="true" default-gender="generic" public-name="the_section_id">
         <text>
           <base>the section</base>
@@ -909,11 +905,6 @@
       <attribute name="p55" type="date" public-name="sec_sub_date_01_value">
         <text>
           <base>the section's substitution date attribute #01 value</base>
-        </text>
-      </attribute>
-      <attribute name="p57" type="text" public-name="section_fnding">
-        <text>
-          <base>the section's finding</base>
         </text>
       </attribute>
     </entity>
@@ -939,13 +930,13 @@
     <relationship source="global" target="employment" is-containment="false" public-id="global2candidatesep" reverse-public-id="candidatesep2global" text="all candidate separation interview employments" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" reverse-text="each candidate separation to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="document" text="all instances of the document" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" reverse-text="each document to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
-    <relationship source="employer" target="document" is-containment="false" public-id="employertodocument" reverse-public-id="documenttoemployer" text="inferred employer document" relationship-id="inferredemployerdocument" reverse-relationship-id="documentinferredforemployer" reverse-text="document inferred for employer" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="document" is-containment="false" public-id="claimanttodocument" reverse-public-id="documenttoclaimant" text="all inferred claimant documents" relationship-id="allinferredclaimantdocuments" reverse-relationship-id="documenttoclaimant" reverse-text="document to claimant" type="OneToMany" is-computed="false" />
-    <relationship source="document" target="section" text="all instances of the section for the document" relationship-id="allinstancesofthesectionforthedocument" reverse-relationship-id="document_allinstancesofthesectionforthedocument_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
     <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="global_allinstancesoftheissue_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
     <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="global_allinstancesoftheaction_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
-    <relationship source="document" target="section" is-containment="false" public-id="documenttosection" reverse-public-id="sectiontodocument" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
+    <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="employer_to_nod" reverse-public-id="nod_to_employer" />
+    <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="claimanttonod" reverse-public-id="nodtoclaimant" />
+    <relationship source="nod" target="section" text="all instances of the section for the nod" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="nod_allinstancesofthesectionforthenod_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
+    <relationship source="nod" target="section" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" is-containment="false" public-id="documenttosection" reverse-public-id="sectiontodocument" />
   </relationships>
   <rules />
   <interactive-items>

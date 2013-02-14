@@ -9,26 +9,26 @@
       </attribute>
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
+          <base>the mre should receive a 412A</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a 412A'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
           <base>the mre should receive a notice of determination</base>
           <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a notice of determination'))</parse>
         </text>
       </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the nmr should receive a notice of determination</base>
           <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the nmr',plural),o('a notice of determination'))</parse>
         </text>
       </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the bptw should receive a notice of determination</base>
           <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the bptw',plural),o('a notice of determination'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the mre should receive a 412A</base>
-          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a 412A'))</parse>
         </text>
       </attribute>
     </entity>
@@ -39,19 +39,19 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is the next most recent employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the next most recent employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is a non adjudicated ten week employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a non adjudicated ten week employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer was asserted to be reimbursing</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employer',singular),o('asserted to be reimbursing'))</parse>
@@ -63,54 +63,33 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the document" id="document" containment-relationship-id="allinstancesofthedocument" containment-parent-id="global">
-      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+    <entity name="the nod" id="nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global">
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the document may be appealed</base>
-          <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the document',singular),o('appealed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the document should include section 01</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 01'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the document should include section 02</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),sb('the document',plural),o('section 02'))</parse>
+          <base>the nod may be appealed</base>
+          <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the nod',singular),o('appealed'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the document</base>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the section" id="section" containment-relationship-id="allinstancesofthesectionforthedocument" containment-parent-id="document">
-      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the section</base>
+          <base>the nod</base>
         </text>
       </attribute>
     </entity>
   </entities>
   <relationships>
-    <relationship type="OneToMany" relationship-id="allinstancesofthesectionforthedocument" reverse-relationship-id="document_allinstancesofthesectionforthedocument_rev" text="all instances of the section for the document" source="document" target="section" is-implicit="false" is-containment="true" />
-    <relationship type="OneToMany" relationship-id="allinferredclaimantdocuments" reverse-relationship-id="documenttoclaimant" text="all inferred claimant documents" reverse-text="document to claimant" source="global" target="document" is-implicit="false" is-containment="false" />
-    <relationship type="OneToMany" relationship-id="allinstancesofthedocument" reverse-relationship-id="eachdocumenttoglobal" text="all instances of the document" reverse-text="each document to global" source="global" target="document" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
-    <relationship type="ManyToMany" relationship-id="inferredemployerdocument" reverse-relationship-id="documentinferredforemployer" text="inferred employer document" reverse-text="document inferred for employer" source="employer" target="document" is-implicit="false" is-containment="false" />
-    <relationship type="ManyToMany" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" text="all sections inferred" reverse-text="sections inferred for document" source="document" target="section" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" text="all inferred claimant nod" reverse-text="nod to claimant" source="global" target="nod" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" text="all instances of the nod" reverse-text="each nod to global" source="global" target="nod" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" text="inferred employer nod" reverse-text="nod inferred for employer" source="employer" target="nod" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule id="0" name="all inferred claimant documents" ruleburst="true" concludes="InferInstance(allinferredclaimantdocuments)" folder="0" source-offset="296">
+    <rule id="0" name="all inferred claimant nod" ruleburst="true" concludes="InferInstance(allinferredclaimantnod)" folder="0" source-offset="296">
       <rule-xml>
-        <table-conclude-instance relationship-id="allinferredclaimantdocuments" source="global" source-scope-id="global0">
+        <table-conclude-instance relationship-id="allinferredclaimantnod" source="global" source-scope-id="global0">
           <row>
             <identity>
-              <string-value>NoD</string-value>
+              <string-value>Claimant NoD</string-value>
             </identity>
             <condition>
               <attribute attr-id="b1" />
@@ -119,30 +98,14 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="1" name="inferred employer document" ruleburst="true" concludes="InferInstance(inferredemployerdocument)" folder="0" source-offset="533">
+    <rule id="1" name="inferred employer nod" ruleburst="true" concludes="InferInstance(inferredemployernod)" folder="0" source-offset="539">
       <rule-xml>
-        <table-conclude-instance relationship-id="inferredemployerdocument" source="employer" source-scope-id="employer0">
+        <table-conclude-instance relationship-id="inferredemployernod" source="employer" source-scope-id="employer0">
           <row>
             <identity>
               <concatenate>
                 <attribute attr-id="p2" />
                 <string-value><![CDATA[ MRE 412A]]></string-value>
-              </concatenate>
-            </identity>
-            <condition>
-              <and>
-                <attribute attr-id="b2" />
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="b12" />
-                </scope-for>
-              </and>
-            </condition>
-          </row>
-          <row>
-            <identity>
-              <concatenate>
-                <attribute attr-id="p2" />
-                <string-value><![CDATA[ MRE NoD]]></string-value>
               </concatenate>
             </identity>
             <condition>
@@ -158,14 +121,36 @@
             <identity>
               <concatenate>
                 <attribute attr-id="p2" />
+                <string-value><![CDATA[ MRE NoD]]></string-value>
+              </concatenate>
+            </identity>
+            <condition>
+              <and>
+                <exists-in scope-ref="global0" scope-is-source="true" scope-entity-id="global">
+                  <relationship relationship-id="allinstancesoftheemployer" target-entity-id="employer" />
+                </exists-in>
+                <attribute attr-id="b2" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b4" />
+                </scope-for>
+              </and>
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <concatenate>
+                <attribute attr-id="p2" />
                 <string-value><![CDATA[ NMR NoD]]></string-value>
               </concatenate>
             </identity>
             <condition>
               <and>
-                <attribute attr-id="b4" />
+                <exists-in scope-ref="global0" scope-is-source="true" scope-entity-id="global">
+                  <relationship relationship-id="allinstancesoftheemployer" target-entity-id="employer" />
+                </exists-in>
+                <attribute attr-id="b5" />
                 <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="b5" />
+                  <attribute attr-id="b6" />
                 </scope-for>
               </and>
             </condition>
@@ -179,9 +164,12 @@
             </identity>
             <condition>
               <and>
-                <attribute attr-id="b6" />
+                <exists-in scope-ref="global0" scope-is-source="true" scope-entity-id="global">
+                  <relationship relationship-id="allinstancesoftheemployer" target-entity-id="employer" />
+                </exists-in>
+                <attribute attr-id="b7" />
                 <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="b7" />
+                  <attribute attr-id="b8" />
                 </scope-for>
               </and>
             </condition>
@@ -189,18 +177,18 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="2" name="the document may be appealed" ruleburst="true" concludes="b8" folder="0" source-offset="1554">
+    <rule id="2" name="the nod may be appealed" ruleburst="true" concludes="b13" folder="0" source-offset="1705">
       <rule-xml>
-        <table-conclude attr-id="b8" entity-id="document" scope-id="document0">
+        <table-conclude attr-id="b13" entity-id="nod" scope-id="nod0">
           <row>
             <value>
               <true-value />
             </value>
             <condition>
               <for scope-id="employer0">
-                <relationship relationship-id="documentinferredforemployer" target-entity-id="employer" />
+                <relationship relationship-id="nodinferredforemployer" target-entity-id="employer" />
                 <not>
-                  <attribute attr-id="b9" />
+                  <attribute attr-id="b10" />
                 </not>
               </for>
             </condition>
@@ -209,28 +197,6 @@
             <false-value />
           </otherwise>
         </table-conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="all sections inferred" ruleburst="true" concludes="InferInstance(allsectionsinferred)" folder="0" source-offset="1936">
-      <rule-xml>
-        <table-conclude-instance relationship-id="allsectionsinferred" source="document" source-scope-id="document0">
-          <row>
-            <identity>
-              <string-value>Section01</string-value>
-            </identity>
-            <condition>
-              <attribute attr-id="b10" />
-            </condition>
-          </row>
-          <row>
-            <identity>
-              <string-value>Section02</string-value>
-            </identity>
-            <condition>
-              <attribute attr-id="b11" />
-            </condition>
-          </row>
-        </table-conclude-instance>
       </rule-xml>
     </rule>
   </rules>
