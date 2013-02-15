@@ -1,0 +1,223 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is payable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('payable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is monetarily eligible</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('monetarily eligible'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's status has met the conditions of eligibility</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,perfect)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant meets all other conditions of eligibility</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant',singular),o('all other conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the (claimant, party) is subject to fraud administrative penalties</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the (claimant, party)',singular),o('subject to fraud administrative penalties'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has met the reporting requirements</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,perfect)),sb('the claimant',singular),o('the reporting requirements'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has failed to meet the requirements to remove the previously imposed (disqualification, ineligibility)</base>
+          <parse>s(ver('10.4.2.18'),v(fail,t(simple,present,perfect)),sb('the claimant',singular),o('to meet the requirements to remove the previously imposed (disqualification, ineligibility)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant, otherwise ineligible based on reasonable assurance, has become eligible through their election to remove non-educational wages from the base period</base>
+          <parse>s(ver('10.4.2.18'),v(base,t(simple,past,normal)),sb('the claimant, otherwise ineligible',plural),o('on reasonable assurance, has become eligible through their election to remove non-educational wages from the base period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is qualified based on separation</base>
+          <parse>s(ver('10.4.2.18'),v(qualify,t(simple,present,normal)),ob('the claimant',singular),o('based on separation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is qualified based on separation from employment</base>
+          <parse>s(ver('10.4.2.18'),v(qualify,t(simple,present,normal)),ob('the claimant',singular),o('based on separation from employment'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
+          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is an (educational institution, educational service agency)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an (educational institution, educational service agency)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has reasonable assurance of returning to the same or similar work during the next term with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to the same or similar work during the next term with the employer'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is at fault for the separation from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="ManyToMany" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" text="all candidate separation interview employments" reverse-text="each candidate separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the claimant is payable" ruleburst="true" concludes="b1" folder="0" source-offset="973">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b2" />
+              <conclude attr-id="b17" entity-id="global" scope-id="global0">
+                <value>
+                  <true-value />
+                </value>
+                <condition>
+                  <attribute attr-id="b13" />
+                </condition>
+                <otherwise>
+                  <false-value />
+                </otherwise>
+              </conclude>
+              <attribute attr-id="b4" />
+              <attribute attr-id="b5" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the claimant is qualified based on separation" ruleburst="true" concludes="b13" folder="0" source-offset="1288">
+      <rule-xml>
+        <conclude attr-id="b13" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <for-all scope-id="employment0">
+              <relationship relationship-id="allcandidateseparationinterviewemployments" target-entity-id="employment" />
+              <not>
+                <attribute attr-id="b14" />
+              </not>
+            </for-all>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant meets all other conditions of eligibility" ruleburst="true" concludes="b5" folder="0" source-offset="1464">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <exists scope-id="employment0">
+                <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+                <not>
+                  <for>
+                    <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                    <attribute attr-id="b6" />
+                  </for>
+                </not>
+              </exists>
+              <not>
+                <attribute attr-id="b7" />
+              </not>
+              <attribute attr-id="b8" />
+              <not>
+                <attribute attr-id="b9" />
+              </not>
+              <or>
+                <not>
+                  <attribute attr-id="b10" />
+                </not>
+                <attribute attr-id="b11" />
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term" ruleburst="true" concludes="b10" folder="0" source-offset="2292">
+      <rule-xml>
+        <conclude attr-id="b10" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+              <and>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="b15" />
+                </for>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="b16" />
+                </for>
+              </and>
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
