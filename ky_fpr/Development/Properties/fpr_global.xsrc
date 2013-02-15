@@ -594,6 +594,18 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service to a state with a substantially similar re-assignment statute'))</parse>
         </text>
       </attribute>
+      <attribute name="b121" type="boolean" public-name="subst_changed_circumstances">
+        <text>
+          <base>the claimant's circumstances have changed substantially</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the claimant''s circumstances',plural),o('substantially'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b122" type="boolean">
+        <text>
+          <base>the claimant received worker's compensation for the injury</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('worker''s compensation for the injury'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
