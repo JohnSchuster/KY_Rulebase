@@ -588,6 +588,12 @@
           <parse>s(ver('10.4.2.18'),v(file,t(continuous,present,normal)),ob('the claim',singular))</parse>
         </text>
       </attribute>
+      <attribute name="b120" type="boolean" public-name="spouse_reassigned_by_bos">
+        <text>
+          <base>the claimant's spouse was assigned by a branch of service to a state with a substantially similar re-assignment statute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service to a state with a substantially similar re-assignment statute'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -873,6 +879,12 @@
         <text>
           <base>the claimant voluntarily left the employment without good cause attributable to the employment</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without good cause attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b119" type="boolean" public-name="emp_empt_dup">
+        <text>
+          <base>the employment is a duplicate employment period for the same employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a duplicate employment period for the same employer'))</parse>
         </text>
       </attribute>
     </entity>

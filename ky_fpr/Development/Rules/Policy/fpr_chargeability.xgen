@@ -7,18 +7,6 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception'))</parse>
         </text>
       </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation occurred under disqualifying circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation',plural),o('under disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation occurred under non-disqualifying circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation',plural),o('under non-disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -105,16 +93,22 @@
           <parse>s(ver('10.4.2.18'),v(defer,t(simple,present,normal)),ob('the employer''s chargeability ruling',singular))</parse>
         </text>
       </attribute>
-      <attribute name="b24" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer is the most recent employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent employer'))</parse>
-        </text>
-      </attribute>
       <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is a ten week employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employer occurred under non-disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employer',plural),o('under non-disqualifying circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employer occurred under disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employer',plural),o('under disqualifying circumstances'))</parse>
         </text>
       </attribute>
     </entity>
@@ -162,9 +156,7 @@
               </and>
               <and>
                 <attribute attr-id="b4" />
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="b5" />
-                </scope-for>
+                <attribute attr-id="b27" />
                 <attribute attr-id="b6" />
               </and>
               <and>
@@ -180,7 +172,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employer is deemed a chargeable employer" ruleburst="true" concludes="b8" folder="0" source-offset="804">
+    <rule id="1" name="the employer is deemed a chargeable employer" ruleburst="true" concludes="b8" folder="0" source-offset="868">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employer" scope-id="employer0">
           <value>
@@ -192,9 +184,7 @@
               <and>
                 <attribute attr-id="b6" />
                 <or>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b10" />
-                  </scope-for>
+                  <attribute attr-id="b26" />
                   <not>
                     <attribute attr-id="b11" />
                   </not>
@@ -215,7 +205,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="no ruling as to chargeability is being made at this time" ruleburst="true" concludes="b23" folder="0" source-offset="1633">
+    <rule id="2" name="no ruling as to chargeability is being made at this time" ruleburst="true" concludes="b23" folder="0" source-offset="1804">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
@@ -224,7 +214,7 @@
           <condition>
             <and>
               <not>
-                <attribute attr-id="b24" />
+                <attribute attr-id="b6" />
               </not>
               <or>
                 <attribute attr-id="b25" />
@@ -238,7 +228,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2041">
+    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2194">
       <rule-xml>
         <conclude attr-id="b12" entity-id="employer" scope-id="employer0">
           <value>
@@ -253,7 +243,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2181">
+    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2346">
       <rule-xml>
         <conclude attr-id="b13" entity-id="employer" scope-id="employer0">
           <value>
@@ -271,21 +261,21 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="2430">
+    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="2613">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employer" scope-id="employer0">
           <value>
             <true-value />
           </value>
           <condition>
-            <for-all scope-id="employment0">
+            <exists scope-id="employment0">
               <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
               <and>
                 <attribute attr-id="b21" />
                 <attribute attr-id="b20" />
                 <attribute attr-id="b19" />
               </and>
-            </for-all>
+            </exists>
           </condition>
           <otherwise>
             <false-value />
