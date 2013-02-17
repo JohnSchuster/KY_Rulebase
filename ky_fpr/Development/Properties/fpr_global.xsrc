@@ -16,21 +16,6 @@
           <base>the scenario id</base>
         </text>
       </attribute>
-      <attribute name="p12" type="text" public-name="g01_mre_pattern_code">
-        <text>
-          <base>the mre pattern code</base>
-        </text>
-      </attribute>
-      <attribute name="p13" type="text" public-name="g01_nmre_pattern_code">
-        <text>
-          <base>the nmre pattern code</base>
-        </text>
-      </attribute>
-      <attribute name="p14" type="text" public-name="g01_bptw_pattern_code">
-        <text>
-          <base>the bptw pattern code</base>
-        </text>
-      </attribute>
       <attribute name="p17" type="date" public-name="mre_last_day_worked">
         <text>
           <base>the most recent employment's last day worked</base>
@@ -490,16 +475,16 @@
           <base>the mre last day worked</base>
         </text>
       </attribute>
-      <attribute name="b91" type="boolean" public-name="g01_mre_was_twe">
+      <attribute name="b91" type="boolean" public-name="g01_mre_is_pc">
         <text>
-          <base>the most recent employment was for a ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the most recent employment',singular),o('for a ten week employer'))</parse>
+          <base>the most recent employment is potentially chargeable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the most recent employment',singular),o('potentially chargeable'))</parse>
         </text>
       </attribute>
-      <attribute name="b92" type="boolean" public-name="g01_nmre_was_twe">
+      <attribute name="b92" type="boolean" public-name="g01_nmr_is_pc">
         <text>
-          <base>the next most recent employment was for a ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the next most recent employment',singular),o('for a ten week employer'))</parse>
+          <base>the next most recent employment is potentially chargeable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the next most recent employment',singular),o('potentially chargeable'))</parse>
         </text>
       </attribute>
       <attribute name="b93" type="boolean" public-name="g01_interviews_sufficient">
@@ -606,6 +591,30 @@
           <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('worker''s compensation for the injury'))</parse>
         </text>
       </attribute>
+      <attribute name="b123" type="boolean" public-name="g01_mre_exists">
+        <text>
+          <base>a MRE was identified</base>
+          <parse>s(ver('10.4.2.18'),v(identify,t(simple,past,normal)),ob('a MRE',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b124" type="boolean" public-name="g01_rce_identified">
+        <text>
+          <base>a RCE was identified</base>
+          <parse>s(ver('10.4.2.18'),v(identify,t(simple,past,normal)),ob('a RCE',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b125" type="boolean" public-name="g01_nmr_identified">
+        <text>
+          <base>a NMR was identified</base>
+          <parse>s(ver('10.4.2.18'),v(identify,t(simple,past,normal)),ob('a NMR',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b126" type="boolean" public-name="g01_bptw_identified">
+        <text>
+          <base>a BPTW was identified</base>
+          <parse>s(ver('10.4.2.18'),v(identify,t(simple,past,normal)),ob('a BPTW',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -631,10 +640,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the next most recent employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b11" type="boolean" public-name="g01_na_twe_employer">
+      <attribute name="b11" type="boolean" public-name="g01_bptw_employer">
         <text>
-          <base>the employer is a non adjudicated ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a non adjudicated ten week employer'))</parse>
+          <base>the employer is a base period ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a base period ten week employer'))</parse>
         </text>
       </attribute>
       <attribute name="p16" type="number" public-name="g01_employer_num_separate_weeks">
@@ -766,15 +775,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b7" type="boolean" public-name="g01_most_recent_na_twe">
+      <attribute name="b7" type="boolean" public-name="g01_most_recent_bptw">
         <text>
-          <base>the employment is the most recent non adjudicated ten week employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent non adjudicated ten week employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p9" type="text" public-name="pattern_code">
-        <text>
-          <base>the employment's pattern code</base>
+          <base>the employment is the most recent bptw</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
         </text>
       </attribute>
       <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
@@ -816,10 +820,10 @@
           <base>the employment's employer name</base>
         </text>
       </attribute>
-      <attribute name="b80" type="boolean" public-name="g01_empt_mr_na_sep_empt">
+      <attribute name="b80" type="boolean" public-name="g01_empt_mr_sep_bptw">
         <text>
-          <base>the employment is the most recent non adjudicated, separated, ten week employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent non adjudicated, separated, ten week employment'))</parse>
+          <base>the employment is the most recent, separated, bptw</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent, separated, bptw'))</parse>
         </text>
       </attribute>
       <attribute name="p42" type="text" public-name="g01_emp_separation_det">
@@ -951,7 +955,7 @@
     <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="global_cont_employer" reverse-public-id="employer_cby_global" />
     <relationship source="employer" target="employment" text="all employer instances of employment" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" reverse-text="employment to employer instance" type="OneToMany" is-computed="false" is-containment="true" public-id="employer_cont_employment" reverse-public-id="employment_cby_employer" />
     <relationship source="global" target="employment" is-containment="false" public-id="global_inf_employment" reverse-public-id="employment_inf_global" text="all inferred instances of the employment" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" reverse-text="each employment to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="employment" is-containment="false" public-id="global2candidatesep" reverse-public-id="candidatesep2global" text="all candidate separation interview employments" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" reverse-text="each candidate separation to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="global2sep" reverse-public-id="sep2global" text="all separation interview employments" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" reverse-text="each separation to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="global_allinstancesoftheissue_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
