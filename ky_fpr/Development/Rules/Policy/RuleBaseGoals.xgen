@@ -98,8 +98,8 @@
     </entity>
   </entities>
   <relationships>
-    <relationship type="ManyToMany" relationship-id="allcandidateseparationinterviewemployments" reverse-relationship-id="eachcandidateseparationtoglobal" text="all candidate separation interview employments" reverse-text="each candidate separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
@@ -142,7 +142,7 @@
           </value>
           <condition>
             <for-all scope-id="employment0">
-              <relationship relationship-id="allcandidateseparationinterviewemployments" target-entity-id="employment" />
+              <relationship relationship-id="allseparationinterviewemployments" target-entity-id="employment" />
               <not>
                 <attribute attr-id="b14" />
               </not>
@@ -154,7 +154,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant meets all other conditions of eligibility" ruleburst="true" concludes="b5" folder="0" source-offset="1464">
+    <rule id="2" name="the claimant meets all other conditions of eligibility" ruleburst="true" concludes="b5" folder="0" source-offset="1454">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -192,7 +192,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term" ruleburst="true" concludes="b10" folder="0" source-offset="2292">
+    <rule id="3" name="the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term" ruleburst="true" concludes="b10" folder="0" source-offset="2282">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
