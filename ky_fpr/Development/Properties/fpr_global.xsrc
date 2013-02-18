@@ -945,6 +945,28 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a duplicate employment period for the same employer'))</parse>
         </text>
       </attribute>
+      <attribute name="p58" type="text" public-name="emt_selected_status">
+        <text>
+          <base>the employment's selected status</base>
+        </text>
+      </attribute>
+      <attribute name="b135" type="boolean" public-name="emt_emp_request_resignation">
+        <text>
+          <base>the employment's employer requested the claimant's resignation</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the employment''s employer',plural),o('the claimant''s resignation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p59" type="text" public-name="emt_reason_emr_req_resign">
+        <text>
+          <base>the claimant's stated reason that the employer requested their resignation</base>
+        </text>
+      </attribute>
+      <attribute name="b136" type="boolean" public-name="emt_terminated_if_not_resigned">
+        <text>
+          <base>the claimant would have been terminated had they failed to resign</base>
+          <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,perfect)),sb('the claimant',singular),o('terminated had they failed to resign'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="fpr_nod">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
