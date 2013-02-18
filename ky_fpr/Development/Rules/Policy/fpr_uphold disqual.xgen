@@ -43,12 +43,6 @@
           <parse>s(ver('10.4.2.18'),v(work,t(simple,present,perfect)),sb('the claimant',singular),o('in covered employment in each of (four, ten) whether or not consecutive as required by the previous determination'))</parse>
         </text>
       </attribute>
-      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>or the claimant has earned (four, ten) times the weekly benefit rate as required by the previous determination</base>
-          <parse>s(ver('10.4.2.18'),v(earn,t(simple,present,perfect)),sb('or the claimant',singular),o('(four, ten) times the weekly benefit rate as required by the previous determination'))</parse>
-        </text>
-      </attribute>
       <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a previously imposed ineligibility</base>
@@ -89,6 +83,12 @@
         <text lang="en-US">
           <base>the claimant has earned wages equaling at least five (5) times the weekly benefit rate determined on the immediately preceding benefit year</base>
           <parse>s(ver('10.4.2.18'),v(earn,t(simple,present,perfect)),sb('the claimant',singular),o('wages equaling at least five (5) times the weekly benefit rate determined on the immediately preceding benefit year'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has earned (four, ten) times the weekly benefit rate as required by the previous determination</base>
+          <parse>s(ver('10.4.2.18'),v(earn,t(simple,present,perfect)),sb('the claimant',singular),o('(four, ten) times the weekly benefit rate as required by the previous determination'))</parse>
         </text>
       </attribute>
     </entity>
@@ -137,7 +137,7 @@
                   <attribute attr-id="b7" />
                 </not>
                 <not>
-                  <attribute attr-id="b8" />
+                  <attribute attr-id="b16" />
                 </not>
               </or>
             </and>
@@ -148,7 +148,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant has not met the requirements to remove a previously imposed ineligibility" ruleburst="true" concludes="not b3" folder="0" source-offset="1259">
+    <rule id="2" name="the claimant has not met the requirements to remove a previously imposed ineligibility" ruleburst="true" concludes="not b3" folder="0" source-offset="1261">
       <rule-xml>
         <conclude attr-id="b3" entity-id="global" scope-id="global0">
           <value>
@@ -173,7 +173,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant has not met the requirements to remove a previously imposed fraud disqualification" ruleburst="true" concludes="not b4" folder="0" source-offset="1589">
+    <rule id="3" name="the claimant has not met the requirements to remove a previously imposed fraud disqualification" ruleburst="true" concludes="not b4" folder="0" source-offset="1591">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -193,7 +193,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant has not met the requirements to receive benefits in a new benefit year in accordance with KRS 341.355 (Double Dip)" ruleburst="true" concludes="not b5" folder="0" source-offset="1923">
+    <rule id="4" name="the claimant has not met the requirements to receive benefits in a new benefit year in accordance with KRS 341.355 (Double Dip)" ruleburst="true" concludes="not b5" folder="0" source-offset="1925">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>

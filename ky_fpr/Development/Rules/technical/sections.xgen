@@ -75,12 +75,12 @@
     </entity>
   </entities>
   <relationships>
-    <relationship type="OneToMany" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="nod_allinstancesofthesectionforthenod_rev" text="all instances of the section for the nod" source="nod" target="section" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="eachsection2thenod" text="all instances of the section for the nod" reverse-text="each section2 the nod" source="nod" target="section" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" text="all instances of the nod" reverse-text="each nod to global" source="global" target="nod" is-implicit="false" is-containment="true" />
-    <relationship type="ManyToMany" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" text="inferred employer nod" reverse-text="nod inferred for employer" source="employer" target="nod" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" text="all sections inferred" reverse-text="sections inferred for document" source="nod" target="section" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" text="inferred employer nod" reverse-text="nod inferred for employer" source="employer" target="nod" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
     <rule id="0" name="all sections inferred" ruleburst="true" concludes="InferInstance(allsectionsinferred)" folder="0" source-offset="1">

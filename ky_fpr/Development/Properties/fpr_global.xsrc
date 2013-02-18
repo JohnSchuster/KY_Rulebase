@@ -615,6 +615,42 @@
           <parse>s(ver('10.4.2.18'),v(identify,t(simple,past,normal)),ob('a BPTW',singular))</parse>
         </text>
       </attribute>
+      <attribute name="b127" type="boolean" public-name="fpr_quit_exception">
+        <text>
+          <base>the claimant has a quit exception</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b128" type="boolean" public-name="fpr_claimant_unsat_attendance">
+        <text>
+          <base>the claimant has an unsatisfactory attendance record</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b129" type="boolean">
+        <text>
+          <base>the scenario id is "S003"</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the scenario id',singular),o('"S003"'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b132" type="boolean" public-name="fpr_bona_fide_labor_dispute">
+        <text>
+          <base>the bona fide labor dispute is in active progress</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the bona fide labor dispute',singular),o('in active progress'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b133" type="boolean" public-name="fpr_unemp_bona_fide_dis">
+        <text>
+          <base>the claimant is unemployed as a result of a bona fide labor dispute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a bona fide labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b134" type="boolean" public-name="fpr_offwork_inclement_weather">
+        <text>
+          <base>the claimant (is, was) off work due to inclement weather</base>
+          <parse>s(ver('10.4.2.18'),v(work,t(simple,present,normal)),sb('the claimant (is, was) off',plural),o('due to inclement weather'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -722,9 +758,15 @@
           <parse>s(ver('10.4.2.18'),v(defer,t(simple,present,normal)),ob('the employer''s chargeability ruling',singular))</parse>
         </text>
       </attribute>
+      <attribute name="b130" type="boolean" public-name="fpr_claim_rem_in_lieu">
+        <text>
+          <base>the claimant is receiving remuneration in lieu of notice from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving remuneration in lieu of notice from the employer'))</parse>
+        </text>
+      </attribute>
     </entity>
-    <entity id="employment" name="the employment" identifying-attribute-name="employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
-      <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="employment_instance_id">
+    <entity id="employment" name="the employment" identifying-attribute-name="g01_employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
+      <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="g01_employment_instance_id">
         <text>
           <base>the employment</base>
         </text>
@@ -904,7 +946,7 @@
         </text>
       </attribute>
     </entity>
-    <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="inferred_nod">
+    <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="fpr_nod">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
         <text>
           <base>the nod</base>
@@ -918,8 +960,14 @@
           <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the nod',singular),o('appealed'))</parse>
         </text>
       </attribute>
+      <attribute name="b131" type="boolean">
+        <text>
+          <base>the nod section d_1_mc_02 should be included</base>
+          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),ob('the nod section d_1_mc_02',singular))</parse>
+        </text>
+      </attribute>
     </entity>
-    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthenod" containment-parent-id="nod" public-id="the_section">
+    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthenod" containment-parent-id="nod" public-id="fpr_nod_section">
       <attribute name="p51" type="text" substitutable="true" default-gender="generic" public-name="the_section_id">
         <text>
           <base>the section</base>
@@ -936,35 +984,43 @@
         </text>
       </attribute>
     </entity>
-    <entity id="issue" name="the issue" identifying-attribute-name="the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="the_issue">
-      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="the_issue_id">
+    <entity id="issue" name="the issue" identifying-attribute-name="g01_the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="fpr_issue">
+      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_issue_id">
         <text>
           <base>the issue</base>
         </text>
       </attribute>
     </entity>
-    <entity id="action" name="the action" identifying-attribute-name="the_action_id" identifying-attribute-text="the action" containment-relationship-id="allinstancesoftheaction" containment-parent-id="global" public-id="the_action">
+    <entity id="action" name="the action" identifying-attribute-name="the_action_id" identifying-attribute-text="the action" containment-relationship-id="allinstancesoftheaction" containment-parent-id="global" public-id="fpr_action">
       <attribute name="p53" type="text" substitutable="true" default-gender="generic" public-name="the_action_id">
         <text>
           <base>the action</base>
         </text>
       </attribute>
     </entity>
+    <entity id="a" name="the 412A" identifying-attribute-name="the_412a" identifying-attribute-text="the 412A" containment-relationship-id="allinstancesofthe412a" containment-parent-id="global" public-id="fpr_412a">
+      <attribute name="p57" type="text" substitutable="true" default-gender="generic" public-name="the_412a">
+        <text>
+          <base>the 412A</base>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
-    <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="global_cont_employer" reverse-public-id="employer_cby_global" />
-    <relationship source="employer" target="employment" text="all employer instances of employment" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" reverse-text="employment to employer instance" type="OneToMany" is-computed="false" is-containment="true" public-id="employer_cont_employment" reverse-public-id="employment_cby_employer" />
-    <relationship source="global" target="employment" is-containment="false" public-id="global_inf_employment" reverse-public-id="employment_inf_global" text="all inferred instances of the employment" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" reverse-text="each employment to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="employment" is-containment="false" public-id="global2sep" reverse-public-id="sep2global" text="all separation interview employments" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" reverse-text="each separation to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="employment" is-containment="false" public-id="gloabl_inf_exc_mre" reverse-public-id="mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="employment" is-containment="false" public-id="global_candidate_bptw" reverse-public-id="candidate_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" reverse-text="each candidate to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="global_allinstancesoftheissue_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
-    <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="global_allinstancesoftheaction_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
-    <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="globaltodocument" reverse-public-id="documenttoglobal" />
-    <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="employer_to_nod" reverse-public-id="nod_to_employer" />
-    <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="claimanttonod" reverse-public-id="nodtoclaimant" />
-    <relationship source="nod" target="section" text="all instances of the section for the nod" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="nod_allinstancesofthesectionforthenod_rev" reverse-text="" type="OneToMany" is-computed="false" is-containment="true" public-id="" reverse-public-id="" />
-    <relationship source="nod" target="section" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" is-containment="false" public-id="documenttosection" reverse-public-id="sectiontodocument" />
+    <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_emr" reverse-public-id="fpr_emr_cby_global" />
+    <relationship source="employer" target="employment" text="all employer instances of employment" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" reverse-text="employment to employer instance" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_emr_c_emt" reverse-public-id="fpr_emt_cby_emr" />
+    <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_inf_emt" reverse-public-id="fpr_emt_inf_global" text="all inferred instances of the employment" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" reverse-text="each inferred employment to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_sep_emt" reverse-public-id="fpr_emt_sep_global" text="all separation interview employments" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" reverse-text="each separation to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_inf_exc_mre" reverse-public-id="fpr_mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_bptw_emt" reverse-public-id="fpr_emt_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" reverse-text="each bptw to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="eachissueinstancetoglobal" reverse-text="each issue instance to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2issue" reverse-public-id="fpr_issue2global" />
+    <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="eachactioncontainedbyglobal" reverse-text="each action contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_action" reverse-public-id="fpr_action_cby_global" />
+    <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_nod" reverse-public-id="fpr_nod_cby_global" />
+    <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_emr_inf_nod" reverse-public-id="fpr_nod_inf_emr" />
+    <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
+    <relationship source="nod" target="section" text="all instances of the section for the nod" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="eachsection2thenod" reverse-text="each section2 the nod" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_nod_c_section" reverse-public-id="fpr_section_cby_nod" />
+    <relationship source="nod" target="section" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_nod_inf_section" reverse-public-id="fpr_section_inf_nod" />
+    <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
   </relationships>
   <rules />
   <interactive-items>

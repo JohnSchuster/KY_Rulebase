@@ -56,15 +56,15 @@
     </entity>
   </entities>
   <relationships>
-    <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" text="all inferred instances except mre" reverse-text="each exc mre to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
-    <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachcandidatetoglobal" text="all inferred candidate bptw" reverse-text="each candidate to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule id="0" name="isMemberOf(the employment, all inferred instances of the employment)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesoftheemployment)" folder="0" source-offset="3256">
+    <rule id="0" name="isMemberOf(the employment, all inferred instances of the employment)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesoftheemployment)" folder="0" source-offset="3250">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesoftheemployment" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -79,7 +79,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3570">
+    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3453">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesexceptmre" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -96,7 +96,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="4026">
+    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="3801">
       <rule-xml>
         <conclude-rel relationship-id="allinferredcandidatebptw" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -125,7 +125,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b14" folder="0" source-offset="4560">
+    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b14" folder="0" source-offset="4200">
       <rule-xml>
         <conclude attr-id="b14" entity-id="global" scope-id="global0">
           <value>
@@ -151,7 +151,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="5049">
+    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="4576">
       <rule-xml>
         <conclude-rel relationship-id="allseparationinterviewemployments" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
