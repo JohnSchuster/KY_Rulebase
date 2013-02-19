@@ -663,6 +663,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the bptw',singular),o('potentially chargeable'))</parse>
         </text>
       </attribute>
+      <attribute name="b139" type="boolean" public-name="test_2_flow">
+        <text>
+          <base>the test flow should be used</base>
+          <parse>s(ver('10.4.2.18'),v(use+should,t(simple,modal,normal)),ob('the test flow',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -690,8 +696,8 @@
       </attribute>
       <attribute name="b11" type="boolean" public-name="g01_bptw_employer">
         <text>
-          <base>the employer is a base period ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a base period ten week employer'))</parse>
+          <base>the employer is the most recent bptw employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent bptw employer'))</parse>
         </text>
       </attribute>
       <attribute name="p16" type="number" public-name="g01_employer_num_separate_weeks">
@@ -977,6 +983,16 @@
         <text>
           <base>the claimant would have been terminated had they failed to resign</base>
           <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,perfect)),sb('the claimant',singular),o('terminated had they failed to resign'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p60" type="text" public-name="g01_emt_vis_name">
+        <text>
+          <base>the employment period's visible name</base>
+        </text>
+      </attribute>
+      <attribute name="p62" type="number" public-name="g01_emt_week_diff">
+        <text>
+          <base>the employment's week difference inclusive</base>
         </text>
       </attribute>
     </entity>
