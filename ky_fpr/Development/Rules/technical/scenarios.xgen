@@ -98,10 +98,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the next most recent employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the employer is a base period ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a base period ten week employer'))</parse>
+          <base>the employer is the most recent bptw employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent bptw employer'))</parse>
         </text>
       </attribute>
       <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -190,6 +190,11 @@
           <base>the employment's number of discrete weeks not worked by the claimant</base>
         </text>
       </attribute>
+      <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment period's visible name</base>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
@@ -225,7 +230,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the next most recent employment is potentially chargeable" ruleburst="true" concludes="b26" folder="0" source-offset="336">
+    <rule id="1" name="the next most recent employment is potentially chargeable" ruleburst="true" concludes="b26" folder="0" source-offset="441">
       <rule-xml>
         <conclude attr-id="b26" entity-id="global" scope-id="global0">
           <value>
@@ -249,7 +254,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the recent concurrent employment is potentially chargeable" ruleburst="true" concludes="b27" folder="0" source-offset="610">
+    <rule id="2" name="the recent concurrent employment is potentially chargeable" ruleburst="true" concludes="b27" folder="0" source-offset="820">
       <rule-xml>
         <conclude attr-id="b27" entity-id="global" scope-id="global0">
           <value>
@@ -273,7 +278,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the bptw is potentially chargeable" ruleburst="true" concludes="b28" folder="0" source-offset="885">
+    <rule id="3" name="the bptw is potentially chargeable" ruleburst="true" concludes="b28" folder="0" source-offset="1200">
       <rule-xml>
         <conclude attr-id="b28" entity-id="global" scope-id="global0">
           <value>
@@ -297,7 +302,25 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employment" ruleburst="true" concludes="p1" folder="0" source-offset="1172">
+    <rule id="4" name="the employment period's visible name " ruleburst="true" concludes="p19 = p2 &amp; &quot; from &quot; &amp; p3 &amp; &quot; to &quot; &amp; p4" folder="0" source-offset="1515">
+      <rule-xml>
+        <conclude attr-id="p19" entity-id="employment" scope-id="employment0">
+          <value>
+            <concatenate>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <attribute attr-id="p2" />
+              </for>
+              <string-value><![CDATA[ from ]]></string-value>
+              <attribute attr-id="p3" />
+              <string-value><![CDATA[ to ]]></string-value>
+              <attribute attr-id="p4" />
+            </concatenate>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment" ruleburst="true" concludes="p1" folder="0" source-offset="1860">
       <rule-xml>
         <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <row>
@@ -321,6 +344,24 @@
           <row>
             <value>
               <concatenate>
+                <string-value><![CDATA[RCE ]]></string-value>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="p2" />
+                </for>
+                <string-value><![CDATA[ from ]]></string-value>
+                <attribute attr-id="p3" />
+                <string-value><![CDATA[ to ]]></string-value>
+                <attribute attr-id="p4" />
+              </concatenate>
+            </value>
+            <condition>
+              <attribute attr-id="b7" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <concatenate>
                 <string-value><![CDATA[NMR ]]></string-value>
                 <for>
                   <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
@@ -339,7 +380,7 @@
           <row>
             <value>
               <concatenate>
-                <string-value><![CDATA[TWE ]]></string-value>
+                <string-value><![CDATA[BPTW ]]></string-value>
                 <for>
                   <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
                   <attribute attr-id="p2" />
@@ -369,7 +410,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employer is potentially chargeable" ruleburst="true" concludes="b14" folder="0" source-offset="2191">
+    <rule id="6" name="the employer is potentially chargeable" ruleburst="true" concludes="b14" folder="0" source-offset="3292">
       <rule-xml>
         <conclude attr-id="b14" entity-id="employer" scope-id="employer0">
           <value>
@@ -384,7 +425,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant currently works for the employer" ruleburst="true" concludes="b15" folder="0" source-offset="2268">
+    <rule id="7" name="the claimant currently works for the employer" ruleburst="true" concludes="b15" folder="0" source-offset="3380">
       <rule-xml>
         <conclude attr-id="b15" entity-id="employer" scope-id="employer0">
           <value>
@@ -402,7 +443,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employer is the most recent employer" ruleburst="true" concludes="b22" folder="0" source-offset="2465">
+    <rule id="8" name="the employer is the most recent employer" ruleburst="true" concludes="b22" folder="0" source-offset="3630">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employer" scope-id="employer0">
           <value>
@@ -420,7 +461,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employer is the next most recent employer" ruleburst="true" concludes="b23" folder="0" source-offset="2598">
+    <rule id="9" name="the employer is the next most recent employer" ruleburst="true" concludes="b23" folder="0" source-offset="3815">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
@@ -438,9 +479,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employer is a base period ten week employer" ruleburst="true" concludes="b30" folder="0" source-offset="2742">
+    <rule id="10" name="the employer is the most recent bptw employer" ruleburst="true" concludes="b32" folder="0" source-offset="4011">
       <rule-xml>
-        <conclude attr-id="b30" entity-id="employer" scope-id="employer0">
+        <conclude attr-id="b32" entity-id="employer" scope-id="employer0">
           <value>
             <true-value />
           </value>
@@ -456,7 +497,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="a separation from employment exists" ruleburst="true" concludes="b11" folder="0" source-offset="2877">
+    <rule id="11" name="a separation from employment exists" ruleburst="true" concludes="b11" folder="0" source-offset="4197">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -476,7 +517,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the most recent last day worked of any employment " ruleburst="true" concludes="p7 = InstanceMaximum(allinferredinstancesoftheemployment,p4)" folder="0" source-offset="3186">
+    <rule id="12" name="the most recent last day worked of any employment " ruleburst="true" concludes="p7 = InstanceMaximum(allinferredinstancesoftheemployment,p4)" folder="0" source-offset="4567">
       <rule-xml>
         <conclude attr-id="p7" entity-id="global" scope-id="global0">
           <value>
@@ -488,7 +529,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the maximum nmre ldw " ruleburst="true" concludes="p17 = InstanceMaximum(allinferredinstancesexceptmre,p4)" folder="0" source-offset="3337">
+    <rule id="13" name="the maximum nmre ldw " ruleburst="true" concludes="p17 = InstanceMaximum(allinferredinstancesexceptmre,p4)" folder="0" source-offset="4781">
       <rule-xml>
         <conclude attr-id="p17" entity-id="global" scope-id="global0">
           <value>
@@ -500,7 +541,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the maximum bptw ldw " ruleburst="true" concludes="p18 = InstanceMaximum(allinferredcandidatebptw,p4)" folder="0" source-offset="3452">
+    <rule id="14" name="the maximum bptw ldw " ruleburst="true" concludes="p18 = InstanceMaximum(allinferredcandidatebptw,p4)" folder="0" source-offset="4954">
       <rule-xml>
         <conclude attr-id="p18" entity-id="global" scope-id="global0">
           <value>
@@ -512,7 +553,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the employment is the next most recent employment" ruleburst="true" concludes="b5" folder="0" source-offset="3561">
+    <rule id="15" name="the employment is the next most recent employment" ruleburst="true" concludes="b5" folder="0" source-offset="5116">
       <rule-xml>
         <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
           <value>
@@ -546,7 +587,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the employment is the most recent employment" ruleburst="true" concludes="b3" folder="0" source-offset="3937">
+    <rule id="16" name="the employment is the most recent employment" ruleburst="true" concludes="b3" folder="0" source-offset="5581">
       <rule-xml>
         <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
           <value>
@@ -569,7 +610,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the employment is the most recent, separated, employment" ruleburst="true" concludes="b21" folder="0" source-offset="4289">
+    <rule id="17" name="the employment is the most recent, separated, employment" ruleburst="true" concludes="b21" folder="0" source-offset="5954">
       <rule-xml>
         <conclude attr-id="b21" entity-id="employment" scope-id="employment0">
           <value>
@@ -589,7 +630,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the mre last day worked " ruleburst="true" concludes="p14 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b3)" folder="0" source-offset="4427">
+    <rule id="18" name="the mre last day worked " ruleburst="true" concludes="p14 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b3)" folder="0" source-offset="6113">
       <rule-xml>
         <conclude attr-id="p14" entity-id="global" scope-id="global0">
           <value>
@@ -602,7 +643,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the nmre last day worked " ruleburst="true" concludes="p15 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b5)" folder="0" source-offset="4598">
+    <rule id="19" name="the nmre last day worked " ruleburst="true" concludes="p15 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b5)" folder="0" source-offset="6351">
       <rule-xml>
         <conclude attr-id="p15" entity-id="global" scope-id="global0">
           <value>
@@ -615,7 +656,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the employment is a recent concurrent employment" ruleburst="true" concludes="b7" folder="0" source-offset="5017">
+    <rule id="20" name="the employment is a recent concurrent employment" ruleburst="true" concludes="b7" folder="0" source-offset="6837">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -624,12 +665,11 @@
           <condition>
             <and>
               <greater-than-equals>
-                <for>
-                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <scope-for scope-ref="global0" target-entity-id="global">
                   <instance-count>
-                    <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                    <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
                   </instance-count>
-                </for>
+                </scope-for>
                 <number-value>2</number-value>
               </greater-than-equals>
               <not>
@@ -653,7 +693,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the employment is the next most recent, separated, employment" ruleburst="true" concludes="b8" folder="0" source-offset="5336">
+    <rule id="21" name="the employment is the next most recent, separated, employment" ruleburst="true" concludes="b8" folder="0" source-offset="7411">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
           <value>
@@ -673,7 +713,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the employment is the most recent bptw" ruleburst="true" concludes="b29" folder="0" source-offset="5483">
+    <rule id="22" name="the employment is the most recent bptw" ruleburst="true" concludes="b29" folder="0" source-offset="7578">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
           <value>
@@ -714,7 +754,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the employment is the most recent, separated, bptw" ruleburst="true" concludes="b31" folder="0" source-offset="5857">
+    <rule id="23" name="the employment is the most recent, separated, bptw" ruleburst="true" concludes="b31" folder="0" source-offset="8056">
       <rule-xml>
         <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
           <value>
@@ -734,7 +774,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the employment's net number of discrete weeks worked within the base period" ruleburst="true" concludes="p9" folder="0" source-offset="6484">
+    <rule id="24" name="the employment's net number of discrete weeks worked within the base period" ruleburst="true" concludes="p9" folder="0" source-offset="8705">
       <rule-xml>
         <table-conclude attr-id="p9" entity-id="employment" scope-id="employment0">
           <row>
