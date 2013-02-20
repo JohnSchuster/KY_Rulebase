@@ -36,16 +36,6 @@
           <base>the most recent last day worked of any employment</base>
         </text>
       </attribute>
-      <attribute name="p12" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the base period start date</base>
-        </text>
-      </attribute>
-      <attribute name="p13" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the effective date</base>
-        </text>
-      </attribute>
       <attribute name="p14" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the mre last day worked</base>
@@ -129,12 +119,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the next most recent, separated, employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent, separated, employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employment is current</base>
@@ -147,22 +131,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
         </text>
       </attribute>
-      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the most recent, separated, employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent, separated, employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employment is the most recent bptw</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the most recent, separated, bptw</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent, separated, bptw'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -178,16 +150,6 @@
       <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's last day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p9" type="number" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's net number of discrete weeks worked within the base period</base>
-        </text>
-      </attribute>
-      <attribute name="p11" type="number" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's number of discrete weeks not worked by the claimant</base>
         </text>
       </attribute>
       <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -610,27 +572,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the employment is the most recent, separated, employment" ruleburst="true" concludes="b21" folder="0" source-offset="5954">
-      <rule-xml>
-        <conclude attr-id="b21" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <not>
-                <attribute attr-id="b16" />
-              </not>
-              <attribute attr-id="b3" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="18" name="the mre last day worked " ruleburst="true" concludes="p14 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b3)" folder="0" source-offset="6113">
+    <rule id="17" name="the mre last day worked " ruleburst="true" concludes="p14 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b3)" folder="0" source-offset="6092">
       <rule-xml>
         <conclude attr-id="p14" entity-id="global" scope-id="global0">
           <value>
@@ -643,7 +585,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the nmre last day worked " ruleburst="true" concludes="p15 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b5)" folder="0" source-offset="6351">
+    <rule id="18" name="the nmre last day worked " ruleburst="true" concludes="p15 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b5)" folder="0" source-offset="6330">
       <rule-xml>
         <conclude attr-id="p15" entity-id="global" scope-id="global0">
           <value>
@@ -656,7 +598,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the employment is a recent concurrent employment" ruleburst="true" concludes="b7" folder="0" source-offset="6837">
+    <rule id="19" name="the employment is a recent concurrent employment" ruleburst="true" concludes="b7" folder="0" source-offset="6816">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -693,27 +635,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the employment is the next most recent, separated, employment" ruleburst="true" concludes="b8" folder="0" source-offset="7411">
-      <rule-xml>
-        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b5" />
-              <not>
-                <attribute attr-id="b16" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="22" name="the employment is the most recent bptw" ruleburst="true" concludes="b29" folder="0" source-offset="7578">
+    <rule id="20" name="the employment is the most recent bptw" ruleburst="true" concludes="b29" folder="0" source-offset="7537">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
           <value>
@@ -752,140 +674,6 @@
             <false-value />
           </otherwise>
         </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="23" name="the employment is the most recent, separated, bptw" ruleburst="true" concludes="b31" folder="0" source-offset="8056">
-      <rule-xml>
-        <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b29" />
-              <not>
-                <attribute attr-id="b16" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="24" name="the employment's net number of discrete weeks worked within the base period" ruleburst="true" concludes="p9" folder="0" source-offset="8705">
-      <rule-xml>
-        <table-conclude attr-id="p9" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <number-value>0</number-value>
-            </value>
-            <condition>
-              <not>
-                <attribute attr-id="b17" />
-              </not>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <minus>
-                <week-difference-inclusive>
-                  <attribute attr-id="p3" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p13" />
-                  </scope-for>
-                </week-difference-inclusive>
-                <attribute attr-id="p11" />
-              </minus>
-            </value>
-            <condition>
-              <and>
-                <greater-than-equals>
-                  <attribute attr-id="p3" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p12" />
-                  </scope-for>
-                </greater-than-equals>
-                <greater-than-equals>
-                  <attribute attr-id="p4" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p13" />
-                  </scope-for>
-                </greater-than-equals>
-              </and>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <minus>
-                <week-difference-inclusive>
-                  <attribute attr-id="p3" />
-                  <attribute attr-id="p4" />
-                </week-difference-inclusive>
-                <attribute attr-id="p11" />
-              </minus>
-            </value>
-            <condition>
-              <and>
-                <greater-than-equals>
-                  <attribute attr-id="p3" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p12" />
-                  </scope-for>
-                </greater-than-equals>
-                <less-than>
-                  <attribute attr-id="p4" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p13" />
-                  </scope-for>
-                </less-than>
-              </and>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <minus>
-                <week-difference-inclusive>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p12" />
-                  </scope-for>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p13" />
-                  </scope-for>
-                </week-difference-inclusive>
-                <attribute attr-id="p11" />
-              </minus>
-            </value>
-            <condition>
-              <and>
-                <less-than>
-                  <attribute attr-id="p3" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p12" />
-                  </scope-for>
-                </less-than>
-                <greater-than-equals>
-                  <attribute attr-id="p4" />
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="p13" />
-                  </scope-for>
-                </greater-than-equals>
-              </and>
-            </condition>
-          </row>
-          <otherwise>
-            <minus>
-              <week-difference-inclusive>
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p12" />
-                </scope-for>
-                <attribute attr-id="p4" />
-              </week-difference-inclusive>
-              <attribute attr-id="p11" />
-            </minus>
-          </otherwise>
-        </table-conclude>
       </rule-xml>
     </rule>
   </rules>

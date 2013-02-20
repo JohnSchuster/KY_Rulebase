@@ -782,6 +782,17 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving remuneration in lieu of notice from the employer'))</parse>
         </text>
       </attribute>
+      <attribute name="p63" type="number" public-name="fpr_max_unworked_weeks">
+        <text>
+          <base>the maximum unworked weeks during investigation period for the employer to be potentially chargeable</base>
+        </text>
+      </attribute>
+      <attribute name="b140" type="boolean" public-name="fpr_weeks_exceed_threshold">
+        <text>
+          <base>the weeks unworked exceeds the threshold for the employer's chargeability</base>
+          <parse>s(ver('10.4.2.18'),v(exceed,t(simple,present,normal)),sb('the weeks unworked',singular),o('the threshold for the employer''s chargeability'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employment" name="the employment" identifying-attribute-name="g01_employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
       <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="g01_employment_instance_id">
@@ -843,7 +854,7 @@
       </attribute>
       <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
         <text>
-          <base>the employment's net number of discrete weeks worked within the base period</base>
+          <base>the employment's number of discrete weeks worked within the investigative period</base>
         </text>
       </attribute>
       <attribute name="b12" type="boolean" public-name="g01_emt_is_current">
