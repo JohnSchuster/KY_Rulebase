@@ -51,12 +51,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a federal base-period employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer filed a timely protest</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(simple,past,normal)),sb('the employer',plural),o('a timely protest'))</parse>
-        </text>
-      </attribute>
       <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is a reimbursing employer</base>
@@ -186,13 +180,13 @@
                 <or>
                   <attribute attr-id="b26" />
                   <not>
-                    <attribute attr-id="b11" />
+                    <attribute attr-id="b4" />
                   </not>
                   <attribute attr-id="b12" />
                   <and>
                     <attribute attr-id="b7" />
                     <not>
-                      <attribute attr-id="b11" />
+                      <attribute attr-id="b4" />
                     </not>
                   </and>
                 </or>
