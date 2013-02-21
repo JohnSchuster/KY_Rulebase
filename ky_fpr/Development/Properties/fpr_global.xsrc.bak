@@ -158,6 +158,12 @@
           <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
         </text>
       </attribute>
+      <attribute name="b24" type="boolean" public-name="claimants_sch_tr_restricts_avail">
+        <text>
+          <base>the claimant's (school, training) restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
       <attribute name="b25" type="boolean" public-name="claimants_ddc_restricts_avail">
         <text>
           <base>the claimant's duty of dependent care restricts their availability</base>
@@ -657,10 +663,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the bptw',singular),o('potentially chargeable'))</parse>
         </text>
       </attribute>
-      <attribute name="b345" type="boolean" public-name="fpr_income_deductable">
+      <attribute name="b139" type="boolean" public-name="test_2_flow">
         <text>
-          <base>the claimant's income is deductible</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s income',singular),o('deductible'))</parse>
+          <base>the test flow should be used</base>
+          <parse>s(ver('10.4.2.18'),v(use+should,t(simple,modal,normal)),ob('the test flow',singular))</parse>
         </text>
       </attribute>
       <attribute name="b346" type="boolean" public-name="fpr_subject_to_fraud">
@@ -2029,11 +2035,6 @@
           <base>the secondary special factor code</base>
         </text>
       </attribute>
-      <attribute name="p65" type="text" public-name="visible_investigation_period_text">
-        <text>
-          <base>the visible investigation period text</base>
-        </text>
-      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2061,8 +2062,8 @@
       </attribute>
       <attribute name="b11" type="boolean" public-name="g01_bptw_employer">
         <text>
-          <base>the employer is a base period ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a base period ten week employer'))</parse>
+          <base>the employer is the most recent bptw employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent bptw employer'))</parse>
         </text>
       </attribute>
       <attribute name="p16" type="number" public-name="g01_employer_num_separate_weeks">
@@ -2111,7 +2112,7 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('a timely protest'))</parse>
         </text>
       </attribute>
-      <attribute name="b86" type="boolean" public-name="g01_emp_potentially_chargeable">
+      <attribute name="b86" type="boolean" public-name="emp_potentially_chargeable">
         <text>
           <base>the employer is potentially chargeable</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('potentially chargeable'))</parse>
@@ -2147,17 +2148,17 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving remuneration in lieu of notice from the employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b278" type="boolean" public-name="emr_may_be_relieved">
+      <attribute name="p63" type="number" public-name="fpr_max_unworked_weeks">
         <text>
-          <base>the employer may be relieved of charges</base>
-          <parse>s(ver('10.4.2.18'),v(relieve+may,t(simple,modal,normal)),ob('the employer',singular),o('of charges'))</parse>
+          <base>the maximum unworked weeks during investigation period for the employer to be potentially chargeable</base>
         </text>
       </attribute>
-      <attribute name="b279" type="boolean" public-name="emr_employed_full_time">
+      <attribute name="b140" type="boolean" public-name="fpr_weeks_exceed_threshold">
         <text>
-          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
+          <base>the weeks unworked exceeds the threshold for the employer's chargeability</base>
+          <parse>s(ver('10.4.2.18'),v(exceed,t(simple,present,normal)),sb('the weeks unworked',singular),o('the threshold for the employer''s chargeability'))</parse>
         </text>
+      </attribute>
       </attribute>
       <attribute name="b280" type="boolean" public-name="emr_gets_non_ded_pension">
         <text>
@@ -2531,32 +2532,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('unable to provide work within the claimant''s diminished capabilities'))</parse>
         </text>
       </attribute>
-      <attribute name="b574" type="boolean" public-name="g01_fpr_weeks_exceed_threshold">
-        <text>
-          <base>the weeks unworked exceeds the threshold for the employer's chargeability</base>
-          <parse>s(ver('10.4.2.18'),v(exceed,t(simple,present,normal)),sb('the weeks unworked',singular),o('the threshold for the employer''s chargeability'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p62" type="number" public-name="fpr_max_unworked_weeks">
-        <text>
-          <base>the maximum unworked weeks during investigation period for the employer to be potentially chargeable</base>
-        </text>
-      </attribute>
-      <attribute name="p67" type="date" public-name="fpr_emr_ealiest_work_date">
-        <text>
-          <base>the employer's earliest work date in period</base>
-        </text>
-      </attribute>
-      <attribute name="p68" type="date" public-name="fpr_emr_latest_work_date">
-        <text>
-          <base>the employer's latest work date in period</base>
-        </text>
-      </attribute>
-      <attribute name="p69" type="text" public-name="fpr_emr_vis_date_range">
-        <text>
-          <base>the employer's visible date range</base>
-        </text>
-      </attribute>
     </entity>
     <entity id="employment" name="the employment" identifying-attribute-name="g01_employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
       <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="g01_employment_instance_id">
@@ -2618,7 +2593,7 @@
       </attribute>
       <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
         <text>
-          <base>the employment's net number of discrete weeks worked within the base period</base>
+          <base>the employment's number of discrete weeks worked within the investigative period</base>
         </text>
       </attribute>
       <attribute name="b12" type="boolean" public-name="g01_emt_is_current">
@@ -2758,6 +2733,16 @@
         <text>
           <base>the claimant would have been terminated had they failed to resign</base>
           <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,perfect)),sb('the claimant',singular),o('terminated had they failed to resign'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p60" type="text" public-name="g01_emt_vis_name">
+        <text>
+          <base>the employment period's visible name</base>
+        </text>
+      </attribute>
+      <attribute name="p62" type="number" public-name="g01_emt_week_diff">
+        <text>
+          <base>the employment's week difference inclusive</base>
         </text>
       </attribute>
       <attribute name="b139" type="boolean" public-name="emt_discharge_dishonesty">
@@ -3592,21 +3577,6 @@
         <text>
           <base>the claimant's separation from the employment is payable within the SIMS precedent</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p63" type="number" public-name="fpr_emt_discrete_weeks_worked">
-        <text>
-          <base>the employment's number of discrete weeks worked within the investigative period</base>
-        </text>
-      </attribute>
-      <attribute name="p64" type="text" public-name="fpr_emt_visible_name">
-        <text>
-          <base>the employment period's visible name</base>
-        </text>
-      </attribute>
-      <attribute name="p66" type="text" public-name="fpr_emt_period_text">
-        <text>
-          <base>the employment period's visible text</base>
         </text>
       </attribute>
     </entity>

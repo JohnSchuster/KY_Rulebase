@@ -95,7 +95,7 @@
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s3" name="&lt;11&gt; List each of your Employer's, From: %g01_base_period_start_date% To %g01_effective_date% " public-id="" order="1" folder="4">
+      <screen type="Question" id="s3" name="&lt;11&gt; List each of your Employer's, From: %visible_investigation_period_text% " public-id="" order="1" folder="4">
         <controls>
           <entity entity-id="fpr_employer">
             <control-properties>
@@ -116,7 +116,7 @@
                   <property name="lines" type="integer">1</property>
                 </control-properties>
                 <input-attr text="the employer">
-                  <doc-attr id="p29@kyfpr_rmod" />
+                  <doc-attr id="p32@kyfpr_rmod" />
                   <doc-attr id="g01_fpr_employer_instance_id" />
                 </input-attr>
                 <caption>Employer's Name:</caption>
@@ -128,11 +128,9 @@
                   <property name="ClassOverride" type="string">
                   </property>
                   <property name="IsHTML" type="boolean">true</property>
-                  <property name="__list-name" type="string">
-                  </property>
                 </control-properties>
                 <input-attr text="the employer's categorization code">
-                  <doc-attr id="p31@kyfpr_rmod" />
+                  <doc-attr id="p38@kyfpr_rmod" />
                   <doc-attr id="g01_emp_categorization_code" />
                 </input-attr>
                 <values>
@@ -147,7 +145,7 @@
           </entity>
         </controls>
       </screen>
-      <screen type="Question" id="s5" name="&lt;15A&gt; Quit Details for %g01_fpr_employer_instance_id%" public-id="" folder="8" order="2" entity="fpr_employment">
+      <screen type="Question" id="s5" name="&lt;15A&gt; Quit Details for %fpr_emt_visible_name%" public-id="" folder="8" order="2" entity="fpr_employment">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -169,7 +167,7 @@
               <property name="IsHTML" type="boolean">false</property>
             </control-properties>
             <input-attr text="the employment's employer requested the claimant's resignation">
-              <doc-attr id="b124@kyfpr_rmod" />
+              <doc-attr id="b529@kyfpr_rmod" />
               <doc-attr id="emt_emp_request_resignation" />
             </input-attr>
             <caption>Did the &lt;employer&gt; request your resignation?</caption>
@@ -4184,7 +4182,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s6" name="&lt;15&gt; Employment Status for %g01_employment_instance_id% " public-id="xrulz_screen_15" entity="fpr_employment" order="1" folder="8">
+      <screen type="Question" id="s6" name="&lt;15&gt; Employment Status for %fpr_emt_visible_name% " public-id="xrulz_screen_15" entity="fpr_employment" order="1" folder="8">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -4206,7 +4204,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">false</property>
             </control-properties>
             <input-attr text="the employment's selected status">
-              <doc-attr id="p39@kyfpr_rmod" />
+              <doc-attr id="p44@kyfpr_rmod" />
               <doc-attr id="emt_selected_status" />
             </input-attr>
             <values>
@@ -4241,7 +4239,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s67" name="&lt;15A1&gt; Quit Details for %g01_fpr_employer_instance_id%" public-id="" folder="8" order="3">
+      <screen type="Question" id="s67" name="&lt;15A1&gt; Quit Details for %fpr_emt_visible_name%" public-id="" folder="8" order="3">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -4253,7 +4251,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimant's stated reason that the employer requested their resignation">
-              <doc-attr id="p40@kyfpr_rmod" />
+              <doc-attr id="p45@kyfpr_rmod" />
               <doc-attr id="emt_reason_emr_req_resign" />
             </input-attr>
             <caption>What is the reason that your employer requested your resignation?</caption>
@@ -4267,14 +4265,14 @@ than 100 miles from your home?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">false</property>
             </control-properties>
             <input-attr text="the claimant would have been terminated had they failed to resign">
-              <doc-attr id="b125@kyfpr_rmod" />
+              <doc-attr id="b530@kyfpr_rmod" />
               <doc-attr id="emt_terminated_if_not_resigned" />
             </input-attr>
             <caption>Would you have been discharged (terminated) if you had not resigned?</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s4" name="List each period of Employment with %g01_fpr_employer_instance_id%  " public-id="" order="1" folder="5">
+      <screen type="Question" id="s4" name="List Periods of Employment for %g01_fpr_employer_instance_id%  Between %visible_investigation_period_text% " public-id="" order="1" folder="5">
         <controls>
           <entity entity-id="fpr_employment">
             <control-properties>
@@ -4296,7 +4294,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
                   <property name="IsHTML" type="boolean">true</property>
                 </control-properties>
                 <input-attr text="the employment's first day worked date">
-                  <doc-attr id="p33@kyfpr_rmod" />
+                  <doc-attr id="p37@kyfpr_rmod" />
                   <doc-attr id="g01_first_day_worked_date" />
                 </input-attr>
                 <caption>First Day Worked</caption>
@@ -4310,16 +4308,16 @@ than 100 miles from your home?&lt;/p&gt;</caption>
                   <property name="IsHTML" type="boolean">true</property>
                 </control-properties>
                 <input-attr text="the employment's last day worked date">
-                  <doc-attr id="p34@kyfpr_rmod" />
+                  <doc-attr id="p38@kyfpr_rmod" />
                   <doc-attr id="g01_last_day_worked_date" />
                 </input-attr>
-                <caption>Last Day&lt;br&gt; Performed Worked</caption>
+                <caption>Last Day&lt;/br&gt;You Performed&lt;/br&gt;Work</caption>
               </input>
             </controls>
           </entity>
         </controls>
       </screen>
-      <screen type="Question" id="s69" name="Weeks un-worked for Employer %g01_fpr_employer_instance_id%" public-id="" folder="7" order="1">
+      <screen type="Question" id="s69" name="Complete Weeks Not Worked for Employer %g01_fpr_employer_instance_id% %fpr_emr_vis_date_range%" public-id="" folder="7" order="1">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -4330,7 +4328,7 @@ than 100 miles from your home?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the weeks unworked exceeds the threshold for the employer's chargeability">
-              <doc-attr id="b93@kyfpr_rmod" />
+              <doc-attr id="b320@kyfpr_rmod" />
               <doc-attr id="fpr_weeks_exceed_threshold" />
             </input-attr>
             <caption>Does the Total number of &lt;b&gt;Complete Working Weeks&lt;/b&gt; that you did not work for the employer, for &lt;b&gt;Any Reason&lt;/b&gt;, exceed (is more than) &lt;b&gt;%fpr_max_unworked_weeks% ?&lt;/b&gt;</caption>
