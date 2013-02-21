@@ -69,12 +69,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a non-deductible pension from the employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving a non-deductible vacation pay from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a non-deductible vacation pay from the employer'))</parse>
-        </text>
-      </attribute>
       <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is receiving severance pay from the employer</base>
@@ -121,12 +115,6 @@
         <text lang="en-US">
           <base>the claimant is receiving deductible wages from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving deductible wages from the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving an 80% deductible pension from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving an 80% deductible pension from the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
@@ -264,7 +252,7 @@
                 <relationship relationship-id="allinstancesoftheemployer" target-entity-id="employer" />
                 <or>
                   <attribute attr-id="b2" />
-                  <attribute attr-id="b3" />
+                  <attribute attr-id="b39" />
                   <attribute attr-id="b4" />
                 </or>
               </for-all>
@@ -290,7 +278,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant's weekly unemployment insurance benefit amount will be reduced by 100% of the amount of income received from all employers" ruleburst="true" concludes="b7" folder="0" source-offset="1157">
+    <rule id="1" name="the claimant's weekly unemployment insurance benefit amount will be reduced by 100% of the amount of income received from all employers" ruleburst="true" concludes="b7" folder="0" source-offset="1156">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
@@ -315,7 +303,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is receiving (received) at least one 100% deductible pension from an employer" ruleburst="true" concludes="b11" folder="0" source-offset="1792">
+    <rule id="2" name="the claimant is receiving (received) at least one 100% deductible pension from an employer" ruleburst="true" concludes="b11" folder="0" source-offset="1791">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -336,7 +324,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is receiving (received) wages paid under the conditions of the WARN act from the employer" ruleburst="true" concludes="b9" folder="0" source-offset="2104">
+    <rule id="3" name="the claimant is receiving (received) wages paid under the conditions of the WARN act from the employer" ruleburst="true" concludes="b9" folder="0" source-offset="2109">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employer" scope-id="employer0">
           <value>
@@ -358,7 +346,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant is receiving remuneration in lieu of notice from the employer" ruleburst="true" concludes="b23" folder="0" source-offset="2337">
+    <rule id="4" name="the claimant is receiving remuneration in lieu of notice from the employer" ruleburst="true" concludes="b23" folder="0" source-offset="2342">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
@@ -384,7 +372,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant's weekly unemployment insurance benefit amount will be reduced by 80% of the amount of income received" ruleburst="true" concludes="b24" folder="0" source-offset="2779">
+    <rule id="5" name="the claimant's weekly unemployment insurance benefit amount will be reduced by 80% of the amount of income received" ruleburst="true" concludes="b24" folder="0" source-offset="2784">
       <rule-xml>
         <conclude attr-id="b24" entity-id="global" scope-id="global0">
           <value>
@@ -395,7 +383,7 @@
               <relationship relationship-id="allinstancesoftheemployer" target-entity-id="employer" />
               <or>
                 <attribute attr-id="b25" />
-                <attribute attr-id="b26" />
+                <attribute attr-id="b32" />
                 <attribute attr-id="b27" />
               </or>
             </for-all>
@@ -406,7 +394,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant is receiving (received) deductible wages from at least one employer" ruleburst="true" concludes="b28" folder="0" source-offset="3222">
+    <rule id="6" name="the claimant is receiving (received) deductible wages from at least one employer" ruleburst="true" concludes="b28" folder="0" source-offset="3238">
       <rule-xml>
         <conclude attr-id="b28" entity-id="global" scope-id="global0">
           <value>
@@ -428,7 +416,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant is receiving (received) an 80% deductible pension from the employer" ruleburst="true" concludes="b32" folder="0" source-offset="3627">
+    <rule id="7" name="the claimant is receiving (received) an 80% deductible pension from the employer" ruleburst="true" concludes="b32" folder="0" source-offset="3644">
       <rule-xml>
         <conclude attr-id="b32" entity-id="employer" scope-id="employer0">
           <value>
@@ -449,7 +437,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant is receiving deductible vacation pay from the employer" ruleburst="true" concludes="b27" folder="0" source-offset="4105">
+    <rule id="8" name="the claimant is receiving deductible vacation pay from the employer" ruleburst="true" concludes="b27" folder="0" source-offset="4122">
       <rule-xml>
         <conclude attr-id="b27" entity-id="employer" scope-id="employer0">
           <value>
@@ -472,7 +460,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant is receiving a non-deductible pension from the employer" ruleburst="true" concludes="b2" folder="0" source-offset="4462">
+    <rule id="9" name="the claimant is receiving a non-deductible pension from the employer" ruleburst="true" concludes="b2" folder="0" source-offset="4479">
       <rule-xml>
         <conclude attr-id="b2" entity-id="employer" scope-id="employer0">
           <value>
@@ -492,7 +480,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant is receiving non-deductible vacation pay from the employer" ruleburst="true" concludes="b39" folder="0" source-offset="4705">
+    <rule id="10" name="the claimant is receiving non-deductible vacation pay from the employer" ruleburst="true" concludes="b39" folder="0" source-offset="4722">
       <rule-xml>
         <conclude attr-id="b39" entity-id="employer" scope-id="employer0">
           <value>
@@ -517,7 +505,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant is receiving severance pay from the employer" ruleburst="true" concludes="b4" folder="0" source-offset="5064">
+    <rule id="11" name="the claimant is receiving severance pay from the employer" ruleburst="true" concludes="b4" folder="0" source-offset="5081">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employer" scope-id="employer0">
           <value>

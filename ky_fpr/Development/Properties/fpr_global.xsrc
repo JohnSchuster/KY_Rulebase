@@ -158,12 +158,6 @@
           <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
         </text>
       </attribute>
-      <attribute name="b24" type="boolean" public-name="claimants_sch_tr_restricts_avail">
-        <text>
-          <base>the claimant's (school, training) restricts their availability</base>
-          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('their availability'))</parse>
-        </text>
-      </attribute>
       <attribute name="b25" type="boolean" public-name="claimants_ddc_restricts_avail">
         <text>
           <base>the claimant's duty of dependent care restricts their availability</base>
@@ -1419,12 +1413,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving income'))</parse>
         </text>
       </attribute>
-      <attribute name="b471" type="boolean" public-name="fpr_unsatisfactory_performance">
-        <text>
-          <base>the claimant's work performance was unsatisfactory</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s work performance',singular),o('unsatisfactory'))</parse>
-        </text>
-      </attribute>
       <attribute name="b472" type="boolean" public-name="fpr_paid_during_shutdown">
         <text>
           <base>the claimant is being paid their regular salary during a federal government shutdown</base>
@@ -1809,7 +1797,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed because of a labor dispute in the establishment where they have been employed'))</parse>
         </text>
       </attribute>
-      <attribute name="b537" type="boolean" public-name="fpr_unsatisfactory_performance_part2">
+      <attribute name="b537" type="boolean" public-name="fpr_unsatisfactory_performance">
         <text>
           <base>the claimant failed to perform satisfactory work</base>
           <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to perform satisfactory work'))</parse>
@@ -1971,7 +1959,7 @@
           <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
         </text>
       </attribute>
-      <attribute name="b564" type="boolean" public-name="fpr_school_restricts_avail_part2">
+      <attribute name="b564" type="boolean" public-name="fpr_school_restricts_aa">
         <text>
           <base>the claimant's school (training) restricts their availability</base>
           <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s school (training)',singular),o('their availability'))</parse>
@@ -2178,12 +2166,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the claimant''s most-recent employer that employed the worker in at least ten weeks (whether or not consecutive) back to the beginning of the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b282" type="boolean" public-name="emr_gets_non_ded_vacation">
-        <text>
-          <base>the claimant is receiving a non-deductible vacation pay from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a non-deductible vacation pay from the employer'))</parse>
-        </text>
-      </attribute>
       <attribute name="b283" type="boolean" public-name="emr_timely_protest">
         <text>
           <base>the employer has filed a timely protest</base>
@@ -2214,10 +2196,10 @@
           <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
         </text>
       </attribute>
-      <attribute name="b288" type="boolean" public-name="emr_violated_rule">
+      <attribute name="b288" type="boolean" public-name="emr_claimant_v_rue_rule">
         <text>
-          <base>the claimant has knowingly violated the employer's reasonable (uniformly) enforced rule</base>
-          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant has knowingly',plural),o('the employer''s reasonable (uniformly) enforced rule'))</parse>
+          <base>the claimant knowingly violated the employer's reasonable (uniformly) enforced rule</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant knowingly',plural),o('the employer''s reasonable (uniformly) enforced rule'))</parse>
         </text>
       </attribute>
       <attribute name="b289" type="boolean" public-name="emr_na_twe">
@@ -2254,12 +2236,6 @@
         <text>
           <base>the claimant left employment rather than take a (drug, alcohol) test as required by the employer's reasonable policy</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('employment rather than take a (drug, alcohol) test as required by the employer''s reasonable policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b295" type="boolean" public-name="emr_timely_protest_part2">
-        <text>
-          <base>the employer filed a timely protest</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(simple,past,normal)),sb('the employer',plural),o('a timely protest'))</parse>
         </text>
       </attribute>
       <attribute name="b296" type="boolean" public-name="emr_is_reimbursing">
@@ -2316,7 +2292,7 @@
           <parse>s(ver('10.4.2.18'),v(demonstrate,t(simple,present,normal)),sb('the claimant''s action',singular),o('a willful disregard of the employer''s business interests'))</parse>
         </text>
       </attribute>
-      <attribute name="b305" type="boolean" public-name="emr_violated_rule_part2">
+      <attribute name="b305" type="boolean" public-name="emr_claimant_violated_rule">
         <text>
           <base>the claimant violated the employer's rule</base>
           <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the employer''s rule'))</parse>
@@ -2338,12 +2314,6 @@
         <text>
           <base>the claimant's separation from the employer occurred under non-disqualifying circumstances</base>
           <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employer',plural),o('under non-disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b309" type="boolean" public-name="emr_gets_80_deducted">
-        <text>
-          <base>the claimant is receiving an 80% deductible pension from the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving an 80% deductible pension from the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b310" type="boolean" public-name="emr_sep_is_disqualifying">
@@ -2400,7 +2370,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions required by the employer',plural),o('reasonable for this employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b319" type="boolean" public-name="emr_gets_80_deducted_part2">
+      <attribute name="b319" type="boolean" public-name="emr_gets_80_deducted">
         <text>
           <base>the claimant is receiving (received) an 80% deductible pension from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) an 80% deductible pension from the employer'))</parse>
@@ -2448,7 +2418,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a pension from the employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b327" type="boolean" public-name="emr_gets_non_ded_vacation_part2">
+      <attribute name="b327" type="boolean" public-name="emr_gets_non_ded_vacation">
         <text>
           <base>the claimant is receiving non-deductible vacation pay from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving non-deductible vacation pay from the employer'))</parse>
