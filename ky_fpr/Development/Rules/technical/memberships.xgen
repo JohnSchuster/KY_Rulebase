@@ -53,6 +53,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
         </text>
       </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment should be investigated in a separation interview</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment',singular),o('in a separation interview'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
@@ -79,52 +85,41 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3565">
+    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3454">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesexceptmre" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
-            <for>
-              <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-              <for-all scope-id="employment1">
-                <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
-              </for-all>
-            </for>
+            <not>
+              <attribute attr-id="b1" />
+            </not>
           </condition>
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="4022">
+    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="3752">
       <rule-xml>
         <conclude-rel relationship-id="allinferredcandidatebptw" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
-            <scope-for scope-ref="global0" target-entity-id="global">
-              <exists scope-id="employment1">
-                <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
-                <and>
-                  <for>
-                    <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                    <attribute attr-id="b2" />
-                  </for>
-                  <not>
-                    <attribute attr-id="b3" />
-                  </not>
-                  <not>
-                    <attribute attr-id="b1" />
-                  </not>
-                  <not>
-                    <attribute attr-id="b4" />
-                  </not>
-                </and>
-              </exists>
-            </scope-for>
+            <and>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <attribute attr-id="b2" />
+              </for>
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+              <not>
+                <attribute attr-id="b1" />
+              </not>
+              <not>
+                <attribute attr-id="b4" />
+              </not>
+            </and>
           </condition>
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="4874">
+    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="4073">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -150,43 +145,52 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="5362">
+    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="4399">
       <rule-xml>
         <conclude-rel relationship-id="allseparationinterviewemployments" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
-            <for>
-              <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-              <exists scope-id="employment1">
-                <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
-                <or>
-                  <attribute attr-id="b1" />
-                  <attribute attr-id="b3" />
-                  <and>
-                    <not>
-                      <scope-for scope-ref="global0" target-entity-id="global">
-                        <attribute attr-id="b5" />
-                      </scope-for>
-                    </not>
-                    <attribute attr-id="b4" />
-                    <not>
-                      <scope-for scope-ref="global0" target-entity-id="global">
-                        <attribute attr-id="b6" />
-                      </scope-for>
-                    </not>
-                  </and>
-                  <and>
-                    <attribute attr-id="b7" />
-                    <not>
-                      <scope-for scope-ref="global0" target-entity-id="global">
-                        <attribute attr-id="b8" />
-                      </scope-for>
-                    </not>
-                  </and>
-                </or>
-              </exists>
-            </for>
+            <attribute attr-id="b9" />
           </condition>
         </conclude-rel>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="4529">
+      <rule-xml>
+        <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <attribute attr-id="b1" />
+              <attribute attr-id="b3" />
+              <and>
+                <not>
+                  <scope-for scope-ref="global0" target-entity-id="global">
+                    <attribute attr-id="b5" />
+                  </scope-for>
+                </not>
+                <attribute attr-id="b4" />
+                <not>
+                  <scope-for scope-ref="global0" target-entity-id="global">
+                    <attribute attr-id="b6" />
+                  </scope-for>
+                </not>
+              </and>
+              <and>
+                <attribute attr-id="b7" />
+                <not>
+                  <scope-for scope-ref="global0" target-entity-id="global">
+                    <attribute attr-id="b8" />
+                  </scope-for>
+                </not>
+              </and>
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
       </rule-xml>
     </rule>
   </rules>
