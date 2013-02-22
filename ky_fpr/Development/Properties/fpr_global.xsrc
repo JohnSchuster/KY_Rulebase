@@ -1824,6 +1824,12 @@
           <base>the visible investigation period text</base>
         </text>
       </attribute>
+      <attribute name="b636" type="boolean" public-name="fpr_bona_fide_dispute">
+        <text>
+          <base>the claimant is unemployed as a result of a bona fide labor dispute in active progress</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a bona fide labor dispute in active progress'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2666,8 +2672,8 @@
       </attribute>
       <attribute name="b178" type="boolean" public-name="emt_left_distance_no_change">
         <text>
-          <base>the claimant left the employment due to the distance to work which did not change the terms of hire</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the distance to work which did not change the terms of hire'))</parse>
+          <base>the claimant left the employment due to the distance to work, yet the terms of hire remained constant</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the distance to work, yet the terms of hire remained constant'))</parse>
         </text>
       </attribute>
       <attribute name="b179" type="boolean" public-name="emt_is_getting_paid">
@@ -3335,8 +3341,8 @@
       </attribute>
       <attribute name="b586" type="boolean" public-name="fpr_distance_remained_constant">
         <text>
-          <base>the distance to work remained constant during the employment's term of hire</base>
-          <parse>s(ver('10.4.2.18'),v(remain,t(simple,past,normal)),sb('the distance to work',plural),o('constant during the employment''s term of hire'))</parse>
+          <base>the terms of hire remained constant during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(remain,t(simple,past,normal)),sb('the terms of hire',plural),o('constant during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b587" type="boolean" public-name="emr_persisted_work_offer">
@@ -3589,6 +3595,36 @@
         <text>
           <base>the claimant's actions were excessive during the employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s actions',plural),o('excessive during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b632" type="boolean" public-name="g01_fpr_emt_sep_interview">
+        <text>
+          <base>the employment should be investigated in a separation interview</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment',singular),o('in a separation interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b633" type="boolean" public-name="fpr_unsat_attendance">
+        <text>
+          <base>the claimant has an unsatisfactory attendance record during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b634" type="boolean" public-name="fpr_harassment_at_work">
+        <text>
+          <base>the harassment during the employment rendered the work unsuitable</base>
+          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the harassment during the employment',plural),o('the work unsuitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b635" type="boolean" public-name="fpr_distance_to_work">
+        <text>
+          <base>the claimant left the employment due to the distance to work which did not change the terms of hire</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the distance to work which did not change the terms of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b637" type="boolean" public-name="fpr_vq_wo_gc_from_emt">
+        <text>
+          <base>the claimant voluntarily left the employment without good cause attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without good cause attributable to the employment'))</parse>
         </text>
       </attribute>
     </entity>

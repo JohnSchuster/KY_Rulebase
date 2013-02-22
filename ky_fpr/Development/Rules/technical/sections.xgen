@@ -1,12 +1,6 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has an unsatisfactory attendance record</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record'))</parse>
-        </text>
-      </attribute>
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the scenario id is "S003"</base>
@@ -103,21 +97,16 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="1" name="the nod section d_1_mc_02 should be included" ruleburst="true" concludes="b9" folder="0" source-offset="220">
+    <rule id="1" name="the nod section d_1_mc_02 should be included" ruleburst="true" concludes="b9" folder="0" source-offset="381">
       <rule-xml>
         <conclude attr-id="b9" entity-id="nod" scope-id="nod0">
           <value>
             <true-value />
           </value>
           <condition>
-            <and>
-              <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="b4" />
-              </scope-for>
-              <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="b5" />
-              </scope-for>
-            </and>
+            <scope-for scope-ref="global0" target-entity-id="global">
+              <attribute attr-id="b5" />
+            </scope-for>
           </condition>
           <otherwise>
             <false-value />
@@ -125,7 +114,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the nod section d_5_di_06, remuneration in lieu, should be included" ruleburst="true" concludes="b10" folder="0" source-offset="350">
+    <rule id="2" name="the nod section d_5_di_06, remuneration in lieu, should be included" ruleburst="true" concludes="b10" folder="0" source-offset="464">
       <rule-xml>
         <conclude attr-id="b10" entity-id="nod" scope-id="nod0">
           <value>
@@ -148,7 +137,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the section's substitution numeric attribute #01 value" ruleburst="true" concludes="p3" folder="0" source-offset="645">
+    <rule id="3" name="the section's substitution numeric attribute #01 value" ruleburst="true" concludes="p3" folder="0" source-offset="810">
       <rule-xml>
         <table-conclude attr-id="p3" entity-id="section" scope-id="section0">
           <row>
@@ -167,7 +156,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the section's substitution date attribute #01 value" ruleburst="true" concludes="p4" folder="0" source-offset="800">
+    <rule id="4" name="the section's substitution date attribute #01 value" ruleburst="true" concludes="p4" folder="0" source-offset="991">
       <rule-xml>
         <table-conclude attr-id="p4" entity-id="section" scope-id="section0">
           <row>
