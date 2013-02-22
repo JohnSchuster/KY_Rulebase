@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="content-language" content="en-US"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <title>Commentary</title>
+	    <script type="text/javascript">
+		$(function() {
+            var headings = $("h2");
+            var paragraphs = $("p");
+            paragraphs.not(":first").hide();
+            headings.on("click",function() {
+                var t = $(this);
+	            var tPara = t.next();
+	            if (tPara.is(":visible")) { return; }
+	             paragraphs.slideUp("normal");
+	            tPara.slideDown("normal");
+             });
+         });
+	    </script>
+        <style type="text/css">
+    <!--
+    body {
+        font: Tahoma, "Lucida Grande", Arial, sans-serif;
+        font-size: 14px;
+        min-width: 500px;
+        color: #000;
+        background-color: #BEBEBE
+    }
+	p , h1{
+		white-space:pre-wrap;
+	}
+	#accordian {
+	    width: 300px;
+		border: 1px solid blue;
+	}
+	#accordian h2 {
+	    border: 1px solid blue;
+		padding: 5px;
+		margin: 0;
+		background: #ddd;
+	}
+		#accordian p {
+		padding: 0px;
+	}
+	-->
+        </style>
+    </head>
+    <body>
+        <h1>Complete Weeks Not<br>Worked for Employer</h1>
+		<div id="accordian">
+		<h2>Any Reason</h2>
+        <p>This means whatever reason caused you to<br>not work for a complete working week.<p>
+		<h2>Examples</h2>
+		<p>Taking a vacation week<br>Leave of absence<br>Suspended<br>Illness</p>
+		<h2>Complete Working Weeks</h2>
+		<p>This means a standard working week of the employer</p>		
+    </body>
+</html>
