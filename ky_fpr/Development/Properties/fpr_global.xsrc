@@ -999,12 +999,6 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a mental health condition'))</parse>
         </text>
       </attribute>
-      <attribute name="b407" type="boolean" public-name="fpr_sports_pro">
-        <text>
-          <base>the claimant is a sports professional</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a sports professional'))</parse>
-        </text>
-      </attribute>
       <attribute name="b408" type="boolean" public-name="fpr_faked_statement_for_benefits">
         <text>
           <base>the claimant knowingly made a false statement to establish the (right to, amount of) benefits</base>
@@ -1119,12 +1113,6 @@
           <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to report'))</parse>
         </text>
       </attribute>
-      <attribute name="b428" type="boolean" public-name="fpr_works_in_school">
-        <text>
-          <base>the claimant is an employee of a school</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an employee of a school'))</parse>
-        </text>
-      </attribute>
       <attribute name="b429" type="boolean" public-name="fpr_school_restricts_avail">
         <text>
           <base>the claimant's (school, training) restricts their availability for suitable work</base>
@@ -1207,12 +1195,6 @@
         <text>
           <base>the pension was contributed to solely by a (chargeable, base-period) employer</base>
           <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),ob('the pension',singular),o('to solely by a (chargeable, base-period) employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b444" type="boolean" public-name="fpr_sports_professional">
-        <text>
-          <base>the claimant is an sports professional</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an sports professional'))</parse>
         </text>
       </attribute>
       <attribute name="b445" type="boolean" public-name="fpr_failed_material_fact">
@@ -1465,12 +1447,6 @@
         <text>
           <base>the claimant was instructed to attend an REA orientation workshop</base>
           <parse>s(ver('10.4.2.18'),v(instruct,t(simple,past,normal)),ob('the claimant',singular),o('to attend an REA orientation workshop'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b490" type="boolean" public-name="fpr_waterway_worker">
-        <text>
-          <base>the claimant is a waterway employee</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee'))</parse>
         </text>
       </attribute>
       <attribute name="b491" type="boolean" public-name="fpr_directed_to_rea-euc">
@@ -1828,6 +1804,18 @@
         <text>
           <base>the claimant is unemployed as a result of a bona fide labor dispute in active progress</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a bona fide labor dispute in active progress'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b644" type="boolean" public-name="ui_goto_quit">
+        <text>
+          <base>the quit details screen should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the quit details screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b645" type="boolean" public-name="ui_starts_with_quit">
+        <text>
+          <base>the claimants alleged status starts with "Quit"</base>
+          <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
         </text>
       </attribute>
     </entity>
@@ -2231,6 +2219,207 @@
       <attribute name="p69" type="text" public-name="fpr_emr_vis_date_range">
         <text>
           <base>the employer's visible date range</base>
+        </text>
+      </attribute>
+      <attribute name="p71" type="text" public-name="emr_street_address">
+        <text>
+          <base>the employers street address</base>
+        </text>
+      </attribute>
+      <attribute name="p72" type="text" public-name="emr_city">
+        <text>
+          <base>the employers city</base>
+        </text>
+      </attribute>
+      <attribute name="p73" type="text" public-name="emr_state">
+        <text>
+          <base>the employer state</base>
+        </text>
+      </attribute>
+      <attribute name="p74" type="number" public-name="emr_zip">
+        <text>
+          <base>the employer zip code</base>
+        </text>
+      </attribute>
+      <attribute name="p75" type="number" public-name="emr_phone">
+        <text>
+          <base>the employer phone number</base>
+        </text>
+      </attribute>
+      <attribute name="p76" type="text" public-name="emr_worked_in_state">
+        <text>
+          <base>the employer state where the claimant worked</base>
+        </text>
+      </attribute>
+      <attribute name="b638" type="boolean" public-name="emr_receiving_pension">
+        <text>
+          <base>you are receiving (received) a non-deductible pension from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('you',plural),o('receiving (received) a non-deductible pension from the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b639" type="boolean" public-name="emr_contributed_pension">
+        <text>
+          <base>the claimant contributed to the pension during their employment with this employer</base>
+          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),sb('the claimant',plural),o('to the pension during their employment with this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b641" type="boolean" public-name="emr_receiving_monthly_retirement">
+        <text>
+          <base>the claimant is receiving monthly benefits payments from a retirement plan</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving monthly benefits payments from a retirement plan'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p77" type="currency" public-name="emr_gross_pension_amt">
+        <text>
+          <base>the monthly gross pension amount that the claiment receives</base>
+        </text>
+      </attribute>
+      <attribute name="p78" type="date" public-name="emr_date_first_pension_pymt">
+        <text>
+          <base>the date the claimant received their first pension benefit payment</base>
+        </text>
+      </attribute>
+      <attribute name="p79" type="currency" public-name="emr_retirement_lump_sum">
+        <text>
+          <base>the claimants total lump sum retirement benefit amount</base>
+        </text>
+      </attribute>
+      <attribute name="p80" type="date" public-name="emr_lump_sum_date">
+        <text>
+          <base>the date the claimant received the lump sum retirement benefit amount</base>
+        </text>
+      </attribute>
+      <attribute name="b642" type="boolean" public-name="emr_lump_option">
+        <text>
+          <base>the claimant had the option to receive monthly payments</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('the option to receive monthly payments'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p81" type="currency" public-name="emp_lump_monthly_option_amt">
+        <text>
+          <base>the claimants optional monthly pension benefit amount</base>
+        </text>
+      </attribute>
+      <attribute name="b650" type="boolean" public-name="emr_goto_pension_questions">
+        <text>
+          <base>the employer pension question screen for monthly payments should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employer pension question screen for monthly payments',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b651" type="boolean" public-name="emr_pension_paid_engaged">
+        <text>
+          <base>the claimant contributed to the employer pension during their engagement</base>
+          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),sb('the claimant',plural),o('to the employer pension during their engagement'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b652" type="boolean" public-name="emr_paid_under_railroad">
+        <text>
+          <base>the employer pension is paid under either the Social Security Act or the Railroad Retirement Act of 1974</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the employer pension',singular),o('under either the Social Security Act or the Railroad Retirement Act of 1974'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p82" type="text" public-name="emr_wage_type">
+        <text>
+          <base>the employer wage type</base>
+        </text>
+      </attribute>
+      <attribute name="p83" type="text" public-name="emr_employer_type">
+        <text>
+          <base>the employer type</base>
+        </text>
+      </attribute>
+      <attribute name="p84" type="text" public-name="emr_job_title">
+        <text>
+          <base>the employer job title</base>
+        </text>
+      </attribute>
+      <attribute name="p85" type="text" public-name="emr_job_duties">
+        <text>
+          <base>the employer job duties</base>
+        </text>
+      </attribute>
+      <attribute name="p86" type="currency" public-name="emr_rate_of_pay">
+        <text>
+          <base>the employer rate of pay</base>
+        </text>
+      </attribute>
+      <attribute name="p87" type="text" public-name="emr_wage_frequency">
+        <text>
+          <base>the employer wage frequency</base>
+        </text>
+      </attribute>
+      <attribute name="b653" type="boolean" public-name="emr_business_owner">
+        <text>
+          <base>the claimant is a business owner or an officer of a corporation</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a business owner or an officer of a corporation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b654" type="boolean" public-name="emr_school_worker">
+        <text>
+          <base>the claimant is an employee of a school</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an employee of a school'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b655" type="boolean" public-name="emr_sports_professional">
+        <text>
+          <base>the claimant is a sports professional</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a sports professional'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b656" type="boolean" public-name="emr_riverboat_worker">
+        <text>
+          <base>the claimant is a waterway employee</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b657" type="boolean" public-name="emr_paid_athletic">
+        <text>
+          <base>the claimant is a paid professional athletic participant</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a paid professional athletic participant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b658" type="boolean" public-name="emr_athletic_paid_to_train">
+        <text>
+          <base>the claimant is paid to train and prepare to be an athletic participant</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to train and prepare to be an athletic participant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b659" type="boolean" public-name="emr_athletic_between">
+        <text>
+          <base>the claimant is between seasons of athletic particpation</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('between seasons of athletic particpation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b660" type="boolean" public-name="emr_athletic_reasonable_assure">
+        <text>
+          <base>the calimant has been given reasonable assurance they will be an athletic participant in the upcoming season</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,present,perfect)),ob('the calimant',singular),o('reasonable assurance they will be an athletic participant in the upcoming season'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b661" type="boolean" public-name="emr_athletic_contract">
+        <text>
+          <base>the claimant is under contract to be an athletic participant in the upcoming season</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('under contract to be an athletic participant in the upcoming season'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p88" type="text" public-name="emr_athletic_orginization">
+        <text>
+          <base>the name of the organization the claimant intends to participate with in the upcoming season</base>
+        </text>
+      </attribute>
+      <attribute name="p89" type="text" public-name="emr_athletic_person_reasonable">
+        <text>
+          <base>the name of the person who provided the claimant with reasonable assurance that they will be a participant in atletic events in the upcoming season</base>
+        </text>
+      </attribute>
+      <attribute name="p90" type="date" public-name="emr_athletic_start">
+        <text>
+          <base>the claimants athletic event start date</base>
+        </text>
+      </attribute>
+      <attribute name="p91" type="date" public-name="emr_athletic_end">
+        <text>
+          <base>the claimants athletic event end date</base>
         </text>
       </attribute>
     </entity>
@@ -3625,6 +3814,49 @@
         <text>
           <base>the claimant voluntarily left the employment without good cause attributable to the employment</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without good cause attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p70" type="text" public-name="emr_quit_circumstance">
+        <text>
+          <base>the claimants quit circumstance</base>
+        </text>
+      </attribute>
+      <attribute name="p93" type="text" public-name="emr_other_quit_reason">
+        <text>
+          <base>the claimants other personal reason for quitting</base>
+        </text>
+      </attribute>
+      <attribute name="b662" type="boolean" public-name="emr_goto_personal">
+        <text>
+          <base>the employment quit interview should branch to personal</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit interview',plural),o('to personal'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b663" type="boolean" public-name="emt_spouse_reassigned">
+        <text>
+          <base>the claimants military spouse was re-assigned to a state other than Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimants military spouse',singular),o('re-assigned to a state other than Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p94" type="text" public-name="emt_reassigned_state">
+        <text>
+          <base>the state that the claimants military spouse was re-assigned to</base>
+        </text>
+      </attribute>
+      <attribute name="p95" type="date" public-name="emt_next_duty">
+        <text>
+          <base>the date the claimant is to report to the next duty station</base>
+        </text>
+      </attribute>
+      <attribute name="p97" type="text" public-name="emr_personal_quit_reason">
+        <text>
+          <base>the claimants personal reason for quitting</base>
+        </text>
+      </attribute>
+      <attribute name="b668" type="boolean" public-name="emr_goto_military">
+        <text>
+          <base>the employment personal interview should branch to military reasons</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment  personal interview',plural),o('to military reasons'))</parse>
         </text>
       </attribute>
     </entity>

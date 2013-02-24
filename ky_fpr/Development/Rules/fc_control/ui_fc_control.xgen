@@ -1,0 +1,141 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the quit details screen should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the quit details screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimants alleged status starts with "Quit"</base>
+          <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer pension question screen for monthly payments should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employer pension question screen for monthly payments',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant contributed to the employer pension during their engagement</base>
+          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),sb('the claimant',plural),o('to the employer pension during their engagement'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer pension is paid under either the Social Security Act or the Railroad Retirement Act of 1974</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the employer pension',singular),o('under either the Social Security Act or the Railroad Retirement Act of 1974'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit interview should branch to personal</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit interview',plural),o('to personal'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants quit circumstance</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants personal reason for quitting</base>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment  personal interview should branch to military reasons</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment  personal interview',plural),o('to military reasons'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the quit details screen should be displayed" ruleburst="true" concludes="b1" folder="0" source-offset="41">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b2" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employer pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b3" folder="0" source-offset="137">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b4" />
+              </not>
+              <not>
+                <attribute attr-id="b5" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment quit interview should branch to personal" ruleburst="true" concludes="b6" folder="0" source-offset="415">
+      <rule-xml>
+        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p1" />
+              <string-value>Personal</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employment  personal interview should branch to military reasons" ruleburst="true" concludes="b7" folder="0" source-offset="530">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p2" />
+              <string-value>Accompany your</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

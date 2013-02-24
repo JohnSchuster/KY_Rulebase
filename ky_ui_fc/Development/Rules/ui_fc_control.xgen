@@ -1,0 +1,78 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants alleged status</base>
+        </text>
+      </attribute>
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the quit details screen should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the quit details screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the pension question screen for monthly payments should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the pension question screen for monthly payments',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant contributed to the pension during their employment</base>
+          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),sb('the claimant',plural),o('to the pension during their employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimants pension is paid under either the Social Security Act or the Railroad Retirement Act of 1974</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimants pension',singular),o('under either the Social Security Act or the Railroad Retirement Act of 1974'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the quit details screen should be displayed" ruleburst="true" concludes="b1" folder="0" source-offset="41">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p1" />
+              <string-value>Quit</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b2" folder="0" source-offset="138">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+              <not>
+                <attribute attr-id="b4" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
