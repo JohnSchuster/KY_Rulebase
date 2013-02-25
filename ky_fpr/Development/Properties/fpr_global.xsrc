@@ -3848,15 +3848,36 @@
           <base>the date the claimant is to report to the next duty station</base>
         </text>
       </attribute>
-      <attribute name="p97" type="text" public-name="emr_personal_quit_reason">
+      <attribute name="p99" type="text" public-name="emr_personal_quit_circumstance">
         <text>
-          <base>the claimants personal reason for quitting</base>
+          <base>the claimants personal quit circumstance</base>
         </text>
       </attribute>
-      <attribute name="b668" type="boolean" public-name="emr_goto_military">
+      <attribute name="b664" type="boolean" public-name="emr_branch_to_military">
         <text>
-          <base>the employment personal interview should branch to military reasons</base>
-          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment  personal interview',plural),o('to military reasons'))</parse>
+          <base>the employment quit personal interview should branch to military</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit personal interview',plural),o('to military'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b665" type="boolean" public-name="emt_concerns_expressed">
+        <text>
+          <base>the claimant expressed concerns regarding the reason for quitting with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(express,t(simple,past,normal)),sb('the claimant',plural),o('concerns regarding the reason for quitting with the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p100" type="text" public-name="emt_concerns_expressed_with">
+        <text>
+          <base>the name of the person with whom the claimant discussed concerns</base>
+        </text>
+      </attribute>
+      <attribute name="p101" type="text" public-name="emt_concerns_expressed_title">
+        <text>
+          <base>the title of the person with whom the claimant discussed concerns</base>
+        </text>
+      </attribute>
+      <attribute name="p102" type="date" public-name="emt_concerns_expressed_date">
+        <text>
+          <base>the date the claimant discused their concerns</base>
         </text>
       </attribute>
     </entity>

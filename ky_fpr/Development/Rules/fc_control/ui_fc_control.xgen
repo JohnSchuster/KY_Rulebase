@@ -41,6 +41,12 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit interview',plural),o('to personal'))</parse>
         </text>
       </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit personal interview should branch to military</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit personal interview',plural),o('to military'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants quit circumstance</base>
@@ -48,13 +54,7 @@
       </attribute>
       <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the claimants personal reason for quitting</base>
-        </text>
-      </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment  personal interview should branch to military reasons</base>
-          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment  personal interview',plural),o('to military reasons'))</parse>
+          <base>the claimants personal quit circumstance</base>
         </text>
       </attribute>
     </entity>
@@ -79,7 +79,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employer pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b3" folder="0" source-offset="137">
+    <rule id="1" name="the employer pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b3" folder="0" source-offset="147">
       <rule-xml>
         <conclude attr-id="b3" entity-id="employer" scope-id="employer0">
           <value>
@@ -101,7 +101,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment quit interview should branch to personal" ruleburst="true" concludes="b6" folder="0" source-offset="415">
+    <rule id="2" name="the employment quit interview should branch to personal" ruleburst="true" concludes="b6" folder="0" source-offset="448">
       <rule-xml>
         <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
           <value>
@@ -119,7 +119,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employment  personal interview should branch to military reasons" ruleburst="true" concludes="b7" folder="0" source-offset="530">
+    <rule id="3" name="the employment quit personal interview should branch to military" ruleburst="true" concludes="b7" folder="0" source-offset="597">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -128,7 +128,7 @@
           <condition>
             <starts-with>
               <attribute attr-id="p2" />
-              <string-value>Accompany your</string-value>
+              <string-value>Accompany</string-value>
             </starts-with>
           </condition>
           <otherwise>
