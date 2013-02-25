@@ -1,19 +1,5 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
-    <entity ref="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the quit details screen should be displayed</base>
-          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the quit details screen',singular))</parse>
-        </text>
-      </attribute>
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimants alleged status starts with "Quit"</base>
-          <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -47,6 +33,120 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit personal interview',plural),o('to military'))</parse>
         </text>
       </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to disciplinary</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to disciplinary'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit interview should branch to work related</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit interview',plural),o('to work related'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to dispute</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to drug</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to drug'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to equipment</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to equipment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to work related injury</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to work related injury'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to training</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to training'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to harassment</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to harassment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to religion</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to religion'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to pay</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to pay'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to distance</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to distance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to work hours</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to work hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to failed</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to failed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to reduction</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to reduction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b23" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to anticipation</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to anticipation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b24" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to failure to</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to failure to'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit work related interview should branch to other</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to other'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit details screen should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment quit details screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment currently working screen should be displayed</base>
+          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment currently working screen',singular))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants quit circumstance</base>
@@ -57,29 +157,31 @@
           <base>the claimants personal quit circumstance</base>
         </text>
       </attribute>
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants work related circumstance</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment selected status</base>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment quit interview should branch to accepted</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit interview',plural),o('to accepted'))</parse>
+        </text>
+      </attribute>
     </entity>
+    <entity ref="global" />
   </entities>
   <relationships>
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the quit details screen should be displayed" ruleburst="true" concludes="b1" folder="0" source-offset="41">
-      <rule-xml>
-        <conclude attr-id="b1" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b2" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="1" name="the employer pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b3" folder="0" source-offset="147">
+    <rule id="0" name="the employer pension question screen for monthly payments should be displayed" ruleburst="true" concludes="b3" folder="0" source-offset="43">
       <rule-xml>
         <conclude attr-id="b3" entity-id="employer" scope-id="employer0">
           <value>
@@ -101,7 +203,43 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment quit interview should branch to personal" ruleburst="true" concludes="b6" folder="0" source-offset="448">
+    <rule id="1" name="the employment quit details screen should be displayed" ruleburst="true" concludes="b27" folder="0" source-offset="340">
+      <rule-xml>
+        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p5" />
+              <string-value>Quit</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment currently working screen should be displayed" ruleburst="true" concludes="b28" folder="0" source-offset="449">
+      <rule-xml>
+        <conclude attr-id="b28" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p5" />
+              <string-value>Currently</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employment quit interview should branch to personal" ruleburst="true" concludes="b6" folder="0" source-offset="582">
       <rule-xml>
         <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
           <value>
@@ -119,7 +257,43 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employment quit personal interview should branch to military" ruleburst="true" concludes="b7" folder="0" source-offset="597">
+    <rule id="4" name="the employment quit interview should branch to work related" ruleburst="true" concludes="b9" folder="0" source-offset="697">
+      <rule-xml>
+        <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p1" />
+              <string-value>Work-Related</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment quit interview should branch to accepted" ruleburst="true" concludes="b29" folder="0" source-offset="820">
+      <rule-xml>
+        <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p1" />
+              <string-value>Accepted</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the employment quit personal interview should branch to military" ruleburst="true" concludes="b7" folder="0" source-offset="958">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -129,6 +303,294 @@
             <starts-with>
               <attribute attr-id="p2" />
               <string-value>Accompany</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the employment quit work related interview should branch to disciplinary" ruleburst="true" concludes="b8" folder="0" source-offset="1120">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Disciplinary</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the employment quit work related interview should branch to dispute" ruleburst="true" concludes="b10" folder="0" source-offset="1264">
+      <rule-xml>
+        <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Dispute</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the employment quit work related interview should branch to drug" ruleburst="true" concludes="b11" folder="0" source-offset="1398">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Drug</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the employment quit work related interview should branch to equipment" ruleburst="true" concludes="b12" folder="0" source-offset="1526">
+      <rule-xml>
+        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Equipment</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the employment quit work related interview should branch to work related injury" ruleburst="true" concludes="b13" folder="0" source-offset="1665">
+      <rule-xml>
+        <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Work-related</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="the employment quit work related interview should branch to training" ruleburst="true" concludes="b14" folder="0" source-offset="1816">
+      <rule-xml>
+        <conclude attr-id="b14" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Lack</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="13" name="the employment quit work related interview should branch to harassment" ruleburst="true" concludes="b15" folder="0" source-offset="1948">
+      <rule-xml>
+        <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Harassment</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the employment quit work related interview should branch to religion" ruleburst="true" concludes="b16" folder="0" source-offset="2088">
+      <rule-xml>
+        <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Religious</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the employment quit work related interview should branch to pay" ruleburst="true" concludes="b17" folder="0" source-offset="2225">
+      <rule-xml>
+        <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Pay</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="16" name="the employment quit work related interview should branch to distance" ruleburst="true" concludes="b18" folder="0" source-offset="2351">
+      <rule-xml>
+        <conclude attr-id="b18" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Distance</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="17" name="the employment quit work related interview should branch to work hours" ruleburst="true" concludes="b19" folder="0" source-offset="2487">
+      <rule-xml>
+        <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Work hours</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="18" name="the employment quit work related interview should branch to reduction" ruleburst="true" concludes="b22" folder="0" source-offset="2627">
+      <rule-xml>
+        <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Reduction</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="19" name="the employment quit work related interview should branch to anticipation" ruleburst="true" concludes="b23" folder="0" source-offset="2765">
+      <rule-xml>
+        <conclude attr-id="b23" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Anticipation</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="20" name="the employment quit work related interview should branch to failed" ruleburst="true" concludes="b21" folder="0" source-offset="2909">
+      <rule-xml>
+        <conclude attr-id="b21" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Failed to</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="the employment quit work related interview should branch to failure to" ruleburst="true" concludes="b24" folder="0" source-offset="3044">
+      <rule-xml>
+        <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Failure to return</string-value>
+            </starts-with>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="22" name="the employment quit work related interview should branch to other" ruleburst="true" concludes="b25" folder="0" source-offset="3191">
+      <rule-xml>
+        <conclude attr-id="b25" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <starts-with>
+              <attribute attr-id="p3" />
+              <string-value>Other</string-value>
             </starts-with>
           </condition>
           <otherwise>
