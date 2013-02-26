@@ -48,6 +48,12 @@
       <folder id="22" text="Quit Details (Work Related)" parent="20" order="6" />
       <folder id="30" text="Currently Employed Screens" parent="8" order="3" />
       <folder id="31" text="Quit Details (Accepted Offer)" parent="20" order="7" />
+      <folder id="32" text="Leave of Absence Screens" parent="8" order="4" />
+      <folder id="33" text="Suspended Screens" parent="8" order="5" />
+      <folder id="34" text="Retired Screens" parent="8" order="6" />
+      <folder id="35" text="Discharge Screens" parent="8" order="7" />
+      <folder id="36" text="Laid Off Screens" parent="8" order="8" />
+      <folder id="37" text="Labor Dispute Screens" parent="8" order="9" />
     </folders>
     <screens>
       <screen type="Summary" id="s1" public-id="summary" name="Assessment Summary" folder="0" order="1">
@@ -108,6 +114,8 @@
                   <property name="ClassOverride" type="string">
                   </property>
                   <property name="IsHTML" type="boolean">true</property>
+                  <property name="__list-name" type="string">
+                  </property>
                 </control-properties>
                 <input-attr text="the employer's categorization code">
                   <doc-attr id="p38@kyfpr_rmod" />
@@ -3705,6 +3713,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants personal quit circumstance">
               <doc-attr id="p66@kyfpr_rmod" />
@@ -3735,14 +3745,14 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants other personal reason for quitting">
-              <doc-attr id="p74@kyfpr_rmod" />
+              <doc-attr id="p75@kyfpr_rmod" />
               <doc-attr id="emr_other_quit_reason" />
             </input-attr>
             <caption>&lt;p&gt;If Other, please explain&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s79" name="Military Spouse Details for %fpr_emt_visible_name%" public-id="" order="2" screen-attr="" folder="21" entity="fpr_employment">
+      <screen type="Question" id="s79" name="Military Spouse Details for %fpr_emt_visible_name%" public-id="" order="2" screen-attr="" folder="21" entity="">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -3752,9 +3762,9 @@ and correct to the best of my knowledge.&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimants military spouse was re-assigned to a state other than Kentucky">
-              <doc-attr id="b578@kyfpr_rmod" />
-              <doc-attr id="emt_spouse_reassigned" />
+            <input-attr text="the claimant left the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military">
+              <doc-attr id="b462@kyfpr_rmod" />
+              <doc-attr id="emt_left_with_military_spouse" />
             </input-attr>
             <caption>&lt;p&gt;Was your military spouse re-assigned to a state other than Kentucky?&lt;/p&gt;</caption>
           </input>
@@ -3787,10 +3797,10 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the state that the claimants military spouse was re-assigned to">
-              <doc-attr id="p75@kyfpr_rmod" />
-              <doc-attr id="emt_reassigned_state" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What State?&lt;/p&gt;</caption>
             <values>
@@ -3856,8 +3866,6 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant is to report to the next duty station">
-              <doc-attr id="p76@kyfpr_rmod" />
-              <doc-attr id="emt_next_duty" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date are you to report to the next duty station?&lt;/p&gt;
 </caption>
@@ -6532,6 +6540,96 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
           </input>
         </controls>
       </screen>
+      <screen type="Question" id="s117" name="Leave of Absence" public-id="" order="1" screen-attr="" folder="32" entity="fpr_employment">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s118" name="Suspended" public-id="" order="1" screen-attr="" folder="33" entity="fpr_employment">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s119" name="Retired" public-id="" order="1" screen-attr="" folder="34" entity="fpr_employment">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s120" name="Laid Off" public-id="" order="1" screen-attr="" folder="36" entity="fpr_employment">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s121" name="Labor Dispute" public-id="" order="1" screen-attr="" folder="37" entity="fpr_employment">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s122" name="Discharged" public-id="" order="1" screen-attr="" entity="fpr_employment" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
     </screens>
     <documents />
     <screen-orders>
@@ -6627,7 +6725,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
         </connections>
       </flow>
       <flow folder="3" order="8" name="GenericSeparationInvestigation" id="f8" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -6636,6 +6734,18 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
           <node node-id="4" node-type="decision" attribute-id="the employment quit details screen should be displayed" />
           <node node-id="5" node-type="decision" attribute-id="the employment currently working screen should be displayed" />
           <node node-id="6" node-type="screen" screen-id="s113" mandatory="true" />
+          <node node-id="7" node-type="decision" attribute-id="the employment leave of absence screen should be displayed" />
+          <node node-id="8" node-type="decision" attribute-id="the employment suspended screen should be displayed" />
+          <node node-id="9" node-type="decision" attribute-id="the employment retired screen should be displayed" />
+          <node node-id="10" node-type="decision" attribute-id="the employment discharged screen should be displayed" />
+          <node node-id="11" node-type="decision" attribute-id="the employment layoff screen should be displayed" />
+          <node node-id="12" node-type="decision" attribute-id="the employment labor dispute screen should be displayed" />
+          <node node-id="13" node-type="screen" screen-id="s117" mandatory="true" />
+          <node node-id="14" node-type="screen" screen-id="s118" mandatory="true" />
+          <node node-id="15" node-type="screen" screen-id="s119" mandatory="true" />
+          <node node-id="16" node-type="screen" screen-id="s122" mandatory="true" />
+          <node node-id="17" node-type="screen" screen-id="s120" mandatory="true" />
+          <node node-id="18" node-type="screen" screen-id="s121" mandatory="true" />
         </nodes>
         <connections>
           <connection from="0" to="2" />
@@ -6652,8 +6762,50 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <boolean-val>true</boolean-val>
             </condition>
           </connection>
-          <connection from="5" to="1" />
+          <connection from="5" to="7" />
           <connection from="6" to="2" />
+          <connection from="7" to="8" />
+          <connection from="7" to="13">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="8" to="9" />
+          <connection from="8" to="14">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="9" to="10" />
+          <connection from="9" to="15">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="10" to="11" />
+          <connection from="10" to="16">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="12" />
+          <connection from="11" to="17">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="12" to="18">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="12" to="1" />
+          <connection from="13" to="2" />
+          <connection from="14" to="2" />
+          <connection from="15" to="2" />
+          <connection from="16" to="2" />
+          <connection from="17" to="2" />
+          <connection from="18" to="2" />
         </connections>
       </flow>
       <flow order="2" name="Preamble Collection" id="f10" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
