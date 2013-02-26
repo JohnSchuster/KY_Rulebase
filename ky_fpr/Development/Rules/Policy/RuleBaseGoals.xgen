@@ -67,6 +67,18 @@
           <parse>s(ver('10.4.2.18'),v(qualify,t(simple,present,normal)),ob('the claimant',singular),o('based on separation from employment'))</parse>
         </text>
       </attribute>
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's unemployment began during the period between two successive academic terms including holiday vacation or recess</base>
+          <parse>s(ver('10.4.2.18'),v(begin,t(simple,past,normal)),sb('the claimant''s unemployment',plural),o('during the period between two successive academic terms including holiday vacation or recess'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has reasonable assurance of returning to the same or similar work during the next term</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to the same or similar work during the next term'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
@@ -99,8 +111,8 @@
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
-    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
@@ -192,26 +204,30 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term" ruleburst="true" concludes="b10" folder="0" source-offset="2483">
+    <rule id="3" name="the claimant is an employee of an (educational institution, educational service agency) with reasonable assurance of returning to the same or similar work during the next term" ruleburst="true" concludes="b10" folder="0" source-offset="2484">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <exists scope-id="employment0">
-              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
-              <and>
-                <for>
-                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                  <attribute attr-id="b15" />
-                </for>
-                <for>
-                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                  <attribute attr-id="b16" />
-                </for>
-              </and>
-            </exists>
+            <and>
+              <attribute attr-id="b18" />
+              <attribute attr-id="b19" />
+              <exists scope-id="employment0">
+                <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+                <and>
+                  <for>
+                    <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                    <attribute attr-id="b15" />
+                  </for>
+                  <for>
+                    <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                    <attribute attr-id="b16" />
+                  </for>
+                </and>
+              </exists>
+            </and>
           </condition>
           <otherwise>
             <false-value />

@@ -19,6 +19,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the next most recent employment',singular),o('potentially chargeable'))</parse>
         </text>
       </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the recent concurrent employment is potentially chargeable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the recent concurrent employment',singular),o('potentially chargeable'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
@@ -63,8 +69,8 @@
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
-    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" text="all inferred instances except mre" reverse-text="each exc mre to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
@@ -85,7 +91,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3454">
+    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="3565">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesexceptmre" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -96,7 +102,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="3752">
+    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="3929">
       <rule-xml>
         <conclude-rel relationship-id="allinferredcandidatebptw" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -119,7 +125,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="4073">
+    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="4334">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -145,7 +151,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="4399">
+    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="4772">
       <rule-xml>
         <conclude-rel relationship-id="allseparationinterviewemployments" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -154,7 +160,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="4529">
+    <rule id="5" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="4968">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>
@@ -179,11 +185,18 @@
               </and>
               <and>
                 <attribute attr-id="b7" />
-                <not>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b8" />
-                  </scope-for>
-                </not>
+                <or>
+                  <not>
+                    <scope-for scope-ref="global0" target-entity-id="global">
+                      <attribute attr-id="b10" />
+                    </scope-for>
+                  </not>
+                  <not>
+                    <scope-for scope-ref="global0" target-entity-id="global">
+                      <attribute attr-id="b8" />
+                    </scope-for>
+                  </not>
+                </or>
               </and>
             </or>
           </condition>

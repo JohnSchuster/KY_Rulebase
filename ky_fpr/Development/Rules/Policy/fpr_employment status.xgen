@@ -25,6 +25,24 @@
           <parse>s(ver('10.4.2.18'),v(earn,t(simple,present,perfect)),sb('the claimant',singular),o('at least one and one fourth times the weekly benefit amount'))</parse>
         </text>
       </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is an sports professional</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an sports professional'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is paid to participate in sports or athletic events</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to participate in sports or athletic events'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is paid to (train, prepare) for participation in sports or athletic events</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to (train, prepare) for participation in sports or athletic events'))</parse>
+        </text>
+      </attribute>
       <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is being paid their regular salary during a federal government shutdown</base>
@@ -156,7 +174,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1341">
+    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1342">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -170,6 +188,24 @@
               </not>
               <attribute attr-id="b23" />
               <attribute attr-id="b24" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="2114">
+      <rule-xml>
+        <conclude attr-id="b12" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b13" />
+              <attribute attr-id="b14" />
             </and>
           </condition>
           <otherwise>

@@ -1818,6 +1818,18 @@
           <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
         </text>
       </attribute>
+      <attribute name="b748" type="boolean" public-name="claim_filed">
+        <text>
+          <base>the claim has been filed</base>
+          <parse>s(ver('10.4.2.18'),v(file,t(simple,present,perfect)),ob('the claim',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_issue">
+        <text>
+          <base>the claim has an able and available issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -4657,6 +4669,24 @@
           <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment labor dispute screen',singular))</parse>
         </text>
       </attribute>
+      <attribute name="b750" type="boolean" public-name="fpr_sep_disq_circumstances">
+        <text>
+          <base>the claimant's separation from the employment occurred under disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under disqualifying circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b751" type="boolean" public-name="discretion_vq_wgc">
+        <text>
+          <base>the dci determined the claimant left the employment voluntarily without good cause</base>
+          <parse>s(ver('10.4.2.18'),v(determine,t(simple,past,normal)),sb('the dci',plural),o('the claimant left the employment voluntarily without good cause'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b752" type="boolean" public-name="fpr_claimant_received_training">
+        <text>
+          <base>the claimant received training (instruction) during the employment on how to perform their duties</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('training (instruction) during the employment on how to perform their duties'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="fpr_nod">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
@@ -4670,35 +4700,6 @@
         <text>
           <base>the nod may be appealed</base>
           <parse>s(ver('10.4.2.18'),v(be+may,t(simple,modal,normal)),sb('the nod',singular),o('appealed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b131" type="boolean" public-name="nod_d_1_mc_02_needs_inclusion">
-        <text>
-          <base>the nod section d_1_mc_02 should be included</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),ob('the nod section d_1_mc_02',singular))</parse>
-        </text>
-      </attribute>
-      <attribute name="b492" type="boolean" public-name="nod_d_5_di_06_needs_inclusion">
-        <text>
-          <base>the nod section d_5_di_06, remuneration in lieu, should be included</base>
-          <parse>s(ver('10.4.2.18'),v(include+should,t(simple,modal,normal)),ob('the nod section d_5_di_06, remuneration in lieu,',singular))</parse>
-        </text>
-      </attribute>
-    </entity>
-    <entity id="section" name="the section" identifying-attribute-name="the_section_id" identifying-attribute-text="the section" containment-relationship-id="allinstancesofthesectionforthenod" containment-parent-id="nod" public-id="fpr_nod_section">
-      <attribute name="p51" type="text" substitutable="true" default-gender="generic" public-name="the_section_id">
-        <text>
-          <base>the section</base>
-        </text>
-      </attribute>
-      <attribute name="p54" type="number" public-name="sec_sub_num_01_value">
-        <text>
-          <base>the section's substitution numeric attribute #01 value</base>
-        </text>
-      </attribute>
-      <attribute name="p55" type="date" public-name="sec_sub_date_01_value">
-        <text>
-          <base>the section's substitution date attribute #01 value</base>
         </text>
       </attribute>
     </entity>
@@ -4736,9 +4737,12 @@
     <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_nod" reverse-public-id="fpr_nod_cby_global" />
     <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_emr_inf_nod" reverse-public-id="fpr_nod_inf_emr" />
     <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
-    <relationship source="nod" target="section" text="all instances of the section for the nod" relationship-id="allinstancesofthesectionforthenod" reverse-relationship-id="eachsection2thenod" reverse-text="each section2 the nod" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_nod_c_section" reverse-public-id="fpr_section_cby_nod" />
-    <relationship source="nod" target="section" text="all sections inferred" relationship-id="allsectionsinferred" reverse-relationship-id="sectionsinferredfordocument" reverse-text="sections inferred for document" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_nod_inf_section" reverse-public-id="fpr_section_inf_nod" />
     <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
+    <relationship source="employer" target="a" is-containment="false" public-id="inf_412a_emr" reverse-public-id="inf_emr_412a" text="all inferred 412a for employer" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" reverse-text="each employer inferred 412a" type="ManyToMany" is-computed="false" />
+    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="action" is-containment="false" public-id="action_inf_claim" reverse-public-id="claim_inf_action" text="all inferred actions" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" reverse-text="action inferred from claim" type="ManyToMany" is-computed="false" />
+    <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferrredbyissue" reverse-text="nod inferrred by issue" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="issue" is-containment="false" public-id="claim_inf_issue" reverse-public-id="issue_inf_by_claim" text="all issues inferred from claim" relationship-id="allissuesinferredfromclaim" reverse-relationship-id="claiminferringthisissue" reverse-text="the claim inferring this issue" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
