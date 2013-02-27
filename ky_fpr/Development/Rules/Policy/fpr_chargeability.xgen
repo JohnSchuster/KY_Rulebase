@@ -79,12 +79,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation from the employer occurred under non-disqualifying circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employer',plural),o('under non-disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
       <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employer is chargeable</base>
@@ -127,6 +121,12 @@
         <text lang="en-US">
           <base>the claimant has a quit exception from the employment</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employment occurred under non-disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under non-disqualifying circumstances'))</parse>
         </text>
       </attribute>
     </entity>
@@ -175,7 +175,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employer is chargeable" ruleburst="true" concludes="b29" folder="0" source-offset="1104">
+    <rule id="1" name="the employer is chargeable" ruleburst="true" concludes="b29" folder="0" source-offset="1197">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employer" scope-id="employer0">
           <value>
@@ -187,7 +187,10 @@
               <and>
                 <attribute attr-id="b6" />
                 <or>
-                  <attribute attr-id="b26" />
+                  <exists scope-id="employment0">
+                    <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                    <attribute attr-id="b32" />
+                  </exists>
                   <not>
                     <attribute attr-id="b4" />
                   </not>
@@ -209,7 +212,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="employer's chargeability deferred" ruleburst="true" concludes="b23" folder="0" source-offset="2145">
+    <rule id="2" name="employer's chargeability deferred" ruleburst="true" concludes="b23" folder="0" source-offset="2339">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
@@ -232,7 +235,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2535">
+    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2729">
       <rule-xml>
         <conclude attr-id="b12" entity-id="employer" scope-id="employer0">
           <value>
@@ -247,7 +250,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2687">
+    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2881">
       <rule-xml>
         <conclude attr-id="b13" entity-id="employer" scope-id="employer0">
           <value>
@@ -265,7 +268,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="2954">
+    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="3209">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employer" scope-id="employer0">
           <value>

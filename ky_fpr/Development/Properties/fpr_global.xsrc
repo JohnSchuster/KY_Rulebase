@@ -2593,8 +2593,8 @@
       </attribute>
       <attribute name="b109" type="boolean" public-name="empt_return_to_work_prospect">
         <text>
-          <base>the employment has definite return to work prospects for the claimant</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work prospects for the claimant'))</parse>
+          <base>the employment has definite return to work prospects within twelve weeks of the claim filing</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work prospects within twelve weeks of the claim filing'))</parse>
         </text>
       </attribute>
       <attribute name="b113" type="boolean" public-name="reported_under_the_influence">
@@ -5134,6 +5134,24 @@
       <attribute name="p203" type="text" public-name="scr_false_no_explanation">
         <text>
           <base>the claimants explanation as to why they did not provide an explanation to the employer regarding the falsified employment application</base>
+        </text>
+      </attribute>
+      <attribute name="b798" type="boolean" public-name="fpr_emt_gc_refused_offer">
+        <text>
+          <base>the claimant had good cause to refuse the employment offer</base>
+          <parse>s(ver('10.4.2.18'),v(offer,t(simple,present,normal)),sb('the claimant had good cause to refuse the employment',plural))</parse>
+        </text>
+      </attribute>
+      <attribute name="b799" type="boolean" public-name="fpr_emt_definite_rtw_date">
+        <text>
+          <base>the employment has definite return to work date within twelve weeks of the claim filing</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work date within twelve weeks of the claim filing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b800" type="boolean" public-name="fpr_emt_sought_is_suitable">
+        <text>
+          <base>the employment being sought is suitable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment being sought',singular),o('suitable'))</parse>
         </text>
       </attribute>
     </entity>
