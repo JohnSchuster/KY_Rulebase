@@ -81,7 +81,7 @@
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s3" name="&lt;11&gt; List each of your Employer's, From: %visible_investigation_period_text% " public-id="" order="1" folder="4">
+      <screen type="Question" id="s3" name="List each of your Employer's, From: %visible_investigation_period_text% " public-id="" order="1" folder="4">
         <controls>
           <entity entity-id="fpr_employer">
             <control-properties>
@@ -89,10 +89,10 @@
               <property name="add-instance-text" type="localized-string">Add Row</property>
               <property name="remove-instance-text" type="localized-string">Remove Checked</property>
               <property name="want-default-entity" type="boolean">true</property>
-              <property name="display-style" type="string">Tabular</property>
+              <property name="display-style" type="string">Portrait</property>
             </control-properties>
             <controls>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="Fotzapple">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="Smucker's">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -105,7 +105,7 @@
                   <doc-attr id="p32@kyfpr_rmod" />
                   <doc-attr id="g01_fpr_employer_instance_id" />
                 </input-attr>
-                <caption>Employer's Name:</caption>
+                <caption>&lt;p&gt;Employer's Name:&lt;/p&gt;</caption>
               </input>
               <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
                 <control-properties>
@@ -114,8 +114,6 @@
                   <property name="ClassOverride" type="string">
                   </property>
                   <property name="IsHTML" type="boolean">true</property>
-                  <property name="__list-name" type="string">
-                  </property>
                 </control-properties>
                 <input-attr text="the employer's categorization code">
                   <doc-attr id="p38@kyfpr_rmod" />
@@ -127,7 +125,7 @@
                   <value code="US Military" default-visibility="enabled">US Military</value>
                   <value code="Government" default-visibility="enabled">Government</value>
                 </values>
-                <caption>Employer type</caption>
+                <caption>&lt;p&gt;Employer type:&lt;/p&gt;</caption>
               </input>
               <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
                 <control-properties>
@@ -135,13 +133,13 @@
                   </property>
                   <property name="ClassOverride" type="string">
                   </property>
-                  <property name="IsHTML" type="boolean">false</property>
+                  <property name="IsHTML" type="boolean">true</property>
                 </control-properties>
                 <input-attr text="the claimant is receiving a pension from the employer">
-                  <doc-attr id="b310@kyfpr_rmod" />
+                  <doc-attr id="b324@kyfpr_rmod" />
                   <doc-attr id="emr_gets_pension" />
                 </input-attr>
-                <caption>Do you receive a pension from this employer</caption>
+                <caption>&lt;p&gt;Do you receive a pension from this employer?&lt;/p&gt;</caption>
               </input>
             </controls>
           </entity>
@@ -2696,13 +2694,13 @@ and correct to the best of my knowledge.&lt;/p&gt;
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the test flow should be used">
-              <doc-attr id="b86@kyfpr_rmod" />
-              <doc-attr id="test_2_flow" />
+              <doc-attr id="b1@Properties_FCProperties_xsrc" />
+              <doc-attr id="fpr_test_flow" />
             </input-attr>
-            <caption>Select secondary test flow?</caption>
+            <caption>&lt;p&gt;Select secondary test flow?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -2716,10 +2714,10 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="remove-instance-text" type="localized-string">
               </property>
               <property name="want-default-entity" type="boolean">true</property>
-              <property name="display-style" type="string">Tabular</property>
+              <property name="display-style" type="string">Portrait</property>
             </control-properties>
             <controls>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2001-05-29">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2012-10-03">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -2731,9 +2729,9 @@ and correct to the best of my knowledge.&lt;/p&gt;
                   <doc-attr id="p61@kyfpr_rmod" />
                   <doc-attr id="g01_first_day_worked_date" />
                 </input-attr>
-                <caption>First Day Worked</caption>
+                <caption>&lt;p&gt;When was the first day you worked for %g01_fpr_employer_instance_id%? &lt;/p&gt;</caption>
               </input>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2012-12-29">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2013-02-02">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -2745,7 +2743,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
                   <doc-attr id="p62@kyfpr_rmod" />
                   <doc-attr id="g01_last_day_worked_date" />
                 </input-attr>
-                <caption>Last Day&lt;/br&gt;You Performed&lt;/br&gt;Work</caption>
+                <caption>&lt;p&gt;When was the last day you worked for %g01_fpr_employer_instance_id%? &lt;/p&gt;</caption>
               </input>
             </controls>
           </entity>
@@ -2762,7 +2760,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;br&gt;&lt;br&gt;&lt;hr&gt;</caption>
+            <caption>&lt;br&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -2776,7 +2774,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <doc-attr id="b286@kyfpr_rmod" />
               <doc-attr id="g01_fpr_weeks_exceed_threshold" />
             </input-attr>
-            <caption>Is the Total number of &lt;b&gt;Complete Working Weeks&lt;/b&gt; that you did not work for the employer, for &lt;b&gt;Any Reason&lt;/b&gt;, greater than &lt;b&gt;%fpr_max_unworked_weeks% ?&lt;/b&gt;</caption>
+            <caption>&lt;p&gt;Is the Total number of &lt;b&gt;Complete (Full) Working Weeks&lt;/b&gt; that you took off from %g01_fpr_employer_instance_id%,&lt;br&gt; for &lt;b&gt;Any Reason&lt;/b&gt;, greater than &lt;b&gt;%fpr_max_unworked_weeks% ?&lt;/b&gt;&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -2856,6 +2854,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the employment selected status">
               <doc-attr id="p68@kyfpr_rmod" />
@@ -4208,6 +4208,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants work related circumstance">
               <doc-attr id="p67@kyfpr_rmod" />
@@ -5785,9 +5787,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer initiated a reduction in workforce buyout">
-              <doc-attr id="b629@kyfpr_rmod" />
-              <doc-attr id="scr_workforce_reduction" />
+            <input-attr text="this employer initiated a substantial reduction in work force goal during the employment">
+              <doc-attr id="b540@kyfpr_rmod" />
+              <doc-attr id="emr_substantial_reduction" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer initiate a reduction in workforce/buyout?&lt;/p&gt;</caption>
           </input>
@@ -5799,9 +5801,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer offered an incentive package for voluntarily accepting the reduction">
-              <doc-attr id="b630@kyfpr_rmod" />
-              <doc-attr id="scr_workforce_offered_incentive" />
+            <input-attr text="the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force">
+              <doc-attr id="b542@kyfpr_rmod" />
+              <doc-attr id="emr_took_buyout" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer offer you an incentive package/buyout for voluntarily accepting the reduction?&lt;/p&gt;</caption>
           </input>
@@ -5814,7 +5816,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant would have been able to remain employed if they did not take the buyout">
-              <doc-attr id="b631@kyfpr_rmod" />
+              <doc-attr id="b670@kyfpr_rmod" />
               <doc-attr id="scr_workforce_could_remain" />
             </input-attr>
             <caption>&lt;p&gt;Could you have continued work if you had not accepted the reduction of workforce package/buyout?&lt;/p&gt;</caption>
@@ -5844,7 +5846,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation of the condition of hire they failed to uphold">
-              <doc-attr id="p123@kyfpr_rmod" />
+              <doc-attr id="p127@kyfpr_rmod" />
               <doc-attr id="scr_condition_of_hire_desc" />
             </input-attr>
             <caption>&lt;p&gt;What condition of your employment contract did you fail to meet? (e.g. failure to pass a test, failure to earn or maintain a certification other than a driver’s license)?&lt;/p&gt;
@@ -5860,7 +5862,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation of why they failed to meet the specific condition of employment">
-              <doc-attr id="p124@kyfpr_rmod" />
+              <doc-attr id="p128@kyfpr_rmod" />
               <doc-attr id="scr_condition_of_hire_failure" />
             </input-attr>
             <caption>&lt;p&gt;Why did you fail to meet this condition of employment?&lt;/p&gt;
@@ -5885,9 +5887,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant was aware of the requirement to meet specific conditions at the time of hire">
-              <doc-attr id="b633@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_aware" />
+            <input-attr text="the claimant was responsible for meeting the employment's condition of continued employment">
+              <doc-attr id="b532@kyfpr_rmod" />
+              <doc-attr id="fpr_responsible_condition" />
             </input-attr>
             <caption>&lt;p&gt;Were you aware of your responsibility to meet this condition or maintain a specific certification at the time of hire?&lt;/p&gt;</caption>
           </input>
@@ -5899,9 +5901,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant was responsible to meet the specific condition as a provision of continued employment">
-              <doc-attr id="b634@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_responsible" />
+            <input-attr text="the condition of the employment was established at the time of hire">
+              <doc-attr id="b474@kyfpr_rmod" />
+              <doc-attr id="emt_condition_settled_at_hire" />
             </input-attr>
             <caption>&lt;p&gt;Were you responsible to meet this condition as a requirement for continued employment?&lt;/p&gt;</caption>
           </input>
@@ -5913,9 +5915,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant received warnings regarding the failure to meet the specified condition of employment">
-              <doc-attr id="b635@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_warning" />
+            <input-attr text="the claimant failed to meet the condition of the employment">
+              <doc-attr id="b475@kyfpr_rmod" />
+              <doc-attr id="emt_failed_to_meet_condition" />
             </input-attr>
             <caption>&lt;p&gt;Did you receive any warning(s) regarding your failure to meet this condition of employment?&lt;/p&gt;</caption>
           </input>
@@ -6303,6 +6305,8 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants reason for accepting an offer of work">
               <doc-attr id="p134@kyfpr_rmod" />
@@ -6329,9 +6333,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant left the employment to accept temporary or non full-time employment">
-              <doc-attr id="b648@kyfpr_rmod" />
-              <doc-attr id="scr_left_for_temporary" />
+            <input-attr text="the claimant voluntarily left the employment to accept temporary work">
+              <doc-attr id="b477@kyfpr_rmod" />
+              <doc-attr id="emt_left_for_temporary_part_2" />
             </input-attr>
             <caption>&lt;p&gt;Did you leave the employment to accept temporary or less than full-time employment?&lt;/p&gt;</caption>
           </input>
@@ -6344,7 +6348,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant left the employment to accept work less than 100 miles from their home">
-              <doc-attr id="b649@kyfpr_rmod" />
+              <doc-attr id="b681@kyfpr_rmod" />
               <doc-attr id="scr_left_for_miles" />
             </input-attr>
             <caption>&lt;p&gt;Did you leave this employment which is one hundred (100) road miles or more from your home 
@@ -6359,7 +6363,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant accepted the new employment offer prior to leaving the current employer">
-              <doc-attr id="b650@kyfpr_rmod" />
+              <doc-attr id="b682@kyfpr_rmod" />
               <doc-attr id="scr_left_prior_to_leaving" />
             </input-attr>
             <caption>&lt;p&gt;Did you accept an offer of new employment prior to leaving this employment?&lt;/p&gt;</caption>
@@ -9145,6 +9149,8 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the substance that tested positive">
               <doc-attr id="p71@kyfpr_rmod" />
