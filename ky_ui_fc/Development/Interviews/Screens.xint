@@ -81,7 +81,7 @@
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s3" name="&lt;11&gt; List each of your Employer's, From: %visible_investigation_period_text% " public-id="" order="1" folder="4">
+      <screen type="Question" id="s3" name="List each of your Employer's, From: %visible_investigation_period_text% " public-id="" order="1" folder="4">
         <controls>
           <entity entity-id="fpr_employer">
             <control-properties>
@@ -89,10 +89,10 @@
               <property name="add-instance-text" type="localized-string">Add Row</property>
               <property name="remove-instance-text" type="localized-string">Remove Checked</property>
               <property name="want-default-entity" type="boolean">true</property>
-              <property name="display-style" type="string">Tabular</property>
+              <property name="display-style" type="string">Portrait</property>
             </control-properties>
             <controls>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="Fotzapple">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="Smucker's">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -105,7 +105,7 @@
                   <doc-attr id="p32@kyfpr_rmod" />
                   <doc-attr id="g01_fpr_employer_instance_id" />
                 </input-attr>
-                <caption>Employer's Name:</caption>
+                <caption>&lt;p&gt;Employer's Name:&lt;/p&gt;</caption>
               </input>
               <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
                 <control-properties>
@@ -114,8 +114,6 @@
                   <property name="ClassOverride" type="string">
                   </property>
                   <property name="IsHTML" type="boolean">true</property>
-                  <property name="__list-name" type="string">
-                  </property>
                 </control-properties>
                 <input-attr text="the employer's categorization code">
                   <doc-attr id="p38@kyfpr_rmod" />
@@ -127,7 +125,7 @@
                   <value code="US Military" default-visibility="enabled">US Military</value>
                   <value code="Government" default-visibility="enabled">Government</value>
                 </values>
-                <caption>Employer type</caption>
+                <caption>&lt;p&gt;Employer type:&lt;/p&gt;</caption>
               </input>
               <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
                 <control-properties>
@@ -135,13 +133,13 @@
                   </property>
                   <property name="ClassOverride" type="string">
                   </property>
-                  <property name="IsHTML" type="boolean">false</property>
+                  <property name="IsHTML" type="boolean">true</property>
                 </control-properties>
                 <input-attr text="the claimant is receiving a pension from the employer">
-                  <doc-attr id="b310@kyfpr_rmod" />
+                  <doc-attr id="b324@kyfpr_rmod" />
                   <doc-attr id="emr_gets_pension" />
                 </input-attr>
-                <caption>Do you receive a pension from this employer</caption>
+                <caption>&lt;p&gt;Do you receive a pension from this employer?&lt;/p&gt;</caption>
               </input>
             </controls>
           </entity>
@@ -2696,13 +2694,13 @@ and correct to the best of my knowledge.&lt;/p&gt;
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the test flow should be used">
-              <doc-attr id="b86@kyfpr_rmod" />
-              <doc-attr id="test_2_flow" />
+              <doc-attr id="b1@Properties_FCProperties_xsrc" />
+              <doc-attr id="fpr_test_flow" />
             </input-attr>
-            <caption>Select secondary test flow?</caption>
+            <caption>&lt;p&gt;Select secondary test flow?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -2716,10 +2714,10 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="remove-instance-text" type="localized-string">
               </property>
               <property name="want-default-entity" type="boolean">true</property>
-              <property name="display-style" type="string">Tabular</property>
+              <property name="display-style" type="string">Portrait</property>
             </control-properties>
             <controls>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2001-05-29">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2012-10-03">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -2731,9 +2729,9 @@ and correct to the best of my knowledge.&lt;/p&gt;
                   <doc-attr id="p61@kyfpr_rmod" />
                   <doc-attr id="g01_first_day_worked_date" />
                 </input-attr>
-                <caption>First Day Worked</caption>
+                <caption>&lt;p&gt;When was the first day you worked for %g01_fpr_employer_instance_id%? &lt;/p&gt;</caption>
               </input>
-              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2012-12-29">
+              <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2013-02-02">
                 <control-properties>
                   <property name="StyleOverride" type="string">
                   </property>
@@ -2745,7 +2743,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
                   <doc-attr id="p62@kyfpr_rmod" />
                   <doc-attr id="g01_last_day_worked_date" />
                 </input-attr>
-                <caption>Last Day&lt;/br&gt;You Performed&lt;/br&gt;Work</caption>
+                <caption>&lt;p&gt;When was the last day you worked for %g01_fpr_employer_instance_id%? &lt;/p&gt;</caption>
               </input>
             </controls>
           </entity>
@@ -2762,7 +2760,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;br&gt;&lt;br&gt;&lt;hr&gt;</caption>
+            <caption>&lt;br&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -2776,7 +2774,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <doc-attr id="b286@kyfpr_rmod" />
               <doc-attr id="g01_fpr_weeks_exceed_threshold" />
             </input-attr>
-            <caption>Is the Total number of &lt;b&gt;Complete Working Weeks&lt;/b&gt; that you did not work for the employer, for &lt;b&gt;Any Reason&lt;/b&gt;, greater than &lt;b&gt;%fpr_max_unworked_weeks% ?&lt;/b&gt;</caption>
+            <caption>&lt;p&gt;Is the Total number of &lt;b&gt;Complete (Full) Working Weeks&lt;/b&gt; that you took off from %g01_fpr_employer_instance_id%,&lt;br&gt; for &lt;b&gt;Any Reason&lt;/b&gt;, greater than &lt;b&gt;%fpr_max_unworked_weeks% ?&lt;/b&gt;&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -2791,8 +2789,18 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>
-&lt;p&gt;Below are descriptions of several categories related to loss of employment.&lt;/p&gt;
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pbs"&gt;Below are descriptions of several categories related to loss of employment.&lt;/p&gt;
 &lt;br&gt;
 &lt;ul&gt;
   &lt;li class="tblue"&gt;Currently Employed (Full-time or part-time)&lt;/li&gt;
@@ -2845,7 +2853,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="IsHTML" type="boolean">true</property>
               <property name="__list-name" type="string">
               </property>
             </control-properties>
@@ -2863,7 +2871,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <value code="Laid Off" default-visibility="enabled">Laid Off</value>
               <value code="Labor Dispute" default-visibility="enabled">Labor Dispute</value>
             </values>
-            <caption>Which category best describes your status for %g01_employment_instance_id%?</caption>
+            <caption>&lt;p&gt;Which category best describes your status for %g01_employment_instance_id%?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -4200,6 +4208,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants work related circumstance">
               <doc-attr id="p67@kyfpr_rmod" />
@@ -5777,9 +5787,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer initiated a reduction in workforce buyout">
-              <doc-attr id="b629@kyfpr_rmod" />
-              <doc-attr id="scr_workforce_reduction" />
+            <input-attr text="this employer initiated a substantial reduction in work force goal during the employment">
+              <doc-attr id="b540@kyfpr_rmod" />
+              <doc-attr id="emr_substantial_reduction" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer initiate a reduction in workforce/buyout?&lt;/p&gt;</caption>
           </input>
@@ -5791,9 +5801,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer offered an incentive package for voluntarily accepting the reduction">
-              <doc-attr id="b630@kyfpr_rmod" />
-              <doc-attr id="scr_workforce_offered_incentive" />
+            <input-attr text="the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force">
+              <doc-attr id="b542@kyfpr_rmod" />
+              <doc-attr id="emr_took_buyout" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer offer you an incentive package/buyout for voluntarily accepting the reduction?&lt;/p&gt;</caption>
           </input>
@@ -5806,7 +5816,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant would have been able to remain employed if they did not take the buyout">
-              <doc-attr id="b631@kyfpr_rmod" />
+              <doc-attr id="b670@kyfpr_rmod" />
               <doc-attr id="scr_workforce_could_remain" />
             </input-attr>
             <caption>&lt;p&gt;Could you have continued work if you had not accepted the reduction of workforce package/buyout?&lt;/p&gt;</caption>
@@ -5836,7 +5846,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation of the condition of hire they failed to uphold">
-              <doc-attr id="p123@kyfpr_rmod" />
+              <doc-attr id="p127@kyfpr_rmod" />
               <doc-attr id="scr_condition_of_hire_desc" />
             </input-attr>
             <caption>&lt;p&gt;What condition of your employment contract did you fail to meet? (e.g. failure to pass a test, failure to earn or maintain a certification other than a driver’s license)?&lt;/p&gt;
@@ -5852,7 +5862,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation of why they failed to meet the specific condition of employment">
-              <doc-attr id="p124@kyfpr_rmod" />
+              <doc-attr id="p128@kyfpr_rmod" />
               <doc-attr id="scr_condition_of_hire_failure" />
             </input-attr>
             <caption>&lt;p&gt;Why did you fail to meet this condition of employment?&lt;/p&gt;
@@ -5877,9 +5887,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant was aware of the requirement to meet specific conditions at the time of hire">
-              <doc-attr id="b633@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_aware" />
+            <input-attr text="the claimant was responsible for meeting the employment's condition of continued employment">
+              <doc-attr id="b532@kyfpr_rmod" />
+              <doc-attr id="fpr_responsible_condition" />
             </input-attr>
             <caption>&lt;p&gt;Were you aware of your responsibility to meet this condition or maintain a specific certification at the time of hire?&lt;/p&gt;</caption>
           </input>
@@ -5891,9 +5901,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant was responsible to meet the specific condition as a provision of continued employment">
-              <doc-attr id="b634@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_responsible" />
+            <input-attr text="the condition of the employment was established at the time of hire">
+              <doc-attr id="b474@kyfpr_rmod" />
+              <doc-attr id="emt_condition_settled_at_hire" />
             </input-attr>
             <caption>&lt;p&gt;Were you responsible to meet this condition as a requirement for continued employment?&lt;/p&gt;</caption>
           </input>
@@ -5905,9 +5915,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant received warnings regarding the failure to meet the specified condition of employment">
-              <doc-attr id="b635@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_warning" />
+            <input-attr text="the claimant failed to meet the condition of the employment">
+              <doc-attr id="b475@kyfpr_rmod" />
+              <doc-attr id="emt_failed_to_meet_condition" />
             </input-attr>
             <caption>&lt;p&gt;Did you receive any warning(s) regarding your failure to meet this condition of employment?&lt;/p&gt;</caption>
           </input>
@@ -6295,6 +6305,8 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants reason for accepting an offer of work">
               <doc-attr id="p134@kyfpr_rmod" />
@@ -6321,9 +6333,9 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant left the employment to accept temporary or non full-time employment">
-              <doc-attr id="b648@kyfpr_rmod" />
-              <doc-attr id="scr_left_for_temporary" />
+            <input-attr text="the claimant voluntarily left the employment to accept temporary work">
+              <doc-attr id="b477@kyfpr_rmod" />
+              <doc-attr id="emt_left_for_temporary_part_2" />
             </input-attr>
             <caption>&lt;p&gt;Did you leave the employment to accept temporary or less than full-time employment?&lt;/p&gt;</caption>
           </input>
@@ -6336,7 +6348,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant left the employment to accept work less than 100 miles from their home">
-              <doc-attr id="b649@kyfpr_rmod" />
+              <doc-attr id="b681@kyfpr_rmod" />
               <doc-attr id="scr_left_for_miles" />
             </input-attr>
             <caption>&lt;p&gt;Did you leave this employment which is one hundred (100) road miles or more from your home 
@@ -6351,7 +6363,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant accepted the new employment offer prior to leaving the current employer">
-              <doc-attr id="b650@kyfpr_rmod" />
+              <doc-attr id="b682@kyfpr_rmod" />
               <doc-attr id="scr_left_prior_to_leaving" />
             </input-attr>
             <caption>&lt;p&gt;Did you accept an offer of new employment prior to leaving this employment?&lt;/p&gt;</caption>
@@ -7372,7 +7384,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident of unsatisfactory work or performance that led to their discharge">
-              <doc-attr id="p161@kyfpr_rmod" />
+              <doc-attr id="p164@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_description" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your discharge.&lt;/p&gt;
@@ -7387,7 +7399,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant was aware of the employment's job responsibilities">
-              <doc-attr id="b432@kyfpr_rmod" />
+              <doc-attr id="b431@kyfpr_rmod" />
               <doc-attr id="fpr_aware_of_responsibility" />
             </input-attr>
             <caption>&lt;p&gt;Were you made aware of your job responsibilities?&lt;/p&gt;</caption>
@@ -7401,7 +7413,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant received training (instruction) during the employment on how to perform their duties">
-              <doc-attr id="b441@kyfpr_rmod" />
+              <doc-attr id="b440@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_received_training" />
             </input-attr>
             <caption>&lt;p&gt;Did you receive training or instruction on how to perform your duties?&lt;/p&gt;</caption>
@@ -7414,9 +7426,9 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant performed this type of work previously">
-              <doc-attr id="b682@kyfpr_rmod" />
-              <doc-attr id="scr_poor_work_previous" />
+            <input-attr text="the employment's work was within the claimant's proven ability">
+              <doc-attr id="b430@kyfpr_rmod" />
+              <doc-attr id="fpr_work_within_ability" />
             </input-attr>
             <caption>&lt;p&gt;Have you previously done this type of work/duties?&lt;/p&gt;</caption>
           </input>
@@ -7428,9 +7440,9 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant previously received positive feedback or commendations regarding their performance">
-              <doc-attr id="b683@kyfpr_rmod" />
-              <doc-attr id="scr_poor_work_commendation" />
+            <input-attr text="the claimant failed to perform satisfactory work during the employment">
+              <doc-attr id="b432@kyfpr_rmod" />
+              <doc-attr id="fpr_unsatisfactory_performance" />
             </input-attr>
             <caption>&lt;p&gt;During your employment, had you received positive evaluations, positive feedback, 
 or commendations regarding your performance?&lt;/p&gt;</caption>
@@ -7454,9 +7466,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant received warnings regarding their work performance prior to being discharged">
-              <doc-attr id="b684@kyfpr_rmod" />
-              <doc-attr id="scr_poor_work_warning" />
+            <input-attr text="the claimant had been previously warned that the employment was in jeopardy">
+              <doc-attr id="b400@kyfpr_rmod" />
+              <doc-attr id="emt_was_warned_before" />
             </input-attr>
             <caption>&lt;p&gt;Were you given any warning (verbal or written) regarding your performance prior to the discharge?&lt;/p&gt;</caption>
           </input>
@@ -7481,7 +7493,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person who gave the claimant warnings regarding their work performance">
-              <doc-attr id="p162@kyfpr_rmod" />
+              <doc-attr id="p165@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_person" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  What was the name of the person who gave you a warning?&lt;/p&gt;</caption>
@@ -7496,7 +7508,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person who gave the claimant warnings regarding their work performance">
-              <doc-attr id="p163@kyfpr_rmod" />
+              <doc-attr id="p166@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_title" />
             </input-attr>
             <caption>&lt;p&gt;  &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;
@@ -7511,7 +7523,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant received warnings regarding their work performance">
-              <doc-attr id="p164@kyfpr_rmod" />
+              <doc-attr id="p167@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_date" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you receive the warning?&lt;/p&gt;
@@ -7537,7 +7549,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants duties or customary work load changed since their date of hire">
-              <doc-attr id="b685@kyfpr_rmod" />
+              <doc-attr id="b703@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_changed" />
             </input-attr>
             <caption>&lt;p&gt;Had your job duties or customary workload changed since your date of hire?&lt;/p&gt;</caption>
@@ -7563,7 +7575,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of how their duties or workload changed since the date of hire">
-              <doc-attr id="p165@kyfpr_rmod" />
+              <doc-attr id="p168@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_change_desc" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe the change&lt;/p&gt;
@@ -7589,7 +7601,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided and explanation to the employer regarding their unsatisfactory work performance">
-              <doc-attr id="b686@kyfpr_rmod" />
+              <doc-attr id="b704@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_excuse" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation for your unsatisfactory performance?&lt;/p&gt;</caption>
@@ -7615,7 +7627,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation for the poor work performance">
-              <doc-attr id="p166@kyfpr_rmod" />
+              <doc-attr id="p169@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_excuse_desc" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -7641,7 +7653,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation for not providing an explanation for their poor work performance">
-              <doc-attr id="p167@kyfpr_rmod" />
+              <doc-attr id="p170@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_no_excuse" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why not?&lt;/p&gt;</caption>
@@ -8025,7 +8037,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the way that the employer alleges that they falsified their employment application">
-              <doc-attr id="p177@kyfpr_rmod" />
+              <doc-attr id="p180@kyfpr_rmod" />
               <doc-attr id="scr_false_description" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges that you falsified your 
@@ -8040,9 +8052,9 @@ employment application (whether or not you agree)?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant concures with the employers allegation of a falsified employment application">
-              <doc-attr id="b705@kyfpr_rmod" />
-              <doc-attr id="scr_false_true" />
+            <input-attr text="the claimant has falsified an application for the employment">
+              <doc-attr id="b384@kyfpr_rmod" />
+              <doc-attr id="emt_falsified_application" />
             </input-attr>
             <caption>&lt;p&gt;Did you falsify an application for the employment?&lt;/p&gt;</caption>
           </input>
@@ -8066,7 +8078,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided the employer with an explanation regarding the falsified employment application">
-              <doc-attr id="b706@kyfpr_rmod" />
+              <doc-attr id="b712@kyfpr_rmod" />
               <doc-attr id="scr_false_provided" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation?&lt;/p&gt;</caption>
@@ -8092,7 +8104,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation to the employer as to why they falsified an employment application">
-              <doc-attr id="p178@kyfpr_rmod" />
+              <doc-attr id="p181@kyfpr_rmod" />
               <doc-attr id="scr_false_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -8118,10 +8130,1924 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation as to why they did not provide an explanation to the employer regarding the falsified employment application">
-              <doc-attr id="p179@kyfpr_rmod" />
+              <doc-attr id="p182@kyfpr_rmod" />
               <doc-attr id="scr_false_no_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s141" name="Insubordination Details for %fpr_emt_visible_name%" public-id="" order="11" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of the instruction the the employer alleges they refused to obey">
+              <doc-attr id="p183@kyfpr_rmod" />
+              <doc-attr id="scr_obey_instruction_desc" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the instruction the employer alleges that you refused to obey (whether or not you agree).&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who gave the claimant the instructions they refused to obey">
+              <doc-attr id="p184@kyfpr_rmod" />
+              <doc-attr id="scr_obey_person" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the name of person who gave you this instruction?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person who gave the claimant the instructions they refused to obey">
+              <doc-attr id="p185@kyfpr_rmod" />
+              <doc-attr id="the_obey_title" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the title of person who gave you this instruction?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant refused to obey an instruction during the employment">
+              <doc-attr id="b390@kyfpr_rmod" />
+              <doc-attr id="emt_refused_an_instruction" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you refuse to obey the instruction?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation as to why they refused to obey the instruction">
+              <doc-attr id="p186@kyfpr_rmod" />
+              <doc-attr id="scr_obey_why" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant had been given this same instruction previously">
+              <doc-attr id="b714@kyfpr_rmod" />
+              <doc-attr id="scr_obey_previously" />
+            </input-attr>
+            <caption>&lt;p&gt;Had you been given the same instruction previously?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has complied with the specified instruction prior to the final incident">
+              <doc-attr id="b715@kyfpr_rmod" />
+              <doc-attr id="scr_obey_complied" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Had you complied with this instruction prior to the final incident?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received warnings regarding refusal of instructions prior to their discharge">
+              <doc-attr id="b716@kyfpr_rmod" />
+              <doc-attr id="scr_obey_warning" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you receive warning (verbal or written) regarding refusal of instruction prior to your discharge?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who gave the claimant warning regarding the refusal of instructions">
+              <doc-attr id="p187@kyfpr_rmod" />
+              <doc-attr id="scr_obey_warning_person" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was the name of the person who gave you a warning?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person who gave the claimant warning regarding the refusal of instructions">
+              <doc-attr id="p188@kyfpr_rmod" />
+              <doc-attr id="scr_obey_warning_title" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received warning regarding the refusal of instructions">
+              <doc-attr id="p189@kyfpr_rmod" />
+              <doc-attr id="scr_obey_warning_date" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp On what date did you receive the warning?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s142" name="Loss of Driver’s License Details for %fpr_emt_visible_name%" public-id="" order="12" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of how they lost their drivers license">
+              <doc-attr id="p190@kyfpr_rmod" />
+              <doc-attr id="scr_driver_loss_desc" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident which led to the loss of driver’s license.&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's job duties required the operation of a motor vehicle for the employment">
+              <doc-attr id="b405@kyfpr_rmod" />
+              <doc-attr id="emt_required_motor_operation" />
+            </input-attr>
+            <caption>&lt;p&gt;Did your job duties require you to operate a motor vehicle?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant lost their drivers license due to a violation of motor vehicle law">
+              <doc-attr id="b718@kyfpr_rmod" />
+              <doc-attr id="scr_driver_loss_law" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you lose your driver’s license due to violations of motor vehicle law?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was aware of the need to maintain a drivers license at the time of hire">
+              <doc-attr id="b719@kyfpr_rmod" />
+              <doc-attr id="scr_driver_aware" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you aware of your responsibility to maintain a driver’s license at the time of hire?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was responsible to maintain a drivers license as a requirement of continued employment">
+              <doc-attr id="b720@kyfpr_rmod" />
+              <doc-attr id="scr_driver_must_maintain" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you responsible to maintain a driver’s license as a requirement for continued employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s143" name="Uninsurable Driver Details for %fpr_emt_visible_name%" public-id="" order="13" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of how they came to be uninsurable">
+              <doc-attr id="p191@kyfpr_rmod" />
+              <doc-attr id="src_insure_desc" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident which led you to become an uninsurable driver.&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's job duties required insurability as a driver for the employment">
+              <doc-attr id="b406@kyfpr_rmod" />
+              <doc-attr id="emt_required_insurance" />
+            </input-attr>
+            <caption>&lt;p&gt;Did your job duties require you to operate a motor vehicle or to be insured as a driver?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant became unisurable as the result of a violation of motor vehicle law">
+              <doc-attr id="b722@kyfpr_rmod" />
+              <doc-attr id="scr_insure_law" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you become uninsurable due to violations of motor vehicle law?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was aware of their responsibility to remain insurable as a requirement of continued employment">
+              <doc-attr id="b723@kyfpr_rmod" />
+              <doc-attr id="scr_insure_aware" />
+            </input-attr>
+            <caption>&lt;p&gt;Were aware of your responsibility to remain insurable as a requirement for employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s144" name="Drug/Alcohol Details" public-id="" order="14" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pr&gt;You have indicated the primary you were discharged from this employment is related to drugs and/or alcohol.&lt;/p&gt;
+</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the claimants drug related reason for discharge">
+              <doc-attr id="p70@kyfpr_rmod" />
+              <doc-attr id="scr_drug_flow_control" />
+            </input-attr>
+            <caption>&lt;p&gt;Please select the reason for termination&lt;/p&gt;
+</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Refusal to submit to a drug/alcohol test" default-visibility="enabled">Refusal to submit to a drug/alcohol test</value>
+              <value code="Consuming drugs and/or alcohol on the employer’s property" default-visibility="enabled">Consuming drugs and/or alcohol on the employer’s property</value>
+              <value code="Reporting to work under the influence of drugs and/or alcohol" default-visibility="enabled">Reporting to work under the influence of drugs and/or alcohol</value>
+              <value code="Positive drug and/or alcohol test" default-visibility="enabled">Positive drug and/or alcohol test</value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants recount of the drug related incident that led to their discharge from employement">
+              <doc-attr id="p190@kyfpr_rmod" />
+              <doc-attr id="scr_drug_explanation" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident that led to your discharge from employment&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the final incident occured regarding the claimants drug use">
+              <doc-attr id="p191@kyfpr_rmod" />
+              <doc-attr id="scr_drug_date" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the date of the final incident?&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received warnings regarding the employers drug and alcohol policy prior to discharge">
+              <doc-attr id="b722@kyfpr_rmod" />
+              <doc-attr id="scr_drug_warning" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you receive warning (verbal or written) regarding violations of employer’s alcohol /drug policy prior to your discharge?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who gave the claimant the warning regarding drug and alcohol use">
+              <doc-attr id="p192@kyfpr_rmod" />
+              <doc-attr id="scr_drug_person" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was the name of the person who gave you a warning?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person who gave the claimant the warning regarding drug and alcohol use">
+              <doc-attr id="p193@kyfpr_rmod" />
+              <doc-attr id="scr_drug_title" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received the warning regarding drug and alcohol use">
+              <doc-attr id="p194@kyfpr_rmod" />
+              <doc-attr id="scr_drug_warning_date" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp On what date did you receive the warning?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s145" name="Refusal to Submit to Testing Details" public-id="" order="15" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the reason the employer requested that the claimant take a drug test">
+              <doc-attr id="p195@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_test_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the reason for the drug and/or alcohol test?&lt;/p&gt;
+
+</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Random" default-visibility="enabled">Random</value>
+              <value code="Post accident" default-visibility="enabled">Post accident</value>
+              <value code="Pre-employment" default-visibility="enabled">Pre-employment</value>
+              <value code="Reasonable suspicion" default-visibility="enabled">Reasonable suspicion</value>
+              <value code="Follow-up testing" default-visibility="enabled">Follow-up testing</value>
+              <value code="Other" default-visibility="enabled">Other</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants recount of why they refused the drug test">
+              <doc-attr id="p198@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_refusal_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;What is your reason for refusing to submit to (or complete) the employer’s drug and/or alcohol test?&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant was to undergo the drug test">
+              <doc-attr id="p197@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_test_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date was the test to be conducted?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employer has a policy regarding alcohol testing">
+              <doc-attr id="b724@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_test_policy" />
+            </input-attr>
+            <caption>&lt;p&gt;Does the employer have a policy concerning drug and/or alcohol testing?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant reported to work under the influence of (alcohol, drugs) during the employment">
+              <doc-attr id="b425@kyfpr_rmod" />
+              <doc-attr id="reported_under_the_influence" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you report to work under the influence of drugs and/or alcohol?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants drugs of choice">
+              <doc-attr id="p196@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_type" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What substance(s)?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s153" name="Consumption or Reporting Under Influence Details" public-id="" order="16" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant consumed (alcohol, drugs) on this employer's premises during the employment">
+              <doc-attr id="b426@kyfpr_rmod" />
+              <doc-attr id="fpr_consumed_drugs_on_site" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you consume drugs and/or alcohol on the employer’s property?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the substance that the claimant consumed on the employers property">
+              <doc-attr id="p199@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_substance" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What substance?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant consumed (alcohol, drugs) during the employment's working hours">
+              <doc-attr id="b427@kyfpr_rmod" />
+              <doc-attr id="fpr_consuming_during_work_hours" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you consume drugs and/or alcohol during working hours?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the substance that the claimant consumed during working hours">
+              <doc-attr id="p200@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_work_hours_substance" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What substance?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant reported to work under the influence of (alcohol, drugs) during the employment">
+              <doc-attr id="b425@kyfpr_rmod" />
+              <doc-attr id="reported_under_the_influence" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you report to work under the influence of drugs and/or alcohol?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the substance that the claimant reported to work under the influence of">
+              <doc-attr id="p201@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_report_substance" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What substance?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant submitted to a drug test on the day of the final incident, as required by the employer">
+              <doc-attr id="b728@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_final_test" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you submit to a drug and/or alcohol test on the day of the final incident as required by the employer?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What type of test? (check the ones that apply)</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant submitted to an alcohol test on the day of the incident">
+              <doc-attr id="b729@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_final_alcohol" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  &amp;nbsp  &amp;nbsp Alcohol test&lt;/p&gt;</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant submitted to a drug test on the day of the incident">
+              <doc-attr id="b730@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_final_drug" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp   &amp;nbsp &amp;nbsp Drug test&lt;/p&gt;</caption>
+            <mandatory-attr text="" />
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If No:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the reason that the claimant refused to submit to a drug or alcohol test on the day of the final incident">
+              <doc-attr id="p202@kyfpr_rmod" />
+              <doc-attr id="scr_onsite_refusal_desc" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp Why did you refuse?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s154" name="Positive Drug Test Details" public-id="" order="17" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the substance that tested positive">
+              <doc-attr id="p71@kyfpr_rmod" />
+              <doc-attr id="scr_positive_test" />
+            </input-attr>
+            <caption>&lt;p&gt;For what substance did you test positive?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="Drugs" default-visibility="enabled">Drugs</value>
+              <value code="Alcohol" default-visibility="enabled">Alcohol</value>
+              <value code="..." default-visibility="enabled">...</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant provided the testing facility or the employer with a valid prescription for the substance found in the testing">
+              <doc-attr id="b733@kyfpr_rmod" />
+              <doc-attr id="scr_tested_positive_prescription" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you provide the employer or testing facility with your current valid prescription 
+for the substance for which you tested positive?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation for the positive test results">
+              <doc-attr id="p205@kyfpr_rmod" />
+              <doc-attr id="scr_tested_positive_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the reason for the positive test?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s155" name="Alcohol Test Details" public-id="" order="18" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the way that the alcohol test was administered to the claimant">
+              <doc-attr id="p205@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_administered" />
+            </input-attr>
+            <caption>&lt;p&gt;How was the test conducted?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Blood" default-visibility="enabled">Blood</value>
+              <value code="Urine" default-visibility="enabled">Urine</value>
+              <value code="Breath" default-visibility="enabled">Breath</value>
+              <value code="Saliva" default-visibility="enabled">Saliva</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the results of the alcohol test that were administered to the claimant">
+              <doc-attr id="p206@kyfpr_rmod" />
+              <doc-attr id="scr_alcohol_administered_result" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the result of the alcohol test?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s156" name="Drug Test Details" public-id="" order="19" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the results of the drug test administered to the claimant">
+              <doc-attr id="p207@kyfpr_rmod" />
+              <doc-attr id="scr_drug_administered_result" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the result of the drug test?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="Positive" default-visibility="enabled">Positive</value>
+              <value code="Negative" default-visibility="enabled">Negative</value>
+              <value code="Inconclusive" default-visibility="enabled">Inconclusive</value>
+            </values>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s158" name="Incarceration Details" public-id="" order="20" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was discharged by the employer for being incarcerated">
+              <doc-attr id="b734@kyfpr_rmod" />
+              <doc-attr id="scr_jail_caused_discharge" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you discharge by the employer for being incarcerated (in jail)?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the beginning date of the claimants most current incarceration">
+              <doc-attr id="p209@kyfpr_rmod" />
+              <doc-attr id="scr_jail_start_date" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the beginning date of your incarceration?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the ending date of the claimants most current incarceration">
+              <doc-attr id="p210@kyfpr_rmod" />
+              <doc-attr id="scr_jail_end_date" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the end date of your incarceration?&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was incarcerated for a conviction during the employment">
+              <doc-attr id="b396@kyfpr_rmod" />
+              <doc-attr id="scr_jail_during_employment" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you incarcerated following a conviction (misdemeanor or felony)?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was incarcerated for at least five (5) days of work during the employment">
+              <doc-attr id="b397@kyfpr_rmod" />
+              <doc-attr id="scr_jail_for_five" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the incarceration result in you missing at least five (5) days work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant properly reported each missed day due to incarceration to the employer">
+              <doc-attr id="b737@kyfpr_rmod" />
+              <doc-attr id="scr_jail_reported" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you properly report to your employer each day that you missed work due to incarceration?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s159" name="Damaging Employer Property Details" public-id="" order="21" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's actions resulted in damage of this employer's property during the employment">
+              <doc-attr id="b422@kyfpr_rmod" />
+              <doc-attr id="scr_damage_action_caused" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you damage the employer’s property?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's actions constitute gross negligence during the employment">
+              <doc-attr id="b423@kyfpr_rmod" />
+              <doc-attr id="scr_gross_negligence" />
+            </input-attr>
+            <caption>&lt;p&gt;Was the property damage a result of your failure to follow a policy or procedure?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the items that the employer alleges the claimant damaged">
+              <doc-attr id="p77@kyfpr_rmod" />
+              <doc-attr id="scr_damage_items" />
+            </input-attr>
+            <caption>&lt;p&gt;What item(s) of property does the employer allege that you damaged?&lt;/p&gt;
+
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation of how the employers property came to be damaged">
+              <doc-attr id="p212@kyfpr_rmod" />
+              <doc-attr id="scr_damage_explanation" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the incident that led to the employer’s property becoming damaged&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received warnings regarding property damage or negligence prior to discharge">
+              <doc-attr id="b738@kyfpr_rmod" />
+              <doc-attr id="scr_damage_warning" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you receive warning (verbal or written) regarding negligence or property damage prior to your discharge?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;p class="pb"&gt;If Yes:&lt;p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name or the person who gave the claimant warning regarding property damage prior to discharge">
+              <doc-attr id="p213@kyfpr_rmod" />
+              <doc-attr id="scr_damage_warning_person" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the name of the person who gave you a warning?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title or the person who gave the claimant warning regarding property damage prior to discharge">
+              <doc-attr id="p214@kyfpr_rmod" />
+              <doc-attr id="scr_damage_warning_title" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received the final warning regarding property damage">
+              <doc-attr id="p215@kyfpr_rmod" />
+              <doc-attr id="scr_damage_warning_date" />
+            </input-attr>
+            <caption>&lt;p&gt;  &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you receive the warning?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s160" name="Union Activity Details" public-id="" order="22" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimant accounting of the union activity that led to their termination">
+              <doc-attr id="p216@kyfpr_rmod" />
+              <doc-attr id="scr_union_activity_description" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident which led to your termination&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was discharged due to their participation in a labor union">
+              <doc-attr id="b738@kyfpr_rmod" />
+              <doc-attr id="scr_union_discharge" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you discharged due to your participation in a labor union?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was required to join a company union">
+              <doc-attr id="b739@kyfpr_rmod" />
+              <doc-attr id="scr_union_company" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you required to join a company union?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant joined the company union">
+              <doc-attr id="b740@kyfpr_rmod" />
+              <doc-attr id="scr_union_company_joined" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you join the company union?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s161" name="Mandatory Retirement Details" public-id="" order="23" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employer terminated the claimants employment by requiring retirement">
+              <doc-attr id="b741@kyfpr_rmod" />
+              <doc-attr id="scr_mandatory_retirement_terminated" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the employer end your employment by requiring you to retire?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant would have been able to continue working for this employer had they not retired">
+              <doc-attr id="b742@kyfpr_rmod" />
+              <doc-attr id="scr_mandatory_retirement_continue" />
+            </input-attr>
+            <caption>&lt;p&gt;Would you have been allowed to continue working for this employer if you had not retired?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employer had a manditory retirement policy">
+              <doc-attr id="b743@kyfpr_rmod" />
+              <doc-attr id="scr_mandatory_retirement_policy" />
+            </input-attr>
+            <caption>&lt;p&gt;Did your employer have a mandatory retirement policy?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant agreed to the retirement policy at the time of their hire">
+              <doc-attr id="b744@kyfpr_rmod" />
+              <doc-attr id="scr_mandatory_retirement_agreement" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Did you agree to the mandatory retirement policy at the time of your hire?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Not:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant agreed to the manditory retirement as a condition of continued employment">
+              <doc-attr id="b745@kyfpr_rmod" />
+              <doc-attr id="scr_mandatory_retirement_agreed" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Did you agree to the mandatory retirement as a condition of continued employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s162" name="Employer Requested Resignation Details" public-id="" order="24" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant would have been terminated had they not resigned">
+              <doc-attr id="b746@kyfpr_rmod" />
+              <doc-attr id="scr_resignation_or_termination" />
+            </input-attr>
+            <caption>&lt;p&gt;Would you have been terminated if you had not resigned?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation of why the employer requested their resignation">
+              <doc-attr id="p217@kyfpr_rmod" />
+              <doc-attr id="scr_resignation_request_explanation" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the reason that your employer requested your resignation?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s163" name="Other Discharge Details" public-id="" order="25" screen-attr="" folder="35">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date of the other final incident">
+              <doc-attr id="p220@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_incident_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did the final incident occur?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation of the other reason for their discharge">
+              <doc-attr id="p218@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_explanation" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the reason the employer gave for your discharge (whether or not you agree)&lt;/p&gt;
+
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the other final incident that led to the calimants discharge">
+              <doc-attr id="p219@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_incident" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the final incident that led to your discharge?&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant violated one of the employers policys or rules">
+              <doc-attr id="b747@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_policy_violation" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you violate the employer’s policy or rule?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was aware of the policy or rule that they violated">
+              <doc-attr id="b748@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_policy_aware" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you aware of the policy or rule?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the policy or rule was uniformly enforced">
+              <doc-attr id="b749@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_uniformly" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Was the policy or rule uniformly enforced?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If No:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants explanation of how the policy or rule is not uniformly enforced">
+              <doc-attr id="p221@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_not_uniform" />
+            </input-attr>
+            <caption>&lt;p&gt;  &amp;nbsp  &amp;nbsp  &amp;nbsp Please provide examples&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received a warning regarding the reason for discharge prior to the end of employment">
+              <doc-attr id="b750@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_warned" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you receive warning (verbal or written) regarding the reason for your discharge prior to the end of the employment?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who gave the claimant a warning about the other prior to their discharge">
+              <doc-attr id="p222@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_warn_person" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the name of the person who gave you a warning?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person who gave the claimant a warning about the other prior to their discharge">
+              <doc-attr id="p223@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_warn_title" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant received a warning about the other prior to their discharge">
+              <doc-attr id="p224@kyfpr_rmod" />
+              <doc-attr id="scr_other_reason_warn_date" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you receive the warning?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -9130,7 +11056,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
         </connections>
       </flow>
       <flow folder="3" order="20" name="The Discharge Collection" id="f28" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -9149,6 +11075,26 @@ employment application (whether or not you agree)?&lt;/p&gt;
           <node node-id="14" node-type="screen" screen-id="s139" mandatory="true" />
           <node node-id="15" node-type="decision" attribute-id="the employment discharge interview should branch to falsification" />
           <node node-id="16" node-type="screen" screen-id="s140" mandatory="true" />
+          <node node-id="17" node-type="decision" attribute-id="the employment discharge interview should branch to refusal" />
+          <node node-id="18" node-type="screen" screen-id="s141" mandatory="true" />
+          <node node-id="19" node-type="decision" attribute-id="the employment discharge interview should branch to driver" />
+          <node node-id="20" node-type="screen" screen-id="s142" mandatory="true" />
+          <node node-id="21" node-type="decision" attribute-id="the employment discharge interview should branch to uninsurable" />
+          <node node-id="22" node-type="screen" screen-id="s143" mandatory="true" />
+          <node node-id="23" node-type="sub-flow" flow-id="The Alcohol Collection" />
+          <node node-id="24" node-type="decision" attribute-id="the employment discharge interview should branch to drugs" />
+          <node node-id="25" node-type="decision" attribute-id="the employment discharge interview should branch to jail" />
+          <node node-id="26" node-type="screen" screen-id="s158" mandatory="true" />
+          <node node-id="27" node-type="decision" attribute-id="the employment discharge interview should branch to damaging" />
+          <node node-id="28" node-type="screen" screen-id="s159" mandatory="true" />
+          <node node-id="29" node-type="decision" attribute-id="the employment discharge interview should branch to union" />
+          <node node-id="30" node-type="screen" screen-id="s160" mandatory="true" />
+          <node node-id="31" node-type="decision" attribute-id="the employment discharge interview should branch to retirement" />
+          <node node-id="32" node-type="screen" screen-id="s161" mandatory="true" />
+          <node node-id="33" node-type="decision" attribute-id="the employment discharge interview should branch to employer-request" />
+          <node node-id="34" node-type="screen" screen-id="s162" mandatory="true" />
+          <node node-id="35" node-type="decision" attribute-id="the employment discharge interview should branch to anything else" />
+          <node node-id="36" node-type="screen" screen-id="s163" mandatory="true" />
         </nodes>
         <connections>
           <connection from="0" to="2" />
@@ -9195,8 +11141,150 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <boolean-val>true</boolean-val>
             </condition>
           </connection>
-          <connection from="15" to="8" />
+          <connection from="15" to="17" />
           <connection from="16" to="8" />
+          <connection from="17" to="18">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="17" to="19" />
+          <connection from="18" to="8" />
+          <connection from="19" to="20">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="19" to="21" />
+          <connection from="20" to="8" />
+          <connection from="21" to="22">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="21" to="24" />
+          <connection from="22" to="8" />
+          <connection from="23" to="8" />
+          <connection from="24" to="23">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="24" to="25" />
+          <connection from="25" to="26">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="25" to="27" />
+          <connection from="26" to="8" />
+          <connection from="27" to="28">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="27" to="29" />
+          <connection from="28" to="8" />
+          <connection from="29" to="30">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="29" to="31" />
+          <connection from="30" to="8" />
+          <connection from="31" to="32">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="31" to="33" />
+          <connection from="32" to="8" />
+          <connection from="33" to="34">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="33" to="35" />
+          <connection from="34" to="8" />
+          <connection from="35" to="36">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="35" to="1" />
+          <connection from="36" to="8" />
+        </connections>
+      </flow>
+      <flow folder="3" order="21" name="The Alcohol Collection" id="f29" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
+        <diagram><![CDATA[H4sIAAAAAAAEAO29B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/Ih7/Hu8WZXqZ101RLT/7aHe881GaL6fVrFhefPbRuj3f3v30o9/j6DdOHj8tsos6W6Q/adve+4g+T9PHL6pZ3vCv+kd6UmZN89lHr9usbvHBR+nZ7LOPCLR7+SN9gV55Uq2Xs+Zo92CU4v97+/Rz7/Fd/dg2+6mz5Sx/d7Tz+K7+Zr/59vUqr58Xy7fpXffhm6oq3xQr/6Pn1fRtPjt6lpVN/viu/mW//cmiKSZlfvSmXtO35i/79cu6WLaZa+D+dgOp183cDNXr92W+tH/QnydVWdVHP/7s2Q4/j+/KB16Lp1kz//L8vMlbDNf7q9PmdXtN/WsT+cNrQRTJv1MRlmjh/vBafFG0INyiaI92qY33p9fou8WsnQOE/GJHddcf1uNnVQj6RbbIj74opnXVVOdt+jpbNunrvC7OH9/lr7ymr4sf5EcPH9/ln97nXy0JkXuP7/JP7/MnVWknkX/3vjtrs7KYmm/1rwDmLK9LooVp4j7wMWrr4m1erVvTyn3gtfp8VpzMs/o1zcvu47veX45EAVUev55ns+rKTv+np5+eHpwQcO/jTluZ9t8b8MMPou1+n26738e1+25eXMwZUf1NvgHJLpZVnT/Prr3xBp/Zll9OmjabWgmwf9oGx2VZXZ2R+liQ+oBANto08kX40pfr9qKKvRR+YV86XUL0Zt/OlrOSlM/9XRpY5zPX9t2KPiJRF7D2z04DlmUdv/eJbaVwRcyou+Bvfz5WOeuAV9Bfr/JpG+gC/v7LushJebSkCiFYvc9s6zf5u/aI1ejju/x78E1PkbgPg3bPqnqRBax7XBYXywX1h4G4P7wWz8rsgnTyzt4+cTH/7n0JZRKACD/wWr6piwXmHI3s704+Itg9flmV1xfVMivxZciWsa86LMHTMWNambnsfu44f5FdCNpAz/vLtnhVyYwcLy9E0YYfhO1yhqBc5n/SaeYj533ipqwmZbnKapBSm/kf2XYn66atFk/r7AqYeX9JC1K0ZHrNH75dPl3OjFWGJd5olfcekDm+9/Bmu7z7I7ts2/zILv/ILv9/wy7/yC7737+fXSY1+iOr/COr/E1Z5dfTOs+XzjDv3RAukzne/5Rs8x6Z5p1Bs7y32Sy74f1cmuXdH5nlH5nlH5nln4Nw+f+HZvlpvb4g6zmt5lWZPs3brCibH9npH9np97PT1KJhg7xdzI6a3X2aSPe3NBk25U/zaQHD7Yz5/mZj/oDi63v0//0d+vnpoDHf/8aNucL/Jo353o+M+Y+M+Y+M+f83jPnPkjE3CvBDbXk7z9N8sSqra5jGdEamPaWu00zNO8l0Xl8W+VXazKt1OUsnpOqn87St0jo/XzdZ+SPL/yPL/36W//YR+qc3ROj3bxeif/pzaNVvbdV/FKL/yKqDRD+y6tL0/ycr2u9l1b+xEP2V2GaY6dfrCUknfnuTNy0R+Uch+48M99cz3GknZL//YSH7w5tD9oNPbwzZH/6/27j/KGSXv39k3EGiHxn3n2/G/f9VIfu0WjZrzMWPbP+PbP/72f7bB+27u7eI2nf39m4M23d3/79g2m+I239k2v2mPzLtPzLtX67biyr2UviFfUk0rl1Gvw+10PnMtf1/3dL6+9n2EzbQK3yTVnX6Kl9VNcfszLvp2fK8XOfLaf6jGP5Hdvzr2fE0jOHv3/uwGH73Fuvuezs3R/G7/39deffZ/ke2Hp//yNb/yNb/f9jWv2cY/7MRxuPVVdUUbXGZ/8gD+JEH8H4ewHtE8vdvEcnv7e7fHMnf/3kbyf/IusvnP7LuP7Lu/x+w7t/YCvxLtc/pUxh2LL3/KGb/kcX+ehY77cTs+x8Ysz+4OWbf3d+7OWZ/8P8Fq/5zvPSuw/2RVf+RVTftfmTVf9hW/ecwZvdj9tqk83/kAvzIBXg/F+B97PvejQvwZNf38M8NBn5v90cG3rb5mmG7hfEjA/8jA/8jA///LQNvkuySnacFeZOcb/KScgRYpe8l57WJMfE++B+Z+B+Z+G/IxO/dxsQ/PLjZxO/9yMTbNj8bJv5HJv5HJv5HJv7/XyYeTW+bxv+Rgf+RgdcWt19437th4X1v9wAR/MGNC+979/+/YN53/39s3q1k/ci8/8i8/8i8/+wvvB+r/f5/yZL7j2z1/ydtddpZcr//PkvuPXP+6S3M+b2dT28255/+yJzbNv/fiNZ/ZM4N2B+Z8x+Z8/c3508Rlv9/2JanZjA/suX/b7Hln2605fKrSNBjX/D4D2Pim3b26GmRXdTZAh+Lnb93g5l/ON7d2d8lM7/36fjhwYP7o3Rn/ODhvQf3d2D/79Nn9+7dGzT+9/6/YPvv3cr2H+zgv58Xtv9Htj/9ENu/c0vb32n3Tdv+urgolszgOx+JCsDvr9usbsXN9+TeFwB58VVeZsgxH2FVbhdOb+fzTvtjyjMTSbZ3TUP9wDZ7mjdtsWT9a9bHHFJe8DGAlfd6gBrc7chXsfc8FPufujli92APbBT6CfkFYt0TUnQtf+3/7bQHuT5tEDrzJ0f3sKS5AyNYeM2Dr/c/fc+v9W9P6z69XmYLkiFReuYv+/WrvM2KJUy2tWDuE9vqeN1W5Aq1Rncer83fjhbLbPWmwnw9qWoSSSt53c/tGydZM81mXT8q8mn3DebXb1d18QOSzqw0PQ18a9+GUQ4MDP1tZ9b9EXzfC/Pchx4Jz8v8HTjMUtB8YNt8O89m/z+1It2h8VjZGwZd3R/2+ydZk8tHyBDYP+z3Z0vqf5HPCnKkbLv+h/3+2P7c8/oMDJLrlz++7/Udtut1ZdrHv3DceaP7hr9OKDfekNNsAqTwMzeoWwUqHF19UV0K0/shl/uw3/h0acKo4CNpyDzy1vxhfcUhX/GGFZ57u+O9vZ2De6P0/oPxw/17D/ZH6afkNd57iFWf/fGDT/fu7+wO+or3f+Qr2jY/t1L+o2Wfn7++Ityy93DLOk4hOYok/d+8s7jvYfU0nxZA5b3dRUXt/wvu4j4F3PeH/cEHB1/j65+X7qLg9CNv8b3siIPxYXbkR96ivvfz0lt8sNlbJFMxPtj5dI+9xd39hw8fkrf4cLxz/9O9fSQZ9z7dv39w79NBd/HBj9xF2+YbFvP3FPMfuYs/f93F93bMfkgO46fv58b+f9xd3N3d7BDu3t9/n+890f6RxzjsMR613LSz/vcj11Fa/Mh1/P+s6/hz7joe3JBoPBh/uvcQi9Iu0bh7b3/86YO9h1isOhg/oA8HPceDH3mOts3PrZT/yHP8f6Xn+EPxHN/TQ4v5jfvfvN+462FF6uu9ncb93fGn9Dz4/8zC9O4B1Oj+oOu4d7B/8/f3Hh78KNv4Xr7j/6uzjf/fNCY/chn1vZ+X2cbdnc0+48MH43vQzKTMHo7v39vdu48k431yI+8/pF8P9se75EceDDqNYMifL17j/8sF/Ude489fr/FD8433dxAgfvN+48P3xSvmGwK5/ze4jbdwGx9SwvHBsFeIrw+G85Hxr39euoza0498xp8TU/Ijn1HfC3zGnzc+494NPuPBeH9vHwvTu/fvjXcf3qOw/lPKOD588HB3lO6NH+7u7O8Or1Dv7v3IZbRtfm7l/Ecu4/u4jOn/r1zG93bNOq4hhYYPKTYkLfDp/fHOwad7e9+497jrpx1vkQwdWK7ePRgf0PPw5yTzeO+9M4+7u+OHn96/D4f84Xj/3u7w8vW9T2/baO/++MGDBwebV8KHWv28dEAjOcsfrXf/0A3UjxxRfe/npyN6b7Mjuvtgd7x7wKrr/h4lKvm33f3xwd7DvVFK+Ux4qfvDjui993NEf+SI/qzJ+Y8c0Z+/juj7enmxJe9Pd75557O35P1+jue9h+N79w52D/4/k7vkJe/de5vWtO+N9/d3927b6kfL3+/rSv4olfmNW5Zv0IMUiD/yINP/D3mQn97gQe7sjA92PoVKw/r3gweUwPx0b/yAPtpHKnN3l9bGHw57kJ/+yIO0bX5u5fyH4EH+yIP8f6sH+aHL3+xD3v9Z8CHvv59rO5DABGb/n/Ag4e3u7Q37hpxm/DoN/l/hN/6/12/8UQryZ8+w/MiB1Pd+fjqQB05ZR9fCH4zvkYvICzG0enIfruQOJR4fkj9JSzj7B+NPD+7duzfsQR78yIO0bX5uBf1HHuTPXw/yVovhGxzI+1hmhv38ph3IB+/r2cb8RGD3/xEX8uEB1qH3Bh1E/n7/vb//eek/ak+3cSB/lHi8hTl5P3PyI79R3/v56Tc+vMFvfDh+sP/g4S7WUu6PP72/T37j/fvjHfIV71EETGvYD3YO9obdxoc/chttmx+WnP/IbfyR25iGicf3ds86/uHB/vjh7r0HD2mxlH87+OY9yPdcXR9IQR7s0lrI7u79nxMv8t77epGE6fjhp/fvY1lnf3wfKzhDCcd7n9620b2D8d7eBteUc5c0hdFWPy8dUMHpNv7njxKYP3JE/1/viP5/0hHd27nBET0YP7y/vwtV+em98d7Ovk1gfvqAft2Hn7r76f1BT3Rv50eeqG3zcyvoP/JEf3Y90f9fe6I/axnM916b//9DBvPBwcYM5d7Op+/7/c9LB/L/XRnMHzmOP3Icd37eZDD37m12HHc/PRjfv/eQwuc9Sld++hBJjJ3x3qf79w8eUCC8T7/v0sL4sON47/9rjuOPHMcfOY4K9v9HKcz775cf/CG5jXt+2vL/JW6jmaifFbdx9wFRcu/e/nB6kRvc33nvBj/yHH+09v1DNij///Qcf+Q58h83e477N3mODyipeB9x7qcPx58+eEAmZLxz/+DePfIb79EnBw/uD7uN+z9yG22bn1sp//nmNv7IbXRu4/v7Zz8sx3HvfRH7/3i+Udy+g+GEojR4ePDeDX7kOIbf/shx/Fk3KT9yHPW9n5+O44MbHMe93fH+/j3yF/ce7Ix39x5igfrBeOch+Y7wIQ/u7+0c7A67jg8+zHX8kev4jcn5j1zHH7mOt/fQOi4iuY2jFHmub9p1vCEVehvHUTH7/4Tj+BBu36fDfuHe7sHXa/Dz0nEUnG7jNx613JR/Db74kQOZfqhh+dl0IH/kQP6/3oE8uMGB3N0fH7DbeG/3YLyze0Cu5P17492D3b37WL2+v/dwlxzMYQ/y4EcepG3zcyvoPwceJHf8Iw/y/wUe5Hvn+H5YHuSn77eY/v8HD/Le7nDqkR3Er9Pg/5Ue5I88SNvmRx6k+/5HKcj/P3mQD4c9SFm7ht+4g4XqvXvjHV7F3r8/vr9Dq9ej9MGD8R7WsYcdyIc/ciBtm59bOf+RA/kjB/L9HMgfwuq1nxolHfbezuPuA+ik/Qc/V6vX997bhcTa8717+5sXp+99ujfsQj4gjfxw5+GtW/1ooft9F7qPzqXtz3N/82fHDv3I39T3fl76m/d2bvA3dx6Od3awvH1vj/KT7Hnu7nxKuuwB6bIDWgX/9ODBp4P+5r2dH/mbts2H+psfJuc/8jd/Hvub75kXjKUrP/1/n7d57/54b+8BAt+fG2/zvROWe/Dbaeln2E082BuT//xptFWs1Y+cyfdMXQZG50cZS2nxYZblRx6kvvez7EH+v9SD3N3sQT58MD54eP+A1rz39h6Svn64Sx7kg4fjXfoVv3063qPV72EPcvdHHqRt83Mr5z/yIH9uPUhB9efGg9zd//9pxpJWUQ4ODh7u/lz5kPff14d8SCs+e/vDmcYfxvcRt9N+v0e6nXzyez9yTt/fOd2c6PyRm/pB5utHbqq+9/PTTd3b7Kbu3dsbH7Da2vv0wfjBPtKb+7SaRa4rfbZ7jz6jNOiwm7r3s++m/shNvZWc/8hN/fnrpu7d//9lonN/Z7y/v7v7/7FE596DnQ2JznukUO8/vG2rH/mS7+tL/ijR+Y1blp9jD/JHHuTPmgcpvwpS5FJVlF9si9wgyd6lCxB2pXU3YuBWQcwQfuC1ikYO8S9iGJhZ6n8Yw8RvHeODOEb+W5u4gWhdXCzfVJ/XhSO1+0QbvZ5XV/y30ZTmb/0ev1vZdn943zodcnJw8vBTaeXrEYFBiP3eR/sKg//ofPv7+N8aR4S/NT7Mi+yFtAidGq/N79NtY+Hc2pXSlo7rg7+DNgaN3biz1XG1LKgOZmeL7CLnmQEBvL/0+1uZgMfHU7gbZ22+UCm1r8hDkx9vYXDNy3za5rMYhGN+4GkMtFEYT4sG8c2s+/7JgSAd/d5jdWsI3R/+t+LnNNCuwd/aRuM/cm94KXeXVi8+pYXY/f398acHu3udAPHxG6DyiiZWHCcifecTvx2hul4s9Ys9bRp82G8tNgpLyr0POyh8WxzsTx0K+kkANFvBD9Fv7huowaeR9kf8R9jap2rc/xn4JoCfl6U4U42jiPeZ4Uty0r5NyJVAEMQ1iqb/hb4BL605fbciJuFoWdt3P/ZxaSigqMrSb9773LTvLEaRX36ercsWAgV3MwuMFYkheAyy6/6w3z8rMzKXuzt7xDzyu/0KPk7weviBbfemLhYLsrpoYn9XzO4OoRbGzreOnONxczxqHo6ZN0fMt4mXbxMt3xQrB5GyqNCnq4LjXvdH59vfx//Wql8lMltPDglfQU28IkXngr/H/G2Qvuhp5I5DfqPffJPXfJPPfAuPOe4vsxnyR8N64P83gwsHI/rhZ3twP7TBdUZDE7VEnJzXVpPGh3rw4OT02fH/q+dxfL872E2DE4l0+dN9T1jZnbbf3Pe+YfK5rz71vnKfPvA+hSk2nbsWB13N0A2U+h/6CARfGNMZa82REUbTvMpXeRbEVv7HfvOvltNquWQ3jZtYcxv9Mnwz4wyU+c7rrPuVvvayKq8vqmVWwkKF+cDYVz7FOv5G7zNLf0rv+Oh4H3iz3fQTSN2PvdYuzaKeTjfvYrw4JhVhY+c1+vlvnKR454s8a9Z1zlaUPDn/T4X6RbEMfNS9Xfzz8AHEwnyjTcXPedIuX1YNsAz+Nm2WwIZxmPESpY6893ln6B3eDT9ix89mAown2EkNPOYPXmWzYk3uDwTX/8CfF8m7GZfQn5rwG++driz1PnOsQZ5FyOTBZ5F2iuFe2DLEW8j3PFvmFqz/kcE08x2a5/l5+0VWU76ZSeb+si3eVCvXwP1hvycOQL4gr9k322VV6X9iG6q78qPVk9jqSYw4j79dVW+FkkaJ+J+4ZvLBl5QfWZl2/ke2IXvxiHScirQf2EZkONiYNX6yV0JAidWCL1jJvsobmpEQ08gXHWhBin8gP8qj4wBxB4MKVnOAK8N/cy0JNO8vr82boi1zD2UeIunqnL9w8uc+6r7cT2G4TwNeCFPHYMBs+vaihsA6E/zQX5nhVpA6USdhjpu/vMGh1VY3ukNeu435bm51g2ukrW52kLTh4NyC8YcHD83z85Ysg2N//Io9um+KLv9fo8uG0ZO6b2nN4OctaYaH312IpU9eryeqln1tDpIEmvmxl97iv3+kp///xV1ueD/S019H6H6kp3+kp9+TNN+Eng7U8uMTePCp6G5e0/nso52P0ldYHTR/2DD5rhf/PT6pNE+lQR1GZXNXQaDn8nUU3RWL9ULWcikNsB+8433ZfdEs4dgPvPc6yzvdz93S0cA33feaZxTu8eKJRCORL/QVziScrBuakqd1doVJ635kWvIa4vE5TfpJTckrA7v/ub6AdSKxdbwK4/7S7+kvihanLRYlG2QUOI8iBjLyhUGD0w/HnNVibP2/Tc8Ivl6vyqINkgzdj4PWeXn+vKpWncb2U20r6Zwvl2eUj+MVH5No6H5uxzhd1w2t3koDa8Y7H2vrL/L6In8zr/NmjnAdMhZ+YietupIRc0rE/zOYLGIQPyrufGiGP/tpmmssbplkDeaIwMa/8FDQj79cEptcmD56n3svdJaRvVe63+hLb2xCDMTw/tLvMY+nxBxfVJcet3c/1cZPr5fZopjK3EvLp/5H2uzbBa3bNe3Luqjqor0GQ3Y/8hnnC0pbFCvCyxDXTwD0v8SrlGStq1Vet4WO1E2XAQ3WZzfs3u5H6UmZNQ3+aNrZo6dFdlFnC6D8UfqTJNH01mcf7Xoq7pggXeZfG4LHJ/I3iWO1rqduVthJtH+aD9IzyhC94xw7fNvPPnpdlcXsI9uK9ZOaticPn+6e9lc17jKgAbgPbwFXnveDe+8WcOOmeDPcB7eA+/Qe/ns/uLsG7uc1pT9JOgPQx8sL4viDh+MH+5/uksGQv7t97zKxDug/Q6zdXpu93vLT3i0x/PQWI3+yf7xz/J4U3fnmRz488uMd/P89R773w8SQHkfC22J4/xZz8+Dg6cn7StH+LeA+PbkZrv7llA0v+8O767lyry8v+p+z92DVFbm8ouyO/h/YXgXR6VkBAA==]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s144" mandatory="true" />
+          <node node-id="3" node-type="decision" attribute-id="the employment drug and alcohol interview should branch to refusal" />
+          <node node-id="4" node-type="screen" screen-id="s145" mandatory="true" />
+          <node node-id="5" node-type="decision" attribute-id="the employment drug and alcohol interview should branch to consuming" />
+          <node node-id="6" node-type="screen" screen-id="s153" mandatory="true" />
+          <node node-id="7" node-type="decision" attribute-id="the employment drug and alcohol interview should branch to the positive" />
+          <node node-id="8" node-type="screen" screen-id="s154" mandatory="true" />
+          <node node-id="9" node-type="decision" attribute-id="the employment drug and alcohol interview should branch to the reporting" />
+          <node node-id="10" node-type="decision" attribute-id="the employment positive drug or alcohol selection should branch to alcohol" />
+          <node node-id="11" node-type="decision" attribute-id="the employment positive drug or alcohol selection should branch to drugs" />
+          <node node-id="12" node-type="screen" screen-id="s155" mandatory="true" />
+          <node node-id="13" node-type="screen" screen-id="s156" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="2" />
+          <connection from="2" to="3" />
+          <connection from="3" to="4">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="3" to="5" />
+          <connection from="4" to="1" />
+          <connection from="5" to="6">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="5" to="9" />
+          <connection from="6" to="1" />
+          <connection from="7" to="8">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="7" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="8" to="10" />
+          <connection from="9" to="6">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="9" to="7" />
+          <connection from="10" to="11" />
+          <connection from="10" to="12">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="13">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="12" to="1" />
+          <connection from="13" to="1" />
         </connections>
       </flow>
     </flows>
