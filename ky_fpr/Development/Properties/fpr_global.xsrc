@@ -561,12 +561,6 @@
           <base>the finding #01</base>
         </text>
       </attribute>
-      <attribute name="b118" type="boolean" public-name="claim_is_being_filed">
-        <text>
-          <base>the claim is being filed</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(continuous,present,normal)),ob('the claim',singular))</parse>
-        </text>
-      </attribute>
       <attribute name="b121" type="boolean" public-name="subst_changed_circumstances">
         <text>
           <base>the claimant's circumstances have changed substantially</base>
@@ -1818,10 +1812,10 @@
           <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
         </text>
       </attribute>
-      <attribute name="b748" type="boolean" public-name="claim_filed">
+      <attribute name="b748" type="boolean" public-name="claim_in_process">
         <text>
-          <base>the claim has been filed</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(simple,present,perfect)),ob('the claim',singular))</parse>
+          <base>the claim is in the process of being filed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
         </text>
       </attribute>
       <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_issue">
@@ -5629,6 +5623,24 @@
         <text>
           <base>the employment discharge interview should branch to anything else</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to anything else'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b845" type="boolean" public-name="fpr_emt_rtw_within_12_weeks">
+        <text>
+          <base>the employment has definite return to work date within twelve weeks of the claim filing</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work date within twelve weeks of the claim filing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b846" type="boolean" public-name="fpr_emt_sought-is_unsuitable">
+        <text>
+          <base>the employment being sought is suitable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment being sought',singular),o('suitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b847" type="boolean" public-name="fpr_claimant_gc_refuse_offer">
+        <text>
+          <base>the claimant had good cause to refuse the employment offer</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause to refuse the employment offer'))</parse>
         </text>
       </attribute>
     </entity>
