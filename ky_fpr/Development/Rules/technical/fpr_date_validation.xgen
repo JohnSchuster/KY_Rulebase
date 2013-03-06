@@ -79,7 +79,18 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's worked dates are sequential" ruleburst="true" concludes="b5" folder="0" source-offset="417">
+    <rule id="1" name="error(&quot;The employment must have been active within the investigation period&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment must have been active within the investigation period\&quot;)&quot;" folder="0" source-offset="380">
+      <rule-xml>
+        <event action="error(&quot;The employment must have been active within the investigation period&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <attribute attr-id="b6" />
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment's worked dates are sequential" ruleburst="true" concludes="b5" folder="0" source-offset="522">
       <rule-xml>
         <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
           <value>
@@ -97,7 +108,18 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's work dates are within an acceptable range" ruleburst="true" concludes="b7" folder="0" source-offset="578">
+    <rule id="3" name="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The first day worked, must be on or before, the last day worked.\&quot;)&quot;" folder="0" source-offset="667">
+      <rule-xml>
+        <event action="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <attribute attr-id="b5" />
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the employment's work dates are within an acceptable range" ruleburst="true" concludes="b7" folder="0" source-offset="792">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -124,6 +146,17 @@
             <false-value />
           </otherwise>
         </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="error(&quot;The employment's work dates are not within an acceptable range&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment's work dates are not within an acceptable range\&quot;)&quot;" folder="0" source-offset="1058">
+      <rule-xml>
+        <event action="error(&quot;The employment's work dates are not within an acceptable range&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <attribute attr-id="b7" />
+            </not>
+          </condition>
+        </event>
       </rule-xml>
     </rule>
   </rules>
