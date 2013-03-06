@@ -1830,6 +1830,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the decision',singular),o('discretionary: the claimant is not physically able to work'))</parse>
         </text>
       </attribute>
+      <attribute name="b850" type="boolean" public-name="fpr_non_zero_issues">
+        <text>
+          <base>at least one issue has been raised</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one issue',singular),o('raised'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -5672,7 +5678,7 @@
       </attribute>
     </entity>
     <entity id="issue" name="the issue" identifying-attribute-name="g01_the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="fpr_issue">
-      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_issue_id">
+      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_issue_id" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true" invisible-if-uncertain="true" invisible-if-unknown="true">
         <text>
           <base>the issue</base>
         </text>
@@ -5707,7 +5713,7 @@
     <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
     <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
     <relationship source="employer" target="a" is-containment="false" public-id="inf_412a_emr" reverse-public-id="inf_emr_412a" text="all inferred 412a for employer" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" reverse-text="each employer inferred 412a" type="ManyToMany" is-computed="false" />
-    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" />
+    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" silent-if-known="true" />
     <relationship source="global" target="action" is-containment="false" public-id="action_inf_claim" reverse-public-id="claim_inf_action" text="all inferred actions" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" reverse-text="action inferred from claim" type="ManyToMany" is-computed="false" />
     <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferrredbyissue" reverse-text="nod inferrred by issue" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="issue" is-containment="false" public-id="claim_inf_issue" reverse-public-id="issue_inf_by_claim" text="all issues inferred from claim" relationship-id="allissuesinferredfromclaim" reverse-relationship-id="claiminferringthisissue" reverse-text="the claim inferring this issue" type="ManyToMany" is-computed="false" />
