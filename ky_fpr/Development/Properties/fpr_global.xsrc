@@ -31,11 +31,6 @@
           <base>the effective date</base>
         </text>
       </attribute>
-      <attribute name="p21" type="date" public-name="mr_byed">
-        <text>
-          <base>the most recent benefit year end date</base>
-        </text>
-      </attribute>
       <attribute name="p22" type="date" public-name="g01_asserted_override_date">
         <text>
           <base>the asserted processing override date</base>
@@ -147,7 +142,7 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
         </text>
       </attribute>
-      <attribute name="p38" type="date" public-name="benefit_year_end_date">
+      <attribute name="p38" type="date" public-name="mr_byed">
         <text>
           <base>the benefit year end date</base>
         </text>
@@ -1834,6 +1829,11 @@
         <text>
           <base>at least one issue has been raised</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one issue',singular),o('raised'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p249" type="date" public-name="fpr_asserted_byed">
+        <text>
+          <base>the asserted most recent benefit year end date</base>
         </text>
       </attribute>
     </entity>
