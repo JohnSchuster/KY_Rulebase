@@ -3,8 +3,8 @@
     <entity ref="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en">
-          <base>the claim has been filed</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(simple,present,perfect)),ob('the claim',singular))</parse>
+          <base>the claim is in the process of being filed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
         </text>
       </attribute>
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
@@ -78,9 +78,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -90,9 +88,7 @@
               <false-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -105,7 +101,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -119,7 +117,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -128,7 +128,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>
@@ -157,9 +159,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -169,9 +169,7 @@
               <false-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -184,7 +182,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -198,7 +198,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -207,7 +209,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>
@@ -236,9 +240,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -248,9 +250,7 @@
               <false-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -263,7 +263,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -277,7 +279,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -286,7 +290,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>
@@ -315,9 +321,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -327,9 +331,7 @@
               <false-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -342,7 +344,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -356,7 +360,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -365,7 +371,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>
@@ -394,9 +402,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -406,9 +412,7 @@
               <false-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -421,7 +425,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -435,7 +441,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -444,7 +452,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>
@@ -473,9 +483,7 @@
             </value>
             <condition>
               <and>
-                <not>
-                  <attribute attr-id="b1" />
-                </not>
+                <attribute attr-id="b1" />
                 <attribute attr-id="b2" />
               </and>
             </condition>
@@ -485,9 +493,7 @@
               <true-value />
             </value>
             <condition>
-              <not>
-                <attribute attr-id="b1" />
-              </not>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -500,7 +506,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S001</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -514,7 +522,9 @@
                   <attribute attr-id="p1" />
                   <string-value>S002</string-value>
                 </equals>
-                <attribute attr-id="b1" />
+                <not>
+                  <attribute attr-id="b1" />
+                </not>
               </and>
             </condition>
           </row>
@@ -523,7 +533,9 @@
               <true-value />
             </value>
             <condition>
-              <attribute attr-id="b1" />
+              <not>
+                <attribute attr-id="b1" />
+              </not>
             </condition>
           </row>
           <otherwise>

@@ -561,12 +561,6 @@
           <base>the finding #01</base>
         </text>
       </attribute>
-      <attribute name="b118" type="boolean" public-name="claim_is_being_filed">
-        <text>
-          <base>the claim is being filed</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(continuous,present,normal)),ob('the claim',singular))</parse>
-        </text>
-      </attribute>
       <attribute name="b121" type="boolean" public-name="subst_changed_circumstances">
         <text>
           <base>the claimant's circumstances have changed substantially</base>
@@ -1818,16 +1812,57 @@
           <parse>s(ver('10.4.2.18'),v(start,t(simple,present,normal)),sb('the claimants alleged status',singular),o('with "Quit"'))</parse>
         </text>
       </attribute>
-      <attribute name="b748" type="boolean" public-name="claim_filed">
+      <attribute name="b748" type="boolean" public-name="claim_in_process">
         <text>
-          <base>the claim has been filed</base>
-          <parse>s(ver('10.4.2.18'),v(file,t(simple,present,perfect)),ob('the claim',singular))</parse>
+          <base>the claim is in the process of being filed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
         </text>
       </attribute>
       <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_issue">
         <text>
           <base>the claim has an able and available issue</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b848" type="boolean" public-name="dis_d4_aa01">
+        <text>
+          <base>the decision was discretionary: the claimant is not physically able to work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the decision',singular),o('discretionary: the claimant is not physically able to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p256" type="text" public-name="fpr_pam_acceptance">
+        <text>
+          <base>the claimants PAM acceptance</base>
+        </text>
+      </attribute>
+      <attribute name="p257" type="text" public-name="fpr_wage_reporting_acceptance">
+        <text>
+          <base>the claimants wage reporting acceptance</base>
+        </text>
+      </attribute>
+      <attribute name="p258" type="text" public-name="fpr_job_search_acceptance">
+        <text>
+          <base>the claimants job search acceptance</base>
+        </text>
+      </attribute>
+      <attribute name="p259" type="text" public-name="fpr_waiting_period_acceptance">
+        <text>
+          <base>the claimants waiting period acceptance</base>
+        </text>
+      </attribute>
+      <attribute name="p260" type="text" public-name="fpr_employer_release_acceptance">
+        <text>
+          <base>the claimants employer release authorization</base>
+        </text>
+      </attribute>
+      <attribute name="p261" type="text" public-name="fpr_certification_acceptance">
+        <text>
+          <base>the claimants information certification</base>
+        </text>
+      </attribute>
+      <attribute name="p262" type="text" public-name="fpr_rights_wishes_acceptance">
+        <text>
+          <base>the claimants rights and wishes</base>
         </text>
       </attribute>
     </entity>
@@ -2603,7 +2638,7 @@
           <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence of (alcohol, drugs) during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b117" type="boolean" public-name="empt_vq_no_good_cause">
+      <attribute name="b117" type="boolean" public-name="g01_empt_vq_no_good_cause">
         <text>
           <base>the claimant voluntarily left without good cause attributable to the employment</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('without good cause attributable to the employment'))</parse>
@@ -3975,7 +4010,7 @@
       </attribute>
       <attribute name="p113" type="text" public-name="scr_dispute_circumstances">
         <text>
-          <base>the circumstances of the dipute that caused the claimant to leave the employment</base>
+          <base>the circumstances of the dispute that caused the claimant to leave the employment</base>
         </text>
       </attribute>
       <attribute name="p114" type="text" public-name="scr_dispute_workplace_impact">
@@ -5629,6 +5664,30 @@
         <text>
           <base>the employment discharge interview should branch to anything else</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to anything else'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b845" type="boolean" public-name="fpr_emt_rtw_within_12_weeks">
+        <text>
+          <base>the employment has definite return to work date within twelve weeks of the claim filing</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('definite return to work date within twelve weeks of the claim filing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b846" type="boolean" public-name="fpr_emt_sought-is_unsuitable">
+        <text>
+          <base>the employment being sought is suitable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment being sought',singular),o('suitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b847" type="boolean" public-name="fpr_claimant_gc_refuse_offer">
+        <text>
+          <base>the claimant had good cause to refuse the employment offer</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause to refuse the employment offer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b849" type="boolean">
+        <text>
+          <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
         </text>
       </attribute>
     </entity>
