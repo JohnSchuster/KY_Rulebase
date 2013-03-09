@@ -1,60 +1,6 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant worked in Kentucky during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant served in the military during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(serve,t(simple,past,normal)),sb('the claimant',plural),o('in the military during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is disqualified based on not being a citizen or a legal alien</base>
-          <parse>s(ver('10.4.2.18'),v(disqualify,t(simple,present,normal)),ob('the claimant',singular),o('based on not being a citizen or a legal alien'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a United States citizen</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a United States citizen'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has provided a valid alien registration number</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('a valid alien registration number'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is disqualified based on receiving unemployment benefits in states other than Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(disqualify,t(simple,present,normal)),ob('the claimant',singular),o('based on receiving unemployment benefits in states other than Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving benefits from a state other than Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving benefits from a state other than Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has an unemployment benefits balance in a state other that Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unemployment benefits balance in a state other that Kentucky'))</parse>
-        </text>
-      </attribute>
       <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the direct deposit screen should be shown</base>
@@ -77,12 +23,6 @@
         <text lang="en-US">
           <base>the claimant was eligible to receive workers compensation benefits during the base period</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('eligible to receive workers compensation benefits during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the length of the claimants alien registration number is greater than or equal to 7</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the length of the claimants alien registration number',singular),o('greater than or equal to 7'))</parse>
         </text>
       </attribute>
       <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
@@ -151,16 +91,16 @@
           <parse>s(ver('10.4.2.18'),v(certify,t(simple,present,normal)),sb('he claimant',singular),o('that the information provided is true and correct to the best of their knowledge'))</parse>
         </text>
       </attribute>
-      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is disqualified based on no time worked in Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(disqualify,t(simple,present,normal)),ob('the claimant',singular),o('based on no time worked in Kentucky'))</parse>
-        </text>
-      </attribute>
       <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claim is in the process of being filed</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has provided their (valid, current) alien registration number</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('their (valid, current) alien registration number'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -168,7 +108,7 @@
           <base>the claimants preferred method of receiving unemployment benefits payments</base>
         </text>
       </attribute>
-      <attribute name="p2" type="number" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants alien registration number</base>
         </text>
@@ -183,37 +123,37 @@
           <base>the claimants current permanent state of residence</base>
         </text>
       </attribute>
-      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants PAM acceptance</base>
         </text>
       </attribute>
-      <attribute name="p7" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants wage reporting acceptance</base>
         </text>
       </attribute>
-      <attribute name="p8" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p7" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants job search acceptance</base>
         </text>
       </attribute>
-      <attribute name="p9" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p8" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants waiting period acceptance</base>
         </text>
       </attribute>
-      <attribute name="p10" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p9" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants employer release authorization</base>
         </text>
       </attribute>
-      <attribute name="p11" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p10" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants information certification</base>
         </text>
       </attribute>
-      <attribute name="p12" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p11" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants rights and wishes</base>
         </text>
@@ -267,70 +207,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is disqualified based on no time worked in Kentucky" ruleburst="true" concludes="b39" folder="0" source-offset="193">
-      <rule-xml>
-        <conclude attr-id="b39" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <not>
-                <attribute attr-id="b2" />
-              </not>
-              <not>
-                <attribute attr-id="b3" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the claimant is disqualified based on not being a citizen or a legal alien" ruleburst="true" concludes="b4" folder="0" source-offset="414">
-      <rule-xml>
-        <conclude attr-id="b4" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <not>
-                <attribute attr-id="b5" />
-              </not>
-              <not>
-                <attribute attr-id="b6" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the claimant is disqualified based on receiving unemployment benefits in states other than Kentucky" ruleburst="true" concludes="b7" folder="0" source-offset="625">
-      <rule-xml>
-        <conclude attr-id="b7" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <attribute attr-id="b8" />
-              <attribute attr-id="b9" />
-              <attribute attr-id="b10" />
-            </or>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the direct deposit screen should be shown" ruleburst="true" concludes="b11" folder="0" source-offset="1006">
+    <rule id="1" name="the direct deposit screen should be shown" ruleburst="true" concludes="b11" folder="0" source-offset="193">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -348,7 +225,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="workers compensation benefits were available to the claimant during the base period" ruleburst="true" concludes="b12" folder="0" source-offset="1175">
+    <rule id="2" name="workers compensation benefits were available to the claimant during the base period" ruleburst="true" concludes="b12" folder="0" source-offset="359">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
@@ -366,14 +243,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant has provided a valid alien registration number" ruleburst="true" concludes="b6" folder="0" source-offset="1447">
+    <rule id="3" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b49" folder="0" source-offset="630">
       <rule-xml>
-        <conclude attr-id="b6" entity-id="global" scope-id="global0">
+        <conclude attr-id="b49" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b18" />
+            <greater-than-equals>
+              <length>
+                <attribute attr-id="p2" />
+              </length>
+              <number-value>7</number-value>
+            </greater-than-equals>
           </condition>
           <otherwise>
             <false-value />
@@ -381,7 +263,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimants current permanent state is Kentucky" ruleburst="true" concludes="b35" folder="0" source-offset="1606">
+    <rule id="4" name="the claimants current permanent state is Kentucky" ruleburst="true" concludes="b35" folder="0" source-offset="814">
       <rule-xml>
         <conclude attr-id="b35" entity-id="global" scope-id="global0">
           <value>
@@ -399,7 +281,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimants current state is Kentucky" ruleburst="true" concludes="b36" folder="0" source-offset="1757">
+    <rule id="5" name="the claimants current state is Kentucky" ruleburst="true" concludes="b36" folder="0" source-offset="962">
       <rule-xml>
         <conclude attr-id="b36" entity-id="global" scope-id="global0">
           <value>
@@ -417,7 +299,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant has completed the final screen" ruleburst="true" concludes="b37" folder="0" source-offset="1921">
+    <rule id="6" name="the claimant has completed the final screen" ruleburst="true" concludes="b37" folder="0" source-offset="1123">
       <rule-xml>
         <conclude attr-id="b37" entity-id="global" scope-id="global0">
           <value>
@@ -440,9 +322,29 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant was given access to the PAM-UI-400 pamphlet" ruleburst="true" concludes="b19" folder="0" source-offset="2647">
+    <rule id="7" name="the claimant was given access to the PAM-UI-400 pamphlet" ruleburst="true" concludes="b19" folder="0" source-offset="1849">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <greater-than-equals>
+              <length>
+                <attribute attr-id="p5" />
+              </length>
+              <number-value>1</number-value>
+            </greater-than-equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the claimant understands that they must report all wages" ruleburst="true" concludes="b21" folder="0" source-offset="2004">
+      <rule-xml>
+        <conclude attr-id="b21" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -460,9 +362,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant understands that they must report all wages" ruleburst="true" concludes="b21" folder="0" source-offset="2805">
+    <rule id="9" name="the claimant understands that they must look for one or more jobs per week" ruleburst="true" concludes="b23" folder="0" source-offset="2170">
       <rule-xml>
-        <conclude attr-id="b21" entity-id="global" scope-id="global0">
+        <conclude attr-id="b23" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -480,9 +382,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant understands that they must look for one or more jobs per week" ruleburst="true" concludes="b23" folder="0" source-offset="2974">
+    <rule id="10" name="the claimant understands that there is a one week waiting period per benefit year" ruleburst="true" concludes="b25" folder="0" source-offset="2350">
       <rule-xml>
-        <conclude attr-id="b23" entity-id="global" scope-id="global0">
+        <conclude attr-id="b25" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -500,9 +402,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant understands that there is a one week waiting period per benefit year" ruleburst="true" concludes="b25" folder="0" source-offset="3157">
+    <rule id="11" name="the former employer is authorized to release information requested in connection with the claimants unemployment insurance benefits" ruleburst="true" concludes="b27" folder="0" source-offset="2541">
       <rule-xml>
-        <conclude attr-id="b25" entity-id="global" scope-id="global0">
+        <conclude attr-id="b27" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -520,9 +422,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the former employer is authorized to release information requested in connection with the claimants unemployment insurance benefits" ruleburst="true" concludes="b27" folder="0" source-offset="3351">
+    <rule id="12" name="the claimant certifies that the information provided is true and correct to the best of their knowledge" ruleburst="true" concludes="b29" folder="0" source-offset="2787">
       <rule-xml>
-        <conclude attr-id="b27" entity-id="global" scope-id="global0">
+        <conclude attr-id="b29" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -540,9 +442,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant certifies that the information provided is true and correct to the best of their knowledge" ruleburst="true" concludes="b29" folder="0" source-offset="3601">
+    <rule id="13" name="the claimant understands their rights and wishes to submit their application for unemployment benefits" ruleburst="true" concludes="b31" folder="0" source-offset="3001">
       <rule-xml>
-        <conclude attr-id="b29" entity-id="global" scope-id="global0">
+        <conclude attr-id="b31" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
@@ -560,27 +462,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant understands their rights and wishes to submit their application for unemployment benefits" ruleburst="true" concludes="b31" folder="0" source-offset="3818">
-      <rule-xml>
-        <conclude attr-id="b31" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <greater-than-equals>
-              <length>
-                <attribute attr-id="p12" />
-              </length>
-              <number-value>1</number-value>
-            </greater-than-equals>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="17" name="the claimant's attendance at the employment was unsatisfactory" ruleburst="true" concludes="b48" folder="0" source-offset="4045">
+    <rule id="14" name="the claimant's attendance at the employment was unsatisfactory" ruleburst="true" concludes="b48" folder="0" source-offset="3225">
       <rule-xml>
         <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
           <value>
