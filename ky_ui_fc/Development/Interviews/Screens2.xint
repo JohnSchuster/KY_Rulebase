@@ -1,12 +1,12 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
-    <entity ref="global" />
   </entities>
   <relationships />
   <rules />
   <interactive-items>
     <folders>
-      <folder id="1" text="TestScreens" parent="0" order="1" />
+      <folder id="1" text="TestScreens" parent="0" order="2" />
+      <folder id="2" text="Additional Separation" order="1" parent="0" />
     </folders>
     <screens>
       <screen type="Question" id="s1" name="Demo Support Screen" public-id="" order="1" screen-attr="" folder="1">
@@ -82,6 +82,230 @@
               <doc-attr id="g01_asserted_override_date" />
             </input-attr>
             <caption>&lt;p&gt;Enter any assertion of a test-case specific processing override date?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s2" name="Leave of Absence Details for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" entity="fpr_employment" folder="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the leave of absence started">
+              <doc-attr id="p287@kyfpr_rmod" />
+              <doc-attr id="fpr_leave_of_absence_start" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the date the leave of absence started?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is performing work for the employment">
+              <doc-attr id="b498@kyfpr_rmod" />
+              <doc-attr id="emt_is_working_for_employment" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you currently performing any work for this employer?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="both parties (claimant and employer) agree that the claimant is currently connected to the employment">
+              <doc-attr id="b500@kyfpr_rmod" />
+              <doc-attr id="emt_is_connected" />
+            </input-attr>
+            <caption>&lt;p&gt;Does the employer still consider you employed with them?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's leave of absence from the employment is approved">
+              <doc-attr id="b497@kyfpr_rmod" />
+              <doc-attr id="emt_approved_loa" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you and your employer agree that you are on a leave of absence?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant's leave from the employment is intended to be temporary">
+              <doc-attr id="b499@kyfpr_rmod" />
+              <doc-attr id="emt_leave_is_temporary" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you intend to return to your position with the employer?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s3" name="Retired" public-id="" order="4" screen-attr="" entity="fpr_employment" folder="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string" />
+              <property name="StyleOverride" type="string" />
+            </control-properties>
+            <caption>&lt;img src="../../../../images/construction.jpg" class="center" /&gt;</caption>
+          </label>
+        </controls>
+      </screen>
+      <screen type="Question" id="s4" name="Leave of Absence Return to Work Details for %fpr_emt_visible_name%" public-id="" order="2" folder="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has a return to work from leave of absence date">
+              <doc-attr id="b806@kyfpr_rmod" />
+              <doc-attr id="fpr_leave_of_absence_return" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have a return to work date?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the leave of absence return date">
+              <doc-attr id="p288@kyfpr_rmod" />
+              <doc-attr id="fpr_leave_retrurn_date" />
+            </input-attr>
+            <caption>&lt;p&gt;If yes, please provide your return to work date&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s5" name="Leave of Absence Reason Details for %fpr_emt_visible_name%" public-id="" order="3" folder="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the reason for the claimants leave of absence">
+              <doc-attr id="p289@kyfpr_rmod" />
+              <doc-attr id="fpr_leave_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the reason for your leave of absence?&lt;/p&gt;
+
+</caption>
+            <values>
+              <value code="Medical Leave" default-visibility="enabled">Medical Leave</value>
+              <value code="Personal Leave (other than medical)" default-visibility="enabled">Personal Leave (other than medical)</value>
+              <value code="Other" default-visibility="enabled">Other</value>
+              <value code="..." default-visibility="enabled">...</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the other reason for the claimants leave of absence">
+              <doc-attr id="p290@kyfpr_rmod" />
+              <doc-attr id="fpr_other_leave_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;If Other, please explain&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has documentation to substantiate this leave">
+              <doc-attr id="b807@kyfpr_rmod" />
+              <doc-attr id="fpr_has_leave_documentation" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have documentation to substantiate this leave?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants documentation to substantiate this leave">
+              <doc-attr id="p291@kyfpr_rmod" />
+              <doc-attr id="fpr_leave_documentation" />
+            </input-attr>
+            <caption>&lt;p&gt;If Yes, please describe&lt;/p&gt;
+</caption>
           </input>
         </controls>
       </screen>

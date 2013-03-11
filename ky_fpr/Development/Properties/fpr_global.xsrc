@@ -3842,12 +3842,6 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
         </text>
       </attribute>
-      <attribute name="b241" type="boolean" public-name="emt_no_conflict_with_religion">
-        <text>
-          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(do,t(simple,past,normal)),sb('the conditions of the employment',plural),o('not conflict with the claimant''s religious beliefs'))</parse>
-        </text>
-      </attribute>
       <attribute name="b242" type="boolean" public-name="emt_excessive_carelessness">
         <text>
           <base>the claimant demonstrated excessive carelessness (inefficiency) in connection to the employment</base>
@@ -4657,9 +4651,9 @@
           <base>the claimants description of the equipment problem that caused them to leave the employment</base>
         </text>
       </attribute>
-      <attribute name="p123" type="number" public-name="scr_final_date_equipment">
+      <attribute name="p123" type="date" public-name="scr_final_date_equipment">
         <text>
-          <base>the date the final equipent problem occured</base>
+          <base>the date the final equipment problem occured</base>
         </text>
       </attribute>
       <attribute name="p124" type="text" public-name="scr_equipment_impact">
@@ -6269,6 +6263,49 @@
         <text>
           <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b906" type="boolean" public-name="fpr_religious_conflict">
+        <text>
+          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(conflict,t(simple,past,normal)),sb('the conditions of the employment',plural),o('with the claimant''s religious beliefs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p312" type="date" public-name="fpr_leave_of_absence_start">
+        <text>
+          <base>the date the leave of absence started</base>
+        </text>
+      </attribute>
+      <attribute name="b907" type="boolean" public-name="fpr_leave_of_absence_return">
+        <text>
+          <base>the claimant has a return to work from leave of absence date</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a return to work from leave of absence date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p313" type="date" public-name="fpr_leave_retrurn_date">
+        <text>
+          <base>the leave of absence return date</base>
+        </text>
+      </attribute>
+      <attribute name="p314" type="text" public-name="fpr_leave_reason">
+        <text>
+          <base>the reason for the claimants leave of absence</base>
+        </text>
+      </attribute>
+      <attribute name="p315" type="text" public-name="fpr_other_leave_reason">
+        <text>
+          <base>the other reason for the claimants leave of absence</base>
+        </text>
+      </attribute>
+      <attribute name="b908" type="boolean" public-name="fpr_has_leave_documentation">
+        <text>
+          <base>the claimant has documentation to substantiate this leave</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('documentation to substantiate this leave'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p316" type="text" public-name="fpr_leave_documentation">
+        <text>
+          <base>the claimants documentation to substantiate this leave</base>
         </text>
       </attribute>
     </entity>
