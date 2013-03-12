@@ -1836,6 +1836,12 @@
           <base>the asserted most recent benefit year end date</base>
         </text>
       </attribute>
+      <attribute name="b854" type="boolean" public-name="fpr_test_flow">
+        <text>
+          <base>the test flow should be used</base>
+          <parse>s(ver('10.4.2.18'),v(use+should,t(simple,modal,normal)),ob('the test flow',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2440,12 +2446,6 @@
           <base>the claimants athletic event end date</base>
         </text>
       </attribute>
-      <attribute name="b851" type="boolean" public-name="fpr_emr_10w_per_claimant">
-        <text>
-          <base>the employer, per the claimant, is a ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer, per the claimant,',singular),o('a ten week employer'))</parse>
-        </text>
-      </attribute>
     </entity>
     <entity id="employment" name="the employment" identifying-attribute-name="g01_employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
       <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="g01_employment_instance_id">
@@ -2503,11 +2503,6 @@
         <text>
           <base>the employment is the most recent bptw</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
-        <text>
-          <base>the employment's net number of discrete weeks worked within the base period</base>
         </text>
       </attribute>
       <attribute name="b12" type="boolean" public-name="g01_emt_is_current">
@@ -5660,6 +5655,12 @@
         <text>
           <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b853" type="boolean" public-name="fpr_emt_10w_per_claimant">
+        <text>
+          <base>the employment, per the claimant, was a ten week employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment, per the claimant,',singular),o('a ten week employment'))</parse>
         </text>
       </attribute>
     </entity>
