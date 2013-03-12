@@ -5,8 +5,9 @@
   <rules />
   <interactive-items>
     <folders>
-      <folder id="1" text="TestScreens" parent="0" order="2" />
-      <folder id="2" text="Additional Separation" order="1" parent="0" />
+      <folder id="1" text="TestScreens" parent="0" order="3" />
+      <folder id="2" text="Leave of Absence Screens" order="1" parent="0" />
+      <folder id="3" text="Currently Employed Screens" order="2" parent="0" />
     </folders>
     <screens>
       <screen type="Question" id="s1" name="Demo Support Screen" public-id="" order="1" screen-attr="" folder="1">
@@ -110,7 +111,7 @@
               <doc-attr id="p287@kyfpr_rmod" />
               <doc-attr id="fpr_leave_of_absence_start" />
             </input-attr>
-            <caption>&lt;p&gt;What is the date the leave of absence started?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;What is the date your leave of absence started?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -138,7 +139,7 @@
               <doc-attr id="b500@kyfpr_rmod" />
               <doc-attr id="emt_is_connected" />
             </input-attr>
-            <caption>&lt;p&gt;Does the employer still consider you employed with them?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Does this employer still consider you employed with them?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -152,7 +153,7 @@
               <doc-attr id="b497@kyfpr_rmod" />
               <doc-attr id="emt_approved_loa" />
             </input-attr>
-            <caption>&lt;p&gt;Do you and your employer agree that you are on a leave of absence?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Do you and your employer both agree that you are on a leave of absence?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -166,7 +167,7 @@
               <doc-attr id="b499@kyfpr_rmod" />
               <doc-attr id="emt_leave_is_temporary" />
             </input-attr>
-            <caption>&lt;p&gt;Do you intend to return to your position with the employer?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Do you intend to return to your position with this employer?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -210,6 +211,17 @@
             </input-attr>
             <caption>&lt;p&gt;Do you have a return to work date?&lt;/p&gt;</caption>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">false</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -222,7 +234,7 @@
               <doc-attr id="p288@kyfpr_rmod" />
               <doc-attr id="fpr_leave_retrurn_date" />
             </input-attr>
-            <caption>&lt;p&gt;If yes, please provide your return to work date&lt;/p&gt;
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Please provide your return to work date&lt;/p&gt;
 </caption>
           </input>
         </controls>
@@ -262,6 +274,17 @@
               <value code="..." default-visibility="enabled">...</value>
             </values>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -275,7 +298,7 @@
               <doc-attr id="p290@kyfpr_rmod" />
               <doc-attr id="fpr_other_leave_reason" />
             </input-attr>
-            <caption>&lt;p&gt;If Other, please explain&lt;/p&gt;</caption>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbspPlease explain&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -291,6 +314,17 @@
             </input-attr>
             <caption>&lt;p&gt;Do you have documentation to substantiate this leave?&lt;/p&gt;</caption>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -304,8 +338,326 @@
               <doc-attr id="p291@kyfpr_rmod" />
               <doc-attr id="fpr_leave_documentation" />
             </input-attr>
-            <caption>&lt;p&gt;If Yes, please describe&lt;/p&gt;
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Please describe&lt;/p&gt;
 </caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s6" name="Currently Employed  for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" entity="fpr_employment" folder="3">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="tb"&gt;Full-Time&lt;/p&gt;
+&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Considered Full-Time by the employer&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="tb"&gt;Part-Time&lt;/p&gt;
+&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Considered less than Full-Time by the employer&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="tb"&gt;As-Needed&lt;/p&gt;
+&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Working on an “as needed” basis per the employer’s staffing needs, for example: Substitute Teacher, On-Call Nurse, etc&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the claimants current employment status">
+              <doc-attr id="p292@kyfpr_rmod" />
+              <doc-attr id="scr_current_employment_status" />
+            </input-attr>
+            <values>
+              <value code="Full-Time" default-visibility="enabled">Full-Time</value>
+              <value code="Part-Time" default-visibility="enabled">Part-Time</value>
+              <value code="As-Needed" default-visibility="enabled">As-Needed</value>
+            </values>
+            <caption>&lt;p&gt;What is the current status of your employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s13" name="Full-Time Details for %fpr_emt_visible_name%" public-id="" folder="3" order="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the number of hours per week the claimant works">
+              <doc-attr id="p293@kyfpr_rmod" />
+              <doc-attr id="scr_hours_worked_per_week" />
+            </input-attr>
+            <caption>&lt;p&gt;How many hours do you work per week, on average?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
+              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
+              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
+              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
+              <value code="More than 40" default-visibility="enabled">More than 40</value>
+              <value code="..." default-visibility="enabled">...</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant receives benefits from the employment">
+              <doc-attr id="b808@kyfpr_rmod" />
+              <doc-attr id="scr_receives_benefits" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you receive employee benefits from this employer?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants reason for filing for benefits while they are employed full time">
+              <doc-attr id="p294@kyfpr_rmod" />
+              <doc-attr id="scr_why_filing_full_time" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the reason that you are filing a claim for unemployment insurance benefits if you are employed full-time?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s14" name="Employment Status Details for %fpr_emt_visible_name%" public-id="" folder="3" order="3">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the status of the claimants employment has changed since the date of hire">
+              <doc-attr id="b809@kyfpr_rmod" />
+              <doc-attr id="scr_employment_status_change" />
+            </input-attr>
+            <caption>&lt;p&gt;Has the status of your employment changed since the date of hire?&lt;/p&gt;
+&lt;p&gt;(e.g. hours reduced from Full-Time to Part-Time)&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s15" name="Employment Status Change Details for %fpr_emt_visible_name%" public-id="" folder="3" order="4">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was reduced from full-time employment to less than full-time employment">
+              <doc-attr id="b810@kyfpr_rmod" />
+              <doc-attr id="scr_reduced_from_full_to_part" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you reduced from full-time to less than full time employment (including part-time or as-needed)&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s16" name="Employment Status Non-Reduction Details for %fpr_emt_visible_name%" public-id="" folder="3" order="5">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has been employed less than full-time by this employer since the date of hire">
+              <doc-attr id="b811@kyfpr_rmod" />
+              <doc-attr id="scr_always_less_than_full_time" />
+            </input-attr>
+            <caption>&lt;p&gt;Have you always been employed less than full-time by this employer?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s17" name="Employment Status Always Less than Full-Time Details for %fpr_emt_visible_name%" public-id="" folder="3" order="6">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant had the option to work full time at the time of hire">
+              <doc-attr id="b812@kyfpr_rmod" />
+              <doc-attr id="scr_full_time_option" />
+            </input-attr>
+            <caption>&lt;p&gt;At the time of hire, did you have the option to work full-time for this employer?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the reason the claimant chose to work part time">
+              <doc-attr id="p295@kyfpr_rmod" />
+              <doc-attr id="scr_chose_part_time_reason" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp If full-time hours were available to you, why did you choose to work part-time?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>

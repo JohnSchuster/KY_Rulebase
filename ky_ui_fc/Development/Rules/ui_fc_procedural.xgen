@@ -159,44 +159,8 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer has an attendance policy</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('an attendance policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was well aware of the attendance policy</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('well aware of the attendance policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was given written and/or verbal warnings regarding absence or tardiness</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('written and/or verbal warnings regarding absence or tardiness'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment followed the progressive disciplinary policy</base>
-          <parse>s(ver('10.4.2.18'),v(follow,t(simple,past,normal)),sb('the employment',plural),o('the progressive disciplinary policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b48" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's attendance at the employment was unsatisfactory</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s attendance at the employment',singular),o('unsatisfactory'))</parse>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
-  <relationships>
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
-    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
-  </relationships>
+  <relationships />
   <rules>
     <rule id="0" name="the claim is in the process of being filed" ruleburst="true" concludes="b40" folder="0" source-offset="142">
       <rule-xml>
@@ -455,26 +419,6 @@
               </length>
               <number-value>1</number-value>
             </greater-than-equals>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="14" name="the claimant's attendance at the employment was unsatisfactory" ruleburst="true" concludes="b48" folder="0" source-offset="3225">
-      <rule-xml>
-        <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b42" />
-              <attribute attr-id="b43" />
-              <attribute attr-id="b44" />
-              <attribute attr-id="b47" />
-            </and>
           </condition>
           <otherwise>
             <false-value />
