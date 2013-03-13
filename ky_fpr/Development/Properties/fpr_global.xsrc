@@ -147,6 +147,30 @@
           <base>the benefit year end date</base>
         </text>
       </attribute>
+      <attribute name="b23" type="boolean" public-name="claimant_trans_restricts_avail">
+        <text>
+          <base>the claimant's transportation restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b25" type="boolean" public-name="claimants_ddc_restricts_avail">
+        <text>
+          <base>the claimant's duty of dependent care restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" public-name="claimant_incarceration_restricts">
+        <text>
+          <base>the claimant's incarceration restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" public-name="claimant_corp_restricts_avail">
+        <text>
+          <base>the claimant's (self-employment, corporate officer position, commission work) restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('their availability'))</parse>
+        </text>
+      </attribute>
       <attribute name="b28" type="boolean" public-name="claimant_alien_status_restricts">
         <text>
           <base>the claimant's alien status restricts their availability for suitable work</base>
@@ -1552,6 +1576,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer is a closely-held corporation'))</parse>
         </text>
       </attribute>
+      <attribute name="b521" type="boolean" public-name="fpr_unauthorized_alien">
+        <text>
+          <base>the claimant is an alien who is not authorized to work in the United States</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien who is not authorized to work in the United States'))</parse>
+        </text>
+      </attribute>
       <attribute name="b522" type="boolean" public-name="fpr_reasonable_effort">
         <text>
           <base>the claimant is making a reasonable effort to obtain work</base>
@@ -1616,6 +1646,12 @@
         <text>
           <base>the claimant is unemployed because of a labor dispute in the establishment where they have been employed</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed because of a labor dispute in the establishment where they have been employed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b538" type="boolean" public-name="fpr_union_provides_work">
+        <text>
+          <base>the claimant is a member of a union that is responsible for securing future employment (for the claimant)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member of a union that is responsible for securing future employment (for the claimant)'))</parse>
         </text>
       </attribute>
       <attribute name="b543" type="boolean" public-name="fpr_reasonable_selection">
@@ -1684,10 +1720,22 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,past,normal)),sb('the claimant',plural),o('an employer from conveying the details of the job'))</parse>
         </text>
       </attribute>
+      <attribute name="b562" type="boolean" public-name="fpr_group_b_claim">
+        <text>
+          <base>this is a group b claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this',singular),o('a group b claim'))</parse>
+        </text>
+      </attribute>
       <attribute name="b563" type="boolean" public-name="fpr_status_meets_eligibility">
         <text>
           <base>the claimant's status meets the conditions of eligibility</base>
           <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b564" type="boolean" public-name="fpr_school_restricts_aa">
+        <text>
+          <base>the claimant's school (training) restricts their availability</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s school (training)',singular),o('their availability'))</parse>
         </text>
       </attribute>
       <attribute name="b565" type="boolean" public-name="fpr_physical_health_prevents_work">
@@ -1788,632 +1836,10 @@
           <base>the asserted most recent benefit year end date</base>
         </text>
       </attribute>
-      <attribute name="b851" type="boolean" public-name="fpr_disqualified_no_time_worked">
+      <attribute name="b854" type="boolean" public-name="fpr_test_flow">
         <text>
-          <base>the claimant is immediately disqualified based on no time worked in Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('immediately disqualified based on no time worked in Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b852" type="boolean" public-name="fpr_worked_in_kentucky">
-        <text>
-          <base>the claimant worked in Kentucky during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('in Kentucky during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b853" type="boolean" public-name="fpr_served_in_military">
-        <text>
-          <base>the claimant served in the military during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(serve,t(simple,past,normal)),sb('the claimant',plural),o('in the military during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b854" type="boolean" public-name="fpr_disqualified_not_citizen">
-        <text>
-          <base>the claimant is immediately disqualified based on not being a citizen or a legal alien</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('immediately disqualified based on not being a citizen or a legal alien'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b855" type="boolean" public-name="fpr_us_citizen">
-        <text>
-          <base>the claimant is a United States citizen</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a United States citizen'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b857" type="boolean" public-name="fpr_disqualified_ui_benefits">
-        <text>
-          <base>the claimant is immediately disqualified based on receiving unemployment benefits in states other than Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('immediately disqualified based on receiving unemployment benefits in states other than Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b858" type="boolean" public-name="fpr_applied_for_ui_other_state">
-        <text>
-          <base>the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b859" type="boolean" public-name="fpr_receiving_ui_from_other_state">
-        <text>
-          <base>the claimant is receiving benefits from a state other than Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving benefits from a state other than Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b860" type="boolean" public-name="fpr_ui_balance_other_state">
-        <text>
-          <base>the claimant has an unemployment benefits balance in a state other that Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unemployment benefits balance in a state other that Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b861" type="boolean" public-name="fpr_sports_professional">
-        <text>
-          <base>the claimant is an sports professional</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an sports professional'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b862" type="boolean" public-name="fpr_work_outside_kentucky">
-        <text>
-          <base>the claimant has worked in states other than Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(work,t(simple,present,perfect)),sb('the claimant',singular),o('in states other than Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p250" type="text" public-name="fpr_claimant_alias">
-        <text>
-          <base>the claimants other or assumed names</base>
-        </text>
-      </attribute>
-      <attribute name="p251" type="date" public-name="fpr_claimant_birthday">
-        <text>
-          <base>the claimants birthday</base>
-        </text>
-      </attribute>
-      <attribute name="p252" type="number" public-name="fpr_claimant_home_phone">
-        <text>
-          <base>the claimants primary (home) phone number</base>
-        </text>
-      </attribute>
-      <attribute name="p253" type="number" public-name="fpr_claimant_alternate_phone">
-        <text>
-          <base>the claimants alternate (cell) phone number</base>
-        </text>
-      </attribute>
-      <attribute name="p254" type="text" public-name="fpr_claimant_email">
-        <text>
-          <base>the claimants e-mail address</base>
-        </text>
-      </attribute>
-      <attribute name="b863" type="boolean" public-name="fpr_interpreter_required">
-        <text>
-          <base>the claimant requires an interpreter</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimant',singular),o('an interpreter'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p255" type="text" public-name="fpr_interpretor_language">
-        <text>
-          <base>the prefered language of the interpretor</base>
-        </text>
-      </attribute>
-      <attribute name="p256" type="text" public-name="fpr_claimant_gender">
-        <text>
-          <base>the claimants gender</base>
-        </text>
-      </attribute>
-      <attribute name="p257" type="text" public-name="fpr_claimant_ethnic_group">
-        <text>
-          <base>the claimants ethnic group</base>
-        </text>
-      </attribute>
-      <attribute name="p258" type="text" public-name="fpr_claimant_race">
-        <text>
-          <base>the claimants race</base>
-        </text>
-      </attribute>
-      <attribute name="b864" type="boolean" public-name="fpr_claimant_disability">
-        <text>
-          <base>the claimant has a disability status</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a disability status'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p259" type="text" public-name="fpr_current_street_address">
-        <text>
-          <base>the claimants current street address</base>
-        </text>
-      </attribute>
-      <attribute name="p260" type="text" public-name="fpr_current_appt_num">
-        <text>
-          <base>the claimants current suite or appartment number</base>
-        </text>
-      </attribute>
-      <attribute name="p261" type="text" public-name="fpr_current_city">
-        <text>
-          <base>the claimants current city of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p262" type="text" public-name="fpr_current_state">
-        <text>
-          <base>the claimants current state of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p263" type="text" public-name="fpr_current_county">
-        <text>
-          <base>the claimants current county of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p264" type="number" public-name="fpr_current_zip">
-        <text>
-          <base>the claimants current zip code of residence</base>
-        </text>
-      </attribute>
-      <attribute name="b865" type="boolean" public-name="fpr_current_address_is_po">
-        <text>
-          <base>the claimants address contains a post office box number</base>
-          <parse>s(ver('10.4.2.18'),v(contain,t(simple,present,normal)),sb('the claimants address',singular),o('a post office box number'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p265" type="text" public-name="fpr_permanent_address">
-        <text>
-          <base>the claimants current permanent street address</base>
-        </text>
-      </attribute>
-      <attribute name="p266" type="text" public-name="fpr_permanent_appt_no">
-        <text>
-          <base>the claimants current permanent suite or appartment number</base>
-        </text>
-      </attribute>
-      <attribute name="p267" type="text" public-name="fpr_permanent_city">
-        <text>
-          <base>the claimants current permanent city of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p268" type="text" public-name="fpr_permanent_state">
-        <text>
-          <base>the claimants current permanent state of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p269" type="number" public-name="fpr_permanent_zip">
-        <text>
-          <base>the claimants current permanent zip code of residence</base>
-        </text>
-      </attribute>
-      <attribute name="p270" type="text" public-name="fpr_permanent_county">
-        <text>
-          <base>the claimants current permanent county of residence</base>
-        </text>
-      </attribute>
-      <attribute name="b866" type="boolean" public-name="fpr_within_commuting_distance">
-        <text>
-          <base>the claimant is within commuting distance of Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('within commuting distance of Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p271" type="text" public-name="fpr_alien_registration_number">
-        <text>
-          <base>the claimants alien registration number</base>
-        </text>
-      </attribute>
-      <attribute name="p272" type="text" public-name="fpr_final_pam_acceptance">
-        <text>
-          <base>the claimants PAM acceptance</base>
-        </text>
-      </attribute>
-      <attribute name="p273" type="text" public-name="fpr_final_wage_report_acceptance">
-        <text>
-          <base>the claimants wage reporting acceptance</base>
-        </text>
-      </attribute>
-      <attribute name="p274" type="text" public-name="fpr_final_job_search_acceptance">
-        <text>
-          <base>the claimants job search acceptance</base>
-        </text>
-      </attribute>
-      <attribute name="p275" type="text" public-name="fpr_final_waiting_period_acceptance">
-        <text>
-          <base>the claimants waiting period acceptance</base>
-        </text>
-      </attribute>
-      <attribute name="p276" type="text" public-name="fpr_final_employer_release">
-        <text>
-          <base>the claimants employer release authorization</base>
-        </text>
-      </attribute>
-      <attribute name="p277" type="text" public-name="fpr_final_info_certification">
-        <text>
-          <base>the claimants information certification</base>
-        </text>
-      </attribute>
-      <attribute name="p278" type="text" public-name="fpr_final_rights">
-        <text>
-          <base>the claimants rights and wishes</base>
-        </text>
-      </attribute>
-      <attribute name="p279" type="text" public-name="fpr_payment_method">
-        <text>
-          <base>the claimants preferred method of receiving unemployment benefits payments</base>
-        </text>
-      </attribute>
-      <attribute name="p280" type="text" public-name="fpr_direct_deposit_name">
-        <text>
-          <base>the claimant name, as used for the purpose of direct deposit</base>
-        </text>
-      </attribute>
-      <attribute name="p281" type="text" public-name="fpr_direct_deposit_bank">
-        <text>
-          <base>the financial institutions name, as used for the purpose of direct deposit</base>
-        </text>
-      </attribute>
-      <attribute name="p282" type="number" public-name="fpr_direct_deposit_routing">
-        <text>
-          <base>the financial institutions routing number, as used for the purpose of direct deposit</base>
-        </text>
-      </attribute>
-      <attribute name="p283" type="number" public-name="fpr_direct_deposit_account">
-        <text>
-          <base>the claimants account number, as used for the purpose of direct deposit</base>
-        </text>
-      </attribute>
-      <attribute name="p284" type="text" public-name="fpr_direct_deposit_type">
-        <text>
-          <base>the claimants account type, as used for the purpose of direct deposit</base>
-        </text>
-      </attribute>
-      <attribute name="b867" type="boolean" public-name="fpr_withhold_federal">
-        <text>
-          <base>the claimant has elected to have ten percent of their benefit payments withheld for the purpose of forthcoming Federal Tax liability</base>
-          <parse>s(ver('10.4.2.18'),v(elect,t(simple,present,perfect)),sb('the claimant',singular),o('to have ten percent of their benefit payments withheld for the purpose of forthcoming Federal Tax liability'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b868" type="boolean" public-name="fpr_withhold_state">
-        <text>
-          <base>the claimant has elected to have four percent of their benefit payments withheld for the purpose of forthcoming State Tax liability</base>
-          <parse>s(ver('10.4.2.18'),v(elect,t(simple,present,perfect)),sb('the claimant',singular),o('to have four percent of their benefit payments withheld for the purpose of forthcoming State Tax liability'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b869" type="boolean" public-name="fpr_received_workers_comp">
-        <text>
-          <base>the claimant received workers compensation benefits during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('workers compensation benefits during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b870" type="boolean" public-name="fpr_eligible_workers_comp">
-        <text>
-          <base>the claimant was eligible to receive workers compensation benefits during the base period</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('eligible to receive workers compensation benefits during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b871" type="boolean" public-name="fpr_natural_disaster">
-        <text>
-          <base>the claimant is unemployed as a result of a natural disaster that occured on or about the facility where they were employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occured on or about the facility where they were employed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b872" type="boolean" public-name="fpr_union_member">
-        <text>
-          <base>the claimant is a member in good standing of a sanctioned labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a sanctioned labor union'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b873" type="boolean" public-name="fpr_union_provides_work">
-        <text>
-          <base>the claimant is presented with work opportunities by the labor union</base>
-          <parse>s(ver('10.4.2.18'),v(present,t(simple,present,normal)),ob('the claimant',singular),o('with work opportunities by the labor union'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p285" type="text" public-name="fpr_area_of_expertise">
-        <text>
-          <base>the claimants field of expertise or industry</base>
-        </text>
-      </attribute>
-      <attribute name="b874" type="boolean" public-name="fpr_advanced_ed_required">
-        <text>
-          <base>the claimants occupation requires advanced education or certification</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimants occupation',singular),o('advanced education or certification'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b875" type="boolean" public-name="fpr_has_reliable_transportation">
-        <text>
-          <base>the claimant has a reliable means of transportation</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a reliable means of transportation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p286" type="date" public-name="fpr_trans_restrict_start">
-        <text>
-          <base>the date the restriction on the claimants transportation began</base>
-        </text>
-      </attribute>
-      <attribute name="b876" type="boolean" public-name="fpr_knows_when_trans_restrict_ends">
-        <text>
-          <base>the claimant knows when the transportation restriction will end</base>
-          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when the transportation restriction will end'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p287" type="date" public-name="fpr_trans_restrict_end">
-        <text>
-          <base>the date the restriction on the claimants transportation ends</base>
-        </text>
-      </attribute>
-      <attribute name="p288" type="text" public-name="fpr_alt_trans_desc">
-        <text>
-          <base>the claimants description of their alternate means of transportation</base>
-        </text>
-      </attribute>
-      <attribute name="p289" type="text" public-name="fpr_training_facility_name">
-        <text>
-          <base>the name of the school, training program or educational institution that the claimant has enrolled in</base>
-        </text>
-      </attribute>
-      <attribute name="p290" type="date" public-name="fpr_training_start_date">
-        <text>
-          <base>the date the claimant started the training program</base>
-        </text>
-      </attribute>
-      <attribute name="p291" type="date" public-name="fpr_training_end_date">
-        <text>
-          <base>the completion date of the claimants training program</base>
-        </text>
-      </attribute>
-      <attribute name="p292" type="text" public-name="fpr_training_hrs_per_wk">
-        <text>
-          <base>the approximate number of hours the claimant spends in training per week</base>
-        </text>
-      </attribute>
-      <attribute name="p293" type="text" public-name="fpr_approved_training_program">
-        <text>
-          <base>the claimants approved program of study</base>
-        </text>
-      </attribute>
-      <attribute name="b877" type="boolean" public-name="fpr_training_schedule_change">
-        <text>
-          <base>the claimants training program or schedule has changed since the initial point of approval</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the claimants training program or schedule',singular),o('since the initial point of approval'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p294" type="date" public-name="fpr_program_study_start">
-        <text>
-          <base>the begin date for the program of study for which the claimant approved</base>
-        </text>
-      </attribute>
-      <attribute name="p295" type="date" public-name="fpr_program_study_end">
-        <text>
-          <base>the end date for the program of study for which the claimant was approved</base>
-        </text>
-      </attribute>
-      <attribute name="b878" type="boolean" public-name="fpr_online_classes">
-        <text>
-          <base>the claimants classes are available on-lin</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimants classes',plural),o('available on-lin'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b879" type="boolean" public-name="fpr_change_class_schedule">
-        <text>
-          <base>the claimant is willing to change their class schedule if suitable work becomes available</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to change their class schedule if suitable work becomes available'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b880" type="boolean" public-name="fpr_requested_approval">
-        <text>
-          <base>the claimant requested approval previously for their program of study</base>
-          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('approval previously for their program of study'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p296" type="date" public-name="fpr_dependent_care_start">
-        <text>
-          <base>the date the requirement for caring for others began</base>
-        </text>
-      </attribute>
-      <attribute name="b881" type="boolean" public-name="fpr_knows_dependent_conclusion">
-        <text>
-          <base>the claimant is aware of when the need to provide care will conclude</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('aware of when the need to provide care will conclude'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p297" type="text" public-name="fpr_dependent_care_hrs_per_wk">
-        <text>
-          <base>the approximate number of hours spent caring for others per week</base>
-        </text>
-      </attribute>
-      <attribute name="p298" type="date" public-name="fpr_dependent_care_conclusion">
-        <text>
-          <base>the date the requirement for caring for others will end</base>
-        </text>
-      </attribute>
-      <attribute name="p299" type="text" public-name="fpr_alternate_care_desc">
-        <text>
-          <base>the claimants description of alternate means of care</base>
-        </text>
-      </attribute>
-      <attribute name="b882" type="boolean" public-name="fpr_self_emp_prevents_search">
-        <text>
-          <base>the claimant's self-employment prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b883" type="boolean" public-name="fpr_commission_prevents_search">
-        <text>
-          <base>the claimant's commission work prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b884" type="boolean" public-name="fpr_co_prevents_search">
-        <text>
-          <base>the claimant's corporate officer position prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b885" type="boolean" public-name="fpr_self_empl_prevents_accept">
-        <text>
-          <base>the claimant's self-employment prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b886" type="boolean" public-name="fpr_commision_prevents_accept">
-        <text>
-          <base>the claimant's commission work prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b887" type="boolean" public-name="fpr_co_prevents_accept">
-        <text>
-          <base>the claimant's corporate officer position prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p300" type="text" public-name="fpr_self_empl_hours">
-        <text>
-          <base>the approximate number of hours the claimant spends on self employment work each week</base>
-        </text>
-      </attribute>
-      <attribute name="b888" type="boolean" public-name="fpr_will_quit_self_empl">
-        <text>
-          <base>the claimant is willing to abandon self employment to accept suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to abandon self employment to accept suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p301" type="text" public-name="fpr_commission_hours">
-        <text>
-          <base>the approximate number of hours the claimant spends on commission work each week</base>
-        </text>
-      </attribute>
-      <attribute name="b889" type="boolean" public-name="fpr_will_quit_commission">
-        <text>
-          <base>the claimant is willing to abandon commission work to accept suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to abandon commission work to accept suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p302" type="text" public-name="fpr_co_hours">
-        <text>
-          <base>the approximate number of hours the claimant spends as an officer of a closely held corporation work each week</base>
-        </text>
-      </attribute>
-      <attribute name="b890" type="boolean" public-name="fpr_will_quit_co">
-        <text>
-          <base>the claimant is willing to abandon serving as an officer of a closely held corporation to accept suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('willing to abandon serving as an officer of a closely held corporation to accept suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b891" type="boolean" public-name="fpr_work_release_eligable">
-        <text>
-          <base>the claimant is eligable to participate in a work release program</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligable to participate in a work release program'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p303" type="text" public-name="fpr_incarceration_facility">
-        <text>
-          <base>the name of the facility that the claimant is incarcerated at</base>
-        </text>
-      </attribute>
-      <attribute name="p304" type="date" public-name="fpr_incarceration_end_date">
-        <text>
-          <base>the date the claimants incarceration ends</base>
-        </text>
-      </attribute>
-      <attribute name="p305" type="date" public-name="fpr_incarceration_begin_date">
-        <text>
-          <base>the date the claimants incarceration began</base>
-        </text>
-      </attribute>
-      <attribute name="b892" type="boolean" public-name="fpr_ss_disability_last_twelve">
-        <text>
-          <base>the claimant has received Social Security disability payments within the last twelve months</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,present,perfect)),sb('the claimant',singular),o('Social Security disability payments within the last twelve months'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b893" type="boolean" public-name="fpr_applied_ss_disability">
-        <text>
-          <base>the claimant has applied for social security disability benefits</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for social security disability benefits'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p306" type="date" public-name="fpr_physical_begin_date">
-        <text>
-          <base>the date the claimants pyhsical restriction began</base>
-        </text>
-      </attribute>
-      <attribute name="b894" type="boolean" public-name="fpr_restriction_end_aware">
-        <text>
-          <base>the claimant knows when the physical restriction will end</base>
-          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when the physical restriction will end'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b895" type="boolean" public-name="fpr_medical_document_in_support">
-        <text>
-          <base>the claimant has a medical document supporting their physical limitation</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a medical document supporting their physical limitation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b896" type="boolean" public-name="fpr_perform_limited_work">
-        <text>
-          <base>the claimant can perform pyhsical work in some capacity</base>
-          <parse>s(ver('10.4.2.18'),v(perform+can,t(simple,modal,normal)),sb('the claimant',plural),o('pyhsical work in some capacity'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b897" type="boolean" public-name="fpr_lift_fifty">
-        <text>
-          <base>the claiment can not lift more than fifty pounds</base>
-          <parse>s(ver('10.4.2.18'),v(lift+can,t(simple,modal,normal)),sb('the claiment',plural),o('more than fifty pounds'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b898" type="boolean" public-name="fpr_repetitive_motion">
-        <text>
-          <base>the claimant is not capable of repetitive motion</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('capable of repetitive motion'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b899" type="boolean" public-name="fpr_standing_long">
-        <text>
-          <base>the claimant is not capable of standing for prolonged periods of time</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('capable of standing for prolonged periods of time'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p307" type="text" public-name="fpr_restricted_hours" plural="true">
-        <text>
-          <base>the claimants restricted work hours</base>
-        </text>
-      </attribute>
-      <attribute name="p308" type="date" public-name="fpr_physical_limit_end_date">
-        <text>
-          <base>the date the claimants physical limitation is expected end</base>
-        </text>
-      </attribute>
-      <attribute name="p309" type="date" public-name="fpr_mental_issue_start_date">
-        <text>
-          <base>the date the claimant became mentally ill</base>
-        </text>
-      </attribute>
-      <attribute name="b900" type="boolean" public-name="fpr_no_longer_mental_ill">
-        <text>
-          <base>the claimant knows when they will no longer be mentally ill</base>
-          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when they will no longer be mentally ill'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b901" type="boolean" public-name="fpr_mental_health_document">
-        <text>
-          <base>the claimant has a medical document supporting their mental limitation</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a medical document supporting their mental limitation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b902" type="boolean" public-name="fpr_some_mental_work">
-        <text>
-          <base>the claimant can perform mental work in some capacity</base>
-          <parse>s(ver('10.4.2.18'),v(perform+can,t(simple,modal,normal)),sb('the claimant',plural),o('mental work in some capacity'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p310" type="text" public-name="fpr_mental_condition_desc">
-        <text>
-          <base>the claimants description of their mental health</base>
-        </text>
-      </attribute>
-      <attribute name="p311" type="date" public-name="fpr_mental_health_end">
-        <text>
-          <base>the date the claimant expects their mental health condition to improve</base>
-        </text>
-      </attribute>
-      <attribute name="b903" type="boolean" public-name="fpr_disability_on_physical">
-        <text>
-          <base>the claimant applied for social security disability benefits based on a physical condition</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),sb('the claimant',plural),o('for social security disability benefits based on a physical condition'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b904" type="boolean" public-name="fpr_disability_on_mental">
-        <text>
-          <base>the claimant applied for social security disability benefits based on a mental condition</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),sb('the claimant',plural),o('for social security disability benefits based on a mental condition'))</parse>
+          <base>the test flow should be used</base>
+          <parse>s(ver('10.4.2.18'),v(use+should,t(simple,modal,normal)),ob('the test flow',singular))</parse>
         </text>
       </attribute>
     </entity>
@@ -3079,11 +2505,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
         </text>
       </attribute>
-      <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
-        <text>
-          <base>the employment's net number of discrete weeks worked within the base period</base>
-        </text>
-      </attribute>
       <attribute name="b12" type="boolean" public-name="g01_emt_is_current">
         <text>
           <base>the employment is current</base>
@@ -3094,11 +2515,6 @@
         <text>
           <base>the employment is the next most recent, separated, employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent, separated, employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p20" type="number" public-name="g01_empt_weeks_not_worked">
-        <text>
-          <base>the employment's number of discrete weeks not worked by the claimant</base>
         </text>
       </attribute>
       <attribute name="b22" type="boolean" public-name="g01_empt_mr_sep_empt">
@@ -3812,6 +3228,12 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
         </text>
       </attribute>
+      <attribute name="b241" type="boolean" public-name="emt_no_conflict_with_religion">
+        <text>
+          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(do,t(simple,past,normal)),sb('the conditions of the employment',plural),o('not conflict with the claimant''s religious beliefs'))</parse>
+        </text>
+      </attribute>
       <attribute name="b242" type="boolean" public-name="emt_excessive_carelessness">
         <text>
           <base>the claimant demonstrated excessive carelessness (inefficiency) in connection to the employment</base>
@@ -4373,6 +3795,12 @@
           <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment',singular),o('in a separation interview'))</parse>
         </text>
       </attribute>
+      <attribute name="b633" type="boolean" public-name="fpr_unsat_attendance">
+        <text>
+          <base>the claimant has an unsatisfactory attendance record during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unsatisfactory attendance record during the employment'))</parse>
+        </text>
+      </attribute>
       <attribute name="b634" type="boolean" public-name="fpr_harassment_at_work">
         <text>
           <base>the harassment during the employment rendered the work unsuitable</base>
@@ -4615,9 +4043,9 @@
           <base>the claimants description of the equipment problem that caused them to leave the employment</base>
         </text>
       </attribute>
-      <attribute name="p123" type="date" public-name="scr_final_date_equipment">
+      <attribute name="p123" type="number" public-name="scr_final_date_equipment">
         <text>
-          <base>the date the final equipment problem occured</base>
+          <base>the date the final equipent problem occured</base>
         </text>
       </attribute>
       <attribute name="p124" type="text" public-name="scr_equipment_impact">
@@ -6229,103 +5657,15 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b906" type="boolean" public-name="fpr_religious_conflict">
+      <attribute name="b853" type="boolean" public-name="g01_fpr_emt_10w_per_claimant">
         <text>
-          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(conflict,t(simple,past,normal)),sb('the conditions of the employment',plural),o('with the claimant''s religious beliefs'))</parse>
+          <base>the employment, per the claimant, was a ten week employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment, per the claimant,',singular),o('a ten week employment'))</parse>
         </text>
       </attribute>
-      <attribute name="p312" type="date" public-name="fpr_leave_of_absence_start">
+      <attribute name="p250" type="text" public-name="fpr_emt_visible_weeks_range">
         <text>
-          <base>the date the leave of absence started</base>
-        </text>
-      </attribute>
-      <attribute name="b907" type="boolean" public-name="fpr_leave_of_absence_return">
-        <text>
-          <base>the claimant has a return to work from leave of absence date</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a return to work from leave of absence date'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p313" type="date" public-name="fpr_leave_retrurn_date">
-        <text>
-          <base>the leave of absence return date</base>
-        </text>
-      </attribute>
-      <attribute name="p314" type="text" public-name="fpr_leave_reason">
-        <text>
-          <base>the reason for the claimants leave of absence</base>
-        </text>
-      </attribute>
-      <attribute name="p315" type="text" public-name="fpr_other_leave_reason">
-        <text>
-          <base>the other reason for the claimants leave of absence</base>
-        </text>
-      </attribute>
-      <attribute name="b908" type="boolean" public-name="fpr_has_leave_documentation">
-        <text>
-          <base>the claimant has documentation to substantiate this leave</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('documentation to substantiate this leave'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p316" type="text" public-name="fpr_leave_documentation">
-        <text>
-          <base>the claimants documentation to substantiate this leave</base>
-        </text>
-      </attribute>
-      <attribute name="p317" type="text" public-name="scr_current_employment_status">
-        <text>
-          <base>the claimants current employment status</base>
-        </text>
-      </attribute>
-      <attribute name="p318" type="text" public-name="scr_hours_worked_per_week">
-        <text>
-          <base>the number of hours per week the claimant works</base>
-        </text>
-      </attribute>
-      <attribute name="b909" type="boolean" public-name="scr_receives_benefits">
-        <text>
-          <base>the claimant receives benefits from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,present,normal)),sb('the claimant',singular),o('benefits from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p319" type="text" public-name="scr_why_filing_full_time">
-        <text>
-          <base>the claimants reason for filing for benefits while they are employed full time</base>
-        </text>
-      </attribute>
-      <attribute name="b910" type="boolean" public-name="scr_employment_status_change">
-        <text>
-          <base>the status of the claimants employment has changed since the date of hire</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the status of the claimants employment',singular),o('since the date of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b911" type="boolean" public-name="scr_reduced_from_full_to_part">
-        <text>
-          <base>the claimant was reduced from full-time employment to less than full-time employment</base>
-          <parse>s(ver('10.4.2.18'),v(reduce,t(simple,past,normal)),ob('the claimant',singular),o('from full-time employment to less than full-time employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b912" type="boolean" public-name="scr_always_less_than_full_time">
-        <text>
-          <base>the claimant has been employed less than full-time by this employer since the date of hire</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,perfect)),ob('the claimant',singular),o('less than full-time by this employer since the date of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b913" type="boolean" public-name="scr_full_time_option">
-        <text>
-          <base>the claimant had the option to work full time at the time of hire</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('the option to work full time at the time of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p320" type="text" public-name="scr_chose_part_time_reason">
-        <text>
-          <base>the reason the claimant chose to work part time</base>
-        </text>
-      </attribute>
-      <attribute name="b914" type="boolean" public-name="scr_show_full_time_details">
-        <text>
-          <base>the employment full time details screen should be displayed</base>
-          <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment full time details screen',singular))</parse>
+          <base>the employment's contributing weeks, visible text</base>
         </text>
       </attribute>
     </entity>
