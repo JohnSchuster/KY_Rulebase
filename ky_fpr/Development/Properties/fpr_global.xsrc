@@ -3020,6 +3020,12 @@
           <base>the claimants athletic event end date</base>
         </text>
       </attribute>
+      <attribute name="b916" type="boolean" public-name="fpr_rce_employer">
+        <text>
+          <base>the employer is an rce employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an rce employer'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employment" name="the employment" identifying-attribute-name="g01_employment_instance_id" identifying-attribute-text="the employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer" public-id="fpr_employment">
       <attribute name="p3" type="text" substitutable="true" default-gender="generic" public-name="g01_employment_instance_id">
@@ -6326,6 +6332,12 @@
         <text>
           <base>the employment full time details screen should be displayed</base>
           <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment full time details screen',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b915" type="boolean" public-name="fpr_ten_week_per_claimant">
+        <text>
+          <base>the employment, per the claimant, was a ten week employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment, per the claimant,',singular),o('a ten week employment'))</parse>
         </text>
       </attribute>
     </entity>
