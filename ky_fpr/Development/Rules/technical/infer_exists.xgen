@@ -55,6 +55,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one issue',singular),o('raised'))</parse>
         </text>
       </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is mentally able to work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('mentally able to work'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
@@ -188,12 +194,12 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="all issues inferred from claim" ruleburst="true" concludes="InferInstance(allissuesinferredfromclaim)" folder="0" source-offset="314">
+    <rule id="1" name="all issues inferred from claim" ruleburst="true" concludes="InferInstance(allissuesinferredfromclaim)" folder="0" source-offset="298">
       <rule-xml>
         <table-conclude-instance relationship-id="allissuesinferredfromclaim" source="global" source-scope-id="global0">
           <row>
             <identity>
-              <string-value>AA_d3_aa01</string-value>
+              <string-value>aa_d4_01</string-value>
             </identity>
             <condition>
               <and>
@@ -208,10 +214,27 @@
               </and>
             </condition>
           </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_02</string-value>
+            </identity>
+            <condition>
+              <and>
+                <not>
+                  <unknown>
+                    <attribute attr-id="b29" />
+                  </unknown>
+                </not>
+                <not>
+                  <attribute attr-id="b29" />
+                </not>
+              </and>
+            </condition>
+          </row>
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="2" name="isMemberOf(the nod, issue infers nod)" ruleburst="true" concludes="IsMemberOf(&quot;nod&quot;,issueinfersnod)" folder="0" source-offset="672">
+    <rule id="2" name="isMemberOf(the nod, issue infers nod)" ruleburst="true" concludes="IsMemberOf(&quot;nod&quot;,issueinfersnod)" folder="0" source-offset="695">
       <rule-xml>
         <conclude-rel relationship-id="issueinfersnod" source="issue" source-scope-id="issue0" target-scope-id="nod0">
           <condition>
@@ -247,7 +270,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="3" name="at least one issue has been raised" ruleburst="true" concludes="b28" folder="0" source-offset="1512">
+    <rule id="3" name="at least one issue has been raised" ruleburst="true" concludes="b28" folder="0" source-offset="1090">
       <rule-xml>
         <conclude attr-id="b28" entity-id="global" scope-id="global0">
           <value>
@@ -267,7 +290,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="all inferred actions" ruleburst="true" concludes="InferInstance(allinferredactions)" folder="0" source-offset="1652">
+    <rule id="4" name="all inferred actions" ruleburst="true" concludes="InferInstance(allinferredactions)" folder="0" source-offset="1181">
       <rule-xml>
         <table-conclude-instance relationship-id="allinferredactions" source="global" source-scope-id="global0">
           <row>
@@ -281,7 +304,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="5" name="all inferred claimant nod" ruleburst="true" concludes="InferInstance(allinferredclaimantnod)" folder="0" source-offset="1985">
+    <rule id="5" name="all inferred claimant nod" ruleburst="true" concludes="InferInstance(allinferredclaimantnod)" folder="0" source-offset="1456">
       <rule-xml>
         <table-conclude-instance relationship-id="allinferredclaimantnod" source="global" source-scope-id="global0">
           <row>
@@ -295,7 +318,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="6" name="all inferred 412a for employer" ruleburst="true" concludes="InferInstance(allinferred412aforemployer)" folder="0" source-offset="2196">
+    <rule id="6" name="all inferred 412a for employer" ruleburst="true" concludes="InferInstance(allinferred412aforemployer)" folder="0" source-offset="1605">
       <rule-xml>
         <table-conclude-instance relationship-id="allinferred412aforemployer" source="employer" source-scope-id="employer0">
           <row>
@@ -377,7 +400,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="7" name="inferred employer nod" ruleburst="true" concludes="InferInstance(inferredemployernod)" folder="0" source-offset="3731">
+    <rule id="7" name="inferred employer nod" ruleburst="true" concludes="InferInstance(inferredemployernod)" folder="0" source-offset="2475">
       <rule-xml>
         <table-conclude-instance relationship-id="inferredemployernod" source="employer" source-scope-id="employer0">
           <row>
@@ -447,7 +470,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="8" name="the nod may be appealed" ruleburst="true" concludes="b13" folder="0" source-offset="4590">
+    <rule id="8" name="the nod may be appealed" ruleburst="true" concludes="b13" folder="0" source-offset="3181">
       <rule-xml>
         <table-conclude attr-id="b13" entity-id="nod" scope-id="nod0">
           <row>
