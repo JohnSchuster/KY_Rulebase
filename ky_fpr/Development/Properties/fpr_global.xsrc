@@ -2416,6 +2416,12 @@
           <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),sb('the claimant',plural),o('for social security disability benefits based on a mental condition'))</parse>
         </text>
       </attribute>
+      <attribute name="b917" type="boolean" public-name="fpr_claim_has_deductable_issue">
+        <text>
+          <base>the claim has a deductible income issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -6383,6 +6389,173 @@
       <attribute name="p330" type="text" public-name="fpr_emt_issue_text">
         <text>
           <base>the employment's issue text</base>
+        </text>
+      </attribute>
+      <attribute name="p331" type="currency" public-name="scr_dispute_start_date">
+        <text>
+          <base>the date the employment labor dispute started</base>
+        </text>
+      </attribute>
+      <attribute name="p332" type="text" public-name="scr_dispute_start_status">
+        <text>
+          <base>the claimants work status when the employment labor dispute started</base>
+        </text>
+      </attribute>
+      <attribute name="p333" type="text" public-name="scr_layoff_informant">
+        <text>
+          <base>the name of the person who informed the claimant that they were laid-off</base>
+        </text>
+      </attribute>
+      <attribute name="p334" type="text" public-name="scr_layoff_title">
+        <text>
+          <base>the title of the person who informed the claimant that they were laid-off</base>
+        </text>
+      </attribute>
+      <attribute name="p335" type="date" public-name="scr_layoff_notice_date">
+        <text>
+          <base>the date that the claimant was notified of their lay-off</base>
+        </text>
+      </attribute>
+      <attribute name="p336" type="date" public-name="scr_layoff_date">
+        <text>
+          <base>the date that the claimant was laid-off</base>
+        </text>
+      </attribute>
+      <attribute name="p337" type="text" public-name="scr_layoff_reason">
+        <text>
+          <base>the reason that the claimant believes they were laid off</base>
+        </text>
+      </attribute>
+      <attribute name="b918" type="boolean" public-name="scr_layoff_warning">
+        <text>
+          <base>the claimant received previos warning that their job was in jeoprady</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('previos warning that their job was in jeoprady'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b919" type="boolean" public-name="scr_layoff_is_temporary">
+        <text>
+          <base>the claimant is on temporary layoff</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on temporary layoff'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b920" type="boolean" public-name="scr_layoff_return">
+        <text>
+          <base>the claimant has a return to work date from the temporary layoff</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a return to work date from the temporary layoff'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p338" type="date" public-name="scr_layoff_recall_date">
+        <text>
+          <base>the claimants recall date</base>
+        </text>
+      </attribute>
+      <attribute name="p339" type="text" public-name="scr_layoff_recall_notification">
+        <text>
+          <base>the method of comunication used to inform the claimant of the recall date</base>
+        </text>
+      </attribute>
+      <attribute name="b921" type="boolean" public-name="scr_layoff_reduction_package">
+        <text>
+          <base>the claimant accepted a reduction in workforce package</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in workforce package'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b922" type="boolean" public-name="scr_layoff_volunteer">
+        <text>
+          <base>the claimant Volunteered to be laid off</base>
+          <parse>s(ver('10.4.2.18'),v(lay,t(simple,past,normal)),sb('the claimant Volunteered to be',plural),o('off'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b923" type="boolean" public-name="scr_layoff_early_retirement">
+        <text>
+          <base>the claimant accepted an early retirement</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an early retirement'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b924" type="boolean" public-name="scr_layoff_package_offered">
+        <text>
+          <base>the employment offered the claimant an incentive package to accept the layoff</base>
+          <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employment',plural),o('the claimant an incentive package to accept the layoff'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b925" type="boolean" public-name="scr_layoff_buyout_not_mandatory">
+        <text>
+          <base>the claimant did not have to accept the reduction in workforce buyout</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('to accept the reduction in workforce buyout'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p340" type="text" public-name="scr_layoff_employer_reason">
+        <text>
+          <base>the reason the claimant was laid off</base>
+        </text>
+      </attribute>
+      <attribute name="p341" type="text" public-name="scr_layoff_other">
+        <text>
+          <base>the other reason the claimant was laid off</base>
+        </text>
+      </attribute>
+      <attribute name="p342" type="text" public-name="scr_ld_result">
+        <text>
+          <base>the result of the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="p343" type="text" public-name="scr_ld_groups">
+        <text>
+          <base>the groups involved in the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="b926" type="boolean" public-name="scr_ld_participating">
+        <text>
+          <base>the claimant is actively participating in the labor dispute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('actively participating in the labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p344" type="text" public-name="scr_ld_reason">
+        <text>
+          <base>the reason for the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="p345" type="text" public-name="scr_ld_location">
+        <text>
+          <base>the location of the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="p346" type="text" public-name="scr_ld_empl_address">
+        <text>
+          <base>the address of the employmet having the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="p347" type="date" public-name="scr_ld_end_date">
+        <text>
+          <base>the date the labor dispute ended</base>
+        </text>
+      </attribute>
+      <attribute name="b927" type="boolean" public-name="scr_ld_ended_company_closed">
+        <text>
+          <base>the labor dispute ended because the company permanently closed</base>
+          <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the labor dispute',plural),o('because the company permanently closed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p348" type="text" public-name="scr_ld_noshow">
+        <text>
+          <base>the reason that the claimant did not return to work after the labor dispute</base>
+        </text>
+      </attribute>
+      <attribute name="b928" type="boolean" public-name="scr_pursuant_to_plan">
+        <text>
+          <base>the claimant's mandatory retirement is pursuant to this employer's general plan</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to this employer''s general plan'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b929" type="boolean" public-name="scr_plan_includes_benefits">
+        <text>
+          <base>this employer's general plan includes retirement benefits</base>
+          <parse>s(ver('10.4.2.18'),v(include,t(simple,present,normal)),sb('this employer''s general plan',singular),o('retirement benefits'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p349" type="text" public-name="scr_retirement_reason">
+        <text>
+          <base>the claimants reason for retirement</base>
         </text>
       </attribute>
     </entity>
