@@ -7,6 +7,12 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
         </text>
       </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en">
+          <base>the claim has a deductible income issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -9578,7 +9584,7 @@
           </row>
           <row>
             <value>
-              <string-value>KRS 341.370 (1) (c)</string-value>
+              <string-value>KRS 341.370 (1) ©</string-value>
             </value>
             <condition>
               <equals>
@@ -10061,6 +10067,20 @@
               </for>
             </condition>
           </row>
+          <row>
+            <value>
+              <string-value>DI</string-value>
+            </value>
+            <condition>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <for>
+                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
+                  <attribute attr-id="b2" />
+                </for>
+              </for>
+            </condition>
+          </row>
           <otherwise>
             <string-value>uncertain</string-value>
           </otherwise>
@@ -10080,6 +10100,20 @@
                 <for>
                   <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
                   <attribute attr-id="b1" />
+                </for>
+              </for>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Deductible Income</string-value>
+            </value>
+            <condition>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <for>
+                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
+                  <attribute attr-id="b2" />
                 </for>
               </for>
             </condition>
