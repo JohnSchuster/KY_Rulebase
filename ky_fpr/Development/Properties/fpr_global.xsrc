@@ -215,8 +215,8 @@
       </attribute>
       <attribute name="b39" type="boolean" public-name="fpr_claimants_trans_no_work">
         <text>
-          <base>the claimant's transportation prevents obtaining (acceptance) of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
+          <base>the claimant's lack of reliable transportation prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s lack of reliable transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="b40" type="boolean" public-name="fpr_claimant_is_in_school">
@@ -2422,6 +2422,12 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
         </text>
       </attribute>
+      <attribute name="b975" type="boolean" public-name="fpr_transpo_prev_accept_work">
+        <text>
+          <base>the claimant's transportation prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -3262,8 +3268,8 @@
       </attribute>
       <attribute name="b144" type="boolean" public-name="emt_voluntary_quit">
         <text>
-          <base>the claimant voluntarily left the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment'))</parse>
+          <base>the claimant left the employment voluntarily</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily'))</parse>
         </text>
       </attribute>
       <attribute name="b145" type="boolean" public-name="emt_discharged_misconduct">
