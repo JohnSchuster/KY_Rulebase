@@ -1512,10 +1512,10 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is a member in good standing of a sanctioned labor union">
-              <doc-attr id="b117@kyfpr_rmod" />
+              <doc-attr id="b111@kyfpr_rmod" />
               <doc-attr id="fpr_union_member" />
             </input-attr>
-            <caption>&lt;p&gt;Are you a member in good standing of a sanctioned labor union?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Are you a member in good standing of a  labor union?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -1548,7 +1548,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s28" name="Work Profile Information" public-id="" order="3" screen-attr="" folder="12">
+      <screen type="Question" id="s28" name="Information about your type of work" public-id="" order="3" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1573,7 +1573,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <doc-attr id="p67@kyfpr_rmod" />
               <doc-attr id="fpr_area_of_expertise" />
             </input-attr>
-            <caption>&lt;p&gt;What is your field of expertise or industry?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;What is your field of work or industry?&lt;/p&gt;</caption>
             <values>
               <value code="Accommodation and Food Services" default-visibility="enabled">Accommodation and Food Services</value>
               <value code="Administrative and Support Services" default-visibility="enabled">Administrative and Support Services</value>
@@ -1603,6 +1603,17 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <value code="..." default-visibility="enabled">...</value>
             </values>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -1612,11 +1623,22 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants occupation requires advanced education or certification">
-              <doc-attr id="b302@kyfpr_rmod" />
+              <doc-attr id="b303@kyfpr_rmod" />
               <doc-attr id="fpr_advanced_ed_required" />
             </input-attr>
-            <caption>&lt;p&gt;Does your job require advanced education or a certification?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Does your job require advanced education or a certification or a license?&lt;/p&gt;</caption>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -1629,11 +1651,11 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <doc-attr id="b69@kyfpr_rmod" />
               <doc-attr id="fpr_refused_suitable" />
             </input-attr>
-            <caption>&lt;p&gt;Have you refused an offer of suitable work since %g01_filing_date%?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Have you refused an offer of work since %g01_filing_date%?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s29" name="Work Availability Information" public-id="" order="4" screen-attr="" folder="12">
+      <screen type="Question" id="s29" name="Your Availability For Work" public-id="" order="4" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1686,8 +1708,33 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <doc-attr id="b51@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_cares" />
             </input-attr>
-            <caption>&lt;p&gt;Does the care of others (child care, elder care, care of family member, etc.)limit your ability to look for or accept work?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Does the care of others (child care, elder care, care of family member, etc.) limit your ability to look for or accept work?&lt;/p&gt;</caption>
           </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is incarcerated">
+              <doc-attr id="b55@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_in_jail" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you incarcerated or scheduled to report for incarceration (imprisoned, jailed, house arrest, work release, etc.)?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -1725,28 +1772,14 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant is a corporate officer in a closely-held corporation">
-              <doc-attr id="b265@kyfpr_rmod" />
+              <doc-attr id="b266@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_is_closely_held" />
             </input-attr>
             <caption>&lt;p&gt;Are you a corporate officer in a closely-held corporation?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant is incarcerated">
-              <doc-attr id="b55@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_in_jail" />
-            </input-attr>
-            <caption>&lt;p&gt;Are you incarcerated or scheduled to report for incarceration (imprisoned, jailed, house arrest, work release, etc.)?&lt;/p&gt;</caption>
-          </input>
         </controls>
       </screen>
-      <screen type="Question" id="s30" name="Transportation Detail" public-id="" order="5" screen-attr="" folder="12">
+      <screen type="Question" id="s30" name="Your Transportation Restrictions " public-id="" order="5" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1767,12 +1800,38 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant has an alternative means of transportation">
-              <doc-attr id="b42@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_has_alt_trans" />
+            <input-attr text="the date the restriction on the claimants transportation began">
+              <doc-attr id="p68@kyfpr_rmod" />
+              <doc-attr id="fpr_trans_restrict_start" />
             </input-attr>
-            <caption>&lt;p&gt;Do you have any possible alternate means of transportation?&lt;/p&gt; </caption>
+            <caption>&lt;p&gt;When did this restriction on your transportation begin?&lt;/p&gt;
+</caption>
           </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant knows when the transportation restriction will end">
+              <doc-attr id="b304@kyfpr_rmod" />
+              <doc-attr id="fpr_knows_when_trans_restrict_ends" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you know when this restriction on your transportation will end?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -1820,30 +1879,15 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the date the restriction on the claimants transportation began">
-              <doc-attr id="p68@kyfpr_rmod" />
-              <doc-attr id="fpr_trans_restrict_start" />
+            <input-attr text="the claimant has an alternative means of transportation">
+              <doc-attr id="b42@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_has_alt_trans" />
             </input-attr>
-            <caption>&lt;p&gt;When did this restriction on your transportation begin?&lt;/p&gt;
-</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant knows when the transportation restriction will end">
-              <doc-attr id="b302@kyfpr_rmod" />
-              <doc-attr id="fpr_knows_when_trans_restrict_ends" />
-            </input-attr>
-            <caption>&lt;p&gt;Do you know when this restriction on your transportation will end?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Do you have any alternate means of transportation?&lt;/p&gt; </caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s31" name="Transportation Restriction" public-id="" order="6" screen-attr="" folder="12">
+      <screen type="Question" id="s31" name="Your Transportation Restriction End Date" public-id="" order="6" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1872,7 +1916,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s32" name="Alternative Transportation" public-id="" order="7" screen-attr="" folder="12">
+      <screen type="Question" id="s32" name="Your Alternative Transportation" public-id="" order="7" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1885,14 +1929,14 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
             </control-properties>
             <caption>&lt;br&gt;</caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" default-value="My wifes broom">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">6</property>
+              <property name="lines" type="integer">3</property>
             </control-properties>
             <input-attr text="the claimants description of their alternate means of transportation">
               <doc-attr id="p70@kyfpr_rmod" />
@@ -1903,7 +1947,7 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s33" name="School or Training Program Information" public-id="" order="8" screen-attr="" folder="12">
+      <screen type="Question" id="s33" name="Your School or Training Program" public-id="" order="8" screen-attr="" folder="12">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -1924,11 +1968,12 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant is in an apprentice program">
-              <doc-attr id="b46@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_is_apprentice" />
+            <input-attr text="the date the claimant started the training program">
+              <doc-attr id="p72@kyfpr_rmod" />
+              <doc-attr id="fpr_training_start_date" />
             </input-attr>
-            <caption>&lt;p&gt;Are you in a trade union apprentice program?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;When did you begin school or training program?&lt;/p&gt;
+</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -1938,12 +1983,47 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant's (school, training) has been approved by this Division">
-              <doc-attr id="b47@kyfpr_rmod" />
-              <doc-attr id="fpr_claimants_school_is_ok" />
+            <input-attr text="the completion date of the claimants training program">
+              <doc-attr id="p73@kyfpr_rmod" />
+              <doc-attr id="fpr_training_end_date" />
             </input-attr>
-            <caption>&lt;p&gt;Has your enrollment in school or training program been approved by the Division of Unemployment Insurance?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;When do you expect to complete your school or training program?&lt;/p&gt;
+</caption>
           </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the approximate number of hours the claimant spends in training per week">
+              <doc-attr id="p74@kyfpr_rmod" />
+              <doc-attr id="fpr_training_hrs_per_wk" />
+            </input-attr>
+            <caption>&lt;p&gt;How many hours per week do you attend class(es) for your school or training program?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="..." default-visibility="enabled">...</value>
+              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
+              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
+              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
+              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
+              <value code="More than 40" default-visibility="enabled">More than 40</value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -2004,14 +2084,12 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the name of the school, training program or educational institution that the claimant has enrolled in">
-              <doc-attr id="p71@kyfpr_rmod" />
-              <doc-attr id="fpr_training_facility_name" />
+            <input-attr text="the claimant is in an apprentice program">
+              <doc-attr id="b46@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_is_apprentice" />
             </input-attr>
-            <caption>&lt;p&gt;What is the name of the school, training program, educational institution?&lt;/p&gt;
-</caption>
+            <caption>&lt;p&gt;Are you in a trade union apprentice program?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -2021,50 +2099,11 @@ Thank you for your cooperation.&lt;/p&gt;</caption>
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the date the claimant started the training program">
-              <doc-attr id="p72@kyfpr_rmod" />
-              <doc-attr id="fpr_training_start_date" />
+            <input-attr text="the claimant's (school, training) has been approved by this Division">
+              <doc-attr id="b47@kyfpr_rmod" />
+              <doc-attr id="fpr_claimants_school_is_ok" />
             </input-attr>
-            <caption>&lt;p&gt;When did you begin school or training program?&lt;/p&gt;
-</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the completion date of the claimants training program">
-              <doc-attr id="p73@kyfpr_rmod" />
-              <doc-attr id="fpr_training_end_date" />
-            </input-attr>
-            <caption>&lt;p&gt;When do you expect to complete your school or training program?&lt;/p&gt;
-</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the approximate number of hours the claimant spends in training per week">
-              <doc-attr id="p74@kyfpr_rmod" />
-              <doc-attr id="fpr_training_hrs_per_wk" />
-            </input-attr>
-            <caption>&lt;p&gt;How many hours per week do you attend class(es) for your school or training program?&lt;/p&gt;
-</caption>
-            <values>
-              <value code="..." default-visibility="enabled">...</value>
-              <value code="1 - 10" default-visibility="enabled">1 - 10</value>
-              <value code="11 - 20" default-visibility="enabled">11 - 20</value>
-              <value code="21 - 30" default-visibility="enabled">21 - 30</value>
-              <value code="31 - 40" default-visibility="enabled">31 - 40</value>
-              <value code="More than 40" default-visibility="enabled">More than 40</value>
-            </values>
+            <caption>&lt;p&gt;Has your enrollment in school or training program been approved by the Division of Unemployment Insurance?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
