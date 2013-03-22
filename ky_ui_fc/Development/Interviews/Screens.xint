@@ -54,6 +54,10 @@
       <folder id="37" text="Labor Dispute Screens" parent="8" order="9" />
       <folder id="35" text="Discharge Screens" order="3" parent="8" />
       <folder id="38" text="TestScreens" order="1" parent="1" />
+      <folder id="39" text="Reduction in Hours (Employee)" parent="8" order="10" />
+      <folder id="40" text="Personal Reasons" order="2" parent="39" />
+      <folder id="41" text="Work Related" order="3" parent="39" />
+      <folder id="42" text="Reduction in Hours (Employer)" parent="8" order="11" />
     </folders>
     <screens>
       <screen type="Summary" id="s1" public-id="summary" name="Demonstration: OET Claim Filing, Version 0.1 " folder="0" order="1">
@@ -12615,6 +12619,1757 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
           </input>
         </controls>
       </screen>
+      <screen type="Question" id="s192" name="Employee Requested Reduction Details for %fpr_emt_visible_name% " public-id="" folder="39" order="1">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants reduction in hours is temporary">
+              <doc-attr id="b823@kyfpr_rmod" />
+              <doc-attr id="scr_rh_is_temporary" />
+            </input-attr>
+            <caption>&lt;p&gt;Is the reduction temporary?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the claimant requested reduction in hours">
+              <doc-attr id="p324@kyfpr_rmod" />
+              <doc-attr id="scr_rh_request_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did you request a reduction in your hours of work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person the claimant spoke with regarding reduction in hours">
+              <doc-attr id="p325@kyfpr_rmod" />
+              <doc-attr id="scr_rh_request_person" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the name of the person to whom you requested a reduction in your hours of work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person the claimant spoke with regarding reduction in hours">
+              <doc-attr id="p326@kyfpr_rmod" />
+              <doc-attr id="scr_rh_title" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the title of the person to whom you requested a reduction in your hours of work?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;
+&lt;ul&gt;
+    &lt;li class="tblue"&gt;Personal Reasons&lt;/li&gt;
+        &lt;ul&gt;
+	        &lt;li class="ns"&gt;Examples of Personal Reasons include but are not limited to:&lt;/li&gt;
+	        &lt;li class="ns"&gt;non work-related injury or health condition&lt;/li&gt; 
+	        &lt;li class="ns"&gt;domestic circumstances, attending school&lt;/li&gt;
+	        &lt;li class="ns"&gt;relocation, military reassignment, etc&lt;/li&gt;
+	     &lt;/ul&gt;
+    &lt;li class="tblue"&gt;Work-Related&lt;/li&gt;
+        &lt;ul&gt;
+	        &lt;li class="ns"&gt;Examples of Work-Related Reasons include but are not limited to:&lt;/li&gt; 
+	        &lt;li class="ns"&gt;working conditions, hurt on the job&lt;/li&gt;
+	        &lt;li class="ns"&gt;lack of training, safety concerns&lt;/li&gt;
+	        &lt;li class="ns"&gt;dispute in the workplace, employer breach of contract&lt;/li&gt;
+	        &lt;li class="ns"&gt;harassment, etc.&lt;/li&gt;
+	     &lt;/ul&gt;
+    &lt;li class="tblue"&gt;Accepted an Offer of Work&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li class="ns"&gt;Quit to go to a new job&lt;/li&gt;
+		    &lt;li class="ns"&gt;quit while maintaining other employment&lt;/li&gt;
+        &lt;/ul&gt;
+&lt;/ul&gt;
+&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the reduction request circumstance">
+              <doc-attr id="p328@kyfpr_rmod" />
+              <doc-attr id="scr_reduction_circumstance" />
+            </input-attr>
+            <caption>&lt;p&gt;Please select the circumstances that most closely reflect the reason you requested a reduction in your hours.&lt;/p&gt;</caption>
+            <values>
+              <value code="SDC01" default-visibility="enabled">Personal Reasons</value>
+              <value code="SDC02" default-visibility="enabled">Work-Related</value>
+              <value code="SDC03" default-visibility="enabled">Accepted an Offer of Work</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s204" name="Work Alternatives Reduction of Hours Details for %fpr_emt_visible_name%" public-id="" order="4" screen-attr="" folder="39">
+        <controls>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant expressed concerns regarding the reason for reduction in hours with the employer">
+              <doc-attr id="b825@kyfpr_rmod" />
+              <doc-attr id="scr_reduction_concerns_expressed" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you express your concerns regarding your reason for requesting a reduction in hours with this employer?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;if Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person with whom the claimant discussed concerns">
+              <doc-attr id="p154@kyfpr_rmod" />
+              <doc-attr id="emt_concerns_expressed_with" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  What was the name of the person with whom you discussed your concerns?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person with whom the claimant discussed concerns">
+              <doc-attr id="p155@kyfpr_rmod" />
+              <doc-attr id="emt_concerns_expressed_title" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimant discused their concerns">
+              <doc-attr id="p156@kyfpr_rmod" />
+              <doc-attr id="emt_concerns_expressed_date" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you discuss your concerns?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the specific actions the employer took to address the concerns">
+              <doc-attr id="p157@kyfpr_rmod" />
+              <doc-attr id="scr_action_employer_took" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What specific actions did the employer take to address or correct the issue(s)?&lt;/p&gt;
+</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant pursued alternatives prior to requesting a reduction">
+              <doc-attr id="b826@kyfpr_rmod" />
+              <doc-attr id="scr_pursued_prior" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you pursue alternatives to requesting a reduction?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;if Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants description of the alternatives that were pursued prior to requesting a reduction">
+              <doc-attr id="p331@kyfpr_rmod" />
+              <doc-attr id="scr_alternatives_prior_reduction" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe all alternatives that were pursued before requesting a reduction in hours&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Not:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants reason for not pursuing alternatives">
+              <doc-attr id="p162@kyfpr_rmod" />
+              <doc-attr id="scr_not_pursued_description" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why were alternatives not pursued?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s203" name="Personal Reasons Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" order="1" folder="40">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class= "pb"&gt;You have indicated you requested a reduction in hours for personal reasons.&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the primary reason for reduction in hours">
+              <doc-attr id="p329@kyfpr_rmod" />
+              <doc-attr id="scr_primary_reason_reduction" />
+            </input-attr>
+            <caption>&lt;p&gt;Please select the primary reason for your request for reduction in hours&lt;/p&gt;
+</caption>
+            <values>
+              <value code="PR01" default-visibility="enabled">Attend school or a training program</value>
+              <value code="PR02" default-visibility="enabled">To move or relocate</value>
+              <value code="PR03" default-visibility="enabled">Responsibility for the care for family member(s) (i.e. dependent care)</value>
+              <value code="PR04" default-visibility="enabled">Lack of transportation</value>
+              <value code="PR05" default-visibility="enabled">Domestic circumstances</value>
+              <value code="PR06" default-visibility="enabled">Medical condition or injury (not caused by the work)</value>
+              <value code="PR07" default-visibility="enabled">Other</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants other personal reason for requesting a reduction in work hours">
+              <doc-attr id="p330@kyfpr_rmod" />
+              <doc-attr id="scr_rh_other" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please explain&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s205" name="Work-Related Reasons Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="1">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;You have indicated you requested a reduction in hours for work-related reasons.&lt;/p&gt;
+</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment work related reduction reason">
+              <doc-attr id="p332@kyfpr_rmod" />
+              <doc-attr id="scr_primary_reduction_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;Please select the primary reason for requesting a work reduction&lt;/p&gt;
+</caption>
+            <values>
+              <value code="RH01" default-visibility="enabled">Disciplinary action imposed by the employer</value>
+              <value code="RH02" default-visibility="enabled">Dispute in the workplace</value>
+              <value code="RH03" default-visibility="enabled">Drug or alcohol test required by the employer</value>
+              <value code="RH04" default-visibility="enabled">Equipment problems</value>
+              <value code="RH05" default-visibility="enabled">Work-related injury or health condition</value>
+              <value code="RH06" default-visibility="enabled">Harassment</value>
+              <value code="RH07" default-visibility="enabled">Lack of training or experience</value>
+              <value code="RH08" default-visibility="enabled">Religious beliefs</value>
+              <value code="RH09" default-visibility="enabled">Pay practices or rate of pay</value>
+              <value code="RH10" default-visibility="enabled">Distance to work</value>
+              <value code="RH11" default-visibility="enabled">Work hours required by the employer</value>
+              <value code="RH12" default-visibility="enabled">Reduction in workforce initiative by the employer (i.e. accepting a buyout)</value>
+              <value code="RH13" default-visibility="enabled">Failed to uphold your conditions of hire (i.e. failing to maintain a certification)</value>
+              <value code="RH14" default-visibility="enabled">Other</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants other reason for requesting a reduction in work hours">
+              <doc-attr id="p333@kyfpr_rmod" />
+              <doc-attr id="scr_reduction_other" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please Explain&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s206" name="Employer Requested Reduction Details for %fpr_emt_visible_name% " public-id="" folder="42" order="1">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employer imposed reduction in work hours is temporary">
+              <doc-attr id="b828@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_reduction_temporary" />
+            </input-attr>
+            <caption>&lt;p&gt;Is the reduction temporary?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the employer reduced the claimanrts work hours">
+              <doc-attr id="p334@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_reduction_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did the employer reduce your hours of work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the name of the person who reduced the claimants work hours">
+              <doc-attr id="p335@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_name" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the name of the person who informed you that your hours of work were reduced?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the title of the person who reduced the claimants work hours">
+              <doc-attr id="p336@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_title" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the title of the person who informed you that your hours of work were reduced?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the reason the employment reduced the claimants work hours">
+              <doc-attr id="p337@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_reduction_reason" />
+            </input-attr>
+            <values>
+              <value code="Business Slow-down" default-visibility="enabled">Business Slow-down</value>
+              <value code="Disciplinary Action" default-visibility="enabled">Disciplinary Action</value>
+              <value code="Other" default-visibility="enabled">Other</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+            <caption>&lt;p&gt;Why did the employer reduce your hours of work?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the other reason the employment reduced the claimants work hours">
+              <doc-attr id="p338@kyfpr_rmod" />
+              <doc-attr id="scr_rhe_reduction_other" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please Explain&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s207" name="Effort to Correct Behavior Reduction in Hours Details for %fpr_emt_visible_name% " public-id="" folder="42" order="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the action the claimant took to try and prevent the reduction in hours">
+              <doc-attr id="p339@kyfpr_rmod" />
+              <doc-attr id="scr_prevent_reduction_action" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe what action you took to correct your behavior or prevent your reduction in hours&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s208" name="Disciplinary Action Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="2">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the diciplinary action that the employment imposed which caused the claimant to request a reduction in hours">
+              <doc-attr id="p340@kyfpr_rmod" />
+              <doc-attr id="scr_rh_employer_action" />
+            </input-attr>
+            <caption>&lt;p&gt;What disciplinary action did the employer impose that caused you to request a reduction in hours?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the employer imposed the disciplinary action">
+              <doc-attr id="p341@kyfpr_rmod" />
+              <doc-attr id="scr_rh_disciplinary_action_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date was this disciplinary action imposed?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the disciplinary action administered was in accordance with the employee handbook">
+              <doc-attr id="b829@kyfpr_rmod" />
+              <doc-attr id="scr_rh_action_in_accordance" />
+            </input-attr>
+            <caption>&lt;p&gt;Was this disciplinary action administered in accordance with the employee handbook or employer policy?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received warnings that disciplinary actions would be imposed">
+              <doc-attr id="b830@kyfpr_rmod" />
+              <doc-attr id="scr_rh_disciplinary_warning" />
+            </input-attr>
+            <caption>&lt;p&gt;Had you previously received warnings or disciplinary action during this employment?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s209" name="Dispute in the Workplace Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="3">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the circumstances of the dispute that caused the claimant to request a reduction in hours">
+              <doc-attr id="p342@kyfpr_rmod" />
+              <doc-attr id="scr_rh_dispute_circumstance" />
+            </input-attr>
+            <caption>&lt;p&gt;What circumstances surrounding the dispute led you to request a reduction in hours?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the impact that the workplace dispute had on the claimants employment">
+              <doc-attr id="p343@kyfpr_rmod" />
+              <doc-attr id="scr_rh_dispute_impact" />
+            </input-attr>
+            <caption>&lt;p&gt;How did the dispute in the workplace impact your employment?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the person that the claimant has a dispute with">
+              <doc-attr id="p344@kyfpr_rmod" />
+              <doc-attr id="scr_rh_dispute_person" />
+            </input-attr>
+            <caption>&lt;p&gt;With whom did the dispute take place?&lt;/p&gt;</caption>
+            <values>
+              <value code="Management" default-visibility="enabled">Management</value>
+              <value code="Supervisor" default-visibility="enabled">Supervisor</value>
+              <value code="Co-Worker" default-visibility="enabled">Co-Worker</value>
+              <value code="Customer" default-visibility="enabled">Customer</value>
+              <value code="Other" default-visibility="enabled">Other</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the other person that the claimant had a dispute with">
+              <doc-attr id="p345@kyfpr_rmod" />
+              <doc-attr id="scr_rh_dispute_other" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please Describe&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the final incident took place that caused the claimant to request reduction in hours">
+              <doc-attr id="p346@kyfpr_rmod" />
+              <doc-attr id="scr_rh_final_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the final incident take place?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s214" name="Drug or Alcohol Test Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="4">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the reason that the claimant requested a reduction in hours rather than submit to a drug/alcohol test">
+              <doc-attr id="p347@kyfpr_rmod" />
+              <doc-attr id="scr_rh_submit_alcohol" />
+            </input-attr>
+            <caption>&lt;p&gt;Why did you request a reduction in hours rather than submit to (or complete) the employer’s drug and/or alcohol test?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the drug/alcohol test was to be conducted that caused the claimant to request reduced hours">
+              <doc-attr id="p348@kyfpr_rmod" />
+              <doc-attr id="scr_rh_drug_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date was the test to be conducted?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment has policy regarding drug/alcohol testing">
+              <doc-attr id="b845@kyfpr_rmod" />
+              <doc-attr id="scr_rh_drug_policy" />
+            </input-attr>
+            <caption>&lt;p&gt;Does the employer have a policy concerning drug and/or alcohol testing?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
+            </control-properties>
+            <input-attr text="the reason for the drug/alcohol test that caused the claimant to request reduced hours">
+              <doc-attr id="p349@kyfpr_rmod" />
+              <doc-attr id="scr_rh_drug_reason" />
+            </input-attr>
+            <caption>&lt;p&gt;What was the reason for the drug and/or alcohol test?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="Random" default-visibility="enabled">Random</value>
+              <value code="Post Accident" default-visibility="enabled">Post Accident</value>
+              <value code="Pre-Employment" default-visibility="enabled">Pre-Employment</value>
+              <value code="Reasonable Suspicion" default-visibility="enabled">Reasonable Suspicion</value>
+              <value code="Follow-up Testing" default-visibility="enabled">Follow-up Testing</value>
+              <value code="Other" default-visibility="enabled">Other</value>
+              <value code="" default-visibility="enabled">
+              </value>
+            </values>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Other:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the other reason for the drug/alcohol test that caused the claimant to request reduced hours">
+              <doc-attr id="p350@kyfpr_rmod" />
+              <doc-attr id="scr_rh_other_drug_reason" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please Describe&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s218" name="Equipment Problems Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="5">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of why equipment problems caused them to request a reduction in work hours">
+              <doc-attr id="p351@kyfpr_rmod" />
+              <doc-attr id="scr_rh_equipment_description" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final equipment problem(s) that caused you to request a reduction in hours.&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the final equipment problem occured which caused the claimant to request reduced hours">
+              <doc-attr id="p352@kyfpr_rmod" />
+              <doc-attr id="scr_rh_equipment_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the final incident take place?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of how the equipment problem impacted their employment and caused them to request reduced hours">
+              <doc-attr id="p353@kyfpr_rmod" />
+              <doc-attr id="scr_rh_equipment_impact" />
+            </input-attr>
+            <caption>&lt;p&gt;How did the equipment problem(s) impact your employment?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the equipment problem that caused the claimant to request reduced hours was a one-time incident">
+              <doc-attr id="b846@kyfpr_rmod" />
+              <doc-attr id="scr_rh_one_time_incident" />
+            </input-attr>
+            <caption>&lt;p&gt;Was the problem(s) with the equipment a one-time incident?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the equipment that caused the claimant to request reduced hours was serviced according to industry standards">
+              <doc-attr id="b847@kyfpr_rmod" />
+              <doc-attr id="scr_rh_equipment_service" />
+            </input-attr>
+            <caption>&lt;p&gt;Was the equipment serviced/repaired in accordance with industry standards?	&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was trained to use the equipment that caused them to request reduced hours">
+              <doc-attr id="b848@kyfpr_rmod" />
+              <doc-attr id="scr_rh_trained" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you trained or authorized to use the equipment?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment was aware of the equipment problems that caused the claimant to request reduced hours">
+              <doc-attr id="b849@kyfpr_rmod" />
+              <doc-attr id="scr_rh_employment_aware" />
+            </input-attr>
+            <caption>&lt;p&gt;Was the employer made aware of the equipment problem(s) prior to the request of a reduction in hours?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the means by which the employment was made aware of the equipment problems that caused the claimant to request reduced hours">
+              <doc-attr id="p354@kyfpr_rmod" />
+              <doc-attr id="scr_rh_employment_aware_method" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  How was the employer made aware?&lt;/p&gt;
+</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s220" name="Work-Related Injury or Health Condition Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="6">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the nature of the injury or medical condition that caused the claimant to request reduced hours">
+              <doc-attr id="p355@kyfpr_rmod" />
+              <doc-attr id="scr_rh_injury_description" />
+            </input-attr>
+            <caption>&lt;p&gt;What type of injury or medical condition caused you to request a reduction in hours?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the injury or medical condition occured that caused the claimant to request reduced hours">
+              <doc-attr id="p356@kyfpr_rmod" />
+              <doc-attr id="scr_rh_start_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the injury occur or when did the medical condition begin?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the injury or medical condition that caused the claimant to request reduced hours was caused by the employment">
+              <doc-attr id="b850@kyfpr_rmod" />
+              <doc-attr id="scr_rh_condition_caused" />
+            </input-attr>
+            <caption>&lt;p&gt;Was this injury or medical condition caused by the employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has medical documentation that shows that the injury or medical condition that caused them to request reduced hours was caused by the work">
+              <doc-attr id="b851@kyfpr_rmod" />
+              <doc-attr id="scr_rh_medical_documentation" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have medical documentation to show that the condition was caused by the work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was approved for worker comp due to the injury or medical condition thart caused them to request reduced hours">
+              <doc-attr id="b852@kyfpr_rmod" />
+              <doc-attr id="scr_rh_workers_comp_approved" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you approved for Workers Compensation due to this injury or medical condition?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant exhausted all available leave time prior to requesting reduced hours">
+              <doc-attr id="b853@kyfpr_rmod" />
+              <doc-attr id="scr_rh_exhausted_leave_time" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you exhaust all available leave time (including short term disability, FMLA, etc.) prior to requesting a reduction in hours?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants physican has provided restrictive reasons for them to request reduced hours">
+              <doc-attr id="b854@kyfpr_rmod" />
+              <doc-attr id="scr_rh_restrictive_reasons" />
+            </input-attr>
+            <caption>&lt;p&gt;Has your doctor provided you with any restrictions for returning to this position?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment is able able to accomodate the restrictions that caused the claimant to request reduced hours">
+              <doc-attr id="b855@kyfpr_rmod" />
+              <doc-attr id="scr_rh_restrictions_accomodated" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Is the employer able to accommodate these restrictions?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s223" name="Harassment Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="7">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of the final incident of harassment that caused them to request reduced hours">
+              <doc-attr id="p357@kyfpr_rmod" />
+              <doc-attr id="scr_rh_harassment_description" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe final incident of harassment that caused you to request a reduction in hours&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the incident of harassment occured which caused the claimant to request reduced hours">
+              <doc-attr id="p358@kyfpr_rmod" />
+              <doc-attr id="scr_rh_incident_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the final incident take place?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of how the harassment impacted the employment to the point where they requested reduced work hours">
+              <doc-attr id="p359@kyfpr_rmod" />
+              <doc-attr id="scr_rh_employment_impact" />
+            </input-attr>
+            <caption>&lt;p&gt;How did the incident(s) of harassment impact your employment?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="there was repeated incidents of harassment that caused the claimant to request reduced hours">
+              <doc-attr id="b856@kyfpr_rmod" />
+              <doc-attr id="scr_rh_repeated_harassment" />
+            </input-attr>
+            <caption>&lt;p&gt;Were there repeated occurrences of this harassment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment has a policy regarding harassment">
+              <doc-attr id="b857@kyfpr_rmod" />
+              <doc-attr id="scr_rh_policy" />
+            </input-attr>
+            <caption>&lt;p&gt;Does the employer have a harassment policy?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant followed proper procedures of reporting the harassment prior to requesting reduced work hours">
+              <doc-attr id="b858@kyfpr_rmod" />
+              <doc-attr id="scr_rh_reporting_procedures" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you follow the proper procedures to report the alleged harassment (such as filing a formal complaint, 
+addressing your concerns with the employer)?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s225" name="Lack of Training/Experience Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="8">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants lack of training or experience caused them to request reduced hours">
+              <doc-attr id="b859@kyfpr_rmod" />
+              <doc-attr id="scr_rh_training_lack" />
+            </input-attr>
+            <caption>&lt;p&gt;Does your lack of training or experience negatively impact your employment?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of how their lack of training prompted them to request reduced hours">
+              <doc-attr id="p360@kyfpr_rmod" />
+              <doc-attr id="scr_rh_lack_description" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has prior experience doing the type of work that prompted the to request reduced hours">
+              <doc-attr id="b860@kyfpr_rmod" />
+              <doc-attr id="scr_rh_prior_experience" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have prior experience doing this type of work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment provided training to the claimant in the area that prompted them to request reduced hours">
+              <doc-attr id="b861@kyfpr_rmod" />
+              <doc-attr id="scr_rh_training_provided" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the employer provide you with training in order to perform your employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received warnings about their performance in the area that prompted them to request reduced hours">
+              <doc-attr id="b862@kyfpr_rmod" />
+              <doc-attr id="scr_rh_warnings" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you receive any type of warning regarding your work performance?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s228" name="Religious Beliefs Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="9">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of the religious event that caused them to request reduced hours">
+              <doc-attr id="p361@kyfpr_rmod" />
+              <doc-attr id="scr_rh_religious_description" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident that caused you to request a reduction in hours.&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the religious event occured which caused the claimant to request reduced hours">
+              <doc-attr id="p362@kyfpr_rmod" />
+              <doc-attr id="scr_rh_event_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the final incident take place?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the specific details of the religious conflict that prompted the claimant to request reduced hours">
+              <doc-attr id="p363@kyfpr_rmod" />
+              <doc-attr id="scr_rh_conflict_details" />
+            </input-attr>
+            <caption>&lt;p&gt;How, specifically, did this incident conflict with your religious beliefs?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the religious conflict that prompted the claimant to request reduced hours is recurring">
+              <doc-attr id="b863@kyfpr_rmod" />
+              <doc-attr id="scr_rh_recurring" />
+            </input-attr>
+            <caption>&lt;p&gt;Is this conflict with your religious beliefs a recurring issue?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant was aware of possible religious conflicts that would prompt them to request reduced hours prior to the start of the employment">
+              <doc-attr id="b864@kyfpr_rmod" />
+              <doc-attr id="scr_rh_conflict_prior_to_start" />
+            </input-attr>
+            <caption>&lt;p&gt;Were you aware of any possible conflict between your job duties and your religious beliefs prior to the start of the employment?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the conditions of the employment regarding the religious conflicts that caused the claimant to request reduced hours changed after accepting the employment">
+              <doc-attr id="b865@kyfpr_rmod" />
+              <doc-attr id="scr_rh_changed_conflict" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the conditions of work change after you accepted the employment?&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimant description of how the religious conflict changed after accepting employment and prompted them to request reduced hours">
+              <doc-attr id="p364@kyfpr_rmod" />
+              <doc-attr id="scr_rh_conflict_change_description" />
+            </input-attr>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe these changes&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s229" name="Rate of Pay/Pay Practices Reduction in Hours Details for %fpr_emt_visible_name%" public-id="" folder="41" order="10">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">false</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">2</property>
+            </control-properties>
+            <input-attr text="the claimants description of the final pay practice incident that caused them to request reduced hours">
+              <doc-attr id="p365@kyfpr_rmod" />
+              <doc-attr id="scr_rh_paydescription" />
+            </input-attr>
+            <caption>&lt;p&gt;Please describe the final incident that caused you to request a reduction in hours.&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the pay practice incident occured which caused the claimant to request reduced hours">
+              <doc-attr id="p366@kyfpr_rmod" />
+              <doc-attr id="scr_rh_pay_incident_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When did the final incident take place?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the rate of pay changed from the agreed rate at time of hire which caused the claimant to request reduced hours">
+              <doc-attr id="b866@kyfpr_rmod" />
+              <doc-attr id="scr_rh_rate_change" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the rate of pay change from the rate agreed upon at the time of hire?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employments pay practice changed from the time of hire which caused the claimant to request reduced hours">
+              <doc-attr id="b867@kyfpr_rmod" />
+              <doc-attr id="scr_rh_pay_practice" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the employer’s pay practice (e.g. pay dates, etc.) change from what was agreed upon at the time of hire?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
     </screens>
     <documents />
     <screen-orders>
@@ -13749,7 +15504,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
         </connections>
       </flow>
       <flow folder="3" order="19" name="the Currently Employed Collection" id="f31" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -13762,6 +15517,13 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
           <node node-id="8" node-type="decision" attribute-id="the claimant was reduced from full-time employment to less than full-time employment" />
           <node node-id="9" node-type="screen" screen-id="s177" mandatory="true" />
           <node node-id="10" node-type="screen" screen-id="s191" mandatory="true" />
+          <node node-id="11" node-type="decision" attribute-id="the claimant has been employed less than full-time by this employer since the date of hire" />
+          <node node-id="12" node-type="screen" screen-id="s178" mandatory="true" />
+          <node node-id="13" node-type="decision" attribute-id="the claimant had the option to work full time at the time of hire" />
+          <node node-id="14" node-type="sub-flow" flow-id="the Reduction in Hours (Employee) Collection" />
+          <node node-id="15" node-type="decision" attribute-id="the claimant voluntarily requested a reduction in the hours of the employment" />
+          <node node-id="16" node-type="screen" screen-id="s204" mandatory="true" />
+          <node node-id="17" node-type="sub-flow" flow-id="the Reduction in Hours (Employer) Collection" />
         </nodes>
         <connections>
           <connection from="0" to="2" />
@@ -13787,8 +15549,33 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
             </condition>
           </connection>
           <connection from="8" to="10" />
-          <connection from="9" to="1" />
-          <connection from="10" to="1" />
+          <connection from="9" to="11" />
+          <connection from="10" to="15" />
+          <connection from="11" to="10">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="12" />
+          <connection from="12" to="13" />
+          <connection from="13" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="14" to="16" />
+          <connection from="15" to="14">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="15" to="17">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="16" to="1" />
+          <connection from="17" to="1" />
         </connections>
       </flow>
       <flow order="4" name="Employer Details Flow" id="f39" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
@@ -14062,6 +15849,122 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <boolean-val>true</boolean-val>
             </condition>
           </connection>
+        </connections>
+      </flow>
+      <flow folder="3" order="23" name="the Reduction in Hours (Employee) Collection" id="f54" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s192" mandatory="true" />
+          <node node-id="3" node-type="screen" screen-id="s203" mandatory="true" />
+          <node node-id="4" node-type="decision" attribute-id="the employment personal reasons screen should be displayed" />
+          <node node-id="5" node-type="decision" attribute-id="the employment work related screen should be displayed" />
+          <node node-id="6" node-type="screen" screen-id="s205" mandatory="true" />
+          <node node-id="7" node-type="decision" attribute-id="the employment disciplinary action reduction in hours details screen should be displayed" />
+          <node node-id="8" node-type="screen" screen-id="s208" mandatory="true" />
+          <node node-id="9" node-type="decision" attribute-id="the employment dispute in the workplace reduction in hours details screen should be displayed" />
+          <node node-id="10" node-type="screen" screen-id="s209" mandatory="true" />
+          <node node-id="11" node-type="decision" attribute-id="the employment drug or alcohol test reduction in hours details screen should be displayed" />
+          <node node-id="12" node-type="screen" screen-id="s214" mandatory="true" />
+          <node node-id="13" node-type="decision" attribute-id="the employment equipment problems reduction in hours details screen should be displayed" />
+          <node node-id="14" node-type="screen" screen-id="s218" mandatory="true" />
+          <node node-id="15" node-type="decision" attribute-id="the employment work-related injury or health condition reduction in hours details should be displayed" />
+          <node node-id="16" node-type="screen" screen-id="s220" mandatory="true" />
+          <node node-id="17" node-type="decision" attribute-id="the employment harassment reduction in hours details should be displayed" />
+          <node node-id="18" node-type="screen" screen-id="s223" mandatory="true" />
+          <node node-id="19" node-type="decision" attribute-id="the employment lack of training/experience reduction in hours details should be displayed" />
+          <node node-id="20" node-type="screen" screen-id="s225" mandatory="true" />
+          <node node-id="21" node-type="decision" attribute-id="the employment religious beliefs reduction in hours details should be displayed" />
+          <node node-id="22" node-type="screen" screen-id="s228" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="2" />
+          <connection from="2" to="4" />
+          <connection from="3" to="1" />
+          <connection from="4" to="3">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="4" to="5" />
+          <connection from="5" to="6">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="5" to="1" />
+          <connection from="6" to="7" />
+          <connection from="7" to="8">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="7" to="9" />
+          <connection from="8" to="1" />
+          <connection from="9" to="10">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="9" to="11" />
+          <connection from="10" to="1" />
+          <connection from="11" to="12">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="11" to="13" />
+          <connection from="12" to="1" />
+          <connection from="13" to="14">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="13" to="15" />
+          <connection from="14" to="1" />
+          <connection from="15" to="16">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="15" to="17" />
+          <connection from="16" to="1" />
+          <connection from="17" to="18">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="17" to="19" />
+          <connection from="18" to="1" />
+          <connection from="19" to="20">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="19" to="21" />
+          <connection from="20" to="1" />
+          <connection from="21" to="22">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="21" to="1" />
+          <connection from="22" to="1" />
+        </connections>
+      </flow>
+      <flow folder="3" order="24" name="the Reduction in Hours (Employer) Collection" id="f55" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s207" mandatory="true" />
+          <node node-id="3" node-type="screen" screen-id="s206" mandatory="true" />
+        </nodes>
+        <connections>
+          <connection from="0" to="3" />
+          <connection from="2" to="1" />
+          <connection from="3" to="2" />
         </connections>
       </flow>
     </flows>
