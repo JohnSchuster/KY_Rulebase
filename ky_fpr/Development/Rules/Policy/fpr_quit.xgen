@@ -8,20 +8,6 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b119" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's mandatory retirement is pursuant to the employer's general plan</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to the employer''s general plan'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b120" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer's general plan includes retirement benefits</base>
-          <parse>s(ver('10.4.2.18'),v(include,t(simple,present,normal)),sb('the employer''s general plan',singular),o('retirement benefits'))</parse>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -701,7 +687,20 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a medical condition that was not caused by the work'))</parse>
         </text>
       </attribute>
+      <attribute name="b172" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's mandatory retirement is pursuant to this employer's general plan</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to this employer''s general plan'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b173" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer's general plan includes retirement benefits</base>
+          <parse>s(ver('10.4.2.18'),v(include,t(simple,present,normal)),sb('this employer''s general plan',singular),o('retirement benefits'))</parse>
+        </text>
+      </attribute>
     </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
   <relationships>
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
@@ -1131,7 +1130,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the claimant abandoned the employment" ruleburst="true" concludes="b22" folder="0" source-offset="11173">
+    <rule id="18" name="the claimant abandoned the employment" ruleburst="true" concludes="b22" folder="0" source-offset="11172">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>
@@ -1156,7 +1155,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute" ruleburst="true" concludes="b142" folder="0" source-offset="11496">
+    <rule id="19" name="the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute" ruleburst="true" concludes="b142" folder="0" source-offset="11495">
       <rule-xml>
         <conclude attr-id="b142" entity-id="employment" scope-id="employment0">
           <value>
@@ -1174,7 +1173,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the claimant left the employment without a bona fide offer of continuing work" ruleburst="true" concludes="b24" folder="0" source-offset="11937">
+    <rule id="20" name="the claimant left the employment without a bona fide offer of continuing work" ruleburst="true" concludes="b24" folder="0" source-offset="11936">
       <rule-xml>
         <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
           <value>
@@ -1195,7 +1194,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the claimant voluntarily left the employment in anticipation of (discharge, layoff)" ruleburst="true" concludes="b25" folder="0" source-offset="12250">
+    <rule id="21" name="the claimant voluntarily left the employment in anticipation of (discharge, layoff)" ruleburst="true" concludes="b25" folder="0" source-offset="12249">
       <rule-xml>
         <conclude attr-id="b25" entity-id="employment" scope-id="employment0">
           <value>
@@ -1221,7 +1220,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer" ruleburst="true" concludes="b108" folder="0" source-offset="12978">
+    <rule id="22" name="the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer" ruleburst="true" concludes="b108" folder="0" source-offset="12977">
       <rule-xml>
         <conclude attr-id="b108" entity-id="employment" scope-id="employment0">
           <value>
@@ -1244,7 +1243,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the claimant left the employment due to the work hours required by this employer" ruleburst="true" concludes="b114" folder="0" source-offset="13649">
+    <rule id="23" name="the claimant left the employment due to the work hours required by this employer" ruleburst="true" concludes="b114" folder="0" source-offset="13648">
       <rule-xml>
         <conclude attr-id="b114" entity-id="employment" scope-id="employment0">
           <value>
@@ -1266,7 +1265,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="24" name="the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy" ruleburst="true" concludes="b34" folder="0" source-offset="14102">
+    <rule id="24" name="the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy" ruleburst="true" concludes="b34" folder="0" source-offset="14101">
       <rule-xml>
         <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
           <value>
@@ -1275,14 +1274,8 @@
           <condition>
             <and>
               <attribute attr-id="b118" />
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <attribute attr-id="b119" />
-              </for>
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <attribute attr-id="b120" />
-              </for>
+              <attribute attr-id="b172" />
+              <attribute attr-id="b173" />
               <attribute attr-id="b121" />
             </and>
           </condition>
@@ -1292,7 +1285,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment" ruleburst="true" concludes="b41" folder="0" source-offset="14541">
+    <rule id="25" name="the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment" ruleburst="true" concludes="b41" folder="0" source-offset="14542">
       <rule-xml>
         <conclude attr-id="b41" entity-id="employment" scope-id="employment0">
           <value>
@@ -1311,7 +1304,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="26" name="the claimant voluntarily left the employment to retire" ruleburst="true" concludes="b48" folder="0" source-offset="14892">
+    <rule id="26" name="the claimant voluntarily left the employment to retire" ruleburst="true" concludes="b48" folder="0" source-offset="14893">
       <rule-xml>
         <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
           <value>
@@ -1329,7 +1322,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="27" name="the claimant's separation from the employment is payable within the SIMS precedent" ruleburst="true" concludes="b127" folder="0" source-offset="15086">
+    <rule id="27" name="the claimant's separation from the employment is payable within the SIMS precedent" ruleburst="true" concludes="b127" folder="0" source-offset="15087">
       <rule-xml>
         <conclude attr-id="b127" entity-id="employment" scope-id="employment0">
           <value>
@@ -1349,7 +1342,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="28" name="the claimant voluntarily left the employment without exhausting all reasonable alternatives" ruleburst="true" concludes="b61" folder="0" source-offset="15530">
+    <rule id="28" name="the claimant voluntarily left the employment without exhausting all reasonable alternatives" ruleburst="true" concludes="b61" folder="0" source-offset="15531">
       <rule-xml>
         <conclude attr-id="b61" entity-id="employment" scope-id="employment0">
           <value>
@@ -1369,7 +1362,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="29" name="the claimant voluntarily left the employment when this employer violated the contract of hire" ruleburst="true" concludes="b159" folder="0" source-offset="15857">
+    <rule id="29" name="the claimant voluntarily left the employment when this employer violated the contract of hire" ruleburst="true" concludes="b159" folder="0" source-offset="15858">
       <rule-xml>
         <conclude attr-id="b159" entity-id="employment" scope-id="employment0">
           <value>
@@ -1388,7 +1381,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="30" name="the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress" ruleburst="true" concludes="b160" folder="0" source-offset="16180">
+    <rule id="30" name="the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress" ruleburst="true" concludes="b160" folder="0" source-offset="16181">
       <rule-xml>
         <conclude attr-id="b160" entity-id="employment" scope-id="employment0">
           <value>
