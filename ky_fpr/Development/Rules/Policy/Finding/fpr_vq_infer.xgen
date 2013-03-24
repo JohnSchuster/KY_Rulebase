@@ -1,32 +1,25 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
-    <entity ref="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant requested a reduction in hours</base>
-          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in hours'))</parse>
-        </text>
-      </attribute>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant is payable</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('payable'))</parse>
+          <base>the claimant left the employment rather than take a (drug, alcohol) test as required by this employer's reasonable policy</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment rather than take a (drug, alcohol) test as required by this employer''s reasonable policy'))</parse>
         </text>
       </attribute>
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant's secondary reason was drug and alcohol test</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s secondary reason',singular),o('drug and alcohol test'))</parse>
+          <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
         </text>
       </attribute>
-    </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's policy based finding code</base>
         </text>
       </attribute>
     </entity>
+    <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
   <relationships>
@@ -158,7 +151,7 @@
         <prop name="fragment"> 10</prop>
       </props>
     </rule>
-    <rule id="1" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="412">
+    <rule id="1" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="725">
       <rule-xml>
         <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <row>
@@ -198,21 +191,7 @@
               <string-value>vq_d2_05</string-value>
             </value>
             <condition>
-              <and>
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="b1" />
-                </scope-for>
-                <and>
-                  <not>
-                    <scope-for scope-ref="global0" target-entity-id="global">
-                      <attribute attr-id="b2" />
-                    </scope-for>
-                  </not>
-                  <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b3" />
-                  </scope-for>
-                </and>
-              </and>
+              <attribute attr-id="b2" />
             </condition>
           </row>
           <row>
@@ -268,7 +247,9 @@
               <string-value>vq_d2_12</string-value>
             </value>
             <condition>
-              <false-value />
+              <not>
+                <attribute attr-id="b3" />
+              </not>
             </condition>
           </row>
           <row>
