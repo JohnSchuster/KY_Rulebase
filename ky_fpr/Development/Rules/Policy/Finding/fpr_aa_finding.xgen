@@ -13,6 +13,18 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('mentally able to work'))</parse>
         </text>
       </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's status meets the conditions of eligibility</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available for suitable work'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the issue" id="issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global">
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -30,6 +42,38 @@
     <rule id="0" name="all issues inferred from claim" ruleburst="true" concludes="InferInstance(allissuesinferredfromclaim)" folder="0" source-offset="80">
       <rule-xml>
         <table-conclude-instance relationship-id="allissuesinferredfromclaim" source="global" source-scope-id="global0">
+          <row>
+            <identity>
+              <string-value>aa_d3_01</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_02</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_03</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_04</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
           <row>
             <identity>
               <string-value>aa_d4_01</string-value>
@@ -62,6 +106,61 @@
                   <attribute attr-id="b2" />
                 </not>
               </and>
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_03</string-value>
+            </identity>
+            <condition>
+              <and>
+                <not>
+                  <attribute attr-id="b3" />
+                </not>
+                <not>
+                  <attribute attr-id="b4" />
+                </not>
+              </and>
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_04</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_05</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_06</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_07</string-value>
+            </identity>
+            <condition>
+              <false-value />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_08</string-value>
+            </identity>
+            <condition>
+              <false-value />
             </condition>
           </row>
         </table-conclude-instance>
