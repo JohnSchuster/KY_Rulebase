@@ -97,20 +97,9 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
         </text>
       </attribute>
-      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has provided their (valid, current) alien registration number</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('their (valid, current) alien registration number'))</parse>
-        </text>
-      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants preferred method of receiving unemployment benefits payments</base>
-        </text>
-      </attribute>
-      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the claimants alien registration number</base>
         </text>
       </attribute>
       <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -207,27 +196,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b49" folder="0" source-offset="630">
-      <rule-xml>
-        <conclude attr-id="b49" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <greater-than-equals>
-              <length>
-                <attribute attr-id="p2" />
-              </length>
-              <number-value>7</number-value>
-            </greater-than-equals>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the claimants current permanent state is Kentucky" ruleburst="true" concludes="b35" folder="0" source-offset="814">
+    <rule id="3" name="the claimants current permanent state is Kentucky" ruleburst="true" concludes="b35" folder="0" source-offset="631">
       <rule-xml>
         <conclude attr-id="b35" entity-id="global" scope-id="global0">
           <value>
@@ -245,7 +214,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimants current state is Kentucky" ruleburst="true" concludes="b36" folder="0" source-offset="962">
+    <rule id="4" name="the claimants current state is Kentucky" ruleburst="true" concludes="b36" folder="0" source-offset="779">
       <rule-xml>
         <conclude attr-id="b36" entity-id="global" scope-id="global0">
           <value>
@@ -263,7 +232,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant has completed the final screen" ruleburst="true" concludes="b37" folder="0" source-offset="1123">
+    <rule id="5" name="the claimant has completed the final screen" ruleburst="true" concludes="b37" folder="0" source-offset="940">
       <rule-xml>
         <conclude attr-id="b37" entity-id="global" scope-id="global0">
           <value>
@@ -286,7 +255,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant was given access to the PAM-UI-400 pamphlet" ruleburst="true" concludes="b19" folder="0" source-offset="1849">
+    <rule id="6" name="the claimant was given access to the PAM-UI-400 pamphlet" ruleburst="true" concludes="b19" folder="0" source-offset="1666">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -306,7 +275,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant understands that they must report all wages" ruleburst="true" concludes="b21" folder="0" source-offset="2004">
+    <rule id="7" name="the claimant understands that they must report all wages" ruleburst="true" concludes="b21" folder="0" source-offset="1821">
       <rule-xml>
         <conclude attr-id="b21" entity-id="global" scope-id="global0">
           <value>
@@ -326,7 +295,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant understands that they must look for one or more jobs per week" ruleburst="true" concludes="b23" folder="0" source-offset="2170">
+    <rule id="8" name="the claimant understands that they must look for one or more jobs per week" ruleburst="true" concludes="b23" folder="0" source-offset="1987">
       <rule-xml>
         <conclude attr-id="b23" entity-id="global" scope-id="global0">
           <value>
@@ -346,7 +315,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant understands that there is a one week waiting period per benefit year" ruleburst="true" concludes="b25" folder="0" source-offset="2350">
+    <rule id="9" name="the claimant understands that there is a one week waiting period per benefit year" ruleburst="true" concludes="b25" folder="0" source-offset="2167">
       <rule-xml>
         <conclude attr-id="b25" entity-id="global" scope-id="global0">
           <value>
@@ -366,7 +335,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the former employer is authorized to release information requested in connection with the claimants unemployment insurance benefits" ruleburst="true" concludes="b27" folder="0" source-offset="2541">
+    <rule id="10" name="the former employer is authorized to release information requested in connection with the claimants unemployment insurance benefits" ruleburst="true" concludes="b27" folder="0" source-offset="2358">
       <rule-xml>
         <conclude attr-id="b27" entity-id="global" scope-id="global0">
           <value>
@@ -386,7 +355,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant certifies that the information provided is true and correct to the best of their knowledge" ruleburst="true" concludes="b29" folder="0" source-offset="2787">
+    <rule id="11" name="the claimant certifies that the information provided is true and correct to the best of their knowledge" ruleburst="true" concludes="b29" folder="0" source-offset="2604">
       <rule-xml>
         <conclude attr-id="b29" entity-id="global" scope-id="global0">
           <value>
@@ -406,7 +375,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant understands their rights and wishes to submit their application for unemployment benefits" ruleburst="true" concludes="b31" folder="0" source-offset="3001">
+    <rule id="12" name="the claimant understands their rights and wishes to submit their application for unemployment benefits" ruleburst="true" concludes="b31" folder="0" source-offset="2818">
       <rule-xml>
         <conclude attr-id="b31" entity-id="global" scope-id="global0">
           <value>

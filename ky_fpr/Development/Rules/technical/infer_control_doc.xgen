@@ -1,6 +1,11 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the scenario id</base>
+        </text>
+      </attribute>
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en">
           <base>the claim is in the process of being filed</base>
@@ -9,8 +14,8 @@
       </attribute>
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en">
-          <base>the claim has an able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
+          <base>the claim has at least one able and available issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
         </text>
       </attribute>
       <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
@@ -47,11 +52,6 @@
         <text lang="en">
           <base>the mre should receive a 412A</base>
           <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the mre',plural),o('a 412A'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en">
-          <base>the scenario id</base>
         </text>
       </attribute>
     </entity>
