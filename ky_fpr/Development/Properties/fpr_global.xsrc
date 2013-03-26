@@ -215,8 +215,8 @@
       </attribute>
       <attribute name="b39" type="boolean" public-name="fpr_claimants_trans_no_work">
         <text>
-          <base>the claimant's transportation prevents obtaining (acceptance) of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
+          <base>the claimant's lack of reliable transportation prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s lack of reliable transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="b40" type="boolean" public-name="fpr_claimant_is_in_school">
@@ -415,12 +415,6 @@
         <text>
           <base>the claimant is payable (qualifying)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('payable (qualifying)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b77" type="boolean" public-name="g01_gbl_status_eligible">
-        <text>
-          <base>the claimant's status has met the conditions of eligibility</base>
-          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,perfect)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
         </text>
       </attribute>
       <attribute name="b78" type="boolean" public-name="fpr_override_date_defined">
@@ -836,12 +830,6 @@
         <text>
           <base>the claimant has met the requirements to receive benefits in a new benefit year in accordance with KRS 341.355 (Double Dip)</base>
           <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,perfect)),sb('the claimant',singular),o('the requirements to receive benefits in a new benefit year in accordance with KRS 341.355 (Double Dip)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b386" type="boolean" public-name="fpr_meets_all_other">
-        <text>
-          <base>the claimant meets all other conditions of eligibility</base>
-          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant',singular),o('all other conditions of eligibility'))</parse>
         </text>
       </attribute>
       <attribute name="b387" type="boolean" public-name="fpr_has_physical_health_issue">
@@ -1767,8 +1755,8 @@
       </attribute>
       <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_issue">
         <text>
-          <base>the claim has an able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
+          <base>the claim has at least one able and available issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
         </text>
       </attribute>
       <attribute name="b848" type="boolean" public-name="dis_d4_aa01">
@@ -2079,8 +2067,8 @@
       </attribute>
       <attribute name="b871" type="boolean" public-name="fpr_natural_disaster">
         <text>
-          <base>the claimant is unemployed as a result of a natural disaster that occured on or about the facility where they were employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occured on or about the facility where they were employed'))</parse>
+          <base>the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occurred on or about the facility where they were employed'))</parse>
         </text>
       </attribute>
       <attribute name="b872" type="boolean" public-name="fpr_union_member">
@@ -2420,6 +2408,106 @@
         <text>
           <base>the claim has a deductible income issue</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b975" type="boolean" public-name="fpr_transpo_prev_accept_work">
+        <text>
+          <base>the claimant's transportation prevents obtaining (acceptance) of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b976" type="boolean" public-name="fpr_aa_d3_02_mentally_able">
+        <text>
+          <base>the claimant is eligible (aa_d3_02, mentally able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_02, mentally able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b977" type="boolean" public-name="fpr_aa_d3_01_physically_able">
+        <text>
+          <base>the claimant is eligible (aa_d3_01, physically able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_01, physically able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b978" type="boolean" public-name="fpr_aa_d3_03_available">
+        <text>
+          <base>the claimant is eligible (aa_d3_03, available)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_03, available)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b979" type="boolean" public-name="fpr_aa_d3_04_aws">
+        <text>
+          <base>the claimant is eligible (aa_d3_04, adequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_04, adequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b980" type="boolean" public-name="fpr_aa_d4_01_physically_unable">
+        <text>
+          <base>the claimant is ineligible (aa_d4_01, physically unable)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_01, physically unable)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b981" type="boolean" public-name="fpr_aa_d4_02_mentally_unable">
+        <text>
+          <base>the claimant is ineligible (aa_d4_02, mentally unable)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_02, mentally unable)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b982" type="boolean" public-name="fpr_aa_d4_03_physically_unable">
+        <text>
+          <base>the claimant is ineligible (aa_d4_03, not_available)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_03, not_available)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b983" type="boolean" public-name="fpr_aa_d4_04_inadequate_ws">
+        <text>
+          <base>the claimant is ineligible (aa_d4_04, inadequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_04, inadequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b984" type="boolean" public-name="fpr_aa_d4_05_alien_status">
+        <text>
+          <base>the claimant is ineligible (aa_d4_05, alien status)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_05, alien status)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b985" type="boolean" public-name="fpr_aa_d4_06_d_rt">
+        <text>
+          <base>the claimant is ineligible (aa_d4_06, disaster roads or transportation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_06, disaster roads or transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b986" type="boolean" public-name="fpr_aa_d4_07_d_a">
+        <text>
+          <base>the claimant is ineligible (aa_d4_07, disaster availability)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_07, disaster availability)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b987" type="boolean" public-name="fpr_aa_d4_08_dua">
+        <text>
+          <base>the claimant is ineligible (aa_d4_08, dua)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible (aa_d4_08, dua)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p393" type="text" public-name="fpr_aa_claim_asserted_nod_code">
+        <text>
+          <base>the claim's asserted nod finding code</base>
+        </text>
+      </attribute>
+      <attribute name="b988" type="boolean" public-name="fpr_aa_claim_nodc_defined">
+        <text>
+          <base>the claim's asserted nod finding code is defined</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim''s asserted nod finding code',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p394" type="text" public-name="fpr_aa_alien_reg_code">
+        <text>
+          <base>the claimant's alien registration code</base>
+        </text>
+      </attribute>
+      <attribute name="b989" type="boolean" public-name="fpr_aa_selfemp_seeking">
+        <text>
+          <base>the claimant's (self employment, commission only work) limits their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(limit,t(simple,present,normal)),sb('the claimant''s (self employment, commission only work)',singular),o('their availability for suitable work'))</parse>
         </text>
       </attribute>
     </entity>
@@ -3262,8 +3350,8 @@
       </attribute>
       <attribute name="b144" type="boolean" public-name="emt_voluntary_quit">
         <text>
-          <base>the claimant voluntarily left the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment'))</parse>
+          <base>the claimant left the employment voluntarily</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily'))</parse>
         </text>
       </attribute>
       <attribute name="b145" type="boolean" public-name="emt_discharged_misconduct">
@@ -3606,12 +3694,6 @@
         <text>
           <base>during the employment the claimant engaged in conduct that endangered themselves</base>
           <parse>s(ver('10.4.2.18'),v(engage,t(simple,past,normal)),sb('during the employment the claimant',plural),o('in conduct that endangered themselves'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b202" type="boolean" public-name="emt_adopted_subdivision_statute">
-        <text>
-          <base>the state of re-location of their spouse during the employment has adopted a statute substantially similar to that subdivision (Kentucky Statute)</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the state of re-location of their spouse during the employment',singular),o('adopted a statute substantially similar to that subdivision (Kentucky Statute)'))</parse>
         </text>
       </attribute>
       <attribute name="b204" type="boolean" public-name="emt_left_personal_reasons">
@@ -5123,7 +5205,7 @@
       </attribute>
       <attribute name="p157" type="text" public-name="scr_the_selected_status">
         <text>
-          <base>the selected employment status</base>
+          <base>the employment selected status</base>
         </text>
       </attribute>
       <attribute name="b735" type="boolean" public-name="scr_branch_to_quit_details">
@@ -6235,7 +6317,7 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause to refuse the employment offer'))</parse>
         </text>
       </attribute>
-      <attribute name="b849" type="boolean">
+      <attribute name="b849" type="boolean" public-name="emt_adopted_subdivision_statute">
         <text>
           <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
@@ -6351,7 +6433,7 @@
           <base>the employment's contributing weeks, visible text</base>
         </text>
       </attribute>
-      <attribute name="p322" type="text" public-name="assert_nod_finding_code">
+      <attribute name="p322" type="text" public-name="g01_assert_nod_finding_code">
         <text>
           <base>the employment's asserted nod finding code</base>
         </text>
@@ -7043,28 +7125,6 @@
           <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the employments pay practice',plural),o('from the time of hire which caused the claimant to request reduced hours'))</parse>
         </text>
       </attribute>
-      <attribute name="p393" type="text" public-name="scr_rh_pay_change_desc">
-        <text>
-          <base>the claimants description of the pay rate change that caused them to request redeuced hours</base>
-        </text>
-      </attribute>
-      <attribute name="b975" type="boolean" public-name="scr_rh_pay_applied_all">
-        <text>
-          <base>the pay change that caused the claimant to request reduced hours was applied to all workers</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay change that caused the claimant to request reduced hours',singular),o('to all workers'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p394" type="text" public-name="scr_rh_practice_change_desc">
-        <text>
-          <base>the claimants description of the pay practice change that caused them to request redeuced hours</base>
-        </text>
-      </attribute>
-      <attribute name="b976" type="boolean" public-name="scr_rh_practice_applied_all">
-        <text>
-          <base>the pay practice change that caused the claimant to request reduced hours was applied to all workers</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay practice change that caused the claimant to request reduced hours',singular),o('to all workers'))</parse>
-        </text>
-      </attribute>
     </entity>
     <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="fpr_nod">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
@@ -7117,9 +7177,9 @@
     <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
     <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
     <relationship source="employer" target="a" is-containment="false" public-id="inf_412a_emr" reverse-public-id="inf_emr_412a" text="all inferred 412a for employer" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" reverse-text="each employer inferred 412a" type="ManyToMany" is-computed="false" />
-    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" silent-if-known="true" />
+    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="action" is-containment="false" public-id="action_inf_claim" reverse-public-id="claim_inf_action" text="all inferred actions" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" reverse-text="action inferred from claim" type="ManyToMany" is-computed="false" />
-    <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferrredbyissue" reverse-text="nod inferrred by issue" type="ManyToMany" is-computed="false" />
+    <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferredbyissue" reverse-text="nod inferred by issue" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="issue" is-containment="false" public-id="claim_inf_issue" reverse-public-id="issue_inf_by_claim" text="all issues inferred from claim" relationship-id="allissuesinferredfromclaim" reverse-relationship-id="claiminferringthisissue" reverse-text="the claim inferring this issue" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />

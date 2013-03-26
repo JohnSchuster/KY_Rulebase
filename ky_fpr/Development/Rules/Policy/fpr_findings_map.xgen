@@ -1,16 +1,41 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en">
-          <base>the claim has an able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('an able and available issue'))</parse>
-        </text>
-      </attribute>
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en">
           <base>the claim has a deductible income issue</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en">
+          <base>the claim has at least one able and available issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p8" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the claimant's nod determination</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the claimant's nod ruling</base>
+        </text>
+      </attribute>
+      <attribute name="p10" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the claimant's finding</base>
+        </text>
+      </attribute>
+      <attribute name="p11" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the claimant's legal citation</base>
+        </text>
+      </attribute>
+      <attribute name="p12" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en">
+          <base>the claimant's nod finding code</base>
         </text>
       </attribute>
     </entity>
@@ -62,16 +87,16 @@
     <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule ruleburst="true" folder="0" name="the employment's nod text" id="1" concludes="p1">
+    <rule ruleburst="true" folder="0" name="the claimant's nod determination" id="1" concludes="p8">
       <rule-xml>
-        <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
+        <table-conclude attr-id="p8" entity-id="global" scope-id="global0">
           <row>
             <value>
               <string-value>d3 (Eligible)</string-value>
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d3_01</string-value>
               </equals>
             </condition>
@@ -82,7 +107,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d3_02</string-value>
               </equals>
             </condition>
@@ -93,7 +118,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d3_03</string-value>
               </equals>
             </condition>
@@ -104,7 +129,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d3_04</string-value>
               </equals>
             </condition>
@@ -115,7 +140,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_01</string-value>
               </equals>
             </condition>
@@ -126,7 +151,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_02</string-value>
               </equals>
             </condition>
@@ -137,7 +162,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_03</string-value>
               </equals>
             </condition>
@@ -148,7 +173,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_04</string-value>
               </equals>
             </condition>
@@ -159,7 +184,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_05</string-value>
               </equals>
             </condition>
@@ -170,7 +195,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_06</string-value>
               </equals>
             </condition>
@@ -181,7 +206,7 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_07</string-value>
               </equals>
             </condition>
@@ -192,11 +217,443 @@
             </value>
             <condition>
               <equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p12" />
                 <string-value>aa_d4_08</string-value>
               </equals>
             </condition>
           </row>
+          <otherwise>
+            <string-value>uncertain</string-value>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule ruleburst="true" folder="0" name="the claimant's nod ruling" id="2" concludes="p9">
+      <rule-xml>
+        <table-conclude attr-id="p9" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <string-value>N/A</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>N/A</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>N/A</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>N/A</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_05</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_06</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <string-value>uncertain</string-value>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule ruleburst="true" folder="0" name="the claimant's finding" id="3" concludes="p10">
+      <rule-xml>
+        <table-conclude attr-id="p10" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <string-value>Eligible- Physically Able</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Eligible- Mentally Able</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Eligible- Available</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Eligible-Adequate Work Search</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Physically Unable</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Mentally Unable</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Not Available</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Inadequate Work Search</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Alien Status</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_05</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Disaster Roads or Transportation</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_06</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Disaster Availability</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- DUA</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <string-value>uncertain</string-value>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule ruleburst="true" folder="0" name="the claimant's legal citation" id="4" concludes="p11">
+      <rule-xml>
+        <table-conclude attr-id="p11" entity-id="global" scope-id="global0">
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d3_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_01</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_04</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5); KRS 341.360 (3)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_05</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_06</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Disaster Relief Act Section 407</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <string-value>uncertain</string-value>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule ruleburst="true" folder="0" name="the employment's nod text" id="5" concludes="p1">
+      <rule-xml>
+        <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <row>
             <value>
               <string-value>d5 (Deductible)</string-value>
@@ -2557,141 +3014,9 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the employment's nod ruling text" id="2" concludes="p2">
+    <rule ruleburst="true" folder="0" name="the employment's nod ruling text" id="6" concludes="p2">
       <rule-xml>
         <table-conclude attr-id="p2" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <string-value>N/A</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>N/A</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>N/A</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>N/A</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_05</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_06</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_07</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>ind</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_08</string-value>
-              </equals>
-            </condition>
-          </row>
           <row>
             <value>
               <string-value>N/A</string-value>
@@ -5052,141 +5377,9 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the employment's nod finding text" id="3" concludes="p3">
+    <rule ruleburst="true" folder="0" name="the employment's nod finding text" id="7" concludes="p3">
       <rule-xml>
         <table-conclude attr-id="p3" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <string-value>Eligible- Physically Able</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Eligible- Mentally Able</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Eligible- Available</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Eligible-Adequate Work Search</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Physically Unable</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Mentally Unable</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Not Available</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Inadequate Work Search</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Alien Status</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_05</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Disaster Roads or Transportation</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_06</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- Disaster Availability</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_07</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Ineligible- DUA</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_08</string-value>
-              </equals>
-            </condition>
-          </row>
           <row>
             <value>
               <string-value>Pension Monthly</string-value>
@@ -7555,141 +7748,9 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the employment's nod legal citation" id="4" concludes="p5">
+    <rule ruleburst="true" folder="0" name="the employment's nod legal citation" id="8" concludes="p5">
       <rule-xml>
         <table-conclude attr-id="p5" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d3_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_01</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_02</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (4) (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_03</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_04</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (5); KRS 341.360 (3)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_05</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_06</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>KRS 341.350 (5)</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_07</string-value>
-              </equals>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Disaster Relief Act Section 407</string-value>
-            </value>
-            <condition>
-              <equals>
-                <attribute attr-id="p4" />
-                <string-value>aa_d4_08</string-value>
-              </equals>
-            </condition>
-          </row>
           <row>
             <value>
               <string-value>KRS 341.390 (3) (a); KRS 341.390 (3) (b)</string-value>
@@ -10050,7 +10111,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the employment's issue code" id="5" concludes="p6">
+    <rule ruleburst="true" folder="0" name="the employment's issue code" id="9" concludes="p6">
       <rule-xml>
         <table-conclude attr-id="p6" entity-id="employment" scope-id="employment0">
           <row>
@@ -10062,7 +10123,7 @@
                 <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
                 <for>
                   <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b1" />
+                  <attribute attr-id="b3" />
                 </for>
               </for>
             </condition>
@@ -10087,7 +10148,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule ruleburst="true" folder="0" name="the employment's issue text" id="6" concludes="p7">
+    <rule ruleburst="true" folder="0" name="the employment's issue text" id="10" concludes="p7">
       <rule-xml>
         <table-conclude attr-id="p7" entity-id="employment" scope-id="employment0">
           <row>
@@ -10099,7 +10160,7 @@
                 <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
                 <for>
                   <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b1" />
+                  <attribute attr-id="b3" />
                 </for>
               </for>
             </condition>
