@@ -169,24 +169,6 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('obtaining (acceptance) of suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is self-employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('self-employed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b38" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is employed on a commission basis</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('on a commission basis'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a corporate officer is a closely-held corporation</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer is a closely-held corporation'))</parse>
-        </text>
-      </attribute>
       <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's (self-employment, corporate officer position, commission work) prevents a suitable work search</base>
@@ -501,8 +483,8 @@
       </attribute>
       <attribute name="b134" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant is a member in good standing of a sanctioned labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a sanctioned labor union'))</parse>
+          <base>the claimant is a member in good standing of a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
         </text>
       </attribute>
       <attribute name="b135" type="boolean" ruleburst="true" is-used="True">
@@ -517,40 +499,28 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a reliable means of transportation'))</parse>
         </text>
       </attribute>
-      <attribute name="b137" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's self-employment prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b138" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's commission work prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
       <attribute name="b139" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's corporate officer position prevents a suitable work search</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('a suitable work search'))</parse>
         </text>
       </attribute>
-      <attribute name="b140" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's self-employment prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b141" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's commission work prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
       <attribute name="b142" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's corporate officer position prevents acceptance of suitable work</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('acceptance of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b143" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's (self-employment, commission work) prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b144" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's (self-employment, commission work) prevents acceptance of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('acceptance of suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -644,7 +614,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="d4_aa01 Ineligible- Physically Unable" ruleburst="true" concludes="not b2" folder="0" source-offset="548">
+    <rule id="1" name="d4_aa01 Ineligible- Physically Unable" ruleburst="true" concludes="not b2" folder="0" source-offset="575">
       <rule-xml>
         <conclude attr-id="b2" entity-id="global" scope-id="global0">
           <value>
@@ -675,7 +645,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is not mentally able to work" ruleburst="true" concludes="not b3" folder="0" source-offset="815">
+    <rule id="2" name="the claimant is not mentally able to work" ruleburst="true" concludes="not b3" folder="0" source-offset="877">
       <rule-xml>
         <conclude attr-id="b3" entity-id="global" scope-id="global0">
           <value>
@@ -693,7 +663,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is not available for suitable work" ruleburst="true" concludes="not b4" folder="0" source-offset="995">
+    <rule id="3" name="the claimant is not available for suitable work" ruleburst="true" concludes="not b4" folder="0" source-offset="1078">
       <rule-xml>
         <conclude attr-id="b4" entity-id="global" scope-id="global0">
           <value>
@@ -715,7 +685,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant's transportation restricts their availability for suitable work" ruleburst="true" concludes="b10" folder="0" source-offset="1606">
+    <rule id="4" name="the claimant's transportation restricts their availability for suitable work" ruleburst="true" concludes="b10" folder="0" source-offset="1734">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -743,7 +713,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant's (school, training) restricts their availability for suitable work" ruleburst="true" concludes="b11" folder="0" source-offset="2002">
+    <rule id="5" name="the claimant's (school, training) restricts their availability for suitable work" ruleburst="true" concludes="b11" folder="0" source-offset="2169">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -773,7 +743,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant's duty of dependent care restricts their availability for suitable work" ruleburst="true" concludes="b12" folder="0" source-offset="2554">
+    <rule id="6" name="the claimant's duty of dependent care restricts their availability for suitable work" ruleburst="true" concludes="b12" folder="0" source-offset="2775">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
@@ -797,7 +767,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant's incarceration restricts their availability for suitable work" ruleburst="true" concludes="b13" folder="0" source-offset="2987">
+    <rule id="7" name="the claimant's incarceration restricts their availability for suitable work" ruleburst="true" concludes="b13" folder="0" source-offset="3242">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -818,7 +788,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" ruleburst="true" concludes="b14" folder="0" source-offset="3268">
+    <rule id="8" name="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" ruleburst="true" concludes="b14" folder="0" source-offset="3547">
       <rule-xml>
         <conclude attr-id="b14" entity-id="global" scope-id="global0">
           <value>
@@ -826,13 +796,8 @@
           </value>
           <condition>
             <or>
-              <attribute attr-id="b37" />
-              <attribute attr-id="b38" />
-              <attribute attr-id="b39" />
-              <or>
-                <attribute attr-id="b40" />
-                <attribute attr-id="b41" />
-              </or>
+              <attribute attr-id="b40" />
+              <attribute attr-id="b41" />
             </or>
           </condition>
           <otherwise>
@@ -841,7 +806,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant's (self-employment, corporate officer position, commission work) prevents a suitable work search" ruleburst="true" concludes="b40" folder="0" source-offset="3792">
+    <rule id="9" name="the claimant's (self-employment, corporate officer position, commission work) prevents a suitable work search" ruleburst="true" concludes="b40" folder="0" source-offset="3931">
       <rule-xml>
         <conclude attr-id="b40" entity-id="global" scope-id="global0">
           <value>
@@ -849,9 +814,8 @@
           </value>
           <condition>
             <or>
-              <attribute attr-id="b137" />
-              <attribute attr-id="b138" />
               <attribute attr-id="b139" />
+              <attribute attr-id="b143" />
             </or>
           </condition>
           <otherwise>
@@ -860,7 +824,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant's (self-employment, corporate officer position, commission work) prevents obtaining (acceptance) of suitable work" ruleburst="true" concludes="b41" folder="0" source-offset="4110">
+    <rule id="10" name="the claimant's (self-employment, corporate officer position, commission work) prevents obtaining (acceptance) of suitable work" ruleburst="true" concludes="b41" folder="0" source-offset="4221">
       <rule-xml>
         <conclude attr-id="b41" entity-id="global" scope-id="global0">
           <value>
@@ -868,9 +832,8 @@
           </value>
           <condition>
             <or>
-              <attribute attr-id="b140" />
-              <attribute attr-id="b141" />
               <attribute attr-id="b142" />
+              <attribute attr-id="b144" />
             </or>
           </condition>
           <otherwise>
@@ -879,7 +842,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant is making a reasonable effort to find work, as expected of a prudent person in like circumstances" ruleburst="true" concludes="b120" folder="0" source-offset="4460">
+    <rule id="11" name="the claimant is making a reasonable effort to find work, as expected of a prudent person in like circumstances" ruleburst="true" concludes="b120" folder="0" source-offset="4538">
       <rule-xml>
         <conclude attr-id="b120" entity-id="global" scope-id="global0">
           <value>
@@ -905,7 +868,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant is making a reasonable effort to obtain work" ruleburst="true" concludes="b44" folder="0" source-offset="4888">
+    <rule id="12" name="the claimant is making a reasonable effort to obtain work" ruleburst="true" concludes="b44" folder="0" source-offset="5005">
       <rule-xml>
         <conclude attr-id="b44" entity-id="global" scope-id="global0">
           <value>
@@ -934,7 +897,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant has failed to apply for suitable work when directed" ruleburst="true" concludes="b52" folder="0" source-offset="5375">
+    <rule id="13" name="the claimant has failed to apply for suitable work when directed" ruleburst="true" concludes="b52" folder="0" source-offset="5553">
       <rule-xml>
         <conclude attr-id="b52" entity-id="global" scope-id="global0">
           <value>
@@ -953,7 +916,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant is seeking suitable work" ruleburst="true" concludes="b50" folder="0" source-offset="5704">
+    <rule id="14" name="the claimant is seeking suitable work" ruleburst="true" concludes="b50" folder="0" source-offset="5908">
       <rule-xml>
         <conclude attr-id="b50" entity-id="global" scope-id="global0">
           <value>
@@ -974,7 +937,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant has not refused an offer of suitable work with the employer" ruleburst="true" concludes="not b94" folder="0" source-offset="5871">
+    <rule id="15" name="the claimant has not refused an offer of suitable work with the employer" ruleburst="true" concludes="not b94" folder="0" source-offset="6145">
       <rule-xml>
         <conclude attr-id="b94" entity-id="employer" scope-id="employer0">
           <value>
@@ -1005,7 +968,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant is considered part of group b" ruleburst="true" concludes="b125" folder="0" source-offset="6272">
+    <rule id="16" name="the claimant is considered part of group b" ruleburst="true" concludes="b125" folder="0" source-offset="6642">
       <rule-xml>
         <conclude attr-id="b125" entity-id="global" scope-id="global0">
           <value>
@@ -1040,7 +1003,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the claimant is a member of a union that is responsible for securing future employment (for the claimant)" ruleburst="true" concludes="b64" folder="0" source-offset="6819">
+    <rule id="17" name="the claimant is a member of a union that is responsible for securing future employment (for the claimant)" ruleburst="true" concludes="b64" folder="0" source-offset="7279">
       <rule-xml>
         <conclude attr-id="b64" entity-id="global" scope-id="global0">
           <value>
@@ -1058,7 +1021,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the employment is not suitable" ruleburst="true" concludes="not b54" folder="0" source-offset="7070">
+    <rule id="18" name="the employment is not suitable" ruleburst="true" concludes="not b54" folder="0" source-offset="7531">
       <rule-xml>
         <conclude attr-id="b54" entity-id="employment" scope-id="employment0">
           <value>
@@ -1118,7 +1081,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the claimant's situation permits them some reasonable selection between job offers" ruleburst="true" concludes="b67" folder="0" source-offset="8202">
+    <rule id="19" name="the claimant's situation permits them some reasonable selection between job offers" ruleburst="true" concludes="b67" folder="0" source-offset="8753">
       <rule-xml>
         <conclude attr-id="b67" entity-id="global" scope-id="global0">
           <value>
@@ -1137,7 +1100,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the claimant was given a bona fide offer of work by the employer" ruleburst="true" concludes="b130" folder="0" source-offset="8628">
+    <rule id="20" name="the claimant was given a bona fide offer of work by the employer" ruleburst="true" concludes="b130" folder="0" source-offset="9203">
       <rule-xml>
         <conclude attr-id="b130" entity-id="employer" scope-id="employer0">
           <value>
@@ -1170,7 +1133,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the claimant's alien status restricts their availability for suitable work" ruleburst="true" concludes="b15" folder="0" source-offset="9015">
+    <rule id="21" name="the claimant's alien status restricts their availability for suitable work" ruleburst="true" concludes="b15" folder="0" source-offset="9628">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -1206,7 +1169,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="9608">
+    <rule id="22" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="10283">
       <rule-xml>
         <conclude attr-id="b88" entity-id="global" scope-id="global0">
           <value>
@@ -1226,7 +1189,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="9776">
+    <rule id="23" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="10475">
       <rule-xml>
         <conclude attr-id="b42" entity-id="global" scope-id="global0">
           <value>

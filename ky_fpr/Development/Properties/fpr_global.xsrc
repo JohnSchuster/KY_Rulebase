@@ -297,18 +297,6 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('obtaining (acceptance) of suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b53" type="boolean" public-name="fpr_claimant_is_self_employed">
-        <text>
-          <base>the claimant is self-employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('self-employed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b54" type="boolean" public-name="fpr_claimant_on_commission">
-        <text>
-          <base>the claimant is employed on a commission basis</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('on a commission basis'))</parse>
-        </text>
-      </attribute>
       <attribute name="b55" type="boolean" public-name="fpr_claimant_is_closely_held">
         <text>
           <base>the claimant is a corporate officer in a closely-held corporation</base>
@@ -2066,12 +2054,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occurred on or about the facility where they were employed'))</parse>
         </text>
       </attribute>
-      <attribute name="b872" type="boolean" public-name="fpr_union_member">
-        <text>
-          <base>the claimant is a member in good standing of a sanctioned labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a sanctioned labor union'))</parse>
-        </text>
-      </attribute>
       <attribute name="b873" type="boolean" public-name="fpr_union_provides_work">
         <text>
           <base>the claimant is presented with work opportunities by the labor union</base>
@@ -2201,34 +2183,10 @@
           <base>the claimants description of alternate means of care</base>
         </text>
       </attribute>
-      <attribute name="b882" type="boolean" public-name="fpr_self_emp_prevents_search">
-        <text>
-          <base>the claimant's self-employment prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b883" type="boolean" public-name="fpr_commission_prevents_search">
-        <text>
-          <base>the claimant's commission work prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
       <attribute name="b884" type="boolean" public-name="fpr_co_prevents_search">
         <text>
           <base>the claimant's corporate officer position prevents a suitable work search</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b885" type="boolean" public-name="fpr_self_empl_prevents_accept">
-        <text>
-          <base>the claimant's self-employment prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b886" type="boolean" public-name="fpr_commision_prevents_accept">
-        <text>
-          <base>the claimant's commission work prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('acceptance of suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="b887" type="boolean" public-name="fpr_co_prevents_accept">
@@ -2508,6 +2466,24 @@
       <attribute name="p405" type="text" public-name="scr_benefit_payments">
         <text>
           <base>the claimants choice for unemployment benefits payments</base>
+        </text>
+      </attribute>
+      <attribute name="b991" type="boolean" public-name="fpr_self_commission_search">
+        <text>
+          <base>the claimant's (self-employment, commission work) prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b992" type="boolean" public-name="fpr_self_commission_acceptance">
+        <text>
+          <base>the claimant's (self-employment, commission work) prevents acceptance of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('acceptance of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b993" type="boolean" public-name="fpr_union_member">
+        <text>
+          <base>the claimant is a member in good standing of a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
         </text>
       </attribute>
     </entity>
@@ -7163,6 +7139,253 @@
       <attribute name="p404" type="text" public-name="scr_selected_positive_sub_status">
         <text>
           <base>the selected positive test substance status</base>
+        </text>
+      </attribute>
+      <attribute name="p406" type="text" public-name="scr_rh_pay_practice_employee">
+        <text>
+          <base>the pay practice change description (employee reduction in hours)</base>
+        </text>
+      </attribute>
+      <attribute name="b990" type="boolean" public-name="scr_rh_paychange_employee">
+        <text>
+          <base>the pay practice change (employee reduction in hours) was applied to all employees</base>
+          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay practice change (employee reduction in hours)',singular),o('to all employees'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p407" type="text" public-name="scr_rh_pay_rate_employee">
+        <text>
+          <base>the pay rate change description (employee reduction in hours)</base>
+        </text>
+      </attribute>
+      <attribute name="b994" type="boolean" public-name="scr_payrate_change_employee">
+        <text>
+          <base>the pay rate change (employee reduction in hours) was applied to all employees</base>
+          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay rate change (employee reduction in hours)',singular),o('to all employees'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p408" type="text" public-name="scr_reduction_request">
+        <text>
+          <base>the selected reduction request status</base>
+        </text>
+      </attribute>
+      <attribute name="b995" type="boolean" public-name="scr_employee_branch_personal">
+        <text>
+          <base>the employee requested reduction details screen should branch to personal reasons</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to personal reasons'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b996" type="boolean" public-name="scr_employee_branch_work_related">
+        <text>
+          <base>the employee requested reduction details screen should branch to work related</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to work related'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b997" type="boolean" public-name="scr_employee_branch_accepted">
+        <text>
+          <base>the employee requested reduction details screen should branch to accepted an offer</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to accepted an offer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p409" type="text" public-name="scr_rh_work_distance">
+        <text>
+          <base>the (employee requested) distance to work reduction in hours request reason</base>
+        </text>
+      </attribute>
+      <attribute name="b998" type="boolean" public-name="scr_rh_work_distance_increase">
+        <text>
+          <base>the (employee requested reduced hours) distance to work has increased since the date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(increase,t(simple,present,perfect)),sb('the (employee requested reduced hours) distance to work',singular),o('since the date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p410" type="text" public-name="scr_rh_distance_increase_miles">
+        <text>
+          <base>the number of miles that the distance to work has increased by since the date of hire</base>
+        </text>
+      </attribute>
+      <attribute name="b999" type="boolean" public-name="scr_rh_distance_by_employer">
+        <text>
+          <base>the change in distance was initiated the employer</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),ob('the change in distance',singular),o('the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p411" type="date" public-name="scr_rh_distance_change_date">
+        <text>
+          <base>the date that the distance to work changed</base>
+        </text>
+      </attribute>
+      <attribute name="p412" type="text" public-name="scr_rh_work_hour_roilback">
+        <text>
+          <base>the description of the final event that took place regarding the work hours which caused the claimant to request a reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="b1000" type="boolean" public-name="scr_rh_rollback_since_hire">
+        <text>
+          <base>the working hours (shift, number of hours, etc.) changed since the claimants date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the working hours (shift, number of hours, etc.)',plural),o('since the claimants date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p413" type="text" public-name="scr_rh_hours_rollback_desc">
+        <text>
+          <base>the claimants description of how the working hours (shift, number of hours, etc.) changed since their date of hire</base>
+        </text>
+      </attribute>
+      <attribute name="b1001" type="boolean" public-name="scr_rh_hours_rollback_temp">
+        <text>
+          <base>the work hours reduction was implemented for a limited period of time</base>
+          <parse>s(ver('10.4.2.18'),v(implement,t(simple,past,normal)),ob('the work hours reduction',singular),o('for a limited period of time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p414" type="text" public-name="scr_rh_hours_rollback_duration">
+        <text>
+          <base>the length of time that the temporary hours reduction was expected to last</base>
+        </text>
+      </attribute>
+      <attribute name="b1002" type="boolean" public-name="scr_rh_hours_rollback_was_discilpine">
+        <text>
+          <base>the work hour reduction was intended to be a disciplinary action</base>
+          <parse>s(ver('10.4.2.18'),v(intend,t(simple,past,normal)),ob('the work hour reduction',singular),o('to be a disciplinary action'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1003" type="boolean" public-name="scr_rh_workforce_buyout">
+        <text>
+          <base>the employer initiated a reduction in workforce/buyout</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('the employer',plural),o('a reduction in workforce/buyout'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1004" type="boolean" public-name="scr_rh_buyout_offer">
+        <text>
+          <base>the employer offered the claimant an incentive package/buyout for voluntarily accepting the reduction</base>
+          <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employer',plural),o('the claimant an incentive package/buyout for voluntarily accepting the reduction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1005" type="boolean" public-name="scr_rh_continue_if_no_buyout">
+        <text>
+          <base>the claimant could have continued work if they had not accepted the reduction of workforce package/buyout</base>
+          <parse>s(ver('10.4.2.18'),v(continue+could,t(simple,modal,perfect)),sb('the claimant',singular),o('work if they had not accepted the reduction of workforce package/buyout'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p415" type="text" public-name="scr_rh_failed_condition">
+        <text>
+          <base>the condition of the employment contract that the claimant failed to meet</base>
+        </text>
+      </attribute>
+      <attribute name="p416" type="text" public-name="scr_rh_why_failed_condition">
+        <text>
+          <base>the reason that the claimant failed to meet this condition of employment</base>
+        </text>
+      </attribute>
+      <attribute name="b1006" type="boolean" public-name="scr_rh_aware_of_condition">
+        <text>
+          <base>the claimant was aware of their responsibility to meet this condition or maintain a specific certification at the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their responsibility to meet this condition or maintain a specific certification at the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1007" type="boolean" public-name="scr_rh_was_responsible_to_meet">
+        <text>
+          <base>the claimant was responsible to meet this condition as a requirement for continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible to meet this condition as a requirement for continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1008" type="boolean" public-name="scr_rh_condition_warning">
+        <text>
+          <base>the claimant received warning(s) regarding their failure to meet this condition of employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warning(s) regarding their failure to meet this condition of employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p417" type="text" public-name="scr_rh_other_condition_desc">
+        <text>
+          <base>the working condition or final incident that caused the claimant to request a reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p418" type="date" public-name="scr_rh_other_incident_date">
+        <text>
+          <base>the date the final incident occured</base>
+        </text>
+      </attribute>
+      <attribute name="p419" type="text" public-name="scr_rh_incident_impact">
+        <text>
+          <base>the way that the final incident impacted the claimants ability to perform their work</base>
+        </text>
+      </attribute>
+      <attribute name="b1009" type="boolean" public-name="scr_rh_contract_changed">
+        <text>
+          <base>the conditions of work or contract of hire changed since the claimants date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the conditions of work or contract of hire',plural),o('since the claimants date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1010" type="boolean" public-name="scr_rh_ownership_changed">
+        <text>
+          <base>the company changed ownership or management since the claimants hire date</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the company',plural),o('ownership or management since the claimants hire date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p420" type="text" public-name="scr_rh_offer_of_work_status">
+        <text>
+          <base>the selected offer of work status</base>
+        </text>
+      </attribute>
+      <attribute name="b1011" type="boolean" public-name="scr_rh_accept_temporary">
+        <text>
+          <base>the claimant requested a reduction in hours to accept temporary or less than full-time employment</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in hours to accept temporary or less than full-time employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1012" type="boolean" public-name="scr_rh_mile_less_than">
+        <text>
+          <base>the claimant requested a reduction in working hours from employment which is one hundred (100) road miles or more from their home to accept employment that is less than one hundred (100) road miles from their homes</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in working hours from employment which is one hundred (100) road miles or more from their home to accept employment that is less than one hundred (100) road miles from their homes'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1013" type="boolean" public-name="scr_rh_accept_prior_to">
+        <text>
+          <base>the claimant accepted an offer of new employment prior to requesting a reduction in hours</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an offer of new employment prior to requesting a reduction in hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p421" type="text" public-name="scr_rh_new_job_name">
+        <text>
+          <base>the name of the business that extended the new job offer</base>
+        </text>
+      </attribute>
+      <attribute name="p422" type="text" public-name="scr_rh_new_job_person">
+        <text>
+          <base>the name of the person who offered the job</base>
+        </text>
+      </attribute>
+      <attribute name="p423" type="text" public-name="scr_rh_new_job_address">
+        <text>
+          <base>the address of the business</base>
+        </text>
+      </attribute>
+      <attribute name="p424" type="text" public-name="scr_rh_new_job_phone">
+        <text>
+          <base>the phone number of the business</base>
+        </text>
+      </attribute>
+      <attribute name="p425" type="date" public-name="scr_rh_new_job_offer_date">
+        <text>
+          <base>the date the new job was offered</base>
+        </text>
+      </attribute>
+      <attribute name="p426" type="date" public-name="scr_rh_new_job_begin_date">
+        <text>
+          <base>the date the new job began</base>
+        </text>
+      </attribute>
+      <attribute name="p427" type="text" public-name="scr_rh_new_job_schedule">
+        <text>
+          <base>the schedule of the new job</base>
+        </text>
+      </attribute>
+      <attribute name="b1014" type="boolean" public-name="scr_rh_new_job_is_working">
+        <text>
+          <base>the claimant began working at the new job</base>
+          <parse>s(ver('10.4.2.18'),v(begin,t(simple,past,normal)),sb('the claimant',plural),o('working at the new job'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p428" type="text" public-name="scr_rh_new_job_why_not_start">
+        <text>
+          <base>the claimants reason for not starting the new job</base>
         </text>
       </attribute>
     </entity>
