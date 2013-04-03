@@ -2486,6 +2486,35 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
         </text>
       </attribute>
+      <attribute name="b1015" type="boolean" public-name="scr_aa_additional_reason">
+        <text>
+          <base>the claimant has an additional reason that limits their availability for work</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an additional reason that limits their availability for work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p429" type="text" public-name="scr_aa_additional_availability">
+        <text>
+          <base>the additional reason that affects the claimants availability to work</base>
+        </text>
+      </attribute>
+      <attribute name="b1016" type="boolean" public-name="scr_aa_additional_search">
+        <text>
+          <base>the situation or event prevents the claimant from looking for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the situation or event',singular),o('the claimant from looking for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1017" type="boolean" public-name="scr_aa_additional_accept">
+        <text>
+          <base>the situation or event prevents the claimant from accepting suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the situation or event',singular),o('the claimant from accepting suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1018" type="boolean" public-name="fpr_knows_incarceration_end_date">
+        <text>
+          <base>the claimant knows when their incarceration will end</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when their incarceration will end'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -6082,16 +6111,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('discharged by the employer for being incarcerated'))</parse>
         </text>
       </attribute>
-      <attribute name="p233" type="date" public-name="scr_jail_start_date">
-        <text>
-          <base>the beginning date of the claimants most current incarceration</base>
-        </text>
-      </attribute>
-      <attribute name="p234" type="date" public-name="scr_jail_end_date">
-        <text>
-          <base>the ending date of the claimants most current incarceration</base>
-        </text>
-      </attribute>
       <attribute name="b826" type="boolean" public-name="scr_jail_conviction">
         <text>
           <base>the claimant was incarcerated following a conviction</base>
@@ -7386,6 +7405,233 @@
       <attribute name="p428" type="text" public-name="scr_rh_new_job_why_not_start">
         <text>
           <base>the claimants reason for not starting the new job</base>
+        </text>
+      </attribute>
+      <attribute name="p430" type="date" public-name="scr_current_incarceration_start">
+        <text>
+          <base>the beginning date of the claimants most current incarceration</base>
+        </text>
+      </attribute>
+      <attribute name="p431" type="date" public-name="scr_current_incarceration_end">
+        <text>
+          <base>the ending date of the claimants most current incarceration</base>
+        </text>
+      </attribute>
+      <attribute name="b1020" type="boolean" public-name="scr_employee_employer">
+        <text>
+          <base>the claimant is still considered employed by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('still considered employed by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1021" type="boolean" public-name="scr_su_return_date_provided">
+        <text>
+          <base>the claimant was provided a return to work date by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the claimant',singular),o('a return to work date by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p432" type="date" public-name="scr_su_return_to_work_date">
+        <text>
+          <base>the claimant return after suspension date</base>
+        </text>
+      </attribute>
+      <attribute name="p433" type="text" public-name="scr_su_return_date">
+        <text>
+          <base>the reason the claimant was sudspended</base>
+        </text>
+      </attribute>
+      <attribute name="p434" type="text" public-name="scr_su_why_suspended">
+        <text>
+          <base>the reason that the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p435" type="text" public-name="scr_sc_other_suspension_reason">
+        <text>
+          <base>the other reason that the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p436" type="text" public-name="scr_su_primary_reason">
+        <text>
+          <base>the claimants primary suspension reason</base>
+        </text>
+      </attribute>
+      <attribute name="p437" type="text" public-name="scr_su_other_reason">
+        <text>
+          <base>the claimants other suspension reason</base>
+        </text>
+      </attribute>
+      <attribute name="p438" type="text" public-name="scr_su_suspended_name">
+        <text>
+          <base>the name of the person who suspended the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="p439" type="text" public-name="scr_su_suspension_title">
+        <text>
+          <base>the title of the person who suspended the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="b1022" type="boolean" public-name="scr_su_date_known">
+        <text>
+          <base>the claimant knows their suspension date</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('their suspension date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p440" type="date" public-name="scr_su_suspended_date">
+        <text>
+          <base>the date the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p441" type="text" public-name="scr_su_supervisor_name">
+        <text>
+          <base>the name of the suspended claimants supervisor</base>
+        </text>
+      </attribute>
+      <attribute name="p442" type="text" public-name="scr_su_supervisor_title">
+        <text>
+          <base>the title of the suspended claimants supervisor</base>
+        </text>
+      </attribute>
+      <attribute name="b1023" type="boolean" public-name="scr_su_handbook">
+        <text>
+          <base>the suspended claimant was provided with a copy of the employers handbook</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the suspended claimant',singular),o('with a copy of the employers handbook'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1024" type="boolean" public-name="scr_sc_aware">
+        <text>
+          <base>the claimant was aware of their duties and expectations</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their duties and expectations'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1025" type="boolean" public-name="scr_sc_progressive_policy">
+        <text>
+          <base>the enployer has a progressive disciplinary policy</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the enployer',singular),o('a progressive disciplinary policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1026" type="boolean" public-name="scr_sc_followed_policy">
+        <text>
+          <base>the employer followed the progressive disciplinary policy</base>
+          <parse>s(ver('10.4.2.18'),v(follow,t(simple,past,normal)),sb('the employer',plural),o('the progressive disciplinary policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p443" type="text" public-name="scr_sc_not_follow_policy">
+        <text>
+          <base>the rreason that the claimants employer did not follow policy</base>
+        </text>
+      </attribute>
+      <attribute name="b1027" type="boolean" public-name="scr_sc_followed">
+        <text>
+          <base>the claimants employer followed the prograssive policy</base>
+          <parse>s(ver('10.4.2.18'),v(follow,t(simple,past,normal)),sb('the claimants employer',plural),o('the prograssive policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1028" type="boolean" public-name="scr_sc_attendance_policy">
+        <text>
+          <base>the employer (who suspended the claimant) has an attendance policy</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer (who suspended the claimant)',singular),o('an attendance policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1029" type="boolean" public-name="scr_su_attendance_aware">
+        <text>
+          <base>the claimant was aware of the attendance policy</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the attendance policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1030" type="boolean" public-name="scr_su_documentation_required">
+        <text>
+          <base>the claimant was required to provide supporting documentation for their absence/tardiness</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to provide supporting documentation for their absence/tardiness'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p445" type="text" public-name="scr_su_tardy_reporting">
+        <text>
+          <base>the method by which the claimant was required to report absences/tardiness</base>
+        </text>
+      </attribute>
+      <attribute name="b1031" type="boolean" public-name="scr_su_warning_given">
+        <text>
+          <base>the claimant was given warning (verbal or written) regarding attendance/tardiness prior to their suspension</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('warning (verbal or written) regarding attendance/tardiness prior to their suspension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p446" type="text" public-name="scr_warning_name">
+        <text>
+          <base>the name of the person who gave the claimant attendance warnings</base>
+        </text>
+      </attribute>
+      <attribute name="p447" type="text" public-name="scr_su_warning_title_attendance">
+        <text>
+          <base>the title of the person who gave the claimant attendance warnings</base>
+        </text>
+      </attribute>
+      <attribute name="p448" type="date" public-name="scr_su_warning_date_attend">
+        <text>
+          <base>the date the claimant received warning about their attendance</base>
+        </text>
+      </attribute>
+      <attribute name="p449" type="text" public-name="scr_su_alleged_violation">
+        <text>
+          <base>the claimants description of the rule or policy that the employer alleges they violated</base>
+        </text>
+      </attribute>
+      <attribute name="b1032" type="boolean" public-name="scr_su_violated">
+        <text>
+          <base>the claimant violated the employers rule or policy</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the employers rule or policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1033" type="boolean" public-name="scr_su_aware_of_rules">
+        <text>
+          <base>the claimant was aware of the employers policy and rulres</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employers policy and rulres'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1034" type="boolean" public-name="scr_su_uniformly_enforced">
+        <text>
+          <base>the rules and policy was uniformly enforced</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the rules and policy',singular),o('uniformly enforced'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p450" type="text" public-name="scr_su_not_uniform">
+        <text>
+          <base>the claimants description of how the rule or policy was not uniformly enforced</base>
+        </text>
+      </attribute>
+      <attribute name="b1035" type="boolean" public-name="scr_su_policy_warning">
+        <text>
+          <base>the claimant was given warning (verbal or written) regarding rule/policy violation prior to the suspension</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('warning (verbal or written) regarding rule/policy violation prior to the suspension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p451" type="text" public-name="scr_su_warning_name">
+        <text>
+          <base>the name of the person who gave the claimant a warning</base>
+        </text>
+      </attribute>
+      <attribute name="p452" type="text" public-name="scr_su_warning_title_rule">
+        <text>
+          <base>the title of the person who gave the claimant a rule warning</base>
+        </text>
+      </attribute>
+      <attribute name="p453" type="date" public-name="scr_su_warning_date_rule">
+        <text>
+          <base>the date the claimant received warning about the rule violation</base>
+        </text>
+      </attribute>
+      <attribute name="b1036" type="boolean" public-name="scr_su_policy_explanation">
+        <text>
+          <base>the claimant provided an explanation to the employer as to why the policy was violated</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanation to the employer as to why the policy was violated'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p454" type="text" public-name="scr_su_violation_explanation">
+        <text>
+          <base>the claimants explanation to the employer as to why the policy was violated</base>
+        </text>
+      </attribute>
+      <attribute name="p455" type="text" public-name="scr_su_no_explanation">
+        <text>
+          <base>the reason that the claimant did not provide an explanation</base>
         </text>
       </attribute>
     </entity>
