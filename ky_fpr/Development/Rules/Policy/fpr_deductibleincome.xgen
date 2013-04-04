@@ -62,6 +62,38 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is receiving (received) remuneration for the employment in lieu of notice</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) remuneration for the employment in lieu of notice'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant received advance notice of the separation from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('advance notice of the separation from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is receiving income for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving income for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is receiving (received) vacation pay for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) vacation pay for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is receiving vacation pay for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving vacation pay for the employment'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -199,38 +231,6 @@
         <text lang="en-US">
           <base>the income was paid based upon your years of service for the employer</base>
           <parse>s(ver('10.4.2.18'),v(pay,t(simple,past,normal)),ob('the income',singular),o('based upon your years of service for the employer'))</parse>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving (received) remuneration for the employment in lieu of notice</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) remuneration for the employment in lieu of notice'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant received advance notice of the separation from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('advance notice of the separation from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving income for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving income for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving (received) vacation pay for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) vacation pay for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is receiving vacation pay for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving vacation pay for the employment'))</parse>
         </text>
       </attribute>
     </entity>

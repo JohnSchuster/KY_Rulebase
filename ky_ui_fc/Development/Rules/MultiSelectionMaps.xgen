@@ -25,6 +25,78 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to attend non-TRA (school, training)'))</parse>
         </text>
       </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a dispute in the workplace</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a dispute in the workplace'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to equipment problems</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to equipment problems'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to harassment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to harassment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a medical condition</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a medical condition'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a lack of (training, experience)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a lack of (training, experience)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to disciplinary action imposed by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to disciplinary action imposed by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment rather than take a (drug, alcohol) test</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment rather than take a (drug, alcohol) test'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's attendance at the employment was unsatisfactory</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s attendance at the employment',singular),o('unsatisfactory'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to domestic circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to domestic circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to relocate</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to relocate'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to lack of transportation</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to lack of transportation'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment selected status</base>
@@ -40,6 +112,16 @@
           <base>the claimants personal quit circumstance</base>
         </text>
       </attribute>
+      <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants work related circumstance</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the reason the claimants employment was discontinued</base>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -49,43 +131,7 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the claimant voluntarily left the employment" ruleburst="true" concludes="b1" folder="0" source-offset="71">
-      <rule-xml>
-        <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <equals>
-              <attribute attr-id="p1" />
-              <string-value>Quit</string-value>
-            </equals>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="1" name="the claimant was (discharged, suspended, reduced in hours) from the employment" ruleburst="true" concludes="b2" folder="0" source-offset="175">
-      <rule-xml>
-        <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <equals>
-              <attribute attr-id="p1" />
-              <string-value>Discharged</string-value>
-            </equals>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the claimant voluntarily left the employment for personal reason(s)" ruleburst="true" concludes="b3" folder="0" source-offset="325">
+    <rule id="0" name="the claimant voluntarily left the employment for personal reason(s)" ruleburst="true" concludes="b3" folder="0" source-offset="72">
       <rule-xml>
         <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
           <value>
@@ -103,7 +149,61 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant voluntarily left the employment to attend non-TRA (school, training)" ruleburst="true" concludes="b4" folder="0" source-offset="481">
+    <rule id="1" name="the claimant voluntarily left the employment" ruleburst="true" concludes="b1" folder="0" source-offset="225">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p1" />
+              <string-value>Quit</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant was (discharged, suspended, reduced in hours) from the employment" ruleburst="true" concludes="b2" folder="0" source-offset="328">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p1" />
+              <string-value>Discharged</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant voluntarily left the employment due to domestic circumstances" ruleburst="true" concludes="b14" folder="0" source-offset="502">
+      <rule-xml>
+        <conclude attr-id="b14" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p3" />
+              <string-value>Domestic circumstances</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant voluntarily left the employment to attend non-TRA (school, training)" ruleburst="true" concludes="b4" folder="0" source-offset="683">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -113,6 +213,204 @@
             <equals>
               <attribute attr-id="p3" />
               <string-value>Attend school or a training program</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant voluntarily left the employment to relocate" ruleburst="true" concludes="b15" folder="0" source-offset="897">
+      <rule-xml>
+        <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p3" />
+              <string-value>To move or relocate</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the claimant voluntarily left the employment due to lack of transportation" ruleburst="true" concludes="b17" folder="0" source-offset="1055">
+      <rule-xml>
+        <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p3" />
+              <string-value>Lack of transportation</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the claimant voluntarily left the employment due to a dispute in the workplace" ruleburst="true" concludes="b5" folder="0" source-offset="1257">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Dispute in the workplace</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the claimant voluntarily left the employment due to equipment problems" ruleburst="true" concludes="b6" folder="0" source-offset="1445">
+      <rule-xml>
+        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Equipment problems</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the claimant voluntarily left the employment due to harassment" ruleburst="true" concludes="b7" folder="0" source-offset="1613">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Harassment</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the claimant voluntarily left the employment due to a medical condition" ruleburst="true" concludes="b8" folder="0" source-offset="1756">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Work-related injury or health condition</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the claimant voluntarily left the employment due to a lack of (training, experience)" ruleburst="true" concludes="b9" folder="0" source-offset="1966">
+      <rule-xml>
+        <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Lack of training or experience</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="the claimant left the employment due to religious beliefs" ruleburst="true" concludes="b10" folder="0" source-offset="2171">
+      <rule-xml>
+        <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Religious beliefs</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="13" name="the claimant voluntarily left the employment due to disciplinary action imposed by this employer" ruleburst="true" concludes="b11" folder="0" source-offset="2324">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Disciplinary action imposed by the employer</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the claimant voluntarily left the employment rather than take a (drug, alcohol) test" ruleburst="true" concludes="b12" folder="0" source-offset="2569">
+      <rule-xml>
+        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p4" />
+              <string-value>Drug or alcohol test required by the employer</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the claimant's attendance at the employment was unsatisfactory" ruleburst="true" concludes="b13" folder="0" source-offset="2819">
+      <rule-xml>
+        <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p5" />
+              <string-value>Unsatisfactory Attendance/Tardiness</string-value>
             </equals>
           </condition>
           <otherwise>
