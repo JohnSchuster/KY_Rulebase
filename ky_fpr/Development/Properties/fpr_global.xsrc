@@ -6160,9 +6160,9 @@
           <base>the date the claimant received the final warning regarding property damage</base>
         </text>
       </attribute>
-      <attribute name="p240" type="text" public-name="scr_union_activity_description">
+      <attribute name="p240" type="text" public-name="scr_su_union_description">
         <text>
-          <base>the claimant accounting of the union activity that led to their termination</base>
+          <base>the claimant description of the union activity that led to their suspension</base>
         </text>
       </attribute>
       <attribute name="b830" type="boolean" public-name="scr_union_discharge">
@@ -7966,6 +7966,33 @@
         <text>
           <base>the claimant received a warning (verbal or written) regarding negligence or property damage prior to their suspension</base>
           <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a warning (verbal or written) regarding negligence or property damage prior to their suspension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1072" type="boolean" public-name="scr_su_union_suspension">
+        <text>
+          <base>the claimant was suspended due to their participation in a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('due to their participation in a labor union'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p482" type="text" public-name="scr_union_discharge_desc">
+        <text>
+          <base>the claimant description of the union activity that led to their discharge</base>
+        </text>
+      </attribute>
+      <attribute name="p483" type="text" public-name="scr_su_other_final">
+        <text>
+          <base>the claimants description of the fiinal incident that led to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="p484" type="date" public-name="scr_su_final_other_date">
+        <text>
+          <base>the date the final incident occured that caused the claimant to be suspended</base>
+        </text>
+      </attribute>
+      <attribute name="b1073" type="boolean" public-name="scr_su_warning_prior_to_end">
+        <text>
+          <base>the claiamt received warning regarding the reason for your suspension prior to the end of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claiamt',plural),o('warning regarding the reason for your suspension prior to the end of the employment'))</parse>
         </text>
       </attribute>
     </entity>
