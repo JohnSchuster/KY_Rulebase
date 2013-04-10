@@ -114,6 +114,13 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
+      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the finding</base>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the action" id="action" containment-relationship-id="allinstancesoftheaction" containment-parent-id="global">
       <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
@@ -128,25 +135,18 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
-      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the finding</base>
-        </text>
-      </attribute>
-    </entity>
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allfindingsinferredfromemployment" reverse-relationship-id="findinginfbyemt" text="all findings inferred from employment" reverse-text="finding inf by emt" source="employment" target="finding" is-implicit="false" is-containment="false" />
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" text="all findings inferred from claim" reverse-text="the claim inferring this finding" source="global" target="finding" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" text="all inferred 412a for employer" reverse-text="each employer inferred 412a" source="employer" target="a" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" text="all instances of the finding" reverse-text="each findings instance of global" source="global" target="finding" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheaction" reverse-relationship-id="eachactioncontainedbyglobal" text="all instances of the action" reverse-text="each action contained by global" source="global" target="action" is-implicit="false" is-containment="true" />
-    <relationship type="ManyToMany" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" text="all inferred claimant nod" reverse-text="nod to claimant" source="global" target="nod" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" text="all instances of the 412A" reverse-text="each 412A contained by global" source="global" target="a" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" text="all inferred claimant nod" reverse-text="nod to claimant" source="global" target="nod" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" text="all instances of the nod" reverse-text="each nod to global" source="global" target="nod" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" text="inferred employer nod" reverse-text="nod inferred for employer" source="employer" target="nod" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" text="all inferred actions" reverse-text="action inferred from claim" source="global" target="action" is-implicit="false" is-containment="false" />

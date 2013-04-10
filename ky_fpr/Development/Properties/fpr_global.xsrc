@@ -2243,6 +2243,78 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('acceptance of suitable work'))</parse>
         </text>
       </attribute>
+      <attribute name="b1111" type="boolean" public-name="fpr_finding_aa_d3_01">
+        <text>
+          <base>the claimant is eligible (aa_d3_01, physically able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_01, physically able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1112" type="boolean" public-name="fpr_finding_aa_d3_02">
+        <text>
+          <base>the claimant is eligible (aa_d3_02, mentally able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_02, mentally able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1113" type="boolean" public-name="fpr_finding_aa_d3_03">
+        <text>
+          <base>the claimant is eligible (aa_d3_03, available)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_03, available)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1114" type="boolean" public-name="fpr_finding_aa_d3_04">
+        <text>
+          <base>the claimant is eligible (aa_d3_04, adequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_04, adequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1115" type="boolean" public-name="fpr_finding_aa_d4_02">
+        <text>
+          <base>the claimant is ineligible aa_d4_02, not available (physically unable)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_02, not available (physically unable)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1116" type="boolean" public-name="fpr_claimant_available_transpo">
+        <text>
+          <base>the claimant is available (transportation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1117" type="boolean" public-name="fpr_claimant_available_training">
+        <text>
+          <base>the claimant is available (school, training)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (school, training)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1118" type="boolean" public-name="fpr_claimant_avail_caregiving">
+        <text>
+          <base>the claimant is available (caregiving)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (caregiving)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1119" type="boolean" public-name="fpr_claimant_avail_incarceration">
+        <text>
+          <base>the claimant is available (incarceration)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (incarceration)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1120" type="boolean" public-name="fpr_claimant_avail_se_comm">
+        <text>
+          <base>the claimant is available (self-employment, commission)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (self-employment, commission)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1121" type="boolean" public-name="fpr_claimant_avail_officer_chc">
+        <text>
+          <base>the claimant is available (officer in closely-held corporation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (officer in closely-held corporation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1122" type="boolean" public-name="fpr_claimant_avail_other">
+        <text>
+          <base>the claimant is available (other)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (other)'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2765,6 +2837,12 @@
         <text>
           <base>the employer pension question screen for monthly payments should be displayed</base>
           <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employer pension question screen for monthly payments',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1123" type="boolean" public-name="fpr_emp_non_adj_ten_week">
+        <text>
+          <base>the employer is a non adjudicated ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a non adjudicated ten week employer'))</parse>
         </text>
       </attribute>
     </entity>
@@ -6524,10 +6602,10 @@
         </text>
       </attribute>
     </entity>
-    <entity id="issue" name="the issue" identifying-attribute-name="g01_the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="fpr_issue">
-      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_issue_id" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true" invisible-if-uncertain="true" invisible-if-unknown="true">
+    <entity id="finding" name="the finding" identifying-attribute-name="g01_the_finding_id" identifying-attribute-text="the finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global" public-id="fpr_finding">
+      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_finding_id" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true" invisible-if-uncertain="true" invisible-if-unknown="true">
         <text>
-          <base>the issue</base>
+          <base>the finding</base>
         </text>
       </attribute>
     </entity>
@@ -6545,6 +6623,13 @@
         </text>
       </attribute>
     </entity>
+    <entity id="issuetype" name="the issue type" identifying-attribute-name="fpr_the_issue_type_id" identifying-attribute-text="the issue type" containment-relationship-id="allinstancesoftheissuetype" containment-parent-id="global" public-id="fpr_issue_type">
+      <attribute name="p507" type="text" substitutable="true" default-gender="generic" public-name="fpr_the_issue_type_id">
+        <text>
+          <base>the issue type</base>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
     <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_emr" reverse-public-id="fpr_emr_cby_global" />
@@ -6553,17 +6638,20 @@
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_sep_emt" reverse-public-id="fpr_emt_sep_global" text="all separation interview employments" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" reverse-text="each separation to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_inf_exc_mre" reverse-public-id="fpr_mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_bptw_emt" reverse-public-id="fpr_emt_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" reverse-text="each bptw to global" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="eachissueinstancetoglobal" reverse-text="each issue instance to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2issue" reverse-public-id="fpr_issue2global" />
     <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="eachactioncontainedbyglobal" reverse-text="each action contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_action" reverse-public-id="fpr_action_cby_global" />
     <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_nod" reverse-public-id="fpr_nod_cby_global" />
     <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_emr_inf_nod" reverse-public-id="fpr_nod_inf_emr" />
     <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
     <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
     <relationship source="employer" target="a" is-containment="false" public-id="inf_412a_emr" reverse-public-id="inf_emr_412a" text="all inferred 412a for employer" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" reverse-text="each employer inferred 412a" type="ManyToMany" is-computed="false" />
-    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="action" is-containment="false" public-id="action_inf_claim" reverse-public-id="claim_inf_action" text="all inferred actions" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" reverse-text="action inferred from claim" type="ManyToMany" is-computed="false" />
-    <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferredbyissue" reverse-text="nod inferred by issue" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="issue" is-containment="false" public-id="claim_inf_issue" reverse-public-id="issue_inf_by_claim" text="all issues inferred from claim" relationship-id="allissuesinferredfromclaim" reverse-relationship-id="claiminferringthisissue" reverse-text="the claim inferring this issue" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="finding" text="all instances of the finding" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" reverse-text="each findings instance of global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2finding" reverse-public-id="fpr_finding2global" />
+    <relationship source="employment" target="finding" text="all findings inferred from employment" relationship-id="allfindingsinferredfromemployment" reverse-relationship-id="findinginfbyemt" reverse-text="finding inf by emt" type="ManyToMany" is-computed="false" is-containment="false" public-id="emt_inf_finding" reverse-public-id="finding_inf_emt" />
+    <relationship source="finding" target="nod" text="finding infers nod" relationship-id="findinginfersnod" reverse-relationship-id="nodinferredbyfinding" reverse-text="nod inferred by finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="finding_inf_nod" reverse-public-id="nod_inf_finding" />
+    <relationship source="global" target="finding" text="all findings inferred from claim" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" reverse-text="the claim inferring this finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="claim_inf_finding" reverse-public-id="finding_inf_by_claim" />
+    <relationship source="global" target="issuetype" text="all instances of the issue type" relationship-id="allinstancesoftheissuetype" reverse-relationship-id="globalforthisissuetype" reverse-text="global for this issue type" type="OneToMany" is-computed="false" is-containment="true" public-id="global2issuetype" reverse-public-id="issuetype2global" />
+    <relationship source="employment" target="issuetype" is-containment="false" public-id="emt2issuetype" reverse-public-id="issuetype2emt" text="employment raised issue type" relationship-id="employmentraisedissuetype" reverse-relationship-id="issuetyperaisedbyemployment" reverse-text="issue type raised by employment" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="issuetype" is-containment="false" public-id="fpr_global2_issuetype" reverse-public-id="fpr_issuetype2global" text="all issue type's raised by claim" relationship-id="allissuetypesraisedbyclaim" reverse-relationship-id="claimthatraisedthisissuetype" reverse-text="the claim that raised this issue type" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
