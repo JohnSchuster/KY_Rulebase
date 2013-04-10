@@ -113,6 +113,24 @@
           <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
         </text>
       </attribute>
+      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a waterway employee who is considered fully employed by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee who is considered fully employed by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a waterway employee</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is (on a scheduled break, off duty) from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('(on a scheduled break, off duty) from the employer'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
@@ -174,7 +192,25 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1342">
+    <rule id="2" name="the claimant is a waterway employee who is considered fully employed by the employer" ruleburst="true" concludes="b25" folder="0" source-offset="1157">
+      <rule-xml>
+        <conclude attr-id="b25" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b26" />
+              <attribute attr-id="b28" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1368">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -196,7 +232,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="2114">
+    <rule id="4" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="2140">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
