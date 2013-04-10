@@ -499,12 +499,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the decision',singular),o('discretionary: the claimant is not physically able to work'))</parse>
         </text>
       </attribute>
-      <attribute name="b134" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a member in good standing of a sanctioned labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a sanctioned labor union'))</parse>
-        </text>
-      </attribute>
       <attribute name="b135" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is presented with work opportunities by the labor union</base>
@@ -551,6 +545,12 @@
         <text lang="en-US">
           <base>the claimant's corporate officer position prevents acceptance of suitable work</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('acceptance of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b143" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a member in good standing of a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -1048,7 +1048,7 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b134" />
+              <attribute attr-id="b143" />
               <attribute attr-id="b135" />
             </and>
           </condition>
@@ -1058,7 +1058,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the employment is not suitable" ruleburst="true" concludes="not b54" folder="0" source-offset="7841">
+    <rule id="18" name="the employment is not suitable" ruleburst="true" concludes="not b54" folder="0" source-offset="7830">
       <rule-xml>
         <conclude attr-id="b54" entity-id="employment" scope-id="employment0">
           <value>
@@ -1118,7 +1118,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the claimant's situation permits them some reasonable selection between job offers" ruleburst="true" concludes="b67" folder="0" source-offset="9063">
+    <rule id="19" name="the claimant's situation permits them some reasonable selection between job offers" ruleburst="true" concludes="b67" folder="0" source-offset="9052">
       <rule-xml>
         <conclude attr-id="b67" entity-id="global" scope-id="global0">
           <value>
@@ -1137,7 +1137,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the claimant was given a bona fide offer of work by the employer" ruleburst="true" concludes="b130" folder="0" source-offset="9513">
+    <rule id="20" name="the claimant was given a bona fide offer of work by the employer" ruleburst="true" concludes="b130" folder="0" source-offset="9502">
       <rule-xml>
         <conclude attr-id="b130" entity-id="employer" scope-id="employer0">
           <value>
@@ -1170,7 +1170,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the claimant's alien status restricts their availability for suitable work" ruleburst="true" concludes="b15" folder="0" source-offset="9938">
+    <rule id="21" name="the claimant's alien status restricts their availability for suitable work" ruleburst="true" concludes="b15" folder="0" source-offset="9927">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -1206,7 +1206,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="10593">
+    <rule id="22" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="10582">
       <rule-xml>
         <conclude attr-id="b88" entity-id="global" scope-id="global0">
           <value>
@@ -1226,7 +1226,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="10785">
+    <rule id="23" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="10774">
       <rule-xml>
         <conclude attr-id="b42" entity-id="global" scope-id="global0">
           <value>
