@@ -32,14 +32,6 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer is a ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -83,6 +75,14 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
@@ -93,7 +93,7 @@
     <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
   </relationships>
   <rules>
-    <rule id="0" name="isMemberOf(the employment, all inferred instances of the employment)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesoftheemployment)" folder="0" source-offset="1884">
+    <rule id="0" name="isMemberOf(the employment, all inferred instances of the employment)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesoftheemployment)" folder="0" source-offset="1859">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesoftheemployment" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -108,7 +108,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="2199">
+    <rule id="1" name="isMemberOf(the employment, all inferred instances except mre)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredinstancesexceptmre)" folder="0" source-offset="2063">
       <rule-xml>
         <conclude-rel relationship-id="allinferredinstancesexceptmre" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -119,7 +119,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="2563">
+    <rule id="2" name="isMemberOf(the employment, all inferred candidate bptw)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allinferredcandidatebptw)" folder="0" source-offset="2361">
       <rule-xml>
         <conclude-rel relationship-id="allinferredcandidatebptw" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -142,7 +142,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="2968">
+    <rule id="3" name="there is at least one recent concurrent employment" ruleburst="true" concludes="b5" folder="0" source-offset="2682">
       <rule-xml>
         <conclude attr-id="b5" entity-id="global" scope-id="global0">
           <value>
@@ -168,7 +168,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="3406">
+    <rule id="4" name="isMemberOf(the employment, all separation interview employments)" ruleburst="true" concludes="IsMemberOf(&quot;employment&quot;,allseparationinterviewemployments)" folder="0" source-offset="3008">
       <rule-xml>
         <conclude-rel relationship-id="allseparationinterviewemployments" source="global" source-scope-id="global0" target-scope-id="employment0">
           <condition>
@@ -177,7 +177,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="5" name="the most recent employment is potentially chargeable" ruleburst="true" concludes="b6" folder="0" source-offset="3632">
+    <rule id="5" name="the most recent employment is potentially chargeable" ruleburst="true" concludes="b6" folder="0" source-offset="3168">
       <rule-xml>
         <conclude attr-id="b6" entity-id="global" scope-id="global0">
           <value>
@@ -204,7 +204,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the next most recent employment is potentially chargeable" ruleburst="true" concludes="b8" folder="0" source-offset="4194">
+    <rule id="6" name="the next most recent employment is potentially chargeable" ruleburst="true" concludes="b8" folder="0" source-offset="3652">
       <rule-xml>
         <conclude attr-id="b8" entity-id="global" scope-id="global0">
           <value>
@@ -231,7 +231,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the recent concurrent employment is potentially chargeable" ruleburst="true" concludes="b10" folder="0" source-offset="4667">
+    <rule id="7" name="the recent concurrent employment is potentially chargeable" ruleburst="true" concludes="b10" folder="0" source-offset="4047">
       <rule-xml>
         <conclude attr-id="b10" entity-id="global" scope-id="global0">
           <value>
@@ -258,7 +258,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the bptw is potentially chargeable" ruleburst="true" concludes="b13" folder="0" source-offset="5188">
+    <rule id="8" name="the bptw is potentially chargeable" ruleburst="true" concludes="b13" folder="0" source-offset="4489">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -282,7 +282,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="5503">
+    <rule id="9" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="4699">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>

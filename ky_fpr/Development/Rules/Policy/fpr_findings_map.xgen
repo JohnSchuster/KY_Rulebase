@@ -1,18 +1,6 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en">
-          <base>the claim has a deductible income issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a deductible income issue'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en">
-          <base>the claim has at least one able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
-        </text>
-      </attribute>
       <attribute name="p8" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en">
           <base>the claimant's nod determination</base>
@@ -63,16 +51,6 @@
       <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en">
           <base>the employment's nod legal citation</base>
-        </text>
-      </attribute>
-      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en">
-          <base>the employment's issue code</base>
-        </text>
-      </attribute>
-      <attribute name="p7" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en">
-          <base>the employment's issue text</base>
         </text>
       </attribute>
     </entity>
@@ -222,6 +200,72 @@
               </equals>
             </condition>
           </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_09</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_13</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>d4 (Not Eligible)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_14</string-value>
+              </equals>
+            </condition>
+          </row>
           <otherwise>
             <string-value>uncertain</string-value>
           </otherwise>
@@ -363,6 +407,72 @@
               </equals>
             </condition>
           </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_09</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_13</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>ind</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_14</string-value>
+              </equals>
+            </condition>
+          </row>
           <otherwise>
             <string-value>uncertain</string-value>
           </otherwise>
@@ -440,7 +550,7 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- Not Available</string-value>
+              <string-value>Ineligible- Not Available- Transportation</string-value>
             </value>
             <condition>
               <equals>
@@ -451,7 +561,7 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- Inadequate Work Search</string-value>
+              <string-value>Ineligible- Not Available- School/Training</string-value>
             </value>
             <condition>
               <equals>
@@ -462,7 +572,7 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- Alien Status</string-value>
+              <string-value>Ineligible- Not Available- Caregiving</string-value>
             </value>
             <condition>
               <equals>
@@ -473,7 +583,7 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- Disaster Roads or Transportation</string-value>
+              <string-value>Ineligible- Not Available- Incarceration</string-value>
             </value>
             <condition>
               <equals>
@@ -484,7 +594,7 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- Disaster Availability</string-value>
+              <string-value>Ineligible- Not Available- Self Employment/Commission</string-value>
             </value>
             <condition>
               <equals>
@@ -495,12 +605,78 @@
           </row>
           <row>
             <value>
-              <string-value>Ineligible- DUA</string-value>
+              <string-value>Ineligible- Not Available- Officer In Closely-Held Corp</string-value>
             </value>
             <condition>
               <equals>
                 <attribute attr-id="p12" />
                 <string-value>aa_d4_08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Not Available- Other</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_09</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Inadequate Work Search</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Alien Status</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Disaster Roads or Transportation</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- Disaster Availability</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_13</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Ineligible- DUA</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_14</string-value>
               </equals>
             </condition>
           </row>
@@ -592,7 +768,7 @@
           </row>
           <row>
             <value>
-              <string-value>KRS 341.350 (5)</string-value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
             </value>
             <condition>
               <equals>
@@ -603,7 +779,7 @@
           </row>
           <row>
             <value>
-              <string-value>KRS 341.350 (5); KRS 341.360 (3)</string-value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
             </value>
             <condition>
               <equals>
@@ -614,7 +790,7 @@
           </row>
           <row>
             <value>
-              <string-value>KRS 341.350 (5)</string-value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
             </value>
             <condition>
               <equals>
@@ -625,7 +801,7 @@
           </row>
           <row>
             <value>
-              <string-value>KRS 341.350 (5)</string-value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
             </value>
             <condition>
               <equals>
@@ -636,12 +812,78 @@
           </row>
           <row>
             <value>
-              <string-value>Disaster Relief Act Section 407</string-value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
             </value>
             <condition>
               <equals>
                 <attribute attr-id="p12" />
                 <string-value>aa_d4_08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (4) (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_09</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5); KRS 341.360 (3)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>KRS 341.350 (5)</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_13</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <string-value>Disaster Relief Act Section 407</string-value>
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p12" />
+                <string-value>aa_d4_14</string-value>
               </equals>
             </condition>
           </row>
@@ -10103,80 +10345,6 @@
                 <attribute attr-id="p4" />
                 <string-value>ch_c3_01</string-value>
               </equals>
-            </condition>
-          </row>
-          <otherwise>
-            <string-value>uncertain</string-value>
-          </otherwise>
-        </table-conclude>
-      </rule-xml>
-    </rule>
-    <rule ruleburst="true" folder="0" name="the employment's issue code" id="9" concludes="p6">
-      <rule-xml>
-        <table-conclude attr-id="p6" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <string-value>AA</string-value>
-            </value>
-            <condition>
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <for>
-                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b3" />
-                </for>
-              </for>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>DI</string-value>
-            </value>
-            <condition>
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <for>
-                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b2" />
-                </for>
-              </for>
-            </condition>
-          </row>
-          <otherwise>
-            <string-value>uncertain</string-value>
-          </otherwise>
-        </table-conclude>
-      </rule-xml>
-    </rule>
-    <rule ruleburst="true" folder="0" name="the employment's issue text" id="10" concludes="p7">
-      <rule-xml>
-        <table-conclude attr-id="p7" entity-id="employment" scope-id="employment0">
-          <row>
-            <value>
-              <string-value>Able &amp; Available</string-value>
-            </value>
-            <condition>
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <for>
-                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b3" />
-                </for>
-              </for>
-            </condition>
-          </row>
-          <row>
-            <value>
-              <string-value>Deductible Income</string-value>
-            </value>
-            <condition>
-              <for>
-                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
-                <for>
-                  <relationship relationship-id="employerglobalinstance" target-entity-id="global" />
-                  <attribute attr-id="b2" />
-                </for>
-              </for>
             </condition>
           </row>
           <otherwise>

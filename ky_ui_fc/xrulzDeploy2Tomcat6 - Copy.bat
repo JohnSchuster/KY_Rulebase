@@ -4,7 +4,7 @@ rem --------------------------------
 rem set up some base directory paths
 rem --------------------------------
 set sourcePath=C:\Dev\RB\KY_Rulebase\ky_ui_fc\Development\output
-set targetPath=C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\web-determinations\WEB-INF\classes\rulebases
+set targetPath=C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\web-determinations\WEB-INF\classes\rulebases
 
 rem --------------------------------- 
 set configPath="%targetPath%"
