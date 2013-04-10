@@ -47,7 +47,7 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a current benefit year'))</parse>
         </text>
       </attribute>
-      <attribute name="p24" type="number" public-name="filing_year">
+      <attribute name="p24" type="number" public-name="filing_year" display-unformatted="true">
         <text>
           <base>the filing year</base>
         </text>
@@ -295,18 +295,6 @@
         <text>
           <base>the claimant's incarceration prevents obtaining (acceptance) of suitable work</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('obtaining (acceptance) of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b53" type="boolean" public-name="fpr_claimant_is_self_employed">
-        <text>
-          <base>the claimant is self-employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('self-employed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b54" type="boolean" public-name="fpr_claimant_on_commission">
-        <text>
-          <base>the claimant is employed on a commission basis</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('on a commission basis'))</parse>
         </text>
       </attribute>
       <attribute name="b55" type="boolean" public-name="fpr_claimant_is_closely_held">
@@ -1642,12 +1630,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the details of the job',plural),o('conveyed to the claimant'))</parse>
         </text>
       </attribute>
-      <attribute name="b556" type="boolean" public-name="fpr_authorized_alien">
-        <text>
-          <base>the claimant is an alien authorized to work in the United States</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an alien authorized to work in the United States'))</parse>
-        </text>
-      </attribute>
       <attribute name="b558" type="boolean" public-name="fpr_referral_was_for_suitable">
         <text>
           <base>the referral was for suitable work</base>
@@ -1753,10 +1735,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
         </text>
       </attribute>
-      <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_finding">
+      <attribute name="b749" type="boolean" public-name="fpr_claim_has_aa_issue">
         <text>
-          <base>the claim has at least one able and available finding</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available finding'))</parse>
+          <base>the claim has at least one able and available issue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
         </text>
       </attribute>
       <attribute name="b848" type="boolean" public-name="dis_d4_aa01">
@@ -1767,8 +1749,8 @@
       </attribute>
       <attribute name="b850" type="boolean" public-name="fpr_non_zero_issues">
         <text>
-          <base>at least one finding has been raised</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one finding',singular),o('raised'))</parse>
+          <base>at least one issue has been raised</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one issue',singular),o('raised'))</parse>
         </text>
       </attribute>
       <attribute name="p249" type="date" public-name="fpr_asserted_byed">
@@ -1852,12 +1834,12 @@
           <base>the claimants birthday</base>
         </text>
       </attribute>
-      <attribute name="p252" type="number" public-name="fpr_claimant_home_phone">
+      <attribute name="p252" type="number" public-name="fpr_claimant_home_phone" display-unformatted="true">
         <text>
           <base>the claimants primary (home) phone number</base>
         </text>
       </attribute>
-      <attribute name="p253" type="number" public-name="fpr_claimant_alternate_phone">
+      <attribute name="p253" type="number" public-name="fpr_claimant_alternate_phone" display-unformatted="true">
         <text>
           <base>the claimants alternate (cell) phone number</base>
         </text>
@@ -1924,7 +1906,7 @@
           <base>the claimants current county of residence</base>
         </text>
       </attribute>
-      <attribute name="p264" type="number" public-name="fpr_current_zip">
+      <attribute name="p264" type="number" public-name="fpr_current_zip" display-unformatted="true">
         <text>
           <base>the claimants current zip code of residence</base>
         </text>
@@ -1955,7 +1937,7 @@
           <base>the claimants current permanent state of residence</base>
         </text>
       </attribute>
-      <attribute name="p269" type="number" public-name="fpr_permanent_zip">
+      <attribute name="p269" type="number" public-name="fpr_permanent_zip" display-unformatted="true">
         <text>
           <base>the claimants current permanent zip code of residence</base>
         </text>
@@ -2011,11 +1993,6 @@
           <base>the claimants rights and wishes</base>
         </text>
       </attribute>
-      <attribute name="p279" type="text" public-name="fpr_payment_method">
-        <text>
-          <base>the claimants preferred method of receiving unemployment benefits payments</base>
-        </text>
-      </attribute>
       <attribute name="p280" type="text" public-name="fpr_direct_deposit_name">
         <text>
           <base>the claimant name, as used for the purpose of direct deposit</base>
@@ -2026,12 +2003,12 @@
           <base>the financial institutions name, as used for the purpose of direct deposit</base>
         </text>
       </attribute>
-      <attribute name="p282" type="number" public-name="fpr_direct_deposit_routing">
+      <attribute name="p282" type="number" public-name="fpr_direct_deposit_routing" display-unformatted="true">
         <text>
           <base>the financial institutions routing number, as used for the purpose of direct deposit</base>
         </text>
       </attribute>
-      <attribute name="p283" type="number" public-name="fpr_direct_deposit_account">
+      <attribute name="p283" type="number" public-name="fpr_direct_deposit_account" display-unformatted="true">
         <text>
           <base>the claimants account number, as used for the purpose of direct deposit</base>
         </text>
@@ -2067,20 +2044,14 @@
       </attribute>
       <attribute name="b871" type="boolean" public-name="fpr_natural_disaster">
         <text>
-          <base>the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occurred on or about the facility where they were employed'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b872" type="boolean" public-name="fpr_union_member">
-        <text>
-          <base>the claimant is a member in good standing of a sanctioned labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a sanctioned labor union'))</parse>
+          <base>the claimant is unemployed as a result of a natural disaster</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster'))</parse>
         </text>
       </attribute>
       <attribute name="b873" type="boolean" public-name="fpr_union_provides_work">
         <text>
-          <base>the claimant is presented with work opportunities by the labor union</base>
-          <parse>s(ver('10.4.2.18'),v(present,t(simple,present,normal)),ob('the claimant',singular),o('with work opportunities by the labor union'))</parse>
+          <base>the trade union finds work for the claimant</base>
+          <parse>s(ver('10.4.2.18'),v(find,t(simple,present,normal)),sb('the trade union',singular),o('work for the claimant'))</parse>
         </text>
       </attribute>
       <attribute name="p285" type="text" public-name="fpr_area_of_expertise">
@@ -2090,8 +2061,8 @@
       </attribute>
       <attribute name="b874" type="boolean" public-name="fpr_advanced_ed_required">
         <text>
-          <base>the claimants occupation requires advanced education or certification</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimants occupation',singular),o('advanced education or certification'))</parse>
+          <base>the claimants field of work or industry requires advanced education or certification</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimants field of work or industry',singular),o('advanced education or certification'))</parse>
         </text>
       </attribute>
       <attribute name="b875" type="boolean" public-name="fpr_has_reliable_transportation">
@@ -2182,7 +2153,7 @@
       </attribute>
       <attribute name="p296" type="date" public-name="fpr_dependent_care_start">
         <text>
-          <base>the date the requirement for caring for others began</base>
+          <base>the date the limitation due to your care of others began</base>
         </text>
       </attribute>
       <attribute name="b881" type="boolean" public-name="fpr_knows_dependent_conclusion">
@@ -2206,34 +2177,10 @@
           <base>the claimants description of alternate means of care</base>
         </text>
       </attribute>
-      <attribute name="b882" type="boolean" public-name="fpr_self_emp_prevents_search">
-        <text>
-          <base>the claimant's self-employment prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b883" type="boolean" public-name="fpr_commission_prevents_search">
-        <text>
-          <base>the claimant's commission work prevents a suitable work search</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
       <attribute name="b884" type="boolean" public-name="fpr_co_prevents_search">
         <text>
           <base>the claimant's corporate officer position prevents a suitable work search</base>
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('a suitable work search'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b885" type="boolean" public-name="fpr_self_empl_prevents_accept">
-        <text>
-          <base>the claimant's self-employment prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s self-employment',singular),o('acceptance of suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b886" type="boolean" public-name="fpr_commision_prevents_accept">
-        <text>
-          <base>the claimant's commission work prevents acceptance of suitable work</base>
-          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s commission work',singular),o('acceptance of suitable work'))</parse>
         </text>
       </attribute>
       <attribute name="b887" type="boolean" public-name="fpr_co_prevents_accept">
@@ -2361,13 +2308,13 @@
       </attribute>
       <attribute name="p309" type="date" public-name="fpr_mental_issue_start_date">
         <text>
-          <base>the date the claimant became mentally ill</base>
+          <base>the date the claimant's mental health limitation began</base>
         </text>
       </attribute>
       <attribute name="b900" type="boolean" public-name="fpr_no_longer_mental_ill">
         <text>
-          <base>the claimant knows when they will no longer be mentally ill</base>
-          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when they will no longer be mentally ill'))</parse>
+          <base>the claimant knows when their mental health limitation ends</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when their mental health limitation ends'))</parse>
         </text>
       </attribute>
       <attribute name="b901" type="boolean" public-name="fpr_mental_health_document">
@@ -2389,7 +2336,7 @@
       </attribute>
       <attribute name="p311" type="date" public-name="fpr_mental_health_end">
         <text>
-          <base>the date the claimant expects their mental health condition to improve</base>
+          <base>the date the claimant expects their mental health condition to end</base>
         </text>
       </attribute>
       <attribute name="b903" type="boolean" public-name="fpr_disability_on_physical">
@@ -2504,16 +2451,74 @@
           <base>the claimant's alien registration code</base>
         </text>
       </attribute>
-      <attribute name="b989" type="boolean" public-name="fpr_aa_investigated">
+      <attribute name="b989" type="boolean" public-name="fpr_aa_selfemp_seeking">
         <text>
-          <base>the system investigated at least one able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(investigate,t(simple,past,normal)),sb('the system',plural),o('at least one able and available issue'))</parse>
+          <base>the claimant's (self employment, commission only work) limits their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(limit,t(simple,present,normal)),sb('the claimant''s (self employment, commission only work)',singular),o('their availability for suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b990" type="boolean" public-name="fpr_at_least_one_aa_it">
+      <attribute name="p405" type="text" public-name="scr_benefit_payments">
         <text>
-          <base>the claim has at least one able and available issue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available issue'))</parse>
+          <base>the claimants choice for unemployment benefits payments</base>
+        </text>
+      </attribute>
+      <attribute name="b991" type="boolean" public-name="fpr_self_commission_search">
+        <text>
+          <base>the claimant's (self-employment, commission work) prevents a suitable work search</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('a suitable work search'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b992" type="boolean" public-name="fpr_self_commission_acceptance">
+        <text>
+          <base>the claimant's (self-employment, commission work) prevents acceptance of suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('acceptance of suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1015" type="boolean" public-name="scr_aa_additional_reason">
+        <text>
+          <base>the claimant has an additional reason that limits their availability for work</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an additional reason that limits their availability for work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p429" type="text" public-name="scr_aa_additional_availability">
+        <text>
+          <base>the additional reason that affects the claimants availability to work</base>
+        </text>
+      </attribute>
+      <attribute name="b1016" type="boolean" public-name="scr_aa_additional_search">
+        <text>
+          <base>the situation or event prevents the claimant from looking for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the situation or event',singular),o('the claimant from looking for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1017" type="boolean" public-name="scr_aa_additional_accept">
+        <text>
+          <base>the situation or event prevents the claimant from accepting suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the situation or event',singular),o('the claimant from accepting suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1018" type="boolean" public-name="fpr_knows_incarceration_end_date">
+        <text>
+          <base>the claimant knows when their incarceration will end</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('when their incarceration will end'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1080" type="boolean" public-name="fpr_natural_disaster_old">
+        <text>
+          <base>the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occurred on or about the facility where they were employed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1081" type="boolean" public-name="fpr_labor_union_old">
+        <text>
+          <base>the claimant is a member in good standing of a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1082" type="boolean" public-name="fpr_labor_union_work_old">
+        <text>
+          <base>the claimant is presented with work opportunities by the labor union</base>
+          <parse>s(ver('10.4.2.18'),v(present,t(simple,present,normal)),ob('the claimant',singular),o('with work opportunities by the labor union'))</parse>
         </text>
       </attribute>
     </entity>
@@ -2711,12 +2716,6 @@
         <text>
           <base>the claimant is receiving (received) wages paid under the conditions of the WARN act from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving (received) wages paid under the conditions of the WARN act from the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b294" type="boolean" public-name="emr_left_to_avoid_drug_test">
-        <text>
-          <base>the claimant left employment rather than take a (drug, alcohol) test as required by the employer's reasonable policy</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('employment rather than take a (drug, alcohol) test as required by the employer''s reasonable policy'))</parse>
         </text>
       </attribute>
       <attribute name="b296" type="boolean" public-name="emr_is_reimbursing">
@@ -3046,12 +3045,6 @@
           <base>the employer wage frequency</base>
         </text>
       </attribute>
-      <attribute name="b653" type="boolean" public-name="emr_business_owner">
-        <text>
-          <base>the claimant is a business owner or an officer of a corporation</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a business owner or an officer of a corporation'))</parse>
-        </text>
-      </attribute>
       <attribute name="b654" type="boolean" public-name="emr_school_worker">
         <text>
           <base>the claimant is an employee of a school</base>
@@ -3062,12 +3055,6 @@
         <text>
           <base>the claimant is a sports professional</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a sports professional'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b656" type="boolean" public-name="emr_riverboat_worker">
-        <text>
-          <base>the claimant is a waterway employee</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee'))</parse>
         </text>
       </attribute>
       <attribute name="b657" type="boolean" public-name="emr_paid_athletic">
@@ -3124,6 +3111,34 @@
         <text>
           <base>the employer is an rce employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an rce employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p505" type="date" public-name="emr_off_duty_water_start">
+        <text>
+          <base>the claimants start date for the off-duty period of water transportation employment</base>
+        </text>
+      </attribute>
+      <attribute name="p506" type="date" public-name="emr_off_duty_water_end">
+        <text>
+          <base>the claimants end date for the off-duty period of water transportation employment</base>
+        </text>
+      </attribute>
+      <attribute name="b1098" type="boolean" public-name="emr_waterway_employee">
+        <text>
+          <base>the claimant is a waterway employee who is considered fully employed by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee who is considered fully employed by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1099" type="boolean" public-name="emr_riverboat">
+        <text>
+          <base>the claimant is a waterway employee</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1100" type="boolean" public-name="fpr_waterworker_break">
+        <text>
+          <base>the claimant is (on a scheduled break, off duty) from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('(on a scheduled break, off duty) from the employer'))</parse>
         </text>
       </attribute>
     </entity>
@@ -3185,7 +3200,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
         </text>
       </attribute>
-      <attribute name="p15" type="number" public-name="g01_employment_total_weeks">
+      <attribute name="p15" type="number" public-name="g01_employment_total_weeks" display-unformatted="true">
         <text>
           <base>the employment's net number of discrete weeks worked within the base period</base>
         </text>
@@ -3202,7 +3217,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent, separated, employment'))</parse>
         </text>
       </attribute>
-      <attribute name="p20" type="number" public-name="g01_empt_weeks_not_worked">
+      <attribute name="p20" type="number" public-name="g01_empt_weeks_not_worked" display-unformatted="true">
         <text>
           <base>the employment's number of discrete weeks not worked by the claimant</base>
         </text>
@@ -3311,17 +3326,6 @@
         <text>
           <base>the employment's employer requested the claimant's resignation</base>
           <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the employment''s employer',plural),o('the claimant''s resignation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p59" type="text" public-name="emt_reason_emr_req_resign">
-        <text>
-          <base>the claimant's stated reason that the employer requested their resignation</base>
-        </text>
-      </attribute>
-      <attribute name="b136" type="boolean" public-name="emt_terminated_if_not_resigned">
-        <text>
-          <base>the claimant would have been terminated had they failed to resign</base>
-          <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,perfect)),sb('the claimant',singular),o('terminated had they failed to resign'))</parse>
         </text>
       </attribute>
       <attribute name="b139" type="boolean" public-name="emt_discharge_dishonesty">
@@ -3624,12 +3628,6 @@
           <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the claimant''s voluntary participation in this employer''s mandatory retirement policy'))</parse>
         </text>
       </attribute>
-      <attribute name="b189" type="boolean" public-name="emt_refused_an_instruction">
-        <text>
-          <base>the claimant refused to obey an instruction during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,past,normal)),sb('the claimant',plural),o('to obey an instruction during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b190" type="boolean" public-name="emt_getting_vacation_pay">
         <text>
           <base>the claimant is receiving (received) vacation pay for the employment</base>
@@ -3714,22 +3712,10 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to domestic circumstances'))</parse>
         </text>
       </attribute>
-      <attribute name="b207" type="boolean" public-name="scr_jail_during_employment">
-        <text>
-          <base>the claimant was incarcerated for a conviction during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for a conviction during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b208" type="boolean" public-name="emt_left_for_school">
         <text>
           <base>the claimant voluntarily left the employment to attend non-TRA (school, training)</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to attend non-TRA (school, training)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b209" type="boolean" public-name="scr_jail_for_five">
-        <text>
-          <base>the claimant was incarcerated for at least five (5) days of work during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for at least five (5) days of work during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b210" type="boolean" public-name="emt_left_for_elsewhere">
@@ -3754,18 +3740,6 @@
         <text>
           <base>the claimant voluntarily left the employment due to lack of transportation</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to lack of transportation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b214" type="boolean" public-name="emt_condition_settled_at_hire">
-        <text>
-          <base>the condition of the employment was established at the time of hire</base>
-          <parse>s(ver('10.4.2.18'),v(establish,t(simple,past,normal)),ob('the condition of the employment',singular),o('at the time of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b215" type="boolean" public-name="emt_failed_to_meet_condition">
-        <text>
-          <base>the claimant failed to meet the condition of the employment</base>
-          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to meet the condition of the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b216" type="boolean" public-name="emt_left_for_temporary">
@@ -3892,18 +3866,6 @@
         <text>
           <base>the claimant voluntarily left the employment due to a lack of (training, experience)</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a lack of (training, experience)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b238" type="boolean" public-name="emt_required_motor_operation">
-        <text>
-          <base>the claimant's job duties required the operation of a motor vehicle for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the operation of a motor vehicle for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b239" type="boolean" public-name="emt_required_insurance">
-        <text>
-          <base>the claimant's job duties required insurability as a driver for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('insurability as a driver for the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b240" type="boolean" public-name="emt_left_because_of_religion">
@@ -4098,12 +4060,6 @@
           <parse>s(ver('10.4.2.18'),v(retire,t(simple,past,normal)),sb('the claimant',plural),o('from the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b273" type="boolean" public-name="emt_agreed_to_retirement_policy">
-        <text>
-          <base>the claimant voluntarily agreed to the mandatory retirement policy as a condition of the employment</base>
-          <parse>s(ver('10.4.2.18'),v(agree,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('to the mandatory retirement policy as a condition of the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b274" type="boolean" public-name="emt_given_bona_fide_offer">
         <text>
           <base>the claimant was given a bona fide offer of work during the employment</base>
@@ -4128,7 +4084,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
         </text>
       </attribute>
-      <attribute name="p63" type="number" public-name="fpr_emt_discrete_weeks_worked">
+      <attribute name="p63" type="number" public-name="fpr_emt_discrete_weeks_worked" display-unformatted="true">
         <text>
           <base>the employment's number of discrete weeks worked within the investigative period</base>
         </text>
@@ -4179,12 +4135,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute'))</parse>
         </text>
       </attribute>
-      <attribute name="b581" type="boolean" public-name="fpr_responsible_condition">
-        <text>
-          <base>the claimant was responsible for meeting the employment's condition of continued employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible for meeting the employment''s condition of continued employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b582" type="boolean" public-name="fpr_equipment_gives_good_cause">
         <text>
           <base>the employment's equipment problems gave the claimant good cause for quitting</base>
@@ -4221,22 +4171,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('continuing to offer the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b588" type="boolean" public-name="emr_substantial_reduction">
-        <text>
-          <base>this employer initiated a substantial reduction in work force goal during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('this employer',plural),o('a substantial reduction in work force goal during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b589" type="boolean" public-name="emr_agreed_to_reduction">
         <text>
           <base>the claimant voluntarily accepted the conditions of the reduction in force during the employment</base>
           <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the conditions of the reduction in force during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b590" type="boolean" public-name="emr_took_buyout">
-        <text>
-          <base>the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force</base>
-          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('an incentive package from this employer as part of the employment''s reduction in force'))</parse>
         </text>
       </attribute>
       <attribute name="b591" type="boolean" public-name="fpr_accept_offer_with_expectation">
@@ -4407,22 +4345,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment''s standard of behaviour',singular),o('reasonable'))</parse>
         </text>
       </attribute>
-      <attribute name="b622" type="boolean" public-name="fpr_unsatisfactory_performance">
-        <text>
-          <base>the claimant failed to perform satisfactory work during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to perform satisfactory work during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b623" type="boolean" public-name="fpr_work_within_ability">
         <text>
           <base>the employment's work was within the claimant's proven ability</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment''s work',singular),o('within the claimant''s proven ability'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b624" type="boolean" public-name="fpr_aware_of_responsibility">
-        <text>
-          <base>the claimant was aware of the employment's job responsibilities</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employment''s job responsibilities'))</parse>
         </text>
       </attribute>
       <attribute name="b625" type="boolean" public-name="fpr_willful_action">
@@ -4657,11 +4583,6 @@
           <base>the claimants explanation of how the workplace dispute impacted the employment</base>
         </text>
       </attribute>
-      <attribute name="p115" type="text" public-name="scr_dispute_with_person">
-        <text>
-          <base>the person with whom the claimant had the workplace dispute</base>
-        </text>
-      </attribute>
       <attribute name="p116" type="text" public-name="scr_dispute_other">
         <text>
           <base>the other circumstance that the claimant had the workplace dispute with</base>
@@ -4676,11 +4597,6 @@
         <text>
           <base>the employment quit work related interview should branch to dispute</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to dispute'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p118" type="text" public-name="scr_drugtest_reason">
-        <text>
-          <base>the employers reason for requiring a drug test</base>
         </text>
       </attribute>
       <attribute name="p119" type="text" public-name="scr_reason_no_drugtest">
@@ -4812,12 +4728,6 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to work related injury'))</parse>
         </text>
       </attribute>
-      <attribute name="b688" type="boolean" public-name="scr_training_impact">
-        <text>
-          <base>the claimants lack of training had a negative impact on the employment</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimants lack of training',plural),o('a negative impact on the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="p128" type="text" public-name="scr_training_explanation">
         <text>
           <base>the claimants explanation regarding their lack of training</base>
@@ -4896,11 +4806,6 @@
           <base>the date the final religious event occured</base>
         </text>
       </attribute>
-      <attribute name="p134" type="text" public-name="scr_religious_event_description">
-        <text>
-          <base>the specific description of the religious event that inspired them to leave the employment</base>
-        </text>
-      </attribute>
       <attribute name="b697" type="boolean" public-name="scr_religious_event_is_recurring">
         <text>
           <base>the religious incident is recurring</base>
@@ -4911,12 +4816,6 @@
         <text>
           <base>the claimant was aware of a religious conflict prior to accepting the employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of a religious conflict prior to accepting the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b699" type="boolean" public-name="scr_religious_event_changed">
-        <text>
-          <base>the spiritual climate changed after the claimant accepted employment</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the spiritual climate',plural),o('after the claimant accepted employment'))</parse>
         </text>
       </attribute>
       <attribute name="p135" type="text" public-name="scr_religious_event_change_desc">
@@ -4997,47 +4896,14 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to distance'))</parse>
         </text>
       </attribute>
-      <attribute name="p141" type="number" public-name="scr_miles_increased">
-        <text>
-          <base>the number of miles that the claimants commute to work has increased by</base>
-        </text>
-      </attribute>
-      <attribute name="b709" type="boolean" public-name="scr_employer_changed_the_distance">
-        <text>
-          <base>the increased distance to work was the result of an action taken by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the increased distance to work',singular),o('the result of an action taken by the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p142" type="date" public-name="scr_distance_change_date">
-        <text>
-          <base>the date the distance to work increased</base>
-        </text>
-      </attribute>
       <attribute name="p143" type="text" public-name="scr_work_hour_change_quit">
         <text>
           <base>the claimants description of how the number of work hours kindled the desire to quit</base>
         </text>
       </attribute>
-      <attribute name="b710" type="boolean" public-name="scr_work_hour_change_hire">
-        <text>
-          <base>the number of work hours changed since the claimants date of hire</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the number of work hours',plural),o('since the claimants date of hire'))</parse>
-        </text>
-      </attribute>
       <attribute name="p144" type="text" public-name="scr_work_hour_change_desc">
         <text>
           <base>the claimants description of how the work hours changed since their date of hire</base>
-        </text>
-      </attribute>
-      <attribute name="b711" type="boolean" public-name="scr_work_hours_change_temp">
-        <text>
-          <base>the modified number of work hours were temporary</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the modified number of work hours',plural),o('temporary'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p145" type="text" public-name="scr_work_hour_change_duration">
-        <text>
-          <base>the length of time that the modified work hours were expected to be effective</base>
         </text>
       </attribute>
       <attribute name="b712" type="boolean" public-name="scr_work_hours_dicipline">
@@ -5062,17 +4928,6 @@
         <text>
           <base>the employer offered an incentive package for voluntarily accepting the reduction</base>
           <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employer',plural),o('an incentive package for voluntarily accepting the reduction'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b716" type="boolean" public-name="scr_workforce_could_remain">
-        <text>
-          <base>the claimant would have been able to remain employed if they did not take the buyout</base>
-          <parse>s(ver('10.4.2.18'),v(be+would,t(simple,modal,perfect)),sb('the claimant',singular),o('able to remain employed if they did not take the buyout'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p146" type="text" public-name="scr_condition_of_hire_desc">
-        <text>
-          <base>the claimants explanation of the condition of hire they failed to uphold</base>
         </text>
       </attribute>
       <attribute name="p147" type="text" public-name="scr_condition_of_hire_failure">
@@ -5209,11 +5064,6 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to other'))</parse>
         </text>
       </attribute>
-      <attribute name="p157" type="text" public-name="scr_the_selected_status">
-        <text>
-          <base>the employment selected status</base>
-        </text>
-      </attribute>
       <attribute name="b735" type="boolean" public-name="scr_branch_to_quit_details">
         <text>
           <base>the employment quit details screen should be displayed</base>
@@ -5243,12 +5093,6 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary or non full-time employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b739" type="boolean" public-name="scr_left_for_miles">
-        <text>
-          <base>the claimant left the employment to accept work less than 100 miles from their home</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept work less than 100 miles from their home'))</parse>
-        </text>
-      </attribute>
       <attribute name="b740" type="boolean" public-name="scr_left_prior_to_leaving">
         <text>
           <base>the claimant accepted the new employment offer prior to leaving the current employer</base>
@@ -5270,30 +5114,9 @@
           <base>the address of the business that extended the claimant the new job offer</base>
         </text>
       </attribute>
-      <attribute name="p162" type="number" public-name="scr_offer_phone">
-        <text>
-          <base>the phone number of the business that extended the claimant the new job offer</base>
-        </text>
-      </attribute>
-      <attribute name="p163" type="date" public-name="scr_offer_date">
-        <text>
-          <base>the date that the business extended the claimant the new job offer</base>
-        </text>
-      </attribute>
       <attribute name="p164" type="date" public-name="scr_offer_begin_date">
         <text>
           <base>the date that the new employement opportunity is scheduled to begin</base>
-        </text>
-      </attribute>
-      <attribute name="p165" type="text" public-name="scr_offer_work_type">
-        <text>
-          <base>the type of employment of the new job offer that was extended to the claimant</base>
-        </text>
-      </attribute>
-      <attribute name="b741" type="boolean" public-name="scr_offer_began">
-        <text>
-          <base>tha claimant has commenced employment at the new business</base>
-          <parse>s(ver('10.4.2.18'),v(commence,t(simple,present,perfect)),sb('tha claimant',singular),o('employment at the new business'))</parse>
         </text>
       </attribute>
       <attribute name="p166" type="text" public-name="scr_offer_why_not">
@@ -5349,12 +5172,6 @@
           <parse>s(ver('10.4.2.18'),v(determine,t(simple,past,normal)),sb('the dci',plural),o('the claimant left the employment voluntarily without good cause'))</parse>
         </text>
       </attribute>
-      <attribute name="b752" type="boolean" public-name="fpr_claimant_received_training">
-        <text>
-          <base>the claimant received training (instruction) during the employment on how to perform their duties</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('training (instruction) during the employment on how to perform their duties'))</parse>
-        </text>
-      </attribute>
       <attribute name="p167" type="text" public-name="scr_discharge_control">
         <text>
           <base>the reason the claimant was discharged</base>
@@ -5364,11 +5181,6 @@
         <text>
           <base>the employment discharge interview should branch to unsatisfactory attendance</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to unsatisfactory attendance'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p168" type="text" public-name="scr_alternate_discharge_reason">
-        <text>
-          <base>the claimants alternate explanation of the discharge reason</base>
         </text>
       </attribute>
       <attribute name="p169" type="text" public-name="scr_discharge_person_name">
@@ -5404,12 +5216,6 @@
           <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the claimant',singular),o('an employee hand book'))</parse>
         </text>
       </attribute>
-      <attribute name="b757" type="boolean" public-name="scr_discharge_duties">
-        <text>
-          <base>the claimant was aware of their job duties</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their job duties'))</parse>
-        </text>
-      </attribute>
       <attribute name="b758" type="boolean" public-name="scr_discharge_progressively">
         <text>
           <base>the employer has a progressive disciplinary policy</base>
@@ -5428,58 +5234,14 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('an attendance policy'))</parse>
         </text>
       </attribute>
-      <attribute name="b761" type="boolean" public-name="scr_attendance_aware">
-        <text>
-          <base>the claimant was well aware of the attendance policy</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('well aware of the attendance policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b762" type="boolean" public-name="scr_needed_tardy_excuse">
-        <text>
-          <base>the claimant was required to have supporting documentation regarding absence or tardiness</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to have supporting documentation regarding absence or tardiness'))</parse>
-        </text>
-      </attribute>
       <attribute name="p172" type="text" public-name="scr_method_tardy">
         <text>
           <base>the required method of reporting absence or tardiness</base>
         </text>
       </attribute>
-      <attribute name="b763" type="boolean" public-name="scr_tardy_verbal">
-        <text>
-          <base>the claimant was given written and/or verbal warnings regarding absence or tardiness</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('written and/or verbal warnings regarding absence or tardiness'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p173" type="text" public-name="scr_tardy_person_name">
-        <text>
-          <base>the name of the person who gave the claimant warning regarding absence or tardiness</base>
-        </text>
-      </attribute>
-      <attribute name="p174" type="text" public-name="scr_tardy_person_title">
-        <text>
-          <base>the title of the person who gave the claimant warning regarding absence or tardiness</base>
-        </text>
-      </attribute>
-      <attribute name="p175" type="date" public-name="scr_tardy_given_date">
-        <text>
-          <base>the date the claimant received warning regarding absence or tardiness</base>
-        </text>
-      </attribute>
       <attribute name="p176" type="text" public-name="scr_discuntinued_reason">
         <text>
           <base>the reason the claimants employment was discontinued</base>
-        </text>
-      </attribute>
-      <attribute name="p177" type="text" public-name="scr_policy_description">
-        <text>
-          <base>the claimants description of the policy violation they were terminated for</base>
-        </text>
-      </attribute>
-      <attribute name="b764" type="boolean" public-name="scr_rule_was_violated">
-        <text>
-          <base>the claimant violated the rule or policy as described by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the rule or policy as described by the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b765" type="boolean" public-name="scr_rule_awareness">
@@ -5488,52 +5250,9 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employers rules and policies'))</parse>
         </text>
       </attribute>
-      <attribute name="b766" type="boolean" public-name="scr_rules_enforced_fairly">
-        <text>
-          <base>the employers rules and policies are enforced without variation or diversity</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employers rules and policies',plural),o('enforced without variation or diversity'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p178" type="text" public-name="scr_not_followed_fairly">
-        <text>
-          <base>the claimants perceived observations of discrimination regarding rules and policy</base>
-        </text>
-      </attribute>
-      <attribute name="b767" type="boolean" public-name="scr_rule_warning_given">
-        <text>
-          <base>the claimant was given verbal or written warnings regarding policy or rule violation prior to discharge</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('verbal or written warnings regarding policy or rule violation prior to discharge'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p179" type="number" public-name="scr_rule_person">
-        <text>
-          <base>the name of the person that gave the claimant the verbal or written warnings regarding policy or rule violation</base>
-        </text>
-      </attribute>
-      <attribute name="p180" type="text" public-name="scr_rule_person_title">
-        <text>
-          <base>the title of the person that gave the claimant the verbal or written warnings regarding policy or rule violation</base>
-        </text>
-      </attribute>
-      <attribute name="p181" type="date" public-name="scr_rule_warning_date">
-        <text>
-          <base>the date the claimant received the verbal or written warning regarding the rule or policy violation</base>
-        </text>
-      </attribute>
-      <attribute name="b768" type="boolean" public-name="scr_rule_reason_given">
-        <text>
-          <base>the claimant provided an excuse as to why the rule or policy was violated</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an excuse as to why the rule or policy was violated'))</parse>
-        </text>
-      </attribute>
       <attribute name="p182" type="text" public-name="scr_rule_expanation">
         <text>
           <base>the explanation of why they violated the rule or policy</base>
-        </text>
-      </attribute>
-      <attribute name="p183" type="text" public-name="scr_no_reason_given">
-        <text>
-          <base>the claimants reason for no explanation regarding the rule or policy violation</base>
         </text>
       </attribute>
       <attribute name="b769" type="boolean" public-name="scr_branch_to_violation_of">
@@ -5570,52 +5289,14 @@
           <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant previously',plural),o('positive feedback or commendations regarding their performance'))</parse>
         </text>
       </attribute>
-      <attribute name="b773" type="boolean" public-name="scr_poor_work_warning">
-        <text>
-          <base>the claimant received warnings regarding their work performance prior to being discharged</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings regarding their work performance prior to being discharged'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p186" type="text" public-name="scr_poor_work_person">
-        <text>
-          <base>the name of the person who gave the claimant warnings regarding their work performance</base>
-        </text>
-      </attribute>
-      <attribute name="p187" type="text" public-name="scr_poor_work_title">
-        <text>
-          <base>the title of the person who gave the claimant warnings regarding their work performance</base>
-        </text>
-      </attribute>
-      <attribute name="p188" type="date" public-name="scr_poor_work_date">
-        <text>
-          <base>the date the claimant received warnings regarding their work performance</base>
-        </text>
-      </attribute>
-      <attribute name="b774" type="boolean" public-name="scr_poor_work_changed">
-        <text>
-          <base>the claimants duties or customary work load changed since their date of hire</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the claimants duties or customary work load',plural),o('since their date of hire'))</parse>
-        </text>
-      </attribute>
       <attribute name="p189" type="text" public-name="scr_poor_work_change_desc">
         <text>
           <base>the claimants description of how their duties or workload changed since the date of hire</base>
         </text>
       </attribute>
-      <attribute name="b775" type="boolean" public-name="scr_poor_work_excuse">
-        <text>
-          <base>the claimant provided and explanation to the employer regarding their unsatisfactory work performance</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('and explanation to the employer regarding their unsatisfactory work performance'))</parse>
-        </text>
-      </attribute>
       <attribute name="p190" type="text" public-name="scr_poor_work_excuse_desc">
         <text>
           <base>the claimants explanation for the poor work performance</base>
-        </text>
-      </attribute>
-      <attribute name="p191" type="text" public-name="scr_poor_work_no_excuse">
-        <text>
-          <base>the claimants explanation for not providing an explanation for their poor work performance</base>
         </text>
       </attribute>
       <attribute name="b776" type="boolean" public-name="scr_branch_to_unsatisfactory_work">
@@ -5624,53 +5305,10 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to unsatisfactory work'))</parse>
         </text>
       </attribute>
-      <attribute name="b778" type="boolean" public-name="scr_conduct_danger">
-        <text>
-          <base>the claiments bad behavior or conduct endangered themselves or others</base>
-          <parse>s(ver('10.4.2.18'),v(endanger,t(simple,past,normal)),sb('the claiments bad behavior or conduct',plural),o('themselves or others'))</parse>
-        </text>
-      </attribute>
       <attribute name="b779" type="boolean" public-name="scr_conduct_aware">
         <text>
           <base>the claimant was aware that their behavior was inappropriate or unacceptable</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware that their behavior was inappropriate or unacceptable'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b780" type="boolean" public-name="scr_conduct_warning">
-        <text>
-          <base>the claimant received warnings regarding their behavior prior to being discharged</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings regarding their behavior prior to being discharged'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p192" type="text" public-name="scr_conduct_name">
-        <text>
-          <base>the name or the person who gave the claimant warnings regarding their bad behavior</base>
-        </text>
-      </attribute>
-      <attribute name="p193" type="text" public-name="scr_conduct_title">
-        <text>
-          <base>the title or the person who gave the claimant warnings regarding their bad behavior</base>
-        </text>
-      </attribute>
-      <attribute name="p194" type="date" public-name="scr_conduct_date">
-        <text>
-          <base>the date the claimant received warnings regarding their bad behavior</base>
-        </text>
-      </attribute>
-      <attribute name="b781" type="boolean" public-name="scr_conduct_explanation_given">
-        <text>
-          <base>the claimant provided the employer with an explanation regarding their bad behavior</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation regarding their bad behavior'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p195" type="text" public-name="scr_conduct_explanation">
-        <text>
-          <base>the claimants explanation for the bad behavior</base>
-        </text>
-      </attribute>
-      <attribute name="p196" type="text" public-name="scr_conduct_no_explanation">
-        <text>
-          <base>the claimants explanation for not providing an explanation regarding the bad behavior</base>
         </text>
       </attribute>
       <attribute name="b782" type="boolean" public-name="scr_branch_to_inappropriate">
@@ -5745,20 +5383,9 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to employer-request'))</parse>
         </text>
       </attribute>
-      <attribute name="p197" type="text" public-name="scr_dishonest_description">
-        <text>
-          <base>the claimants description of the way the employer alleged they were dishonest</base>
-        </text>
-      </attribute>
       <attribute name="p198" type="text" public-name="scr_dishonest_final_description">
         <text>
           <base>the claimants description of the final incident of dishonesty that led to their discharge</base>
-        </text>
-      </attribute>
-      <attribute name="b794" type="boolean" public-name="scr_dishonest_agree">
-        <text>
-          <base>the claimant concures with the employers allegation of dishonesty</base>
-          <parse>s(ver('10.4.2.18'),v(concure,t(simple,present,normal)),sb('the claimant',singular),o('with the employers allegation of dishonesty'))</parse>
         </text>
       </attribute>
       <attribute name="b795" type="boolean" public-name="scr_dishonest_explanation_given">
@@ -5772,57 +5399,14 @@
           <base>the explanation that the claimant provided to the employer regarding the incident of dishonesty</base>
         </text>
       </attribute>
-      <attribute name="p200" type="text" public-name="scr_dishonest_explanation_not_given">
-        <text>
-          <base>the claimants explanation of why they did not provide an explanation regarding the incident of dishonesty</base>
-        </text>
-      </attribute>
-      <attribute name="p201" type="text" public-name="scr_false_description">
-        <text>
-          <base>the claimants description of the way that the employer alleges that they falsified their employment application</base>
-        </text>
-      </attribute>
-      <attribute name="b796" type="boolean" public-name="scr_false_true">
-        <text>
-          <base>the claimant concures with the employers allegation of a falsified employment application</base>
-          <parse>s(ver('10.4.2.18'),v(concure,t(simple,present,normal)),sb('the claimant',singular),o('with the employers allegation of a falsified employment application'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b797" type="boolean" public-name="scr_false_provided">
-        <text>
-          <base>the claimant provided the employer with an explanation regarding the falsified employment application</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation regarding the falsified employment application'))</parse>
-        </text>
-      </attribute>
       <attribute name="p202" type="text" public-name="scr_false_explanation">
         <text>
           <base>the claimants explanation to the employer as to why they falsified an employment application</base>
         </text>
       </attribute>
-      <attribute name="p203" type="text" public-name="scr_false_no_explanation">
-        <text>
-          <base>the claimants explanation as to why they did not provide an explanation to the employer regarding the falsified employment application</base>
-        </text>
-      </attribute>
-      <attribute name="p204" type="text" public-name="scr_obey_instruction_desc">
-        <text>
-          <base>the claimants description of the instruction the the employer alleges they refused to obey</base>
-        </text>
-      </attribute>
       <attribute name="p205" type="text" public-name="scr_obey_person">
         <text>
           <base>the name of the person who gave the claimant the instructions they refused to obey</base>
-        </text>
-      </attribute>
-      <attribute name="p206" type="text" public-name="the_obey_title">
-        <text>
-          <base>the title of the person who gave the claimant the instructions they refused to obey</base>
-        </text>
-      </attribute>
-      <attribute name="b798" type="boolean" public-name="scr_obey_agree">
-        <text>
-          <base>the claimant concures with the employers allegation of refusal to obey an instruction</base>
-          <parse>s(ver('10.4.2.18'),v(concure,t(simple,present,normal)),sb('the claimant',singular),o('with the employers allegation of refusal to obey an instruction'))</parse>
         </text>
       </attribute>
       <attribute name="p207" type="text" public-name="scr_obey_why">
@@ -5842,32 +5426,6 @@
           <parse>s(ver('10.4.2.18'),v(comply,t(simple,present,perfect)),sb('the claimant',singular),o('with the specified instruction prior to the final incident'))</parse>
         </text>
       </attribute>
-      <attribute name="b801" type="boolean" public-name="scr_obey_warning">
-        <text>
-          <base>the claimant received warnings regarding refusal of instructions prior to their discharge</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings regarding refusal of instructions prior to their discharge'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p208" type="text" public-name="scr_obey_warning_person">
-        <text>
-          <base>the name of the person who gave the claimant warning regarding the refusal of instructions</base>
-        </text>
-      </attribute>
-      <attribute name="p209" type="text" public-name="scr_obey_warning_title">
-        <text>
-          <base>the title of the person who gave the claimant warning regarding the refusal of instructions</base>
-        </text>
-      </attribute>
-      <attribute name="p210" type="date" public-name="scr_obey_warning_date">
-        <text>
-          <base>the date the claimant received warning regarding the refusal of instructions</base>
-        </text>
-      </attribute>
-      <attribute name="p211" type="text" public-name="scr_driver_loss_desc">
-        <text>
-          <base>the claimants description of how they lost their drivers license</base>
-        </text>
-      </attribute>
       <attribute name="b802" type="boolean" public-name="scr_driver_required">
         <text>
           <base>the claimants job duties require then to be able to operate a motor vehicle</base>
@@ -5880,39 +5438,10 @@
           <parse>s(ver('10.4.2.18'),v(lose,t(simple,past,normal)),sb('the claimant',plural),o('their drivers license due to a violation of motor vehicle law'))</parse>
         </text>
       </attribute>
-      <attribute name="b804" type="boolean" public-name="scr_driver_aware">
-        <text>
-          <base>the claimant was aware of the need to maintain a drivers license at the time of hire</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the need to maintain a drivers license at the time of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b805" type="boolean" public-name="scr_driver_must_maintain">
-        <text>
-          <base>the claimant was responsible to maintain a drivers license as a requirement of continued employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible to maintain a drivers license as a requirement of continued employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p212" type="text" public-name="src_insure_desc">
-        <text>
-          <base>the claimants description of how they came to be uninsurable</base>
-        </text>
-      </attribute>
-      <attribute name="b806" type="boolean" public-name="scr_insure_required">
-        <text>
-          <base>the claimants job duties required them to be an insurable motor vehicle operator</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimants job duties',plural),o('them to be an insurable motor vehicle operator'))</parse>
-        </text>
-      </attribute>
       <attribute name="b807" type="boolean" public-name="scr_insure_law">
         <text>
           <base>the claimant became unisurable as the result of a violation of motor vehicle law</base>
           <parse>s(ver('10.4.2.18'),v(become,t(simple,past,normal)),sb('the claimant',plural),o('unisurable as the result of a violation of motor vehicle law'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b808" type="boolean" public-name="scr_insure_aware">
-        <text>
-          <base>the claimant was aware of their responsibility to remain insurable as a requirement of continued employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their responsibility to remain insurable as a requirement of continued employment'))</parse>
         </text>
       </attribute>
       <attribute name="p213" type="text" public-name="scr_drug_flow_control">
@@ -5954,46 +5483,14 @@
           <base>the date the final incident occured regarding the claimants drug use</base>
         </text>
       </attribute>
-      <attribute name="b813" type="boolean" public-name="scr_drug_warning">
-        <text>
-          <base>the claimant received warnings regarding the employers drug and alcohol policy prior to discharge</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings regarding the employers drug and alcohol policy prior to discharge'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p216" type="text" public-name="scr_drug_person">
-        <text>
-          <base>the name of the person who gave the claimant the warning regarding drug and alcohol use</base>
-        </text>
-      </attribute>
-      <attribute name="p217" type="text" public-name="scr_drug_title">
-        <text>
-          <base>the title of the person who gave the claimant the warning regarding drug and alcohol use</base>
-        </text>
-      </attribute>
-      <attribute name="p218" type="date" public-name="scr_drug_warning_date">
-        <text>
-          <base>the date the claimant received the warning regarding drug and alcohol use</base>
-        </text>
-      </attribute>
       <attribute name="p219" type="text" public-name="scr_alcohol_test_reason">
         <text>
           <base>the reason the employer requested that the claimant take a drug test</base>
         </text>
       </attribute>
-      <attribute name="b814" type="boolean" public-name="scr_alcohol_wui">
-        <text>
-          <base>the claimant reported to work under the influence of drugs or alcohol</base>
-          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence of drugs or alcohol'))</parse>
-        </text>
-      </attribute>
       <attribute name="p220" type="text" public-name="scr_alcohol_type">
         <text>
-          <base>the claimants drugs of choice</base>
-        </text>
-      </attribute>
-      <attribute name="p221" type="date" public-name="scr_alcohol_test_date">
-        <text>
-          <base>the date the claimant was to undergo the drug test</base>
+          <base>the substance that the claimant reported to work under the influence of (alcohol, drugs) during the employment</base>
         </text>
       </attribute>
       <attribute name="b815" type="boolean" public-name="scr_alcohol_test_policy">
@@ -6029,21 +5526,15 @@
           <base>the substance that the claimant consumed during working hours</base>
         </text>
       </attribute>
-      <attribute name="b818" type="boolean" public-name="scr_onsite_reported">
-        <text>
-          <base>the claimant reported to work under the influence</base>
-          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence'))</parse>
-        </text>
-      </attribute>
       <attribute name="p225" type="text" public-name="scr_onsite_report_substance">
         <text>
           <base>the substance that the claimant reported to work under the influence of</base>
         </text>
       </attribute>
-      <attribute name="b819" type="boolean" public-name="scr_onsite_final_test">
+      <attribute name="b819" type="boolean" public-name="scr_submitted_to_drug_test">
         <text>
-          <base>the claimant submitted to a drug test on the day of the final incident, as required by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug test on the day of the final incident, as required by the employer'))</parse>
+          <base>the claimant submitted to a drug test as required by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug test as required by the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b820" type="boolean" public-name="scr_onsite_final_alcohol">
@@ -6117,68 +5608,15 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('discharged by the employer for being incarcerated'))</parse>
         </text>
       </attribute>
-      <attribute name="p233" type="date" public-name="scr_jail_start_date">
-        <text>
-          <base>the beginning date of the claimants most current incarceration</base>
-        </text>
-      </attribute>
-      <attribute name="p234" type="date" public-name="scr_jail_end_date">
-        <text>
-          <base>the ending date of the claimants most current incarceration</base>
-        </text>
-      </attribute>
-      <attribute name="b826" type="boolean" public-name="scr_jail_conviction">
-        <text>
-          <base>the claimant was incarcerated following a conviction</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated following a conviction'))</parse>
-        </text>
-      </attribute>
       <attribute name="b827" type="boolean" public-name="scr_jail_at_least_five">
         <text>
           <base>the claimants incarceration resulted in at least five days of missed work</base>
           <parse>s(ver('10.4.2.18'),v(result,t(simple,past,normal)),sb('the claimants incarceration',plural),o('in at least five days of missed work'))</parse>
         </text>
       </attribute>
-      <attribute name="b828" type="boolean" public-name="scr_jail_reported">
+      <attribute name="p240" type="text" public-name="scr_su_union_description">
         <text>
-          <base>the claimant properly reported each missed day due to incarceration to the employer</base>
-          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant properly',plural),o('each missed day due to incarceration to the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p235" type="text" public-name="scr_damage_items">
-        <text>
-          <base>the items that the employer alleges the claimant damaged</base>
-        </text>
-      </attribute>
-      <attribute name="p236" type="text" public-name="scr_damage_explanation">
-        <text>
-          <base>the claimants explanation of how the employers property came to be damaged</base>
-        </text>
-      </attribute>
-      <attribute name="b829" type="boolean" public-name="scr_damage_warning">
-        <text>
-          <base>the claimant received warnings regarding property damage or negligence prior to discharge</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings regarding property damage or negligence prior to discharge'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p237" type="text" public-name="scr_damage_warning_person">
-        <text>
-          <base>the name or the person who gave the claimant warning regarding property damage prior to discharge</base>
-        </text>
-      </attribute>
-      <attribute name="p238" type="text" public-name="scr_damage_warning_title">
-        <text>
-          <base>the title or the person who gave the claimant warning regarding property damage prior to discharge</base>
-        </text>
-      </attribute>
-      <attribute name="p239" type="date" public-name="scr_damage_warning_date">
-        <text>
-          <base>the date the claimant received the final warning regarding property damage</base>
-        </text>
-      </attribute>
-      <attribute name="p240" type="text" public-name="scr_union_activity_description">
-        <text>
-          <base>the claimant accounting of the union activity that led to their termination</base>
+          <base>the claimant description of the union activity that led to their suspension</base>
         </text>
       </attribute>
       <attribute name="b830" type="boolean" public-name="scr_union_discharge">
@@ -6250,23 +5688,6 @@
           <base>the other final incident that led to the calimants discharge</base>
         </text>
       </attribute>
-      <attribute name="p244" type="date" public-name="scr_other_reason_incident_date">
-        <text>
-          <base>the date of the other final incident</base>
-        </text>
-      </attribute>
-      <attribute name="b840" type="boolean" public-name="scr_other_reason_policy_violation">
-        <text>
-          <base>the claimant violated one of the employers policys or rules</base>
-          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('one of the employers policys or rules'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b841" type="boolean" public-name="scr_other_reason_policy_aware">
-        <text>
-          <base>the claimant was aware of the policy or rule that they violated</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the policy or rule that they violated'))</parse>
-        </text>
-      </attribute>
       <attribute name="b842" type="boolean" public-name="scr_other_reason_uniformly">
         <text>
           <base>the policy or rule was uniformly enforced</base>
@@ -6276,27 +5697,6 @@
       <attribute name="p245" type="text" public-name="scr_other_reason_not_uniform">
         <text>
           <base>the claimants explanation of how the policy or rule is not uniformly enforced</base>
-        </text>
-      </attribute>
-      <attribute name="b843" type="boolean" public-name="scr_other_reason_warned">
-        <text>
-          <base>the claimant received a warning regarding the reason for discharge prior to the end of employment</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a warning regarding the reason for discharge prior to the end of employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p246" type="text" public-name="scr_other_reason_warn_person">
-        <text>
-          <base>the name of the person who gave the claimant a warning about the other prior to their discharge</base>
-        </text>
-      </attribute>
-      <attribute name="p247" type="text" public-name="scr_other_reason_warn_title">
-        <text>
-          <base>the title of the person who gave the claimant a warning about the other prior to their discharge</base>
-        </text>
-      </attribute>
-      <attribute name="p248" type="date" public-name="scr_other_reason_warn_date">
-        <text>
-          <base>the date the claimant received a warning about the other prior to their discharge</base>
         </text>
       </attribute>
       <attribute name="b844" type="boolean" public-name="scr_branch_to_anything_else">
@@ -6479,7 +5879,7 @@
           <base>the employment's issue text</base>
         </text>
       </attribute>
-      <attribute name="p331" type="currency" public-name="scr_dispute_start_date">
+      <attribute name="p331" type="date" public-name="scr_dispute_start_date">
         <text>
           <base>the date the employment labor dispute started</base>
         </text>
@@ -6560,18 +5960,6 @@
           <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an early retirement'))</parse>
         </text>
       </attribute>
-      <attribute name="b924" type="boolean" public-name="scr_layoff_package_offered">
-        <text>
-          <base>the employment offered the claimant an incentive package to accept the layoff</base>
-          <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employment',plural),o('the claimant an incentive package to accept the layoff'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b925" type="boolean" public-name="scr_layoff_buyout_not_mandatory">
-        <text>
-          <base>the claimant did not have to accept the reduction in workforce buyout</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('to accept the reduction in workforce buyout'))</parse>
-        </text>
-      </attribute>
       <attribute name="p340" type="text" public-name="scr_layoff_employer_reason">
         <text>
           <base>the reason the claimant was laid off</base>
@@ -6627,12 +6015,6 @@
       <attribute name="p348" type="text" public-name="scr_ld_noshow">
         <text>
           <base>the reason that the claimant did not return to work after the labor dispute</base>
-        </text>
-      </attribute>
-      <attribute name="b928" type="boolean" public-name="scr_pursuant_to_plan">
-        <text>
-          <base>the claimant's mandatory retirement is pursuant to this employer's general plan</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to this employer''s general plan'))</parse>
         </text>
       </attribute>
       <attribute name="b929" type="boolean" public-name="scr_plan_includes_benefits">
@@ -6726,12 +6108,6 @@
           <base>the claimants other reason for requesting a reduction in work hours</base>
         </text>
       </attribute>
-      <attribute name="b935" type="boolean" public-name="scr_rhe_reduction_temporary">
-        <text>
-          <base>the employer imposed reduction in work hours is temporary</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer imposed reduction in work hours',singular),o('temporary'))</parse>
-        </text>
-      </attribute>
       <attribute name="p360" type="date" public-name="scr_rhe_reduction_date">
         <text>
           <base>the date the employer reduced the claimanrts work hours</base>
@@ -6765,23 +6141,6 @@
       <attribute name="p366" type="text" public-name="scr_rh_employer_action">
         <text>
           <base>the diciplinary action that the employment imposed which caused the claimant to request a reduction in hours</base>
-        </text>
-      </attribute>
-      <attribute name="p367" type="date" public-name="scr_rh_disciplinary_action_date">
-        <text>
-          <base>the date that the employer imposed the disciplinary action</base>
-        </text>
-      </attribute>
-      <attribute name="b936" type="boolean" public-name="scr_rh_action_in_accordance">
-        <text>
-          <base>the disciplinary action administered was in accordance with the employee handbook</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the disciplinary action administered',singular),o('in accordance with the employee handbook'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b937" type="boolean" public-name="scr_rh_disciplinary_warning">
-        <text>
-          <base>the claimant received warnings that disciplinary actions would be imposed</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings that disciplinary actions would be imposed'))</parse>
         </text>
       </attribute>
       <attribute name="b938" type="boolean" public-name="scr_rh_display_disciplinary">
@@ -6873,19 +6232,9 @@
           <base>the circumstances of the dispute that caused the claimant to request a reduction in hours</base>
         </text>
       </attribute>
-      <attribute name="p369" type="text" public-name="scr_rh_dispute_impact">
-        <text>
-          <base>the impact that the workplace dispute had on the claimants employment</base>
-        </text>
-      </attribute>
       <attribute name="p370" type="text" public-name="scr_rh_dispute_person" default-gender="male">
         <text>
           <base>the person that the claimant has a dispute with</base>
-        </text>
-      </attribute>
-      <attribute name="p371" type="text" public-name="scr_rh_dispute_other" default-gender="generic">
-        <text>
-          <base>the other person that the claimant had a dispute with</base>
         </text>
       </attribute>
       <attribute name="p372" type="date" public-name="scr_rh_final_date">
@@ -6898,20 +6247,10 @@
           <base>the reason that the claimant requested a reduction in hours rather than submit to a drug/alcohol test</base>
         </text>
       </attribute>
-      <attribute name="p374" type="date" public-name="scr_rh_drug_date">
-        <text>
-          <base>the date that the drug/alcohol test was to be conducted that caused the claimant to request reduced hours</base>
-        </text>
-      </attribute>
       <attribute name="b952" type="boolean" public-name="scr_rh_drug_policy">
         <text>
           <base>the employment has policy regarding drug/alcohol testing</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('policy regarding drug/alcohol testing'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p375" type="text" public-name="scr_rh_drug_reason">
-        <text>
-          <base>the reason for the drug/alcohol test that caused the claimant to request reduced hours</base>
         </text>
       </attribute>
       <attribute name="p376" type="text" public-name="scr_rh_other_drug_reason">
@@ -6924,43 +6263,10 @@
           <base>the claimants description of why equipment problems caused them to request a reduction in work hours</base>
         </text>
       </attribute>
-      <attribute name="p378" type="date" public-name="scr_rh_equipment_date">
-        <text>
-          <base>the date that the final equipment problem occured which caused the claimant to request reduced hours</base>
-        </text>
-      </attribute>
-      <attribute name="p379" type="text" public-name="scr_rh_equipment_impact">
-        <text>
-          <base>the claimants description of how the equipment problem impacted their employment and caused them to request reduced hours</base>
-        </text>
-      </attribute>
-      <attribute name="b953" type="boolean" public-name="scr_rh_one_time_incident">
-        <text>
-          <base>the equipment problem that caused the claimant to request reduced hours was a one-time incident</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the equipment problem that caused the claimant to request reduced hours',singular),o('a one-time incident'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b954" type="boolean" public-name="scr_rh_equipment_service">
-        <text>
-          <base>the equipment that caused the claimant to request reduced hours was serviced according to industry standards</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the equipment that caused the claimant to request reduced hours',singular),o('serviced according to industry standards'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b955" type="boolean" public-name="scr_rh_trained">
-        <text>
-          <base>the claimant was trained to use the equipment that caused them to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('trained to use the equipment that caused them to request reduced hours'))</parse>
-        </text>
-      </attribute>
       <attribute name="b956" type="boolean" public-name="scr_rh_employment_aware">
         <text>
           <base>the employment was aware of the equipment problems that caused the claimant to request reduced hours</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('aware of the equipment problems that caused the claimant to request reduced hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p380" type="text" public-name="scr_rh_employment_aware_method" plural="true">
-        <text>
-          <base>the means by which the employment was made aware of the equipment problems that caused the claimant to request reduced hours</base>
         </text>
       </attribute>
       <attribute name="p381" type="text" public-name="scr_rh_injury_description">
@@ -6968,39 +6274,10 @@
           <base>the nature of the injury or medical condition that caused the claimant to request reduced hours</base>
         </text>
       </attribute>
-      <attribute name="p382" type="date" public-name="scr_rh_start_date">
-        <text>
-          <base>the date the injury or medical condition occured that caused the claimant to request reduced hours</base>
-        </text>
-      </attribute>
-      <attribute name="b957" type="boolean" public-name="scr_rh_condition_caused">
-        <text>
-          <base>the injury or medical condition that caused the claimant to request reduced hours was caused by the employment</base>
-          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),ob('the injury or medical condition that caused the claimant to request reduced hours',singular),o('by the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b958" type="boolean" public-name="scr_rh_medical_documentation">
-        <text>
-          <base>the claimant has medical documentation that shows that the injury or medical condition that caused them to request reduced hours was caused by the work</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('medical documentation that shows that the injury or medical condition that caused them to request reduced hours was caused by the work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b959" type="boolean" public-name="scr_rh_workers_comp_approved">
-        <text>
-          <base>the claimant was approved for worker comp due to the injury or medical condition thart caused them to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(approve,t(simple,past,normal)),ob('the claimant',singular),o('for worker comp due to the injury or medical condition thart caused them to request reduced hours'))</parse>
-        </text>
-      </attribute>
       <attribute name="b960" type="boolean" public-name="scr_rh_exhausted_leave_time">
         <text>
           <base>the claimant exhausted all available leave time prior to requesting reduced hours</base>
           <parse>s(ver('10.4.2.18'),v(exhaust,t(simple,past,normal)),sb('the claimant',plural),o('all available leave time prior to requesting reduced hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b961" type="boolean" public-name="scr_rh_restrictive_reasons">
-        <text>
-          <base>the claimants physican has provided restrictive reasons for them to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimants physican',singular),o('restrictive reasons for them to request reduced hours'))</parse>
         </text>
       </attribute>
       <attribute name="b962" type="boolean" public-name="scr_rh_restrictions_accomodated">
@@ -7019,29 +6296,6 @@
           <base>the date that the incident of harassment occured which caused the claimant to request reduced hours</base>
         </text>
       </attribute>
-      <attribute name="b963" type="boolean" public-name="scr_rh_repeated_harassment">
-        <text>
-          <base>there was repeated incidents of harassment that caused the claimant to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('there',singular),o('repeated incidents of harassment that caused the claimant to request reduced hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b964" type="boolean" public-name="scr_rh_policy">
-        <text>
-          <base>the employment has a policy regarding harassment</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employment',singular),o('a policy regarding harassment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b965" type="boolean" public-name="scr_rh_reporting_procedures">
-        <text>
-          <base>the claimant followed proper procedures of reporting the harassment prior to requesting reduced work hours</base>
-          <parse>s(ver('10.4.2.18'),v(follow,t(simple,past,normal)),sb('the claimant',plural),o('proper procedures of reporting the harassment prior to requesting reduced work hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p385" type="text" public-name="scr_rh_employment_impact">
-        <text>
-          <base>the claimants description of how the harassment impacted the employment to the point where they requested reduced work hours</base>
-        </text>
-      </attribute>
       <attribute name="b966" type="boolean" public-name="scr_rh_training_lack">
         <text>
           <base>the claimants lack of training or experience caused them to request reduced hours</base>
@@ -7057,18 +6311,6 @@
         <text>
           <base>the claimant has prior experience doing the type of work that prompted the to request reduced hours</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('prior experience doing the type of work that prompted the to request reduced hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b968" type="boolean" public-name="scr_rh_training_provided">
-        <text>
-          <base>the employment provided training to the claimant in the area that prompted them to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the employment',plural),o('training to the claimant in the area that prompted them to request reduced hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b969" type="boolean" public-name="scr_rh_warnings">
-        <text>
-          <base>the claimant received warnings about their performance in the area that prompted them to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warnings about their performance in the area that prompted them to request reduced hours'))</parse>
         </text>
       </attribute>
       <attribute name="p387" type="text" public-name="scr_rh_religious_description">
@@ -7092,18 +6334,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the religious conflict that prompted the claimant to request reduced hours',singular),o('recurring'))</parse>
         </text>
       </attribute>
-      <attribute name="b971" type="boolean" public-name="scr_rh_conflict_prior_to_start">
-        <text>
-          <base>the claimant was aware of possible religious conflicts that would prompt them to request reduced hours prior to the start of the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of possible religious conflicts that would prompt them to request reduced hours prior to the start of the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b972" type="boolean" public-name="scr_rh_changed_conflict">
-        <text>
-          <base>the conditions of the employment regarding the religious conflicts that caused the claimant to request reduced hours changed after accepting the employment</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the conditions of the employment regarding the religious conflicts that caused the claimant to request reduced hours',plural),o('after accepting the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="p390" type="text" public-name="scr_rh_conflict_change_description">
         <text>
           <base>the claimant description of how the religious conflict changed after accepting employment and prompted them to request reduced hours</base>
@@ -7119,16 +6349,836 @@
           <base>the date that the pay practice incident occured which caused the claimant to request reduced hours</base>
         </text>
       </attribute>
-      <attribute name="b973" type="boolean" public-name="scr_rh_rate_change">
+      <attribute name="p395" type="text" public-name="scr_selected_employment_status">
         <text>
-          <base>the rate of pay changed from the agreed rate at time of hire which caused the claimant to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the rate of pay',plural),o('from the agreed rate at time of hire which caused the claimant to request reduced hours'))</parse>
+          <base>the selected employment status</base>
         </text>
       </attribute>
-      <attribute name="b974" type="boolean" public-name="scr_rh_pay_practice">
+      <attribute name="p397" type="text" public-name="scr_selected_currently_employes_status">
         <text>
-          <base>the employments pay practice changed from the time of hire which caused the claimant to request reduced hours</base>
-          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the employments pay practice',plural),o('from the time of hire which caused the claimant to request reduced hours'))</parse>
+          <base>the selected currently employed status</base>
+        </text>
+      </attribute>
+      <attribute name="p398" type="text" public-name="scr_selected_work_related_reduction_status">
+        <text>
+          <base>the selected work related reduction status</base>
+        </text>
+      </attribute>
+      <attribute name="p399" type="text" public-name="scr_selected_quit_status">
+        <text>
+          <base>the selected quit status</base>
+        </text>
+      </attribute>
+      <attribute name="p400" type="text" public-name="scr_selected_personal_quit_status">
+        <text>
+          <base>the selected personal quit status</base>
+        </text>
+      </attribute>
+      <attribute name="p401" type="text" public-name="scr_selected_work_quit_status">
+        <text>
+          <base>the selected work related quit status</base>
+        </text>
+      </attribute>
+      <attribute name="p402" type="text" public-name="scr_selected_discharge_status">
+        <text>
+          <base>the selected discharge status</base>
+        </text>
+      </attribute>
+      <attribute name="p403" type="text" public-name="scr_selected_drug_discharge_status">
+        <text>
+          <base>the selected drug discharge status</base>
+        </text>
+      </attribute>
+      <attribute name="p404" type="text" public-name="scr_selected_positive_sub_status">
+        <text>
+          <base>the selected positive test substance status</base>
+        </text>
+      </attribute>
+      <attribute name="b990" type="boolean" public-name="scr_rh_paychange_employee">
+        <text>
+          <base>the pay practice change (employee reduction in hours) was applied to all employees</base>
+          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay practice change (employee reduction in hours)',singular),o('to all employees'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b994" type="boolean" public-name="scr_payrate_change_employee">
+        <text>
+          <base>the pay rate change (employee reduction in hours) was applied to all employees</base>
+          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay rate change (employee reduction in hours)',singular),o('to all employees'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p408" type="text" public-name="scr_reduction_request">
+        <text>
+          <base>the selected reduction request status</base>
+        </text>
+      </attribute>
+      <attribute name="b995" type="boolean" public-name="scr_employee_branch_personal">
+        <text>
+          <base>the employee requested reduction details screen should branch to personal reasons</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to personal reasons'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b996" type="boolean" public-name="scr_employee_branch_work_related">
+        <text>
+          <base>the employee requested reduction details screen should branch to work related</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to work related'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b997" type="boolean" public-name="scr_employee_branch_accepted">
+        <text>
+          <base>the employee requested reduction details screen should branch to accepted an offer</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employee requested reduction details screen',plural),o('to accepted an offer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p409" type="text" public-name="scr_rh_work_distance">
+        <text>
+          <base>the (employee requested) distance to work reduction in hours request reason</base>
+        </text>
+      </attribute>
+      <attribute name="p410" type="text" public-name="scr_rh_distance_increase_miles">
+        <text>
+          <base>the number of miles that the distance to work has increased by since the date of hire</base>
+        </text>
+      </attribute>
+      <attribute name="b999" type="boolean" public-name="scr_rh_distance_by_employer">
+        <text>
+          <base>the change in distance was initiated the employer</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),ob('the change in distance',singular),o('the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p411" type="date" public-name="scr_rh_distance_change_date">
+        <text>
+          <base>the date that the distance to work changed</base>
+        </text>
+      </attribute>
+      <attribute name="p412" type="text" public-name="scr_rh_work_hour_roilback">
+        <text>
+          <base>the description of the final event that took place regarding the work hours which caused the claimant to request a reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="b1000" type="boolean" public-name="scr_rh_rollback_since_hire">
+        <text>
+          <base>the working hours (shift, number of hours, etc.) changed since the claimants date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the working hours (shift, number of hours, etc.)',plural),o('since the claimants date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p413" type="text" public-name="scr_rh_hours_rollback_desc">
+        <text>
+          <base>the claimants description of how the working hours (shift, number of hours, etc.) changed since their date of hire</base>
+        </text>
+      </attribute>
+      <attribute name="b1001" type="boolean" public-name="scr_rh_hours_rollback_temp">
+        <text>
+          <base>the work hours reduction was implemented for a limited period of time</base>
+          <parse>s(ver('10.4.2.18'),v(implement,t(simple,past,normal)),ob('the work hours reduction',singular),o('for a limited period of time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p414" type="text" public-name="scr_rh_hours_rollback_duration">
+        <text>
+          <base>the length of time that the temporary hours reduction was expected to last</base>
+        </text>
+      </attribute>
+      <attribute name="b1003" type="boolean" public-name="scr_rh_workforce_buyout">
+        <text>
+          <base>the employer initiated a reduction in workforce/buyout</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('the employer',plural),o('a reduction in workforce/buyout'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1004" type="boolean" public-name="scr_rh_buyout_offer">
+        <text>
+          <base>the employer offered the claimant an incentive package/buyout for voluntarily accepting the reduction</base>
+          <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employer',plural),o('the claimant an incentive package/buyout for voluntarily accepting the reduction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1005" type="boolean" public-name="scr_rh_continue_if_no_buyout">
+        <text>
+          <base>the claimant could have continued work if they had not accepted the reduction of workforce package/buyout</base>
+          <parse>s(ver('10.4.2.18'),v(continue+could,t(simple,modal,perfect)),sb('the claimant',singular),o('work if they had not accepted the reduction of workforce package/buyout'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p415" type="text" public-name="scr_rh_failed_condition">
+        <text>
+          <base>the condition of the employment contract that the claimant failed to meet</base>
+        </text>
+      </attribute>
+      <attribute name="b1006" type="boolean" public-name="scr_rh_aware_of_condition">
+        <text>
+          <base>the claimant was aware of their responsibility to meet this condition or maintain a specific certification at the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their responsibility to meet this condition or maintain a specific certification at the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1007" type="boolean" public-name="scr_rh_was_responsible_to_meet">
+        <text>
+          <base>the claimant was responsible to meet this condition as a requirement for continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible to meet this condition as a requirement for continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1008" type="boolean" public-name="scr_rh_condition_warning">
+        <text>
+          <base>the claimant received warning(s) regarding their failure to meet this condition of employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warning(s) regarding their failure to meet this condition of employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p417" type="text" public-name="scr_rh_other_condition_desc">
+        <text>
+          <base>the working condition or final incident that caused the claimant to request a reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="b1009" type="boolean" public-name="scr_rh_contract_changed">
+        <text>
+          <base>the conditions of work or contract of hire changed since the claimants date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the conditions of work or contract of hire',plural),o('since the claimants date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1010" type="boolean" public-name="scr_rh_ownership_changed">
+        <text>
+          <base>the company changed ownership or management since the claimants hire date</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,past,normal)),sb('the company',plural),o('ownership or management since the claimants hire date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p420" type="text" public-name="scr_rh_offer_of_work_status">
+        <text>
+          <base>the selected offer of work status</base>
+        </text>
+      </attribute>
+      <attribute name="b1011" type="boolean" public-name="scr_rh_accept_temporary">
+        <text>
+          <base>the claimant requested a reduction in hours to accept temporary or less than full-time employment</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in hours to accept temporary or less than full-time employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1012" type="boolean" public-name="scr_rh_mile_less_than">
+        <text>
+          <base>the claimant requested a reduction in working hours from employment which is one hundred (100) road miles or more from their home to accept employment that is less than one hundred (100) road miles from their homes</base>
+          <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant',plural),o('a reduction in working hours from employment which is one hundred (100) road miles or more from their home to accept employment that is less than one hundred (100) road miles from their homes'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1013" type="boolean" public-name="scr_rh_accept_prior_to">
+        <text>
+          <base>the claimant accepted an offer of new employment prior to requesting a reduction in hours</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an offer of new employment prior to requesting a reduction in hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p422" type="text" public-name="scr_rh_new_job_person">
+        <text>
+          <base>the name of the person who offered the job</base>
+        </text>
+      </attribute>
+      <attribute name="p423" type="text" public-name="scr_rh_new_job_address">
+        <text>
+          <base>the address of the business</base>
+        </text>
+      </attribute>
+      <attribute name="p424" type="text" public-name="scr_rh_new_job_phone">
+        <text>
+          <base>the phone number of the business</base>
+        </text>
+      </attribute>
+      <attribute name="p425" type="date" public-name="scr_rh_new_job_offer_date">
+        <text>
+          <base>the date the new job was offered</base>
+        </text>
+      </attribute>
+      <attribute name="p426" type="date" public-name="scr_rh_new_job_begin_date">
+        <text>
+          <base>the date the new job began</base>
+        </text>
+      </attribute>
+      <attribute name="p427" type="text" public-name="scr_rh_new_job_schedule">
+        <text>
+          <base>the schedule of the new job</base>
+        </text>
+      </attribute>
+      <attribute name="b1014" type="boolean" public-name="scr_rh_new_job_is_working">
+        <text>
+          <base>the claimant began working at the new job</base>
+          <parse>s(ver('10.4.2.18'),v(begin,t(simple,past,normal)),sb('the claimant',plural),o('working at the new job'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p428" type="text" public-name="scr_rh_new_job_why_not_start">
+        <text>
+          <base>the claimants reason for not starting the new job</base>
+        </text>
+      </attribute>
+      <attribute name="p430" type="date" public-name="scr_current_incarceration_start">
+        <text>
+          <base>the beginning date of the claimants most current incarceration</base>
+        </text>
+      </attribute>
+      <attribute name="p431" type="date" public-name="scr_current_incarceration_end">
+        <text>
+          <base>the ending date of the claimants most current incarceration</base>
+        </text>
+      </attribute>
+      <attribute name="b1021" type="boolean" public-name="scr_su_return_date_provided">
+        <text>
+          <base>the claimant was provided a return to work date by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the claimant',singular),o('a return to work date by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p432" type="date" public-name="scr_su_return_to_work_date">
+        <text>
+          <base>the claimant return after suspension date</base>
+        </text>
+      </attribute>
+      <attribute name="p433" type="text" public-name="scr_su_return_date">
+        <text>
+          <base>the reason the claimant was sudspended</base>
+        </text>
+      </attribute>
+      <attribute name="p434" type="text" public-name="scr_su_why_suspended">
+        <text>
+          <base>the reason that the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p435" type="text" public-name="scr_sc_other_suspension_reason">
+        <text>
+          <base>the other reason that the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p436" type="text" public-name="scr_su_primary_reason">
+        <text>
+          <base>the claimants primary suspension reason</base>
+        </text>
+      </attribute>
+      <attribute name="p437" type="text" public-name="scr_su_other_reason">
+        <text>
+          <base>the claimants other suspension reason</base>
+        </text>
+      </attribute>
+      <attribute name="p438" type="text" public-name="scr_su_suspended_name">
+        <text>
+          <base>the name of the person who suspended the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="p439" type="text" public-name="scr_su_suspension_title">
+        <text>
+          <base>the title of the person who suspended the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="b1022" type="boolean" public-name="scr_su_date_known">
+        <text>
+          <base>the claimant knows their suspension date</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('their suspension date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p440" type="date" public-name="scr_su_suspended_date">
+        <text>
+          <base>the date the claimant was suspended</base>
+        </text>
+      </attribute>
+      <attribute name="p442" type="text" public-name="scr_su_supervisor_title">
+        <text>
+          <base>the title of the suspended claimants supervisor</base>
+        </text>
+      </attribute>
+      <attribute name="b1024" type="boolean" public-name="scr_sc_aware">
+        <text>
+          <base>the claimant was aware of their duties and expectations</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their duties and expectations'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p443" type="text" public-name="scr_sc_not_follow_policy">
+        <text>
+          <base>the rreason that the claimants employer did not follow policy</base>
+        </text>
+      </attribute>
+      <attribute name="b1027" type="boolean" public-name="scr_sc_followed">
+        <text>
+          <base>the claimants employer followed the prograssive policy</base>
+          <parse>s(ver('10.4.2.18'),v(follow,t(simple,past,normal)),sb('the claimants employer',plural),o('the prograssive policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1028" type="boolean" public-name="scr_sc_attendance_policy">
+        <text>
+          <base>the employer (who suspended the claimant) has an attendance policy</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer (who suspended the claimant)',singular),o('an attendance policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1030" type="boolean" public-name="scr_su_documentation_required">
+        <text>
+          <base>the claimant was required to provide supporting documentation for their absence/tardiness</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to provide supporting documentation for their absence/tardiness'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p449" type="text" public-name="scr_su_alleged_violation">
+        <text>
+          <base>the claimants description of the rule or policy that the employer alleges they violated</base>
+        </text>
+      </attribute>
+      <attribute name="b1032" type="boolean" public-name="scr_su_violated">
+        <text>
+          <base>the claimant violated the employers rule or policy</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('the employers rule or policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p450" type="text" public-name="scr_su_not_uniform">
+        <text>
+          <base>the claimants description of how the rule or policy was not uniformly enforced</base>
+        </text>
+      </attribute>
+      <attribute name="b1036" type="boolean" public-name="scr_su_policy_explanation">
+        <text>
+          <base>the claimant provided an explanation to the employer as to why the policy was violated</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanation to the employer as to why the policy was violated'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p454" type="text" public-name="scr_su_violation_explanation">
+        <text>
+          <base>the claimants explanation to the employer as to why the policy was violated</base>
+        </text>
+      </attribute>
+      <attribute name="p455" type="text" public-name="scr_su_no_explanation">
+        <text>
+          <base>the reason that the claimant did not provide an explanation</base>
+        </text>
+      </attribute>
+      <attribute name="p456" type="text" public-name="scr_su_final_desc">
+        <text>
+          <base>the claimants description of the final incident of unsatisfactory work that led to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="b1037" type="boolean" public-name="scr_su_job_perform">
+        <text>
+          <base>the claimant was made aware of their work performance job responsibilities</base>
+          <parse>s(ver('10.4.2.18'),v(make,t(simple,past,normal)),ob('the claimant',singular),o('aware of their work performance job responsibilities'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1038" type="boolean" public-name="scr_su_training">
+        <text>
+          <base>the claimant received training or instruction on how to perform their duties</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('training or instruction on how to perform their duties'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1039" type="boolean" public-name="scr_su_performed_previous">
+        <text>
+          <base>the claimant has done this type of work before</base>
+          <parse>s(ver('10.4.2.18'),v(do,t(simple,present,perfect)),sb('the claimant',singular),o('this type of work before'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p457" type="text" public-name="scr_su_warning_name">
+        <text>
+          <base>the name of the person who gave the claimant warning prior to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="p458" type="text" public-name="scr_su_warning_title">
+        <text>
+          <base>the title of the person who gave the claimant warning prior to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="p459" type="date" public-name="scr_su_warning_date">
+        <text>
+          <base>the date the claimant received warning prior to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="b1041" type="boolean" public-name="scr_su_prior_performance">
+        <text>
+          <base>the claimant has received positive feedback regarding their work performance during their employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,present,perfect)),sb('the claimant',singular),o('positive feedback regarding their work performance during their employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1042" type="boolean" public-name="scr_su_workload_change">
+        <text>
+          <base>the claimants job duties or customary workload has changed since their date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the claimants job duties or customary workload',singular),o('since their date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1043" type="boolean" public-name="scr_su_explanation_provided">
+        <text>
+          <base>the claimant provided the employer with an explanation for their unsatisfactory performance</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation for their unsatisfactory performance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p461" type="text" public-name="scr_su_performance_explanation">
+        <text>
+          <base>the claimants explanation for their unsatisfactory performance</base>
+        </text>
+      </attribute>
+      <attribute name="p463" type="text" public-name="scr_su_behavior_issue">
+        <text>
+          <base>the claimants description of the final incident or behavior that led to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="b1044" type="boolean" public-name="scr_su_endangered">
+        <text>
+          <base>the claimants actions/behavior/conduct endangered themselves or others</base>
+          <parse>s(ver('10.4.2.18'),v(endanger,t(simple,past,normal)),sb('the claimants actions/behavior/conduct',plural),o('themselves or others'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1047" type="boolean" public-name="scr_su_explanation_given">
+        <text>
+          <base>the claimant provided the employer with an explanation for their behavior or conduct</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation for their behavior or conduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p464" type="text" public-name="scr_su_behavior_explanation">
+        <text>
+          <base>the claimants explanation for their behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p466" type="text" public-name="scr_dishonest_desc">
+        <text>
+          <base>the claimants description of the way that the employer alleged they were dishonest (whether or not they agree).</base>
+        </text>
+      </attribute>
+      <attribute name="p467" type="text" public-name="scr_dishonest_description">
+        <text>
+          <base>the claimants description of the final incident of dishonesty that led to thier suspension</base>
+        </text>
+      </attribute>
+      <attribute name="b1048" type="boolean" public-name="scr_sc_dishonest_agree">
+        <text>
+          <base>the claimant was dishonest as the employer alleged</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('dishonest as the employer alleged'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p470" type="text" public-name="scr_su_false_allegation">
+        <text>
+          <base>the claimants description of the employers allegation that they falsified their employment application (whether or not they agree)</base>
+        </text>
+      </attribute>
+      <attribute name="b1052" type="boolean" public-name="scr_su_false_explanation">
+        <text>
+          <base>the claimant provided the employer with an explanation about the false application</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation about the false application'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p473" type="text" public-name="scr_su_insubordination_desc">
+        <text>
+          <base>the claimants description of the instruction the employer alleges that they refused to obey</base>
+        </text>
+      </attribute>
+      <attribute name="b1053" type="boolean" public-name="scr_su_refused_to_obey">
+        <text>
+          <base>the claimant refused to obey an instruction</base>
+          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,past,normal)),sb('the claimant',plural),o('to obey an instruction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p474" type="text" public-name="scr_su_refuse_reason">
+        <text>
+          <base>the reason the claimant refused to obey an instruction</base>
+        </text>
+      </attribute>
+      <attribute name="p475" type="text" public-name="scr_su_instructing_person">
+        <text>
+          <base>the name of the person who gave the claimant the instruction that they did not obey</base>
+        </text>
+      </attribute>
+      <attribute name="p476" type="text" public-name="scr_su_license_description">
+        <text>
+          <base>the claimants description of the final incident which led to the loss of their driver's license</base>
+        </text>
+      </attribute>
+      <attribute name="b1057" type="boolean" public-name="scr_su_license_required">
+        <text>
+          <base>the claimants duties require them to operate a motor vehicle</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimants duties',plural),o('them to operate a motor vehicle'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1058" type="boolean" public-name="scr_su_motor_vehicle_law">
+        <text>
+          <base>the claimant lost their driver's license due to violations of motor vehicle law</base>
+          <parse>s(ver('10.4.2.18'),v(lose,t(simple,past,normal)),sb('the claimant',plural),o('their driver''s license due to violations of motor vehicle law'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1059" type="boolean" public-name="scr_su_license_aware">
+        <text>
+          <base>the claimant was aware of their responsibility to maintain a driver's license at the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their responsibility to maintain a driver''s license at the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1060" type="boolean" public-name="scr_su_required_for_continued">
+        <text>
+          <base>the claiumant was responsible to maintain a driver's license as a requirement for continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claiumant',singular),o('responsible to maintain a driver''s license as a requirement for continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p477" type="text" public-name="scr_su_uninsurable_description">
+        <text>
+          <base>the claimants description of the final incident which led them to become an uninsurable driver.</base>
+        </text>
+      </attribute>
+      <attribute name="b1061" type="boolean" public-name="scr_su_insured_required">
+        <text>
+          <base>the claimants job duties require them to operate a motor vehicle or to be insured as a driver</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),sb('the claimants job duties',plural),o('them to operate a motor vehicle or to be insured as a driver'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1063" type="boolean" public-name="scr_su_accident_history">
+        <text>
+          <base>the claimant became uninsurable due to their accident history</base>
+          <parse>s(ver('10.4.2.18'),v(become,t(simple,past,normal)),sb('the claimant',plural),o('uninsurable due to their accident history'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1064" type="boolean" public-name="scr_su_ongoing_requirement">
+        <text>
+          <base>the claimant was aware of their responsibility to remain insurable as a requirement for employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of their responsibility to remain insurable as a requirement for employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1065" type="boolean" public-name="scr_su_incarcerated_suspended">
+        <text>
+          <base>the claimant was suspended by the employer for being incarcerated (in jail)?</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('by the employer for being incarcerated (in jail)?'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1067" type="boolean" public-name="scr_su_in_for_five">
+        <text>
+          <base>the incarceration resulted in the claimant missing at least five (5) days work</base>
+          <parse>s(ver('10.4.2.18'),v(result,t(simple,past,normal)),sb('the incarceration',plural),o('in the claimant missing at least five (5) days work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1068" type="boolean" public-name="scr_su_reported_properly">
+        <text>
+          <base>the claimant properly reported to their employer each day that they missed work due to incarceration</base>
+          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant properly',plural),o('to their employer each day that they missed work due to incarceration'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p480" type="text" public-name="scr_su_damaged_items" plural="true">
+        <text>
+          <base>the item(s) of property that the employer allege that the claimant damaged?</base>
+        </text>
+      </attribute>
+      <attribute name="p481" type="text" public-name="scr_su_incident_description">
+        <text>
+          <base>the claimants description of the incident that led to the employer's property becoming damaged</base>
+        </text>
+      </attribute>
+      <attribute name="b1070" type="boolean" public-name="scr_su_policy_failure">
+        <text>
+          <base>the property damage was a result of the claimants failure to follow a policy or procedure</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the property damage',singular),o('a result of the claimants failure to follow a policy or procedure'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1072" type="boolean" public-name="scr_su_union_suspension">
+        <text>
+          <base>the claimant was suspended due to their participation in a labor union</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('due to their participation in a labor union'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p482" type="text" public-name="scr_union_discharge_desc">
+        <text>
+          <base>the claimant description of the union activity that led to their discharge</base>
+        </text>
+      </attribute>
+      <attribute name="p483" type="text" public-name="scr_su_other_final">
+        <text>
+          <base>the claimants description of the fiinal incident that led to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="p485" type="text" public-name="scr_er_reduction_status">
+        <text>
+          <base>the selected employer requested reduction status</base>
+        </text>
+      </attribute>
+      <attribute name="p486" type="text" public-name="scr_er_other_reduction_status">
+        <text>
+          <base>the other selected employer requested reduction status</base>
+        </text>
+      </attribute>
+      <attribute name="p487" type="text" public-name="scr_er_name">
+        <text>
+          <base>the name of the person who reduced the claimant hours</base>
+        </text>
+      </attribute>
+      <attribute name="b1074" type="boolean" public-name="scr_er_knows_date_reduced">
+        <text>
+          <base>the claimant knows the date their hours were reduced</base>
+          <parse>s(ver('10.4.2.18'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('the date their hours were reduced'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p488" type="date" public-name="scr_er_reduced_hours_date">
+        <text>
+          <base>the date the claimants hours were reduced</base>
+        </text>
+      </attribute>
+      <attribute name="b1075" type="boolean" public-name="scr_submitted_to_alcohol_test">
+        <text>
+          <base>the claimant submitted to an alcohol test as required by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to an alcohol test as required by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1076" type="boolean" public-name="scr_drug_alcohol_submit">
+        <text>
+          <base>the claimant submitted to a drug or alcohol test on the day of the final incident, as required by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug or alcohol test on the day of the final incident, as required by the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1077" type="boolean" public-name="scr_dc_warning">
+        <text>
+          <base>the claimant received a warning prior to their discharge</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a warning prior to their discharge'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1078" type="boolean" public-name="scr_su_warning">
+        <text>
+          <base>the claimant received a warning prior to their suspension</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a warning prior to their suspension'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1079" type="boolean" public-name="scr_rh_warning">
+        <text>
+          <base>the claimant received a warning prior to their reduction in hours</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('a warning prior to their reduction in hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p490" type="text" public-name="scr_dc_warning_person">
+        <text>
+          <base>the name of the person who gave the claimant warning prior to their discharge</base>
+        </text>
+      </attribute>
+      <attribute name="p491" type="text" public-name="scr_dc_warning_title">
+        <text>
+          <base>the title of the person who gave the claimant warning prior to their discharge</base>
+        </text>
+      </attribute>
+      <attribute name="p492" type="text" public-name="scr_rh_warning_name">
+        <text>
+          <base>the name of the person who gave the claimant warning prior to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p493" type="text" public-name="scr_rh_warning_title">
+        <text>
+          <base>the title of the person who gave the claimant warning prior to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p494" type="date" public-name="scr_dc_warning_date">
+        <text>
+          <base>the date the claimant received warning prior to their discharge</base>
+        </text>
+      </attribute>
+      <attribute name="p495" type="date" public-name="scr_rh_warning_date">
+        <text>
+          <base>the date the claimant received warning prior to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p496" type="text" public-name="scr_rh_final_desc">
+        <text>
+          <base>the claimants description of the final incident of unsatisfactory work that led to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p497" type="text" public-name="scr_rh_final_behavior_desc">
+        <text>
+          <base>the claimants description of the final incident or behavior that led to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p498" type="text" public-name="scr_rh_final_dishonesty_desc">
+        <text>
+          <base>the claimants description of the final incident of dishonesty that led to thier reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p499" type="text" public-name="scr_rh_final_unclassified_desc">
+        <text>
+          <base>the claimants description of the fiinal incident that led to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p500" type="text" public-name="scr_rh_drug_incident_desc">
+        <text>
+          <base>the claimants description of the drug related incident that led to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="p502" type="text" public-name="scr_su_final_drug_description">
+        <text>
+          <base>the claimants description of the final drug related incident that led to their suspension</base>
+        </text>
+      </attribute>
+      <attribute name="p503" type="text" public-name="scr_rh_instruction_person_title">
+        <text>
+          <base>the title of the person who gave the claimant the instruction that they did not obey</base>
+        </text>
+      </attribute>
+      <attribute name="p504" type="text" public-name="scr_rh_union_activity_description">
+        <text>
+          <base>the claimant description of the union activity that led to their reduction in hours</base>
+        </text>
+      </attribute>
+      <attribute name="b1083" type="boolean" public-name="fpr_refused_instruction">
+        <text>
+          <base>the claimant refused to obey an instruction during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,past,normal)),sb('the claimant',plural),o('to obey an instruction during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1084" type="boolean" public-name="fpr_incarcerated_during_employment">
+        <text>
+          <base>the claimant was incarcerated for a conviction during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for a conviction during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1085" type="boolean" public-name="fpr_incarcerated_at_least_five">
+        <text>
+          <base>the claimant was incarcerated for at least five (5) days of work during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for at least five (5) days of work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1086" type="boolean" public-name="fpr_received_training">
+        <text>
+          <base>the claimant received training (instruction) during the employment on how to perform their duties</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('training (instruction) during the employment on how to perform their duties'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1087" type="boolean" public-name="fpr_aware_of_responsibilities">
+        <text>
+          <base>the claimant was aware of the employment's job responsibilities</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employment''s job responsibilities'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1088" type="boolean" public-name="fpr_failed_to_perform">
+        <text>
+          <base>the claimant failed to perform satisfactory work during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to perform satisfactory work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1089" type="boolean" public-name="fpr_motor_vehicle_required">
+        <text>
+          <base>the claimant's job duties required the operation of a motor vehicle for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the operation of a motor vehicle for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1090" type="boolean" public-name="fpr_require_insurability">
+        <text>
+          <base>the claimant's job duties required insurability as a driver for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('insurability as a driver for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1091" type="boolean" public-name="fpr_conditions_of_employment">
+        <text>
+          <base>the claimant was responsible for meeting the employment's condition of continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible for meeting the employment''s condition of continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1092" type="boolean" public-name="fpr_condition_at_time_of_hire">
+        <text>
+          <base>the condition of the employment was established at the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(establish,t(simple,past,normal)),ob('the condition of the employment',singular),o('at the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1093" type="boolean" public-name="fpr_failed_condition_of_employment">
+        <text>
+          <base>the claimant failed to meet the condition of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to meet the condition of the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1094" type="boolean" public-name="fpr_retirement_pursuant">
+        <text>
+          <base>the claimant's mandatory retirement is pursuant to this employer's general plan</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to this employer''s general plan'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1095" type="boolean" public-name="fpr_agreed_to_mandatory">
+        <text>
+          <base>the claimant voluntarily agreed to the mandatory retirement policy as a condition of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(agree,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('to the mandatory retirement policy as a condition of the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1096" type="boolean" public-name="fpr_substantial_reduction">
+        <text>
+          <base>this employer initiated a substantial reduction in work force goal during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('this employer',plural),o('a substantial reduction in work force goal during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1097" type="boolean" public-name="fpr_accepted_incentive">
+        <text>
+          <base>the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('an incentive package from this employer as part of the employment''s reduction in force'))</parse>
         </text>
       </attribute>
     </entity>
@@ -7147,10 +7197,10 @@
         </text>
       </attribute>
     </entity>
-    <entity id="finding" name="the finding" identifying-attribute-name="g01_the_finding_id" identifying-attribute-text="the finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global" public-id="fpr_finding">
-      <attribute name="p52" type="text" substitutable="true" public-name="g01_the_finding_id" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true" invisible-if-uncertain="true" invisible-if-unknown="true">
+    <entity id="issue" name="the issue" identifying-attribute-name="g01_the_issue_id" identifying-attribute-text="the issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global" public-id="fpr_issue">
+      <attribute name="p52" type="text" substitutable="true" default-gender="generic" public-name="g01_the_issue_id" silent-if-true="true" silent-if-false="true" silent-if-uncertain="true" silent-if-unknown="true" invisible-if-uncertain="true" invisible-if-unknown="true">
         <text>
-          <base>the finding</base>
+          <base>the issue</base>
         </text>
       </attribute>
     </entity>
@@ -7168,13 +7218,6 @@
         </text>
       </attribute>
     </entity>
-    <entity id="issuetype" name="the issue type" identifying-attribute-name="fpr_the_issue_type_id" identifying-attribute-text="the issue type" containment-relationship-id="allinstancesoftheissuetype" containment-parent-id="global" public-id="fpr_issue_type">
-      <attribute name="p395" type="text" substitutable="true" public-name="fpr_the_issue_type_id">
-        <text>
-          <base>the issue type</base>
-        </text>
-      </attribute>
-    </entity>
   </entities>
   <relationships>
     <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_emr" reverse-public-id="fpr_emr_cby_global" />
@@ -7183,20 +7226,17 @@
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_sep_emt" reverse-public-id="fpr_emt_sep_global" text="all separation interview employments" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" reverse-text="each separation to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_inf_exc_mre" reverse-public-id="fpr_mre_ex_to_global" text="all inferred instances except mre" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" reverse-text="each exc mre to global" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="employment" is-containment="false" public-id="fpr_global_bptw_emt" reverse-public-id="fpr_emt_bptw_global" text="all inferred candidate bptw" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" reverse-text="each bptw to global" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="issue" text="all instances of the issue" relationship-id="allinstancesoftheissue" reverse-relationship-id="eachissueinstancetoglobal" reverse-text="each issue instance to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2issue" reverse-public-id="fpr_issue2global" />
     <relationship source="global" target="action" text="all instances of the action" relationship-id="allinstancesoftheaction" reverse-relationship-id="eachactioncontainedbyglobal" reverse-text="each action contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_action" reverse-public-id="fpr_action_cby_global" />
     <relationship source="global" target="nod" text="all instances of the nod" relationship-id="allinstancesofthenod" reverse-relationship-id="eachnodtoglobal" reverse-text="each nod to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_nod" reverse-public-id="fpr_nod_cby_global" />
     <relationship source="employer" target="nod" text="inferred employer nod" relationship-id="inferredemployernod" reverse-relationship-id="nodinferredforemployer" reverse-text="nod inferred for employer" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_emr_inf_nod" reverse-public-id="fpr_nod_inf_emr" />
     <relationship source="global" target="nod" text="all inferred claimant nod" relationship-id="allinferredclaimantnod" reverse-relationship-id="nodtoclaimant" reverse-text="nod to claimant" type="ManyToMany" is-computed="false" is-containment="false" public-id="fpr_claimant_inf_nod" reverse-public-id="fpr_nod_inf_claimant" />
     <relationship source="global" target="a" text="all instances of the 412A" relationship-id="allinstancesofthe412a" reverse-relationship-id="each412acontainedbyglobal" reverse-text="each 412A contained by global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_412a" reverse-public-id="fpr412a_cby_global" />
     <relationship source="employer" target="a" is-containment="false" public-id="inf_412a_emr" reverse-public-id="inf_emr_412a" text="all inferred 412a for employer" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" reverse-text="each employer inferred 412a" type="ManyToMany" is-computed="false" />
+    <relationship source="employment" target="issue" is-containment="false" public-id="emt_inf_issue" reverse-public-id="issue_inf_emt" text="all issues inferred from employment" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" reverse-text="issue inf by emt" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="action" is-containment="false" public-id="action_inf_claim" reverse-public-id="claim_inf_action" text="all inferred actions" relationship-id="allinferredactions" reverse-relationship-id="actioninferredfromclaim" reverse-text="action inferred from claim" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="finding" text="all instances of the finding" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" reverse-text="each findings instance of global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2finding" reverse-public-id="fpr_finding2global" />
-    <relationship source="employment" target="finding" text="all findings inferred from employment" relationship-id="allfindingsinferredfromemployment" reverse-relationship-id="findinginfbyemt" reverse-text="finding inf by emt" type="ManyToMany" is-computed="false" is-containment="false" public-id="emt_inf_finding" reverse-public-id="finding_inf_emt" />
-    <relationship source="finding" target="nod" text="finding infers nod" relationship-id="findinginfersnod" reverse-relationship-id="nodinferredbyfinding" reverse-text="nod inferred by finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="finding_inf_nod" reverse-public-id="nod_inf_finding" />
-    <relationship source="global" target="finding" text="all findings inferred from claim" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" reverse-text="the claim inferring this finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="claim_inf_finding" reverse-public-id="finding_inf_by_claim" />
-    <relationship source="global" target="issuetype" text="all instances of the issue type" relationship-id="allinstancesoftheissuetype" reverse-relationship-id="globalforthisissuetype" reverse-text="global for this issue type" type="OneToMany" is-computed="false" is-containment="true" public-id="global2issuetype" reverse-public-id="issuetype2global" />
-    <relationship source="global" target="issuetype" is-containment="false" public-id="fpr_global2_issuetype" reverse-public-id="fpr_issuetype2global" text="all issue type's raised by claim" relationship-id="allissuetypesraisedbyclaim" reverse-relationship-id="claimthatraisedthisissuetype" reverse-text="the claim that raised this issue type" type="ManyToMany" is-computed="false" />
-    <relationship source="employment" target="issuetype" is-containment="false" public-id="emt2issuetype" reverse-public-id="issuetype2emt" text="employment raised issue type" relationship-id="employmentraisedissuetype" reverse-relationship-id="issuetyperaisedbyemployment" reverse-text="issue type raised by employment" type="ManyToMany" is-computed="false" />
+    <relationship source="issue" target="nod" is-containment="false" public-id="issue_inf_nod" reverse-public-id="nod_inf_issue" text="issue infers nod" relationship-id="issueinfersnod" reverse-relationship-id="nodinferredbyissue" reverse-text="nod inferred by issue" type="ManyToMany" is-computed="false" />
+    <relationship source="global" target="issue" is-containment="false" public-id="claim_inf_issue" reverse-public-id="issue_inf_by_claim" text="all issues inferred from claim" relationship-id="allissuesinferredfromclaim" reverse-relationship-id="claiminferringthisissue" reverse-text="the claim inferring this issue" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
