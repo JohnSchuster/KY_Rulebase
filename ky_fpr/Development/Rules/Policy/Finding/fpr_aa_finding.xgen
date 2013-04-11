@@ -217,21 +217,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_14, not available (dua)'))</parse>
         </text>
       </attribute>
-      <attribute name="b52" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is ineligible aa_d4_02, not available (physically unable)</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_02, not available (physically unable)'))</parse>
-        </text>
-      </attribute>
       <attribute name="b53" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's transportation restricts their availability for suitable work</base>
           <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability for suitable work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the claim's asserted nod finding code</base>
         </text>
       </attribute>
       <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
@@ -264,6 +253,11 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer is a closely-held corporation'))</parse>
         </text>
       </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claim's asserted nod finding code</base>
+        </text>
+      </attribute>
     </entity>
     <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
       <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -291,7 +285,7 @@
               <attribute attr-id="b4" />
               <attribute attr-id="b5" />
               <attribute attr-id="b31" />
-              <attribute attr-id="b52" />
+              <attribute attr-id="b32" />
               <attribute attr-id="b33" />
               <attribute attr-id="b35" />
               <attribute attr-id="b37" />
@@ -312,7 +306,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is eligible aa_d3_01, (physically able)" ruleburst="true" concludes="b27" folder="0" source-offset="1925">
+    <rule id="1" name="the claimant is eligible aa_d3_01, (physically able)" ruleburst="true" concludes="b27" folder="0" source-offset="2032">
       <rule-xml>
         <conclude attr-id="b27" entity-id="global" scope-id="global0">
           <value>
@@ -336,7 +330,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is eligible aa_d3_02, (mentally able)" ruleburst="true" concludes="b28" folder="0" source-offset="2102">
+    <rule id="2" name="the claimant is eligible aa_d3_02, (mentally able)" ruleburst="true" concludes="b28" folder="0" source-offset="2247">
       <rule-xml>
         <conclude attr-id="b28" entity-id="global" scope-id="global0">
           <value>
@@ -360,7 +354,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is eligible aa_d3_03, (available)" ruleburst="true" concludes="b29" folder="0" source-offset="2277">
+    <rule id="3" name="the claimant is eligible aa_d3_03, (available)" ruleburst="true" concludes="b29" folder="0" source-offset="2460">
       <rule-xml>
         <conclude attr-id="b29" entity-id="global" scope-id="global0">
           <value>
@@ -384,7 +378,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant is eligible aa_d3_04, (adequate work search)" ruleburst="true" concludes="b30" folder="0" source-offset="2448">
+    <rule id="4" name="the claimant is eligible aa_d3_04, (adequate work search)" ruleburst="true" concludes="b30" folder="0" source-offset="2669">
       <rule-xml>
         <conclude attr-id="b30" entity-id="global" scope-id="global0">
           <value>
@@ -408,7 +402,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant is ineligible aa_d4_01, not available (physically unable)" ruleburst="true" concludes="b31" folder="0" source-offset="2630">
+    <rule id="5" name="the claimant is ineligible aa_d4_01, not available (physically unable)" ruleburst="true" concludes="b31" folder="0" source-offset="2889">
       <rule-xml>
         <conclude attr-id="b31" entity-id="global" scope-id="global0">
           <value>
@@ -444,7 +438,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant is ineligible aa_d4_02, not available (mentally unable)" ruleburst="true" concludes="b32" folder="0" source-offset="3007">
+    <rule id="6" name="the claimant is ineligible aa_d4_02, not available (mentally unable)" ruleburst="true" concludes="b32" folder="0" source-offset="3334">
       <rule-xml>
         <conclude attr-id="b32" entity-id="global" scope-id="global0">
           <value>
@@ -480,7 +474,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant is ineligible aa_d4_03, not available (transportation)" ruleburst="true" concludes="b33" folder="0" source-offset="3380">
+    <rule id="7" name="the claimant is ineligible aa_d4_03, not available (transportation)" ruleburst="true" concludes="b33" folder="0" source-offset="3775">
       <rule-xml>
         <conclude attr-id="b33" entity-id="global" scope-id="global0">
           <value>
@@ -521,7 +515,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant is ineligible aa_d4_04, not available (school, training)" ruleburst="true" concludes="b35" folder="0" source-offset="3761">
+    <rule id="8" name="the claimant is ineligible aa_d4_04, not available (school, training)" ruleburst="true" concludes="b35" folder="0" source-offset="4212">
       <rule-xml>
         <conclude attr-id="b35" entity-id="global" scope-id="global0">
           <value>
@@ -562,7 +556,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant is ineligible aa_d4_05, not available (caregiving)" ruleburst="true" concludes="b37" folder="0" source-offset="4150">
+    <rule id="9" name="the claimant is ineligible aa_d4_05, not available (caregiving)" ruleburst="true" concludes="b37" folder="0" source-offset="4657">
       <rule-xml>
         <conclude attr-id="b37" entity-id="global" scope-id="global0">
           <value>
@@ -603,7 +597,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant is ineligible aa_d4_06, not available (incarceration)" ruleburst="true" concludes="b39" folder="0" source-offset="4531">
+    <rule id="10" name="the claimant is ineligible aa_d4_06, not available (incarceration)" ruleburst="true" concludes="b39" folder="0" source-offset="5094">
       <rule-xml>
         <conclude attr-id="b39" entity-id="global" scope-id="global0">
           <value>
@@ -644,7 +638,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant is ineligible aa_d4_07, not available (self-employment, commission)" ruleburst="true" concludes="b41" folder="0" source-offset="4909">
+    <rule id="11" name="the claimant is ineligible aa_d4_07, not available (self-employment, commission)" ruleburst="true" concludes="b41" folder="0" source-offset="5528">
       <rule-xml>
         <conclude attr-id="b41" entity-id="global" scope-id="global0">
           <value>
@@ -685,7 +679,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant is ineligible aa_d4_08, not available (officer in closely-held corporation)" ruleburst="true" concludes="b43" folder="0" source-offset="5364">
+    <rule id="12" name="the claimant is ineligible aa_d4_08, not available (officer in closely-held corporation)" ruleburst="true" concludes="b43" folder="0" source-offset="6039">
       <rule-xml>
         <conclude attr-id="b43" entity-id="global" scope-id="global0">
           <value>
@@ -726,7 +720,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant is ineligible aa_d4_09, not available (other)" ruleburst="true" concludes="b45" folder="0" source-offset="5776">
+    <rule id="13" name="the claimant is ineligible aa_d4_09, not available (other)" ruleburst="true" concludes="b45" folder="0" source-offset="6507">
       <rule-xml>
         <conclude attr-id="b45" entity-id="global" scope-id="global0">
           <value>
@@ -757,7 +751,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant is ineligible aa_d4_10, not available (inadequate work search)" ruleburst="true" concludes="b47" folder="0" source-offset="6062">
+    <rule id="14" name="the claimant is ineligible aa_d4_10, not available (inadequate work search)" ruleburst="true" concludes="b47" folder="0" source-offset="6843">
       <rule-xml>
         <conclude attr-id="b47" entity-id="global" scope-id="global0">
           <value>
@@ -781,7 +775,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant is ineligible aa_d4_11, not available (alien status)" ruleburst="true" concludes="b48" folder="0" source-offset="6262">
+    <rule id="15" name="the claimant is ineligible aa_d4_11, not available (alien status)" ruleburst="true" concludes="b48" folder="0" source-offset="7081">
       <rule-xml>
         <conclude attr-id="b48" entity-id="global" scope-id="global0">
           <value>
@@ -805,7 +799,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant is ineligible aa_d4_12, not available (disaster roads or transportation)" ruleburst="true" concludes="b49" folder="0" source-offset="6521">
+    <rule id="16" name="the claimant is ineligible aa_d4_12, not available (disaster roads or transportation)" ruleburst="true" concludes="b49" folder="0" source-offset="7376">
       <rule-xml>
         <conclude attr-id="b49" entity-id="global" scope-id="global0">
           <value>
@@ -829,7 +823,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the claimant is ineligible aa_d4_13, not available (disaster availability)" ruleburst="true" concludes="b50" folder="0" source-offset="6731">
+    <rule id="17" name="the claimant is ineligible aa_d4_13, not available (disaster availability)" ruleburst="true" concludes="b50" folder="0" source-offset="7624">
       <rule-xml>
         <conclude attr-id="b50" entity-id="global" scope-id="global0">
           <value>
@@ -853,7 +847,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the claimant is ineligible aa_d4_14, not available (dua)" ruleburst="true" concludes="b51" folder="0" source-offset="7054">
+    <rule id="18" name="the claimant is ineligible aa_d4_14, not available (dua)" ruleburst="true" concludes="b51" folder="0" source-offset="7983">
       <rule-xml>
         <conclude attr-id="b51" entity-id="global" scope-id="global0">
           <value>
@@ -877,7 +871,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="all findings inferred from claim" ruleburst="true" concludes="InferInstance(allfindingsinferredfromclaim)" folder="0" source-offset="7389">
+    <rule id="19" name="all findings inferred from claim" ruleburst="true" concludes="InferInstance(allfindingsinferredfromclaim)" folder="0" source-offset="8356">
       <rule-xml>
         <table-conclude-instance relationship-id="allfindingsinferredfromclaim" source="global" source-scope-id="global0">
           <row>
@@ -925,7 +919,7 @@
               <string-value>aa_d4_02</string-value>
             </identity>
             <condition>
-              <attribute attr-id="b52" />
+              <attribute attr-id="b32" />
             </condition>
           </row>
           <row>
