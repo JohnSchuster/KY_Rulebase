@@ -68,6 +68,20 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
+          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant worked at the employer full-time during the week in which benefits were claimed</base>
+          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -97,20 +111,6 @@
         <text lang="en-US">
           <base>both parties (claimant and employer) agree that the claimant is currently connected to the employment</base>
           <parse>s(ver('10.4.2.18'),v(agree,t(simple,present,normal)),sb('both parties (claimant and employer)',plural),o('that the claimant is currently connected to the employment'))</parse>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant worked at the employer full-time during the week in which benefits were claimed</base>
-          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
         </text>
       </attribute>
     </entity>
@@ -155,7 +155,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is being paid their regular salary during a federal government shutdown" ruleburst="true" concludes="b15" folder="0" source-offset="736">
+    <rule id="1" name="the claimant is being paid their regular salary during a federal government shutdown" ruleburst="true" concludes="b15" folder="0" source-offset="819">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -174,7 +174,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1186">
+    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1293">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -196,7 +196,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="1925">
+    <rule id="3" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="2065">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>

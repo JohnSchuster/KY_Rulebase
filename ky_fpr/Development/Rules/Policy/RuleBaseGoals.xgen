@@ -74,14 +74,6 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is at fault for the separation from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -102,11 +94,19 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is at fault for the separation from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('at fault for the separation from the employment'))</parse>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>

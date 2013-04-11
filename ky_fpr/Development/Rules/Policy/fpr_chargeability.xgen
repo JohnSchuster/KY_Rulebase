@@ -1,43 +1,5 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment was part-time since the date of hire</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('part-time since the date of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's wages were provided to the claimant without interruption since the time of hire</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the employment''s wages',plural),o('to the claimant without interruption since the time of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is current</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation from the employment occurred under disqualifying circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has a quit exception from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation from the employment occurred under non-disqualifying circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under non-disqualifying circumstances'))</parse>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -130,6 +92,44 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was part-time since the date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('part-time since the date of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's wages were provided to the claimant without interruption since the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),ob('the employment''s wages',plural),o('to the claimant without interruption since the time of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is current</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employment occurred under disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under disqualifying circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a quit exception from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employment occurred under non-disqualifying circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(occur,t(simple,past,normal)),sb('the claimant''s separation from the employment',plural),o('under non-disqualifying circumstances'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity ref="global" />
   </entities>
   <relationships>
@@ -175,7 +175,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employer is chargeable" ruleburst="true" concludes="b29" folder="0" source-offset="1050">
+    <rule id="1" name="the employer is chargeable" ruleburst="true" concludes="b29" folder="0" source-offset="1197">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employer" scope-id="employer0">
           <value>
@@ -212,7 +212,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="employer's chargeability deferred" ruleburst="true" concludes="b23" folder="0" source-offset="2087">
+    <rule id="2" name="employer's chargeability deferred" ruleburst="true" concludes="b23" folder="0" source-offset="2339">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
@@ -235,7 +235,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2450">
+    <rule id="3" name="the employer is a reimbursing employer" ruleburst="true" concludes="b12" folder="0" source-offset="2729">
       <rule-xml>
         <conclude attr-id="b12" entity-id="employer" scope-id="employer0">
           <value>
@@ -250,7 +250,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2590">
+    <rule id="4" name="the employer is an out-of-state employer that is not chargeable in the state of Kentucky" ruleburst="true" concludes="b13" folder="0" source-offset="2881">
       <rule-xml>
         <conclude attr-id="b13" entity-id="employer" scope-id="employer0">
           <value>
@@ -268,7 +268,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="2900">
+    <rule id="5" name="the employer continues to provide the claimant with part-time employment without interruption to the same extent as was provided from hire" ruleburst="true" concludes="b7" folder="0" source-offset="3209">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employer" scope-id="employer0">
           <value>
