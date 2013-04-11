@@ -1,12 +1,5 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's nod finding code</base>
-        </text>
-      </attribute>
-    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="p5" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
@@ -14,26 +7,33 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the issue" id="issue" containment-relationship-id="allinstancesoftheissue" containment-parent-id="global">
-      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the issue</base>
+          <base>the employment's nod finding code</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
+      <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the finding</base>
         </text>
       </attribute>
     </entity>
     <entity ref="global" />
   </entities>
   <relationships>
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allfindingsinferredfromemployment" reverse-relationship-id="findinginfbyemt" text="all findings inferred from employment" reverse-text="finding inf by emt" source="employment" target="finding" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
-    <relationship type="ManyToMany" relationship-id="allissuesinferredfromemployment" reverse-relationship-id="issueinfbyemt" text="all issues inferred from employment" reverse-text="issue inf by emt" source="employment" target="issue" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
-    <relationship type="OneToMany" relationship-id="allinstancesoftheissue" reverse-relationship-id="eachissueinstancetoglobal" text="all instances of the issue" reverse-text="each issue instance to global" source="global" target="issue" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" text="all instances of the finding" reverse-text="each findings instance of global" source="global" target="finding" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="all issues inferred from employment" ruleburst="true" concludes="InferInstance(allissuesinferredfromemployment)" folder="0" source-offset="61">
+    <rule id="0" name="all findings inferred from employment" ruleburst="true" concludes="InferInstance(allfindingsinferredfromemployment)" folder="0" source-offset="2">
       <rule-xml>
-        <table-conclude-instance relationship-id="allissuesinferredfromemployment" source="employment" source-scope-id="employment0">
+        <table-conclude-instance relationship-id="allfindingsinferredfromemployment" source="employment" source-scope-id="employment0">
           <row>
             <identity>
               <concatenate>

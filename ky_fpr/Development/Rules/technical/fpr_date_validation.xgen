@@ -25,12 +25,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
         </text>
       </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's work dates are within an acceptable range</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s work dates',plural),o('within an acceptable range'))</parse>
-        </text>
-      </attribute>
       <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's last day worked date</base>
@@ -49,7 +43,7 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment was active within the investigative period" ruleburst="true" concludes="b6" folder="0" source-offset="42">
+    <rule id="0" name="the employment was active within the investigative period" ruleburst="true" concludes="b6" folder="0" source-offset="2">
       <rule-xml>
         <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
           <value>
@@ -63,13 +57,18 @@
                   <attribute attr-id="p5" />
                 </scope-for>
               </less-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p1" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p5" />
+                </scope-for>
+              </less-than-equals>
               <greater-than-equals>
                 <attribute attr-id="p1" />
                 <scope-for scope-ref="global0" target-entity-id="global">
                   <attribute attr-id="p2" />
                 </scope-for>
               </greater-than-equals>
-              <attribute attr-id="b7" />
               <attribute attr-id="b5" />
             </and>
           </condition>
@@ -79,9 +78,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="error(&quot;The employment must have been active within the investigation period&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment must have been active within the investigation period\&quot;)&quot;" folder="0" source-offset="417">
+    <rule id="1" name="error(&quot;The employment must have been active within the investigation period.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment must have been active within the investigation period.\&quot;)&quot;" folder="0" source-offset="399">
       <rule-xml>
-        <event action="error(&quot;The employment must have been active within the investigation period&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The employment must have been active within the investigation period.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <attribute attr-id="b6" />
@@ -90,7 +89,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's worked dates are sequential" ruleburst="true" concludes="b5" folder="0" source-offset="663">
+    <rule id="2" name="the employment's worked dates are sequential" ruleburst="true" concludes="b5" folder="0" source-offset="646">
       <rule-xml>
         <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
           <value>
@@ -108,7 +107,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The first day worked, must be on or before, the last day worked.\&quot;)&quot;" folder="0" source-offset="824">
+    <rule id="3" name="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The first day worked, must be on or before, the last day worked.\&quot;)&quot;" folder="0" source-offset="807">
       <rule-xml>
         <event action="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -119,41 +118,49 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employment's work dates are within an acceptable range" ruleburst="true" concludes="b7" folder="0" source-offset="1049">
+    <rule id="4" name="error(&quot;The employment's first day worked, must be on or before, the filing date.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment's first day worked, must be on or before, the filing date.\&quot;)&quot;" folder="0" source-offset="1031">
       <rule-xml>
-        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
+        <event action="error(&quot;The employment's first day worked, must be on or before, the filing date.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
-            <and>
-              <attribute attr-id="b5" />
+            <not>
               <less-than-equals>
                 <attribute attr-id="p4" />
                 <scope-for scope-ref="global0" target-entity-id="global">
                   <attribute attr-id="p5" />
                 </scope-for>
               </less-than-equals>
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="error(&quot;The employment's last day worked, must be on or before the filing date.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment's last day worked, must be on or before the filing date.\&quot;)&quot;" folder="0" source-offset="1327">
+      <rule-xml>
+        <event action="error(&quot;The employment's last day worked, must be on or before the filing date.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
               <less-than-equals>
                 <attribute attr-id="p1" />
                 <scope-for scope-ref="global0" target-entity-id="global">
                   <attribute attr-id="p5" />
                 </scope-for>
               </less-than-equals>
-            </and>
+            </not>
           </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
+        </event>
       </rule-xml>
     </rule>
-    <rule id="5" name="error(&quot;The employment's work dates are not within an acceptable range&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment's work dates are not within an acceptable range\&quot;)&quot;" folder="0" source-offset="1347">
+    <rule id="6" name="error(&quot;The employment's last day worked, must be on or after, the base period start date.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The employment's last day worked, must be on or after, the base period start date.\&quot;)&quot;" folder="0" source-offset="1619">
       <rule-xml>
-        <event action="error(&quot;The employment's work dates are not within an acceptable range&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The employment's last day worked, must be on or after, the base period start date.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
-              <attribute attr-id="b7" />
+              <greater-than-equals>
+                <attribute attr-id="p1" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p2" />
+                </scope-for>
+              </greater-than-equals>
             </not>
           </condition>
         </event>
