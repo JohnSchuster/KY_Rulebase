@@ -97,6 +97,12 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary work'))</parse>
         </text>
       </attribute>
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is vq_d2_04, (Distance to Work)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d2_04, (Distance to Work)'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's policy based finding code</base>
@@ -105,12 +111,6 @@
       <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's asserted nod finding code</base>
-        </text>
-      </attribute>
-      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's separation finding is vq_d2_04, (Distance to Work)</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d2_04, (Distance to Work)'))</parse>
         </text>
       </attribute>
     </entity>
@@ -122,7 +122,7 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="45">
+    <rule id="0" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="81">
       <rule-xml>
         <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <row>
@@ -246,7 +246,7 @@
         <prop name="fragment"> 10</prop>
       </props>
     </rule>
-    <rule id="1" name="the employment's separation finding is vq_d2_01, (Contract of Employment)" ruleburst="true" concludes="b8" folder="0" source-offset="1708">
+    <rule id="1" name="the employment's separation finding is vq_d2_01, (Contract of Employment)" ruleburst="true" concludes="b8" folder="0" source-offset="2260">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
           <value>
@@ -277,7 +277,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's separation finding is vq_d2_02, (Disciplinary Action)" ruleburst="true" concludes="b9" folder="0" source-offset="2109">
+    <rule id="2" name="the employment's separation finding is vq_d2_02, (Disciplinary Action)" ruleburst="true" concludes="b9" folder="0" source-offset="2712">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>
@@ -308,7 +308,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employment's separation finding is vq_d2_03, (Dispute in the Workplace)" ruleburst="true" concludes="b11" folder="0" source-offset="2536">
+    <rule id="3" name="the employment's separation finding is vq_d2_03, (Dispute in the Workplace)" ruleburst="true" concludes="b11" folder="0" source-offset="3191">
       <rule-xml>
         <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
@@ -339,7 +339,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employment's separation finding is vq_d2_04, (Distance to Work)" ruleburst="true" concludes="b20" folder="0" source-offset="3006">
+    <rule id="4" name="the employment's separation finding is vq_d2_04, (Distance to Work)" ruleburst="true" concludes="b20" folder="0" source-offset="3714">
       <rule-xml>
         <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
           <value>
@@ -370,7 +370,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employment's separation finding is vq_d2_05, (Drug/Alcohol Test)" ruleburst="true" concludes="b15" folder="0" source-offset="3440">
+    <rule id="5" name="the employment's separation finding is vq_d2_05, (Drug/Alcohol Test)" ruleburst="true" concludes="b15" folder="0" source-offset="4201">
       <rule-xml>
         <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
           <value>
@@ -401,7 +401,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the employment's separation finding is vq_d2_06, (Equipment)" ruleburst="true" concludes="b16" folder="0" source-offset="3915">
+    <rule id="6" name="the employment's separation finding is vq_d2_06, (Equipment)" ruleburst="true" concludes="b16" folder="0" source-offset="4727">
       <rule-xml>
         <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
           <value>
@@ -434,7 +434,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employment's separation finding is vq_d2_07, (To Go to Temporary Work)" ruleburst="true" concludes="b18" folder="0" source-offset="4333">
+    <rule id="7" name="the employment's separation finding is vq_d2_07, (To Go to Temporary Work)" ruleburst="true" concludes="b18" folder="0" source-offset="5202">
       <rule-xml>
         <conclude attr-id="b18" entity-id="employment" scope-id="employment0">
           <value>
@@ -465,7 +465,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="4721">
+    <rule id="8" name="the employment's policy based finding code" ruleburst="true" concludes="p1" folder="0" source-offset="5649">
       <rule-xml>
         <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
           <row>

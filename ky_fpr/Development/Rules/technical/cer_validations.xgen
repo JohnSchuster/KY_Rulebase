@@ -26,7 +26,7 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment is a duplicate employment period for the same employer" ruleburst="true" concludes="b1" folder="0" source-offset="2">
+    <rule id="0" name="the employment is a duplicate employment period for the same employer" ruleburst="true" concludes="b1" folder="0" source-offset="153">
       <rule-xml>
         <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
           <value>
@@ -37,20 +37,36 @@
               <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
               <exists scope-id="the other employment">
                 <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
-                <and>
-                  <equals>
+                <or>
+                  <greater-than-equals>
                     <scope-for scope-ref="employment0" target-entity-id="employment">
                       <attribute attr-id="p1" />
                     </scope-for>
-                    <attribute attr-id="p1" />
-                  </equals>
-                  <equals>
                     <scope-for scope-ref="employment0" target-entity-id="employment">
                       <attribute attr-id="p2" />
                     </scope-for>
-                    <attribute attr-id="p2" />
-                  </equals>
-                </and>
+                  </greater-than-equals>
+                  <less-than-equals>
+                    <scope-for scope-ref="employment0" target-entity-id="employment">
+                      <attribute attr-id="p2" />
+                    </scope-for>
+                    <attribute attr-id="p1" />
+                  </less-than-equals>
+                  <and>
+                    <greater-than-equals>
+                      <scope-for scope-ref="employment0" target-entity-id="employment">
+                        <attribute attr-id="p2" />
+                      </scope-for>
+                      <attribute attr-id="p2" />
+                    </greater-than-equals>
+                    <less-than-equals>
+                      <scope-for scope-ref="employment0" target-entity-id="employment">
+                        <attribute attr-id="p2" />
+                      </scope-for>
+                      <attribute attr-id="p1" />
+                    </less-than-equals>
+                  </and>
+                </or>
               </exists>
             </for>
           </condition>
@@ -58,6 +74,15 @@
             <false-value />
           </otherwise>
         </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="error(&quot;The different employment period's first day worked and last day worked, must not overlap.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The different employment period's first day worked and last day worked, must not overlap.\&quot;)&quot;" folder="0" source-offset="946">
+      <rule-xml>
+        <event action="error(&quot;The different employment period's first day worked and last day worked, must not overlap.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <attribute attr-id="b1" />
+          </condition>
+        </event>
       </rule-xml>
     </rule>
   </rules>
