@@ -355,6 +355,12 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment drug test interview',plural),o('to Positive Drug Test Details'))</parse>
         </text>
       </attribute>
+      <attribute name="b61" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment requested reduction flow should branch to disciplinary</base>
+          <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment requested reduction flow',plural),o('to disciplinary'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the selected discharge status</base>
@@ -383,6 +389,11 @@
       <attribute name="p6" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the results of the drug test administered to the claimant</base>
+        </text>
+      </attribute>
+      <attribute name="p7" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the reason the employment reduced the claimants work hours</base>
         </text>
       </attribute>
     </entity>
@@ -436,14 +447,311 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment discharge interview should branch to unsatisfactory attendance" ruleburst="true" concludes="b2" folder="0" source-offset="1221">
+    <rule id="1" name="the claimant violated the employer's rule during the employment" ruleburst="true" concludes="b3" folder="0" source-offset="789">
+      <rule-xml>
+        <table-conclude attr-id="b3" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER02</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant failed to perform satisfactory work during the employment" ruleburst="true" concludes="b5" folder="0" source-offset="1041">
+      <rule-xml>
+        <table-conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER03</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant refused to obey an instruction during the employment" ruleburst="true" concludes="b10" folder="0" source-offset="1300">
+      <rule-xml>
+        <table-conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER07</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant failed to maintain a valid driver's license for the employment" ruleburst="true" concludes="b12" folder="0" source-offset="1554">
+      <rule-xml>
+        <table-conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER08</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant reported to work under the influence of (alcohol, drugs) during the employment" ruleburst="true" concludes="b15" folder="0" source-offset="1818">
+      <rule-xml>
+        <table-conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER10</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the claimant was incarcerated for a conviction during the employment" ruleburst="true" concludes="b17" folder="0" source-offset="2097">
+      <rule-xml>
+        <table-conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER11</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the claimant's actions resulted in damage of this employer's property during the employment" ruleburst="true" concludes="b19" folder="0" source-offset="2354">
+      <rule-xml>
+        <table-conclude attr-id="b19" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p1" />
+                <string-value>DS12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>SU12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <row>
+            <value>
+              <true-value />
+            </value>
+            <condition>
+              <equals>
+                <attribute attr-id="p3" />
+                <string-value>ER12</string-value>
+              </equals>
+            </condition>
+          </row>
+          <otherwise>
+            <uncertain-value />
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the employment discharge interview should branch to unsatisfactory attendance" ruleburst="true" concludes="b2" folder="0" source-offset="2634">
       <rule-xml>
         <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b1" />
+            <equals>
+              <attribute attr-id="p1" />
+              <string-value>DS01</string-value>
+            </equals>
           </condition>
           <otherwise>
             <false-value />
@@ -451,9 +759,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant violated the employer's rule during the employment" ruleburst="true" concludes="b3" folder="0" source-offset="1381">
+    <rule id="9" name="the employment discharge interview should branch to violation" ruleburst="true" concludes="b4" folder="0" source-offset="2755">
       <rule-xml>
-        <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -469,24 +777,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employment discharge interview should branch to violation" ruleburst="true" concludes="b4" folder="0" source-offset="1504">
+    <rule id="10" name="the employment discharge interview should branch to unsatisfactory work" ruleburst="true" concludes="b6" folder="0" source-offset="2860">
       <rule-xml>
-        <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b3" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the claimant failed to perform satisfactory work during the employment" ruleburst="true" concludes="b5" folder="0" source-offset="1649">
-      <rule-xml>
-        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -502,22 +795,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employment discharge interview should branch to unsatisfactory work" ruleburst="true" concludes="b6" folder="0" source-offset="1778">
-      <rule-xml>
-        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b5" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="6" name="the employment discharge interview should branch to inappropriate conduct" ruleburst="true" concludes="b7" folder="0" source-offset="1940">
+    <rule id="11" name="the employment discharge interview should branch to inappropriate conduct" ruleburst="true" concludes="b7" folder="0" source-offset="2980">
       <rule-xml>
         <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
           <value>
@@ -535,7 +813,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employment discharge interview should branch to dishonesty" ruleburst="true" concludes="b8" folder="0" source-offset="2081">
+    <rule id="12" name="the employment discharge interview should branch to dishonesty" ruleburst="true" concludes="b8" folder="0" source-offset="3102">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
           <value>
@@ -553,7 +831,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employment discharge interview should branch to falsification" ruleburst="true" concludes="b9" folder="0" source-offset="2211">
+    <rule id="13" name="the employment discharge interview should branch to falsification" ruleburst="true" concludes="b9" folder="0" source-offset="3213">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>
@@ -571,9 +849,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the claimant refused to obey an instruction during the employment" ruleburst="true" concludes="b10" folder="0" source-offset="2344">
+    <rule id="14" name="the employment discharge interview should branch to refusal" ruleburst="true" concludes="b11" folder="0" source-offset="3322">
       <rule-xml>
-        <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -589,24 +867,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the employment discharge interview should branch to refusal" ruleburst="true" concludes="b11" folder="0" source-offset="2469">
+    <rule id="15" name="the employment discharge interview should branch to driver" ruleburst="true" concludes="b13" folder="0" source-offset="3425">
       <rule-xml>
-        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b10" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="11" name="the claimant failed to maintain a valid driver's license for the employment" ruleburst="true" concludes="b12" folder="0" source-offset="2616">
-      <rule-xml>
-        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -622,22 +885,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the employment discharge interview should branch to driver" ruleburst="true" concludes="b13" folder="0" source-offset="2751">
-      <rule-xml>
-        <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b12" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="13" name="the employment discharge interview should branch to uninsurable" ruleburst="true" concludes="b14" folder="0" source-offset="2907">
+    <rule id="16" name="the employment discharge interview should branch to uninsurable" ruleburst="true" concludes="b14" folder="0" source-offset="3532">
       <rule-xml>
         <conclude attr-id="b14" entity-id="employment" scope-id="employment0">
           <value>
@@ -655,9 +903,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant reported to work under the influence of (alcohol, drugs) during the employment" ruleburst="true" concludes="b15" folder="0" source-offset="3039">
+    <rule id="17" name="the employment discharge interview should branch to drugs" ruleburst="true" concludes="b16" folder="0" source-offset="3639">
       <rule-xml>
-        <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -673,24 +921,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the employment discharge interview should branch to drugs" ruleburst="true" concludes="b16" folder="0" source-offset="3190">
+    <rule id="18" name="the employment discharge interview should branch to jail" ruleburst="true" concludes="b18" folder="0" source-offset="3740">
       <rule-xml>
-        <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b15" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="16" name="the claimant was incarcerated for a conviction during the employment" ruleburst="true" concludes="b17" folder="0" source-offset="3361">
-      <rule-xml>
-        <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b18" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -706,24 +939,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the employment discharge interview should branch to jail" ruleburst="true" concludes="b18" folder="0" source-offset="3489">
+    <rule id="19" name="the employment discharge interview should branch to damaging" ruleburst="true" concludes="b20" folder="0" source-offset="3840">
       <rule-xml>
-        <conclude attr-id="b18" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b17" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="18" name="the claimant's actions resulted in damage of this employer's property during the employment" ruleburst="true" concludes="b19" folder="0" source-offset="3636">
-      <rule-xml>
-        <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -739,22 +957,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the employment discharge interview should branch to damaging" ruleburst="true" concludes="b20" folder="0" source-offset="3787">
-      <rule-xml>
-        <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b19" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="20" name="the employment discharge interview should branch to union" ruleburst="true" concludes="b21" folder="0" source-offset="3961">
+    <rule id="20" name="the employment discharge interview should branch to union" ruleburst="true" concludes="b21" folder="0" source-offset="3949">
       <rule-xml>
         <conclude attr-id="b21" entity-id="employment" scope-id="employment0">
           <value>
@@ -772,7 +975,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the employment discharge interview should branch to retirement" ruleburst="true" concludes="b22" folder="0" source-offset="4087">
+    <rule id="21" name="the employment discharge interview should branch to retirement" ruleburst="true" concludes="b22" folder="0" source-offset="4055">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>
@@ -790,7 +993,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the employment discharge interview should branch to employer-request" ruleburst="true" concludes="b23" folder="0" source-offset="4218">
+    <rule id="22" name="the employment discharge interview should branch to employer-request" ruleburst="true" concludes="b23" folder="0" source-offset="4166">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employment" scope-id="employment0">
           <value>
@@ -808,7 +1011,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the employment discharge interview should branch to anything else" ruleburst="true" concludes="b24" folder="0" source-offset="4355">
+    <rule id="23" name="the employment discharge interview should branch to anything else" ruleburst="true" concludes="b24" folder="0" source-offset="4283">
       <rule-xml>
         <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
           <value>
@@ -826,14 +1029,17 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="24" name="the employment suspension attendance screen should be displayed" ruleburst="true" concludes="b25" folder="0" source-offset="4960">
+    <rule id="24" name="the employment suspension attendance screen should be displayed" ruleburst="true" concludes="b25" folder="0" source-offset="4868">
       <rule-xml>
         <conclude attr-id="b25" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b1" />
+            <equals>
+              <attribute attr-id="p2" />
+              <string-value>SU01</string-value>
+            </equals>
           </condition>
           <otherwise>
             <false-value />
@@ -841,9 +1047,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the claimant violated the employer's rule during the employment" ruleburst="true" concludes="b3" folder="0" source-offset="5104">
+    <rule id="25" name="the employment suspension policy screen should be displayed" ruleburst="true" concludes="b26" folder="0" source-offset="4982">
       <rule-xml>
-        <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b26" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -859,24 +1065,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="26" name="the employment suspension policy screen should be displayed" ruleburst="true" concludes="b26" folder="0" source-offset="5236">
+    <rule id="26" name="the employment suspension performance screen should be displayed" ruleburst="true" concludes="b27" folder="0" source-offset="5092">
       <rule-xml>
-        <conclude attr-id="b26" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b3" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="27" name="the claimant failed to perform satisfactory work during the employment" ruleburst="true" concludes="b5" folder="0" source-offset="5377">
-      <rule-xml>
-        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -892,22 +1083,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="28" name="the employment suspension performance screen should be displayed" ruleburst="true" concludes="b27" folder="0" source-offset="5516">
-      <rule-xml>
-        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b5" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="29" name="the employment suspension behavior screen should be displayed" ruleburst="true" concludes="b28" folder="0" source-offset="5669">
+    <rule id="27" name="the employment suspension behavior screen should be displayed" ruleburst="true" concludes="b28" folder="0" source-offset="5212">
       <rule-xml>
         <conclude attr-id="b28" entity-id="employment" scope-id="employment0">
           <value>
@@ -925,7 +1101,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="30" name="the employment suspension dishonesty screen should be displayed" ruleburst="true" concludes="b29" folder="0" source-offset="5806">
+    <rule id="28" name="the employment suspension dishonesty screen should be displayed" ruleburst="true" concludes="b29" folder="0" source-offset="5329">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
           <value>
@@ -943,7 +1119,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="31" name="the employment suspension falsification screen should be displayed" ruleburst="true" concludes="b30" folder="0" source-offset="5945">
+    <rule id="29" name="the employment suspension falsification screen should be displayed" ruleburst="true" concludes="b30" folder="0" source-offset="5448">
       <rule-xml>
         <conclude attr-id="b30" entity-id="employment" scope-id="employment0">
           <value>
@@ -961,9 +1137,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="32" name="the claimant refused to obey an instruction during the employment" ruleburst="true" concludes="b10" folder="0" source-offset="6087">
+    <rule id="30" name="the employment suspension refusal screen should be displayed" ruleburst="true" concludes="b31" folder="0" source-offset="5565">
       <rule-xml>
-        <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -979,24 +1155,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="33" name="the employment suspension refusal screen should be displayed" ruleburst="true" concludes="b31" folder="0" source-offset="6222">
+    <rule id="31" name="the employment suspension license screen should be displayed" ruleburst="true" concludes="b32" folder="0" source-offset="5676">
       <rule-xml>
-        <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b10" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="34" name="the claimant failed to maintain a valid driver's license for the employment" ruleburst="true" concludes="b12" folder="0" source-offset="6367">
-      <rule-xml>
-        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b32" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1012,22 +1173,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="35" name="the employment suspension license screen should be displayed" ruleburst="true" concludes="b32" folder="0" source-offset="6512">
-      <rule-xml>
-        <conclude attr-id="b32" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b12" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="36" name="the employment suspension uninsurable screen should be displayed" ruleburst="true" concludes="b33" folder="0" source-offset="6668">
+    <rule id="32" name="the employment suspension uninsurable screen should be displayed" ruleburst="true" concludes="b33" folder="0" source-offset="5792">
       <rule-xml>
         <conclude attr-id="b33" entity-id="employment" scope-id="employment0">
           <value>
@@ -1045,9 +1191,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="37" name="the claimant reported to work under the influence of (alcohol, drugs) during the employment" ruleburst="true" concludes="b15" folder="0" source-offset="6808">
+    <rule id="33" name="the employment suspension alcohol screen should be displayed" ruleburst="true" concludes="b34" folder="0" source-offset="5907">
       <rule-xml>
-        <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1063,24 +1209,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="38" name="the employment suspension alcohol screen should be displayed" ruleburst="true" concludes="b34" folder="0" source-offset="6969">
+    <rule id="34" name="the employment suspension incarceration screen should be displayed" ruleburst="true" concludes="b35" folder="0" source-offset="6018">
       <rule-xml>
-        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b15" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="39" name="the claimant was incarcerated for a conviction during the employment" ruleburst="true" concludes="b17" folder="0" source-offset="7140">
-      <rule-xml>
-        <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b35" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1096,24 +1227,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="40" name="the employment suspension incarceration screen should be displayed" ruleburst="true" concludes="b35" folder="0" source-offset="7278">
+    <rule id="35" name="the employment suspension damaging screen should be displayed" ruleburst="true" concludes="b36" folder="0" source-offset="6135">
       <rule-xml>
-        <conclude attr-id="b35" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b17" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="41" name="the claimant's actions resulted in damage of this employer's property during the employment" ruleburst="true" concludes="b19" folder="0" source-offset="7432">
-      <rule-xml>
-        <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1129,22 +1245,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="42" name="the employment suspension damaging screen should be displayed" ruleburst="true" concludes="b36" folder="0" source-offset="7593">
-      <rule-xml>
-        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b19" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="43" name="the employment suspension union screen should be displayed" ruleburst="true" concludes="b37" folder="0" source-offset="7765">
+    <rule id="36" name="the employment suspension union screen should be displayed" ruleburst="true" concludes="b37" folder="0" source-offset="6252">
       <rule-xml>
         <conclude attr-id="b37" entity-id="employment" scope-id="employment0">
           <value>
@@ -1162,7 +1263,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="44" name="the employment suspension other screen should be displayed" ruleburst="true" concludes="b38" folder="0" source-offset="7899">
+    <rule id="37" name="the employment suspension other screen should be displayed" ruleburst="true" concludes="b38" folder="0" source-offset="6366">
       <rule-xml>
         <conclude attr-id="b38" entity-id="employment" scope-id="employment0">
           <value>
@@ -1180,14 +1281,17 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="45" name="the employment reduction in hours attendance screen should be displayed" ruleburst="true" concludes="b39" folder="0" source-offset="8536">
+    <rule id="38" name="the employment reduction in hours attendance screen should be displayed" ruleburst="true" concludes="b39" folder="0" source-offset="6983">
       <rule-xml>
         <conclude attr-id="b39" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
-            <attribute attr-id="b1" />
+            <equals>
+              <attribute attr-id="p3" />
+              <string-value>ER01</string-value>
+            </equals>
           </condition>
           <otherwise>
             <false-value />
@@ -1195,9 +1299,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="46" name="the claimant violated the employer's rule during the employment" ruleburst="true" concludes="b3" folder="0" source-offset="8688">
+    <rule id="39" name="the employment reduction in hours policy screen should be displayed" ruleburst="true" concludes="b40" folder="0" source-offset="7114">
       <rule-xml>
-        <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b40" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1213,24 +1317,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="47" name="the employment reduction in hours policy screen should be displayed" ruleburst="true" concludes="b40" folder="0" source-offset="8829">
+    <rule id="40" name="the employment reduction in hours unsatisfactory work screen should be displayed" ruleburst="true" concludes="b41" folder="0" source-offset="7241">
       <rule-xml>
-        <conclude attr-id="b40" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b3" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="48" name="the claimant failed to perform satisfactory work during the employment" ruleburst="true" concludes="b5" folder="0" source-offset="8978">
-      <rule-xml>
-        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b41" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1246,22 +1335,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="49" name="the employment reduction in hours unsatisfactory work screen should be displayed" ruleburst="true" concludes="b41" folder="0" source-offset="9126">
-      <rule-xml>
-        <conclude attr-id="b41" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b5" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="50" name="the employment reduction in hours conduct screen should be displayed" ruleburst="true" concludes="b42" folder="0" source-offset="9295">
+    <rule id="41" name="the employment reduction in hours conduct screen should be displayed" ruleburst="true" concludes="b42" folder="0" source-offset="7386">
       <rule-xml>
         <conclude attr-id="b42" entity-id="employment" scope-id="employment0">
           <value>
@@ -1279,7 +1353,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="51" name="the employment reduction in hours dishonesty screen should be displayed" ruleburst="true" concludes="b43" folder="0" source-offset="9448">
+    <rule id="42" name="the employment reduction in hours dishonesty screen should be displayed" ruleburst="true" concludes="b43" folder="0" source-offset="7519">
       <rule-xml>
         <conclude attr-id="b43" entity-id="employment" scope-id="employment0">
           <value>
@@ -1297,7 +1371,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="52" name="the employment reduction in hours false application screen should be displayed" ruleburst="true" concludes="b44" folder="0" source-offset="9604">
+    <rule id="43" name="the employment reduction in hours false application screen should be displayed" ruleburst="true" concludes="b44" folder="0" source-offset="7655">
       <rule-xml>
         <conclude attr-id="b44" entity-id="employment" scope-id="employment0">
           <value>
@@ -1315,9 +1389,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="53" name="the claimant refused to obey an instruction during the employment" ruleburst="true" concludes="b10" folder="0" source-offset="9767">
+    <rule id="44" name="the employment reduction in hours refusal to obey screen should be displayed" ruleburst="true" concludes="b45" folder="0" source-offset="7793">
       <rule-xml>
-        <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b45" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1333,24 +1407,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="54" name="the employment reduction in hours refusal to obey screen should be displayed" ruleburst="true" concludes="b45" folder="0" source-offset="9911">
+    <rule id="45" name="the employment reduction in hours loss of license screen should be displayed" ruleburst="true" concludes="b46" folder="0" source-offset="7929">
       <rule-xml>
-        <conclude attr-id="b45" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b10" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="55" name="the claimant failed to maintain a valid driver's license for the employment" ruleburst="true" concludes="b12" folder="0" source-offset="10072">
-      <rule-xml>
-        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b46" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1366,22 +1425,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="56" name="the employment reduction in hours loss of license screen should be displayed" ruleburst="true" concludes="b46" folder="0" source-offset="10226">
-      <rule-xml>
-        <conclude attr-id="b46" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b12" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="57" name="the employment reduction in hours loss of insurance screen should be displayed" ruleburst="true" concludes="b47" folder="0" source-offset="10397">
+    <rule id="46" name="the employment reduction in hours loss of insurance screen should be displayed" ruleburst="true" concludes="b47" folder="0" source-offset="8070">
       <rule-xml>
         <conclude attr-id="b47" entity-id="employment" scope-id="employment0">
           <value>
@@ -1399,9 +1443,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="58" name="the claimant reported to work under the influence of (alcohol, drugs) during the employment" ruleburst="true" concludes="b15" folder="0" source-offset="10560">
+    <rule id="47" name="the employment reduction in hours alcohol screen should be displayed" ruleburst="true" concludes="b48" folder="0" source-offset="8208">
       <rule-xml>
-        <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1417,24 +1461,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="59" name="the employment reduction in hours alcohol screen should be displayed" ruleburst="true" concludes="b48" folder="0" source-offset="10730">
+    <rule id="48" name="the employment reduction in hours incarceration screen should be displayed" ruleburst="true" concludes="b49" folder="0" source-offset="8336">
       <rule-xml>
-        <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b15" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="60" name="the claimant was incarcerated for a conviction during the employment" ruleburst="true" concludes="b17" folder="0" source-offset="10909">
-      <rule-xml>
-        <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b49" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1450,24 +1479,9 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="61" name="the employment reduction in hours incarceration screen should be displayed" ruleburst="true" concludes="b49" folder="0" source-offset="11056">
+    <rule id="49" name="the employment reduction in hours damage property screen should be displayed" ruleburst="true" concludes="b50" folder="0" source-offset="8470">
       <rule-xml>
-        <conclude attr-id="b49" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b17" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="62" name="the claimant's actions resulted in damage of this employer's property during the employment" ruleburst="true" concludes="b19" folder="0" source-offset="11218">
-      <rule-xml>
-        <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b50" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -1483,22 +1497,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="63" name="the employment reduction in hours damage property screen should be displayed" ruleburst="true" concludes="b50" folder="0" source-offset="11388">
-      <rule-xml>
-        <conclude attr-id="b50" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b19" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="64" name="the employment reduction in hours union activity screen should be displayed" ruleburst="true" concludes="b51" folder="0" source-offset="11575">
+    <rule id="50" name="the employment reduction in hours union activity screen should be displayed" ruleburst="true" concludes="b51" folder="0" source-offset="8611">
       <rule-xml>
         <conclude attr-id="b51" entity-id="employment" scope-id="employment0">
           <value>
@@ -1516,7 +1515,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="65" name="the employment reduction in hours other screen should be displayed" ruleburst="true" concludes="b52" folder="0" source-offset="11735">
+    <rule id="51" name="the employment reduction in hours other screen should be displayed" ruleburst="true" concludes="b52" folder="0" source-offset="8751">
       <rule-xml>
         <conclude attr-id="b52" entity-id="employment" scope-id="employment0">
           <value>
@@ -1534,7 +1533,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="66" name="the employment drug and alcohol interview should branch to refusal" ruleburst="true" concludes="b53" folder="0" source-offset="12132">
+    <rule id="52" name="the employment drug and alcohol interview should branch to refusal" ruleburst="true" concludes="b53" folder="0" source-offset="9128">
       <rule-xml>
         <conclude attr-id="b53" entity-id="employment" scope-id="employment0">
           <value>
@@ -1552,7 +1551,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="67" name="the employment drug and alcohol interview should branch to consuming" ruleburst="true" concludes="b54" folder="0" source-offset="12267">
+    <rule id="53" name="the employment drug and alcohol interview should branch to consuming" ruleburst="true" concludes="b54" folder="0" source-offset="9243">
       <rule-xml>
         <conclude attr-id="b54" entity-id="employment" scope-id="employment0">
           <value>
@@ -1570,7 +1569,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="68" name="the employment drug and alcohol interview should branch to the reporting" ruleburst="true" concludes="b55" folder="0" source-offset="12404">
+    <rule id="54" name="the employment drug and alcohol interview should branch to the reporting" ruleburst="true" concludes="b55" folder="0" source-offset="9360">
       <rule-xml>
         <conclude attr-id="b55" entity-id="employment" scope-id="employment0">
           <value>
@@ -1588,7 +1587,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="69" name="the employment drug and alcohol interview should branch to the positive" ruleburst="true" concludes="b56" folder="0" source-offset="12545">
+    <rule id="55" name="the employment drug and alcohol interview should branch to the positive" ruleburst="true" concludes="b56" folder="0" source-offset="9481">
       <rule-xml>
         <conclude attr-id="b56" entity-id="employment" scope-id="employment0">
           <value>
@@ -1606,7 +1605,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="70" name="the employment positive drug or alcohol selection should branch to drugs" ruleburst="true" concludes="b57" folder="0" source-offset="12759">
+    <rule id="56" name="the employment positive drug or alcohol selection should branch to drugs" ruleburst="true" concludes="b57" folder="0" source-offset="9675">
       <rule-xml>
         <conclude attr-id="b57" entity-id="employment" scope-id="employment0">
           <value>
@@ -1624,7 +1623,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="71" name="the employment positive drug or alcohol selection should branch to alcohol" ruleburst="true" concludes="b58" folder="0" source-offset="12909">
+    <rule id="57" name="the employment positive drug or alcohol selection should branch to alcohol" ruleburst="true" concludes="b58" folder="0" source-offset="9805">
       <rule-xml>
         <conclude attr-id="b58" entity-id="employment" scope-id="employment0">
           <value>
@@ -1642,7 +1641,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="72" name="the employment drug test interview should branch to Positive Drug Test Details" ruleburst="true" concludes="b59" folder="0" source-offset="13061">
+    <rule id="58" name="the employment drug test interview should branch to Positive Drug Test Details" ruleburst="true" concludes="b59" folder="0" source-offset="9937">
       <rule-xml>
         <conclude attr-id="b59" entity-id="employment" scope-id="employment0">
           <value>
@@ -1652,6 +1651,24 @@
             <equals>
               <attribute attr-id="p6" />
               <string-value>Positive</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="59" name="the employment requested reduction flow should branch to disciplinary" ruleburst="true" concludes="b61" folder="0" source-offset="10099">
+      <rule-xml>
+        <conclude attr-id="b61" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p7" />
+              <string-value>ED02</string-value>
             </equals>
           </condition>
           <otherwise>
