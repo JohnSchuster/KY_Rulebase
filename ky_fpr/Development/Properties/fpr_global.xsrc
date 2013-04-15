@@ -2009,8 +2009,8 @@
       </attribute>
       <attribute name="b892" type="boolean" public-name="fpr_ss_disability_last_twelve">
         <text>
-          <base>the claimant has received Social Security disability payments within the last twelve months</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,present,perfect)),sb('the claimant',singular),o('Social Security disability payments within the last twelve months'))</parse>
+          <base>the claimant received (approved for) Social Security disability payments within the last twelve months</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('(approved for) Social Security disability payments within the last twelve months'))</parse>
         </text>
       </attribute>
       <attribute name="b893" type="boolean" public-name="fpr_applied_ss_disability">
@@ -2741,7 +2741,7 @@
       </attribute>
       <attribute name="p86" type="currency" public-name="emr_rate_of_pay">
         <text>
-          <base>the employer rate of pay</base>
+          <base>the claimant's rate of pay with the employer</base>
         </text>
       </attribute>
       <attribute name="p87" type="text" public-name="emr_wage_frequency">
@@ -2755,10 +2755,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an employee of a school'))</parse>
         </text>
       </attribute>
-      <attribute name="b655" type="boolean" public-name="emr_sports_professional">
+      <attribute name="b655" type="boolean" public-name="fpr_emr_athletic_professional">
         <text>
-          <base>the claimant is a sports professional</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a sports professional'))</parse>
+          <base>the claimant is an athletic professional</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an athletic professional'))</parse>
         </text>
       </attribute>
       <attribute name="b657" type="boolean" public-name="emr_paid_athletic">
@@ -2781,8 +2781,8 @@
       </attribute>
       <attribute name="b660" type="boolean" public-name="emr_athletic_reasonable_assure">
         <text>
-          <base>the calimant has been given reasonable assurance they will be an athletic participant in the upcoming season</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,present,perfect)),ob('the calimant',singular),o('reasonable assurance they will be an athletic participant in the upcoming season'))</parse>
+          <base>the claimant has been given reasonable assurance they will be an athletic participant in the upcoming season</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,present,perfect)),ob('the claimant',singular),o('reasonable assurance they will be an athletic participant in the upcoming season'))</parse>
         </text>
       </attribute>
       <attribute name="b661" type="boolean" public-name="emr_athletic_contract">
@@ -2855,6 +2855,16 @@
         <text>
           <base>the employer has an identical name to another employer</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the employer',singular),o('an identical name to another employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p509" type="date" public-name="fpr_emp_season_begin_date">
+        <text>
+          <base>the date the upcoming season with the employer begins</base>
+        </text>
+      </attribute>
+      <attribute name="p510" type="date" public-name="fpr_emp_season_end_date">
+        <text>
+          <base>the date the last season ended with the employer</base>
         </text>
       </attribute>
     </entity>
@@ -3372,10 +3382,10 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary work'))</parse>
         </text>
       </attribute>
-      <attribute name="b217" type="boolean" public-name="emt_left_for_temporary_part_2">
+      <attribute name="b217" type="boolean" public-name="fpr_emt_for_temp_ltft_work">
         <text>
-          <base>the claimant voluntarily left the employment to accept temporary work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept temporary work'))</parse>
+          <base>the claimant voluntarily left the employment to accept (temporary, less than full time) work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept (temporary, less than full time) work'))</parse>
         </text>
       </attribute>
       <attribute name="b218" type="boolean" public-name="emt_action_was_wilful">
@@ -4125,14 +4135,8 @@
       </attribute>
       <attribute name="b671" type="boolean" public-name="scr_discipline_imposed_with_policy">
         <text>
-          <base>the diciplinary action imposed was in accordance with the employer policy</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the diciplinary action imposed',singular),o('in accordance with the employer policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b672" type="boolean" public-name="scr_discipline_imposed_warned">
-        <text>
-          <base>the claimant had been previosly warned or disiplined during this employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,perfect)),sb('the claimant',singular),o('previosly warned or disiplined during this employment'))</parse>
+          <base>the diciplinary action imposed was in accordance with the employer (policy, handbook)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the diciplinary action imposed',singular),o('in accordance with the employer (policy, handbook)'))</parse>
         </text>
       </attribute>
       <attribute name="p113" type="text" public-name="scr_dispute_circumstances">
@@ -4145,9 +4149,9 @@
           <base>the claimants explanation of how the workplace dispute impacted the employment</base>
         </text>
       </attribute>
-      <attribute name="p117" type="date" public-name="scr_dispute_date">
+      <attribute name="p117" type="date" public-name="fpr_emt_final_incident_date">
         <text>
-          <base>the date the workplace dispute occured</base>
+          <base>the date the final incident occured during the employment</base>
         </text>
       </attribute>
       <attribute name="b673" type="boolean" public-name="scr_branch_to_dispute">
@@ -4290,10 +4294,10 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('prior experience with the type of work they were doing'))</parse>
         </text>
       </attribute>
-      <attribute name="b690" type="boolean" public-name="scr_employer_training">
+      <attribute name="b690" type="boolean" public-name="fpr_emr_provided_training">
         <text>
-          <base>the employer provided the claimant with training so they could perform the assigned work</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the employer',plural),o('the claimant with training so they could perform the assigned work'))</parse>
+          <base>the employer provided the claimant with training so they could perform the employment's work</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the employer',plural),o('the claimant with training so they could perform the employment''s work'))</parse>
         </text>
       </attribute>
       <attribute name="b691" type="boolean" public-name="scr_training_warnings">
@@ -4424,10 +4428,10 @@
           <base>the claimants description of how the pay practice has changed</base>
         </text>
       </attribute>
-      <attribute name="b706" type="boolean" public-name="scr_pay_practice_universal">
+      <attribute name="b706" type="boolean" public-name="fpr_emt_pay_prac_all">
         <text>
-          <base>the pay practice change was applied to one and all</base>
-          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay practice change',singular),o('to one and all'))</parse>
+          <base>the pay practice change was applied to all employees</base>
+          <parse>s(ver('10.4.2.18'),v(apply,t(simple,past,normal)),ob('the pay practice change',singular),o('to all employees'))</parse>
         </text>
       </attribute>
       <attribute name="p140" type="text" public-name="scr_work_distance_desc">
@@ -4491,9 +4495,9 @@
           <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the employer',plural),o('a specific date when the claimant would be laid off'))</parse>
         </text>
       </attribute>
-      <attribute name="p149" type="date" public-name="scr_anticipation_date_given">
+      <attribute name="p149" type="date" public-name="scr_discharge_date_given">
         <text>
-          <base>the specific date of lay off or discharge given by the employer</base>
+          <base>the specific date of lay off or discharge given during the employment</base>
         </text>
       </attribute>
       <attribute name="b723" type="boolean" public-name="scr_anticipation_work_ongoing">
@@ -4708,9 +4712,9 @@
           <base>the date the claimant was discharged</base>
         </text>
       </attribute>
-      <attribute name="p171" type="text" public-name="scr_former_supervisor_name">
+      <attribute name="p171" type="text" public-name="fpr_emt_supervisor_name">
         <text>
-          <base>he name of the claimants supervisor</base>
+          <base>the name of the claimants supervisor at the employment</base>
         </text>
       </attribute>
       <attribute name="b755" type="boolean" public-name="scr_discharge_aware">
@@ -5369,10 +5373,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('on temporary layoff'))</parse>
         </text>
       </attribute>
-      <attribute name="b920" type="boolean" public-name="scr_layoff_return">
+      <attribute name="b920" type="boolean" public-name="fpr_emt_given_def_rtw_date">
         <text>
-          <base>the claimant has a return to work date from the temporary layoff</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a return to work date from the temporary layoff'))</parse>
+          <base>the claimant was given a definite return to work date for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a definite return to work date for the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p338" type="date" public-name="scr_layoff_recall_date">
@@ -5861,9 +5865,9 @@
           <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),ob('the change in distance',singular),o('the employer'))</parse>
         </text>
       </attribute>
-      <attribute name="p411" type="date" public-name="scr_rh_distance_change_date">
+      <attribute name="p411" type="date" public-name="fpr_emt_distance_change_date">
         <text>
-          <base>the date that the distance to work changed</base>
+          <base>the date the distance to the employment's work changed</base>
         </text>
       </attribute>
       <attribute name="p412" type="text" public-name="scr_rh_work_hour_roilback">
@@ -5905,10 +5909,10 @@
           <parse>s(ver('10.4.2.18'),v(offer,t(simple,past,normal)),sb('the employer',plural),o('the claimant an incentive package/buyout for voluntarily accepting the reduction'))</parse>
         </text>
       </attribute>
-      <attribute name="b1005" type="boolean" public-name="scr_rh_continue_if_no_buyout">
+      <attribute name="b1005" type="boolean" public-name="fpr_emt_cont_acc_package">
         <text>
-          <base>the claimant could have continued work if they had not accepted the reduction of workforce package/buyout</base>
-          <parse>s(ver('10.4.2.18'),v(continue+could,t(simple,modal,perfect)),sb('the claimant',singular),o('work if they had not accepted the reduction of workforce package/buyout'))</parse>
+          <base>the claimant could have continued work if they had not accepted the reduction in workforce (package, buyout)</base>
+          <parse>s(ver('10.4.2.18'),v(continue+could,t(simple,modal,perfect)),sb('the claimant',singular),o('work if they had not accepted the reduction in workforce (package, buyout)'))</parse>
         </text>
       </attribute>
       <attribute name="p415" type="text" public-name="scr_rh_failed_condition">
@@ -5928,10 +5932,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible to meet this condition as a requirement for continued employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1008" type="boolean" public-name="scr_rh_condition_warning">
+      <attribute name="b1008" type="boolean" public-name="fpr_emt_ftm_coe_warning">
         <text>
-          <base>the claimant received warning(s) regarding their failure to meet this condition of employment</base>
-          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warning(s) regarding their failure to meet this condition of employment'))</parse>
+          <base>the claimant received warning's for failure to meet the condition of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('warning''s for failure to meet the condition of the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p417" type="text" public-name="scr_rh_other_condition_desc">
@@ -6020,9 +6024,9 @@
           <base>the beginning date of the claimants most current incarceration</base>
         </text>
       </attribute>
-      <attribute name="p431" type="date" public-name="scr_current_incarceration_end">
+      <attribute name="p431" type="date" public-name="fpr_emt_inc_end_date">
         <text>
-          <base>the ending date of the claimants most current incarceration</base>
+          <base>the end date of the claimants incarceration during the employment</base>
         </text>
       </attribute>
       <attribute name="b1021" type="boolean" public-name="scr_su_return_date_provided">
@@ -6619,6 +6623,24 @@
         <text>
           <base>the employment period is overlapping another employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment period',singular),o('overlapping another employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1131" type="boolean" public-name="fpr_claimant_prev_warning">
+        <text>
+          <base>the claimant had been previously warned or disciplined during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,perfect)),sb('the claimant',singular),o('previously warned or disciplined during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1132" type="boolean" public-name="fpr_accepted_offer_prior_tle">
+        <text>
+          <base>the claimant accepted an offer of new employment prior to leaving the employment</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an offer of new employment prior to leaving the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1133" type="boolean" public-name="fpr_emt_left_acc_temp_work">
+        <text>
+          <base>the claimant voluntarily left the employment to accept temporary work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept temporary work'))</parse>
         </text>
       </attribute>
     </entity>
