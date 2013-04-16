@@ -73,7 +73,7 @@
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="tc"&gt;Alpha:  Built on 4/15/2013 by xRulz&lt;/p&gt;</caption>
+            <caption>&lt;p class="tc"&gt;Alpha:  Built on 4/16/2013 by xRulz&lt;/p&gt;</caption>
           </label>
           <flow name="Main Flow" default-state="enabled">
             <control-properties>
@@ -3522,6 +3522,8 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the selected employment status">
               <doc-attr id="p6@Rules_MultiSelectionMaps_doc" />
@@ -9883,7 +9885,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
           </entity>
         </controls>
       </screen>
-      <screen type="Question" id="s167" name="You worked for %g01_fpr_employer_instance_id%  in the period between %visible_investigation_period_text%" public-id="" order="1" screen-attr="" folder="19" entity="fpr_employment">
+      <screen type="Question" id="s167" name="You worked for %g01_fpr_employer_instance_id%  in the period %fpr_emt_visible_weeks_range%" public-id="" order="1" screen-attr="" folder="19" entity="fpr_employment">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -9905,7 +9907,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p&gt;A total of %fpr_emt_discrete_weeks_worked% weeks employment occurred &lt;/p&gt;</caption>
+            <caption>&lt;p&gt;During the period you worked for %g01_fpr_employer_instance_id%,  there were a total of %fpr_emt_discrete_weeks_worked% weeks.&lt;/p&gt;</caption>
           </label>
           <label visible-by-default="true">
             <control-properties>
@@ -9917,8 +9919,8 @@ employment application (whether or not you agree)?&lt;/p&gt;
               </property>
             </control-properties>
             <caption>&lt;br/&gt;
-&lt;p&gt;In this question a "separate working week" means you performed at least one hours work during that week.&lt;/p&gt;
-&lt;p&gt;The ten weeks may have occurred separately, they need not be consecutive.&lt;/p&gt;</caption>
+&lt;p&gt;In the question below, a &lt;b&gt;"work week"&lt;/b&gt; means that you performed at least one hours work during that week.&lt;/p&gt;
+&lt;br/&gt;&lt;p&gt;The week's you worked, need not be consecutive, or continuous.&lt;/p&gt;</caption>
           </label>
           <label visible-by-default="true">
             <control-properties>
@@ -9943,7 +9945,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <doc-attr id="b383@kyfpr_rmod" />
               <doc-attr id="fpr_ten_week_per_claimant" />
             </input-attr>
-            <caption>&lt;p&gt;Of the %fpr_emt_discrete_weeks_worked% weeks you worked for %g01_fpr_employer_instance_id%, &lt;b&gt;did you work ten weeks?&lt;/b&gt;&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Of the %fpr_emt_discrete_weeks_worked% weeks you were employed by %g01_fpr_employer_instance_id%, &lt;b&gt;did you work for ten or more "work weeks"?&lt;/b&gt;&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -10597,6 +10599,17 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
+            <caption>&lt;h3&gt;Please note that some fields have pre-set values to speed up testing, these default will not be present when deployed in production.&lt;/h3&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
             <caption>&lt;br&gt;</caption>
           </label>
           <label visible-by-default="true">
@@ -10644,7 +10657,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the asserted most recent benefit year end date">
-              <doc-attr id="p26@kyfpr_rmod" />
+              <doc-attr id="p27@kyfpr_rmod" />
               <doc-attr id="fpr_asserted_byed" />
             </input-attr>
             <caption>&lt;p&gt;What is the (Siebel) asserted most recent benefit year end date?&lt;/p&gt;</caption>
