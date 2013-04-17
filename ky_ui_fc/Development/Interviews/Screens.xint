@@ -127,13 +127,13 @@
 Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&gt;
 &lt;p class="tcu"&gt;YOU ARE RESPONSIBLE FOR THE ACCURACY OF ALL OF YOUR ANSWERS&lt;/p&gt;
 &lt;br&gt;
-&lt;h2&gt;To file your Kentucky Unemployment claim, you will need:&lt;/h2&gt;
-&lt;p class="pb"&gt;Persoinal information&lt;/p&gt;
+&lt;h2&gt;To file your Kentucky Unemployment claim you will need:&lt;/h2&gt;
+&lt;p class="pb"&gt;Personal information&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Date of birth&lt;/li&gt;
   &lt;li&gt;Complete mailing address&lt;/li&gt;
   &lt;li&gt;Phone number&lt;/li&gt;
-  &lt;li&gt;Alien registration number If not a US Citizen&lt;/li&gt;
+  &lt;li&gt;Alien registration number if not a US Citizen&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p class="pb"&gt;Employment information for last 18 months&lt;/p&gt;
 &lt;ul&gt;
@@ -225,15 +225,37 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant served in the military during the base period">
-              <doc-attr id="b255@kyfpr_rmod" />
+              <doc-attr id="b254@kyfpr_rmod" />
               <doc-attr id="fpr_served_in_military" />
             </input-attr>
-            <caption>&lt;P&gt;Did you serve in the military between %g01_base_period_start_date% and %g01_effective_date%?&lt;/p&gt;</caption>
+            <caption>&lt;P&gt;Did you serve in the Military, not including the National Guard, between %g01_base_period_start_date% and %g01_base_period_end_date%?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
       <screen type="Question" id="s11" name="Unemployment Benefits from state other than Kentucky" public-id="" order="5" screen-attr="" folder="9">
         <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">false</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>You have indicated..</caption>
+          </label>
           <label visible-by-default="true">
             <control-properties>
               <property name="text-style" type="string">Normal</property>
@@ -254,7 +276,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has an unemployment benefits balance in a state other that Kentucky">
-              <doc-attr id="b262@kyfpr_rmod" />
+              <doc-attr id="b260@kyfpr_rmod" />
               <doc-attr id="fpr_ui_balance_other_state" />
             </input-attr>
             <caption>&lt;p&gt;Do you still have a balance in another state, whether or not you were found eligible?&lt;/p&gt;</caption>
@@ -294,7 +316,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;Please provide the following information in order to help us in the event we need to contact you.&lt;/p&gt;
+            <caption>&lt;p class="pb"&gt;Please provide the following information in the event we need to contact you.&lt;/p&gt;
 
 
 </caption>
@@ -310,62 +332,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
             </control-properties>
             <caption>&lt;br&gt;</caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant is a US Citizen">
-              <doc-attr id="b95@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_is_citizen" />
-            </input-attr>
-            <caption>&lt;p&gt;Are you a United States citizen?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">1</property>
-            </control-properties>
-            <input-attr text="the claimants other or assumed names">
-              <doc-attr id="p34@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_alias" />
-            </input-attr>
-            <caption>&lt;p&gt;Please list other names under which you have worked (maiden name, married name, etc.):&lt;/p&gt;</caption>
-          </input>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" default-value="1959-12-31">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="__input-style" type="string">d</property>
-            </control-properties>
-            <input-attr text="the claimants birthday">
-              <doc-attr id="p35@kyfpr_rmod" />
-              <doc-attr id="fpr_claimant_birthday" />
-            </input-attr>
-            <caption>&lt;p&gt;Birth Date:&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -374,7 +341,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants primary (home) phone number">
-              <doc-attr id="p36@kyfpr_rmod" />
+              <doc-attr id="p34@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_home_phone" />
             </input-attr>
             <caption>&lt;p&gt;Primary phone number:&lt;/p&gt;</caption>
@@ -388,7 +355,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants alternate (cell) phone number">
-              <doc-attr id="p37@kyfpr_rmod" />
+              <doc-attr id="p35@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_alternate_phone" />
             </input-attr>
             <caption>&lt;p&gt;Alternate phone number&lt;/p&gt;</caption>
@@ -403,24 +370,13 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants e-mail address">
-              <doc-attr id="p38@kyfpr_rmod" />
+              <doc-attr id="p36@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_email" />
             </input-attr>
             <caption>&lt;p&gt;Email address:&lt;/p&gt;
 
 </caption>
           </input>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -430,7 +386,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant requires an interpreter">
-              <doc-attr id="b302@kyfpr_rmod" />
+              <doc-attr id="b275@kyfpr_rmod" />
               <doc-attr id="fpr_interpreter_required" />
             </input-attr>
             <caption>&lt;p&gt;Should we need to contact you, is an interpreter needed?&lt;/p&gt;</caption>
@@ -444,10 +400,10 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the prefered language of the interpretor">
-              <doc-attr id="p39@kyfpr_rmod" />
+              <doc-attr id="p37@kyfpr_rmod" />
               <doc-attr id="fpr_interpretor_language" />
             </input-attr>
-            <caption>&lt;p&gt;Prefered language?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Preferred language?&lt;/p&gt;</caption>
             <values>
               <value code="Spanish" default-visibility="enabled">Spanish</value>
               <value code="Portuguese" default-visibility="enabled">Portuguese</value>
@@ -480,7 +436,73 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;The following questions are optional and are for statistical purposes only&lt;/p&gt;
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant is a US Citizen">
+              <doc-attr id="b98@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_is_citizen" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you a United States citizen?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="1959-12-31">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="__input-style" type="string">d</property>
+            </control-properties>
+            <input-attr text="the claimants birthday">
+              <doc-attr id="p33@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_birthday" />
+            </input-attr>
+            <caption>&lt;p&gt;Birth Date:&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants other or assumed names">
+              <doc-attr id="p32@kyfpr_rmod" />
+              <doc-attr id="fpr_claimant_alias" />
+            </input-attr>
+            <caption>&lt;p&gt;Please list other names under which you have worked (maiden name, married name, etc.):&lt;/p&gt;</caption>
+          </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;hr&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pb"&gt;The following questions are optional and are for statistical purposes only.&lt;/p&gt;
 </caption>
           </label>
           <label visible-by-default="true">
@@ -503,7 +525,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants gender">
-              <doc-attr id="p40@kyfpr_rmod" />
+              <doc-attr id="p38@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_gender" />
             </input-attr>
             <caption>&lt;p&gt;Gender:&lt;/p&gt;</caption>
@@ -524,7 +546,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants ethnic group">
-              <doc-attr id="p41@kyfpr_rmod" />
+              <doc-attr id="p39@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_ethnic_group" />
             </input-attr>
             <caption>&lt;p&gt;Ethnic group:&lt;/p&gt;</caption>
@@ -544,7 +566,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants race">
-              <doc-attr id="p42@kyfpr_rmod" />
+              <doc-attr id="p40@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_race" />
             </input-attr>
             <caption>&lt;p&gt;Race:&lt;/p&gt;</caption>
@@ -558,7 +580,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <value code="Native Hawaiian or Other Pacific Islander" default-visibility="enabled">Native Hawaiian or Other Pacific Islander</value>
             </values>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="default" default-value="false">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="default" default-value="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -567,7 +589,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has a disability status">
-              <doc-attr id="b303@kyfpr_rmod" />
+              <doc-attr id="b276@kyfpr_rmod" />
               <doc-attr id="fpr_claimant_disability" />
             </input-attr>
             <caption>&lt;p&gt;Do you have a disability&lt;/p&gt;</caption>
@@ -600,7 +622,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
 &lt;hr&gt;
 </caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -610,7 +632,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current street address">
-              <doc-attr id="p43@kyfpr_rmod" />
+              <doc-attr id="p41@kyfpr_rmod" />
               <doc-attr id="fpr_current_street_address" />
             </input-attr>
             <caption>&lt;p&gt;Street address:&lt;/p&gt;</caption>
@@ -625,12 +647,12 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current suite or appartment number">
-              <doc-attr id="p44@kyfpr_rmod" />
+              <doc-attr id="p42@kyfpr_rmod" />
               <doc-attr id="fpr_current_appt_num" />
             </input-attr>
             <caption>&lt;p&gt;Suite or Apt. Number:&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -640,82 +662,12 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current city of residence">
-              <doc-attr id="p45@kyfpr_rmod" />
+              <doc-attr id="p43@kyfpr_rmod" />
               <doc-attr id="fpr_current_city" />
             </input-attr>
             <caption>&lt;p&gt;City:&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="select" select-style="Dropdown">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimants current state of residence">
-              <doc-attr id="p18@Rules_MultiSelectionMaps_doc" />
-              <doc-attr id="p46@kyfpr_rmod" />
-              <doc-attr id="fpr_current_state" />
-            </input-attr>
-            <caption>&lt;p&gt;State:&lt;/p&gt;</caption>
-            <values>
-              <value code="" default-visibility="enabled">
-              </value>
-              <value code="AL" default-visibility="enabled">Alabama</value>
-              <value code="AK" default-visibility="enabled">Alaska</value>
-              <value code="AZ" default-visibility="enabled">Arizona</value>
-              <value code="AR" default-visibility="enabled">Arkansas</value>
-              <value code="CA" default-visibility="enabled">California</value>
-              <value code="CO" default-visibility="enabled">Colorado</value>
-              <value code="CT" default-visibility="enabled">Connecticut</value>
-              <value code="DE" default-visibility="enabled">Delaware</value>
-              <value code="DC" default-visibility="enabled">District Of Columbia</value>
-              <value code="FL" default-visibility="enabled">Florida</value>
-              <value code="GA" default-visibility="enabled">Georgia</value>
-              <value code="HI" default-visibility="enabled">Hawaii</value>
-              <value code="ID" default-visibility="enabled">Idaho</value>
-              <value code="IL" default-visibility="enabled">Illinois</value>
-              <value code="IN" default-visibility="enabled">Indiana</value>
-              <value code="IA" default-visibility="enabled">Iowa</value>
-              <value code="KS" default-visibility="enabled">Kansas</value>
-              <value code="KY" default-visibility="enabled">Kentucky</value>
-              <value code="LA" default-visibility="enabled">Louisiana</value>
-              <value code="ME" default-visibility="enabled">Maine</value>
-              <value code="MD" default-visibility="enabled">Maryland</value>
-              <value code="MA" default-visibility="enabled">Massachusetts</value>
-              <value code="MI" default-visibility="enabled">Michigan</value>
-              <value code="MN" default-visibility="enabled">Minnesota</value>
-              <value code="MS" default-visibility="enabled">Mississippi</value>
-              <value code="MO" default-visibility="enabled">Missouri</value>
-              <value code="MT" default-visibility="enabled">Montana</value>
-              <value code="NE" default-visibility="enabled">Nebraska</value>
-              <value code="NV" default-visibility="enabled">Nevada</value>
-              <value code="NH" default-visibility="enabled">New Hampshire</value>
-              <value code="NJ" default-visibility="enabled">New Jersey</value>
-              <value code="NM" default-visibility="enabled">New Mexico</value>
-              <value code="NY" default-visibility="enabled">New York</value>
-              <value code="NC" default-visibility="enabled">North Carolina</value>
-              <value code="ND" default-visibility="enabled">North Dakota</value>
-              <value code="OH" default-visibility="enabled">Ohio</value>
-              <value code="OK" default-visibility="enabled">Oklahoma</value>
-              <value code="OR" default-visibility="enabled">Oregon</value>
-              <value code="PA" default-visibility="enabled">Pennsylvania</value>
-              <value code="RI" default-visibility="enabled">Rhode Island</value>
-              <value code="SC" default-visibility="enabled">South Carolina</value>
-              <value code="SD" default-visibility="enabled">South Dakota</value>
-              <value code="TN" default-visibility="enabled">Tennessee</value>
-              <value code="TX" default-visibility="enabled">Texas</value>
-              <value code="UT" default-visibility="enabled">Utah</value>
-              <value code="VT" default-visibility="enabled">Vermont</value>
-              <value code="VA" default-visibility="enabled">Virginia</value>
-              <value code="WA" default-visibility="enabled">Washington</value>
-              <value code="WV" default-visibility="enabled">West Virginia</value>
-              <value code="WI" default-visibility="enabled">Wisconsin</value>
-              <value code="WY" default-visibility="enabled">Wyoming</value>
-            </values>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="select" select-style="Dropdown">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -723,7 +675,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants current county of residence">
-              <doc-attr id="p47@kyfpr_rmod" />
+              <doc-attr id="p45@kyfpr_rmod" />
               <doc-attr id="fpr_current_county" />
             </input-attr>
             <caption>&lt;p&gt;County:&lt;/p&gt;</caption>
@@ -853,7 +805,77 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <value code="Woodford" default-visibility="enabled">Woodford</value>
             </values>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimants current state of residence">
+              <doc-attr id="p18@Rules_MultiSelectionMaps_doc" />
+              <doc-attr id="p44@kyfpr_rmod" />
+              <doc-attr id="fpr_current_state" />
+            </input-attr>
+            <caption>&lt;p&gt;State:&lt;/p&gt;</caption>
+            <values>
+              <value code="" default-visibility="enabled">
+              </value>
+              <value code="AL" default-visibility="enabled">Alabama</value>
+              <value code="AK" default-visibility="enabled">Alaska</value>
+              <value code="AZ" default-visibility="enabled">Arizona</value>
+              <value code="AR" default-visibility="enabled">Arkansas</value>
+              <value code="CA" default-visibility="enabled">California</value>
+              <value code="CO" default-visibility="enabled">Colorado</value>
+              <value code="CT" default-visibility="enabled">Connecticut</value>
+              <value code="DE" default-visibility="enabled">Delaware</value>
+              <value code="DC" default-visibility="enabled">District Of Columbia</value>
+              <value code="FL" default-visibility="enabled">Florida</value>
+              <value code="GA" default-visibility="enabled">Georgia</value>
+              <value code="HI" default-visibility="enabled">Hawaii</value>
+              <value code="ID" default-visibility="enabled">Idaho</value>
+              <value code="IL" default-visibility="enabled">Illinois</value>
+              <value code="IN" default-visibility="enabled">Indiana</value>
+              <value code="IA" default-visibility="enabled">Iowa</value>
+              <value code="KS" default-visibility="enabled">Kansas</value>
+              <value code="KY" default-visibility="enabled">Kentucky</value>
+              <value code="LA" default-visibility="enabled">Louisiana</value>
+              <value code="ME" default-visibility="enabled">Maine</value>
+              <value code="MD" default-visibility="enabled">Maryland</value>
+              <value code="MA" default-visibility="enabled">Massachusetts</value>
+              <value code="MI" default-visibility="enabled">Michigan</value>
+              <value code="MN" default-visibility="enabled">Minnesota</value>
+              <value code="MS" default-visibility="enabled">Mississippi</value>
+              <value code="MO" default-visibility="enabled">Missouri</value>
+              <value code="MT" default-visibility="enabled">Montana</value>
+              <value code="NE" default-visibility="enabled">Nebraska</value>
+              <value code="NV" default-visibility="enabled">Nevada</value>
+              <value code="NH" default-visibility="enabled">New Hampshire</value>
+              <value code="NJ" default-visibility="enabled">New Jersey</value>
+              <value code="NM" default-visibility="enabled">New Mexico</value>
+              <value code="NY" default-visibility="enabled">New York</value>
+              <value code="NC" default-visibility="enabled">North Carolina</value>
+              <value code="ND" default-visibility="enabled">North Dakota</value>
+              <value code="OH" default-visibility="enabled">Ohio</value>
+              <value code="OK" default-visibility="enabled">Oklahoma</value>
+              <value code="OR" default-visibility="enabled">Oregon</value>
+              <value code="PA" default-visibility="enabled">Pennsylvania</value>
+              <value code="RI" default-visibility="enabled">Rhode Island</value>
+              <value code="SC" default-visibility="enabled">South Carolina</value>
+              <value code="SD" default-visibility="enabled">South Dakota</value>
+              <value code="TN" default-visibility="enabled">Tennessee</value>
+              <value code="TX" default-visibility="enabled">Texas</value>
+              <value code="UT" default-visibility="enabled">Utah</value>
+              <value code="VT" default-visibility="enabled">Vermont</value>
+              <value code="VA" default-visibility="enabled">Virginia</value>
+              <value code="WA" default-visibility="enabled">Washington</value>
+              <value code="WV" default-visibility="enabled">West Virginia</value>
+              <value code="WI" default-visibility="enabled">Wisconsin</value>
+              <value code="WY" default-visibility="enabled">Wyoming</value>
+            </values>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -862,7 +884,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants current zip code of residence">
-              <doc-attr id="p48@kyfpr_rmod" />
+              <doc-attr id="p46@kyfpr_rmod" />
               <doc-attr id="fpr_current_zip" />
             </input-attr>
             <caption>&lt;p&gt;Zip code:&lt;/p&gt;</caption>
@@ -887,7 +909,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants address contains a post office box number">
-              <doc-attr id="b304@kyfpr_rmod" />
+              <doc-attr id="b277@kyfpr_rmod" />
               <doc-attr id="fpr_current_address_is_po" />
             </input-attr>
             <caption>&lt;p&gt;Does the address listed above contain a post office box number?&lt;/p&gt;</caption>
@@ -919,7 +941,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
             <caption>&lt;p class="pb"&gt;Please enter the physical address at which you reside.&lt;/p&gt;
 &lt;hr&gt;</caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -929,7 +951,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current permanent street address">
-              <doc-attr id="p49@kyfpr_rmod" />
+              <doc-attr id="p47@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_address" />
             </input-attr>
             <caption>&lt;p&gt;Street address:&lt;/p&gt;</caption>
@@ -944,12 +966,12 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current permanent suite or appartment number">
-              <doc-attr id="p50@kyfpr_rmod" />
+              <doc-attr id="p48@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_appt_no" />
             </input-attr>
             <caption>&lt;p&gt;Suite or Apt Number:&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -959,12 +981,12 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants current permanent city of residence">
-              <doc-attr id="p51@kyfpr_rmod" />
+              <doc-attr id="p49@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_city" />
             </input-attr>
             <caption>&lt;p&gt;City:&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="select" select-style="Dropdown">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -973,7 +995,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants current permanent county of residence">
-              <doc-attr id="p54@kyfpr_rmod" />
+              <doc-attr id="p52@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_county" />
             </input-attr>
             <caption>&lt;p&gt;County:&lt;/p&gt;</caption>
@@ -1113,7 +1135,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
             </control-properties>
             <input-attr text="the claimants current permanent state of residence">
               <doc-attr id="p17@Rules_MultiSelectionMaps_doc" />
-              <doc-attr id="p52@kyfpr_rmod" />
+              <doc-attr id="p50@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_state" />
             </input-attr>
             <caption>&lt;p&gt;State:&lt;/p&gt;</caption>
@@ -1173,7 +1195,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <value code="WY" default-visibility="enabled">Wyoming</value>
             </values>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -1182,7 +1204,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants current permanent zip code of residence">
-              <doc-attr id="p53@kyfpr_rmod" />
+              <doc-attr id="p51@kyfpr_rmod" />
               <doc-attr id="fpr_permanent_zip" />
             </input-attr>
             <caption>&lt;p&gt;Zip code:&lt;/p&gt;&lt;br&gt;</caption>
@@ -1215,7 +1237,7 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/p&gt;&lt;br&g
               <doc-attr id="p53@kyfpr_rmod" />
               <doc-attr id="fpr_alien_registration_number" />
             </input-attr>
-            <caption>&lt;p&gt;What is your alien registration number?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;What is your Alien Registration Number?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -9795,7 +9817,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant worked in Kentucky during the base period">
-              <doc-attr id="b259@kyfpr_rmod" />
+              <doc-attr id="b253@kyfpr_rmod" />
               <doc-attr id="fpr_worked_in_kentucky" />
             </input-attr>
             <caption>&lt;p&gt;Did you work in Kentucky at any point between %g01_base_period_start_date% and %g01_base_period_end_date% ?&lt;/p&gt;
@@ -9810,7 +9832,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has worked in states other than Kentucky">
-              <doc-attr id="b298@kyfpr_rmod" />
+              <doc-attr id="b274@kyfpr_rmod" />
               <doc-attr id="fpr_work_outside_kentucky" />
             </input-attr>
             <caption>&lt;p&gt;Did you work in a state other than Kentucky between %g01_base_period_start_date% and %g01_base_period_end_date% ?&lt;/p&gt;</caption>
@@ -9824,10 +9846,10 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has applied for unemployment benefits in a state other than Kentucky in the last 12 months">
-              <doc-attr id="b264@kyfpr_rmod" />
+              <doc-attr id="b258@kyfpr_rmod" />
               <doc-attr id="fpr_applied_for_ui_other_state" />
             </input-attr>
-            <caption>&lt;p&gt;Have you applied for, or are you receiving, unemployment benefits in a state other than Kentucky within the last 12 months?&lt;/P&gt;</caption>
+            <caption>&lt;p&gt;Have you applied for, or have you received, unemployment benefits in a state other than Kentucky within the last 12 months?&lt;/P&gt;</caption>
           </input>
         </controls>
       </screen>
