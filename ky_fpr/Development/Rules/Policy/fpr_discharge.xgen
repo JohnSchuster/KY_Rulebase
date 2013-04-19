@@ -163,18 +163,6 @@
           <parse>s(ver('10.4.2.18'),v(lead,t(simple,past,normal)),sb('the claimant''s action',plural),o('directly to becoming uninsurable as a driver for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b72" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's job duties required the operation of a motor vehicle for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the operation of a motor vehicle for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b73" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's job duties required insurability as a driver for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('insurability as a driver for the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b75" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant demonstrated excessive carelessness (inefficiency) in connection to the employment</base>
@@ -371,6 +359,12 @@
         <text lang="en-US">
           <base>the claimant received training (instruction) during the employment on how to perform their duties</base>
           <parse>s(ver('10.4.2.18'),v(receive,t(simple,past,normal)),sb('the claimant',plural),o('training (instruction) during the employment on how to perform their duties'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b112" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's job duties required the claimant to (operate a motor vehicle, be insurable as a driver) for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the claimant to (operate a motor vehicle, be insurable as a driver) for the employment'))</parse>
         </text>
       </attribute>
     </entity>
@@ -705,10 +699,7 @@
           <condition>
             <and>
               <attribute attr-id="b71" />
-              <or>
-                <attribute attr-id="b72" />
-                <attribute attr-id="b73" />
-              </or>
+              <attribute attr-id="b112" />
             </and>
           </condition>
           <otherwise>
@@ -717,7 +708,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the claimant's actions were negligent during the employment" ruleburst="true" concludes="b78" folder="0" source-offset="7193">
+    <rule id="17" name="the claimant's actions were negligent during the employment" ruleburst="true" concludes="b78" folder="0" source-offset="7134">
       <rule-xml>
         <conclude attr-id="b78" entity-id="employment" scope-id="employment0">
           <value>

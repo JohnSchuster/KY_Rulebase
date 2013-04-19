@@ -4253,10 +4253,10 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('documentation to show that the employment caused the medical condition'))</parse>
         </text>
       </attribute>
-      <attribute name="b683" type="boolean" public-name="scr_work_comp_approved">
+      <attribute name="b683" type="boolean" public-name="fpr_emt_eligible_work_comp">
         <text>
-          <base>the claimant was approved for worker compensation due to the injury or medical condition</base>
-          <parse>s(ver('10.4.2.18'),v(approve,t(simple,past,normal)),ob('the claimant',singular),o('for worker compensation due to the injury or medical condition'))</parse>
+          <base>the claimant was eligible for worker compensation due to the injury or medical condition</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('eligible for worker compensation due to the injury or medical condition'))</parse>
         </text>
       </attribute>
       <attribute name="b684" type="boolean" public-name="scr_leave_exhausted">
@@ -4367,10 +4367,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the incident',singular),o('a recurring issue during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b698" type="boolean" public-name="scr_religious_event_conflict">
+      <attribute name="b698" type="boolean" public-name="fpr_emt_aware_rc_possible">
         <text>
-          <base>the claimant was aware of a religious conflict prior to accepting the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of a religious conflict prior to accepting the employment'))</parse>
+          <base>the claimant was aware of possible conflicts prior to starting the employmentt</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of possible conflicts prior to starting the employmentt'))</parse>
         </text>
       </attribute>
       <attribute name="p135" type="text" public-name="fpr_emt_change_desc">
@@ -4752,10 +4752,10 @@
           <base>the required method of reporting absence or tardiness</base>
         </text>
       </attribute>
-      <attribute name="b765" type="boolean" public-name="scr_rule_awareness">
+      <attribute name="b765" type="boolean" public-name="fpr_emt_cmt_aware_policy">
         <text>
-          <base>the claimant was aware of the employers rules and policies</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employers rules and policies'))</parse>
+          <base>the claimant was aware of the attendance policy during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the attendance policy during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p182" type="text" public-name="scr_rule_expanation">
@@ -5082,16 +5082,16 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('discharged due to their participation in a labor union'))</parse>
         </text>
       </attribute>
-      <attribute name="b831" type="boolean" public-name="scr_union_company">
+      <attribute name="b831" type="boolean" public-name="fpr_emt_req_join_union">
         <text>
-          <base>the claimant was required to join a company union</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to join a company union'))</parse>
+          <base>the claimant was required to join a union during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),ob('the claimant',singular),o('to join a union during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b832" type="boolean" public-name="scr_union_company_joined">
+      <attribute name="b832" type="boolean" public-name="fpr_emt_clt_joined_union">
         <text>
-          <base>the claimant joined the company union</base>
-          <parse>s(ver('10.4.2.18'),v(join,t(simple,past,normal)),sb('the claimant',plural),o('the company union'))</parse>
+          <base>the claimant joined the union during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(join,t(simple,past,normal)),sb('the claimant',plural),o('the union during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b833" type="boolean" public-name="scr_mandatory_retirement_terminated">
@@ -5145,15 +5145,15 @@
           <base>the other final incident that led to the calimants discharge</base>
         </text>
       </attribute>
-      <attribute name="b842" type="boolean" public-name="scr_other_reason_uniformly">
+      <attribute name="b842" type="boolean" public-name="fpr_emt_rule_pol_unif_enf">
         <text>
-          <base>the policy or rule was uniformly enforced</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the policy or rule',singular),o('uniformly enforced'))</parse>
+          <base>the employer's rules and policies were uniformly enforced (per the claimant)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employer''s rules and policies',plural),o('uniformly enforced (per the claimant)'))</parse>
         </text>
       </attribute>
-      <attribute name="p245" type="text" public-name="scr_other_reason_not_uniform">
+      <attribute name="p245" type="text" public-name="fpr_emt_example_discrim">
         <text>
-          <base>the claimants explanation of how the policy or rule is not uniformly enforced</base>
+          <base>the claimants examples of discrimination regarding rules and policy</base>
         </text>
       </attribute>
       <attribute name="b844" type="boolean" public-name="scr_branch_to_anything_else">
@@ -5278,12 +5278,6 @@
         <text>
           <base>the employment full time details screen should be displayed</base>
           <parse>s(ver('10.4.2.18'),v(display+should,t(simple,modal,normal)),ob('the employment full time details screen',singular))</parse>
-        </text>
-      </attribute>
-      <attribute name="b915" type="boolean" public-name="fpr_ten_week_per_claimant">
-        <text>
-          <base>the employment, per the claimant, was a ten week employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment, per the claimant,',singular),o('a ten week employment'))</parse>
         </text>
       </attribute>
       <attribute name="p321" type="text" public-name="fpr_emt_visible_weeks_range">
@@ -5462,12 +5456,6 @@
       <attribute name="p348" type="text" public-name="scr_ld_noshow">
         <text>
           <base>the reason that the claimant did not return to work after the labor dispute</base>
-        </text>
-      </attribute>
-      <attribute name="b929" type="boolean" public-name="scr_plan_includes_benefits">
-        <text>
-          <base>this employer's general plan includes retirement benefits</base>
-          <parse>s(ver('10.4.2.18'),v(include,t(simple,present,normal)),sb('this employer''s general plan',singular),o('retirement benefits'))</parse>
         </text>
       </attribute>
       <attribute name="p349" type="text" public-name="scr_retirement_reason">
@@ -5870,9 +5858,9 @@
           <base>the date the distance to the employment's work changed</base>
         </text>
       </attribute>
-      <attribute name="p412" type="text" public-name="scr_rh_work_hour_roilback">
+      <attribute name="p412" type="text" public-name="fpr_emt_final_event_desc">
         <text>
-          <base>the description of the final event that took place regarding the work hours which caused the claimant to request a reduction in hours</base>
+          <base>the claimants description of the final event which caused them to quit</base>
         </text>
       </attribute>
       <attribute name="b1000" type="boolean" public-name="scr_rh_rollback_since_hire">
@@ -5886,10 +5874,10 @@
           <base>the claimants description of how the working hours (shift, number of hours, etc.) changed since their date of hire</base>
         </text>
       </attribute>
-      <attribute name="b1001" type="boolean" public-name="scr_rh_hours_rollback_temp">
+      <attribute name="b1001" type="boolean" public-name="fpr_emt_temp_change_hours">
         <text>
-          <base>the work hours reduction was implemented for a limited period of time</base>
-          <parse>s(ver('10.4.2.18'),v(implement,t(simple,past,normal)),ob('the work hours reduction',singular),o('for a limited period of time'))</parse>
+          <base>the change in working hours at the employment was temporary</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the change in working hours at the employment',singular),o('temporary'))</parse>
         </text>
       </attribute>
       <attribute name="p414" type="text" public-name="scr_rh_hours_rollback_duration">
@@ -6125,15 +6113,10 @@
           <base>the claimants description of how the rule or policy was not uniformly enforced</base>
         </text>
       </attribute>
-      <attribute name="b1036" type="boolean" public-name="scr_su_policy_explanation">
+      <attribute name="b1036" type="boolean" public-name="fpr_emt_policy_v_exp">
         <text>
-          <base>the claimant provided an explanation to the employer as to why the policy was violated</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanation to the employer as to why the policy was violated'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p454" type="text" public-name="scr_su_violation_explanation">
-        <text>
-          <base>the claimants explanation to the employer as to why the policy was violated</base>
+          <base>the claimant provided an explanantion why the rule or policy was violated during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanantion why the rule or policy was violated during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p455" type="text" public-name="scr_su_no_explanation">
@@ -6209,8 +6192,8 @@
       </attribute>
       <attribute name="b1047" type="boolean" public-name="scr_su_explanation_given">
         <text>
-          <base>the claimant provided the employer with an explanation for their behavior or conduct</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation for their behavior or conduct'))</parse>
+          <base>the claimant provided an explanation regarding their unsatisfactory work performance during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanation regarding their unsatisfactory work performance during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p464" type="text" public-name="scr_su_behavior_explanation">
@@ -6352,15 +6335,15 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the property damage',singular),o('a result of the claimants failure to follow a policy or procedure'))</parse>
         </text>
       </attribute>
-      <attribute name="b1072" type="boolean" public-name="scr_su_union_suspension">
+      <attribute name="b1072" type="boolean" public-name="fpr_emt_union_suspension">
         <text>
-          <base>the claimant was suspended due to their participation in a labor union</base>
-          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('due to their participation in a labor union'))</parse>
+          <base>the claimant was suspended due to their participation in a union during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('due to their participation in a union during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="p482" type="text" public-name="scr_union_discharge_desc">
+      <attribute name="p482" type="text" public-name="fpr_emt_discharge_incident_desc">
         <text>
-          <base>the claimant description of the union activity that led to their discharge</base>
+          <base>the claimant's description of the final incident which led to their discharge</base>
         </text>
       </attribute>
       <attribute name="p483" type="text" public-name="scr_su_other_final">
@@ -6536,10 +6519,10 @@
           <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the operation of a motor vehicle for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1090" type="boolean" public-name="fpr_require_insurability">
+      <attribute name="b1090" type="boolean" public-name="fpr_dut_requires_op_ins">
         <text>
-          <base>the claimant's job duties required insurability as a driver for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('insurability as a driver for the employment'))</parse>
+          <base>the claimant's job duties required the claimant to (operate a motor vehicle, be insurable as a driver) for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the claimant''s job duties',plural),o('the claimant to (operate a motor vehicle, be insurable as a driver) for the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b1091" type="boolean" public-name="fpr_conditions_of_employment">
@@ -6648,10 +6631,21 @@
           <base>the reason the incident at the employment conflicted with the claimant's beliefs</base>
         </text>
       </attribute>
-      <attribute name="b1140" type="boolean" public-name="fpr_emt_cond_no_conflict_rb">
+      <attribute name="b1136" type="boolean" public-name="fpr_emt_pol_inc_ret_ben">
         <text>
-          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(conflict,t(simple,past,normal)),sb('the conditions of the employment',plural),o('with the claimant''s religious beliefs'))</parse>
+          <base>the employment's mandatory policy included retirement benefits (per the claimant)</base>
+          <parse>s(ver('10.4.2.18'),v(include,t(simple,past,normal)),sb('the employment''s mandatory policy',plural),o('retirement benefits (per the claimant)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1137" type="boolean" public-name="fpr_emt_clt_aware_emp_pol">
+        <text>
+          <base>the claimant was aware of the employer's rules and policies</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employer''s rules and policies'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p512" type="text" public-name="fpr_emt_event_cause_redh">
+        <text>
+          <base>the claimant's description of the final event that caused them to request a reduction in hours</base>
         </text>
       </attribute>
     </entity>
