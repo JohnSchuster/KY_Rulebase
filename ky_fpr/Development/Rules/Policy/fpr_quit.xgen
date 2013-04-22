@@ -1,7 +1,7 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
-      <attribute name="b168" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claim is in the process of being filed</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim',singular),o('in the process of being filed'))</parse>
@@ -9,61 +9,121 @@
       </attribute>
     </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the condition of the employment was established at the time of hire</base>
+          <parse>s(ver('10.4.2.18'),v(establish,t(simple,past,normal)),ob('the condition of the employment',singular),o('at the time of hire'))</parse>
+        </text>
+      </attribute>
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the terms of hire remained constant during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(hire,t(simple,present,normal)),sb('the terms of',plural),o('remained constant during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer's (drug, alcohol) policy was reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer''s (drug, alcohol) policy',singular),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left without good cause attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('without good cause attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the dci determined the claimant left the employment voluntarily without good cause</base>
+          <parse>s(ver('10.4.2.18'),v(determine,t(simple,past,normal)),sb('the dci',plural),o('the claimant left the employment voluntarily without good cause'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a quit exception from the employment</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception from the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment voluntarily</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily'))</parse>
         </text>
       </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant voluntarily requested a reduction in the hours of the employment</base>
           <parse>s(ver('10.4.2.18'),v(request,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('a reduction in the hours of the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's reason for leaving is attributable to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s reason for leaving',singular),o('attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the given cause of claimant leaving the employment is non-compliant to statutes</base>
+          <parse>s(ver('10.4.2.18'),v(cause,t(simple,present,normal)),sb('the given',plural),o('of claimant leaving the employment is non-compliant to statutes'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant failed to meet a substantial condition in the terms of the employment</base>
           <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to meet a substantial condition in the terms of the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment to accept temporary employment</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment rather than take a (drug, alcohol) test as required by this employer's reasonable policy</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment rather than take a (drug, alcohol) test as required by this employer''s reasonable policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to a dispute in the workplace that did not cause the work to become unsuitable</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a dispute in the workplace that did not cause the work to become unsuitable'))</parse>
         </text>
       </attribute>
-      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to equipment problems that were good cause for quitting</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to equipment problems that were good cause for quitting'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to harassment which did not render the work unsuitable</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to harassment which did not render the work unsuitable'))</parse>
         </text>
       </attribute>
-      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to a medical condition that was not (adversely affected, caused) by the work</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a medical condition that was not (adversely affected, caused) by the work'))</parse>
         </text>
       </attribute>
-      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to a lack of (training, experience) which did not render the work unsuitable</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a lack of (training, experience) which did not render the work unsuitable'))</parse>
         </text>
       </attribute>
-      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to conditions of the work which did not conflict with the claimant's religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to conditions of the work which did not conflict with the claimant''s religious beliefs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant had good cause for failing to return to the employment following a temporary layoff</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause for failing to return to the employment following a temporary layoff'))</parse>
@@ -71,632 +131,572 @@
       </attribute>
       <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant abandoned the employment</base>
-          <parse>s(ver('10.4.2.18'),v(abandon,t(simple,past,normal)),sb('the claimant',plural),o('the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b24" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment without a bona fide offer of continuing work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment without a bona fide offer of continuing work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment in anticipation of (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment in anticipation of (discharge, layoff)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment prior to (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment prior to (discharge, layoff)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy</base>
-          <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the claimant''s voluntary participation in this employer''s mandatory retirement policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left employment due to disciplinary action imposed by this employer which was reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('employment due to disciplinary action imposed by this employer which was reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment with their next most recent suitable work which was concurrent with their most recent work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment with their next most recent suitable work which was concurrent with their most recent work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b41" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept a bona fide job offer with a reasonable expectation of continued employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment for personal reason(s)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment for personal reason(s)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to domestic circumstances</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to domestic circumstances'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment to attend non-TRA (school, training)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to attend non-TRA (school, training)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment to relocate</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to relocate'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b48" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment to retire</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to retire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment to pursue self-employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to pursue self-employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b50" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to lack of transportation</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to lack of transportation'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b52" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the condition of the employment was established at the time of hire</base>
-          <parse>s(ver('10.4.2.18'),v(establish,t(simple,past,normal)),ob('the condition of the employment',singular),o('at the time of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b53" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant failed to meet the condition of the employment</base>
-          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to meet the condition of the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment to accept temporary work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b55" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment to accept temporary work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept temporary work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b56" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment was continuing</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('continuing'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b57" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment rather than take a (drug, alcohol) test as required by this employer's reasonable policy</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment rather than take a (drug, alcohol) test as required by this employer''s reasonable policy'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b58" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment rather than take a (drug, alcohol) test</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment rather than take a (drug, alcohol) test'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b60" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer's (drug, alcohol) policy was reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer''s (drug, alcohol) policy',singular),o('reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b61" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment without exhausting all reasonable alternatives</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without exhausting all reasonable alternatives'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b62" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer required a (drug, alcohol) test for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('this employer',plural),o('a (drug, alcohol) test for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b63" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to a dispute in the workplace</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a dispute in the workplace'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b64" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the dispute caused the employment to become unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),sb('the dispute',plural),o('the employment to become unsuitable'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b65" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to equipment problems</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to equipment problems'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b67" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to harassment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to harassment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b69" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to a medical condition</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a medical condition'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b70" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the medical condition was caused by the employment</base>
-          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),ob('the medical condition',singular),o('by the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b71" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to a lack of (training, experience)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a lack of (training, experience)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b74" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the conditions of the employment did not conflict with the claimant's religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(do,t(simple,past,normal)),sb('the conditions of the employment',plural),o('not conflict with the claimant''s religious beliefs'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b75" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was recalled to the employment following a temporary lay-off</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('recalled to the employment following a temporary lay-off'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b76" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant had good cause for failing to return to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause for failing to return to the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b77" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the working conditions required by this employer were reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the working conditions',plural),o('by this employer were reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b78" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to working conditions</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to working conditions'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b79" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the working conditions were reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions',plural),o('reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b80" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the working conditions of the employment were necessary in the legitimate pursuit of the business</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions of the employment',plural),o('necessary in the legitimate pursuit of the business'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b81" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment due to reasonable (pay practices, rate of pay) required by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to reasonable (pay practices, rate of pay) required by this employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b82" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to (pay practices, rate of pay)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to (pay practices, rate of pay)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b86" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the disciplinary action was reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the disciplinary action',singular),o('reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b87" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment due to reasonable disciplinary action imposed by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to reasonable disciplinary action imposed by this employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b89" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to the distance to work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to the distance to work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b91" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant reported for the employment as scheduled</base>
-          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('for the employment as scheduled'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b94" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant made timely contact with this employer during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(make,t(simple,past,normal)),sb('the claimant',plural),o('timely contact with this employer during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b95" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant provided this employer with a reason for failing to report to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('this employer with a reason for failing to report to the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b98" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment in anticipation of new employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment in anticipation of new employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b100" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant anticipated a (discharge, layoff) from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(anticipate,t(simple,past,normal)),sb('the claimant',plural),o('a (discharge, layoff) from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b101" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was given a certain date of (discharge, layoff) from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a certain date of (discharge, layoff) from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b102" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment prior to the date of (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment prior to the date of (discharge, layoff)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b107" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer was going to lay off the claimant from the employment (if the reduction in workforce goal was not met)</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('going to lay off the claimant from the employment (if the reduction in workforce goal was not met)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b108" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment''s suitable work due to a reduction in workforce plan initiated by this employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b110" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to dissatisfaction with working hours</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to dissatisfaction with working hours'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b111" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the working hours were reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working hours',plural),o('reasonable for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b114" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment due to the work hours required by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the work hours required by this employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b115" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer violated the conditions of hire for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('this employer',plural),o('the conditions of hire for the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b116" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the working hours for the employment were scheduled by this employer in the legitimate pursuit of business</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working hours for the employment',plural),o('scheduled by this employer in the legitimate pursuit of business'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b118" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant retired from the employment</base>
-          <parse>s(ver('10.4.2.18'),v(retire,t(simple,past,normal)),sb('the claimant',plural),o('from the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b121" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily agreed to the mandatory retirement policy as a condition of the employment</base>
-          <parse>s(ver('10.4.2.18'),v(agree,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('to the mandatory retirement policy as a condition of the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b123" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was given a bona fide offer of work during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a bona fide offer of work during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b124" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant accepted the offer during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('the offer during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b125" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant had a reasonable expectation the employment would continue</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a reasonable expectation the employment would continue'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b127" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's separation from the employment is payable within the SIMS precedent</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b131" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's health condition is related to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(relate,t(simple,present,normal)),ob('the claimant''s health condition',singular),o('to the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b136" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left without good cause attributable to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('without good cause attributable to the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b137" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's reason for leaving is attributable to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s reason for leaving',singular),o('attributable to the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b138" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment due to conditions of the work which did not conflict with the claimant's religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to conditions of the work which did not conflict with the claimant''s religious beliefs'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b139" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
           <base>the working conditions required by the employment were reasonable for this employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions required by the employment',plural),o('reasonable for this employer'))</parse>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the working conditions',plural),o('by the employment were reasonable for this employer'))</parse>
         </text>
       </attribute>
-      <attribute name="b140" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b23" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to (pay practices, rate of pay) required by this employer which were reasonable</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to (pay practices, rate of pay) required by this employer which were reasonable'))</parse>
         </text>
       </attribute>
-      <attribute name="b141" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b24" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant left the employment due the work hours required by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due the work hours required by this employer'))</parse>
+          <base>the claimant left employment due to disciplinary action imposed by this employer which was reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('employment due to disciplinary action imposed by this employer which was reasonable for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b142" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b143" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was responsible for meeting the employment's condition of continued employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible for meeting the employment''s condition of continued employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b144" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's equipment problems gave the claimant good cause for quitting</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),sb('the employment''s equipment problems',plural),o('the claimant good cause for quitting'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b145" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the harassment during the employment rendered the work unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the harassment during the employment',plural),o('the work unsuitable'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b146" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the lack of (training, experience) rendered the employment's work unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the lack of (training, experience)',plural),o('the employment''s work unsuitable'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b147" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant left the employment due to religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b148" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the (pay practices, rate of pay) required during the employment were reasonable</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the (pay practices, rate of pay) required during the employment',plural),o('reasonable'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b149" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment due to disciplinary action imposed by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to disciplinary action imposed by this employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b151" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer was continuing to offer the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('continuing to offer the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b152" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer initiated a substantial reduction in work force goal during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('this employer',plural),o('a substantial reduction in work force goal during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b153" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily accepted the conditions of the reduction in force during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the conditions of the reduction in force during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b154" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force</base>
-          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('an incentive package from this employer as part of the employment''s reduction in force'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b155" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was subject to mandatory retirement during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('subject to mandatory retirement during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b156" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant had a health condition during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a health condition during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b157" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is unable to perform the employment's regular job due to illness or injury</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unable to perform the employment''s regular job due to illness or injury'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b158" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>this employer is unable to provide the employment's work, within the claimant's diminished capabilities</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this employer',singular),o('unable to provide the employment''s work, within the claimant''s diminished capabilities'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b159" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment when this employer violated the contract of hire</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment when this employer violated the contract of hire'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b160" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed from the employment, as a result of a bona fide labor dispute in active progress'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b161" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is unemployed from the employment, as a result of a bona fide labor dispute</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed from the employment, as a result of a bona fide labor dispute'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b162" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's bona fide labor dispute is in active progress</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s bona fide labor dispute',singular),o('in active progress'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b163" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to the distance to work, yet the terms of hire remained constant</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the distance to work, yet the terms of hire remained constant'))</parse>
         </text>
       </attribute>
-      <attribute name="b164" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the terms of hire remained constant during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(remain,t(simple,past,normal)),sb('the terms of hire',plural),o('constant during the employment'))</parse>
+          <base>the claimant abandoned the employment</base>
+          <parse>s(ver('10.4.2.18'),v(abandon,t(simple,past,normal)),sb('the claimant',plural),o('the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b166" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the dci determined the claimant left the employment voluntarily without good cause</base>
-          <parse>s(ver('10.4.2.18'),v(determine,t(simple,past,normal)),sb('the dci',plural),o('the claimant left the employment voluntarily without good cause'))</parse>
+          <base>the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s spouse',singular),o('assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute'))</parse>
         </text>
       </attribute>
-      <attribute name="b167" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the given cause of claimant leaving the employment is non-compliant to statutes</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the given cause of claimant leaving the employment',singular),o('non-compliant to statutes'))</parse>
+          <base>the claimant left the employment without a bona fide offer of continuing work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment without a bona fide offer of continuing work'))</parse>
         </text>
       </attribute>
-      <attribute name="b169" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
+          <base>the claimant voluntarily left the employment in anticipation of (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment in anticipation of (discharge, layoff)'))</parse>
         </text>
       </attribute>
-      <attribute name="b170" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant pursued alternatives prior to leaving the employment</base>
-          <parse>s(ver('10.4.2.18'),v(pursue,t(simple,past,normal)),sb('the claimant',plural),o('alternatives prior to leaving the employment'))</parse>
+          <base>the claimant voluntarily left the employment prior to (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment prior to (discharge, layoff)'))</parse>
         </text>
       </attribute>
-      <attribute name="b171" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment''s suitable work due to a reduction in workforce plan initiated by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due the work hours required by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due the work hours required by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy</base>
+          <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the claimant''s voluntary participation in this employer''s mandatory retirement policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment with their next most recent suitable work which was concurrent with their most recent work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment with their next most recent suitable work which was concurrent with their most recent work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept a bona fide job offer with a reasonable expectation of continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is a recent concurrent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment for personal reason(s)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment for personal reason(s)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to domestic circumstances</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to domestic circumstances'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to attend non-TRA (school, training)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to attend non-TRA (school, training)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to relocate</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to relocate'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to retire</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to retire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to pursue self-employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to pursue self-employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to lack of transportation</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to lack of transportation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was responsible for meeting the employment's condition of continued employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('responsible for meeting the employment''s condition of continued employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant failed to meet the condition of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(fail,t(simple,past,normal)),sb('the claimant',plural),o('to meet the condition of the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to accept temporary work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept temporary work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment to accept temporary work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept temporary work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was continuing</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('continuing'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment rather than take a (drug, alcohol) test</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment rather than take a (drug, alcohol) test'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer required a (drug, alcohol) test for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('this employer',plural),o('a (drug, alcohol) test for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b52" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment voluntarily (after exhausting all reasonable alternatives)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily (after exhausting all reasonable alternatives)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a dispute in the workplace</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a dispute in the workplace'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the dispute caused the employment to become unsuitable</base>
+          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),sb('the dispute',plural),o('the employment to become unsuitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to equipment problems</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to equipment problems'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b56" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's equipment problems gave the claimant good cause for quitting</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),sb('the employment''s equipment problems',plural),o('the claimant good cause for quitting'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to harassment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to harassment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the harassment during the employment rendered the work unsuitable</base>
+          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the harassment during the employment',plural),o('the work unsuitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b59" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant left the employment due to a medical condition that was not caused by the work</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a medical condition that was not caused by the work'))</parse>
         </text>
       </attribute>
-      <attribute name="b172" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b60" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a medical condition</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a medical condition'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b61" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the medical condition was caused by the employment</base>
+          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),ob('the medical condition',singular),o('by the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b62" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to a lack of (training, experience)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a lack of (training, experience)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b63" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the lack of (training, experience) rendered the employment's work unsuitable</base>
+          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the lack of (training, experience)',plural),o('the employment''s work unsuitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b64" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b65" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the conditions of the employment conflicted with the claimant's religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(conflict,t(simple,past,normal)),sb('the conditions of the employment',plural),o('with the claimant''s religious beliefs'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b66" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was recalled to the employment following a temporary lay-off</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('recalled to the employment following a temporary lay-off'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b67" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had good cause for failing to return to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('good cause for failing to return to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b68" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the working conditions required by this employer were reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the working conditions',plural),o('by this employer were reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b69" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to working conditions</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to working conditions'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b70" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the working conditions were reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions',plural),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b71" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the working conditions of the employment were necessary in the legitimate pursuit of the business</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working conditions of the employment',plural),o('necessary in the legitimate pursuit of the business'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b72" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to reasonable (pay practices, rate of pay) required by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to reasonable (pay practices, rate of pay) required by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b73" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to (pay practices, rate of pay)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to (pay practices, rate of pay)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b74" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the (pay practices, rate of pay) required during the employment were reasonable</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,past,normal)),sb('the (pay practices, rate of pay)',plural),o('during the employment were reasonable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b75" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to reasonable disciplinary action imposed by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to reasonable disciplinary action imposed by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b76" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to disciplinary action imposed by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to disciplinary action imposed by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b77" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the disciplinary action was reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(action,t(simple,present,normal)),sb('the disciplinary',plural),o('was reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b78" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to the distance to work</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to the distance to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b79" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant reported for the employment as scheduled</base>
+          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('for the employment as scheduled'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b80" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant made timely contact with this employer during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(make,t(simple,past,normal)),sb('the claimant',plural),o('timely contact with this employer during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b81" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant provided this employer with a reason for failing to report to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('this employer with a reason for failing to report to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b82" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b83" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's spouse has been re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('the claimant''s spouse',singular),o('re-located during the employment, by the military, to a State with a statute substantially similar to Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b84" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer was continuing to offer the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('continuing to offer the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b85" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment in anticipation of new employment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment in anticipation of new employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b86" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was given a bona fide offer of work during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a bona fide offer of work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b87" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant anticipated a (discharge, layoff) from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(anticipate,t(simple,past,normal)),sb('the claimant',plural),o('a (discharge, layoff) from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b88" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was given a certain date of (discharge, layoff) from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a certain date of (discharge, layoff) from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b89" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment prior to the date of (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment prior to the date of (discharge, layoff)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b90" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer initiated a substantial reduction in work force goal during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(initiate,t(simple,past,normal)),sb('this employer',plural),o('a substantial reduction in work force goal during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b91" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily accepted the conditions of the reduction in force during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the conditions of the reduction in force during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b92" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily accepted an incentive package from this employer as part of the employment's reduction in force</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('an incentive package from this employer as part of the employment''s reduction in force'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b93" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer was going to lay off the claimant from the employment (if the reduction in workforce goal was not met)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('going to lay off the claimant from the employment (if the reduction in workforce goal was not met)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b94" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment due to the work hours required by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to the work hours required by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b95" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment due to dissatisfaction with working hours</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to dissatisfaction with working hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b96" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the working hours were reasonable for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working hours',plural),o('reasonable for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b97" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the working hours for the employment were scheduled by this employer in the legitimate pursuit of business</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the working hours for the employment',plural),o('scheduled by this employer in the legitimate pursuit of business'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b98" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer violated the conditions of hire for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('this employer',plural),o('the conditions of hire for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b99" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant retired from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(retire,t(simple,past,normal)),sb('the claimant',plural),o('from the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b100" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's mandatory retirement is pursuant to this employer's general plan</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s mandatory retirement',singular),o('pursuant to this employer''s general plan'))</parse>
         </text>
       </attribute>
-      <attribute name="b173" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b101" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>this employer's general plan includes retirement benefits</base>
-          <parse>s(ver('10.4.2.18'),v(include,t(simple,present,normal)),sb('this employer''s general plan',singular),o('retirement benefits'))</parse>
+          <base>the employment's mandatory policy included retirement benefits (per the claimant)</base>
+          <parse>s(ver('10.4.2.18'),v(include,t(simple,past,normal)),sb('the employment''s mandatory policy',plural),o('retirement benefits (per the claimant)'))</parse>
         </text>
       </attribute>
-      <attribute name="b174" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b102" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant left the employment due to equipment problems that were good cause for quitting</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to equipment problems that were good cause for quitting'))</parse>
+          <base>the claimant voluntarily agreed to the mandatory retirement policy as a condition of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(agree,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('to the mandatory retirement policy as a condition of the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b175" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b103" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant left the employment voluntarily without exhausting all reasonable alternatives</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily without exhausting all reasonable alternatives'))</parse>
+          <base>the claimant accepted the offer during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('the offer during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b176" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b104" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the employment is a recent concurrent employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
+          <base>the claimant had a reasonable expectation the employment would continue</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a reasonable expectation the employment would continue'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b105" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was subject to mandatory retirement during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('subject to mandatory retirement during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b106" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's separation from the employment is payable within the SIMS precedent</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s separation from the employment',singular),o('payable within the SIMS precedent'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b107" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had a health condition during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a health condition during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b108" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unable to perform the employment's regular job due to illness or injury</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unable to perform the employment''s regular job due to illness or injury'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b109" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer is unable to provide the employment's work, within the claimant's diminished capabilities</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this employer',singular),o('unable to provide the employment''s work, within the claimant''s diminished capabilities'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b110" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's health condition is related to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(relate,t(simple,present,normal)),ob('the claimant''s health condition',singular),o('to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b111" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant pursued alternatives prior to leaving the employment</base>
+          <parse>s(ver('10.4.2.18'),v(pursue,t(simple,past,normal)),sb('the claimant',plural),o('alternatives prior to leaving the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b112" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant pursued alternatives prior to requesting a reduction</base>
+          <parse>s(ver('10.4.2.18'),v(pursue,t(simple,past,normal)),sb('the claimant',plural),o('alternatives prior to requesting a reduction'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b113" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant voluntarily left the employment when this employer violated the contract of hire</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment when this employer violated the contract of hire'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b114" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed from the employment, as a result of a bona fide labor dispute in active progress'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b115" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unemployed from the employment, as a result of a bona fide labor dispute</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed from the employment, as a result of a bona fide labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b116" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's bona fide labor dispute is in active progress</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s bona fide labor dispute',singular),o('in active progress'))</parse>
         </text>
       </attribute>
     </entity>
@@ -707,27 +707,9 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the condition of the employment was established at the time of hire" ruleburst="true" concludes="b52" folder="0" source-offset="1076">
+    <rule id="0" name="the claimant voluntarily left without good cause attributable to the employment" ruleburst="true" concludes="b4" folder="0" source-offset="752">
       <rule-xml>
-        <conclude attr-id="b52" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="1" name="the terms of hire remained constant during the employment" ruleburst="true" concludes="b164" folder="0" source-offset="1151">
-      <rule-xml>
-        <conclude attr-id="b164" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the claimant voluntarily left without good cause attributable to the employment" ruleburst="true" concludes="b136" folder="0" source-offset="1244">
-      <rule-xml>
-        <conclude attr-id="b136" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
@@ -736,24 +718,24 @@
               <and>
                 <not>
                   <scope-for scope-ref="global0" target-entity-id="global">
-                    <attribute attr-id="b168" />
+                    <attribute attr-id="b5" />
                   </scope-for>
                 </not>
-                <attribute attr-id="b166" />
+                <attribute attr-id="b6" />
               </and>
               <and>
                 <not>
-                  <attribute attr-id="b2" />
+                  <attribute attr-id="b7" />
                 </not>
                 <or>
-                  <attribute attr-id="b3" />
-                  <attribute attr-id="b4" />
+                  <attribute attr-id="b8" />
+                  <attribute attr-id="b9" />
                 </or>
                 <or>
                   <not>
-                    <attribute attr-id="b137" />
+                    <attribute attr-id="b10" />
                   </not>
-                  <attribute attr-id="b167" />
+                  <attribute attr-id="b11" />
                 </or>
               </and>
             </or>
@@ -764,40 +746,60 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the given cause of claimant leaving the employment is non-compliant to statutes" ruleburst="true" concludes="b167" folder="0" source-offset="1928">
+    <rule id="1" name="the given cause of claimant leaving the employment is non-compliant to statutes" ruleburst="true" concludes="b11" folder="0" source-offset="1374">
       <rule-xml>
-        <conclude attr-id="b167" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <or>
-              <attribute attr-id="b6" />
-              <attribute attr-id="b7" />
-              <attribute attr-id="b57" />
-              <attribute attr-id="b10" />
-              <not>
-                <attribute attr-id="b174" />
-              </not>
+              <attribute attr-id="b12" />
               <attribute attr-id="b13" />
               <attribute attr-id="b14" />
               <attribute attr-id="b15" />
-              <attribute attr-id="b138" />
               <not>
-                <attribute attr-id="b17" />
+                <attribute attr-id="b16" />
               </not>
-              <attribute attr-id="b139" />
-              <attribute attr-id="b140" />
-              <attribute attr-id="b37" />
-              <attribute attr-id="b163" />
+              <attribute attr-id="b17" />
+              <attribute attr-id="b18" />
+              <attribute attr-id="b19" />
+              <attribute attr-id="b20" />
+              <not>
+                <attribute attr-id="b21" />
+              </not>
               <attribute attr-id="b22" />
-              <attribute attr-id="b142" />
+              <attribute attr-id="b23" />
               <attribute attr-id="b24" />
               <attribute attr-id="b25" />
               <attribute attr-id="b26" />
-              <attribute attr-id="b108" />
-              <attribute attr-id="b141" />
+              <attribute attr-id="b27" />
+              <attribute attr-id="b28" />
+              <attribute attr-id="b29" />
+              <attribute attr-id="b30" />
+              <attribute attr-id="b31" />
+              <attribute attr-id="b32" />
+              <attribute attr-id="b33" />
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant has a quit exception from the employment" ruleburst="true" concludes="b7" folder="0" source-offset="3715">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
               <attribute attr-id="b34" />
+              <attribute attr-id="b35" />
+              <attribute attr-id="b36" />
+              <attribute attr-id="b27" />
             </or>
           </condition>
           <otherwise>
@@ -806,39 +808,16 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant has a quit exception from the employment" ruleburst="true" concludes="b2" folder="0" source-offset="4422">
+    <rule id="3" name="the claimant left the employment with their next most recent suitable work which was concurrent with their most recent work" ruleburst="true" concludes="b34" folder="0" source-offset="4339">
       <rule-xml>
-        <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <attribute attr-id="b39" />
-              <attribute attr-id="b40" />
-              <attribute attr-id="b41" />
-              <and>
-                <attribute attr-id="b142" />
-                <attribute attr-id="b42" />
-              </and>
-            </or>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="5" name="the claimant left the employment with their next most recent suitable work which was concurrent with their most recent work" ruleburst="true" concludes="b39" folder="0" source-offset="5220">
-      <rule-xml>
-        <conclude attr-id="b39" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b3" />
-              <attribute attr-id="b176" />
+              <attribute attr-id="b8" />
+              <attribute attr-id="b37" />
             </and>
           </condition>
           <otherwise>
@@ -847,128 +826,42 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant's reason for leaving is not attributable to the employment" ruleburst="true" concludes="not b137" folder="0" source-offset="5503">
-      <rule-xml>
-        <conclude attr-id="b137" entity-id="employment" scope-id="employment0">
-          <value>
-            <false-value />
-          </value>
-          <condition>
-            <or>
-              <attribute attr-id="b44" />
-              <or>
-                <attribute attr-id="b45" />
-                <attribute attr-id="b46" />
-                <attribute attr-id="b47" />
-                <attribute attr-id="b48" />
-                <attribute attr-id="b49" />
-                <attribute attr-id="b50" />
-              </or>
-            </or>
-          </condition>
-          <otherwise>
-            <true-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="7" name="the claimant failed to meet a substantial condition in the terms of the employment" ruleburst="true" concludes="b6" folder="0" source-offset="6178">
-      <rule-xml>
-        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b143" />
-              <attribute attr-id="b52" />
-              <attribute attr-id="b53" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="8" name="the claimant left the employment to accept temporary work" ruleburst="true" concludes="b54" folder="0" source-offset="6532">
-      <rule-xml>
-        <conclude attr-id="b54" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b55" />
-              <attribute attr-id="b56" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="9" name="the claimant left the employment rather than take a (drug, alcohol) test as required by this employer's reasonable policy" ruleburst="true" concludes="b57" folder="0" source-offset="6731">
-      <rule-xml>
-        <conclude attr-id="b57" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b58" />
-              <attribute attr-id="b62" />
-              <or>
-                <attribute attr-id="b60" />
-                <attribute attr-id="b61" />
-              </or>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="10" name="the claimant left the employment due to a dispute in the workplace that did not cause the work to become unsuitable" ruleburst="true" concludes="b10" folder="0" source-offset="7236">
+    <rule id="4" name="the claimant's reason for leaving is not attributable to the employment" ruleburst="true" concludes="not b10" folder="0" source-offset="4604">
       <rule-xml>
         <conclude attr-id="b10" entity-id="employment" scope-id="employment0">
           <value>
-            <true-value />
+            <false-value />
           </value>
           <condition>
-            <and>
-              <attribute attr-id="b63" />
+            <or>
+              <attribute attr-id="b38" />
               <or>
-                <not>
-                  <attribute attr-id="b64" />
-                </not>
-                <attribute attr-id="b61" />
+                <attribute attr-id="b39" />
+                <attribute attr-id="b40" />
+                <attribute attr-id="b41" />
+                <attribute attr-id="b42" />
+                <attribute attr-id="b43" />
+                <attribute attr-id="b44" />
               </or>
-            </and>
+            </or>
           </condition>
           <otherwise>
-            <false-value />
+            <true-value />
           </otherwise>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant left the employment due to equipment problems that were good cause for quitting" ruleburst="true" concludes="b174" folder="0" source-offset="7698">
+    <rule id="5" name="the claimant failed to meet a substantial condition in the terms of the employment" ruleburst="true" concludes="b12" folder="0" source-offset="5226">
       <rule-xml>
-        <conclude attr-id="b174" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b12" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b65" />
-              <or>
-                <attribute attr-id="b144" />
-                <not>
-                  <attribute attr-id="b61" />
-                </not>
-              </or>
+              <attribute attr-id="b45" />
+              <attribute attr-id="b1" />
+              <attribute attr-id="b46" />
             </and>
           </condition>
           <otherwise>
@@ -977,21 +870,16 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant left the employment due to harassment which did not render the work unsuitable" ruleburst="true" concludes="b13" folder="0" source-offset="8088">
+    <rule id="6" name="the claimant left the employment to accept temporary work" ruleburst="true" concludes="b47" folder="0" source-offset="5556">
       <rule-xml>
-        <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b47" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b67" />
-              <or>
-                <not>
-                  <attribute attr-id="b145" />
-                </not>
-                <attribute attr-id="b61" />
-              </or>
+              <attribute attr-id="b48" />
+              <attribute attr-id="b49" />
             </and>
           </condition>
           <otherwise>
@@ -1000,20 +888,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the claimant left the employment due to a medical condition that was not caused by the work" ruleburst="true" concludes="b171" folder="0" source-offset="8453">
+    <rule id="7" name="the claimant left the employment rather than take a (drug, alcohol) test as required by this employer's reasonable policy" ruleburst="true" concludes="b14" folder="0" source-offset="5737">
       <rule-xml>
-        <conclude attr-id="b171" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b14" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b69" />
+              <attribute attr-id="b50" />
+              <attribute attr-id="b51" />
               <or>
-                <not>
-                  <attribute attr-id="b70" />
-                </not>
-                <attribute attr-id="b61" />
+                <attribute attr-id="b3" />
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1023,7 +910,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant left the employment due to a lack of (training, experience) which did not render the work unsuitable" ruleburst="true" concludes="b15" folder="0" source-offset="8810">
+    <rule id="8" name="the claimant left the employment due to a dispute in the workplace that did not cause the work to become unsuitable" ruleburst="true" concludes="b15" folder="0" source-offset="6212">
       <rule-xml>
         <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
           <value>
@@ -1031,10 +918,12 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b71" />
+              <attribute attr-id="b53" />
               <or>
-                <attribute attr-id="b146" />
-                <attribute attr-id="b61" />
+                <not>
+                  <attribute attr-id="b54" />
+                </not>
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1044,18 +933,18 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant left the employment due to conditions of the work which did not conflict with the claimant's religious beliefs" ruleburst="true" concludes="b138" folder="0" source-offset="9220">
+    <rule id="9" name="the claimant left the employment due to equipment problems that were good cause for quitting" ruleburst="true" concludes="b16" folder="0" source-offset="6646">
       <rule-xml>
-        <conclude attr-id="b138" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b147" />
+              <attribute attr-id="b55" />
               <or>
-                <attribute attr-id="b74" />
-                <attribute attr-id="b61" />
+                <attribute attr-id="b56" />
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1065,39 +954,20 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant did not have good cause for failing to return to the employment following a temporary layoff" ruleburst="true" concludes="not b17" folder="0" source-offset="9625">
+    <rule id="10" name="the claimant left the employment due to harassment which did not render the work unsuitable" ruleburst="true" concludes="b17" folder="0" source-offset="6997">
       <rule-xml>
         <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
           <value>
-            <false-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b75" />
-              <not>
-                <attribute attr-id="b76" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <true-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="17" name="the working conditions required by this employer were reasonable for the employment" ruleburst="true" concludes="b77" folder="0" source-offset="9914">
-      <rule-xml>
-        <conclude attr-id="b77" entity-id="employment" scope-id="employment0">
-          <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b78" />
-              <attribute attr-id="b79" />
+              <attribute attr-id="b57" />
               <or>
-                <attribute attr-id="b80" />
-                <attribute attr-id="b61" />
+                <not>
+                  <attribute attr-id="b58" />
+                </not>
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1107,18 +977,20 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the claimant left the employment due to reasonable (pay practices, rate of pay) required by this employer" ruleburst="true" concludes="b81" folder="0" source-offset="10368">
+    <rule id="11" name="the claimant left the employment due to a medical condition that was not caused by the work" ruleburst="true" concludes="b59" folder="0" source-offset="7333">
       <rule-xml>
-        <conclude attr-id="b81" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b59" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b82" />
+              <attribute attr-id="b60" />
               <or>
-                <attribute attr-id="b148" />
-                <attribute attr-id="b61" />
+                <not>
+                  <attribute attr-id="b61" />
+                </not>
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1128,18 +1000,18 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the claimant left the employment due to reasonable disciplinary action imposed by this employer" ruleburst="true" concludes="b87" folder="0" source-offset="10785">
+    <rule id="12" name="the claimant left the employment due to a lack of (training, experience) which did not render the work unsuitable" ruleburst="true" concludes="b19" folder="0" source-offset="7661">
       <rule-xml>
-        <conclude attr-id="b87" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b149" />
+              <attribute attr-id="b62" />
               <or>
-                <attribute attr-id="b86" />
-                <attribute attr-id="b61" />
+                <attribute attr-id="b63" />
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1149,18 +1021,62 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="the claimant left the employment due to the distance to work, yet the terms of hire remained constant" ruleburst="true" concludes="b163" folder="0" source-offset="11188">
+    <rule id="13" name="the claimant left the employment due to conditions of the work which did not conflict with the claimant's religious beliefs" ruleburst="true" concludes="b20" folder="0" source-offset="8046">
       <rule-xml>
-        <conclude attr-id="b163" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b89" />
+              <attribute attr-id="b64" />
+              <and>
+                <not>
+                  <attribute attr-id="b65" />
+                </not>
+                <attribute attr-id="b52" />
+              </and>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the claimant did not have good cause for failing to return to the employment following a temporary layoff" ruleburst="true" concludes="not b21" folder="0" source-offset="8424">
+      <rule-xml>
+        <conclude attr-id="b21" entity-id="employment" scope-id="employment0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b66" />
+              <not>
+                <attribute attr-id="b67" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the working conditions required by this employer were reasonable for the employment" ruleburst="true" concludes="b68" folder="0" source-offset="8687">
+      <rule-xml>
+        <conclude attr-id="b68" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b69" />
+              <attribute attr-id="b70" />
               <or>
-                <attribute attr-id="b164" />
-                <attribute attr-id="b61" />
+                <attribute attr-id="b71" />
+                <attribute attr-id="b52" />
               </or>
             </and>
           </condition>
@@ -1170,23 +1086,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the claimant abandoned the employment" ruleburst="true" concludes="b22" folder="0" source-offset="11579">
+    <rule id="16" name="the claimant left the employment due to reasonable (pay practices, rate of pay) required by this employer" ruleburst="true" concludes="b72" folder="0" source-offset="9111">
       <rule-xml>
-        <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b72" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <not>
-                <attribute attr-id="b91" />
-              </not>
-              <not>
-                <attribute attr-id="b94" />
-              </not>
-              <not>
-                <attribute attr-id="b95" />
-              </not>
+              <attribute attr-id="b73" />
+              <or>
+                <attribute attr-id="b74" />
+                <attribute attr-id="b52" />
+              </or>
             </and>
           </condition>
           <otherwise>
@@ -1195,16 +1107,19 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute" ruleburst="true" concludes="b142" folder="0" source-offset="11902">
+    <rule id="17" name="the claimant left the employment due to reasonable disciplinary action imposed by this employer" ruleburst="true" concludes="b75" folder="0" source-offset="9503">
       <rule-xml>
-        <conclude attr-id="b142" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b75" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b42" />
-              <attribute attr-id="b169" />
+              <attribute attr-id="b76" />
+              <or>
+                <attribute attr-id="b77" />
+                <attribute attr-id="b52" />
+              </or>
             </and>
           </condition>
           <otherwise>
@@ -1213,28 +1128,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="23" name="the claimant left the employment without a bona fide offer of continuing work" ruleburst="true" concludes="b24" folder="0" source-offset="12343">
-      <rule-xml>
-        <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b151" />
-              <attribute attr-id="b98" />
-              <not>
-                <attribute attr-id="b123" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="24" name="the claimant voluntarily left the employment in anticipation of (discharge, layoff)" ruleburst="true" concludes="b25" folder="0" source-offset="12656">
+    <rule id="18" name="the claimant left the employment due to the distance to work, yet the terms of hire remained constant" ruleburst="true" concludes="b25" folder="0" source-offset="9881">
       <rule-xml>
         <conclude attr-id="b25" entity-id="employment" scope-id="employment0">
           <value>
@@ -1242,14 +1136,164 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b3" />
-              <attribute attr-id="b100" />
-              <attribute attr-id="b151" />
+              <attribute attr-id="b78" />
+              <or>
+                <attribute attr-id="b2" />
+                <attribute attr-id="b52" />
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="19" name="the claimant abandoned the employment" ruleburst="true" concludes="b26" folder="0" source-offset="10246">
+      <rule-xml>
+        <conclude attr-id="b26" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
               <not>
-                <attribute attr-id="b101" />
+                <attribute attr-id="b79" />
               </not>
-              <attribute attr-id="b3" />
-              <attribute attr-id="b56" />
+              <not>
+                <attribute attr-id="b80" />
+              </not>
+              <not>
+                <attribute attr-id="b81" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="20" name="the claimant's spouse was assigned by a branch of service, during the employment, to a state with a substantially similar re-assignment statute" ruleburst="true" concludes="b27" folder="0" source-offset="10533">
+      <rule-xml>
+        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b82" />
+              <attribute attr-id="b83" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="the claimant left the employment without a bona fide offer of continuing work" ruleburst="true" concludes="b28" folder="0" source-offset="10954">
+      <rule-xml>
+        <conclude attr-id="b28" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b84" />
+              <attribute attr-id="b85" />
+              <not>
+                <attribute attr-id="b86" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="22" name="the claimant voluntarily left the employment in anticipation of (discharge, layoff)" ruleburst="true" concludes="b29" folder="0" source-offset="11237">
+      <rule-xml>
+        <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b8" />
+              <attribute attr-id="b87" />
+              <attribute attr-id="b84" />
+              <not>
+                <attribute attr-id="b88" />
+              </not>
+              <attribute attr-id="b8" />
+              <attribute attr-id="b49" />
+              <attribute attr-id="b88" />
+              <attribute attr-id="b89" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="23" name="the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer" ruleburst="true" concludes="b31" folder="0" source-offset="11904">
+      <rule-xml>
+        <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b90" />
+              <attribute attr-id="b91" />
+              <attribute attr-id="b92" />
+              <not>
+                <attribute attr-id="b93" />
+              </not>
+              <attribute attr-id="b84" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="24" name="the claimant left the employment due to the work hours required by this employer" ruleburst="true" concludes="b94" folder="0" source-offset="12529">
+      <rule-xml>
+        <conclude attr-id="b94" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b95" />
+              <attribute attr-id="b96" />
+              <attribute attr-id="b97" />
+              <not>
+                <attribute attr-id="b98" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="25" name="the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy" ruleburst="true" concludes="b33" folder="0" source-offset="12943">
+      <rule-xml>
+        <conclude attr-id="b33" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b99" />
+              <attribute attr-id="b100" />
               <attribute attr-id="b101" />
               <attribute attr-id="b102" />
             </and>
@@ -1260,21 +1304,17 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer" ruleburst="true" concludes="b108" folder="0" source-offset="13384">
+    <rule id="26" name="the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment" ruleburst="true" concludes="b36" folder="0" source-offset="13374">
       <rule-xml>
-        <conclude attr-id="b108" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b152" />
-              <attribute attr-id="b153" />
-              <attribute attr-id="b154" />
-              <not>
-                <attribute attr-id="b107" />
-              </not>
-              <attribute attr-id="b151" />
+              <attribute attr-id="b86" />
+              <attribute attr-id="b103" />
+              <attribute attr-id="b104" />
             </and>
           </condition>
           <otherwise>
@@ -1283,7 +1323,87 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="26" name="the claimant left the employment due to the work hours required by this employer" ruleburst="true" concludes="b114" folder="0" source-offset="14055">
+    <rule id="27" name="the claimant voluntarily left the employment to retire" ruleburst="true" concludes="b42" folder="0" source-offset="13698">
+      <rule-xml>
+        <conclude attr-id="b42" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b99" />
+              <attribute attr-id="b105" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="28" name="the claimant's separation from the employment is payable within the SIMS precedent" ruleburst="true" concludes="b106" folder="0" source-offset="13872">
+      <rule-xml>
+        <conclude attr-id="b106" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b107" />
+              <attribute attr-id="b108" />
+              <attribute attr-id="b109" />
+              <attribute attr-id="b110" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="29" name="the claimant left the employment voluntarily (after exhausting all reasonable alternatives)" ruleburst="true" concludes="b52" folder="0" source-offset="14281">
+      <rule-xml>
+        <conclude attr-id="b52" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b8" />
+              <or>
+                <attribute attr-id="b111" />
+                <attribute attr-id="b112" />
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="30" name="the claimant voluntarily left the employment when this employer violated the contract of hire" ruleburst="true" concludes="b113" folder="0" source-offset="14566">
+      <rule-xml>
+        <conclude attr-id="b113" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b8" />
+              <attribute attr-id="b98" />
+              <not>
+                <attribute attr-id="b52" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="31" name="the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress" ruleburst="true" concludes="b114" folder="0" source-offset="14881">
       <rule-xml>
         <conclude attr-id="b114" entity-id="employment" scope-id="employment0">
           <value>
@@ -1291,149 +1411,8 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b110" />
-              <attribute attr-id="b111" />
-              <attribute attr-id="b116" />
-              <not>
-                <attribute attr-id="b115" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="27" name="the employment ended due to the claimant's voluntary participation in this employer's mandatory retirement policy" ruleburst="true" concludes="b34" folder="0" source-offset="14508">
-      <rule-xml>
-        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b118" />
-              <attribute attr-id="b172" />
-              <attribute attr-id="b173" />
-              <attribute attr-id="b121" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="28" name="the claimant left the employment to accept a bona fide job offer with a reasonable expectation of continued employment" ruleburst="true" concludes="b41" folder="0" source-offset="14949">
-      <rule-xml>
-        <conclude attr-id="b41" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b123" />
-              <attribute attr-id="b124" />
-              <attribute attr-id="b125" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="29" name="the claimant voluntarily left the employment to retire" ruleburst="true" concludes="b48" folder="0" source-offset="15300">
-      <rule-xml>
-        <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b118" />
-              <attribute attr-id="b155" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="30" name="the claimant's separation from the employment is payable within the SIMS precedent" ruleburst="true" concludes="b127" folder="0" source-offset="15494">
-      <rule-xml>
-        <conclude attr-id="b127" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b156" />
-              <attribute attr-id="b157" />
-              <attribute attr-id="b158" />
-              <attribute attr-id="b131" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="31" name="the claimant voluntarily left the employment without exhausting all reasonable alternatives" ruleburst="true" concludes="b61" folder="0" source-offset="15938">
-      <rule-xml>
-        <conclude attr-id="b61" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b3" />
-              <not>
-                <attribute attr-id="b170" />
-              </not>
-              <attribute attr-id="b175" />
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="32" name="the claimant voluntarily left the employment when this employer violated the contract of hire" ruleburst="true" concludes="b159" folder="0" source-offset="16364">
-      <rule-xml>
-        <conclude attr-id="b159" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b3" />
               <attribute attr-id="b115" />
-              <not>
-                <attribute attr-id="b175" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="33" name="the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress" ruleburst="true" concludes="b160" folder="0" source-offset="16792">
-      <rule-xml>
-        <conclude attr-id="b160" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b161" />
-              <attribute attr-id="b162" />
+              <attribute attr-id="b116" />
             </and>
           </condition>
           <otherwise>

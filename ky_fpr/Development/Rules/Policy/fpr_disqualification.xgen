@@ -55,10 +55,10 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unemployment benefits balance in a state other that Kentucky'))</parse>
         </text>
       </attribute>
-      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant has provided their (valid, current) alien registration number</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('their (valid, current) alien registration number'))</parse>
+          <base>the claimant has provided an alien registration number</base>
+          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('an alien registration number'))</parse>
         </text>
       </attribute>
     </entity>
@@ -99,7 +99,7 @@
                 <attribute attr-id="b5" />
               </not>
               <not>
-                <attribute attr-id="b11" />
+                <attribute attr-id="b12" />
               </not>
             </and>
           </condition>
@@ -109,7 +109,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is immediately disqualified based on receiving unemployment benefits in states other than Kentucky" ruleburst="true" concludes="b7" folder="0" source-offset="555">
+    <rule id="2" name="the claimant is immediately disqualified based on receiving unemployment benefits in states other than Kentucky" ruleburst="true" concludes="b7" folder="0" source-offset="535">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
