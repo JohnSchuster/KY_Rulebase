@@ -992,8 +992,8 @@
       </attribute>
       <attribute name="b442" type="boolean" public-name="fpr_pension_employer_contributed">
         <text>
-          <base>the pension was contributed to solely by a (chargeable, base-period) employer</base>
-          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),ob('the pension',singular),o('to solely by a (chargeable, base-period) employer'))</parse>
+          <base>the pension was contributed to solely by the employer (potentially chargeable, base-period)</base>
+          <parse>s(ver('10.4.2.18'),v(contribute,t(simple,past,normal)),ob('the pension',singular),o('to solely by the employer (potentially chargeable, base-period)'))</parse>
         </text>
       </attribute>
       <attribute name="b445" type="boolean" public-name="fpr_failed_material_fact">
@@ -1028,8 +1028,8 @@
       </attribute>
       <attribute name="b451" type="boolean" public-name="fpr_receiving_pension">
         <text>
-          <base>the claimant is receiving a monthly pension</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a monthly pension'))</parse>
+          <base>the claimant is receiving a monthly pension from the employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a monthly pension from the employer'))</parse>
         </text>
       </attribute>
       <attribute name="b453" type="boolean" public-name="fpr_paid_sports_participant">
@@ -1074,10 +1074,10 @@
           <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('their availability for suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b461" type="boolean" public-name="fpr_chose_lump">
+      <attribute name="b461" type="boolean" public-name="fpr_chose_lump_sum_pen">
         <text>
-          <base>the claimant chose to receive a lump sum pension</base>
-          <parse>s(ver('10.4.2.18'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to receive a lump sum pension'))</parse>
+          <base>the claimant chose to receive a lump sum pension from the employer(potentially chargeable, base-period)</base>
+          <parse>s(ver('10.4.2.18'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to receive a lump sum pension from the employer(potentially chargeable, base-period)'))</parse>
         </text>
       </attribute>
       <attribute name="b463" type="boolean" public-name="fpr_paid_athletic_preparer">
@@ -2319,6 +2319,12 @@
         <text>
           <base>at least one finding has been reached</base>
           <parse>s(ver('10.4.2.18'),v(reach,t(simple,present,perfect)),ob('at least one finding',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1138" type="boolean" public-name="fpr_ins_registration_valid">
+        <text>
+          <base>the INS has confirmed the alien's registration number is (valid, current)</base>
+          <parse>s(ver('10.4.2.18'),v(confirm,t(simple,present,perfect)),sb('the INS',singular),o('the alien''s registration number is (valid, current)'))</parse>
         </text>
       </attribute>
     </entity>
