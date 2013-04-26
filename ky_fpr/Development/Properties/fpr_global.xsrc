@@ -3100,10 +3100,10 @@
           <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to this employer''s mandatory retirement program in which the claimant did not voluntarily participate'))</parse>
         </text>
       </attribute>
-      <attribute name="b160" type="boolean" public-name="emt_medical_not_adverse">
+      <attribute name="b160" type="boolean" public-name="emt_medical_not_caused">
         <text>
-          <base>the claimant left the employment due to a medical condition that was not (adversely affected, caused) by the work</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a medical condition that was not (adversely affected, caused) by the work'))</parse>
+          <base>the claimant left the employment due to a medical condition that was caused by the work</base>
+          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),ob('the claimant left the employment due to a medical condition that',singular),o('by the work'))</parse>
         </text>
       </attribute>
       <attribute name="b161" type="boolean" public-name="emt_disqualifying_reason">
@@ -3430,10 +3430,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer''s (drug, alcohol) policy',singular),o('reasonable for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b225" type="boolean" public-name="emt_left_without_exhausting">
+      <attribute name="b225" type="boolean" public-name="emt_quit_without_exhausting">
         <text>
-          <base>the claimant left the employment after exhausting all reasonable alternatives</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment after exhausting all reasonable alternatives'))</parse>
+          <base>the claimant exhausted all reasonable alternatives prior to quitting the employment</base>
+          <parse>s(ver('10.4.2.18'),v(exhaust,t(simple,past,normal)),sb('the claimant',plural),o('all reasonable alternatives prior to quitting the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b226" type="boolean" public-name="emt_work_was_unsatisfactory">
@@ -6618,12 +6618,6 @@
         <text>
           <base>the claimant voluntarily left the employment to accept temporary work</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment to accept temporary work'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b1134" type="boolean" public-name="fpr_emt_vq_aeara">
-        <text>
-          <base>the claimant left the employment voluntarily (after exhausting all reasonable alternatives)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily (after exhausting all reasonable alternatives)'))</parse>
         </text>
       </attribute>
       <attribute name="b1135" type="boolean" public-name="fpr_emt_vol_accept_inc_pkg">
