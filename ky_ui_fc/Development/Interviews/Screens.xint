@@ -3424,82 +3424,17 @@ In order to successfully complete your claim, you must agree to rights and respo
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s6" name="Employment Status for %fpr_emt_visible_name% " public-id="xrulz_screen_15" entity="fpr_employment" order="1" folder="8">
+      <screen type="Question" id="s6" name="Employment Status for %fpr_emt_visible_name% " public-id="xr_cs_01" entity="fpr_employment" order="1" folder="8">
         <controls>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;p class="pbsmall"&gt;Please select the category that most closely matches your situation.&lt;/p&gt;
-&lt;br&gt;
-&lt;ul&gt;
-  &lt;li class="tbsmall"&gt;Currently Employed (Full-time or part-time)&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;For example, you continue working full-time in accordance with your employer's customary full-time work schedule or you are working part-time, working on-call, as needed, PRN status.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;li class="tbsmall"&gt;Leave of Absence&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;(eg.) On FMLA, Short-term disability, etc.&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;You are temporarily away from work for personal reasons and you are expected to return to your position&lt;/li&gt;
-	&lt;/ul&gt;  
-  &lt;li class="tbsmall"&gt;Suspension&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;(eg.) You are temporarily away from work due to a diciplinary action or&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;investigation initiated by your employer&lt;/li&gt;
-	&lt;/ul&gt;  
-  &lt;li class="tbsmall"&gt;Quit&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;(eg.) An employee may choose to leave a job for changes in personal circumstances, working conditions, prospects of other work, etc.&lt;/li&gt;
-	&lt;/ul&gt;
-  &lt;li class="tbsmall"&gt;Retired (Voluntary or Involuntary)&lt;/li&gt;
-    &lt;ul&gt;
-      &lt;li class="nsmall"&gt;(eg.) You voluntarily retired from the workforce, you are  receiving retirement/pension or retainer benefits, or&lt;/li&gt;
-      &lt;li class="nsmall"&gt;you retired in accordance with the employer mandqatory retirement policy.&lt;/li&gt;
-    &lt;/ul&gt;	  
-  &lt;li class="tbsmall"&gt;Discharged (aka. Terminated, fired, let-go, sacked, canned, etc)&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;(eg.) Employer chooses to require the employee to leave, generally, the employer states that it is the fault of the employee:&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;attendance, policy violation, work performance, failed drug test, etc.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;li class="tbsmall"&gt;Laid Off&lt;/li&gt;
-    &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;(eg.) Position eliminated or a business slow-down occured due to economic cycles or&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;the company's need to restructure itself, the firm itself going out of business or a change in the function of the employer&lt;/li&gt;
-	     &lt;ul&gt;
-		   &lt;li class="nsmall"&gt;(eg.) A certain type of product or service is no longer offered by the company therefore jobs related to that product or service are no longer needed&lt;/li&gt;
-		&lt;/ul&gt;
-    &lt;/ul&gt;	
-  &lt;li class="tbsmall"&gt;Labor Dispute&lt;/li&gt;	
-     &lt;ul&gt;
-	    &lt;li class="nsmall"&gt;You are a member of a labor union and are involved in ongoing strike actions undertaken by the labor union&lt;/li&gt;
-     &lt;/ul&gt;	 
-&lt;/ul&gt;  
-&lt;br&gt;
-</caption>
-          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Radiobutton">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
               <property name="ClassOverride" type="string">
               </property>
-              <property name="IsHTML" type="boolean">true</property>
+              <property name="IsHTML" type="boolean">false</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the selected employment status">
               <doc-attr id="p6@Rules_MultiSelectionMaps_doc" />
@@ -3516,9 +3451,15 @@ In order to successfully complete your claim, you must agree to rights and respo
               <value code="ES07" default-visibility="enabled">Laid Off</value>
               <value code="ES08" default-visibility="enabled">Labor Dispute</value>
             </values>
-            <caption>&lt;p&gt;Which category best describes your status for %g01_employment_instance_id%?&lt;/p&gt;</caption>
+            <props>
+              <prop name="xRulzCustomFieldId">xr01</prop>
+            </props>
           </input>
         </controls>
+        <props>
+          <prop name="xRulzCustomScreen">true</prop>
+          <prop name="xRulzScreenId">xr_cs_01</prop>
+        </props>
       </screen>
       <screen type="Question" id="s5" name="Resignation for %fpr_emt_visible_name%" public-id="" order="1" entity="fpr_employment" folder="20">
         <controls>
