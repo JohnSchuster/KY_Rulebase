@@ -59,6 +59,69 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the next most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is a recent concurrent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is current</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was active within the investigative period</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the most recent bptw</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's first day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment period's visible name</base>
+        </text>
+      </attribute>
+      <attribute name="p27" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's contributing weeks, visible text</base>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -120,69 +183,6 @@
       <attribute name="p26" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employer's latest work date in period</base>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the most recent employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the next most recent employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is a recent concurrent employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is current</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment was active within the investigative period</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment is the most recent bptw</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment</base>
-        </text>
-      </attribute>
-      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's first day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's last day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment period's visible name</base>
-        </text>
-      </attribute>
-      <attribute name="p27" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's contributing weeks, visible text</base>
         </text>
       </attribute>
     </entity>

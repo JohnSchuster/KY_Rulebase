@@ -12,6 +12,29 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was active within the investigative period</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's first day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p8" type="date" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p11" type="number" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's number of discrete weeks worked within the investigative period</base>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -39,29 +62,6 @@
       <attribute name="p10" type="number" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the maximum unworked weeks during investigation period for the employer to be potentially chargeable</base>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment was active within the investigative period</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p5" type="date" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's first day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p8" type="date" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's last day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p11" type="number" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the employment's number of discrete weeks worked within the investigative period</base>
         </text>
       </attribute>
     </entity>
