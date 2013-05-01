@@ -571,14 +571,14 @@
           <parse>s(ver('10.4.2.18'),v(confirm,t(simple,present,perfect)),sb('the INS',singular),o('the alien''s registration number is (valid, current)'))</parse>
         </text>
       </attribute>
-      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the claimant's alien registration code</base>
-        </text>
-      </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the filing date</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants alien registration number</base>
         </text>
       </attribute>
     </entity>
@@ -1298,7 +1298,7 @@
           <condition>
             <greater-than-equals>
               <length>
-                <attribute attr-id="p1" />
+                <attribute attr-id="p4" />
               </length>
               <number-value>8</number-value>
             </greater-than-equals>
@@ -1309,7 +1309,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="25" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="11208">
+    <rule id="25" name="the claimant has provided their (valid, current) alien registration number" ruleburst="true" concludes="b88" folder="0" source-offset="11209">
       <rule-xml>
         <conclude attr-id="b88" entity-id="global" scope-id="global0">
           <value>
@@ -1324,7 +1324,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="26" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="11413">
+    <rule id="26" name="the claimant is an alien" ruleburst="true" concludes="b42" folder="0" source-offset="11414">
       <rule-xml>
         <conclude attr-id="b42" entity-id="global" scope-id="global0">
           <value>
