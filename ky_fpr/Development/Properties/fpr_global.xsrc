@@ -3146,8 +3146,8 @@
       </attribute>
       <attribute name="b156" type="boolean" public-name="emt_dispute_in_workplace">
         <text>
-          <base>the claimant left the employment due to a dispute in the workplace that did not cause the work to become unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a dispute in the workplace that did not cause the work to become unsuitable'))</parse>
+          <base>the claimant left the employment due to a dispute in the workplace</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a dispute in the workplace'))</parse>
         </text>
       </attribute>
       <attribute name="b157" type="boolean" public-name="emt_equipment_problems">
@@ -3156,22 +3156,16 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to equipment problems that were good cause for quitting'))</parse>
         </text>
       </attribute>
-      <attribute name="b158" type="boolean" public-name="emt_harassment_not_unsuitable">
-        <text>
-          <base>the claimant left the employment due to harassment which did not render the work unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to harassment which did not render the work unsuitable'))</parse>
-        </text>
-      </attribute>
       <attribute name="b159" type="boolean" public-name="emt_unvoluntary_retirement_pgm">
         <text>
           <base>the employment ended due to this employer's mandatory retirement program in which the claimant did not voluntarily participate</base>
           <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to this employer''s mandatory retirement program in which the claimant did not voluntarily participate'))</parse>
         </text>
       </attribute>
-      <attribute name="b160" type="boolean" public-name="emt_medical_not_caused">
+      <attribute name="b160" type="boolean" public-name="emt_medical_work_caused">
         <text>
           <base>the claimant left the employment due to a medical condition that was caused by the work</base>
-          <parse>s(ver('10.4.2.18'),v(cause,t(simple,past,normal)),ob('the claimant left the employment due to a medical condition that',singular),o('by the work'))</parse>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a medical condition that was caused by the work'))</parse>
         </text>
       </attribute>
       <attribute name="b161" type="boolean" public-name="emt_disqualifying_reason">
@@ -3182,8 +3176,8 @@
       </attribute>
       <attribute name="b162" type="boolean" public-name="emt_left_lack_training">
         <text>
-          <base>the claimant left the employment due to a lack of (training, experience) which did not render the work unsuitable</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a lack of (training, experience) which did not render the work unsuitable'))</parse>
+          <base>the claimant left the employment due to a lack of (training, experience)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a lack of (training, experience)'))</parse>
         </text>
       </attribute>
       <attribute name="b163" type="boolean" public-name="emt_lost_required_license">
@@ -3312,16 +3306,10 @@
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment without a bona fide offer of continuing work'))</parse>
         </text>
       </attribute>
-      <attribute name="b185" type="boolean" public-name="emt_left_in_anticipation">
+      <attribute name="b185" type="boolean" public-name="emt_left_anticipated_ld">
         <text>
-          <base>the claimant voluntarily left the employment in anticipation of (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment in anticipation of (discharge, layoff)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b186" type="boolean" public-name="emt_left_before_discharge">
-        <text>
-          <base>the claimant voluntarily left the employment prior to (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment prior to (discharge, layoff)'))</parse>
+          <base>the claimant left the employment in anticipation of (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment in anticipation of (discharge, layoff)'))</parse>
         </text>
       </attribute>
       <attribute name="b187" type="boolean" public-name="emt_refused_instructions">
@@ -3348,10 +3336,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the instruction',singular),o('reasonable for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b192" type="boolean" public-name="emt_left_discipline_reasonable">
+      <attribute name="b192" type="boolean" public-name="emt_left_disciplinay_action">
         <text>
-          <base>the claimant left employment due to disciplinary action imposed by this employer which was reasonable for the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('employment due to disciplinary action imposed by this employer which was reasonable for the employment'))</parse>
+          <base>the claimant left the employment due to disciplinary action imposed by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to disciplinary action imposed by this employer'))</parse>
         </text>
       </attribute>
       <attribute name="b193" type="boolean" public-name="emt_noncompliant_statutes">
@@ -3372,7 +3360,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving vacation pay for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b196" type="boolean" public-name="emt_gt_100_lt_100">
+      <attribute name="b196" type="boolean" public-name="fpr_emt_changed_on_100_miles">
         <text>
           <base>the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles</base>
           <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles'))</parse>
@@ -3536,8 +3524,8 @@
       </attribute>
       <attribute name="b231" type="boolean" public-name="emt_left_due_to_harassment">
         <text>
-          <base>the claimant voluntarily left the employment due to harassment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to harassment'))</parse>
+          <base>the claimant left the employment due to harassment</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to harassment'))</parse>
         </text>
       </attribute>
       <attribute name="b232" type="boolean" public-name="emt_drivers_license_required">
@@ -3570,16 +3558,10 @@
           <parse>s(ver('10.4.2.18'),v(lead,t(simple,past,normal)),sb('the claimant''s action',plural),o('directly to becoming uninsurable as a driver for the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b237" type="boolean" public-name="emt_left_no_training">
+      <attribute name="b240" type="boolean" public-name="emt_left_nc_religious_beliefs">
         <text>
-          <base>the claimant voluntarily left the employment due to a lack of (training, experience)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to a lack of (training, experience)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b240" type="boolean" public-name="emt_left_because_of_religion">
-        <text>
-          <base>the claimant left the employment due to religious beliefs</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to religious beliefs'))</parse>
+          <base>the claimant left the employment due to non-conflicting religious beliefs</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to non-conflicting religious beliefs'))</parse>
         </text>
       </attribute>
       <attribute name="b242" type="boolean" public-name="emt_excessive_carelessness">
@@ -3612,10 +3594,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s actions',plural),o('negligent during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b247" type="boolean" public-name="emt_left_due_to_conditions">
+      <attribute name="b247" type="boolean" public-name="emt_left_working_conditions">
         <text>
-          <base>the claimant voluntarily left the employment due to working conditions</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to working conditions'))</parse>
+          <base>the claimant left the employment due to unspecified working conditions</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to unspecified working conditions'))</parse>
         </text>
       </attribute>
       <attribute name="b248" type="boolean" public-name="emt_conditions_reasonable">
@@ -3638,8 +3620,8 @@
       </attribute>
       <attribute name="b251" type="boolean" public-name="emt_left_pay_practice">
         <text>
-          <base>the claimant voluntarily left the employment due to (pay practices, rate of pay)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment due to (pay practices, rate of pay)'))</parse>
+          <base>the claimant left the employment due to (pay practices, rate of pay)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to (pay practices, rate of pay)'))</parse>
         </text>
       </attribute>
       <attribute name="b252" type="boolean" public-name="emt_left_due_to_dicipline">
@@ -3704,8 +3686,8 @@
       </attribute>
       <attribute name="b264" type="boolean" public-name="emt_left_prior_to_layoff">
         <text>
-          <base>the claimant left the employment prior to the date of (discharge, layoff)</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment prior to the date of (discharge, layoff)'))</parse>
+          <base>the claimant left the employment prior to (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment prior to (discharge, layoff)'))</parse>
         </text>
       </attribute>
       <attribute name="b265" type="boolean" public-name="emt_provisional_layoff">
@@ -3714,10 +3696,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('this employer',singular),o('going to lay off the claimant from the employment (if the reduction in workforce goal was not met)'))</parse>
         </text>
       </attribute>
-      <attribute name="b266" type="boolean" public-name="emt_left_freely_due_to_reduction">
+      <attribute name="b266" type="boolean" public-name="emt_left_emr_rif">
         <text>
-          <base>the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment''s suitable work due to a reduction in workforce plan initiated by this employer'))</parse>
+          <base>the claimant left the employment due to a reduction in workforce plan initiated by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to a reduction in workforce plan initiated by this employer'))</parse>
         </text>
       </attribute>
       <attribute name="b267" type="boolean" public-name="emt_left_freely_due_to_hours">
@@ -6726,6 +6708,24 @@
         <text>
           <base>the employment's separation finding is vq_d2_04, (Distance to Work)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d2_04, (Distance to Work)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1153" type="boolean" public-name="fpr_left_equip_problems">
+        <text>
+          <base>the claimant left the employment due to equipment problems</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment due to equipment problems'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1154" type="boolean" public-name="fpr_emr_action_suitable">
+        <text>
+          <base>the (employer action, working condition) did not render the employment unsuitable</base>
+          <parse>s(ver('10.4.2.18'),v(render,t(simple,past,normal)),sb('the (employer action, working condition)',plural),o('the employment unsuitable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1157" type="boolean" public-name="fpr_emt_gte_100_miles">
+        <text>
+          <base>the claimant left the employment which was one hundred (100) road miles or more from their home</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment which was one hundred (100) road miles or more from their home'))</parse>
         </text>
       </attribute>
     </entity>
