@@ -43,10 +43,10 @@
       <folder id="16" text="Final" parent="1" order="8" />
       <folder id="19" text="Employment_Information" order="2" parent="5" />
       <folder id="20" text="Quit Screens" order="2" parent="8" />
-      <folder id="21" text="Quit Details (Personal)" parent="20" order="4" />
-      <folder id="22" text="Quit Details (Work Related)" parent="20" order="6" />
+      <folder id="21" text="Quit Details (Personal)" parent="20" order="5" />
+      <folder id="22" text="Quit Details (Work Related)" parent="20" order="7" />
       <folder id="30" text="Currently Employed Screens" parent="8" order="4" />
-      <folder id="31" text="Quit Details (Accepted Offer)" parent="20" order="7" />
+      <folder id="31" text="Quit Details (Accepted Offer)" parent="20" order="8" />
       <folder id="32" text="Leave of Absence Screens" parent="8" order="5" />
       <folder id="33" text="Suspended Screens" parent="8" order="6" />
       <folder id="36" text="Laid Off Screens" parent="8" order="9" />
@@ -60,9 +60,10 @@
       <folder id="43" text="Accept An Offer" order="4" parent="39" />
       <folder id="34" text="Retired Screens" order="8" parent="8" />
       <folder id="44" text="Alcohol and Drug Screens" parent="8" order="13" />
+      <folder id="45" text="Verification" order="1" parent="20" />
     </folders>
     <screens>
-      <screen type="Summary" id="s1" public-id="summary" name="Demonstration: Alpha OET Claim Filing, Version 0.2 " folder="0" order="1">
+      <screen type="Summary" id="s1" public-id="summary" name="Demonstration: OET Claim Filing, Version 0.1 " folder="0" order="1">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -73,7 +74,7 @@
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="tc"&gt;Review Alpha:  Built on 5/4/2013 by xRulz&lt;/p&gt;</caption>
+            <caption>&lt;p class="tc"&gt;Alpha:  Built on 5/1/2013 by xRulz&lt;/p&gt;</caption>
           </label>
           <flow name="Main Flow" default-state="enabled">
             <control-properties>
@@ -125,7 +126,7 @@
             </control-properties>
             <caption>&lt;h2 class="tcb"&gt;This is an application for Unemployment Insurance. Intentionally submitting false information to obtain benefits is a criminal act.&lt;br&gt;
 Any violation will result in prosecution under KRS.331.370(2).&lt;/h2&gt;
-&lt;p class="pred"&gt;&lt;u&gt;YOU ARE RESPONSIBLE FOR THE ACCURACY OF ALL OF YOUR ANSWERS&lt;/u&gt;&lt;/p&gt;
+&lt;h2 class="pred"&gt;&lt;u&gt;YOU ARE RESPONSIBLE FOR THE ACCURACY OF ALL OF YOUR ANSWERS&lt;/u&gt;&lt;/h2&gt;
 
 
 &lt;h2&gt;To File Your Kentucky Unemployment Claim You Will Need:&lt;/h2&gt;
@@ -383,6 +384,8 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/h2&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants gender">
               <doc-attr id="p38@kyfpr_rmod" />
@@ -404,6 +407,8 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/h2&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants ethnic group">
               <doc-attr id="p39@kyfpr_rmod" />
@@ -424,6 +429,8 @@ Any violation will result in prosecution under KRS.331.370(2).&lt;/h2&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the claimants race">
               <doc-attr id="p40@kyfpr_rmod" />
@@ -1655,7 +1662,7 @@ during your benefit year.&lt;/p&gt;</caption>
               </property>
             </control-properties>
             <input-attr text="the claimants field of expertise or industry">
-              <doc-attr id="p66@kyfpr_rmod" />
+              <doc-attr id="p69@kyfpr_rmod" />
               <doc-attr id="fpr_area_of_expertise" />
             </input-attr>
             <caption>&lt;p&gt;What is your field of work or industry?&lt;/p&gt;</caption>
@@ -1699,7 +1706,7 @@ during your benefit year.&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants field of work or industry requires advanced education or certification">
-              <doc-attr id="b284@kyfpr_rmod" />
+              <doc-attr id="b289@kyfpr_rmod" />
               <doc-attr id="fpr_advanced_ed_required" />
             </input-attr>
             <caption>&lt;p&gt;Does your job require advanced education, a certification, or a license?&lt;/p&gt;</caption>
@@ -1716,7 +1723,7 @@ during your benefit year.&lt;/p&gt;</caption>
               <doc-attr id="b119@kyfpr_rmod" />
               <doc-attr id="fpr_labor_union_old" />
             </input-attr>
-            <caption>&lt;p&gt;Are you a member in good standing of a labor union?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Are you a member in good standing of a trade union?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
             <control-properties>
@@ -3457,36 +3464,7 @@ In order to successfully complete your claim, you must agree to rights and respo
           <prop name="xRulzScreenId">xr_cs_01</prop>
         </props>
       </screen>
-      <screen type="Question" id="s5" name="Resignation for %fpr_emt_visible_name%" public-id="" order="1" entity="fpr_employment" folder="20">
-        <controls>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the employment's employer requested the claimant's resignation">
-              <doc-attr id="b675@kyfpr_rmod" />
-              <doc-attr id="emt_emp_request_resignation" />
-            </input-attr>
-            <caption>&lt;p&gt;Did the employer request your resignation?&lt;/p&gt;</caption>
-          </input>
-        </controls>
-      </screen>
-      <screen type="Question" id="s67" name="Resignation Details for %fpr_emt_visible_name%" public-id="" order="2" folder="20">
+      <screen type="Question" id="s70" name="Quit Reason for %fpr_emt_visible_name%" public-id="" order="4" screen-attr="" folder="20" entity="fpr_employment">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -3508,63 +3486,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;You have indicated the employer requested your resignation.&lt;/p&gt;
-</caption>
-          </label>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;hr&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">1</property>
-            </control-properties>
-            <input-attr text="the claimants explanation of why the employer requested their resignation">
-              <doc-attr id="p288@kyfpr_rmod" />
-              <doc-attr id="scr_resignation_request_explanation" />
-            </input-attr>
-            <caption>&lt;p&gt;What is the reason that your employer requested your resignation?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant would have been terminated had they not resigned">
-              <doc-attr id="b815@kyfpr_rmod" />
-              <doc-attr id="scr_resignation_or_termination" />
-            </input-attr>
-            <caption>&lt;p&gt;Would you have been discharged (terminated) if you had not resigned?&lt;/p&gt;</caption>
-          </input>
-        </controls>
-      </screen>
-      <screen type="Question" id="s70" name="Quit Details for %fpr_emt_visible_name%" public-id="" order="3" screen-attr="" folder="20" entity="fpr_employment">
-        <controls>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
+            <caption>&lt;p class="pbs"&gt;Please select the circumstances that most closely reflects the reason you quit this employment&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
@@ -3573,6 +3495,8 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the selected quit status">
               <doc-attr id="p22@Rules_MultiSelectionMaps_doc" />
@@ -3583,8 +3507,8 @@ In order to successfully complete your claim, you must agree to rights and respo
 </caption>
             <values>
               <value code="QS01" default-visibility="enabled">Personal Reasons</value>
-              <value code="QS02" default-visibility="enabled">Work-Related</value>
-              <value code="QS03" default-visibility="enabled">Accepted an Offer of Work</value>
+              <value code="QS02" default-visibility="enabled">Work-Related Reasons</value>
+              <value code="QS03" default-visibility="enabled">Seek, Accept, or Maintain Other Employment</value>
               <value code="" default-visibility="enabled">
               </value>
             </values>
@@ -3613,42 +3537,29 @@ In order to successfully complete your claim, you must agree to rights and respo
 &lt;ul&gt;
   &lt;li class="pbsmall"&gt;Personal Reasons&lt;/li&gt;
     &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;examples of Personal Reasons include but are not limited to:&lt;/li&gt;
-      &lt;li class="nsmall"&gt;non work-related injury or health condition&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;domestic circumstances&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;attending school&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;relocation&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;military reassignment&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Non work-related injury or health condition&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Domestic circumstances&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Attending school&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Relocation&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Military reassignment&lt;/li&gt;
 	&lt;/ul&gt;
-  &lt;li class="pbsmall"&gt;Work-Related&lt;/li&gt;
+  &lt;li class="pbsmall"&gt;Work-Related Reasons&lt;/li&gt;
     &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;examples of Work-Related Reasons include but are not limited to:&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;working conditions&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;hurt on the job&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;lack of training&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;safety concerns&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;dispute in the workplace&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;employer breach of contract&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;harassment&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Working conditions&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Hurt on the job&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Lack of training&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Safety concerns&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Dispute in the workplace&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Employer breach of contract&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Harassment&lt;/li&gt;
 	&lt;/ul&gt;  
-  &lt;li class="pbsmall"&gt;Accepted an Offer of Work&lt;/li&gt;
+  &lt;li class="pbsmall"&gt;Seek, Accept, or Maintain Other Employment&lt;/li&gt;
     &lt;ul&gt;
-	  &lt;li class="nsmall"&gt;quit to go to a new job&lt;/li&gt;
-	  &lt;li class="nsmall"&gt;quit while maintaining other employment&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Quit to go to a new job&lt;/li&gt;
+	  &lt;li class="nsmall"&gt;Quit while maintaining other employment&lt;/li&gt;
 	&lt;/ul&gt;  
 &lt;/ul&gt;  
 </caption>
-          </label>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
           </label>
         </controls>
       </screen>
@@ -3674,7 +3585,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;Please provide the mailing address of your employer's corporate office.&lt;br&gt;If that is unknown, please provide the address listed on your paycheck or your work location.&lt;/p&gt;</caption>
+            <caption>&lt;p class="pbs"&gt;Please provide the mailing address of your employer's corporate office.&lt;br&gt;If that is unknown, please provide the address listed on your paycheck or your work location.&lt;/p&gt;</caption>
           </label>
           <label visible-by-default="true">
             <control-properties>
@@ -4438,7 +4349,7 @@ In order to successfully complete your claim, you must agree to rights and respo
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s78" name="Quit Details (Personal) for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" folder="21" entity="fpr_employment">
+      <screen type="Question" id="s78" name="Quit Details (Personal Reasons) for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" folder="21" entity="fpr_employment">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -4460,7 +4371,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;You have indicated you quit this employment for personal reasons.&lt;/p&gt;
+            <caption>&lt;p class="pbs"&gt;You have indicated you quit this employment for personal reasons.&lt;/p&gt;
 </caption>
           </label>
           <label visible-by-default="true">
@@ -4472,7 +4383,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;hr&gt;</caption>
+            <caption>&lt;br&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
@@ -4481,6 +4392,8 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the selected personal quit status">
               <doc-attr id="p23@Rules_MultiSelectionMaps_doc" />
@@ -4526,25 +4439,11 @@ In order to successfully complete your claim, you must agree to rights and respo
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles">
-              <doc-attr id="b498@kyfpr_rmod" />
-              <doc-attr id="emt_gt_100_lt_100" />
-            </input-attr>
-            <caption>&lt;p&gt;Did you leave employment, which was one hundred (100) road miles or more from your home, to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
             <input-attr text="the claimant was given a bona fide offer of work during the employment">
               <doc-attr id="b394@kyfpr_rmod" />
               <doc-attr id="emt_given_bona_fide_offer" />
             </input-attr>
-            <caption>&lt;p&gt;Were you given another bona fide offer of work, during your employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Were you given another bona fide offer of work during this employment?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -4558,7 +4457,21 @@ In order to successfully complete your claim, you must agree to rights and respo
               <doc-attr id="b540@kyfpr_rmod" />
               <doc-attr id="emt_accepted_offer" />
             </input-attr>
-            <caption>&lt;p&gt;Did you accept the other offer, during your employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did you quit to accept an offer of new work during this employment?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles">
+              <doc-attr id="b498@kyfpr_rmod" />
+              <doc-attr id="emt_gt_100_lt_100" />
+            </input-attr>
+            <caption>&lt;p&gt;Did you leave employment, which was 100 road miles or more from your home, to accept work that is less than 100 road miles?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -4578,20 +4491,6 @@ In order to successfully complete your claim, you must agree to rights and respo
       </screen>
       <screen type="Question" id="s79" name="Military Spouse Details for %fpr_emt_visible_name%" public-id="" order="2" screen-attr="" folder="21">
         <controls>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant left the employment to accompany their spouse to a different state, when the spouse was re-assigned by the military">
-              <doc-attr id="b469@kyfpr_rmod" />
-              <doc-attr id="emt_left_with_military_spouse" />
-            </input-attr>
-            <caption>&lt;p&gt;Was your military spouse re-assigned to a state other than Kentucky?&lt;/p&gt;</caption>
-          </input>
           <label visible-by-default="true">
             <control-properties>
               <property name="text-style" type="string">Normal</property>
@@ -4601,7 +4500,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;hr&gt;</caption>
+            <caption>&lt;br&gt;</caption>
           </label>
           <label visible-by-default="true">
             <control-properties>
@@ -4612,23 +4511,33 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pbs"&gt;You have indicated you quit this employment to accompany your spouse when he/she was reassigned by the military.&lt;/p&gt;
+</caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="select" select-style="Dropdown">
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the state that the claimants military spouse was re-assigned to">
-              <doc-attr id="p65@kyfpr_rmod" />
+              <doc-attr id="p139@kyfpr_rmod" />
               <doc-attr id="emt_reassigned_state" />
             </input-attr>
-            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What State?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;To what location is/was your spouse scheduled to report?&lt;/p&gt;</caption>
             <values>
               <value code="" default-visibility="enabled">
               </value>
@@ -4683,9 +4592,10 @@ In order to successfully complete your claim, you must agree to rights and respo
               <value code="WV" default-visibility="enabled">West Virginia</value>
               <value code="WI" default-visibility="enabled">Wisconsin</value>
               <value code="WY" default-visibility="enabled">Wyoming</value>
+              <value code="OCONUS" default-visibility="enabled">OCONUS</value>
             </values>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -4694,10 +4604,10 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant is to report to the next duty station">
-              <doc-attr id="p80@kyfpr_rmod" />
+              <doc-attr id="p145@kyfpr_rmod" />
               <doc-attr id="emt_next_duty" />
             </input-attr>
-            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date are you to report to the next duty station?&lt;/p&gt;
+            <caption>&lt;p&gt;On what date is/was your spouse scheduled to report to the next duty station?&lt;/p&gt;
 </caption>
           </input>
           <label visible-by-default="true">
@@ -4709,12 +4619,12 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;br&gt;&lt;p class="pr"&gt;Please provide the Division with a copy of your spouse’s PCS Orders via mail or fax.&lt;br&gt; Be sure to include your name and social security number on the document.&lt;br&gt; Failure to provide this information will may result in a delay in processing your claim. &lt;br&gt; The address and fax number will provided at the conclusion of this application.&lt;/p&gt;
+            <caption>&lt;br&gt;&lt;p class="prb"&gt;Please provide the Division with a copy of your spouse’s PCS Orders via mail or fax.&lt;br&gt; Be sure to include your name and social security number on the document.&lt;br&gt; Failure to provide this information will may result in a delay in processing your claim. &lt;br&gt; The address and fax number will provided at the conclusion of this application.&lt;/p&gt;
 </caption>
           </label>
         </controls>
       </screen>
-      <screen type="Question" id="s80" name="Work Alternatives Details for %fpr_emt_visible_name%" public-id="" order="5" screen-attr="" folder="20">
+      <screen type="Question" id="s80" name="Work Alternatives Details for %fpr_emt_visible_name%" public-id="" order="6" screen-attr="" folder="20">
         <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -4725,10 +4635,10 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant expressed concerns regarding the reason for quitting with the employer">
-              <doc-attr id="b636@kyfpr_rmod" />
+              <doc-attr id="b601@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed" />
             </input-attr>
-            <caption>&lt;p&gt;Did you express your concerns regarding your reason for quitting with the employer prior to leaving the employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did you express your concerns (regarding your reason for quitting) with the employer prior to leaving this employment?&lt;/p&gt;</caption>
           </input>
           <label visible-by-default="true">
             <control-properties>
@@ -4750,7 +4660,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;if Yes:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -4762,7 +4672,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person with whom the claimant discussed concerns">
-              <doc-attr id="p81@kyfpr_rmod" />
+              <doc-attr id="p146@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_with" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  What was the name of the person with whom you discussed your concerns?&lt;/p&gt;</caption>
@@ -4777,7 +4687,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person with whom the claimant discussed concerns">
-              <doc-attr id="p82@kyfpr_rmod" />
+              <doc-attr id="p147@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_title" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
@@ -4791,7 +4701,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant discused their concerns">
-              <doc-attr id="p83@kyfpr_rmod" />
+              <doc-attr id="p148@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_date" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you discuss your concerns?&lt;/p&gt;</caption>
@@ -4803,10 +4713,10 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">1</property>
+              <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the specific actions the employer took to address the concerns">
-              <doc-attr id="p84@kyfpr_rmod" />
+              <doc-attr id="p149@kyfpr_rmod" />
               <doc-attr id="scr_action_employer_took" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What specific actions did the employer take to address or correct the issue(s)?&lt;/p&gt;
@@ -4832,7 +4742,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant gave notice prior to leaving">
-              <doc-attr id="b637@kyfpr_rmod" />
+              <doc-attr id="b602@kyfpr_rmod" />
               <doc-attr id="scr_notice_given" />
             </input-attr>
             <caption>&lt;p&gt;Did you give notice prior to leaving the employment?&lt;/p&gt;</caption>
@@ -4846,7 +4756,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;if Yes:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -4858,7 +4768,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the person to whom the claimant gave notice">
-              <doc-attr id="p85@kyfpr_rmod" />
+              <doc-attr id="p150@kyfpr_rmod" />
               <doc-attr id="scr_notice_given_person" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp To whom did you give notice?&lt;/p&gt;</caption>
@@ -4873,7 +4783,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person to whom the claimant gave notice">
-              <doc-attr id="p86@kyfpr_rmod" />
+              <doc-attr id="p151@kyfpr_rmod" />
               <doc-attr id="scr_notice_given_title" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;
@@ -4888,7 +4798,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant gave notice">
-              <doc-attr id="p87@kyfpr_rmod" />
+              <doc-attr id="p152@kyfpr_rmod" />
               <doc-attr id="scr_notice_given_date" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you give notice?&lt;/p&gt;</caption>
@@ -4902,7 +4812,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant was allowed to work until the end of notice">
-              <doc-attr id="b639@kyfpr_rmod" />
+              <doc-attr id="b604@kyfpr_rmod" />
               <doc-attr id="scr_allowed_until_notice_end" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Did the employer allow you to work until the end of your notice?&lt;/p&gt;</caption>
@@ -4927,7 +4837,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant pursued alternatives prior to leaving the employment">
-              <doc-attr id="b638@kyfpr_rmod" />
+              <doc-attr id="b603@kyfpr_rmod" />
               <doc-attr id="scr_pursued_alt_prior" />
             </input-attr>
             <caption>&lt;p&gt;Did you pursue alternatives to quitting before leaving the employment?&lt;/p&gt;</caption>
@@ -4941,7 +4851,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;if Yes:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pb"&gt;If Yes:&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -4953,7 +4863,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the alternatives that were pursued prior to leaving the employment">
-              <doc-attr id="p88@kyfpr_rmod" />
+              <doc-attr id="p153@kyfpr_rmod" />
               <doc-attr id="scr_pursued_description" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe all alternatives that were pursued before leaving the employment?&lt;/p&gt;</caption>
@@ -4967,7 +4877,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;If Not:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pb"&gt;If No:&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -4979,7 +4889,7 @@ In order to successfully complete your claim, you must agree to rights and respo
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants reason for not pursuing alternatives">
-              <doc-attr id="p89@kyfpr_rmod" />
+              <doc-attr id="p154@kyfpr_rmod" />
               <doc-attr id="scr_not_pursued_description" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why were alternatives not pursued?&lt;/p&gt;</caption>
@@ -6970,7 +6880,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s114" name="Quit Details (Accepted Offer)  for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" folder="31">
+      <screen type="Question" id="s114" name="Quit Details (Seek, Accept, Maintain Other Work)  for %fpr_emt_visible_name%" public-id="" order="1" screen-attr="" folder="31">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -6981,10 +6891,21 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;You have indicated you quit this employment because you accepted an offer of work.&lt;p&gt;&lt;br&gt;
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pbs"&gt;You have indicated you quit this employment to seek, accept, or maintain other employment.&lt;p&gt;&lt;br&gt;
 </caption>
           </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="...">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -6995,7 +6916,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               </property>
             </control-properties>
             <input-attr text="the claimants reason for accepting an offer of work">
-              <doc-attr id="p207@kyfpr_rmod" />
+              <doc-attr id="p194@kyfpr_rmod" />
               <doc-attr id="scr_reason_for_accepting" />
             </input-attr>
             <caption>&lt;p&gt;Please select the primary reason for leaving&lt;/p&gt;
@@ -7008,21 +6929,21 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <value code="To remain employed with another employer" default-visibility="enabled">To remain employed with another employer</value>
             </values>
           </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s115" name="Prospect of Work Details  for %fpr_emt_visible_name%" public-id="" order="2" screen-attr="" folder="31">
+        <controls>
           <label visible-by-default="true">
             <control-properties>
-              <property name="text-style" type="string">Heading 3</property>
-              <property name="IsHTML" type="boolean">false</property>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
               <property name="ClassOverride" type="string">
               </property>
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>ToDo Fix question</caption>
+            <caption>&lt;br&gt;</caption>
           </label>
-        </controls>
-      </screen>
-      <screen type="Question" id="s115" name="Prospect of Work Details  for %fpr_emt_visible_name%" public-id="" order="2" screen-attr="" folder="31">
-        <controls>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -7032,9 +6953,22 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant voluntarily left the employment to accept (temporary, less than full time) work">
+              <doc-attr id="b578@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_for_temp_ltft_work" />
             </input-attr>
-            <caption>&lt;p&gt;Did you leave the employment to accept temporary or less than full-time employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did you leave this employment to accept temporary or less than full-time employment?&lt;/p&gt;</caption>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p&gt;Was this employment 100 road miles or more from your home, one way?&lt;p class="pr"&gt;This needs to be Yes/No question, then if Yes, will ask follow-up question if left for employment that is less than 100 miles...&lt;/p&gt;</caption>
+          </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
@@ -7044,7 +6978,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant left the employment which is one hundred (100) road miles or more from his home to accept work that is less than one hundred (100) road miles">
-              <doc-attr id="b481@kyfpr_rmod" />
+              <doc-attr id="b499@kyfpr_rmod" />
               <doc-attr id="emt_gt_100_lt_100" />
             </input-attr>
             <caption>&lt;p&gt;Did you leave this employment which is one hundred (100) road miles or more from your home 
@@ -7059,12 +6993,14 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant accepted an offer of new employment prior to leaving the employment">
+              <doc-attr id="b810@kyfpr_rmod" />
+              <doc-attr id="fpr_accepted_offer_prior_tle" />
             </input-attr>
-            <caption>&lt;p&gt;Did you accept an offer of new employment prior to leaving this employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did you accept an offer of new work prior to leaving this employment?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s116" name="Prospect of Work Details Accepted Offer  for %fpr_emt_visible_name%" public-id="" order="3" screen-attr="" folder="31">
+      <screen type="Question" id="s116" name="Prospect of Work Details Accepted Offer for %fpr_emt_visible_name%" public-id="" order="3" screen-attr="" folder="31">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -7087,7 +7023,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the business that extended the claimant the new job offer">
-              <doc-attr id="p191@kyfpr_rmod" />
+              <doc-attr id="p195@kyfpr_rmod" />
               <doc-attr id="scr_offer_business" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of the business that extended the new job offer?&lt;/p&gt;
@@ -7103,7 +7039,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person that extended the claimant the new job offer">
-              <doc-attr id="p192@kyfpr_rmod" />
+              <doc-attr id="p196@kyfpr_rmod" />
               <doc-attr id="scr_offer_person" />
             </input-attr>
             <caption>&lt;p&gt;What was the name of the person who offered the job?&lt;/p&gt;
@@ -7119,7 +7055,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the address of the business that extended the claimant the new job offer">
-              <doc-attr id="p193@kyfpr_rmod" />
+              <doc-attr id="p197@kyfpr_rmod" />
               <doc-attr id="scr_offer_address" />
             </input-attr>
             <caption>&lt;p&gt;What is the address of the business that extended the new job offer?&lt;/p&gt;
@@ -7135,7 +7071,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the phone number of the business">
-              <doc-attr id="p307@kyfpr_rmod" />
+              <doc-attr id="p311@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_phone" />
             </input-attr>
             <caption>&lt;p&gt;What is the phone number of the business?&lt;/p&gt;
@@ -7150,7 +7086,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the new job was offered">
-              <doc-attr id="p308@kyfpr_rmod" />
+              <doc-attr id="p312@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_offer_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the new job offered?&lt;/p&gt;
@@ -7164,57 +7100,8 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the date that the new employement opportunity is scheduled to begin">
-              <doc-attr id="p194@kyfpr_rmod" />
-              <doc-attr id="scr_offer_begin_date" />
-            </input-attr>
-            <caption>&lt;p&gt;On what date is the new job to begin?&lt;/p&gt;
-</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the schedule of the new job">
-              <doc-attr id="p310@kyfpr_rmod" />
-              <doc-attr id="scr_rh_new_job_schedule" />
-            </input-attr>
-            <caption>&lt;p&gt;What is the schedule of the new job?&lt;/p&gt;
-</caption>
-            <values>
-              <value code="" default-visibility="enabled">
-              </value>
-              <value code="Full-time Permanent" default-visibility="enabled">Full-time Permanent</value>
-              <value code="Full-time Temporary" default-visibility="enabled">Full-time Temporary</value>
-              <value code="Part-time Permanent" default-visibility="enabled">Part-time Permanent</value>
-              <value code="Part-time Temporary" default-visibility="enabled">Part-time Temporary</value>
-            </values>
-          </input>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;hr&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
             <input-attr text="the claimant began working at the new job">
-              <doc-attr id="b762@kyfpr_rmod" />
+              <doc-attr id="b772@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_is_working" />
             </input-attr>
             <caption>&lt;p&gt;Did you begin working at the new job?&lt;/p&gt;</caption>
@@ -7228,7 +7115,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pb"&gt;If Not:&lt;/p&gt;</caption>
+            <caption>&lt;p class="pb"&gt;If No:&lt;/p&gt;</caption>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -7240,11 +7127,49 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the reason that the claimant has not commenced employment with the new business">
-              <doc-attr id="p195@kyfpr_rmod" />
+              <doc-attr id="p199@kyfpr_rmod" />
               <doc-attr id="scr_offer_why_not" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why have you not started yet?&lt;/p&gt;
 </caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date that the new employement opportunity is scheduled to begin">
+              <doc-attr id="p198@kyfpr_rmod" />
+              <doc-attr id="scr_offer_begin_date" />
+            </input-attr>
+            <caption>&lt;p&gt;On what date did/will the new job begin?&lt;/p&gt;
+</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the schedule of the new job">
+              <doc-attr id="p314@kyfpr_rmod" />
+              <doc-attr id="scr_rh_new_job_schedule" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the schedule of the new job?&lt;/p&gt;
+</caption>
+            <values>
+              <value code="" default-visibility="enabled">
+              </value>
+              <value code="Full-time Permanent" default-visibility="enabled">Full-time Permanent</value>
+              <value code="Full-time Temporary" default-visibility="enabled">Full-time Temporary</value>
+              <value code="Part-time Permanent" default-visibility="enabled">Part-time Permanent</value>
+              <value code="Part-time Temporary" default-visibility="enabled">Part-time Temporary</value>
+            </values>
           </input>
         </controls>
       </screen>
@@ -7299,13 +7224,13 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the employment labor dispute started">
-              <doc-attr id="p237@kyfpr_rmod" />
+              <doc-attr id="p241@kyfpr_rmod" />
               <doc-attr id="scr_dispute_start_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date did the labor dispute begin?&lt;/p&gt;
 </caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="select" select-style="Dropdown" default-value="LD04">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -7316,17 +7241,15 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               </property>
             </control-properties>
             <input-attr text="the claimants work status when the employment labor dispute started">
-              <doc-attr id="p238@kyfpr_rmod" />
+              <doc-attr id="p242@kyfpr_rmod" />
               <doc-attr id="scr_dispute_start_status" />
             </input-attr>
             <caption>&lt;p&gt;What was your employment status on the date the labor dispute began?&lt;/p&gt;</caption>
             <values>
-              <value code="" default-visibility="enabled">
-              </value>
-              <value code="On leave of absence" default-visibility="enabled">On leave of absence</value>
-              <value code="On lay off" default-visibility="enabled">On lay off</value>
-              <value code="On Suspension" default-visibility="enabled">On Suspension</value>
-              <value code="Working" default-visibility="enabled">Working</value>
+              <value code="LD01" default-visibility="enabled">Working</value>
+              <value code="LD02" default-visibility="enabled">On Leave Of Abscence</value>
+              <value code="LD03" default-visibility="enabled">On Lay Off</value>
+              <value code="LD04" default-visibility="enabled">On Suspension</value>
             </values>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
@@ -7338,7 +7261,7 @@ to accept work that is less than one hundred (100) road miles?&lt;/p&gt;</captio
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employment's bona fide labor dispute is in active progress">
-              <doc-attr id="b564@kyfpr_rmod" />
+              <doc-attr id="b559@kyfpr_rmod" />
               <doc-attr id="fpr_bona_fide_labor_dispute" />
             </input-attr>
             <caption>&lt;p&gt;Is the labor dispute in active progress?&lt;/p&gt;</caption>
@@ -9330,7 +9253,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employer terminated the claimants employment by requiring retirement">
-              <doc-attr id="b741@kyfpr_rmod" />
+              <doc-attr id="b712@kyfpr_rmod" />
               <doc-attr id="scr_mandatory_retirement_terminated" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer end your employment by requiring you to retire?&lt;/p&gt;</caption>
@@ -9344,7 +9267,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant would have been able to continue working for this employer had they not retired">
-              <doc-attr id="b742@kyfpr_rmod" />
+              <doc-attr id="b713@kyfpr_rmod" />
               <doc-attr id="scr_mandatory_retirement_continue" />
             </input-attr>
             <caption>&lt;p&gt;Would you have been allowed to continue working for this employer if you had not retired?&lt;/p&gt;</caption>
@@ -9368,9 +9291,9 @@ employment application (whether or not you agree)?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer had a manditory retirement policy">
-              <doc-attr id="b743@kyfpr_rmod" />
-              <doc-attr id="scr_mandatory_retirement_policy" />
+            <input-attr text="the employer had a mandatory retirement policy">
+              <doc-attr id="b714@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_m_retirement_policy" />
             </input-attr>
             <caption>&lt;p&gt;Did your employer have a mandatory retirement policy?&lt;/p&gt;</caption>
           </input>
@@ -9394,7 +9317,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant agreed to the retirement policy at the time of their hire">
-              <doc-attr id="b744@kyfpr_rmod" />
+              <doc-attr id="b578@kyfpr_rmod" />
               <doc-attr id="scr_mandatory_retirement_agreement" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Did you agree to the mandatory retirement policy at the time of your hire?&lt;/p&gt;</caption>
@@ -9418,9 +9341,9 @@ employment application (whether or not you agree)?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant agreed to the manditory retirement as a condition of continued employment">
-              <doc-attr id="b745@kyfpr_rmod" />
-              <doc-attr id="scr_mandatory_retirement_agreed" />
+            <input-attr text="the claimant agreed to the mandatory retirement as a condition of continued employment">
+              <doc-attr id="b579@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_agree_m_retirement" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Did you agree to the mandatory retirement as a condition of continued employment?&lt;/p&gt;</caption>
           </input>
@@ -10557,6 +10480,17 @@ To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remov
             </input-attr>
             <caption>&lt;p class="rt"&gt;Enter any assertion of a test-case specific processing override date&lt;/p&gt;</caption>
           </input>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;&lt;p class="pred"&gt;It is unfortunate that this technique works with every kind of input EXCEPT text &lt;br&gt;Thank you Oracle&lt;/p&gt;</caption>
+          </label>
         </controls>
       </screen>
       <screen type="Question" id="s180" name="Laid Off Notification Details for %fpr_emt_visible_name%" public-id="" folder="36" order="2">
@@ -10962,6 +10896,8 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the result of the labor dispute">
               <doc-attr id="p316@kyfpr_rmod" />
@@ -11148,8 +11084,8 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant voluntarily requested a reduction in the hours of the employment">
-              <doc-attr id="b498@kyfpr_rmod" />
+            <input-attr text="the claimant requested a reduction in the hours of the employment">
+              <doc-attr id="b559@kyfpr_rmod" />
               <doc-attr id="emt_requested_reduction" />
             </input-attr>
             <caption>&lt;p&gt;Did you request that your working hours be reduced?&lt;/p&gt;</caption>
@@ -13060,7 +12996,7 @@ addressing your concerns with the employer)?&lt;/p&gt;</caption>
               <doc-attr id="b111@kyfpr_rmod" />
               <doc-attr id="fpr_labor_union_work_old" />
             </input-attr>
-            <caption>&lt;p&gt;Does the labor union find work for you?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Does the trade union find work for you?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -14141,9 +14077,9 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employer had a manditory retirement policy">
-              <doc-attr id="b699@kyfpr_rmod" />
-              <doc-attr id="scr_mandatory_retirement_policy" />
+            <input-attr text="the employer had a mandatory retirement policy">
+              <doc-attr id="b714@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_m_retirement_policy" />
             </input-attr>
             <caption>&lt;p&gt;Did your employer have a mandatory retirement policy?&lt;/p&gt;</caption>
           </input>
@@ -14156,7 +14092,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employment's mandatory policy included retirement benefits (per the claimant)">
-              <doc-attr id="b560@kyfpr_rmod" />
+              <doc-attr id="b544@kyfpr_rmod" />
               <doc-attr id="fpr_emt_pol_inc_ret_ben" />
             </input-attr>
             <caption>&lt;p&gt;Did the employer's mandatory policy include retirement benefits?&lt;/p&gt;</caption>
@@ -14170,7 +14106,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant would have been able to continue working for this employer had they not retired">
-              <doc-attr id="b698@kyfpr_rmod" />
+              <doc-attr id="b713@kyfpr_rmod" />
               <doc-attr id="scr_mandatory_retirement_continue" />
             </input-attr>
             <caption>&lt;p&gt;Would you have been allowed to continue working for this employer if you had not retired?&lt;/p&gt;</caption>
@@ -14195,7 +14131,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant agreed to the retirement policy at the time of their hire">
-              <doc-attr id="b700@kyfpr_rmod" />
+              <doc-attr id="b578@kyfpr_rmod" />
               <doc-attr id="scr_mandatory_retirement_agreement" />
             </input-attr>
             <caption>&lt;p&gt;Did you agree to the mandatory retirement policy at the time of your hire?&lt;/p&gt;</caption>
@@ -14219,9 +14155,9 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant agreed to the manditory retirement as a condition of continued employment">
-              <doc-attr id="b701@kyfpr_rmod" />
-              <doc-attr id="scr_mandatory_retirement_agreed" />
+            <input-attr text="the claimant agreed to the mandatory retirement as a condition of continued employment">
+              <doc-attr id="b579@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_agree_m_retirement" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Did you agree to the mandatory retirement as a condition of continued employment?&lt;/p&gt;</caption>
           </input>
@@ -19770,6 +19706,102 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
           </label>
         </controls>
       </screen>
+      <screen type="Question" id="s5" name="Requested Quit or Resignation for %fpr_emt_visible_name%" public-id="" order="1" entity="fpr_employment" folder="45">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the employment's employer requested the claimant's resignation">
+              <doc-attr id="b579@kyfpr_rmod" />
+              <doc-attr id="emt_emp_request_resignation" />
+            </input-attr>
+            <caption>&lt;p&gt;Did the employer request that you quit or resign?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s67" name="Resignation Details for %fpr_emt_visible_name%" public-id="" order="2" folder="45">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pbs"&gt;You have indicated the employer requested that you quit or resign.&lt;/p&gt;
+</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="lines" type="integer">1</property>
+            </control-properties>
+            <input-attr text="the claimants explanation of why the employer requested their resignation">
+              <doc-attr id="p229@kyfpr_rmod" />
+              <doc-attr id="scr_resignation_request_explanation" />
+            </input-attr>
+            <caption>&lt;p&gt;What is the reason that your employer requested that you quit or resign?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant would have been terminated had they not resigned">
+              <doc-attr id="b710@kyfpr_rmod" />
+              <doc-attr id="scr_resignation_or_termination" />
+            </input-attr>
+            <caption>&lt;p&gt;Would you have been discharged (terminated) if you had not quit or resigned?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
     </screens>
     <documents />
     <screen-orders>
@@ -19824,8 +19856,8 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
           <connection from="12" to="1" />
         </connections>
       </flow>
-      <flow folder="3" order="9" name="GenericSeparationInvestigation" id="f8" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
-        <diagram><![CDATA[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]]></diagram>
+      <flow folder="3" order="9" name="GenericSeparationInvestigation" id="f8" entity="fpr_employment" public-id="" error="true" entry-node-id="0">
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
@@ -21833,6 +21865,27 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
               <boolean-val>false</boolean-val>
             </condition>
           </connection>
+        </connections>
+      </flow>
+      <flow folder="3" order="30" name="Quit_Verification" id="f62" entity="fpr_employment" public-id="" error="false" entry-node-id="0">
+        <diagram><![CDATA[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]]></diagram>
+        <nodes>
+          <node node-id="0" node-type="start" />
+          <node node-id="1" node-type="end" />
+          <node node-id="2" node-type="screen" screen-id="s5" mandatory="true" />
+          <node node-id="3" node-type="screen" screen-id="s67" mandatory="true" />
+          <node node-id="4" node-type="decision" attribute-id="the employment's employer requested the claimant's resignation" />
+        </nodes>
+        <connections>
+          <connection from="0" to="2" />
+          <connection from="2" to="4" />
+          <connection from="3" to="1" />
+          <connection from="4" to="3">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="4" to="1" />
         </connections>
       </flow>
     </flows>
