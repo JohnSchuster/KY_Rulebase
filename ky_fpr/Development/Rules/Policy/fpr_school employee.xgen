@@ -37,18 +37,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an employee of an educational service agency'))</parse>
         </text>
       </attribute>
-      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is employed by a governmental entity which was established for the purpose of providing services to an educational institution</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('by a governmental entity which was established for the purpose of providing services to an educational institution'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the governmental entity is operated exclusively for the purpose of providing services to an educational institution</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the governmental entity',singular),o('operated exclusively for the purpose of providing services to an educational institution'))</parse>
-        </text>
-      </attribute>
       <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is a full-time school employee who is not considered unemployed during a period of inclement weather</base>
@@ -68,36 +56,46 @@
         </text>
       </attribute>
     </entity>
-    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b23" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant has reasonable assurance of returning to the employment, performing same or similar work during the next term</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to the employment, performing same or similar work during the next term'))</parse>
+          <base>the employer that the claimant works for is an educational institution or an educational service agency</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer that the claimant works for',singular),o('an educational institution or an educational service agency'))</parse>
         </text>
       </attribute>
-      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b24" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the employment will be the same or similar</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,future,normal)),sb('the employment',singular),o('the same or similar'))</parse>
+          <base>the employer is a governmental entity which was established for the purpose of providing services to an educational institution</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a governmental entity which was established for the purpose of providing services to an educational institution'))</parse>
         </text>
       </attribute>
-      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant has a contract to perform work for the employment during the next term</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a contract to perform work for the employment during the next term'))</parse>
+          <base>the employer (the governmental entity), is operated exclusively for the purpose of providing services to an educational institution</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer (the governmental entity),',singular),o('operated exclusively for the purpose of providing services to an educational institution'))</parse>
         </text>
       </attribute>
-      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
-          <base>the claimant has reasonable assurance of performing work for the employment during the next term</base>
-          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of performing work for the employment during the next term'))</parse>
+          <base>the claimant has reasonable assurance of returning to the employer performing same or similar work during the next term</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to the employer performing same or similar work during the next term'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has a contract to perform work for the employer during the next term</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a contract to perform work for the employer during the next term'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has reasonable assurance of performing work for the employer during the next term</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of performing work for the employer during the next term'))</parse>
         </text>
       </attribute>
     </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
   <relationships>
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
@@ -120,16 +118,16 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is an employee of an educational service agency" ruleburst="true" concludes="b9" folder="0" source-offset="1248">
+    <rule id="1" name="the employer that the claimant works for is an educational institution or an educational service agency" ruleburst="true" concludes="b23" folder="0" source-offset="1570">
       <rule-xml>
-        <conclude attr-id="b9" entity-id="global" scope-id="global0">
+        <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b14" />
-              <attribute attr-id="b15" />
+              <attribute attr-id="b24" />
+              <attribute attr-id="b25" />
             </and>
           </condition>
           <otherwise>
@@ -138,20 +136,17 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant has reasonable assurance of returning to the employment, performing same or similar work during the next term" ruleburst="true" concludes="b16" folder="0" source-offset="1588">
+    <rule id="2" name="the claimant has reasonable assurance of returning to the employer performing same or similar work during the next term" ruleburst="true" concludes="b26" folder="0" source-offset="1958">
       <rule-xml>
-        <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b26" entity-id="employer" scope-id="employer0">
           <value>
             <true-value />
           </value>
           <condition>
-            <and>
-              <attribute attr-id="b17" />
-              <or>
-                <attribute attr-id="b18" />
-                <attribute attr-id="b19" />
-              </or>
-            </and>
+            <or>
+              <attribute attr-id="b27" />
+              <attribute attr-id="b28" />
+            </or>
           </condition>
           <otherwise>
             <false-value />
@@ -159,7 +154,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is a full-time school employee who is not considered unemployed during a period of inclement weather" ruleburst="true" concludes="b20" folder="0" source-offset="1976">
+    <rule id="3" name="the claimant is a full-time school employee who is not considered unemployed during a period of inclement weather" ruleburst="true" concludes="b20" folder="0" source-offset="2286">
       <rule-xml>
         <conclude attr-id="b20" entity-id="global" scope-id="global0">
           <value>
