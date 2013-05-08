@@ -2711,12 +2711,12 @@
           <base>the employer state</base>
         </text>
       </attribute>
-      <attribute name="p74" type="number" public-name="emr_zip">
+      <attribute name="p74" type="number" public-name="emr_zip" display-unformatted="true">
         <text>
           <base>the employer zip code</base>
         </text>
       </attribute>
-      <attribute name="p75" type="number" public-name="emr_phone">
+      <attribute name="p75" type="number" public-name="emr_phone" display-unformatted="true">
         <text>
           <base>the employer phone number</base>
         </text>
@@ -4404,11 +4404,6 @@
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to training'))</parse>
         </text>
       </attribute>
-      <attribute name="p129" type="text" public-name="scr_harrassment_description">
-        <text>
-          <base>the claimants description of the final incident of harassment that caused them to leave the employment.</base>
-        </text>
-      </attribute>
       <attribute name="p130" type="date" public-name="scr_harrassment_date">
         <text>
           <base>the date the final incident of harassment took place</base>
@@ -4441,11 +4436,6 @@
         <text>
           <base>the employment quit work related interview should branch to harassment</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment quit work related interview',plural),o('to harassment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p132" type="text" public-name="fpr_emt_incident_description">
-        <text>
-          <base>the claimant's description of the final incident that caused them to leave the employment</base>
         </text>
       </attribute>
       <attribute name="p133" type="date" public-name="fpr_emt_fincal_incident_date">
@@ -4866,11 +4856,6 @@
           <base>the claimants description of the steps they took to correct their behavior and maintain their employment</base>
         </text>
       </attribute>
-      <attribute name="p185" type="text" public-name="scr_poor_work_description">
-        <text>
-          <base>the claimants description of the final incident of unsatisfactory work or performance that led to their discharge</base>
-        </text>
-      </attribute>
       <attribute name="b770" type="boolean" public-name="scr_poor_work_aware">
         <text>
           <base>the claimant was made aware of their job responsibilities</base>
@@ -4969,11 +4954,6 @@
         <text>
           <base>the employment discharge interview should branch to employer-request</base>
           <parse>s(ver('10.4.2.18'),v(branch+should,t(simple,modal,normal)),sb('the employment discharge interview',plural),o('to employer-request'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p198" type="text" public-name="scr_dishonest_final_description">
-        <text>
-          <base>the claimants description of the final incident of dishonesty that led to their discharge</base>
         </text>
       </attribute>
       <attribute name="b795" type="boolean" public-name="scr_dishonest_explanation_given">
@@ -5786,11 +5766,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('able able to accomodate the restrictions that caused the claimant to request reduced hours'))</parse>
         </text>
       </attribute>
-      <attribute name="p383" type="text" public-name="fpr_emt_rh_description">
-        <text>
-          <base>the claimants description of the final incident that caused them to request reduced hours</base>
-        </text>
-      </attribute>
       <attribute name="p384" type="date" public-name="scr_rh_incident_date">
         <text>
           <base>the date that the incident of harassment occured which caused the claimant to request reduced hours</base>
@@ -5837,11 +5812,6 @@
       <attribute name="p390" type="text" public-name="scr_rh_conflict_change_description">
         <text>
           <base>the claimant description of how the religious conflict changed after accepting employment and prompted them to request reduced hours</base>
-        </text>
-      </attribute>
-      <attribute name="p391" type="text" public-name="scr_rh_paydescription">
-        <text>
-          <base>the claimants description of the final pay practice incident that caused them to request reduced hours</base>
         </text>
       </attribute>
       <attribute name="p392" type="date" public-name="scr_rh_pay_incident_date">
@@ -5952,7 +5922,7 @@
       </attribute>
       <attribute name="p412" type="text" public-name="fpr_emt_final_event_desc">
         <text>
-          <base>the claimants description of the final event which caused them to quit</base>
+          <base>the claimants description of the final incident</base>
         </text>
       </attribute>
       <attribute name="b1000" type="boolean" public-name="scr_rh_rollback_since_hire">
@@ -6205,20 +6175,9 @@
           <base>the claimants description of how the rule or policy was not uniformly enforced</base>
         </text>
       </attribute>
-      <attribute name="b1036" type="boolean" public-name="fpr_emt_policy_v_exp">
-        <text>
-          <base>the claimant provided an explanantion why the rule or policy was violated during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('an explanantion why the rule or policy was violated during the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="p455" type="text" public-name="scr_su_no_explanation">
         <text>
           <base>the reason that the claimant did not provide an explanation</base>
-        </text>
-      </attribute>
-      <attribute name="p456" type="text" public-name="scr_su_final_desc">
-        <text>
-          <base>the claimants description of the final incident of unsatisfactory work that led to their suspension</base>
         </text>
       </attribute>
       <attribute name="b1038" type="boolean" public-name="scr_su_training">
@@ -6271,11 +6230,6 @@
           <base>the claimants explanation for their unsatisfactory performance</base>
         </text>
       </attribute>
-      <attribute name="p463" type="text" public-name="scr_su_behavior_issue">
-        <text>
-          <base>the claimants description of the final incident or behavior that led to their suspension</base>
-        </text>
-      </attribute>
       <attribute name="b1044" type="boolean" public-name="scr_su_endangered">
         <text>
           <base>the claimants actions/behavior/conduct endangered themselves or others</base>
@@ -6296,11 +6250,6 @@
       <attribute name="p466" type="text" public-name="scr_dishonest_desc">
         <text>
           <base>the claimants description of the way that the employer alleged they were dishonest (whether or not they agree).</base>
-        </text>
-      </attribute>
-      <attribute name="p467" type="text" public-name="scr_dishonest_description">
-        <text>
-          <base>the claimants description of the final incident of dishonesty that led to thier suspension</base>
         </text>
       </attribute>
       <attribute name="b1048" type="boolean" public-name="scr_sc_dishonest_agree">
@@ -6341,11 +6290,6 @@
           <base>the name of the person who gave the claimant the instruction that they did not obey</base>
         </text>
       </attribute>
-      <attribute name="p476" type="text" public-name="scr_su_license_description">
-        <text>
-          <base>the claimants description of the final incident which led to the loss of their driver's license</base>
-        </text>
-      </attribute>
       <attribute name="b1057" type="boolean" public-name="scr_su_license_required">
         <text>
           <base>the claimants duties require them to operate a motor vehicle</base>
@@ -6368,11 +6312,6 @@
         <text>
           <base>the claiumant was responsible to maintain a driver's license as a requirement for continued employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claiumant',singular),o('responsible to maintain a driver''s license as a requirement for continued employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p477" type="text" public-name="scr_su_uninsurable_description">
-        <text>
-          <base>the claimants description of the final incident which led them to become an uninsurable driver.</base>
         </text>
       </attribute>
       <attribute name="b1061" type="boolean" public-name="scr_su_insured_required">
@@ -6431,16 +6370,6 @@
         <text>
           <base>the claimant was suspended due to their participation in a union during the employment</base>
           <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('due to their participation in a union during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="p482" type="text" public-name="fpr_emt_discharge_incident_desc">
-        <text>
-          <base>the claimant's description of the final incident which led to their discharge</base>
-        </text>
-      </attribute>
-      <attribute name="p483" type="text" public-name="scr_su_other_final">
-        <text>
-          <base>the claimants description of the fiinal incident that led to their suspension</base>
         </text>
       </attribute>
       <attribute name="p485" type="text" public-name="scr_er_reduction_status">
@@ -6529,34 +6458,9 @@
           <base>the date the claimant received warning prior to their reduction in hours</base>
         </text>
       </attribute>
-      <attribute name="p496" type="text" public-name="scr_rh_final_desc">
-        <text>
-          <base>the claimants description of the final incident of unsatisfactory work that led to their reduction in hours</base>
-        </text>
-      </attribute>
-      <attribute name="p497" type="text" public-name="scr_rh_final_behavior_desc">
-        <text>
-          <base>the claimants description of the final incident or behavior that led to their reduction in hours</base>
-        </text>
-      </attribute>
-      <attribute name="p498" type="text" public-name="scr_rh_final_dishonesty_desc">
-        <text>
-          <base>the claimants description of the final incident of dishonesty that led to thier reduction in hours</base>
-        </text>
-      </attribute>
-      <attribute name="p499" type="text" public-name="scr_rh_final_unclassified_desc">
-        <text>
-          <base>the claimants description of the fiinal incident that led to their reduction in hours</base>
-        </text>
-      </attribute>
       <attribute name="p500" type="text" public-name="scr_rh_drug_incident_desc">
         <text>
           <base>the claimants description of the drug related incident that led to their reduction in hours</base>
-        </text>
-      </attribute>
-      <attribute name="p502" type="text" public-name="scr_su_final_drug_description">
-        <text>
-          <base>the claimants description of the final drug related incident that led to their suspension</base>
         </text>
       </attribute>
       <attribute name="p503" type="text" public-name="scr_rh_instruction_person_title">
@@ -6717,11 +6621,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('aware of the employer''s rules and policies'))</parse>
         </text>
       </attribute>
-      <attribute name="p512" type="text" public-name="fpr_emt_event_cause_redh">
-        <text>
-          <base>the claimant's description of the final event that caused them to request a reduction in hours</base>
-        </text>
-      </attribute>
       <attribute name="b1139" type="boolean" public-name="fpr_emt_action_reasonable">
         <text>
           <base>the (employer action, working condition) was reasonable for the employment</base>
@@ -6822,6 +6721,11 @@
         <text>
           <base>the claimant was on leave of absence when the employment's labor dispute started</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('on leave of absence when the employment''s labor dispute started'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p518" type="text" public-name="fpr_rule_violation_reason">
+        <text>
+          <base>the claimants explanantion of why the rule or policy was violated during the employment</base>
         </text>
       </attribute>
     </entity>
