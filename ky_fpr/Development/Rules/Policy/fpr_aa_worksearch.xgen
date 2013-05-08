@@ -493,12 +493,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the decision',singular),o('discretionary: the claimant is not physically able to work'))</parse>
         </text>
       </attribute>
-      <attribute name="b135" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is presented with work opportunities by the labor union</base>
-          <parse>s(ver('10.4.2.18'),v(present,t(simple,present,normal)),ob('the claimant',singular),o('with work opportunities by the labor union'))</parse>
-        </text>
-      </attribute>
       <attribute name="b136" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant has a reliable means of transportation</base>
@@ -541,12 +535,6 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('acceptance of suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b143" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a member in good standing of a labor union</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a labor union'))</parse>
-        </text>
-      </attribute>
       <attribute name="b145" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claim is in the process of being filed</base>
@@ -569,6 +557,18 @@
         <text lang="en-US">
           <base>the INS has confirmed the alien's registration number is (valid, current)</base>
           <parse>s(ver('10.4.2.18'),v(confirm,t(simple,present,perfect)),sb('the INS',singular),o('the alien''s registration number is (valid, current)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b149" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a member in good standing of a trade union</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a member in good standing of a trade union'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b150" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is presented with work opportunities by the trade union</base>
+          <parse>s(ver('10.4.2.18'),v(present,t(simple,present,normal)),ob('the claimant',singular),o('with work opportunities by the trade union'))</parse>
         </text>
       </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -1091,8 +1091,8 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b143" />
-              <attribute attr-id="b135" />
+              <attribute attr-id="b149" />
+              <attribute attr-id="b150" />
             </and>
           </condition>
           <otherwise>
