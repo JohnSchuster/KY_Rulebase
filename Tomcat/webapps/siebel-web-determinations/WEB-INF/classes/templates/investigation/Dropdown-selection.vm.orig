@@ -1,0 +1,26 @@
+#set( $listValues = ${control.getListOptions()} )
+
+#if(${control.isReadOnly()})
+    #set($readOnlyString = "disabled")
+#else
+    #set($readOnlyString = "")
+#end
+<select id="${control.getEncodedID()}" name="${control.getId()}" tabindex="#tabIndex()" $readOnlyString ${styleAttribute} ${classAttribute} >
+    #foreach( $listValue in $listValues )
+        #if($listValue.isVisible())
+            #if( ${control.getDisplayValue()} == ${listValue.getValue()} )
+               <option selected value="${listValue.getValue()}">${listValue.getDisplayText()}</option>
+            #elseif ($control.getControlType().equals("BooleanInputControl"))
+                #if ($control.isTrue() && $listValue.getValue().equals(${boolean-true}))
+                        <option selected value="${listValue.getValue()}">${listValue.getDisplayText()}</option>
+                #elseif ($control.isFalse() && $listValue.getValue().equals(${boolean-false}))
+                        <option selected value="${listValue.getValue()}">${listValue.getDisplayText()}</option>
+                #else
+                        <option value="${listValue.getValue()}">${listValue.getDisplayText()}</option>
+                #end
+            #else
+               <option value="${listValue.getValue()}">${listValue.getDisplayText()}</option>
+            #end
+        #end
+    #end
+</select>

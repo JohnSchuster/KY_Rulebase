@@ -1,0 +1,14 @@
+## Render the control text as a link if it has commentary, or plain text otherwise
+	#if (${validCommentaryTarget} && ${control.hasCommentary()})
+		#set ( $controlCommentaryURL = ${control.getCommentaryURL()})		
+    	<a class="control-commentary-link" href="$controlCommentaryURL" target="${commentaryTarget}">
+    		$control.getText()
+    	</a>
+    	## set display properties for commentary target unless already set
+    	#if (!$commentaryExists)	
+    		#set ( $commentaryExists = ${control.hasCommentary()} )
+			#set ( $commentaryURL = $controlCommentaryURL)
+    	#end    	
+	#else
+    	$control.getText()
+	#end

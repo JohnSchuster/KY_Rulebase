@@ -1,0 +1,31 @@
+#if( $control.isVisible() )
+    #parse( "investigation/controlMessages.vm" )
+    #if( $control.isChecked() )
+        #set( $checkedString = "checked" )
+    #else
+        #set( $checkedString = "" )
+    #end
+    #if( $control.isReadOnly() )
+        #set( $disabledString = "disabled" )
+    #else
+        #set( $disabledString = "" )
+    #end
+    #parse( "investigation/input-style-overrides.vm" )
+    <div class="info">
+    #if($control.isMandatory() == "true" || $control.isMandatory() == "True")
+        <span class="mandatory">${mandatory-text}</span>
+    #end
+        &nbsp;
+    </div>
+    <div class="control-checkbox">
+        #if(!$controlFirst)
+            <label for="${control.getEncodedID()}">#parse("investigation/control-text.vm")</label>
+        #end
+        <span class="input-checkbox">
+        <input type="checkbox" name="${control.getId()}" id="${control.getEncodedID()}" ${disabledString} value="yes" ${checkedString} tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
+        </span>
+        #if( $controlFirst)
+            <label for="${control.getEncodedID()}">#parse("investigation/control-text.vm")</label>
+        #end
+    </div>
+#end
