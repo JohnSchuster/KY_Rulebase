@@ -1,0 +1,22 @@
+#if( ${control.getButtonClass().equals("submit")} )
+    <hr class="submit-break"/>
+    <div class="button-spacer">&nbsp;</div>
+    <div class="info">&nbsp;</div>
+    <div class="submit-button">
+#end
+
+
+#if( ${control.isEnabled()} )
+    #set( $disabledString = "" )
+#else
+    #set( $disabledString = "disabled" )
+#end
+    
+#if( ${control.isVisible()})
+    #parse( "investigation/controlMessages.vm" )
+    <input class="${control.getButtonClass()}" id="${control.getEncodedID()}" name="${control.getId()}" type="submit" value="${control.getText()}" alt="${control.getText()}" tabindex="#tabIndex()" $disabledString>
+    #if( ${control.getButtonClass().equals("submit")} )
+        </div>
+    #end
+#end
+

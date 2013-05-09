@@ -1,4 +1,5 @@
-## The variable control is available in scope, and is set to the DateInputInterviewControl that this template is to render
+##xRulz customization of the DateInputControl.vm 
+##The variable control is available in scope, and is set to the DateInputInterviewControl that this template is to render
 
 #if( $control.isVisible() )
     #parse( "investigation/controlMessages.vm" )
@@ -25,55 +26,20 @@
         #elseif( $control.getSelectionStyle().equals("Radiobutton") )
             #parse( "investigation/Radiobutton-selection.vm" )
         #else
-
-                #if( $control.isReadOnly() )
-                    #set( $disabledString = "disabled" )
-                #else
-                    #set( $disabledString = "" )
-                #end
-                #if(${control.getInputStyle()} == "ymd")
-                    #set( $numListClassAttribute = "class=${quoteChar}${classList} num-list ${quoteChar}")
-                    <span class="date-control">
-                            <label for="${control.getEncodedID()}" class="hidden">${control.getText()} ${day-selection-alt}</label>
-                        <select id="${control.getEncodedID()}" name="${control.getDayId()}" $disabledString tabindex="#tabIndex()" ${styleAttribute} ${numListClassAttribute}>
-                        <option value=""></option>
-                        #foreach($val in [1..31])
-                            #if(${control.getDayValue()} == $val)
-                                <option value="$val" selected>$val</option>
-                            #else
-                                <option value="$val">$val</option>
-                            #end
-                        #end
-                        </select>
-                    </span>
-                    <span class="date-control">
-                        <label for="month-${control.getEncodedID()}" class="hidden">${control.getText()} ${month-selection-alt}</label>
-                        <select id="month-${control.getEncodedID()}" name="${control.getMonthId()}" $disabledString tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
-                            <option value=""></option>
-                            <option value="1" #if(${control.getMonthValue()}==1) selected #end >${month-jan}</option>
-                            <option value="2" #if(${control.getMonthValue()}==2) selected #end >${month-feb}</option>
-                            <option value="3" #if(${control.getMonthValue()}==3) selected #end >${month-mar}</option>
-                            <option value="4" #if(${control.getMonthValue()}==4) selected #end >${month-apr}</option>
-                            <option value="5" #if(${control.getMonthValue()}==5) selected #end >${month-may}</option>
-                            <option value="6" #if(${control.getMonthValue()}==6) selected #end >${month-jun}</option>
-                            <option value="7" #if(${control.getMonthValue()}==7) selected #end >${month-jul}</option>
-                            <option value="8" #if(${control.getMonthValue()}==8) selected #end >${month-aug}</option>
-                            <option value="9" #if(${control.getMonthValue()}==9) selected #end >${month-sep}</option>
-                            <option value="10" #if(${control.getMonthValue()}==10) selected #end >${month-oct}</option>
-                            <option value="11" #if(${control.getMonthValue()}==11) selected #end >${month-nov}</option>
-                            <option value="12" #if(${control.getMonthValue()}==12) selected #end >${month-dec}</option>
-                        </select>
-                    </span>
-                    <span class="date-control">
-                        <label for="year-${control.getEncodedID()}" class="hidden">${control.getText()} ${year-selection-alt}</label>
-                        <input id="year-${control.getEncodedID()}" type="text" name="${control.getYearId()}" $readOnlyString value="${control.getYearValue()}" maxlength="4" size="4" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
-                    </span>
-                #else
-                    <span class="date-control">
-                        <label for="date-${control.getEncodedID()}" class="hidden">${control.getText()} ${date-selection-alt}</label>
-                        <input id="date-${control.getEncodedID()}" type="text" name="${control.getId()}" $readOnlyString value="${control.getDisplayValue()}" maxlength="${date-field-max-length}" size="${date-field-length}" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
-                    </span>
-                #end
+            #if( $control.isReadOnly() )
+                #set( $disabledString = "disabled" )
+            #else
+                #set( $disabledString = "" )
+            #end
+            <span class="date-control">
+                <label for="date-${control.getEncodedID()}" class="hidden">${control.getText()} ${date-selection-alt}</label>
+                <input id="date-${control.getEncodedID()}" type="text" name="${control.getId()}" $readOnlyString value="${control.getDisplayValue()}" maxlength="${date-field-max-length}" size="${date-field-length}" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
+				## xRulz:Start Attach the datepicker by the OWD Selector
+				<script type="text/javascript">
+					$( "#date-${control.getEncodedID()}" ).datepicker();
+				</script>
+				## xRulz:End
+            </span>
         #end
     </div>
 #end

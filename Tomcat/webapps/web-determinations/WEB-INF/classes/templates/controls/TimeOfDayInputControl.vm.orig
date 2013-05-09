@@ -1,0 +1,112 @@
+## The variable inputControl is available in scope, and is set to the TimeOfDayInputInterviewControl that this template is to render
+
+
+#if( $control.isVisible() )
+    #parse( "investigation/controlMessages.vm" )
+
+    #if( $control.isReadOnly() )
+        #set( $readOnlyString = "readonly" )
+    #else
+        #set( $readOnlyString = "" )
+    #end
+
+    #parse( "investigation/input-style-overrides.vm" )
+
+<div class="question">#parse("investigation/identifier-text.vm")<label
+        for="${control.getEncodedID()}">#parse("investigation/control-text.vm")</label></div>
+<div class="info">
+    #if($control.isMandatory() == "true" || $control.isMandatory() == "True")
+        <span class="mandatory">${mandatory-text}</span>
+    #end
+    &nbsp;
+</div>
+<div class="control">
+        #if( $control.getSelectionStyle().equals("Dropdown") )
+            #parse( "investigation/Dropdown-selection.vm" )
+        #elseif( $control.getSelectionStyle().equals("Listbox") )
+            #parse( "investigation/Listbox-selection.vm" )
+        #elseif( $control.getSelectionStyle().equals("Radiobutton") )
+            #parse( "investigation/Radiobutton-selection.vm" )
+        #else
+            #if( $control.isReadOnly() )
+                #set( $disabledString = "disabled" )
+            #else
+                #set( $disabledString = "" )
+            #end
+
+            <fieldset id="${control.getEncodedID()}">
+                <legend>#parse("investigation/control-text.vm")</legend>
+                #if(${control.getInputStyle()} == "hms" || ${control.getInputStyle()} == "hm")
+                    #set( $numListClassAttribute = "class=${quoteChar}${classList} num-list ${quoteChar}")
+
+                    <span class="date-control">
+                            <select id="hr-${control.getEncodedID()}" name="${control.getHourId()}" $disabledString
+                                    tabindex="#tabIndex()" ${styleAttribute} ${numListClassAttribute}>
+                                <option value=""></option>
+                                #foreach($val in [0..23])
+                                    #if($val < 10)
+                                        #set($displayVal = "0${val}")
+                                    #else
+                                        #set($displayVal = "${val}")
+                                    #end
+                                    <option value="$val" #if(${control.getHourValue()}==$val)
+                                            selected #end >$displayVal</option>
+                                #end
+                            </select>
+                            <label for="hr-${control.getEncodedID()}"
+                                   class="hidden">${control.getText()} ${hour-selection-alt}</label>
+                        </span>
+                        <span class="date-control">
+                            <select id="min-${control.getEncodedID()}" name="${control.getMinuteId()}" $disabledString
+                                    tabindex="#tabIndex()" ${styleAttribute} ${numListClassAttribute}>
+                                <option value=""></option>
+                                #foreach($val in [0..59])
+                                    #if($val % ${control.getMinuteIncrement()} == 0)
+                                        #if($val < 10)
+                                            #set($displayVal = "0${val}")
+                                        #else
+                                            #set($displayVal = "${val}")
+                                        #end
+                                        <option value="$val" #if(${control.getMinuteValue()}==$val)
+                                                selected #end >${displayVal}</option>
+                                    #end
+                                #end
+                            </select>
+                            <label for="min-${control.getEncodedID()}"
+                                   class="hidden">${control.getText()} ${minute-selection-alt}</label>
+                        </span>
+                    #if(${control.getInputStyle()} == "hms")
+                        <span class="date-control">
+                                <select id="sec-${control.getEncodedID()}" name="${control.getSecondId()}" $disabledString
+                                        tabindex="#tabIndex()" ${styleAttribute} ${numListClassAttribute}>
+                                    <option value=""></option>
+                                    #foreach($val in [0..59])
+                                        #if($val % ${control.getSecondIncrement()} == 0)
+                                            #if($val < 10)
+                                                #set($displayVal = "0${val}")
+                                            #else
+                                                #set($displayVal = "${val}")
+                                            #end
+                                            <option value="$val" #if(${control.getSecondValue()}==$val)
+                                                    selected #end >${displayVal}</option>
+                                        #end
+                                    #end
+                                </select>
+                                <label for="sec-${control.getEncodedID()}"
+                                       class="hidden">${control.getText()} ${second-selection-alt}</label>
+                            </span>
+                    #end
+                #else
+                    <span class="date-control">
+                            <input id="time-${control.getEncodedID()}" type="text" name="${control.getId()}" $readOnlyString
+                                   value="${control.getDisplayValue()}" maxlength="8" size="8"
+                                   tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
+                            <label for="time-${control.getEncodedID()}"
+                                   class="hidden">${control.getText()} ${time-selection-alt}</label>
+                        </span>
+                #end
+            </fieldset>
+        #end
+
+</div>
+#end

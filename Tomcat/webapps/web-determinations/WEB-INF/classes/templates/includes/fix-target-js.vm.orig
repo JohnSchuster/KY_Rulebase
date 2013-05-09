@@ -1,0 +1,25 @@
+
+// apply to all links and forms
+jQuery(function() { 
+	jQuery("a").each(fixTarget);
+	jQuery("form").each(fixTarget);
+});
+
+function fixTarget(index, value) {
+
+	// frameset-top-target means that the link should go to the frame's parent
+	if (value.target == "${frameset-top-target}") {
+		try {
+			if (window.frameElement && (window.frameElement.name == "${opa-interview-frameset}")) {
+				value.target = "_parent";
+			}
+			else {
+				value.target = "_self";
+			}
+		}
+		// firefox may deny access to the frameset id in which case we are not in an owd frame
+		catch(error) {
+			value.target = "_self";
+		}
+	}
+}
