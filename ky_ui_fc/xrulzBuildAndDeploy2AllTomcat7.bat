@@ -6,7 +6,7 @@ rem Paths
 rem --------------------------------
 set sourcePath=C:\Dev\RB\KY_Rulebase\ky_ui_fc\Development\output
 set targetPath1=C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF\classes\rulebases
-set targetPath2=C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF\classes\rulebases
+set targetPath2=C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\web-determinations\WEB-INF\classes\rulebases
 
 set opm_compiler=C:\Program Files (x86)\Oracle\Policy Modeling\bin\Oracle.Policy.Modeling.CommandLineCompiler.exe
 set rb_ky_fpr=C:\Dev\RB\KY_Rulebase\ky_fpr\Development\ky_fpr.xprj
