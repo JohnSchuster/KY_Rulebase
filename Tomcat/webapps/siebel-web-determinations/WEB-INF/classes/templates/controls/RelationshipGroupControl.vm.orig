@@ -1,0 +1,18 @@
+##This applies to RelationshipGroup controls, which currently only appear on the summary screen.
+##For now we do not render anything for the control itself.
+#if (${control.isVisible()})
+    #foreach($instCtrl in ${control.getControls()})
+        #if(${instCtrl.isVisible()})
+            <ul>
+                #foreach($ctrl in ${instCtrl.getControls()})
+                    #set($control = $ctrl)
+                    #if( (${control.getControlType().equals("GoalControl")} || ${control.getControlType().equals("DocumentControl")}) && ${control.isVisible()} )
+                        <li>#parse ( "controls/${control.getControlType()}.vm" )</li>
+                    #else
+                        #parse ( "controls/${control.getControlType()}.vm" )
+                    #end
+                #end
+            </ul>
+        #end
+    #end
+#end

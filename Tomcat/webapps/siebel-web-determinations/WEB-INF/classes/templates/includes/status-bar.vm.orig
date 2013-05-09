@@ -1,0 +1,58 @@
+## Standard status bar
+## HTML Comments should be commented out when not debugging
+## <!-- begin status bar -->
+#if(${show-status-bar}  == "true")
+    <div id="status">
+        <div class="left">&nbsp;</div>
+        <div class="content">&nbsp;</div>
+        <div class="right">
+            #if(!${show-empty-status-bar})
+                <div id="status-info" >
+                    #if((${show-rulebase} == "true" || ${show-rulebase} == "True") && ${rulebase})
+                        ${rulebase-text} ${rulebase}
+                    #end
+                    #if((${show-locale} == "true" || ${show-locale} == "True") && ${locale})
+                        ${locale-text} ${locale}
+                    #end
+                    #if((${show-rulebase-version} == "true" || ${show-rulebase-version} == "True") && ${rulebase-version})
+                        ${rulebase-version-text} ${rulebase-version}
+                    #end
+                    #if((${show-rulebase-build-time}== "true" || ${show-rulebase-build-time}== "True") && ${rulebase-build-time})
+                        ${rulebase-build-time-text} ${rulebase-build-time}
+                    #end
+                    #if((${show-policy-modeling-version} == "true" || ${show-policy-modeling-version} == "True") && ${opm-version})
+                        ${policy-modeling-version-text} ${opm-version}
+                    #end
+                    #if((${show-user-id}  == "true" || ${show-user-id}  == "True") && ${user-id})
+                        ${user-id-text} ${user-id}
+                    #end
+                    #if((${show-case-id}  == "true" || ${show-case-id}  == "True") && ${case-id})
+                        ${case-id-text} ${case-id}
+                    #end
+                </div>
+            #else
+                &nbsp;
+            #end
+
+            #if ($progress && ($show-progress-bar == "true" || $show-progress-bar == "True"))
+                #set($progressWidth = 130)
+                #set($progressComplete = ($progressWidth * $progress.getFractionComplete()))
+                #set($progressComplete = $progressComplete.intValue())
+                #set($progressIncomplete = $progressWidth - $progressComplete)
+
+                <div id="progress-bar" style="width:${progressWidth}">
+                    #if( ${pagedir-right-to-left} == "true" || ${pagedir-right-to-left} == "True")
+                        ## for RTL languages the completeness bar needs to flow from right to left
+                        <div class="incomplete" style="width:${progressIncomplete}px">&nbsp;</div>
+                        <div class="complete" style="width:${progressComplete}px">&nbsp;</div>
+
+                    #else
+                        <div class="complete" style="width:${progressComplete}px">&nbsp;</div>
+                        <div class="incomplete" style="width:${progressIncomplete}px">&nbsp;</div>
+                    #end
+
+                </div>
+            #end
+        </div>
+    </div>
+#end
