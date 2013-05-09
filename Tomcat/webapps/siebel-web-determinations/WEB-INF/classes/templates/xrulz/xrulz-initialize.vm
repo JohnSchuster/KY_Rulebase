@@ -1,0 +1,82 @@
+// 	--- xRulz Client Side Code Development ---
+// 	--- See DesignGuidelinesReadMe.txt ---
+// 	---	SD, 2013-04-28
+$(function() {  // jQuery idiom that defers execution until the Browsers DOM ready event
+	$.datepicker.setDefaults({
+		showOn: "both",				// datepicker shows on field focus or icon/button click
+		showButtonPanel: true,		// simplifies closure of the popup
+		currentText: "Selected",		// moves back to current month/day
+		regional: "en",				// western region  
+		buttonImageOnly: false,
+		buttonImage: "calendar.gif",
+		buttonText: "Calendar",
+		appendText: "&nbsp mm/dd/yyyy",
+		dateFormat: "mm/dd/yy",
+		showOtherMonths: true,
+		yearRange: "1910:+1",		// Range 1950 thru current Year; does not display any future year
+		firstDay: 0, 				// Makes Sunday the first day of the week
+		constrainInput: true, 		//limits field input to valid chars
+		changeMonth: true,			//dropdown
+		changeYear: true 			//dropdown
+	});
+	$( "#date1" ).datepicker(); 	//Attach datepicker to Dom Node by it's CSS selector (example is an ID)
+	$( "#radio" ).buttonset();
+	
+	/* xRulz XR_CS_01 Screen Functions Start*/
+	/* -------------------------------------*/
+	// Set up a jQuery Wrapped Set for the Confirmation Div
+	var $xr_confirm = $( "#xr_confirm" );
+	// Handler
+	function xr_cs_01_btn_01_click( event ) {
+		// Handler for the Continue ( submit ) Button's click event
+		event.preventDefault();
+		event.stopPropagation();
+
+		if ( 0 == $( "input:checked" ).length ) {
+			//console.log("No radio button was selected");
+			$( "#xr_cs_01_t01" ).effect("highlight", {color :"#FF0000"}, 5000);
+			//alert("Please select a category, then click the Continue button");
+			return false;
+		} 
+		$( "#xr_cs_01_t01" ).stop( true, true ); // Clear and end any highlit
+		// Use the current wrapped set to set the dialog content
+		
+		var $temp = "You Have Selected: <br\><br\>" + $( "input:checked" ).parent().children().text();
+		
+		//Get the parent element of the checked input
+		//var checked = $( "input:checked" );
+		//var temp = "You Have Selected: <br\><br\>";
+		//temp = temp + $( $checked ).parent().first-child().text() + "<br\><br\>";
+		//temp = temp + $( $checked ).parent().nth-child(2).text();
+		
+		//console.log( $temp );
+		$( $xr_confirm ).html( $temp );
+		// Display the Dialog
+		$( $xr_confirm ).dialog( "open" );
+	}
+	
+	// Bind the handler to the "Continue" button's click event
+	$( "#xr_cs_01_btn_01" ).on( "click", xr_cs_01_btn_01_click );
+	
+	// Configure the dialog, and attach to the hidden Div by Id
+	$( $xr_confirm ).dialog( {
+		dialogClass: "no-close",  	// Drop the default close button
+		autoOpen: false, 			// Defer Showing the Dialog
+		resizable: true,
+		height:300,
+		minWidth:400,
+		modal: true,				// Force a response to this dialog
+		buttons: 
+			{ 	Cancel: function() {
+					$( this ).dialog( "close" );
+			},
+				Confirm: function() {
+					$("#owdInterviewForm").submit(); // Submit the OWD Form
+					$( this ).dialog( "close" );
+			}
+		}
+	});
+	/* -------------------------------------*/
+	/* xRulz XR_CS_01 Screen Functions End  */
+});
+

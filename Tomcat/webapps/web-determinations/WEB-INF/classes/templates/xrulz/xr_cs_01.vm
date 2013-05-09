@@ -1,0 +1,100 @@
+## xRulz Custom screen definition for xr_cs_01
+#set ( $xrulz_screen_id = $screen.getProperty("xRulzScreenId","") )
+##<h2>xRulz Custom Screen: $xrulz_screen_id</h2>	
+<h2>Below Are Descriptions of Several Categories Related to Loss of Employment.
+		<span id="xr_cs_01_t01">Please Select The One That Fits Your Situation</span>
+</h2>
+#set( $controlList = ${screen.getControls()} )
+<div id="xr_confirm" title="Please confirm..." ></div>
+<div class="radio-group" id="xr-${control.getEncodedID()}">
+	<fieldset id="xr_cs_01_fs">
+	        <legend>${control.getText()}</legend>
+			#foreach( $control in $controlList )
+				##<h2>ControlType ${control.getControlType()} </h2>
+				##<h2>ControlProperty $control.getProperty("xRulzCustomFieldId","") </h2>				
+				#if( "xr01" == $control.getProperty("xRulzCustomFieldId","") )
+					##  Process the radio groups set of list values
+					#set( $listValues = ${control.getListOptions()} )
+					#foreach( $listValue in $listValues )
+						##<p>id = $id, control.getId() = ${control.getId()}, velocityCount ${velocityCount} </p>
+						#set($id = $tabIndex)
+						<span>
+							<input  
+								type="radio" 
+								name="${control.getId()}" 
+								id="n${id}${velocityCount}"
+								value="${listValue.getValue()}" 
+								tabindex="#tabIndex()" 
+								##${styleAttribute}
+								 class="xr_cs_01_radio"
+								#if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+									 checked
+								#end
+							></input>
+							#if( "ES01" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Currently Employed, Full-time or Part-time</h2>
+								<p class="ps"> &nbspExample: You are employed and continue working part-time, on-call, 
+								as-needed, PRN status, or full-time for this employer.
+								</p>
+							#elseif( "ES02" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Leave of Absence</h2>
+								<p class="ps"> &nbspExample: You are employed but temporarily away from work for personal reasons and you are expected to return to 
+								your position. FMLA, Short-Term Disability, etc.
+								</p>
+							#elseif( "ES03" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Suspension</h2>
+								<p class="ps"> &nbspExample: You are employed but temporarily away from work due to a disciplinary action or 
+								investigation, which was initiated by the employer.
+								</p>
+							#elseif( "ES04" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}">
+								<h2 class="xr_cs_01_float">Quit</h2>
+								<p class="ps"> &nbspExample: You chose to leave this employment due to your personal circumstances, 
+								working conditions, prospect of other work, etc.
+								</p>
+							#elseif( "ES05" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Retired (Voluntary or Involuntary)</h2>
+								<p class="ps"> &nbspExample: You chose to leave the workforce or you retired in accordance with the employer 
+								mandatory retirement policy. Retirement generally coincides<br>with your eligibility to collect retirement resources
+								such as Social Security, a company pension, or distributions 
+								from a 401(k) or other retirement plan.
+								</p>
+							#elseif( "ES06" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Discharged (Terminated, Fired, Let-Go, Etc...)</h2>
+								<p class="ps"> &nbspExample: You were terminated, fired, let go, or dismissed from the employment. 
+								Generally the employer states that it is the fault of the employee:<br>  
+								attendance, policy violation, work performance, failed drug test, etc.
+								</p>
+							#elseif( "ES07" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Laid Off</h2>
+								<p class="ps"> &nbspExample: Your position was eliminated or you are not working due to
+								a business slow-down/shut-down, internal restructuring, or the business has closed, etc.
+								</p>
+							#elseif( "ES08" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h2 class="xr_cs_01_float">Labor Dispute</h2>
+								<p class="ps"> &nbspExample: You are actively involved in the labor dispute or you
+								are prevented from working because of an active labor dispute,
+								such as a strike or collective bargaining controversy.
+								</p>
+							#else
+								<h2>Error xr_cs_01 No Matching List value Label</h2>
+							#end
+						</span>
+					#end
+				#end
+			#end  			
+	</fieldset>
+</div>
+<br>
+<hr>
+ <div class="xrulz_button">
+     <input class="button" type="button" id="xr_cs_01_btn_01" value="   Continue   ">
+ </div>
+

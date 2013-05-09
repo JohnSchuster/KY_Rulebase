@@ -1,0 +1,13 @@
+#if($control.isVisible())
+    #parse( "investigation/controlMessages.vm" )
+    <div class="control-list">
+        <ul>
+        #set($listItems = $control.getControls())
+        #foreach( $control in $listItems )
+            <div class="control-list-item">
+                <li>#parse( "controls/${control.getControlType()}.vm" )</li>
+            </div>
+        #end
+        </ul>
+    </div>
+#end

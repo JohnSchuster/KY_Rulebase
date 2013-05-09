@@ -1,0 +1,6 @@
+## the variable 'labelControl' is available in scope, and is set to the LabelInterviewControl object to be rendered
+#if( ${control.isVisible()} )
+    #parse( "investigation/controlMessages.vm" )
+    #parse( "investigation/input-style-overrides.vm" )
+    <div id="${control.getEncodedID()}" ${classAttribute} ${styleAttribute}>#parse("investigation/control-text.vm")</div>
+#end

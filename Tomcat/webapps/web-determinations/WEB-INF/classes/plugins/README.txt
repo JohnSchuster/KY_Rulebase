@@ -1,0 +1,1 @@
+Custom plugins to be loaded via the zero configuration method go in this directory.

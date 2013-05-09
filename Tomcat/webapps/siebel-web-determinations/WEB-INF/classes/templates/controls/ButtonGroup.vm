@@ -1,0 +1,16 @@
+#if($control.isVisible())
+    #parse( "investigation/controlMessages.vm" )
+    <div class="button-group">
+        #if($disableButtonSpacer != "true")  ## by default always provide a button spacer
+        <div class="button-spacer">&nbsp;</div>
+        #end
+        <div class="info">&nbsp;</div>
+        <div class="buttons">
+            #set($buttonControls = ${control.getControls()} )
+            #foreach( $button in $buttonControls )
+                #set($control = $button)
+                #parse( "controls/${button.getControlType()}.vm" )
+            #end
+        </div>
+    </div>
+#end

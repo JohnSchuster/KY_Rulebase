@@ -1,0 +1,23 @@
+## this file can be applied to all input controls and build style and class overides.
+#set($quoteChar = '"')
+#set($styleAttribute = "")
+#set($classAttribute = "class=${quoteChar}owd-input${quoteChar}")
+#set($classList = "owd-input")
+
+#if(!${control.isTextHTML()})
+    #if($control.hasStyleOverride())
+        #set($styleAttribute = "style=${quoteChar}${control.getStyleOverride()}${quoteChar}")
+    #end
+
+    #if($control.hasClassOverride() || $control.isReadOnly())
+        #if($control.hasClassOverride()) ## class override overrides readonly class
+            #set($classList = "owd-input ${control.getClassOverride()}")
+        #else
+            #set($classList = "owd-input readonly")
+        #end
+    #elseif (${control.getTextStyle()} != "Normal")
+        #set($classList = "owd-input ${control.getTextStyle()}")
+    #end
+
+    #set($classAttribute = "class=${quoteChar}${classList}${quoteChar}")
+#end

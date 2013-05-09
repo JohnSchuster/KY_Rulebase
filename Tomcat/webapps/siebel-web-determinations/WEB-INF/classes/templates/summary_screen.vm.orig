@@ -1,0 +1,100 @@
+## Summary screen, first and typically last screen displayed in an investigation
+##  Displays known and unknown goals and high level decision reports with navigation
+#if( ${pagedir-right-to-left} == "true" || ${pagedir-right-to-left} == "True")
+    #set($pagedirString = "rtl")
+#else
+    #set($pagedirString = "ltr")
+#end
+
+#if ($screen.hasCommentary()) 
+    #set ($commentaryExists = $screen.hasCommentary())
+    #set ($commentaryURL = $screen.getCommentaryURL())
+#end    
+
+#set($validCommentaryTarget = ${opa-commentary-type} == "iframe" || ${opa-commentary-type} == "frameset" || ${opa-commentary-type} == "popup")
+
+    
+## set the target for control and commentary
+#if ( ${opa-commentary-type} == "iframe" )
+    #set($commentaryTarget = ${opa-commentary-iframe})
+#end
+
+#if ( ${opa-commentary-type} == "frameset" )
+    #set($commentaryTarget = ${opa-commentary-frameset})
+#end
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="${screen.getLocale()}" dir="${pagedirString}">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="content-language" content="${screen.getLocale()}">
+        <title>${screen.getTitle()} - ${header-title}</title>
+        <link rel="stylesheet" type="text/css" href="${context-root-path}${resource-request}/reset.css">
+        <style type="text/css">
+    <!--
+    ${css-text}
+    -->
+        </style>
+		## add the xrulz custom styles
+		<link rel="stylesheet" type="text/css" href="${context-root-path}${resource-request}/xrulz_s.css">
+		<script type="text/javascript" src="${context-root-path}${resource-request}/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			#parse("includes/fix-target-js.vm")
+		</script>
+    </head>
+    <body>
+    <div id="wrapper">
+        #parse("includes/header.vm")
+        #set($show-summary = "false")
+        #parse("includes/menu-bar.vm")
+        #parse("includes/status-bar.vm")
+
+        #set( $controlList = ${screen.getControls()} )
+
+        <div id="content">
+            <div id="summary">
+                <h1 id="title">
+                    #parse ( "investigation/screen-title.vm" )
+                </h1>
+
+                <div class="GoalControlBlock">
+					## Ensure only <li> controls have <ul> parents
+					## Other controls e.g. labels need to be outside <ul>
+					#set($isUL = false)
+					#foreach( $control in $controlList )
+						#if( (${control.getControlType().equals("GoalControl")} || ${control.getControlType().equals("DocumentControl")}) && ${control.isVisible()} )
+							#if (!$isUL)
+								#set($isUL = true)
+								
+								<ul>
+							#end
+							
+							<li>#parse ( "controls/${control.getControlType()}.vm" )</li>
+						#else
+							#if ($isUL)
+								
+								</ul>
+								#set($isUL = false)
+							#end
+							#parse ( "controls/${control.getControlType()}.vm" )
+						#end
+					#end
+					#if ($isUL)
+								
+						</ul>
+						#set($isUL = false)
+					#end
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+    #if (${opa-commentary-type} == "iframe")
+        #parse( "includes/commentary-iframe.vm" )
+    #end
+    </div>
+    #parse("includes/footer.vm")    
+  </body>
+</html>
+
