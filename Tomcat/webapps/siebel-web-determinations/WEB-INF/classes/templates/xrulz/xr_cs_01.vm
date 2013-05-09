@@ -1,0 +1,101 @@
+## xRulz Custom screen definition for xr_cs_01
+#set ( $xrulz_screen_id = $screen.getProperty("xRulzScreenId","") )
+##<h2>xRulz Custom Screen: $xrulz_screen_id</h2>	
+<h3>Below Are Descriptions of Several Categories Related to Loss of Employment.
+		<span id="xr_cs_01_t01">Please Select The One That Fits Your Situation</span>
+</h3>
+#set( $controlList = ${screen.getControls()} )
+<div id="xr_confirm" title="Please confirm..." ></div>
+<div class="radio-group" id="xr-${control.getEncodedID()}">
+	<fieldset id="xr_cs_01_fs">
+	        <legend>${control.getText()}</legend>
+			#foreach( $control in $controlList )
+				##<h3>ControlType ${control.getControlType()} </h3>
+				##<h3>ControlProperty $control.getProperty("xRulzCustomFieldId","") </h3>				
+				#if( "xr01" == $control.getProperty("xRulzCustomFieldId","") )
+					##  Process the radio groups set of list values
+					#set( $listValues = ${control.getListOptions()} )
+					#foreach( $listValue in $listValues )
+						##<p>id = $id, control.getId() = ${control.getId()}, velocityCount ${velocityCount} </p>
+						#set($id = $tabIndex)
+						<span>
+							<input  
+								type="radio" 
+								name="${control.getId()}" 
+								id="n${id}${velocityCount}"
+								value="${listValue.getValue()}" 
+								tabindex="#tabIndex()" 
+								##${styleAttribute}
+								class="xr_cs_01_radio"
+								#if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+									 checked
+								#end
+							></input>
+							#if( "ES01" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Currently Employed, Full-time or Part-time</h3>
+								<p class="nsmall">(eg.) You continue working full-time in 
+									accordance with your employer's customary 
+									full-time work schedule or you are working part-time, 
+									working on-call, as needed, PRN status.
+								</p>
+							#elseif( "ES02" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Leave of Absence</h3>
+								<p class="nsmall">(eg.) On FMLA, Short-term disability, etc.
+									You are temporarily away from work for personal reasons 
+									and you are expected to return to your position.
+								</p>
+							#elseif( "ES03" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Suspension</h3>
+								<p class="nsmall">You are temporarily away from work due to a diciplinary action 
+									or investigation initiated by your employer.
+								</p>
+							#elseif( "ES04" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}">
+								<h3 class="xr_cs_01_float">Quit</h3>
+								<p class="nsmall">An employee may choose to leave a job for changes in 
+									personal circumstances, working conditions, prospects of other work, etc.
+								</p>
+							#elseif( "ES05" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Retired (Voluntary or Involuntary)</h3>
+								<p class="nsmall">(eg.) You voluntarily retired from the workforce, you are
+									receiving retirement/pension or retainer benefits, or
+									you retired in accordance with the employer mandqatory retirement policy.
+								</p>
+							#elseif( "ES06" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Discharged (aka. Terminated, Fired, Let-Go, Sacked, Etc...)</h3>
+								<p class="nsmall">Employer chooses to require the employee to leave, generally, 
+									the employer states that it is the fault of the employee due to
+									attendance, policy violation, work performance, failed drug test, etc...
+								</p>
+							#elseif( "ES07" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Laid Off</h3>
+								<p class="nsmall">
+									Position eliminated or a business slow-down occured due to economic cycles or
+									the company's need to restructure itself, the firm itself going 
+									out of business or a change in the function of the employer.
+									(eg.) A certain type of product or service is no longer offered by the 
+									company therefore jobs related to that product or service are no longer needed.
+								</p>
+							#elseif( "ES08" == ${listValue.getValue()} )
+								##<label for="n${id}${velocityCount}"></label>
+								<h3 class="xr_cs_01_float">Labor Dispute</h3>
+								<p class="nsmall">You are a member of a labor union and are involved in ongoing 
+									strike actions undertaken by the labor union.
+								</p>
+							#else
+								<h2 class="xr_err">Error xr_cs_01 No Matching List value Label</h2>
+							#end
+						</span>
+					#end
+				#end
+			#end  			
+	</fieldset>
+</div>
+<input type="button" id="xr_cs_01_btn_01" value="Continue" />
+

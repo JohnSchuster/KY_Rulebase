@@ -1,0 +1,35 @@
+#set( $listValues = ${control.getListOptions()} )
+#if(${control.isReadOnly()})
+    #set($readOnlyString = "disabled")
+#else
+    #set($readOnlyString = "")
+#end 
+## xRulz: Support jQuery Buttonset API
+<div class="radio-group" id="xr-${control.getEncodedID()}">
+	<legend>${control.getText()}</legend>
+	#foreach( $listValue in $listValues )
+		#if(${listValue.isVisible()})
+            #set($id = $tabIndex)
+			<input 
+				type="radio" 
+				name="${control.getId()}" 
+				id="n${id}${velocityCount}"
+				value="${listValue.getValue()}" 
+				tabindex="#tabIndex()" 
+				${styleAttribute}
+				${classAttribute}
+				#if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+				   checked
+				#end
+			/>
+			<label 
+				for="n${id}${velocityCount}">$listValue.getDisplayText()
+			</label>                                                                        
+        #end
+    #end
+	## xRulz: Attach the jquery buttonset using the ID of the div
+	<script type="text/javascript">
+		$( "#xr-${control.getEncodedID()}" ).buttonset();
+	</script>	
+	## xRulz:End
+</div>

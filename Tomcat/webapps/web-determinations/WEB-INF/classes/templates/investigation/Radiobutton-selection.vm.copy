@@ -1,0 +1,36 @@
+#set( $listValues = ${control.getListOptions()} )
+#if(${control.isReadOnly()})
+    #set($readOnlyString = "disabled")
+#else
+    #set($readOnlyString = "")
+#end 
+<div class="radio-group" id="xr-${control.getEncodedID()}">
+        <legend>${control.getText()}</legend>
+        #foreach( $listValue in $listValues )
+            #if(${listValue.isVisible()})
+                #set($id = $tabIndex)
+                <input type="radio" 
+					name="${control.getId()}" 
+					id="n${id}${velocityCount}" 
+					$readOnlyString value="${listValue.getValue()}" 
+					tabindex="#tabIndex()" 
+					${styleAttribute} 
+					${classAttribute}
+                    #if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+                       checked="checked"
+					    checked
+                    #end
+                />$listValue.getDisplayText()<br/>
+					<label for="n${id}${velocityCount}">$listValue.getDisplayText()
+				</label>                                                                        
+            #end
+        #end
+	## xRulz:Start Attach the buttonset by the ID of the div
+		<script type="text/javascript">
+			var xrbset = $( "#xr-${control.getEncodedID()}" ).buttonset();
+			xrbset.buttonset( "refresh" );
+			console.log("buttonset #xr-${control.getEncodedID()}");
+		</script>
+		
+	## xRulz:End
+</div>

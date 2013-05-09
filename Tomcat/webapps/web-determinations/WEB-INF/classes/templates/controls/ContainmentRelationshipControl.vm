@@ -1,0 +1,118 @@
+#if($control.isVisible())
+    #parse( "investigation/controlMessages.vm" )
+    #set($collectControls = ${control.getControls()} )
+    #set($entCtrl = ${control})
+    #if($control.getDisplayStyle() == "landscape")
+        <div class="landscape">
+            <table>
+
+                #if($collectControls.get(0).getControlType() == "EntityInstanceCollectGroup")
+                    ## debug to see instance id's
+                    ##<tr>
+                    ##    <td>&nbsp;</td>
+                    ##    #foreach( $entityControl in $collectControls )
+                    ##        #if( $entityControl.getControlType() == "EntityInstanceCollectGroup") ## render all entity instance groups in the table
+                    ##        <td>
+                    ##            ${entityControl.getRawEntityInstanceName()}
+                    ##        </td>
+                    ##        #end
+                    ##    #end
+                    ##</tr>
+                    #set($ctrlIdx = 0)
+                    #foreach( $entControl in $collectControls.get(0).getControls() )  ## process the first control to get any labels.
+                        #set($controlIndex = $velocityCount - 1)  ## velocity by default uses 1 based indexing.
+						#if ($entCtrl.hasVisibleControl($controlIndex))
+							<tr>
+                        		<td class="question-column">
+									#if(${entControl.getControlType()} == "ButtonGroup")
+										&nbsp;
+									#else
+										#set($control = $entControl)
+										#if (${control.getControlType()} == "LabelControl")
+											#parse ("controls/LabelControl.vm")
+										#else
+											<div class="question-label">
+												#parse( "investigation/control-text.vm" )
+											</div>
+										#end
+									#end
+								</td>
+
+								## for each instance we have, get the control and put it in the table
+								#set($disableButtonSpacer = "true") ## turn off button spacing for tables.
+								#foreach( $entityInstanceCollectControl in $collectControls )
+									#if( $entityInstanceCollectControl.getControlType() == "EntityInstanceCollectGroup") ## render all entity instance groups in the table
+										<td>
+											#set($control = $entityInstanceCollectControl.getControls().get($controlIndex))
+											##label controls only get printed once
+											#if(${control.getControlType()} != "LabelControl")
+												#parse( "controls/${control.getControlType()}.vm" )
+											#end
+ 										</td>
+                                    #end
+                                #end
+								#set($disableButtonSpacer = "false")
+                            </tr>
+                        #end
+                    #end
+                #end
+            </table>
+
+            ## now render any other controls that belong to just the screen itself and don't collect entities, eg buttons.
+            #foreach( $otherInputControl in $collectControls )
+                #if( $otherInputControl.getControlType() != "EntityInstanceCollectGroup")
+                    #set($control = $otherInputControl)
+                    #parse( "controls/${otherInputControl.getControlType()}.vm" )
+                #end
+            #end
+        </div>
+    #elseif($control.getDisplayStyle() == "tabular")
+        <div class="tabular">
+            <table> ## tabular data entry format
+                <tr>
+                    #foreach( $control in $collectControls.get(0).getControls() )  ## process the first control to get any labels.
+                        #set($controlIndex = $velocityCount - 1)  ## velocity by default uses 1 based indexing.
+                        #if( $entCtrl.hasVisibleControl($controlIndex) && $control.getControlType() != "ButtonGroup" && $control.getControlType() != "ButtonControl")
+                            <th>
+                                #parse( "investigation/control-text.vm" )
+                            </th>
+                        #end
+                    #end
+                    <th>&nbsp;</th>
+                </tr>
+            ## now for each instance render as a row; don't display labels and each group is a fieldset.
+            #set($disableButtonSpacer = "true") ## turn off button spacing for tables.
+            #foreach( $control in $collectControls )
+                #if( $control.getControlType() == "EntityInstanceCollectGroup") ## render all entity instance groups in the table
+                <tr>
+                    #set($fieldsetPrefix = "f")
+                    #foreach($entityControl in $control.getControls())
+                        <td>
+                        ##Label controls are only ever rendered once in the header row
+                        #if ($entityControl.isVisible() && ${entityControl.getControlType()} != "LabelControl")
+                            #set($control = $entityControl)
+                            #parse( "controls/${entityControl.getControlType()}.vm" )
+                        #end
+                        </td>
+                    #end
+                </tr>
+                #end
+            #end
+            #set($disableButtonSpacer = "false")
+            </table>
+
+            ## now render any other controls that belong to just the screen itself and don't collect entities, eg buttons.
+            #foreach( $otherInputControl in $collectControls )
+                #if( $otherInputControl.getControlType() != "EntityInstanceCollectGroup")
+                    #set($control = $otherInputControl)
+                    #parse( "controls/${otherInputControl.getControlType()}.vm" )
+                #end
+            #end
+
+        </div>
+    #else ## default is to use portrait style
+        #foreach( $control in $collectControls )
+            #parse( "controls/${control.getControlType()}.vm" )
+        #end
+    #end
+#end

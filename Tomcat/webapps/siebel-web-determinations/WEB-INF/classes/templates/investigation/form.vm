@@ -1,0 +1,25 @@
+#set( $contextPath = ${screen.getContext().getContextPath()})
+#set( $rulebaseName = ${screen.getEncodedRulebaseID()} )
+#set( $locale = ${screen.getLocaleString()} )
+#set( $goalID = ${screen.getEncodedGoalID()} )
+#set( $screenID = ${screen.getEncodedScreenID()} )
+## tabindexes need to be incremented for each html control, there may be many html controls rendered per rulebase screen control
+#set($tabIndex = 1)
+#macro( tabIndex )
+${tabIndex}#set($tabIndex = $tabIndex + 1)
+#end
+<form id="owdInterviewForm" name="form" accept-charset="UTF-8" method="POST" action="${post-uri}" target="${frameset-top-target}">
+#if(${goal-state})
+    <input name="goal-state" type="hidden" value="${goal-state}"/>
+#end
+## VTL code to loop through the question controls on the Screen object. We do this by rendering
+## each QuestionControl in turn.
+## Grab the list of controls from the screen
+    #set( $controlList = ${screen.getControls()} )
+    #foreach( $control in $controlList )
+        <div class="control-item">
+                #parse( "controls/${control.getControlType()}.vm" )
+        </div>
+        <span class="control-clear"></span>
+    #end
+</form>

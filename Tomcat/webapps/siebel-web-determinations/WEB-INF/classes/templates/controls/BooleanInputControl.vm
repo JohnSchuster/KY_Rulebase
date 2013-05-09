@@ -1,0 +1,73 @@
+#if ($control.isVisible())
+    #parse( "investigation/controlMessages.vm" )
+
+    <div class="question">#parse("investigation/identifier-text.vm")<label for="${control.getEncodedID()}">#parse("investigation/control-text.vm")</label></div>
+
+    #if( ${control.isReadOnly()} )
+        #set( $readOnlyString = "disabled" )
+    #else
+        #set( $readOnlyString = "" )
+    #end
+    #parse( "investigation/input-style-overrides.vm" )
+    <div class="info">
+        #if( !$control.getSelectionStyle().equals("checkbox") && ($control.isMandatory() == "true" || $control.isMandatory() == "True") )
+            <span class="mandatory">${mandatory-text}</span>
+        #end
+        &nbsp;
+    </div>
+    <div class="control">
+        #if($control.getSelectionStyle().equals("checkbox"))
+            #if( $control.isTrue() )
+            #set( $checkedString = "checked" )
+            #else
+                #set( $checkedString = "" )
+            #end
+            #if( $control.isReadOnly() )
+                #set( $disabledString = "disabled" )
+            #else
+                #set( $disabledString = "" )
+            #end
+            <div class="control-checkbox">
+                <fieldset id="${control.getEncodedID()}">
+                    <input type="checkbox" name="${control.getId()}" id="${control.getEncodedID()}" ${disabledString} value="true" ${checkedString} tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>
+                </fieldset>
+            </div>
+        #elseif( $control.getSelectionStyle().equals("Dropdown") )
+            #parse( "investigation/Dropdown-selection.vm" )
+        #elseif( $control.getSelectionStyle().equals("Listbox") )
+            #parse( "investigation/Listbox-selection.vm" )
+        #else
+            <div class="radio-group-boolean">
+                <fieldset id="${control.getEncodedID()}">
+                    <legend>${control.getText()}</legend>
+
+                    #set($id = $tabIndex)
+                    <label for="n${id}0" class="hidden">${control.getText()} ${boolean-true}</label>
+                    <input type="radio" name="${control.getId()}" id="n${id}0" $readOnlyString value="true" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}
+                        #if(${control.isTrue()})
+                              checked
+                        #end
+                    >${boolean-true}
+
+                    #set($id = $tabIndex)
+                    <label for="n${id}0" class="hidden">${control.getText()} ${boolean-false}</label>
+                    <input type="radio" name="${control.getId()}" id="n${id}0" $readOnlyString value="false" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}
+                        #if(${control.isFalse()})
+                            checked
+                        #end
+                    >${boolean-false}
+                    #if( !${control.isMandatory()} )
+                        #set($id = $tabIndex)
+                        <label for="n${id}0" class="hidden">${control.getText()} ${boolean-uncertain}</label>
+                        <input type="radio" name="${control.getId()}" id="n${id}0" $readOnlyString value="uncertain" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}
+                            #if( ${control.isUncertain()} )
+                               checked
+                            #end
+                        >${boolean-uncertain}
+                    #end
+                 </fieldset>
+            </div>
+        #end
+    </div>
+
+#end

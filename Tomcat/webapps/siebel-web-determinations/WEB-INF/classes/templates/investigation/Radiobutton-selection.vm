@@ -1,0 +1,22 @@
+#set( $listValues = ${control.getListOptions()} )
+#if(${control.isReadOnly()})
+    #set($readOnlyString = "disabled")
+#else
+    #set($readOnlyString = "")
+#end 
+<div class="radio-group">
+    <fieldset id="${control.getEncodedID()}">
+        <legend>${control.getText()}</legend>
+        #foreach( $listValue in $listValues )
+            #if(${listValue.isVisible()})
+                #set($id = $tabIndex)
+                <input type="radio" name="${control.getId()}" id="n${id}${velocityCount}" $readOnlyString value="${listValue.getValue()}" tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}
+                    #if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+                       checked
+                    #end
+                />$listValue.getDisplayText()<br/>
+                <label for="n${id}${velocityCount}" class="hidden">${control.getText()} $listValue.getDisplayText()</label>                                                                        
+            #end
+        #end
+    </fieldset>
+</div>
