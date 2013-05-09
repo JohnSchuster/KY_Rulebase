@@ -1,0 +1,13 @@
+## there are three display styles at this stage, portrait (the default), landscape and tabular.
+#if ( $control.isVisible() )
+    #parse( "investigation/controlMessages.vm" )
+    #set( $entInstCollectControls = ${control.getControls()} )
+    <div class="entity-instance-group">
+        #foreach( $control in $entInstCollectControls )
+            <div class="control-item">
+            #parse( "controls/${control.getControlType()}.vm" )
+            </div>
+            <span class="control-clear"></span>
+        #end
+    </div>
+#end

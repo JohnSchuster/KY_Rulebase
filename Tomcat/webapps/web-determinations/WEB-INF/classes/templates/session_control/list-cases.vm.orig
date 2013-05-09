@@ -1,0 +1,70 @@
+## This page lists the available cases that can be loaded.
+#if( ${pagedir-right-to-left} == "true" || ${pagedir-right-to-left} == "True")
+    #set($pagedirString = "rtl")
+#else
+    #set($pagedirString = "ltr")
+#end
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="${locale}" dir="${pagedirString}">
+    <head>
+        <title>${load-case-title}</title>
+        <link rel="stylesheet" type="text/css" href="${context-root-path}${resource-request}/reset.css">
+        <script type="text/javascript">
+            #parse("includes/javascript-utilities.vm")
+        </script>
+        <style type="text/css">
+<!--
+${css-text}
+-->
+        </style>
+       <script src="${context-root-path}${resource-request}/jquery-1.7.1.min.js"></script>
+	   <script type="text/javascript">
+            #parse("includes/fix-target-js.vm")
+       </script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            #parse("includes/header.vm")
+            #set($show-empty-menu-bar = true)
+            #parse("includes/menu-bar.vm")
+            #parse("includes/status-bar.vm")
+
+            <div id="content">
+                <div id="content-wrapper">
+                    <h1 id="title">${load-case-title}</h1>
+                    #if((${has-active-session} == "true" || ${has-active-session} == "True") && (${has-cases} == "true" || ${has-cases} == "True"))
+                        #set($errorCondition = ${confirm-end-session-text})
+                         <div id="messages">#parse ( "investigation/warning.vm" )</div>
+                    #end
+                    <form name="form" accept-charset="UTF-8" method="POST" action="${post-uri}" target="${frameset-top-target}">
+                        #if(${has-cases} == "true" || ${has-cases} == "True")
+                            <div class="saved-case-list">
+                                <h2>${case-list-caption}</h2>
+                                <p>
+                                    <ul>
+                                    #foreach($case in $cases)
+                                        <li><a name="${case.value}" href="${case.value}">${case.key}</a></li>
+                                    #end
+                                    </ul>
+                                </p>
+                            </div>
+                        #else
+                            <h2>${no-cases-message}</h2>
+                        #end
+                        <div class="button-group">
+                            <div class="button-spacer">&nbsp;</div>
+                            <div class="info">&nbsp;</div>
+                            <div class="buttons">
+                                <input class="button" id="${cancel-button-id}" name="${cancel-button-id}" type="submit" value="${cancel-button-text}" alt="${cancel-button-text}" tabindex="1" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+           </div>
+        </div>
+
+        #parse("includes/footer.vm")
+    </body>
+</html>

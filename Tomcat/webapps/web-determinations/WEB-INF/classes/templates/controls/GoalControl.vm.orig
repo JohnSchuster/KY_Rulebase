@@ -1,0 +1,29 @@
+## Expects a variable called 'control' to exist in scope before this template is invoked, set to the GoalInterviewControl object to be parsed
+#if ( $control.isVisible() )
+    #set($goalControl = $control)
+    #set($isKnown = ${goalControl.isKnown()})
+    #set($drLink = ${goalControl.getDecisionReportLink()})
+
+    #if(!${isKnown})
+        #parse( "investigation/input-style-overrides.vm" )
+        <div id="${control.getEncodedID()}" ${classAttribute} ${styleAttribute}>
+          #if( ${control.isEnabled()} )
+            <a href="${control.getURL()}" id="${control.getEncodedID()}" target="${frameset-top-target}" ${classAttribute} ${styleAttribute}>${control.getText()}</a>
+          #else
+            ${control.getText()}
+          #end
+        </div>
+    #else
+        #parse( "investigation/input-style-overrides.vm" )
+        <div id="${control.getEncodedID()}" ${classAttribute} ${styleAttribute}>
+            ${goalControl.getText()}
+
+            #set( $control = $drLink )
+            #if( ${control.isEnabled()} )
+                <a href="${control.getURL()}" id="${control.getEncodedID()}" target="${frameset-top-target}" ${classAttribute} ${styleAttribute}>${control.getText()}</a>
+            #else
+                ${control.getText()}
+            #end
+        </div>
+    #end
+#end

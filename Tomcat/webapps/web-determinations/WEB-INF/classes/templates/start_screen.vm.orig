@@ -1,0 +1,58 @@
+## The landing page for the default web-determinations shell.
+## This page provides the mechanism to start an interview for a particular rulebase.
+#if( ${pagedir-right-to-left} == "true" || ${pagedir-right-to-left} == "True" )
+    #set($pagedirString = "rtl")
+#else
+    #set($pagedirString = "ltr")
+#end
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="${locale}" dir="${pagedirString}">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <title>${header-title}</title>
+        <link rel="stylesheet" type="text/css" href="${context-root-path}${resource-request}/reset.css">
+        <style type="text/css">
+<!--
+${css-text}
+-->
+        </style>
+     ## add the xrulz custom style		
+	<link rel="stylesheet" type="text/css" href="${context-root-path}${resource-request}/xrulz_s.css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            #parse("includes/header.vm")
+            #set($show-empty-menu-bar = true)
+            #parse("includes/menu-bar.vm")
+
+
+            <div id="content">
+                <div class="left"></div>
+                <div class="center">
+                    <div class="selection-list">
+                        <h2>${title}</h2>
+                        <div>
+                            <div class="column">
+                                <ul>
+                            #foreach($rulebase in $rulebases)
+                                    <li><a name="${rulebase.key}" href="${rulebase.value}">${rulebase.key}</a></li>
+                                #if($velocityCount % 23 == 0)
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul>
+                                #end
+                            #end
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        #parse("includes/footer.vm")
+    </body>
+</html>
