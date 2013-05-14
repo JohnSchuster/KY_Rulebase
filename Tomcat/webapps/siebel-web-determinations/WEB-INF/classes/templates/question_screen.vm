@@ -97,16 +97,20 @@
 		#if( "true" == $screen.getProperty("xRulzCustomScreenId","") )
 			## Custom Screen Logic
 			<div id="investigation">
-				<h1 id="title">#parse ("investigation/screen-title.vm")</h1>
+				#if( "" == $screen.getProperty("xRulzHideTitle","") )
+					<h1 id="title">#parse ("investigation/screen-title.vm")</h1>
+				#end
 				## Report errors and warnings for the screen
 					#parse( "investigation/screen-messages.vm" )
 				## Import the form template and allow it to use this template's velocity context
 					#parse( "xrulz/xrulz-form.vm" )
 			</div>
 		#else
-			## Oracle OWD Vanilla
 			<div id="investigation">
-				<h1 id="title">#parse ("investigation/screen-title.vm")</h1>
+				#if( "" == $screen.getProperty("xRulzHideTitle","") )
+					<h1 id="title">#parse ("investigation/screen-title.vm")</h1>
+				#end
+				## Oracle Generic
 				## Report errors and warnings for the screen
 					#parse( "investigation/screen-messages.vm" )
 				## Import the form template and allow it to use this template's velocity context
