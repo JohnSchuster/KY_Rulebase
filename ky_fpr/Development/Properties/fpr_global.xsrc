@@ -6448,6 +6448,30 @@
           <base>the claimants description of how the employment was impacted</base>
         </text>
       </attribute>
+      <attribute name="b1175" type="boolean" public-name="fpr_claimant_emr_connected">
+        <text>
+          <base>this employer still considers the claimant connected to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,normal)),sb('this employer still',singular),o('the claimant connected to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1176" type="boolean" public-name="fpr_c_considers_emr_connected">
+        <text>
+          <base>the claimant still considers themself to be connected to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,normal)),sb('the claimant still',singular),o('themself to be connected to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1177" type="boolean" public-name="fpr_selected_curr_employed">
+        <text>
+          <base>the employment status selected by claimant is currently employed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment status selected by claimant',singular),o('currently employed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1178" type="boolean" public-name="fpr_employment_is_full_time">
+        <text>
+          <base>the employment is full time</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('full time'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="nod" name="the nod" identifying-attribute-name="the_nod" identifying-attribute-text="the nod" containment-relationship-id="allinstancesofthenod" containment-parent-id="global" public-id="fpr_nod">
       <attribute name="p48" type="text" substitutable="true" default-gender="generic" public-name="the_nod">
