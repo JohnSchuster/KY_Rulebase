@@ -99,6 +99,18 @@
           <parse>s(ver('10.4.2.18'),v(agree,t(simple,present,normal)),sb('both parties (claimant and employer)',plural),o('that the claimant is currently connected to the employment'))</parse>
         </text>
       </attribute>
+      <attribute name="b25" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this employer still considers the claimant connected to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,normal)),sb('this employer still',singular),o('the claimant connected to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b26" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant still considers themself to be connected to the employment</base>
+          <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,normal)),sb('the claimant still',singular),o('themself to be connected to the employment'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -155,7 +167,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is being paid their regular salary during a federal government shutdown" ruleburst="true" concludes="b15" folder="0" source-offset="819">
+    <rule id="1" name="the claimant is being paid their regular salary during a federal government shutdown" ruleburst="true" concludes="b15" folder="0" source-offset="736">
       <rule-xml>
         <conclude attr-id="b15" entity-id="global" scope-id="global0">
           <value>
@@ -174,7 +186,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1293">
+    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1186">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -196,7 +208,25 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="2065">
+    <rule id="3" name="both parties (claimant and employer) agree that the claimant is currently connected to the employment" ruleburst="true" concludes="b24" folder="0" source-offset="1548">
+      <rule-xml>
+        <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b25" />
+              <attribute attr-id="b26" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="1799">
       <rule-xml>
         <conclude attr-id="b12" entity-id="global" scope-id="global0">
           <value>
