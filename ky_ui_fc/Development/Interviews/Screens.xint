@@ -74,7 +74,7 @@
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="tc"&gt;Alpha:  Built on 5/13/2013 by xRulz&lt;/p&gt;</caption>
+            <caption>&lt;p class="tc"&gt;Alpha:  Built on 5/14/2013 by xRulz&lt;/p&gt;</caption>
           </label>
           <flow name="Main Flow" default-state="enabled">
             <control-properties>
@@ -2505,14 +2505,12 @@ during your benefit year.&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the approximate number of hours the claimant spends as an officer of a closely held corporation work each week">
               <doc-attr id="p84@kyfpr_rmod" />
               <doc-attr id="fpr_co_hours" />
             </input-attr>
-            <caption>&lt;p&gt;How many hours per week do you dedicate to your position as an officer of the closely held corporation?&lt;/p.
+            <caption>&lt;p&gt;How many hours per week do you dedicate to your position as a corporate officer?&lt;/p.
 </caption>
             <values>
               <value code="" default-visibility="enabled">
@@ -2537,7 +2535,7 @@ during your benefit year.&lt;/p&gt;</caption>
               <doc-attr id="b294@kyfpr_rmod" />
               <doc-attr id="fpr_will_quit_co" />
             </input-attr>
-            <caption>&lt;p&gt;Would you be willing to give up your position as an officer of the closely held corporation to accept regular employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Would you be willing to give up your position as a corporate officer to accept regular employment?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
@@ -3453,6 +3451,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the selected quit status">
               <doc-attr id="p22@Rules_MultiSelectionMaps_doc" />
@@ -4458,7 +4458,8 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <value code="WV" default-visibility="enabled">West Virginia</value>
               <value code="WI" default-visibility="enabled">Wisconsin</value>
               <value code="WY" default-visibility="enabled">Wyoming</value>
-              <value code="OCONUS" default-visibility="enabled">OCONUS</value>
+              <value code="US Territories" default-visibility="enabled">US Territories</value>
+              <value code="Foreign" default-visibility="enabled">Foreign Duty Station</value>
             </values>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
@@ -4532,12 +4533,10 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the selected work related quit status">
               <doc-attr id="p24@Rules_MultiSelectionMaps_doc" />
-              <doc-attr id="p264@kyfpr_rmod" />
+              <doc-attr id="p248@kyfpr_rmod" />
               <doc-attr id="scr_selected_work_quit_status" />
             </input-attr>
             <caption>&lt;p&gt;Please select the primary reason you [substitution value]&lt;/p&gt;
@@ -4558,7 +4557,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <value code="QW11" default-visibility="enabled">Work hours required by the employer</value>
               <value code="QW12" default-visibility="enabled">Reduction in workforce initiative by the employer (i.e. accepting a buyout)</value>
               <value code="QW13" default-visibility="enabled">Failed to uphold your conditions of hire (i.e. failing to maintain a certification)</value>
-              <value code="QW14" default-visibility="enabled">Anticipation of a layoff or discharge/after being given a date of discharge or layoff</value>
+              <value code="QW14" default-visibility="enabled">Anticipation of a layoff or discharge</value>
               <value code="QW15" default-visibility="enabled">Failure to return from a temporary layoff</value>
               <value code="QW16" default-visibility="enabled">Other</value>
             </values>
@@ -4573,7 +4572,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;If Other, please explain&lt;/p&gt;
@@ -4754,7 +4753,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="this employer required a (drug, alcohol) test for the employment">
-              <doc-attr id="b499@kyfpr_rmod" />
+              <doc-attr id="b522@kyfpr_rmod" />
               <doc-attr id="emt_drug_test_required" />
             </input-attr>
             <caption>&lt;p&gt;Did your employer require you to take a (drug, alcohol) test during the employment?&lt;/p&gt;</caption>
@@ -4766,11 +4765,11 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants reason for leaving rather than take a drug test">
-              <doc-attr id="p157@kyfpr_rmod" />
-              <doc-attr id="scr_reason_no_drugtest" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Why did you leave the employment rather than submit to (or complete) the employer’s drug and/or alcohol test?&lt;/p&gt;
 </caption>
@@ -4784,7 +4783,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the drug test was to be administered">
-              <doc-attr id="p158@kyfpr_rmod" />
+              <doc-attr id="p155@kyfpr_rmod" />
               <doc-attr id="scr_proposed_drugtest_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the test to be conducted?&lt;/p&gt;
@@ -4808,10 +4807,12 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
-            <input-attr text="the reason the employer requested that the claimant take a drug test">
-              <doc-attr id="p213@kyfpr_rmod" />
-              <doc-attr id="scr_alcohol_test_reason" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;What was the reason for the drug and/or alcohol test?&lt;/p&gt;
 </caption>
@@ -4858,7 +4859,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the reasons for the drug test in the claiants own words">
-              <doc-attr id="p159@kyfpr_rmod" />
+              <doc-attr id="p156@kyfpr_rmod" />
               <doc-attr id="scr_drugtest_description" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Please describe&lt;/p&gt;
@@ -6052,7 +6053,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;What condition of your employment contract did you fail to meet? (e.g. failure to pass a test, failure to earn or maintain a certification other than a driver’s license)?&lt;/p&gt;
@@ -6065,11 +6066,11 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation of why they failed to meet the specific condition of employment">
-              <doc-attr id="p182@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_failure" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Why did you fail to meet this condition of employment?&lt;/p&gt;
 </caption>
@@ -6271,11 +6272,11 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation of why they did not return from a temporary layoff">
-              <doc-attr id="p127@kyfpr_rmod" />
-              <doc-attr id="scr_layoff_return_desc" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the reason that you did not return from the temporary lay off.&lt;/p&gt;
 </caption>
@@ -6300,7 +6301,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant knew the date they were to return from the temporary layoff">
-              <doc-attr id="b640@kyfpr_rmod" />
+              <doc-attr id="b671@kyfpr_rmod" />
               <doc-attr id="scr_layoff_return_date_known" />
             </input-attr>
             <caption>&lt;p&gt;Did you know the date you were to return from the temporary lay off?&lt;/p&gt;</caption>
@@ -6325,7 +6326,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant was to return from the temporary layoff">
-              <doc-attr id="p128@kyfpr_rmod" />
+              <doc-attr id="p173@kyfpr_rmod" />
               <doc-attr id="scr_layoff_return_date" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the date you were to return?&lt;/p&gt;
@@ -6352,7 +6353,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the means by which the employer made the claimant aware of the recall date">
-              <doc-attr id="p129@kyfpr_rmod" />
+              <doc-attr id="p174@kyfpr_rmod" />
               <doc-attr id="scr_layoff_return_aware_by" />
             </input-attr>
             <caption>&lt;p&gt;How did the employer make you aware of the recall date?&lt;/p&gt;
@@ -6367,7 +6368,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant was informed of the recall date">
-              <doc-attr id="p130@kyfpr_rmod" />
+              <doc-attr id="p175@kyfpr_rmod" />
               <doc-attr id="scr_layoff_return_target_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date did the employer notify you of recall date?&lt;/p&gt;
@@ -6620,7 +6621,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the business that extended the claimant the new job offer">
-              <doc-attr id="p184@kyfpr_rmod" />
+              <doc-attr id="p179@kyfpr_rmod" />
               <doc-attr id="scr_offer_business" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of the business that extended the new job offer?&lt;/p&gt;
@@ -6636,7 +6637,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person that extended the claimant the new job offer">
-              <doc-attr id="p185@kyfpr_rmod" />
+              <doc-attr id="p180@kyfpr_rmod" />
               <doc-attr id="scr_offer_person" />
             </input-attr>
             <caption>&lt;p&gt;What was the name of the person who offered the job?&lt;/p&gt;
@@ -6652,7 +6653,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the address of the business that extended the claimant the new job offer">
-              <doc-attr id="p186@kyfpr_rmod" />
+              <doc-attr id="p181@kyfpr_rmod" />
               <doc-attr id="scr_offer_address" />
             </input-attr>
             <caption>&lt;p&gt;What is the address of the business that extended the new job offer?&lt;/p&gt;
@@ -6668,7 +6669,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the phone number of the business">
-              <doc-attr id="p278@kyfpr_rmod" />
+              <doc-attr id="p261@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_phone" />
             </input-attr>
             <caption>&lt;p&gt;What is the phone number of the business?&lt;/p&gt;
@@ -6683,7 +6684,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the new job was offered">
-              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="p262@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_offer_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the new job offered?&lt;/p&gt;
@@ -6698,7 +6699,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant began working at the new job">
-              <doc-attr id="b785@kyfpr_rmod" />
+              <doc-attr id="b787@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_is_working" />
             </input-attr>
             <caption>&lt;p&gt;Did you begin working at the new job?&lt;/p&gt;</caption>
@@ -6710,13 +6711,13 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant has not commenced employment with the new business">
-              <doc-attr id="p188@kyfpr_rmod" />
-              <doc-attr id="scr_offer_why_not" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
-            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp If No, why have you not started yet?&lt;/p&gt;
+            <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp If No, why have you not started?&lt;/p&gt;
 </caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
@@ -6728,7 +6729,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date that the new employement opportunity is scheduled to begin">
-              <doc-attr id="p187@kyfpr_rmod" />
+              <doc-attr id="p182@kyfpr_rmod" />
               <doc-attr id="scr_offer_begin_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date did/will the new job begin?&lt;/p&gt;
@@ -6741,12 +6742,14 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the schedule of the new job">
-              <doc-attr id="p281@kyfpr_rmod" />
+              <doc-attr id="p264@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_schedule" />
             </input-attr>
-            <caption>&lt;p&gt;What is the schedule of the new job?&lt;/p&gt;
+            <caption>&lt;p&gt;What is the employment type of the new job?&lt;/p&gt;
 </caption>
             <values>
               <value code="" default-visibility="enabled">
@@ -7320,7 +7323,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe which rule/policy the employer alleges that you violated (whether or not you agree).&lt;/p&gt;
@@ -7400,7 +7403,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants examples of discrimination regarding rules and policy">
-              <doc-attr id="p215@kyfpr_rmod" />
+              <doc-attr id="p201@kyfpr_rmod" />
               <doc-attr id="fpr_emt_example_discrim" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Please provide examples&lt;/p&gt;</caption>
@@ -7426,7 +7429,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants explanantion of why the rule or policy was violated during the employment">
-              <doc-attr id="p314@kyfpr_rmod" />
+              <doc-attr id="p293@kyfpr_rmod" />
               <doc-attr id="fpr_rule_violation_reason" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide an explanation to the employer as to why the policy was violated?&lt;/p&gt;</caption>
@@ -7449,11 +7452,11 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the explanation of why they violated the rule or policy">
-              <doc-attr id="p194@kyfpr_rmod" />
-              <doc-attr id="scr_rule_expanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -7475,11 +7478,11 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -7508,7 +7511,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your discharge.&lt;/p&gt;
@@ -7537,7 +7540,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant received training or instruction on how to perform their duties">
-              <doc-attr id="b794@kyfpr_rmod" />
+              <doc-attr id="b793@kyfpr_rmod" />
               <doc-attr id="scr_su_training" />
             </input-attr>
             <caption>&lt;p&gt;Did you receive training or instruction on how to perform your duties?&lt;/p&gt;</caption>
@@ -7565,7 +7568,7 @@ prior to the start of the employment?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has received positive feedback regarding their work performance during their employment">
-              <doc-attr id="b796@kyfpr_rmod" />
+              <doc-attr id="b795@kyfpr_rmod" />
               <doc-attr id="scr_su_prior_performance" />
             </input-attr>
             <caption>&lt;p&gt;During your employment, had you received positive evaluations, positive feedback, 
@@ -7591,7 +7594,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants job duties or customary workload has changed since their date of hire">
-              <doc-attr id="b797@kyfpr_rmod" />
+              <doc-attr id="b796@kyfpr_rmod" />
               <doc-attr id="scr_su_workload_change" />
             </input-attr>
             <caption>&lt;p&gt;Had your job duties or customary workload changed since your date of hire?&lt;/p&gt;</caption>
@@ -7617,7 +7620,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of how their duties or workload changed since the date of hire">
-              <doc-attr id="p205@kyfpr_rmod" />
+              <doc-attr id="p189@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_change_desc" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe the change&lt;/p&gt;
@@ -7643,7 +7646,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided the employer with an explanation for their unsatisfactory performance">
-              <doc-attr id="b798@kyfpr_rmod" />
+              <doc-attr id="b797@kyfpr_rmod" />
               <doc-attr id="scr_su_explanation_provided" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation for your unsatisfactory performance?&lt;/p&gt;</caption>
@@ -7666,11 +7669,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation for the poor work performance">
-              <doc-attr id="p206@kyfpr_rmod" />
-              <doc-attr id="scr_poor_work_excuse_desc" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -7692,11 +7695,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p324@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -7725,7 +7728,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident or behavior that led to your discharge.&lt;/p&gt;
@@ -7740,7 +7743,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants actions/behavior/conduct endangered themselves or others">
-              <doc-attr id="b799@kyfpr_rmod" />
+              <doc-attr id="b798@kyfpr_rmod" />
               <doc-attr id="scr_su_endangered" />
             </input-attr>
             <caption>&lt;p&gt;Did your actions/behavior/conduct endanger yourself or others?&lt;/p&gt;</caption>
@@ -7779,7 +7782,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided an explanation regarding their unsatisfactory work performance during the employment">
-              <doc-attr id="b800@kyfpr_rmod" />
+              <doc-attr id="b799@kyfpr_rmod" />
               <doc-attr id="scr_su_explanation_given" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation for your behavior or conduct?&lt;/p&gt;</caption>
@@ -7805,7 +7808,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation for their behavior or conduct">
-              <doc-attr id="p329@kyfpr_rmod" />
+              <doc-attr id="p279@kyfpr_rmod" />
               <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -7828,11 +7831,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p324@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -7861,7 +7864,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges you were dishonest (whether or not you agree).&lt;/p&gt;
@@ -7877,7 +7880,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your discharge?&lt;/p&gt;
@@ -7940,11 +7943,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the explanation that the claimant provided to the employer regarding the incident of dishonesty">
-              <doc-attr id="p198@kyfpr_rmod" />
-              <doc-attr id="scr_dishonest_honest_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -7966,11 +7969,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -7999,7 +8002,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges that you falsified your 
@@ -8063,11 +8066,11 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation to the employer as to why they falsified an employment application">
-              <doc-attr id="p208@kyfpr_rmod" />
-              <doc-attr id="scr_false_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -8089,11 +8092,11 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p325@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -8122,7 +8125,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the instruction the employer alleges that you refused to obey (whether or not you agree).&lt;/p&gt;
@@ -8138,7 +8141,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person who gave the claimant the instructions they refused to obey">
-              <doc-attr id="p209@kyfpr_rmod" />
+              <doc-attr id="p190@kyfpr_rmod" />
               <doc-attr id="scr_obey_person" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of person who gave you this instruction?&lt;/p&gt;</caption>
@@ -8153,7 +8156,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person who gave the claimant the instruction that they did not obey">
-              <doc-attr id="p349@kyfpr_rmod" />
+              <doc-attr id="p291@kyfpr_rmod" />
               <doc-attr id="scr_rh_instruction_person_title" />
             </input-attr>
             <caption>&lt;p&gt;What is the title of person who gave you this instruction?&lt;/p&gt;</caption>
@@ -8201,11 +8204,11 @@ employment application (whether or not you agree)?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation as to why they refused to obey the instruction">
-              <doc-attr id="p210@kyfpr_rmod" />
-              <doc-attr id="scr_obey_why" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why?&lt;/p&gt;</caption>
           </input>
@@ -9278,34 +9281,7 @@ employment application (whether or not you agree)?&lt;/p&gt;
                   <property name="StyleOverride" type="string">
                   </property>
                 </control-properties>
-                <caption>&lt;br&gt;&lt;p class = "pbs"&gt;Please list each period of employment with this employer.&lt;br&gt;  
-If you worked for this employer on separate occasions, please list them separately.&lt;br&gt;&lt;br&gt;
-Enter the Date of the first day you performed work for the employer.&lt;br&gt;
-Enter the Date of the last day you performed work for the employer&lt;br&gt;
-To add another line, please select the ‘Add Row’ button.&lt;br&gt;  
-To remove a line, select the ‘Remove’ checkbox for the corresponding line and select the ‘Remove Checked’ button.&lt;/br&gt;</caption>
-              </label>
-              <label visible-by-default="true">
-                <control-properties>
-                  <property name="text-style" type="string">Normal</property>
-                  <property name="IsHTML" type="boolean">true</property>
-                  <property name="ClassOverride" type="string">
-                  </property>
-                  <property name="StyleOverride" type="string">
-                  </property>
-                </control-properties>
                 <caption>&lt;hr&gt;</caption>
-              </label>
-              <label visible-by-default="true">
-                <control-properties>
-                  <property name="text-style" type="string">Normal</property>
-                  <property name="IsHTML" type="boolean">true</property>
-                  <property name="ClassOverride" type="string">
-                  </property>
-                  <property name="StyleOverride" type="string">
-                  </property>
-                </control-properties>
-                <caption>&lt;br&gt;</caption>
               </label>
               <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="2011-11-11">
                 <control-properties>
@@ -9335,6 +9311,17 @@ To remove a line, select the ‘Remove’ checkbox for the corresponding line an
                 </input-attr>
                 <caption>&lt;p&gt;Last day performed worked:&lt;/p&gt;</caption>
               </input>
+              <label visible-by-default="true">
+                <control-properties>
+                  <property name="text-style" type="string">Normal</property>
+                  <property name="IsHTML" type="boolean">true</property>
+                  <property name="ClassOverride" type="string">
+                  </property>
+                  <property name="StyleOverride" type="string">
+                  </property>
+                </control-properties>
+                <caption>&lt;hr&gt;</caption>
+              </label>
             </controls>
           </entity>
         </controls>
@@ -9350,31 +9337,6 @@ To remove a line, select the ‘Remove’ checkbox for the corresponding line an
               <property name="display-style" type="string">Portrait</property>
             </control-properties>
             <controls>
-              <label visible-by-default="true">
-                <control-properties>
-                  <property name="text-style" type="string">Normal</property>
-                  <property name="IsHTML" type="boolean">true</property>
-                  <property name="ClassOverride" type="string">
-                  </property>
-                  <property name="StyleOverride" type="string">
-                  </property>
-                </control-properties>
-                <caption>&lt;br&gt;</caption>
-              </label>
-              <label visible-by-default="true">
-                <control-properties>
-                  <property name="text-style" type="string">Normal</property>
-                  <property name="IsHTML" type="boolean">true</property>
-                  <property name="ClassOverride" type="string">
-                  </property>
-                  <property name="StyleOverride" type="string">
-                  </property>
-                </control-properties>
-                <caption>&lt;p class = "pbs"&gt;If you worked for a temporary agency, you must list the temporary agency, not the company to which you were assigned.&lt;br&gt;
-If you worked for a skilled trade union, list the contractor for which you worked, not the trade union name.&lt;br&gt;
-To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remove a line, select the ‘Remove’ checkbox for the corresponding line and select the ‘Remove Checked’ button.
-</caption>
-              </label>
               <label visible-by-default="true">
                 <control-properties>
                   <property name="text-style" type="string">Normal</property>
@@ -9408,8 +9370,6 @@ To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remov
                   <property name="ClassOverride" type="string">
                   </property>
                   <property name="IsHTML" type="boolean">true</property>
-                  <property name="__list-name" type="string">
-                  </property>
                 </control-properties>
                 <input-attr text="the employer's categorization code">
                   <doc-attr id="p103@kyfpr_rmod" />
@@ -9423,6 +9383,17 @@ To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remov
                 </values>
                 <caption>&lt;p&gt;Employer Type:&lt;/p&gt;</caption>
               </input>
+              <label visible-by-default="true">
+                <control-properties>
+                  <property name="text-style" type="string">Normal</property>
+                  <property name="IsHTML" type="boolean">true</property>
+                  <property name="ClassOverride" type="string">
+                  </property>
+                  <property name="StyleOverride" type="string">
+                  </property>
+                </control-properties>
+                <caption>&lt;hr&gt;</caption>
+              </label>
             </controls>
           </entity>
         </controls>
@@ -9790,6 +9761,8 @@ To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remov
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the number of hours per week the claimant works">
               <doc-attr id="p304@kyfpr_rmod" />
@@ -10080,6 +10053,9 @@ To add another line, please select the ‘Add Row’ button.  &lt;br&gt;To remov
             <caption>&lt;p&gt;Enter any assertion of a test-case specific processing override date&lt;/p&gt;</caption>
           </input>
         </controls>
+        <props>
+          <prop name="xRulzShowTitle">true</prop>
+        </props>
       </screen>
       <screen type="Question" id="s180" name="Laid Off Notification Details for %fpr_emt_visible_name%" public-id="" folder="36" order="2">
         <controls>
@@ -10639,11 +10615,11 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not return to work after the labor dispute">
-              <doc-attr id="p322@kyfpr_rmod" />
-              <doc-attr id="scr_ld_noshow" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Why didn’t you go back to work after the labor dispute ended?&lt;/p&gt;</caption>
           </input>
@@ -10843,7 +10819,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant expressed concerns regarding the reason for reduction in hours with the employer">
-              <doc-attr id="b834@kyfpr_rmod" />
+              <doc-attr id="b745@kyfpr_rmod" />
               <doc-attr id="scr_reduction_concerns_expressed" />
             </input-attr>
             <caption>&lt;p&gt;Did you express your concerns regarding your reason for requesting a reduction in hours with this employer?&lt;/p&gt;</caption>
@@ -10880,7 +10856,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person with whom the claimant discussed concerns">
-              <doc-attr id="p149@kyfpr_rmod" />
+              <doc-attr id="p145@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_with" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  What was the name of the person with whom you discussed your concerns?&lt;/p&gt;</caption>
@@ -10895,7 +10871,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person with whom the claimant discussed concerns">
-              <doc-attr id="p150@kyfpr_rmod" />
+              <doc-attr id="p146@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_title" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was the title of the person?&lt;/p&gt;</caption>
@@ -10909,7 +10885,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the claimant discused their concerns">
-              <doc-attr id="p151@kyfpr_rmod" />
+              <doc-attr id="p147@kyfpr_rmod" />
               <doc-attr id="emt_concerns_expressed_date" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp On what date did you discuss your concerns?&lt;/p&gt;</caption>
@@ -10924,7 +10900,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the specific actions the employer took to address the concerns">
-              <doc-attr id="p152@kyfpr_rmod" />
+              <doc-attr id="p148@kyfpr_rmod" />
               <doc-attr id="scr_action_employer_took" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What specific actions did the employer take to address or correct the issue(s)?&lt;/p&gt;
@@ -10950,7 +10926,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant pursued alternatives prior to requesting a reduction">
-              <doc-attr id="b835@kyfpr_rmod" />
+              <doc-attr id="b560@kyfpr_rmod" />
               <doc-attr id="scr_pursued_prior" />
             </input-attr>
             <caption>&lt;p&gt;Did you pursue alternatives to requesting a reduction?&lt;/p&gt;</caption>
@@ -10976,7 +10952,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the alternatives that were pursued prior to requesting a reduction">
-              <doc-attr id="p332@kyfpr_rmod" />
+              <doc-attr id="p227@kyfpr_rmod" />
               <doc-attr id="scr_alternatives_prior_reduction" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please describe all alternatives that were pursued before requesting a reduction in hours&lt;/p&gt;</caption>
@@ -11001,9 +10977,9 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants reason for not pursuing alternatives">
-              <doc-attr id="p157@kyfpr_rmod" />
-              <doc-attr id="scr_not_pursued_description" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why were alternatives not pursued?&lt;/p&gt;</caption>
           </input>
@@ -11552,11 +11528,11 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant requested a reduction in hours rather than submit to a drug/alcohol test">
-              <doc-attr id="p273@kyfpr_rmod" />
-              <doc-attr id="scr_rh_submit_alcohol" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Why did you request a reduction in hours rather than submit to (or complete) the employer’s drug and/or alcohol test?&lt;/p&gt;
 </caption>
@@ -11570,7 +11546,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the drug test was to be administered">
-              <doc-attr id="p162@kyfpr_rmod" />
+              <doc-attr id="p155@kyfpr_rmod" />
               <doc-attr id="scr_proposed_drugtest_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the test to be conducted?&lt;/p&gt;
@@ -11597,10 +11573,11 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the reason the employer requested that the claimant take a drug test">
               <doc-attr id="p213@kyfpr_rmod" />
-              <doc-attr id="scr_alcohol_test_reason" />
             </input-attr>
             <caption>&lt;p&gt;What was the reason for the drug and/or alcohol test?&lt;/p&gt;
 </caption>
@@ -11647,7 +11624,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please Describe&lt;/p&gt;</caption>
@@ -12615,11 +12592,11 @@ addressing your concerns with the employer)?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the (employee requested) distance to work reduction in hours request reason">
-              <doc-attr id="p379@kyfpr_rmod" />
-              <doc-attr id="scr_rh_work_distance" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;What specific reason regarding the distance to work caused you to request a reduction in hours?&lt;/p&gt;</caption>
           </input>
@@ -12632,7 +12609,7 @@ addressing your concerns with the employer)?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the distance to work has increased since the claimants date of hire">
-              <doc-attr id="b694@kyfpr_rmod" />
+              <doc-attr id="b661@kyfpr_rmod" />
               <doc-attr id="scr_distance_changed" />
             </input-attr>
             <caption>&lt;p&gt;Did the distance to work increase since your date of hire?&lt;/p&gt;</caption>
@@ -13015,7 +12992,7 @@ caused you to request a reduction in hours&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;What condition of your employment contract did you fail to meet? (e.g. failure to pass a test, 
@@ -13029,11 +13006,11 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation of why they failed to meet the specific condition of employment">
-              <doc-attr id="p175@kyfpr_rmod" />
-              <doc-attr id="scr_condition_of_hire_failure" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;Why did you fail to meet this condition of employment?&lt;/p&gt;
 </caption>
@@ -13353,7 +13330,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the business that extended the claimant the new job offer">
-              <doc-attr id="p208@kyfpr_rmod" />
+              <doc-attr id="p179@kyfpr_rmod" />
               <doc-attr id="scr_offer_business" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of the business that extended the new job offer?&lt;/p&gt;
@@ -13369,7 +13346,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person who offered the job">
-              <doc-attr id="p392@kyfpr_rmod" />
+              <doc-attr id="p259@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_person" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of the person who offered the job?&lt;/p&gt;</caption>
@@ -13384,7 +13361,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the phone number of the business">
-              <doc-attr id="p394@kyfpr_rmod" />
+              <doc-attr id="p261@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_phone" />
             </input-attr>
             <caption>&lt;p&gt;What is the phone number of the business?&lt;/p&gt;</caption>
@@ -13410,7 +13387,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the address of the business">
-              <doc-attr id="p393@kyfpr_rmod" />
+              <doc-attr id="p260@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_address" />
             </input-attr>
             <caption>&lt;p&gt;What is the address of the business?&lt;/p&gt;</caption>
@@ -13446,7 +13423,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the new job was offered">
-              <doc-attr id="p395@kyfpr_rmod" />
+              <doc-attr id="p262@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_offer_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the new job offered?&lt;/p&gt;</caption>
@@ -13460,7 +13437,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the new job began">
-              <doc-attr id="p396@kyfpr_rmod" />
+              <doc-attr id="p263@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_begin_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the new job to begin?&lt;/p&gt;</caption>
@@ -13483,11 +13460,9 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="__list-name" type="string">
-              </property>
             </control-properties>
             <input-attr text="the schedule of the new job">
-              <doc-attr id="p397@kyfpr_rmod" />
+              <doc-attr id="p264@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_schedule" />
             </input-attr>
             <caption>&lt;p&gt;What is the schedule of the new job?&lt;/p&gt;</caption>
@@ -13520,7 +13495,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant began working at the new job">
-              <doc-attr id="b905@kyfpr_rmod" />
+              <doc-attr id="b785@kyfpr_rmod" />
               <doc-attr id="scr_rh_new_job_is_working" />
             </input-attr>
             <caption>&lt;p&gt;Did you begin working at the new job?&lt;/p&gt;</caption>
@@ -13543,11 +13518,11 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants reason for not starting the new job">
-              <doc-attr id="p398@kyfpr_rmod" />
-              <doc-attr id="scr_rh_new_job_why_not_start" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -14206,7 +14181,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe which rule/policy the employer alleges that you violated (whether or not you agree)&lt;/p&gt;</caption>
@@ -14274,7 +14249,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants examples of discrimination regarding rules and policy">
-              <doc-attr id="p228@kyfpr_rmod" />
+              <doc-attr id="p201@kyfpr_rmod" />
               <doc-attr id="fpr_emt_example_discrim" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If No:&lt;/b&gt;&amp;nbsp Please provide examples&lt;/p&gt;</caption>
@@ -14300,7 +14275,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants explanantion of why the rule or policy was violated during the employment">
-              <doc-attr id="p324@kyfpr_rmod" />
+              <doc-attr id="p293@kyfpr_rmod" />
               <doc-attr id="fpr_rule_violation_reason" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide an explanation to the employer as to why the policy was violated?&lt;/p&gt;</caption>
@@ -14315,7 +14290,7 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanantion of why the rule or policy was violated during the employment">
-              <doc-attr id="p324@kyfpr_rmod" />
+              <doc-attr id="p293@kyfpr_rmod" />
               <doc-attr id="fpr_rule_violation_reason" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt;&amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -14327,11 +14302,11 @@ failure to earn or maintain a certification other than a driver’s license)?&lt
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p325@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;if No:&lt;/b&gt; &amp;nbsp Why not&lt;/p&gt;</caption>
           </input>
@@ -14501,7 +14476,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your suspension&lt;/p&gt;</caption>
@@ -14541,7 +14516,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of how their duties or workload changed since the date of hire">
-              <doc-attr id="p205@kyfpr_rmod" />
+              <doc-attr id="p189@kyfpr_rmod" />
               <doc-attr id="scr_poor_work_change_desc" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt; &amp;nbsp Please describe the change&lt;/p&gt;
@@ -14579,11 +14554,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation for their unsatisfactory performance">
-              <doc-attr id="p329@kyfpr_rmod" />
-              <doc-attr id="scr_su_performance_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt;&amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -14594,11 +14569,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p325@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If No:&lt;/b&gt; &amp;nbsp Why not?&lt;/p&gt;
 </caption>
@@ -14628,7 +14603,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident or behavior that led to your suspension.&lt;/p&gt;</caption>
@@ -14696,7 +14671,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation for their behavior or conduct">
-              <doc-attr id="p330@kyfpr_rmod" />
+              <doc-attr id="p279@kyfpr_rmod" />
               <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt; &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -14708,11 +14683,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p325@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If No:&lt;/b&gt; &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -14741,7 +14716,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges you were dishonest (whether or not you agree).&lt;/p&gt;</caption>
@@ -14756,7 +14731,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your suspension?&lt;/p&gt;
@@ -14808,11 +14783,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the explanation that the claimant provided to the employer regarding the incident of dishonesty">
-              <doc-attr id="p207@kyfpr_rmod" />
-              <doc-attr id="scr_dishonest_honest_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt; &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -14823,11 +14798,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p325@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If No:&lt;/b&gt;  &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -14870,7 +14845,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges that you falsified your employment application (whether or not you agree)?&lt;/p&gt;
@@ -14908,11 +14883,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation to the employer as to why they falsified an employment application">
-              <doc-attr id="p199@kyfpr_rmod" />
-              <doc-attr id="scr_false_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt; &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -14923,11 +14898,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If No:&lt;/b&gt;  &amp;nbsp Why not?&lt;/p&gt;
 </caption>
@@ -15060,7 +15035,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the instruction the employer alleges that you refused to obey (whether or not you agree).&lt;/p&gt;
@@ -15098,11 +15073,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason the claimant refused to obey an instruction">
-              <doc-attr id="p300@kyfpr_rmod" />
-              <doc-attr id="scr_su_refuse_reason" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&lt;b&gt;If Yes:&lt;/b&gt; &amp;nbsp Why?&lt;/p&gt;</caption>
           </input>
@@ -15127,7 +15102,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person who gave the claimant the instruction that they did not obey">
-              <doc-attr id="p301@kyfpr_rmod" />
+              <doc-attr id="p280@kyfpr_rmod" />
               <doc-attr id="scr_su_instructing_person" />
             </input-attr>
             <caption>&lt;p&gt;What is the name and title of person who gave you this instruction?&lt;/p&gt;</caption>
@@ -16388,7 +16363,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe which rule/policy the employer alleges that you violated (whether or not you agree)&lt;/p&gt;</caption>
@@ -16467,7 +16442,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of how the rule or policy was not uniformly enforced">
-              <doc-attr id="p293@kyfpr_rmod" />
+              <doc-attr id="p275@kyfpr_rmod" />
               <doc-attr id="scr_su_not_uniform" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Please provide examples&lt;/p&gt;</caption>
@@ -16493,7 +16468,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants explanantion of why the rule or policy was violated during the employment">
-              <doc-attr id="p314@kyfpr_rmod" />
+              <doc-attr id="p293@kyfpr_rmod" />
               <doc-attr id="fpr_rule_violation_reason" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide an explanation to the employer as to why the policy was violated?&lt;/p&gt;</caption>
@@ -16519,7 +16494,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants explanantion of why the rule or policy was violated during the employment">
-              <doc-attr id="p314@kyfpr_rmod" />
+              <doc-attr id="p293@kyfpr_rmod" />
               <doc-attr id="fpr_rule_violation_reason" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -16544,9 +16519,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;&amp;nbsp &amp;nbsp &amp;nbsp Why not&lt;/p&gt;</caption>
           </input>
@@ -16588,7 +16563,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant received training or instruction on how to perform their duties">
-              <doc-attr id="b794@kyfpr_rmod" />
+              <doc-attr id="b793@kyfpr_rmod" />
               <doc-attr id="scr_su_training" />
             </input-attr>
             <caption>&lt;p&gt;Did you receive training or instruction on how to perform your duties?&lt;/p&gt;</caption>
@@ -16602,7 +16577,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has done this type of work before">
-              <doc-attr id="b795@kyfpr_rmod" />
+              <doc-attr id="b794@kyfpr_rmod" />
               <doc-attr id="scr_su_performed_previous" />
             </input-attr>
             <caption>&lt;p&gt;Have you previously done this type of work/duties?&lt;/p&gt;</caption>
@@ -16616,7 +16591,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant has received positive feedback regarding their work performance during their employment">
-              <doc-attr id="b796@kyfpr_rmod" />
+              <doc-attr id="b795@kyfpr_rmod" />
               <doc-attr id="scr_su_prior_performance" />
             </input-attr>
             <caption>&lt;p&gt;During your employment, had you received positive evaluations, positive feedback, 
@@ -16632,7 +16607,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your reduction in hours&lt;/p&gt;</caption>
@@ -16657,7 +16632,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants job duties or customary workload has changed since their date of hire">
-              <doc-attr id="b797@kyfpr_rmod" />
+              <doc-attr id="b796@kyfpr_rmod" />
               <doc-attr id="scr_su_workload_change" />
             </input-attr>
             <caption>&lt;p&gt;Had your job duties or customary workload changed since your date of hire?&lt;/p&gt;</caption>
@@ -16682,7 +16657,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants job duties or customary workload has changed since their date of hire">
-              <doc-attr id="b797@kyfpr_rmod" />
+              <doc-attr id="b796@kyfpr_rmod" />
               <doc-attr id="scr_su_workload_change" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Please describe the change&lt;/p&gt;
@@ -16708,7 +16683,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided the employer with an explanation for their unsatisfactory performance">
-              <doc-attr id="b798@kyfpr_rmod" />
+              <doc-attr id="b797@kyfpr_rmod" />
               <doc-attr id="scr_su_explanation_provided" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation for your unsatisfactory performance?&lt;/p&gt;</caption>
@@ -16733,9 +16708,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation for their unsatisfactory performance">
-              <doc-attr id="p328@kyfpr_rmod" />
-              <doc-attr id="scr_su_performance_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -16759,9 +16734,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p324@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;
 </caption>
@@ -16791,7 +16766,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p297@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident or behavior that led to your reduction in hours.&lt;/p&gt;</caption>
@@ -16805,7 +16780,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimants actions/behavior/conduct endangered themselves or others">
-              <doc-attr id="b799@kyfpr_rmod" />
+              <doc-attr id="b798@kyfpr_rmod" />
               <doc-attr id="scr_su_endangered" />
             </input-attr>
             <caption>&lt;p&gt;Did your actions/behavior/conduct endanger yourself or others?&lt;/p&gt;</caption>
@@ -16844,7 +16819,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant provided an explanation regarding their unsatisfactory work performance during the employment">
-              <doc-attr id="b800@kyfpr_rmod" />
+              <doc-attr id="b799@kyfpr_rmod" />
               <doc-attr id="scr_su_explanation_given" />
             </input-attr>
             <caption>&lt;p&gt;Did you provide the employer with an explanation for your behavior or conduct?&lt;/p&gt;</caption>
@@ -16870,7 +16845,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants explanation for their behavior or conduct">
-              <doc-attr id="p329@kyfpr_rmod" />
+              <doc-attr id="p279@kyfpr_rmod" />
               <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
@@ -16893,11 +16868,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p324@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -16926,7 +16901,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges you were dishonest (whether or not you agree).&lt;/p&gt;</caption>
@@ -16941,7 +16916,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the final incident that led to your reduction in hours&lt;/p&gt;
@@ -17017,9 +16992,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the explanation that the claimant provided to the employer regarding the incident of dishonesty">
-              <doc-attr id="p198@kyfpr_rmod" />
-              <doc-attr id="scr_dishonest_honest_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -17041,11 +17016,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why not?&lt;/p&gt;</caption>
           </input>
@@ -17099,7 +17074,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe in what way the employer alleges that you falsified your employment application (whether or not you agree)?&lt;/p&gt;
@@ -17150,9 +17125,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants explanation to the employer as to why they falsified an employment application">
-              <doc-attr id="p199@kyfpr_rmod" />
-              <doc-attr id="scr_false_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What was your explanation?&lt;/p&gt;</caption>
           </input>
@@ -17174,11 +17149,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason that the claimant did not provide an explanation">
-              <doc-attr id="p294@kyfpr_rmod" />
-              <doc-attr id="scr_su_no_explanation" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp Why not?&lt;/p&gt;
 </caption>
@@ -17208,7 +17183,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the claimants description of the final incident">
-              <doc-attr id="p272@kyfpr_rmod" />
+              <doc-attr id="p255@kyfpr_rmod" />
               <doc-attr id="fpr_emt_final_event_desc" />
             </input-attr>
             <caption>&lt;p&gt;Please describe the instruction the employer alleges that you refused to obey (whether or not you agree).&lt;/p&gt;
@@ -17257,11 +17232,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the reason the claimant refused to obey an instruction">
-              <doc-attr id="p300@kyfpr_rmod" />
-              <doc-attr id="scr_su_refuse_reason" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp Why?&lt;/p&gt;</caption>
           </input>
@@ -17286,7 +17261,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the name of the person who gave the claimant the instruction that they did not obey">
-              <doc-attr id="p301@kyfpr_rmod" />
+              <doc-attr id="p280@kyfpr_rmod" />
               <doc-attr id="scr_su_instructing_person" />
             </input-attr>
             <caption>&lt;p&gt;What is the name of person who gave you this instruction?&lt;/p&gt;</caption>
@@ -17301,7 +17276,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the title of the person who gave the claimant the instruction that they did not obey">
-              <doc-attr id="p312@kyfpr_rmod" />
+              <doc-attr id="p291@kyfpr_rmod" />
               <doc-attr id="scr_rh_instruction_person_title" />
             </input-attr>
             <caption>&lt;p&gt;What is the title of person who gave you this instruction?&lt;/p&gt;</caption>
@@ -18094,10 +18069,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the reason the employer requested that the claimant take a drug test">
               <doc-attr id="p213@kyfpr_rmod" />
-              <doc-attr id="scr_alcohol_test_reason" />
             </input-attr>
             <caption>&lt;p&gt;What was the reason for the drug and/or alcohol test?&lt;/p&gt;
 
@@ -18120,11 +18096,11 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">2</property>
+              <property name="lines" type="integer">1</property>
             </control-properties>
-            <input-attr text="the claimants recount of why they refused the drug test">
-              <doc-attr id="p214@kyfpr_rmod" />
-              <doc-attr id="scr_alcohol_refusal_reason" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt;What is your reason for refusing to submit to (or complete) the employer’s drug and/or alcohol test?&lt;/p&gt;
 </caption>
@@ -18149,7 +18125,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the date the drug test was to be administered">
-              <doc-attr id="p158@kyfpr_rmod" />
+              <doc-attr id="p155@kyfpr_rmod" />
               <doc-attr id="scr_proposed_drugtest_date" />
             </input-attr>
             <caption>&lt;p&gt;On what date was the test to be conducted?&lt;/p&gt;
@@ -18164,7 +18140,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employer has a policy regarding alcohol testing">
-              <doc-attr id="b686@kyfpr_rmod" />
+              <doc-attr id="b711@kyfpr_rmod" />
               <doc-attr id="scr_alcohol_test_policy" />
             </input-attr>
             <caption>&lt;p&gt;Does the employer have a policy concerning drug and/or alcohol testing?&lt;/p&gt;</caption>
@@ -18179,7 +18155,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
             </control-properties>
             <input-attr text="the claimant reported to work under the influence of (alcohol, drugs) during the employment">
               <doc-attr id="b15@Rules_DischargeMapping_doc" />
-              <doc-attr id="b443@kyfpr_rmod" />
+              <doc-attr id="b450@kyfpr_rmod" />
               <doc-attr id="reported_under_the_influence" />
             </input-attr>
             <caption>&lt;p&gt;Did you report to work under the influence of drugs and/or alcohol?&lt;/p&gt;</caption>
@@ -18205,8 +18181,8 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the substance's that influenced the claimant upon reporting to work at the employment">
-              <doc-attr id="p217@kyfpr_rmod" />
-              <doc-attr id="scr_onsite_report_substance" />
+              <doc-attr id="p194@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_onsite_report_substance" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What substance(s)?&lt;/p&gt;</caption>
           </input>
@@ -18234,7 +18210,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant consumed (alcohol, drugs) on this employer's premises during the employment">
-              <doc-attr id="b444@kyfpr_rmod" />
+              <doc-attr id="b451@kyfpr_rmod" />
               <doc-attr id="fpr_consumed_drugs_on_site" />
             </input-attr>
             <caption>&lt;p&gt;Did you consume drugs and/or alcohol on the employer’s property?&lt;/p&gt;</caption>
@@ -18260,7 +18236,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the substance that the claimant consumed on the employers property">
-              <doc-attr id="p215@kyfpr_rmod" />
+              <doc-attr id="p192@kyfpr_rmod" />
               <doc-attr id="scr_onsite_substance" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What substance?&lt;/p&gt;</caption>
@@ -18285,7 +18261,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant consumed (alcohol, drugs) during the employment's working hours">
-              <doc-attr id="b445@kyfpr_rmod" />
+              <doc-attr id="b452@kyfpr_rmod" />
               <doc-attr id="fpr_consuming_during_work_hours" />
             </input-attr>
             <caption>&lt;p&gt;Did you consume drugs and/or alcohol during working hours?&lt;/p&gt;</caption>
@@ -18311,7 +18287,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the substance that the claimant consumed during working hours">
-              <doc-attr id="p216@kyfpr_rmod" />
+              <doc-attr id="p193@kyfpr_rmod" />
               <doc-attr id="scr_onsite_work_hours_substance" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp What substance?&lt;/p&gt;</caption>
@@ -18337,7 +18313,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
             </control-properties>
             <input-attr text="the claimant reported to work under the influence of (alcohol, drugs) during the employment">
               <doc-attr id="b15@Rules_DischargeMapping_doc" />
-              <doc-attr id="b443@kyfpr_rmod" />
+              <doc-attr id="b450@kyfpr_rmod" />
               <doc-attr id="reported_under_the_influence" />
             </input-attr>
             <caption>&lt;p&gt;Did you report to work under the influence of drugs and/or alcohol?&lt;/p&gt;</caption>
@@ -18363,8 +18339,8 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the substance's that influenced the claimant upon reporting to work at the employment">
-              <doc-attr id="p217@kyfpr_rmod" />
-              <doc-attr id="scr_onsite_report_substance" />
+              <doc-attr id="p194@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_onsite_report_substance" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp What substance?&lt;/p&gt;</caption>
           </input>
@@ -18388,7 +18364,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant submitted to a drug or alcohol test on the day of the final incident, as required by the employer">
-              <doc-attr id="b795@kyfpr_rmod" />
+              <doc-attr id="b817@kyfpr_rmod" />
               <doc-attr id="scr_drug_alcohol_submit" />
             </input-attr>
             <caption>&lt;p&gt;Did you submit to a drug and/or alcohol test on the day of the final incident as required by the employer?&lt;/p&gt;</caption>
@@ -18424,7 +18400,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant submitted to an alcohol test as required by the employer">
-              <doc-attr id="b794@kyfpr_rmod" />
+              <doc-attr id="b816@kyfpr_rmod" />
               <doc-attr id="scr_submitted_to_alcohol_test" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp  &amp;nbsp  &amp;nbsp Alcohol test&lt;/p&gt;</caption>
@@ -18439,7 +18415,7 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant submitted to a drug test as required by the employer">
-              <doc-attr id="b687@kyfpr_rmod" />
+              <doc-attr id="b712@kyfpr_rmod" />
               <doc-attr id="scr_submitted_to_drug_test" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp   &amp;nbsp &amp;nbsp Drug test&lt;/p&gt;</caption>
@@ -18465,9 +18441,9 @@ or commendations regarding your performance?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">2</property>
             </control-properties>
-            <input-attr text="the reason that the claimant refused to submit to a drug or alcohol test on the day of the final incident">
-              <doc-attr id="p218@kyfpr_rmod" />
-              <doc-attr id="scr_onsite_refusal_desc" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp  &amp;nbsp Why did you refuse?&lt;/p&gt;</caption>
           </input>
@@ -18566,6 +18542,8 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
+              <property name="__list-name" type="string">
+              </property>
             </control-properties>
             <input-attr text="the reason the employer requested that the claimant take a drug test">
               <doc-attr id="p213@kyfpr_rmod" />
@@ -19371,10 +19349,10 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant pursued alternatives prior to leaving the employment">
-              <doc-attr id="b627@kyfpr_rmod" />
+              <doc-attr id="b628@kyfpr_rmod" />
               <doc-attr id="scr_pursued_alt_prior" />
             </input-attr>
-            <caption>&lt;p&gt;Did you pursue alternatives before leaving the employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did you take any actions to avoid leaving the employment?&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -19385,11 +19363,11 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">2</property>
             </control-properties>
-            <input-attr text="the claimants description of the alternatives that were pursued prior to leaving the employment">
-              <doc-attr id="p152@kyfpr_rmod" />
-              <doc-attr id="scr_pursued_description" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
-            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp If Yes, please describe all alternatives that were pursued before leaving the employment?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp If Yes, please describe all actions taken before leaving the employment.&lt;/p&gt;</caption>
           </input>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
             <control-properties>
@@ -19400,11 +19378,11 @@ for the substance for which you tested positive?&lt;/p&gt;</caption>
               <property name="IsHTML" type="boolean">true</property>
               <property name="lines" type="integer">2</property>
             </control-properties>
-            <input-attr text="the claimants reason for not pursuing alternatives">
-              <doc-attr id="p153@kyfpr_rmod" />
-              <doc-attr id="scr_not_pursued_description" />
+            <input-attr text="the claimants explanation for their behavior or conduct">
+              <doc-attr id="p279@kyfpr_rmod" />
+              <doc-attr id="scr_su_behavior_explanation" />
             </input-attr>
-            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp If No, why were alternatives not pursued?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp If No, why did you not take action?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
