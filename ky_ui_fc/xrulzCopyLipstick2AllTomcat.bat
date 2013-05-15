@@ -18,13 +18,14 @@ set sourcePath2=C:\Dev\RB\KY_Rulebase\Tomcat\webapps\web-determinations\WEB-INF
 set targetPath_01="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF"
 set targetPath_02="C:\Dev\RB\KY_Rulebase\ky_ui_fc\Release\web-determinations\WEB-INF"
 set targetPath_03="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\web-determinations\WEB-INF"
+set exclude_01="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF\classes\rulebases"
 rem --------
 echo on
-robocopy %sourcePath1% %targetPath_01% /S /IS /NP /LOG+:build_output.log
+robocopy %sourcePath1% %targetPath_01% /S /IS /NP /XD %exclude_01% /LOG+:build_output.log
 IF ERRORLEVEL 4 GOTO fail04
-robocopy %sourcePath2% %targetPath_02% /S /IS /NP /LOG+:build_output.log
+robocopy %sourcePath2% %targetPath_02% /S /IS /NP /XD %exclude_01% /LOG+:build_output.log
 IF ERRORLEVEL 4 GOTO fail04
-robocopy %sourcePath2% %targetPath_03% /S /IS /NP /LOG+:build_output.log
+robocopy %sourcePath2% %targetPath_03% /S /IS /NP /XD %exclude_01% /LOG+:build_output.log
 IF ERRORLEVEL 4 GOTO fail04
 echo All Copies Completed.  Restart Tomcat 7 and Test Me Now !
 exit /B 0
