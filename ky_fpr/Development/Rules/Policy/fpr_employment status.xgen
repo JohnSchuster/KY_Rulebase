@@ -25,24 +25,6 @@
           <parse>s(ver('10.4.2.18'),v(earn,t(simple,present,perfect)),sb('the claimant',singular),o('at least one and one fourth times the weekly benefit amount'))</parse>
         </text>
       </attribute>
-      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is an sports professional</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('an sports professional'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is paid to participate in sports or athletic events</base>
-          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to participate in sports or athletic events'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is paid to (train, prepare) for participation in sports or athletic events</base>
-          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to (train, prepare) for participation in sports or athletic events'))</parse>
-        </text>
-      </attribute>
       <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant is being paid their regular salary during a federal government shutdown</base>
@@ -109,6 +91,42 @@
         <text lang="en-US">
           <base>the claimant still considers themself to be connected to the employment</base>
           <parse>s(ver('10.4.2.18'),v(consider,t(simple,present,normal)),sb('the claimant still',singular),o('themself to be connected to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a sports professional for the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a sports professional for the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is paid to participate in sports or athletic events by the employment</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to participate in sports or athletic events by the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is paid to (train, prepare) for participation in sports or athletic events by the employment</base>
+          <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the claimant',singular),o('to (train, prepare) for participation in sports or athletic events by the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a waterway employee who is considered fully employed by the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee who is considered fully employed by the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a waterway employee of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a waterway employee of the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is (on a scheduled break, off duty) from the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('(on a scheduled break, off duty) from the employment'))</parse>
         </text>
       </attribute>
     </entity>
@@ -186,7 +204,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1293">
+    <rule id="2" name="the claimant is on a leave of absence from the employment" ruleburst="true" concludes="b4" folder="0" source-offset="1089">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -208,7 +226,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="both parties (claimant and employer) agree that the claimant is currently connected to the employment" ruleburst="true" concludes="b24" folder="0" source-offset="1688">
+    <rule id="3" name="both parties (claimant and employer) agree that the claimant is currently connected to the employment" ruleburst="true" concludes="b24" folder="0" source-offset="1484">
       <rule-xml>
         <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
           <value>
@@ -226,16 +244,34 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant is an sports professional" ruleburst="true" concludes="b12" folder="0" source-offset="1957">
+    <rule id="4" name="the claimant is a sports professional for the employment" ruleburst="true" concludes="b27" folder="0" source-offset="1753">
       <rule-xml>
-        <conclude attr-id="b12" entity-id="global" scope-id="global0">
+        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b13" />
-              <attribute attr-id="b14" />
+              <attribute attr-id="b28" />
+              <attribute attr-id="b29" />
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant is a waterway employee who is considered fully employed by the employment" ruleburst="true" concludes="b30" folder="0" source-offset="2022">
+      <rule-xml>
+        <conclude attr-id="b30" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b31" />
+              <attribute attr-id="b32" />
             </and>
           </condition>
           <otherwise>
