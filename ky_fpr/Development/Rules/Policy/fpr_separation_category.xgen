@@ -139,6 +139,36 @@
           <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the status of the claimants employment',singular),o('since the date of hire'))</parse>
         </text>
       </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's current employment should be investigated</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment''s current employment',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's reduction in hours should be investigated</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment''s reduction in hours',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was reduced in hours</base>
+          <parse>s(ver('10.4.2.18'),v(reduce,t(simple,past,normal)),ob('the employment',singular),o('in hours'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's retirement should be investigated</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment''s retirement',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's quit selection should be investigated</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment''s quit selection',singular))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -148,7 +178,109 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="845">
+    <rule id="0" name="the employment's current employment should be investigated" ruleburst="true" concludes="b33" folder="0" source-offset="1597">
+      <rule-xml>
+        <conclude attr-id="b33" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b28" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employment's reduction in hours should be investigated" ruleburst="true" concludes="b34" folder="0" source-offset="1735">
+      <rule-xml>
+        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b35" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment's retirement should be investigated" ruleburst="true" concludes="b36" folder="0" source-offset="1844">
+      <rule-xml>
+        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b14" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employment's quit selection should be investigated" ruleburst="true" concludes="b37" folder="0" source-offset="1963">
+      <rule-xml>
+        <conclude attr-id="b37" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b18" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the employment's suspension should be investigated" ruleburst="true" concludes="b5" folder="0" source-offset="2083">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <attribute attr-id="b6" />
+              </and>
+              <attribute attr-id="b7" />
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment's leave of absence should be investigated" ruleburst="true" concludes="b8" folder="0" source-offset="2359">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <attribute attr-id="b9" />
+              </and>
+              <attribute attr-id="b10" />
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="2655">
       <rule-xml>
         <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
           <value>
@@ -172,7 +304,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's separation category is Always Part Time" ruleburst="true" concludes="b31" folder="0" source-offset="1179">
+    <rule id="7" name="the employment's separation category is always part time" ruleburst="true" concludes="b31" folder="0" source-offset="2988">
       <rule-xml>
         <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
           <value>
@@ -195,49 +327,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's suspension should be investigated" ruleburst="true" concludes="b5" folder="0" source-offset="1453">
-      <rule-xml>
-        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <and>
-                <attribute attr-id="b2" />
-                <attribute attr-id="b6" />
-              </and>
-              <attribute attr-id="b7" />
-            </or>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the employment's leave of absence should be investigated" ruleburst="true" concludes="b8" folder="0" source-offset="1729">
-      <rule-xml>
-        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <or>
-              <and>
-                <attribute attr-id="b2" />
-                <attribute attr-id="b9" />
-              </and>
-              <attribute attr-id="b10" />
-            </or>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="2024">
+    <rule id="8" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="3262">
       <rule-xml>
         <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
@@ -277,7 +367,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="2837">
+    <rule id="9" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="4075">
       <rule-xml>
         <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
           <value>
