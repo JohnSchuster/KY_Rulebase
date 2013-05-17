@@ -3,7 +3,7 @@
 // 	---	SD, 2013-04-28
 $(function() {  // jQuery idiom that defers execution until the Browsers DOM ready event
 	$.datepicker.setDefaults({
-		showOn: "both",				// qqq datepicker shows on field focus or icon/button click
+		showOn: "both",				// datepicker shows on field focus or icon/button click
 		showButtonPanel: true,		// simplifies closure of the popup
 		currentText: "Selected",		// moves back to current month/day
 		regional: "en",				// western region  
@@ -41,16 +41,15 @@ $(function() {  // jQuery idiom that defers execution until the Browsers DOM rea
 		$( "#xr_cs_01_t01" ).stop( true, true ); // Clear and end any highlit
 		// Use the current wrapped set to set the dialog content
 		
-		var $temp = "You Have Selected: <br\><br\>" + $( "input:checked" ).parent().children().text();
+		var temp = "<h2>You Have Selected:</h2>";
+		$( "input:checked" ).parent().children(".xr_01_sel").each( 
+			function(index, element) {
+				temp = temp + "<br/><p>" + $(element).html() + "</p>";
+				//console.log( temp );
+			});
+		console.log( temp );
+		$( $xr_confirm ).html( temp );
 		
-		//Get the parent element of the checked input
-		//var checked = $( "input:checked" );
-		//var temp = "You Have Selected: <br\><br\>";
-		//temp = temp + $( $checked ).parent().first-child().text() + "<br\><br\>";
-		//temp = temp + $( $checked ).parent().nth-child(2).text();
-		
-		//console.log( $temp );
-		$( $xr_confirm ).html( $temp );
 		// Display the Dialog
 		$( $xr_confirm ).dialog( "open" );
 	}
