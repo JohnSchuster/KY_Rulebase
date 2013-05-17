@@ -137,9 +137,15 @@
     </entity>
   </entities>
   <relationships>
-    <relationship type="ManyToMany" relationship-id="allfindingsinferredfromemployment" reverse-relationship-id="findinginfbyemt" text="all findings inferred from employment" reverse-text="finding inf by emt" source="employment" target="finding" is-implicit="false" is-containment="false" />
-    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allusfindingsinferredfromemployment" reverse-relationship-id="findingusinfbyemployment" text="all us finding's inferred from employment" reverse-text="finding us inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="alldifindingsinferredfromemployment" reverse-relationship-id="findingdiinfbyemployment" text="all di finding's inferred from employment" reverse-text="finding di inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allmcfindingsinferredfromemployment" reverse-relationship-id="findingmcinfbyemployment" text="all mc finding's inferred from employment" reverse-text="finding mc inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allmsfindingsinferredfromemployment" reverse-relationship-id="findingmsinfbyemployment" text="all ms finding's inferred from employment" reverse-text="finding ms inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allvqfindingsinferredfromemployment" reverse-relationship-id="findingvqinfbyemployment" text="all vq finding's inferred from employment" reverse-text="finding vq inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="ManyToMany" relationship-id="allsefindingsinferredfromemployment" reverse-relationship-id="findingseinfbyemployment" text="all se finding's inferred from employment" reverse-text="finding se inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allldfindingsinferredfromemployment" reverse-relationship-id="findingldinfbyemployment" text="all ld finding's inferred from employment" reverse-text="finding ld inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" text="all findings inferred from claim" reverse-text="the claim inferring this finding" source="global" target="finding" is-implicit="false" is-containment="false" />
     <relationship type="ManyToMany" relationship-id="allinferred412aforemployer" reverse-relationship-id="eachemployerinferred412a" text="all inferred 412a for employer" reverse-text="each employer inferred 412a" source="employer" target="a" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
@@ -175,7 +181,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="1" name="isMemberOf(the nod, finding infers nod)" ruleburst="true" concludes="IsMemberOf(&quot;nod&quot;,findinginfersnod)" folder="0" source-offset="921">
+    <rule id="1" name="isMemberOf(the nod, finding infers nod)" ruleburst="true" concludes="IsMemberOf(&quot;nod&quot;,findinginfersnod)" folder="0" source-offset="805">
       <rule-xml>
         <conclude-rel relationship-id="findinginfersnod" source="finding" source-scope-id="finding0" target-scope-id="nod0">
           <condition>
@@ -197,12 +203,50 @@
                     <exists-in scope-ref="nod0" scope-is-source="true" scope-entity-id="nod">
                       <relationship relationship-id="nodinferredforemployer" target-entity-id="employer" />
                     </exists-in>
-                    <exists scope-id="employment0">
-                      <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
-                      <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
-                        <relationship relationship-id="allfindingsinferredfromemployment" target-entity-id="finding" />
-                      </exists-in>
-                    </exists>
+                    <or>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="alldifindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allldfindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allmcfindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allmsfindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allsefindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allusfindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                      <exists scope-id="employment0">
+                        <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+                        <exists-in scope-ref="finding0" scope-is-source="false" scope-entity-id="finding">
+                          <relationship relationship-id="allvqfindingsinferredfromemployment" target-entity-id="finding" />
+                        </exists-in>
+                      </exists>
+                    </or>
                   </and>
                 </exists>
               </scope-for>
@@ -211,7 +255,7 @@
         </conclude-rel>
       </rule-xml>
     </rule>
-    <rule id="2" name="at least one finding has been raised" ruleburst="true" concludes="b19" folder="0" source-offset="1782">
+    <rule id="2" name="at least one finding has been raised" ruleburst="true" concludes="b19" folder="0" source-offset="1939">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -231,7 +275,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="all inferred actions" ruleburst="true" concludes="InferInstance(allinferredactions)" folder="0" source-offset="1921">
+    <rule id="3" name="all inferred actions" ruleburst="true" concludes="InferInstance(allinferredactions)" folder="0" source-offset="2026">
       <rule-xml>
         <table-conclude-instance relationship-id="allinferredactions" source="global" source-scope-id="global0">
           <row>
@@ -245,7 +289,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="4" name="all inferred 412a for employer" ruleburst="true" concludes="InferInstance(allinferred412aforemployer)" folder="0" source-offset="2088">
+    <rule id="4" name="all inferred 412a for employer" ruleburst="true" concludes="InferInstance(allinferred412aforemployer)" folder="0" source-offset="2135">
       <rule-xml>
         <table-conclude-instance relationship-id="allinferred412aforemployer" source="employer" source-scope-id="employer0">
           <row>
@@ -327,7 +371,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="5" name="inferred employer nod" ruleburst="true" concludes="InferInstance(inferredemployernod)" folder="0" source-offset="3650">
+    <rule id="5" name="inferred employer nod" ruleburst="true" concludes="InferInstance(inferredemployernod)" folder="0" source-offset="3036">
       <rule-xml>
         <table-conclude-instance relationship-id="inferredemployernod" source="employer" source-scope-id="employer0">
           <row>
@@ -397,7 +441,7 @@
         </table-conclude-instance>
       </rule-xml>
     </rule>
-    <rule id="6" name="the nod may be appealed" ruleburst="true" concludes="b15" folder="0" source-offset="4493">
+    <rule id="6" name="the nod may be appealed" ruleburst="true" concludes="b15" folder="0" source-offset="3723">
       <rule-xml>
         <table-conclude attr-id="b15" entity-id="nod" scope-id="nod0">
           <row>
