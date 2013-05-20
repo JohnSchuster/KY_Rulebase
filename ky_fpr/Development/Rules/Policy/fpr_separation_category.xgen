@@ -175,6 +175,18 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('part-time since the date of hire'))</parse>
         </text>
       </attribute>
+      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's labor dispute should be investigated</base>
+          <parse>s(ver('10.4.2.18'),v(investigate+should,t(simple,modal,normal)),ob('the employment''s labor dispute',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the status of the claimants employment has changed since the date of hire</base>
+          <parse>s(ver('10.4.2.18'),v(change,t(simple,present,perfect)),sb('the status of the claimants employment',singular),o('since the date of hire'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -184,7 +196,7 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment's current employment should be investigated" ruleburst="true" concludes="b33" folder="0" source-offset="1597">
+    <rule id="0" name="the employment's current employment should be investigated" ruleburst="true" concludes="b33" folder="0" source-offset="1684">
       <rule-xml>
         <conclude attr-id="b33" entity-id="employment" scope-id="employment0">
           <value>
@@ -199,72 +211,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's reduction in hours should be investigated" ruleburst="true" concludes="b34" folder="0" source-offset="1735">
-      <rule-xml>
-        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b35" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the employment's retirement should be investigated" ruleburst="true" concludes="b36" folder="0" source-offset="1844">
-      <rule-xml>
-        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b14" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="3" name="the employment's quit selection should be investigated" ruleburst="true" concludes="b37" folder="0" source-offset="1963">
-      <rule-xml>
-        <conclude attr-id="b37" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <attribute attr-id="b18" />
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="4" name="the employment's separation category is labor dispute" ruleburst="true" concludes="b38" folder="0" source-offset="2083">
-      <rule-xml>
-        <conclude attr-id="b38" entity-id="employment" scope-id="employment0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <attribute attr-id="b2" />
-              <not>
-                <attribute attr-id="b6" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="5" name="the employment's leave of absence should be investigated" ruleburst="true" concludes="b8" folder="0" source-offset="2302">
+    <rule id="1" name="the employment's leave of absence should be investigated" ruleburst="true" concludes="b8" folder="0" source-offset="1906">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
           <value>
@@ -279,23 +226,14 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="2545">
+    <rule id="2" name="the employment's retirement should be investigated" ruleburst="true" concludes="b36" folder="0" source-offset="2095">
       <rule-xml>
-        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b36" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
-            <or>
-              <and>
-                <attribute attr-id="b28" />
-                <attribute attr-id="b30" />
-              </and>
-              <and>
-                <attribute attr-id="b10" />
-                <attribute attr-id="b25" />
-              </and>
-            </or>
+            <attribute attr-id="b14" />
           </condition>
           <otherwise>
             <false-value />
@@ -303,7 +241,52 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employment's separation category is layoff" ruleburst="true" concludes="b39" folder="0" source-offset="2878">
+    <rule id="3" name="the employment's quit selection should be investigated" ruleburst="true" concludes="b37" folder="0" source-offset="2263">
+      <rule-xml>
+        <conclude attr-id="b37" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b18" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the employment's labor dispute should be investigated" ruleburst="true" concludes="b42" folder="0" source-offset="2442">
+      <rule-xml>
+        <conclude attr-id="b42" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b2" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment's reduction in hours should be investigated" ruleburst="true" concludes="b34" folder="0" source-offset="2700">
+      <rule-xml>
+        <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b35" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the employment's separation category is layoff" ruleburst="true" concludes="b39" folder="0" source-offset="2935">
       <rule-xml>
         <conclude attr-id="b39" entity-id="employment" scope-id="employment0">
           <value>
@@ -318,7 +301,34 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employment's separation category is always part time" ruleburst="true" concludes="b31" folder="0" source-offset="2992">
+    <rule id="7" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="3037">
+      <rule-xml>
+        <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b28" />
+                <attribute attr-id="b30" />
+                <not>
+                  <attribute attr-id="b43" />
+                </not>
+              </and>
+              <and>
+                <attribute attr-id="b10" />
+                <attribute attr-id="b25" />
+              </and>
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the employment's separation category is always part time" ruleburst="true" concludes="b31" folder="0" source-offset="3421">
       <rule-xml>
         <conclude attr-id="b31" entity-id="employment" scope-id="employment0">
           <value>
@@ -328,6 +338,9 @@
             <and>
               <attribute attr-id="b28" />
               <attribute attr-id="b41" />
+              <not>
+                <attribute attr-id="b43" />
+              </not>
             </and>
           </condition>
           <otherwise>
@@ -336,7 +349,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="3304">
+    <rule id="9" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="3798">
       <rule-xml>
         <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
@@ -370,7 +383,12 @@
                   <attribute attr-id="b17" />
                 </or>
               </and>
-              <attribute attr-id="b18" />
+              <and>
+                <attribute attr-id="b18" />
+                <not>
+                  <attribute attr-id="b19" />
+                </not>
+              </and>
             </or>
           </condition>
           <otherwise>
@@ -379,7 +397,27 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="4257">
+    <rule id="10" name="the employment's separation category is labor dispute" ruleburst="true" concludes="b38" folder="0" source-offset="4690">
+      <rule-xml>
+        <conclude attr-id="b38" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b2" />
+              <not>
+                <attribute attr-id="b6" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="4888">
       <rule-xml>
         <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
           <value>
