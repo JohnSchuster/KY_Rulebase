@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-script product-version="10.4.2.18" schema-version="4">
+  <test-case-set>
+    <test-case name="vq01" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="fpr_employer 1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="global2issuetype" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="0xe95456d8b79d70e6" />
+              <ent-inst-ref ref-id="0xdfa368ea111c87a4" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="true">
+              <ent-inst-ref ref-id="0x13c48dd37f50407c" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="fpr_employment 1">
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2012-03-03</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-03-03</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_vq_wo_gc_from_emt" text="the claimant voluntarily left the employment without good cause attributable to the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_left_disciplinay_action" text="the claimant left the employment due to disciplinary action imposed by this employer" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_failed_substantial_condition" text="the claimant failed to meet a substantial condition in the terms of the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="fpr_employer 1">
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>Sams</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="fpr_employment 1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_412a" entity-text="the 412A">
+        <ent-inst id="0x13c48dd37f50407c" />
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding">
+        <ent-inst id="0xe95456d8b79d70e6" />
+        <ent-inst id="0xdfa368ea111c87a4" />
+      </ent-set>
+    </test-case>
+  </test-case-set>
+  <outcome-set />
+</test-script>
