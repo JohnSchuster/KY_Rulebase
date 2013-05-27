@@ -1,8 +1,8 @@
 ##// 	--- xRulz Client Side Code Development ---
 ##// 	--- See DesignGuidelinesReadMe.txt ---
 ##// 	---	SD, 2013-05-27
-$(function() {  // jQuery qdiom that defers execution until the Browsers DOM ready event
-	##//Asynch
+$(function() {  // jQuery Idiom that defers execution until the Browsers DOM ready event
+	//Asynch
 	$.datepicker.setDefaults({
 		showOn: "both",				// datepicker shows on field focus or icon/button click
 		showButtonPanel: true,		// simplifies closure of the popup
@@ -14,18 +14,18 @@ $(function() {  // jQuery qdiom that defers execution until the Browsers DOM rea
 		appendText: "&nbsp mm/dd/yyyy",
 		dateFormat: "mm/dd/yy",
 		showOtherMonths: true,
-		yearRange: "1950:+1",		// Range 1950 thru current Year; does not display any future year
+		yearRange: "1910:+1",		// Range 1950 thru current Year; does not display any future year
 		firstDay: 0, 				// Makes Sunday the first day of the week
-		constrainInput: true, 		// limits field input to valid chars
-		changeMonth: true,			// dropdown
-		changeYear: true 			// dropdown
+		constrainInput: true, 		//limits field input to valid chars
+		changeMonth: true,			//dropdown
+		changeYear: true 			//dropdown
 	});
 	##//Attach datepicker to Dom Node by it's CSS selector (example is an ID)	
 	//$( "#radio" ).buttonset();
 	##// Set up a jQuery Wrapped Set for the Confirmation Div
 	var $xr_confirm = $( "#xr_confirm" );
 	
-	##// Synchronous Handlers
+	// Synchronous Handlers
 	function xr_cs_01_btn_01_click( event ) {
 		// Handler for the Continue ( submit ) Button's click event
 		event.preventDefault();
@@ -74,5 +74,7 @@ $(function() {  // jQuery qdiom that defers execution until the Browsers DOM rea
 			}
 		}
 	});
+	/* -------------------------------------*/
+	/* xRulz XR_CS_01 Screen Functions End  */
 });
 
