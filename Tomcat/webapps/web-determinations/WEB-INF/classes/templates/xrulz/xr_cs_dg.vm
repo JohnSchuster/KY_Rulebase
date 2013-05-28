@@ -1,0 +1,47 @@
+﻿## xRulz Custom screen definition for xr_cs_dg
+
+#set( $xrulz_screen_id = $screen.getProperty("xRulzScreenId","") )
+<h3>xRulz Custom Screen: $xrulz_screen_id</h3>
+
+#parse( "investigation/controlMessages.vm" )
+
+<div id="xr_owd_wrapper" >
+	<div id="xr_replace">
+		## Grab the list of controls from the screen
+		#set( $controlList = ${screen.getControls()} )
+		#foreach( $control in $controlList )
+			<div class="control-item">
+				#set( $entInstCollectControls = ${control.getControls()} )
+				<div class="entity-instance-group">
+					#foreach( $item in $entInstCollectControls )
+						<div class="control-item">
+							<p>${item.getControlType()}</p>
+							#set($collectControls = ${item.getControls()} )
+							##set($entCtrl = ${control})
+							#foreach( $collect in $collectControls )
+								<p>Control... </p>
+								##parse( "controls/${collect.getControlType()}.vm" )	
+								<p>${collect.getControlType()}</p>
+								#if("TextInputControl" == ${collect.getControlType()})
+									<p>TextInputControl</p>
+									<input 
+										type="text" 
+										id="${collect.getEncodedID()}" 
+										name="${collect.getId()}" ${readOnlyString} 
+										value="${collect.getDisplayValue()}" 
+										alt="${collect.getText()}" 
+										tabindex="#tabIndex()" 
+										size="${text-control-width}" 
+										${styleAttribute} 
+										${classAttribute}
+									>
+								#end
+							#end
+						</div>
+					#end
+				</div>
+			</div>
+		#end
+	</div>
+</div>
+
