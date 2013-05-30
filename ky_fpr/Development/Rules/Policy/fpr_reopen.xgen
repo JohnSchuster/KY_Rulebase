@@ -1,0 +1,258 @@
+<root schema-version="1" product-version="10.4.2.18">
+  <entities>
+    <entity ref="global">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant needs to file a new claim</base>
+          <parse>s(ver('10.4.2.18'),v(need,t(simple,present,normal)),sb('the claimant',singular),o('to file a new claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claim's benefit year has expired</base>
+          <parse>s(ver('10.4.2.18'),v(expire,t(simple,present,perfect)),sb('the claim''s benefit year',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claim has a remaining non-zero balance</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a remaining non-zero balance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had a change in employment status since the most recent file date</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a change in employment status since the most recent file date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is in compliance with divisions benefit request procedures</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in compliance with divisions benefit request procedures'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible for an extension of benefits</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible for an extension of benefits'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's eligibility review interview is due</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s eligibility review interview',singular),o('due'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is within the range of dates to complete an eligibility review interview</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('within the range of dates to complete an eligibility review interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b13" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant may request a check in compliance with division requirements</base>
+          <parse>s(ver('10.4.2.18'),v(request+may,t(simple,modal,normal)),sb('the claimant',plural),o('a check in compliance with division requirements'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant may file a new claim</base>
+          <parse>s(ver('10.4.2.18'),v(file+may,t(simple,modal,normal)),sb('the claimant',plural),o('a new claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>claim filing is required of the claimant at this time</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),ob('claim filing',singular),o('of the claimant at this time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this is an additional claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this',singular),o('an additional claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>this is a re-activation of an existing claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this',singular),o('a re-activation of an existing claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is re-opening their existing claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('re-opening their existing claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has an active claim in Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an active claim in Kentucky'))</parse>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships />
+  <rules>
+    <rule id="0" name="the claimant has an active claim in Kentucky" ruleburst="true" concludes="b20" folder="0" source-offset="46">
+      <rule-xml>
+        <conclude attr-id="b20" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <not>
+                <attribute attr-id="b4" />
+              </not>
+              <attribute attr-id="b5" />
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the claimant is re-opening their existing claim" ruleburst="true" concludes="b19" folder="0" source-offset="200">
+      <rule-xml>
+        <conclude attr-id="b19" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b2" />
+              </not>
+              <attribute attr-id="b20" />
+              <or>
+                <conclude attr-id="b17" entity-id="global" scope-id="global0">
+                  <value>
+                    <true-value />
+                  </value>
+                  <condition>
+                    <attribute attr-id="b7" />
+                  </condition>
+                  <otherwise>
+                    <false-value />
+                  </otherwise>
+                </conclude>
+                <conclude attr-id="b18" entity-id="global" scope-id="global0">
+                  <value>
+                    <true-value />
+                  </value>
+                  <condition>
+                    <not>
+                      <attribute attr-id="b9" />
+                    </not>
+                  </condition>
+                  <otherwise>
+                    <false-value />
+                  </otherwise>
+                </conclude>
+              </or>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant does not need to file a new claim" ruleburst="true" concludes="not b2" folder="0" source-offset="695">
+      <rule-xml>
+        <conclude attr-id="b2" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b20" />
+                <or>
+                  <not>
+                    <attribute attr-id="b4" />
+                  </not>
+                  <attribute attr-id="b5" />
+                </or>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b20" />
+                </not>
+                <not>
+                  <attribute attr-id="b10" />
+                </not>
+              </and>
+            </or>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant's eligibility review interview is due" ruleburst="true" concludes="b11" folder="0" source-offset="1250">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b12" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant may request a check in compliance with division requirements" ruleburst="true" concludes="b13" folder="0" source-offset="1457">
+      <rule-xml>
+        <conclude attr-id="b13" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b14" />
+              </not>
+              <not>
+                <attribute attr-id="b19" />
+              </not>
+              <not>
+                <attribute attr-id="b11" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="claim filing is not required of the claimant at this time" ruleburst="true" concludes="not b16" folder="0" source-offset="1723">
+      <rule-xml>
+        <conclude attr-id="b16" entity-id="global" scope-id="global0">
+          <value>
+            <false-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b2" />
+              </not>
+              <attribute attr-id="b13" />
+            </and>
+          </condition>
+          <otherwise>
+            <true-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

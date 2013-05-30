@@ -2414,6 +2414,48 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_14, not available (dua)'))</parse>
         </text>
       </attribute>
+      <attribute name="b1278" type="boolean" public-name="fpr_reo_claim_byear_expired">
+        <text>
+          <base>the claim's benefit year has expired</base>
+          <parse>s(ver('10.4.2.18'),v(expire,t(simple,present,perfect)),sb('the claim''s benefit year',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1279" type="boolean" public-name="fpr_reo_claim_non_zero_bal">
+        <text>
+          <base>the claim has a remaining non-zero balance</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('a remaining non-zero balance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1280" type="boolean" public-name="fpr_reo_claim_chg_emt_status">
+        <text>
+          <base>the claimant had a change in employment status since the most recent file date</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('a change in employment status since the most recent file date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1281" type="boolean" public-name="fpr_reo_claim_elig_ex_ben">
+        <text>
+          <base>the claimant is eligible for an extension of benefits</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible for an extension of benefits'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1282" type="boolean" public-name="fpr_reo_claim_wrod_eri">
+        <text>
+          <base>the claimant is within the range of dates to complete an eligibility review interview</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('within the range of dates to complete an eligibility review interview'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1283" type="boolean" public-name="fpr_reo_claim_may_file_new">
+        <text>
+          <base>the claimant may file a new claim</base>
+          <parse>s(ver('10.4.2.18'),v(file+may,t(simple,modal,normal)),sb('the claimant',plural),o('a new claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1284" type="boolean" public-name="fpr_reo_claim_inco_dbrp">
+        <text>
+          <base>the claimant is in compliance with divisions benefit request procedures</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in compliance with divisions benefit request procedures'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
