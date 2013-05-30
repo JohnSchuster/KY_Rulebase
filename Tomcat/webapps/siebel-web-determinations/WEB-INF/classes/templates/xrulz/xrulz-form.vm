@@ -12,9 +12,11 @@ ${tabIndex}#set($tabIndex = $tabIndex + 1)
 	#if(${goal-state})
 		<input name="goal-state" type="hidden" value="${goal-state}"/>
 	#end
-	## VTL
+	#set($xr_sid = $screen.getProperty("xRulzScreenId",""))
 	## Select for the specific custom screen
-	#if( "xr_cs_01" == $screen.getProperty("xRulzScreenId","") )
+	#if( "xr_cs_01" == $xr_sid )
 		#parse( "xrulz/xr_cs_01.vm" )
+	#elseif( "xr_cs_dg" == $xr_sid )
+		#parse( "xrulz/xr_cs_dg.vm" )
 	#end
 </form>

@@ -1,9 +1,10 @@
-// 	--- xRulz Client Side Code Development ---
-// 	--- See DesignGuidelinesReadMe.txt ---
-// 	---	SD, 2013-04-28
-$(function() {  // jQuery idiom that defers execution until the Browsers DOM ready event
+##// 	--- xRulz Client Side Code Development ---
+##// 	--- See DesignGuidelinesReadMe.txt ---
+##// 	---	SD, 2013-05-27
+$(function() {  // jQuery qdiom that defers execution until the Browsers DOM ready event
+	##//Asynch
 	$.datepicker.setDefaults({
-		showOn: "both",				// qqq datepicker shows on field focus or icon/button click
+		showOn: "both",				// datepicker shows on field focus or icon/button click
 		showButtonPanel: true,		// simplifies closure of the popup
 		currentText: "Selected",		// moves back to current month/day
 		regional: "en",				// western region  
@@ -13,20 +14,18 @@ $(function() {  // jQuery idiom that defers execution until the Browsers DOM rea
 		appendText: "&nbsp mm/dd/yyyy",
 		dateFormat: "mm/dd/yy",
 		showOtherMonths: true,
-		yearRange: "1910:+1",		// Range 1950 thru current Year; does not display any future year
+		yearRange: "1950:+1",		// Range 1950 thru current Year; does not display any future year
 		firstDay: 0, 				// Makes Sunday the first day of the week
-		constrainInput: true, 		//limits field input to valid chars
-		changeMonth: true,			//dropdown
-		changeYear: true 			//dropdown
+		constrainInput: true, 		// limits field input to valid chars
+		changeMonth: true,			// dropdown
+		changeYear: true 			// dropdown
 	});
-	$( "#date1" ).datepicker(); 	//Attach datepicker to Dom Node by it's CSS selector (example is an ID)
-	$( "#radio" ).buttonset();
-	
-	/* xRulz XR_CS_01 Screen Functions Start*/
-	/* -------------------------------------*/
-	// Set up a jQuery Wrapped Set for the Confirmation Div
+	##//Attach datepicker to Dom Node by it's CSS selector (example is an ID)	
+	//$( "#radio" ).buttonset();
+	##// Set up a jQuery Wrapped Set for the Confirmation Div
 	var $xr_confirm = $( "#xr_confirm" );
-	// Handler
+	
+	##// Synchronous Handlers
 	function xr_cs_01_btn_01_click( event ) {
 		// Handler for the Continue ( submit ) Button's click event
 		event.preventDefault();
@@ -41,16 +40,15 @@ $(function() {  // jQuery idiom that defers execution until the Browsers DOM rea
 		$( "#xr_cs_01_t01" ).stop( true, true ); // Clear and end any highlit
 		// Use the current wrapped set to set the dialog content
 		
-		var $temp = "You Have Selected: <br\><br\>" + $( "input:checked" ).parent().children().text();
+		var temp = "<h2>You Have Selected:</h2>";
+		$( "input:checked" ).parent().children(".xr_01_sel").each( 
+			function(index, element) {
+				temp = temp + "<br/><p>" + $(element).html() + "</p>";
+				//console.log( temp );
+			});
+		//console.log( temp );
+		$( $xr_confirm ).html( temp );
 		
-		//Get the parent element of the checked input
-		//var checked = $( "input:checked" );
-		//var temp = "You Have Selected: <br\><br\>";
-		//temp = temp + $( $checked ).parent().first-child().text() + "<br\><br\>";
-		//temp = temp + $( $checked ).parent().nth-child(2).text();
-		
-		//console.log( $temp );
-		$( $xr_confirm ).html( $temp );
 		// Display the Dialog
 		$( $xr_confirm ).dialog( "open" );
 	}
@@ -76,7 +74,5 @@ $(function() {  // jQuery idiom that defers execution until the Browsers DOM rea
 			}
 		}
 	});
-	/* -------------------------------------*/
-	/* xRulz XR_CS_01 Screen Functions End  */
 });
 

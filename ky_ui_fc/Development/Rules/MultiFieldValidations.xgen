@@ -1,11 +1,14 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+<<<<<<< HEAD
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants explanation for their behavior or conduct</base>
         </text>
       </attribute>
+=======
+>>>>>>> sd_baseline
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimants job duties or customary workload has changed since their date of hire</base>
@@ -18,6 +21,19 @@
           <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation for their unsatisfactory performance'))</parse>
         </text>
       </attribute>
+<<<<<<< HEAD
+=======
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants explanation for their behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p2" type="date" ruleburst="true" is-used="False">
+        <text lang="en-US">
+          <base>the date the off-duty water transportation period from the employment began</base>
+        </text>
+      </attribute>
+>>>>>>> sd_baseline
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -44,7 +60,11 @@
         </event>
       </rule-xml>
     </rule>
+<<<<<<< HEAD
     <rule id="1" name="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.\&quot;)&quot;" folder="0" source-offset="364">
+=======
+    <rule id="1" name="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.\&quot;)&quot;" folder="0" source-offset="483">
+>>>>>>> sd_baseline
       <rule-xml>
         <event action="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -63,7 +83,11 @@
         </event>
       </rule-xml>
     </rule>
+<<<<<<< HEAD
     <rule id="2" name="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please enter the explanation you provided to your employer.\&quot;)&quot;" folder="0" source-offset="1258">
+=======
+    <rule id="2" name="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please enter the explanation you provided to your employer.\&quot;)&quot;" folder="0" source-offset="1543">
+>>>>>>> sd_baseline
       <rule-xml>
         <event action="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -80,7 +104,11 @@
         </event>
       </rule-xml>
     </rule>
+<<<<<<< HEAD
     <rule id="3" name="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.\&quot;)&quot;" folder="0" source-offset="1500">
+=======
+    <rule id="3" name="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.\&quot;)&quot;" folder="0" source-offset="1896">
+>>>>>>> sd_baseline
       <rule-xml>
         <event action="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>

@@ -2853,36 +2853,6 @@
           <parse>s(ver('10.4.2.18'),v(pay,t(simple,present,normal)),ob('the employer pension',singular),o('under either the Social Security Act or the Railroad Retirement Act of 1974'))</parse>
         </text>
       </attribute>
-      <attribute name="p82" type="text" public-name="emr_wage_type">
-        <text>
-          <base>the employer wage type</base>
-        </text>
-      </attribute>
-      <attribute name="p83" type="text" public-name="emr_employer_type">
-        <text>
-          <base>the employer type</base>
-        </text>
-      </attribute>
-      <attribute name="p84" type="text" public-name="emr_job_title">
-        <text>
-          <base>the employer job title</base>
-        </text>
-      </attribute>
-      <attribute name="p85" type="text" public-name="emr_job_duties">
-        <text>
-          <base>the employer job duties</base>
-        </text>
-      </attribute>
-      <attribute name="p86" type="currency" public-name="emr_rate_of_pay">
-        <text>
-          <base>the claimant's rate of pay with the employer</base>
-        </text>
-      </attribute>
-      <attribute name="p87" type="text" public-name="emr_wage_frequency">
-        <text>
-          <base>the employer wage frequency</base>
-        </text>
-      </attribute>
       <attribute name="b654" type="boolean" public-name="emr_school_worker">
         <text>
           <base>the claimant is an employee of a school</base>
@@ -6204,10 +6174,10 @@
           <parse>s(ver('10.4.2.18'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('work that is less than one hundred (100) road miles from their home'))</parse>
         </text>
       </attribute>
-      <attribute name="b1159" type="boolean" public-name="cat_fpr_emt_sep_cat_quit">
+      <attribute name="b1159" type="boolean" public-name="fpr_emt_sep_desc_quit_wnhbt">
         <text>
-          <base>the employment's separation category is quit</base>
-          <parse>s(ver('10.4.2.18'),v(quit,t(simple,present,normal)),ob('the employment''s separation category',singular))</parse>
+          <base>the employment's separation description is (quit-would-not-have-been-terminated)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(quit-would-not-have-been-terminated)'))</parse>
         </text>
       </attribute>
       <attribute name="b1160" type="boolean" public-name="cat_fpr_emt_sep_cat_discharged">
@@ -6442,10 +6412,10 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('a waterway employee during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1195" type="boolean" public-name="fpr_emr_instructor">
+      <attribute name="b1195" type="boolean" public-name="fpr_emt_educational_employee">
         <text>
-          <base>the claimant was an instructor for a government agency or institution during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('an instructor for a government agency or institution during the employment'))</parse>
+          <base>the claimant was an educational employee during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('an educational employee during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b1196" type="boolean" public-name="fpr_emr_expecting_to_return">
@@ -6821,6 +6791,101 @@
       <attribute name="p545" type="text" public-name="fpr_sel_curr_emp_status">
         <text>
           <base>the selected currently employed status</base>
+        </text>
+      </attribute>
+      <attribute name="b1266" type="boolean" public-name="fpr_emt_sep_desc_rarih">
+        <text>
+          <base>the employment's separation description is (requested a reduction in hours)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(requested a reduction in hours)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1268" type="boolean" public-name="fpr_emt_sep_desc_dnitrfyloa">
+        <text>
+          <base>the employment's separation description is (do-not-intend-to-return-from-your-leave-of-absence)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(do-not-intend-to-return-from-your-leave-of-absence)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1269" type="boolean" public-name="fpr_emt_sep_desc_retired">
+        <text>
+          <base>the employment's separation description is (retired)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(retired)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1270" type="boolean" public-name="fpr_emt_sep_desc_qnd">
+        <text>
+          <base>the employment's separation description is (quit-not-discharged)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(quit-not-discharged)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p547" type="text" public-name="fpr_emt_scd_vt">
+        <text>
+          <base>the employment's separation category description</base>
+        </text>
+      </attribute>
+      <attribute name="b1271" type="boolean" public-name="fpr_emt_sep_desc_whbt">
+        <text>
+          <base>the employment's separation description is (would have been terminated)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(would have been terminated)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1272" type="boolean" public-name="fpr_emt_sep_desc_swhbt">
+        <text>
+          <base>the employment's separation description is (suspended would have been terminated)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(suspended would have been terminated)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1273" type="boolean" public-name="fpr_emt_sep_desc_errih">
+        <text>
+          <base>the employment's separation description is (employer requested reduction in hours)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(employer requested reduction in hours)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1274" type="boolean" public-name="fpr_emt_sep_desc_mr">
+        <text>
+          <base>the employment's separation description is (mandatory retirement)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation description',singular),o('(mandatory retirement)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1276" type="boolean" public-name="fpr_emt_sep_cat_quit">
+        <text>
+          <base>the employment's separation category is quit</base>
+          <parse>s(ver('10.4.2.18'),v(quit,t(simple,present,normal)),ob('the employment''s separation category',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="p548" type="text" public-name="fpr_emt_wage_type">
+        <text>
+          <base>the employment's wage type</base>
+        </text>
+      </attribute>
+      <attribute name="p549" type="text" public-name="fpr_emt_type">
+        <text>
+          <base>the employment type</base>
+        </text>
+      </attribute>
+      <attribute name="b1277" type="boolean" public-name="fpr_emt_work_perf_in_ky">
+        <text>
+          <base>the employment's work was performed in Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(perform,t(simple,past,normal)),ob('the employment''s work',singular),o('in Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p550" type="text" public-name="emt_job_title">
+        <text>
+          <base>the employment's job title</base>
+        </text>
+      </attribute>
+      <attribute name="p551" type="text" public-name="emt_job_duties">
+        <text>
+          <base>the employment job duties</base>
+        </text>
+      </attribute>
+      <attribute name="p552" type="currency" public-name="emt_rate_of_pay">
+        <text>
+          <base>the claimant's rate of pay with the employment</base>
+        </text>
+      </attribute>
+      <attribute name="p553" type="text" public-name="fpr_emt_wage_frequency">
+        <text>
+          <base>the employment wage frequency</base>
         </text>
       </attribute>
     </entity>
