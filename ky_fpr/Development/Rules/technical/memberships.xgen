@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
@@ -29,6 +29,14 @@
         <text lang="en-US">
           <base>the bptw is potentially chargeable</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the bptw',singular),o('potentially chargeable'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
         </text>
       </attribute>
     </entity>
@@ -66,14 +74,6 @@
       <attribute name="p1" type="number" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's number of discrete weeks worked within the investigative period</base>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employer is a ten week employer</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
         </text>
       </attribute>
     </entity>
