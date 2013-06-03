@@ -10,7 +10,7 @@ import com.oracle.determinations.interview.engine.data.model.InterviewUserData;
 //import com.oracle.determinations.interview.engine.local.LocalInterviewEngine;
 //import com.oracle.determinations.interview.engine.plugins.InterviewSessionPlugin;
 //import com.oracle.determinations.interview.engine.plugins.InterviewSessionRegisterArgs;
-//import com.oracle.determinations.interview.engine.plugins.data.DataAdaptorPlugin;
+import com.oracle.determinations.interview.engine.plugins.data.DataAdaptorPlugin;
 import com.oracle.determinations.interview.engine.security.BasicSecurityToken;
 import com.oracle.determinations.web.platform.controller.SessionContext;
 import com.oracle.determinations.web.platform.eventmodel.events.OnGetScreenEvent;
@@ -67,7 +67,10 @@ public class SaveEventTriggers implements OnRequireSessionEventHandler, OnGetScr
 
         InterviewSession currentSession = currentContext.getInterviewSession();
         
-        String adaptorString = currentSession.getDataAdaptor().toString();
+        //String adaptorString = currentSession.getDataAdaptor().toString();
+        //DataAdaptorPlugin dap = null;
+        //currentSession.setDataAdaptor(dap);
+        
         //Call Current (default Siebel ?) DataAdaptor to retrieve the Interview Data, load()
         InterviewUserData userData = currentSession.getDataAdaptor().load(token, currentContext.getCaseID(), currentContext.getInterviewSession().getRulebase());
         
