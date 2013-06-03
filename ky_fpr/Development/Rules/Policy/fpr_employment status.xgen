@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.3.23">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
@@ -47,20 +47,6 @@
         <text lang="en-US">
           <base>the claimant is being paid their regular salary</base>
           <parse>s(ver('10.4.2.18'),v(pay,t(continuous,present,normal)),ob('the claimant',singular),o('their regular salary'))</parse>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
-          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant worked at the employer full-time during the week in which benefits were claimed</base>
-          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
         </text>
       </attribute>
     </entity>
@@ -141,6 +127,20 @@
         <text lang="en-US">
           <base>the claimant is (on a scheduled break, off duty) from the employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('(on a scheduled break, off duty) from the employment'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is employed full-time in accordance with the employer's customary work schedule</base>
+          <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('full-time in accordance with the employer''s customary work schedule'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant worked at the employer full-time during the week in which benefits were claimed</base>
+          <parse>s(ver('10.4.2.18'),v(work,t(simple,past,normal)),sb('the claimant',plural),o('at the employer full-time during the week in which benefits were claimed'))</parse>
         </text>
       </attribute>
     </entity>
