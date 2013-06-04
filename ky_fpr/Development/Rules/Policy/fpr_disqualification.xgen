@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -17,18 +17,6 @@
         <text lang="en-US">
           <base>the claimant served in the military during the base period</base>
           <parse>s(ver('10.4.2.18'),v(serve,t(simple,past,normal)),sb('the claimant',plural),o('in the military during the base period'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is immediately disqualified based on not being a citizen or a legal alien</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('immediately disqualified based on not being a citizen or a legal alien'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a United States citizen</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a United States citizen'))</parse>
         </text>
       </attribute>
       <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
@@ -53,12 +41,6 @@
         <text lang="en-US">
           <base>the claimant has an unemployment benefits balance in a state other that Kentucky</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an unemployment benefits balance in a state other that Kentucky'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b12" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has provided an alien registration number</base>
-          <parse>s(ver('10.4.2.18'),v(provide,t(simple,present,perfect)),sb('the claimant',singular),o('an alien registration number'))</parse>
         </text>
       </attribute>
     </entity>
@@ -87,29 +69,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the claimant is immediately disqualified based on not being a citizen or a legal alien" ruleburst="true" concludes="b4" folder="0" source-offset="316">
-      <rule-xml>
-        <conclude attr-id="b4" entity-id="global" scope-id="global0">
-          <value>
-            <true-value />
-          </value>
-          <condition>
-            <and>
-              <not>
-                <attribute attr-id="b5" />
-              </not>
-              <not>
-                <attribute attr-id="b12" />
-              </not>
-            </and>
-          </condition>
-          <otherwise>
-            <false-value />
-          </otherwise>
-        </conclude>
-      </rule-xml>
-    </rule>
-    <rule id="2" name="the claimant is immediately disqualified based on receiving unemployment benefits in states other than Kentucky" ruleburst="true" concludes="b7" folder="0" source-offset="535">
+    <rule id="1" name="the claimant is immediately disqualified based on receiving unemployment benefits in states other than Kentucky" ruleburst="true" concludes="b7" folder="0" source-offset="535">
       <rule-xml>
         <conclude attr-id="b7" entity-id="global" scope-id="global0">
           <value>
