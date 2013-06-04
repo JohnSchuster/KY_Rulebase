@@ -1,5 +1,13 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
+    <entity ref="global">
+      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the selected employment status was unsatisfactory attendance</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the selected employment status',singular),o('unsatisfactory attendance'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -53,12 +61,6 @@
         <text lang="en-US">
           <base>the employment's separation finding is mc_d2_05, (Dishonesty)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d2_05, (Dishonesty)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b10" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was (discharged, suspended, reduced in hours) from the employment due to dishonesty</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, suspended, reduced in hours) from the employment due to dishonesty'))</parse>
         </text>
       </attribute>
       <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
@@ -119,12 +121,6 @@
         <text lang="en-US">
           <base>the employment's separation finding is mc_d2_11, (Reporting Under the Influence)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d2_11, (Reporting Under the Influence)'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b21" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was working under the influence during the employment</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('working under the influence during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
@@ -211,9 +207,69 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d2_24, (Mandatory Retirement, Accepted Contract of Employment)'))</parse>
         </text>
       </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was (discharged, reduced in hours) from the employment due to misconduct</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, reduced in hours) from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant violated this employers cash handling policy during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('this employers cash handling policy during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant violated this employers (drug and-or alcohol) policy during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('this employers (drug and-or alcohol) policy during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was (discharged, reduced in hours) from the employment due to dishonesty</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, reduced in hours) from the employment due to dishonesty'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant reported to work under the influence of (alcohol, drugs) during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(report,t(simple,past,normal)),sb('the claimant',plural),o('to work under the influence of (alcohol, drugs) during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant consumed (alcohol, drugs) on this employer's property during working hours of the employment</base>
+          <parse>s(ver('10.4.2.18'),v(consume,t(simple,past,normal)),sb('the claimant',plural),o('(alcohol, drugs) on this employer''s property during working hours of the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was suspended from the employment due to misconduct</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was suspended from the employment due to dishonesty</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('from the employment due to dishonesty'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant damaged this employer's property, through gross negligence during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(damage,t(simple,past,normal)),sb('the claimant',plural),o('this employer''s property, through gross negligence during the employment'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's asserted nod finding code</base>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is mc_d1_02 (Payable Attendance)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_02 (Payable Attendance)'))</parse>
         </text>
       </attribute>
     </entity>
@@ -224,7 +280,6 @@
         </text>
       </attribute>
     </entity>
-    <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
   <relationships>
@@ -250,11 +305,7 @@
                 </equals>
               </and>
               <and>
-                <not>
-                  <unknown>
-                    <attribute attr-id="b3" />
-                  </unknown>
-                </not>
+                <attribute attr-id="b36" />
                 <attribute attr-id="b3" />
               </and>
             </or>
@@ -262,7 +313,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the employment's separation finding is mc_d2_02, (Attendance Unsatisfactory)" ruleburst="true" concludes="b4" folder="0" source-offset="3038" question-search="false">
+    <rule id="1" name="the employment's separation finding is mc_d2_02, (Attendance Unsatisfactory)" ruleburst="true" concludes="b4" folder="0" source-offset="2978" question-search="false">
       <rule-xml>
         <conclude attr-id="b4" entity-id="employment" scope-id="employment0">
           <value>
@@ -278,11 +329,7 @@
                 </equals>
               </and>
               <and>
-                <not>
-                  <unknown>
-                    <attribute attr-id="b3" />
-                  </unknown>
-                </not>
+                <attribute attr-id="b36" />
                 <attribute attr-id="b5" />
               </and>
             </or>
@@ -290,7 +337,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's separation finding is mc_d2_03, (Cash Handling Policy Violation)" ruleburst="true" concludes="b6" folder="0" source-offset="3481" question-search="false">
+    <rule id="2" name="the employment's separation finding is mc_d2_03, (Cash Handling Policy Violation)" ruleburst="true" concludes="b6" folder="0" source-offset="3363" question-search="false">
       <rule-xml>
         <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
           <value>
@@ -305,13 +352,16 @@
                   <string-value>mc_d2_03</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b7" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b37" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the employment's separation finding is mc_d2_04, (Drug Alcohol Policy Violation)" ruleburst="true" concludes="b8" folder="0" source-offset="3844" question-search="false">
+    <rule id="3" name="the employment's separation finding is mc_d2_04, (Drug Alcohol Policy Violation)" ruleburst="true" concludes="b8" folder="0" source-offset="3758" question-search="false">
       <rule-xml>
         <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
           <value>
@@ -326,13 +376,16 @@
                   <string-value>mc_d2_04</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b7" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b38" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the employment's separation finding is mc_d2_05, (Dishonesty)" ruleburst="true" concludes="b9" folder="0" source-offset="4206" question-search="false">
+    <rule id="4" name="the employment's separation finding is mc_d2_05, (Dishonesty)" ruleburst="true" concludes="b9" folder="0" source-offset="4160" question-search="false">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>
@@ -347,13 +400,13 @@
                   <string-value>mc_d2_05</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b10" />
+              <attribute attr-id="b39" />
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the employment's separation finding is mc_d2_06, (Falsification of Application)" ruleburst="true" concludes="b11" folder="0" source-offset="4541" question-search="false">
+    <rule id="5" name="the employment's separation finding is mc_d2_06, (Falsification of Application)" ruleburst="true" concludes="b11" folder="0" source-offset="4451" question-search="false">
       <rule-xml>
         <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
@@ -368,13 +421,16 @@
                   <string-value>mc_d2_06</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b12" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b12" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the employment's separation finding is mc_d2_07, (Insubordination)" ruleburst="true" concludes="b13" folder="0" source-offset="4859" question-search="false">
+    <rule id="6" name="the employment's separation finding is mc_d2_07, (Insubordination)" ruleburst="true" concludes="b13" folder="0" source-offset="4824" question-search="false">
       <rule-xml>
         <conclude attr-id="b13" entity-id="employment" scope-id="employment0">
           <value>
@@ -389,13 +445,16 @@
                   <string-value>mc_d2_07</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b14" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b14" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employment's separation finding is mc_d2_08, (Loss of Drivers' License)" ruleburst="true" concludes="b15" folder="0" source-offset="5182" question-search="false">
+    <rule id="7" name="the employment's separation finding is mc_d2_08, (Loss of Drivers' License)" ruleburst="true" concludes="b15" folder="0" source-offset="5202" question-search="false">
       <rule-xml>
         <conclude attr-id="b15" entity-id="employment" scope-id="employment0">
           <value>
@@ -410,13 +469,16 @@
                   <string-value>mc_d2_08</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b16" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b16" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employment's separation finding is mc_d2_09, (Negligence-Inefficiency)" ruleburst="true" concludes="b17" folder="0" source-offset="5523" question-search="false">
+    <rule id="8" name="the employment's separation finding is mc_d2_09, (Negligence-Inefficiency)" ruleburst="true" concludes="b17" folder="0" source-offset="5598" question-search="false">
       <rule-xml>
         <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
           <value>
@@ -431,13 +493,16 @@
                   <string-value>mc_d2_09</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b18" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b18" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment's separation finding is mc_d2_10, (Refusal of Drug Test)" ruleburst="true" concludes="b19" folder="0" source-offset="5845" question-search="false">
+    <rule id="9" name="the employment's separation finding is mc_d2_10, (Refusal of Drug Test)" ruleburst="true" concludes="b19" folder="0" source-offset="5975" question-search="false">
       <rule-xml>
         <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
           <value>
@@ -452,13 +517,16 @@
                   <string-value>mc_d2_10</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b14" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b14" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the employment's separation finding is mc_d2_11, (Reporting Under the Influence)" ruleburst="true" concludes="b20" folder="0" source-offset="6173" question-search="false">
+    <rule id="10" name="the employment's separation finding is mc_d2_11, (Reporting Under the Influence)" ruleburst="true" concludes="b20" folder="0" source-offset="6358" question-search="false">
       <rule-xml>
         <conclude attr-id="b20" entity-id="employment" scope-id="employment0">
           <value>
@@ -473,13 +541,16 @@
                   <string-value>mc_d2_11</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b21" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b40" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the employment's separation finding is mc_d2_12, (Drugs-Alcohol on Employer Property)" ruleburst="true" concludes="b22" folder="0" source-offset="6498" question-search="false">
+    <rule id="11" name="the employment's separation finding is mc_d2_12, (Drugs-Alcohol on Employer Property)" ruleburst="true" concludes="b22" folder="0" source-offset="6763" question-search="false">
       <rule-xml>
         <conclude attr-id="b22" entity-id="employment" scope-id="employment0">
           <value>
@@ -494,13 +565,16 @@
                   <string-value>mc_d2_12</string-value>
                 </equals>
               </and>
-              <false-value />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b41" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the employment's separation finding is mc_d2_13, (Suspension for Misconduct)" ruleburst="true" concludes="b23" folder="0" source-offset="6769" question-search="false">
+    <rule id="12" name="the employment's separation finding is mc_d2_13, (Suspension for Misconduct)" ruleburst="true" concludes="b23" folder="0" source-offset="7187" question-search="false">
       <rule-xml>
         <conclude attr-id="b23" entity-id="employment" scope-id="employment0">
           <value>
@@ -515,13 +589,13 @@
                   <string-value>mc_d2_13</string-value>
                 </equals>
               </and>
-              <false-value />
+              <attribute attr-id="b42" />
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the employment's separation finding is mc_d2_14, (Suspension for Dishonesty)" ruleburst="true" concludes="b24" folder="0" source-offset="7031" question-search="false">
+    <rule id="13" name="the employment's separation finding is mc_d2_14, (Suspension for Dishonesty)" ruleburst="true" concludes="b24" folder="0" source-offset="7466" question-search="false">
       <rule-xml>
         <conclude attr-id="b24" entity-id="employment" scope-id="employment0">
           <value>
@@ -536,13 +610,13 @@
                   <string-value>mc_d2_14</string-value>
                 </equals>
               </and>
-              <false-value />
+              <attribute attr-id="b43" />
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the employment's separation finding is mc_d2_15, (Incarceration)" ruleburst="true" concludes="b25" folder="0" source-offset="7293" question-search="false">
+    <rule id="14" name="the employment's separation finding is mc_d2_15, (Incarceration)" ruleburst="true" concludes="b25" folder="0" source-offset="7750" question-search="false">
       <rule-xml>
         <conclude attr-id="b25" entity-id="employment" scope-id="employment0">
           <value>
@@ -557,13 +631,16 @@
                   <string-value>mc_d2_15</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b26" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b26" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the employment's separation finding is mc_d2_16, (Unsatisfactory Work)" ruleburst="true" concludes="b27" folder="0" source-offset="7652" question-search="false">
+    <rule id="15" name="the employment's separation finding is mc_d2_16, (Unsatisfactory Work)" ruleburst="true" concludes="b27" folder="0" source-offset="8164" question-search="false">
       <rule-xml>
         <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
           <value>
@@ -578,13 +655,16 @@
                   <string-value>mc_d2_16</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b28" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b28" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the employment's separation finding is mc_d2_17, (Violation of Rule)" ruleburst="true" concludes="b29" folder="0" source-offset="7973" question-search="false">
+    <rule id="16" name="the employment's separation finding is mc_d2_17, (Violation of Rule)" ruleburst="true" concludes="b29" folder="0" source-offset="8540" question-search="false">
       <rule-xml>
         <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
           <value>
@@ -599,13 +679,16 @@
                   <string-value>mc_d2_17</string-value>
                 </equals>
               </and>
-              <false-value />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b7" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the employment's separation finding is mc_d2_18, (Uninsurable Driver)" ruleburst="true" concludes="b30" folder="0" source-offset="8227" question-search="false">
+    <rule id="17" name="the employment's separation finding is mc_d2_18, (Uninsurable Driver)" ruleburst="true" concludes="b30" folder="0" source-offset="8948" question-search="false">
       <rule-xml>
         <conclude attr-id="b30" entity-id="employment" scope-id="employment0">
           <value>
@@ -620,13 +703,16 @@
                   <string-value>mc_d2_18</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b31" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b31" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the employment's separation finding is mc_d2_19, (Gross Negligence - Property Damage)" ruleburst="true" concludes="b32" folder="0" source-offset="8555" question-search="false">
+    <rule id="18" name="the employment's separation finding is mc_d2_19, (Gross Negligence - Property Damage)" ruleburst="true" concludes="b32" folder="0" source-offset="9331" question-search="false">
       <rule-xml>
         <conclude attr-id="b32" entity-id="employment" scope-id="employment0">
           <value>
@@ -641,13 +727,16 @@
                   <string-value>mc_d2_19</string-value>
                 </equals>
               </and>
-              <false-value />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b44" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="19" name="the employment's separation finding is mc_d2_20, (Dangerous Conduct)" ruleburst="true" concludes="b33" folder="0" source-offset="8825" question-search="false">
+    <rule id="19" name="the employment's separation finding is mc_d2_20, (Dangerous Conduct)" ruleburst="true" concludes="b33" folder="0" source-offset="9742" question-search="false">
       <rule-xml>
         <conclude attr-id="b33" entity-id="employment" scope-id="employment0">
           <value>
@@ -662,13 +751,47 @@
                   <string-value>mc_d2_20</string-value>
                 </equals>
               </and>
-              <attribute attr-id="b34" />
+              <and>
+                <attribute attr-id="b36" />
+                <attribute attr-id="b34" />
+              </and>
             </or>
           </condition>
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="20" name="all mc finding's inferred from employment" ruleburst="true" concludes="InferInstance(allmcfindingsinferredfromemployment)" folder="0" source-offset="9164" question-search="false">
+    <rule id="20" name="the employment's separation finding is mc_d1_02 (Payable Attendance)" ruleburst="true" concludes="b45" folder="0" source-offset="10215">
+      <rule-xml>
+        <conclude attr-id="b45" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>mc_d1_02</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b4" />
+                </not>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b46" />
+                </scope-for>
+              </and>
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="all mc finding's inferred from employment" ruleburst="true" concludes="InferInstance(allmcfindingsinferredfromemployment)" folder="0" source-offset="10669" question-search="false">
       <rule-xml>
         <table-conclude-instance relationship-id="allmcfindingsinferredfromemployment" source="employment" source-scope-id="employment0">
           <row>

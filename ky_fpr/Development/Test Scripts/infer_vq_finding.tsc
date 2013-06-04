@@ -1,22 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <test-script product-version="10.4.2.18" schema-version="4">
   <test-case-set>
-    <test-case name="vq01" notes="">
+    <test-case name="vq00" notes="">
       <ent-set entity-type="global" entity-text="Global">
         <ent-inst id="global 1">
+          <attr-inst name="g01_base_scenario_id" text="the scenario id" type="text">
+            <expected-val>
+              <text-val>DSRM</text-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="claim_in_process" text="the claim is in the process of being filed" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
           <relationship-set>
             <relationship-inst type="fpr_global_c_emr" complete="true">
               <ent-inst-ref ref-id="fpr_employer 1" />
             </relationship-inst>
-            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false">
+              <ent-inst-ref ref-id="0x5e0ea31458a23eff" />
+            </relationship-inst>
             <relationship-inst type="global2issuetype" complete="false" />
             <relationship-inst type="fpr_global2finding" complete="false">
-              <ent-inst-ref ref-id="0xe95456d8b79d70e6" />
-              <ent-inst-ref ref-id="0xdfa368ea111c87a4" />
+              <ent-inst-ref ref-id="0xcdbdad842e996401" />
+              <ent-inst-ref ref-id="0xb116afa180843e3b" />
             </relationship-inst>
             <relationship-inst type="fpr_global_c_action" complete="false" />
             <relationship-inst type="fpr_global_c_412a" complete="true">
-              <ent-inst-ref ref-id="0x13c48dd37f50407c" />
+              <ent-inst-ref ref-id="0xcabd153e61863e57" />
             </relationship-inst>
           </relationship-set>
         </ent-inst>
@@ -64,14 +76,23 @@
           </relationship-set>
         </ent-inst>
       </ent-set>
+      <ent-set entity-type="fpr_nod" entity-text="the nod">
+        <ent-inst id="0x5e0ea31458a23eff" />
+      </ent-set>
       <ent-set entity-type="fpr_412a" entity-text="the 412A">
-        <ent-inst id="0x13c48dd37f50407c" />
+        <ent-inst id="0xcabd153e61863e57" />
       </ent-set>
       <ent-set entity-type="fpr_finding" entity-text="the finding">
-        <ent-inst id="0xe95456d8b79d70e6" />
-        <ent-inst id="0xdfa368ea111c87a4" />
+        <ent-inst id="0xcdbdad842e996401" />
+        <ent-inst id="0xb116afa180843e3b" />
       </ent-set>
     </test-case>
   </test-case-set>
-  <outcome-set />
+  <outcome-set>
+    <outcome name="g01_base_scenario_id" display-name="g01_base_scenario_id" text="the scenario id" type="text" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <text-val>S000</text-val>
+      </default-change-points>
+    </outcome>
+  </outcome-set>
 </test-script>
