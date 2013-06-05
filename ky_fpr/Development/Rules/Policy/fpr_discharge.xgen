@@ -1,5 +1,13 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
+    <entity ref="global">
+      <attribute name="b124" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the selected discharge status is (unsatisfactory attendance)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the selected discharge status',singular),o('(unsatisfactory attendance)'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -179,12 +187,6 @@
         <text lang="en-US">
           <base>the claimant had an unsatisfactory attendance record during the employment</base>
           <parse>s(ver('10.4.2.18'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('an unsatisfactory attendance record during the employment'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b91" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's attendance at the employment was unsatisfactory</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant''s attendance at the employment',singular),o('unsatisfactory'))</parse>
         </text>
       </attribute>
       <attribute name="b92" type="boolean" ruleburst="true" is-used="True">
@@ -368,7 +370,6 @@
         </text>
       </attribute>
     </entity>
-    <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
   <relationships>
@@ -508,7 +509,9 @@
           </value>
           <condition>
             <and>
-              <attribute attr-id="b91" />
+              <scope-for scope-ref="global0" target-entity-id="global">
+                <attribute attr-id="b124" />
+              </scope-for>
               <not>
                 <attribute attr-id="b92" />
               </not>
@@ -520,7 +523,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant damaged this employer's property, through gross negligence during the employment" ruleburst="true" concludes="b82" folder="0" source-offset="4148">
+    <rule id="7" name="the claimant damaged this employer's property, through gross negligence during the employment" ruleburst="true" concludes="b82" folder="0" source-offset="4214">
       <rule-xml>
         <conclude attr-id="b82" entity-id="employment" scope-id="employment0">
           <value>
@@ -538,7 +541,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the claimant has refused to obey reasonable instructions during the employment" ruleburst="true" concludes="b34" folder="0" source-offset="4432">
+    <rule id="8" name="the claimant has refused to obey reasonable instructions during the employment" ruleburst="true" concludes="b34" folder="0" source-offset="4498">
       <rule-xml>
         <conclude attr-id="b34" entity-id="employment" scope-id="employment0">
           <value>
@@ -556,7 +559,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="during the employment the claimant engaged in conduct that endangered themselves or others" ruleburst="true" concludes="b42" folder="0" source-offset="4992">
+    <rule id="9" name="during the employment the claimant engaged in conduct that endangered themselves or others" ruleburst="true" concludes="b42" folder="0" source-offset="5058">
       <rule-xml>
         <conclude attr-id="b42" entity-id="employment" scope-id="employment0">
           <value>
@@ -574,7 +577,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the claimant was incarcerated for a conviction, for a period of at least five (5) days of work during the employment" ruleburst="true" concludes="b45" folder="0" source-offset="5281">
+    <rule id="10" name="the claimant was incarcerated for a conviction, for a period of at least five (5) days of work during the employment" ruleburst="true" concludes="b45" folder="0" source-offset="5347">
       <rule-xml>
         <conclude attr-id="b45" entity-id="employment" scope-id="employment0">
           <value>
@@ -592,7 +595,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant's behaviour was inappropriate during the employment" ruleburst="true" concludes="b98" folder="0" source-offset="5578">
+    <rule id="11" name="the claimant's behaviour was inappropriate during the employment" ruleburst="true" concludes="b98" folder="0" source-offset="5644">
       <rule-xml>
         <conclude attr-id="b98" entity-id="employment" scope-id="employment0">
           <value>
@@ -614,7 +617,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the claimant's work performance during the employment was unsatisfactory" ruleburst="true" concludes="b62" folder="0" source-offset="5964">
+    <rule id="12" name="the claimant's work performance during the employment was unsatisfactory" ruleburst="true" concludes="b62" folder="0" source-offset="6030">
       <rule-xml>
         <conclude attr-id="b62" entity-id="employment" scope-id="employment0">
           <value>
@@ -634,7 +637,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="13" name="the employment's work was within the claimant's proven ability" ruleburst="true" concludes="b101" folder="0" source-offset="6371">
+    <rule id="13" name="the employment's work was within the claimant's proven ability" ruleburst="true" concludes="b101" folder="0" source-offset="6437">
       <rule-xml>
         <conclude attr-id="b101" entity-id="employment" scope-id="employment0">
           <value>
@@ -649,7 +652,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="14" name="the claimant's actions constitute gross negligence during the employment" ruleburst="true" concludes="b94" folder="0" source-offset="6548">
+    <rule id="14" name="the claimant's actions constitute gross negligence during the employment" ruleburst="true" concludes="b94" folder="0" source-offset="6614">
       <rule-xml>
         <conclude attr-id="b94" entity-id="employment" scope-id="employment0">
           <value>
@@ -667,7 +670,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="15" name="the claimant's action during the employment was willful" ruleburst="true" concludes="b104" folder="0" source-offset="6805">
+    <rule id="15" name="the claimant's action during the employment was willful" ruleburst="true" concludes="b104" folder="0" source-offset="6871">
       <rule-xml>
         <conclude attr-id="b104" entity-id="employment" scope-id="employment0">
           <value>
@@ -686,7 +689,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="16" name="the claimant failed to maintain a valid driver's license as required for the employment" ruleburst="true" concludes="b16" folder="0" source-offset="7189">
+    <rule id="16" name="the claimant failed to maintain a valid driver's license as required for the employment" ruleburst="true" concludes="b16" folder="0" source-offset="7255">
       <rule-xml>
         <conclude attr-id="b16" entity-id="employment" scope-id="employment0">
           <value>
@@ -704,7 +707,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="17" name="the claimant failed to remain an insurable driver as required for the employment" ruleburst="true" concludes="b17" folder="0" source-offset="7459">
+    <rule id="17" name="the claimant failed to remain an insurable driver as required for the employment" ruleburst="true" concludes="b17" folder="0" source-offset="7525">
       <rule-xml>
         <conclude attr-id="b17" entity-id="employment" scope-id="employment0">
           <value>
@@ -722,7 +725,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="18" name="the claimant's actions were negligent during the employment" ruleburst="true" concludes="b78" folder="0" source-offset="7794">
+    <rule id="18" name="the claimant's actions were negligent during the employment" ruleburst="true" concludes="b78" folder="0" source-offset="7860">
       <rule-xml>
         <conclude attr-id="b78" entity-id="employment" scope-id="employment0">
           <value>
