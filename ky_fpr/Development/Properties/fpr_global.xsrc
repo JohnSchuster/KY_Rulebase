@@ -1907,7 +1907,73 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in compliance with divisions benefit request procedures'))</parse>
         </text>
       </attribute>
-      <attribute name="b1286" type="boolean" public-name="fpr_emt_sel_status_ua">
+      <attribute name="b1286" type="boolean" public-name="fpr_lawfully_present">
+        <text>
+          <base>the claimant was lawfully present</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('lawfully present'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1291" type="boolean" public-name="fpr_needs_new_claim">
+        <text>
+          <base>the claimant needs to file a new claim</base>
+          <parse>s(ver('10.4.2.18'),v(need,t(simple,present,normal)),sb('the claimant',singular),o('to file a new claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1292" type="boolean" public-name="fpr_review_due">
+        <text>
+          <base>the claimant's eligibility review interview is due</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s eligibility review interview',singular),o('due'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1293" type="boolean" public-name="fpr_may_request_check">
+        <text>
+          <base>the claimant may request a check in compliance with division requirements</base>
+          <parse>s(ver('10.4.2.18'),v(request+may,t(simple,modal,normal)),sb('the claimant',plural),o('a check in compliance with division requirements'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1294" type="boolean" public-name="fpr_filing_required_time">
+        <text>
+          <base>claim filing is required of the claimant at this time</base>
+          <parse>s(ver('10.4.2.18'),v(require,t(simple,present,normal)),ob('claim filing',singular),o('of the claimant at this time'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1295" type="boolean" public-name="fpr_is_additional_claim">
+        <text>
+          <base>this is an additional claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this',singular),o('an additional claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1296" type="boolean" public-name="fpr_re-activation_claim">
+        <text>
+          <base>this is a re-activation of an existing claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('this',singular),o('a re-activation of an existing claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1297" type="boolean" public-name="fpr_claimant_is_re-opening">
+        <text>
+          <base>the claimant is re-opening their existing claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('re-opening their existing claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1298" type="boolean" public-name="fpr_active_claim_in_ky">
+        <text>
+          <base>the claimant has an active claim in Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('an active claim in Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1301" type="boolean" public-name="fpr_rce_needs_notice">
+        <text>
+          <base>the rce should receive a notice of determination</base>
+          <parse>s(ver('10.4.2.18'),v(receive+should,t(simple,modal,normal)),sb('the rce',plural),o('a notice of determination'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1302" type="boolean" public-name="fpr_one_finding_raised">
+        <text>
+          <base>at least one finding has been raised</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,perfect)),sb('at least one finding',singular),o('raised'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1313" type="boolean" public-name="fpr_selected_unsatisfactory_att">
         <text>
           <base>the selected employment status was unsatisfactory attendance</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the selected employment status',singular),o('unsatisfactory attendance'))</parse>
@@ -5926,34 +5992,351 @@
           <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant knowingly',plural),o('this employer''s cash handling policy during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1287" type="boolean" public-name="fpr_emt_ct_v_emr_ch_pol">
+      <attribute name="p587" type="text" public-name="dc_final_incident_altft">
+        <text>
+          <base>the claimants description of the always less than full time final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p588" type="text" public-name="dc_final_incident_aol">
+        <text>
+          <base>the claimants description of the anticipation of layoff final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p589" type="text" public-name="dc_final_incident_coh">
+        <text>
+          <base>the claimants description of the conditions of hire final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p590" type="text" public-name="dc_final_incident_da">
+        <text>
+          <base>the claimants description of the disciplinary action final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p591" type="text" public-name="dc_final_incident_daa">
+        <text>
+          <base>the claimants description of the drugs and alcohol final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p592" type="text" public-name="dc_final_incident_dd">
+        <text>
+          <base>the claimants description of the dishonesty details final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p593" type="text" public-name="dc_final_incident_dep">
+        <text>
+          <base>the claimants description of the damaging employer property final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p594" type="text" public-name="dc_final_incident_diw">
+        <text>
+          <base>the claimants description of the dispute in the workplace final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p595" type="text" public-name="dc_final_incident_ep">
+        <text>
+          <base>the claimants description of the equipment problems final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p596" type="text" public-name="dc_final_incident_erq">
+        <text>
+          <base>the claimants description of the employer requested quit final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p597" type="text" public-name="dc_final_incident_err">
+        <text>
+          <base>the claimants description of the employer requested resignation final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p598" type="text" public-name="dc_final_incident_erwhr">
+        <text>
+          <base>the claimants description of the employer requested work hour reduction final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p599" type="text" public-name="dc_final_incident_foa">
+        <text>
+          <base>the claimants description of the falsification of application final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p600" type="text" public-name="dc_final_incident_h">
+        <text>
+          <base>the claimants description of the harrassment final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p601" type="text" public-name="dc_final_incident_i">
+        <text>
+          <base>the claimants description of the insubordination final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p602" type="text" public-name="dc_final_incident_ic">
+        <text>
+          <base>the claimants description of the inappropriate conduct final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p603" type="text" public-name="dc_final_incident_ihc">
+        <text>
+          <base>the claimants description of the injury or health condition final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p604" type="text" public-name="dc_final_incident_loa">
+        <text>
+          <base>the claimants description of the leave of absence final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p605" type="text" public-name="dc_final_incident_lodl">
+        <text>
+          <base>the claimants description of the loss of drivers license final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p606" type="text" public-name="dc_final_incident_lr">
+        <text>
+          <base>the claimants description of the layoff reason final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p607" type="text" public-name="dc_final_incident_od">
+        <text>
+          <base>the claimants description of the other discharge final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p608" type="text" public-name="dc_final_incident_opr">
+        <text>
+          <base>the claimants description of the other personal reason final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p609" type="text" public-name="dc_final_incident_owr">
+        <text>
+          <base>the claimants description of the other work related final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p610" type="text" public-name="dc_final_incident_owrd">
+        <text>
+          <base>the claimants description of the other work related details final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p611" type="text" public-name="dc_final_incident_rd">
+        <text>
+          <base>the claimants description of the retired details final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p612" type="text" public-name="dc_final_incident_rppp">
+        <text>
+          <base>the claimants description of the (rate of pay) (pay practice) final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p613" type="text" public-name="dc_final_incident_rr">
+        <text>
+          <base>the claimants description of the retirement reason final incident</base>
+        </text>
+      </attribute>
+      <attribute name="b1287" type="boolean" public-name="fpr_sought_suitable">
+        <text>
+          <base>the employment being sought is suitable for the claimant</base>
+          <parse>s(ver('10.4.2.18'),v(seek,t(simple,past,normal)),sb('the employment being',plural),o('is suitable for the claimant'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1288" type="boolean" public-name="fpr_left_in_anticipation">
+        <text>
+          <base>the claimant voluntarily left the employment in anticipation of (discharge, layoff)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment in anticipation of (discharge, layoff)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1289" type="boolean" public-name="fpr_left_suitable_reduction">
+        <text>
+          <base>the claimant voluntarily left the employment's suitable work due to a reduction in workforce plan initiated by this employer</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment''s suitable work due to a reduction in workforce plan initiated by this employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1290" type="boolean" public-name="fpr_claimant_left_exhausted">
+        <text>
+          <base>the claimant left the employment voluntarily (after exhausting all reasonable alternatives)</base>
+          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment voluntarily (after exhausting all reasonable alternatives)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1299" type="boolean" public-name="fpr_nod_code_defined">
+        <text>
+          <base>the employment's asserted nod finding code is defined</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s asserted nod finding code',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1300" type="boolean" public-name="fpr_accepted_terms_of_retirement">
+        <text>
+          <base>the employment ended due to the claimant's voluntary acceptance of the terms of this employer's retirement policy</base>
+          <parse>s(ver('10.4.2.18'),v(end,t(simple,past,normal)),sb('the employment',plural),o('due to the claimant''s voluntary acceptance of the terms of this employer''s retirement policy'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1303" type="boolean" public-name="fpr_in_for_five">
+        <text>
+          <base>the claimant was incarcerated for a conviction, for a period of at least five (5) days of work during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('incarcerated for a conviction, for a period of at least five (5) days of work during the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1304" type="boolean" public-name="fpr_action_is_misconduct">
+        <text>
+          <base>the claimant's action in connection to the employment is deemed misconduct</base>
+          <parse>s(ver('10.4.2.18'),v(deem,t(simple,present,normal)),ob('the claimant''s action in connection to the employment',singular),o('misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p614" type="text" public-name="dc_final_incident_ua">
+        <text>
+          <base>the claimants description of the union activity final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p615" type="text" public-name="dc_final_incident_ud">
+        <text>
+          <base>the claimants description of the uninsurable driver final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p616" type="text" public-name="dc_final_incident_uw">
+        <text>
+          <base>the claimants description of the unsatisfactory work final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p617" type="text" public-name="dc_final_incident_vor">
+        <text>
+          <base>the claimants description of the violation of rule final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p618" type="text" public-name="dc_final_incident_wh">
+        <text>
+          <base>the claimants description of the work hours final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p619" type="text" public-name="dc_selected_layoff_reason">
+        <text>
+          <base>the claimants selected description of the layoff reason</base>
+        </text>
+      </attribute>
+      <attribute name="b1305" type="boolean" public-name="fpr_violated_cash_handling">
         <text>
           <base>the claimant violated this employers cash handling policy during the employment</base>
           <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('this employers cash handling policy during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1288" type="boolean" public-name="fpr_emt_c_v_emr_dap">
+      <attribute name="b1306" type="boolean" public-name="fpr_violated_drug_policy">
         <text>
           <base>the claimant violated this employers (drug and-or alcohol) policy during the employment</base>
           <parse>s(ver('10.4.2.18'),v(violate,t(simple,past,normal)),sb('the claimant',plural),o('this employers (drug and-or alcohol) policy during the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1289" type="boolean" public-name="fpr_emt_c_disch">
+      <attribute name="b1307" type="boolean" public-name="fpr_discharge_dishonesty">
+        <text>
+          <base>the claimant was (discharged, reduced in hours) from the employment due to dishonesty</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, reduced in hours) from the employment due to dishonesty'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1308" type="boolean" public-name="fpr_was_discharged">
         <text>
           <base>the claimant was (discharged, reduced in hours) from the employment</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, reduced in hours) from the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1290" type="boolean" public-name="fpr_emt_c_suspended">
+      <attribute name="b1309" type="boolean" public-name="fpr_suspended_dishonesty">
+        <text>
+          <base>the claimant was suspended from the employment due to dishonesty</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('from the employment due to dishonesty'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1310" type="boolean" public-name="fpr_suspended">
         <text>
           <base>the claimant was suspended from the employment</base>
           <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('from the employment'))</parse>
         </text>
       </attribute>
-      <attribute name="b1291" type="boolean" public-name="fpr_emt_mc_d1_02">
+      <attribute name="b1311" type="boolean" public-name="fpr_discharged_misconduct">
+        <text>
+          <base>the claimant was (discharged, reduced in hours) from the employment due to misconduct</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, reduced in hours) from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1312" type="boolean" public-name="fpr_suspended_misconduct">
+        <text>
+          <base>the claimant was suspended from the employment due to misconduct</base>
+          <parse>s(ver('10.4.2.18'),v(suspend,t(simple,past,normal)),ob('the claimant',singular),o('from the employment due to misconduct'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1314" type="boolean" public-name="fpr_finding_mc_d1_02">
         <text>
           <base>the employment's separation finding is mc_d1_02 (Payable Attendance)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_02 (Payable Attendance)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p620" type="text" public-name="dc_dishonesty_allegation">
+        <text>
+          <base>the claimant's description of the employment's allegation of dishonesty</base>
+        </text>
+      </attribute>
+      <attribute name="p621" type="text" public-name="dc_explanation_for_ftrfl">
+        <text>
+          <base>the claimants explanation for their failure to return from layoff behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p622" type="text" public-name="dc_explanation_for_i">
+        <text>
+          <base>the claimants explanation for their insubordination behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p623" type="text" public-name="dc_explanation_for_vrp">
+        <text>
+          <base>the claimants explanation for their violation of rule or policy behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p624" type="text" public-name="dc_explanation_for_uw">
+        <text>
+          <base>the claimants explanation for their unsatisfactory work behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p625" type="text" public-name="dc_explanation_for_in">
+        <text>
+          <base>the claimants explanation for their inappropriate behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p626" type="text" public-name="dc_explanation_for_foa">
+        <text>
+          <base>the claimants explanation for their falsification of application behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p627" type="text" public-name="dc_explanation_for_frfld">
+        <text>
+          <base>the claimants explanation for their failure to return from labor dispute behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p628" type="text" public-name="dc_explanation_for_aptl">
+        <text>
+          <base>the claimants explanation for their alternatives prior to leaving behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p629" type="text" public-name="dc_explanation_for_njopl">
+        <text>
+          <base>the claimants explanation for their new job offer prior to leaving behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p630" type="text" public-name="dc_explanation_for_crui">
+        <text>
+          <base>the claimants explanation for their consumption or reporting under the influence behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p631" type="text" public-name="dc_explanation_for_rtdat">
+        <text>
+          <base>the claimants explanation for their refusal to take drug or alcohol test behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p632" type="text" public-name="dc_explanation_for_coh">
+        <text>
+          <base>the claimants explanation for their conditions of hire behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p633" type="text" public-name="dc_explanation_for_rtstt">
+        <text>
+          <base>the claimants explanation for their refusal to submit to testing behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p634" type="text" public-name="dc_explanation_for_dis">
+        <text>
+          <base>the claimants explanation for their dishonesty behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p635" type="text" public-name="dc_drug_test_reason">
+        <text>
+          <base>the reason for the (drug or alcohol) test</base>
         </text>
       </attribute>
     </entity>

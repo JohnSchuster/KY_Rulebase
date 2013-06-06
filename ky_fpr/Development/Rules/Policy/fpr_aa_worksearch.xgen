@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
@@ -570,6 +570,26 @@
         </text>
       </attribute>
     </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b94" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has refused an offer of suitable work with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('an offer of suitable work with the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b95" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has refused an offer of work with the employer</base>
+          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('an offer of work with the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b130" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant was given a bona fide offer of work by the employer</base>
+          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a bona fide offer of work by the employer'))</parse>
+        </text>
+      </attribute>
+    </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
@@ -610,26 +630,6 @@
       <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's expected return to work date</base>
-        </text>
-      </attribute>
-    </entity>
-    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
-      <attribute name="b94" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has refused an offer of suitable work with the employer</base>
-          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('an offer of suitable work with the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b95" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant has refused an offer of work with the employer</base>
-          <parse>s(ver('10.4.2.18'),v(refuse,t(simple,present,perfect)),sb('the claimant',singular),o('an offer of work with the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b130" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant was given a bona fide offer of work by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(give,t(simple,past,normal)),ob('the claimant',singular),o('a bona fide offer of work by the employer'))</parse>
         </text>
       </attribute>
     </entity>
