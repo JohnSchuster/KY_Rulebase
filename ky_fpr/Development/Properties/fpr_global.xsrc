@@ -26,7 +26,7 @@
           <base>the effective date</base>
         </text>
       </attribute>
-      <attribute name="p22" type="date" public-name="g01_asserted_override_date">
+      <attribute name="p22" type="date" public-name="fpr_si_g01_assert_date">
         <text>
           <base>the asserted processing override date</base>
         </text>
@@ -486,7 +486,7 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant''s income',singular),o('deductible'))</parse>
         </text>
       </attribute>
-      <attribute name="b346" type="boolean" public-name="fpr_subject_to_fraud">
+      <attribute name="b346" type="boolean" public-name="fpr_si_subject_to_fraud">
         <text>
           <base>the (claimant, party) is subject to fraud administrative penalties</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the (claimant, party)',singular),o('subject to fraud administrative penalties'))</parse>
@@ -516,7 +516,7 @@
           <parse>s(ver('10.4.2.18'),v(become,t(simple,present,perfect)),sb('the claimant, otherwise ineligible based on reasonable assurance,',singular),o('eligible through their election to remove non-educational wages from the base period'))</parse>
         </text>
       </attribute>
-      <attribute name="b351" type="boolean" public-name="fpr_failed_imposition_req">
+      <attribute name="b351" type="boolean" public-name="fpr_si_failed_remove_reqs">
         <text>
           <base>the claimant has failed to meet the requirements to remove the previously imposed (disqualification, ineligibility)</base>
           <parse>s(ver('10.4.2.18'),v(fail,t(simple,present,perfect)),sb('the claimant',singular),o('to meet the requirements to remove the previously imposed (disqualification, ineligibility)'))</parse>
@@ -1052,7 +1052,7 @@
           <parse>s(ver('10.4.2.18'),v(apply,t(simple,present,perfect)),sb('the claimant',singular),o('for unemployment benefits in a state other than Kentucky in the last 12 months'))</parse>
         </text>
       </attribute>
-      <attribute name="b859" type="boolean" public-name="fpr_receiving_ui_from_other_state">
+      <attribute name="b859" type="boolean" public-name="fpr_si_rec_ui_another_state">
         <text>
           <base>the claimant is receiving benefits from a state other than Kentucky</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving benefits from a state other than Kentucky'))</parse>
@@ -1163,32 +1163,32 @@
           <parse>s(ver('10.4.2.18'),v(contain,t(simple,present,normal)),sb('the claimants address',singular),o('a post office box number'))</parse>
         </text>
       </attribute>
-      <attribute name="p265" type="text" public-name="fpr_permanent_address">
+      <attribute name="p265" type="text" public-name="fpr_si_permanent_address">
         <text>
           <base>the claimants current permanent street address</base>
         </text>
       </attribute>
-      <attribute name="p266" type="text" public-name="fpr_permanent_appt_no">
+      <attribute name="p266" type="text" public-name="fpr_si_permanent_appt_no">
         <text>
           <base>the claimants current permanent suite or appartment number</base>
         </text>
       </attribute>
-      <attribute name="p267" type="text" public-name="fpr_permanent_city">
+      <attribute name="p267" type="text" public-name="fpr_si_permanent_city">
         <text>
           <base>the claimants current permanent city of residence</base>
         </text>
       </attribute>
-      <attribute name="p268" type="text" public-name="fpr_permanent_state">
+      <attribute name="p268" type="text" public-name="fpr_si_permanent_state">
         <text>
           <base>the claimants current permanent state of residence</base>
         </text>
       </attribute>
-      <attribute name="p269" type="number" public-name="fpr_permanent_zip" display-unformatted="true">
+      <attribute name="p269" type="number" public-name="fpr_si_addr_zip_plus_four" display-unformatted="true">
         <text>
           <base>the claimants current permanent zip code of residence</base>
         </text>
       </attribute>
-      <attribute name="p270" type="text" public-name="fpr_permanent_county">
+      <attribute name="p270" type="text" public-name="fpr_si_permanent_county">
         <text>
           <base>the claimants current permanent county of residence</base>
         </text>
@@ -1557,7 +1557,7 @@
           <parse>s(ver('10.4.2.18'),v(prevent,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('obtaining (acceptance) of suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="p393" type="text" public-name="fpr_aa_claim_asserted_nod_code">
+      <attribute name="p393" type="text" public-name="fpr_si_assert_nod_code">
         <text>
           <base>the claim's asserted nod finding code</base>
         </text>
@@ -1977,6 +1977,29 @@
         <text>
           <base>the selected employment status was unsatisfactory attendance</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the selected employment status',singular),o('unsatisfactory attendance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1315" type="boolean" public-name="fpr_emt_sel_discharge_status">
+        <text>
+          <base>the selected discharge status is (unsatisfactory attendance)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the selected discharge status',singular),o('(unsatisfactory attendance)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1319" type="boolean" public-name="fpr_si_compliance_dbrp">
+        <text>
+          <base>the claimant is in compliance with the divisions benefit request procedures</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in compliance with the divisions benefit request procedures'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1321" type="boolean" public-name="fpr_has_an_active_prior_claim">
+        <text>
+          <base>the claimant has at least one active claim in Kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('at least one active claim in Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p641" type="date" public-name="fpr_si_eri_next_date_due">
+        <text>
+          <base>the date the next eri interview is due</base>
         </text>
       </attribute>
     </entity>
@@ -6396,7 +6419,56 @@
         </text>
       </attribute>
     </entity>
-    <entity id="issuetype" name="the issue type" containment-relationship-id="allinstancesoftheissuetype" containment-parent-id="global" public-id="fpr_issue_type">
+    <entity id="priorclaim" name="the prior_claim" identifying-attribute-name="fpr_si_pc_the_prior_claim_id" identifying-attribute-text="the prior_claim's id" containment-relationship-id="allinstancesofthepriorclaim" containment-parent-id="global" public-id="the_prior_claim_entity">
+      <attribute name="p636" type="text" substitutable="true" default-gender="generic" public-name="fpr_si_pc_the_prior_claim_id">
+        <text>
+          <base>the prior_claim's id</base>
+        </text>
+      </attribute>
+      <attribute name="p637" type="text" public-name="fpr_si_pc_program_code">
+        <text>
+          <base>the prior claim's program code</base>
+        </text>
+      </attribute>
+      <attribute name="p638" type="text" public-name="fpr_si_pc_ar_flag_code">
+        <text>
+          <base>the prior_claim's ar flag code</base>
+        </text>
+      </attribute>
+      <attribute name="b1317" type="boolean" public-name="fpr_pc_is_active_ky">
+        <text>
+          <base>the prior claim is an active claim in kentucky</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the prior claim',singular),o('an active claim in kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p639" type="date" public-name="fpr_si_pc_byed">
+        <text>
+          <base>the prior_claim's benefit year end date</base>
+        </text>
+      </attribute>
+      <attribute name="p640" type="currency" public-name="fpr_si_pc_balance_usd">
+        <text>
+          <base>the prior claim's balance in usd</base>
+        </text>
+      </attribute>
+      <attribute name="b1318" type="boolean" public-name="fpr_pc_benefit_year_expired">
+        <text>
+          <base>the prior_claim's benefit year has expired</base>
+          <parse>s(ver('10.4.2.18'),v(expire,t(simple,present,perfect)),sb('the prior_claim''s benefit year',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1320" type="boolean" public-name="fpr_pc_re_opened">
+        <text>
+          <base>the claimant is re-opening the prior_claim</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('re-opening the prior_claim'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1322" type="boolean" public-name="fpr_pc_most_recent">
+        <text>
+          <base>the prior_claim is the most recent</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the prior_claim',singular),o('the most recent'))</parse>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships>
@@ -6417,15 +6489,14 @@
     <relationship source="employment" target="finding" text="all vq finding's inferred from employment" relationship-id="allvqfindingsinferredfromemployment" reverse-relationship-id="findingvqinfbyemployment" reverse-text="finding vq inf by employment" type="ManyToMany" is-computed="false" is-containment="false" public-id="emt_inf_vq_finding" reverse-public-id="finding_vq_inf_emt" />
     <relationship source="finding" target="nod" text="finding infers nod" relationship-id="findinginfersnod" reverse-relationship-id="nodinferredbyfinding" reverse-text="nod inferred by finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="finding_inf_nod" reverse-public-id="nod_inf_finding" />
     <relationship source="global" target="finding" text="all findings inferred from claim" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" reverse-text="the claim inferring this finding" type="ManyToMany" is-computed="false" is-containment="false" public-id="claim_inf_finding" reverse-public-id="finding_inf_by_claim" />
-    <relationship source="global" target="issuetype" text="all instances of the issue type" relationship-id="allinstancesoftheissuetype" reverse-relationship-id="globalforthisissuetype" reverse-text="global for this issue type" type="OneToMany" is-computed="false" is-containment="true" public-id="global2issuetype" reverse-public-id="issuetype2global" />
-    <relationship source="employment" target="issuetype" is-containment="false" public-id="emt2issuetype" reverse-public-id="issuetype2emt" text="employment raised issue type" relationship-id="employmentraisedissuetype" reverse-relationship-id="issuetyperaisedbyemployment" reverse-text="issue type raised by employment" type="ManyToMany" is-computed="false" />
-    <relationship source="global" target="issuetype" is-containment="false" public-id="fpr_global2_issuetype" reverse-public-id="fpr_issuetype2global" text="all issue type's raised by claim" relationship-id="allissuetypesraisedbyclaim" reverse-relationship-id="claimthatraisedthisissuetype" reverse-text="the claim that raised this issue type" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_mc_finding" reverse-public-id="finding_mc_inf_emt" text="all mc finding's inferred from employment" relationship-id="allmcfindingsinferredfromemployment" reverse-relationship-id="findingmcinfbyemployment" reverse-text="finding mc inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_di_finding" reverse-public-id="finding_di_inf_emt" text="all di finding's inferred from employment" relationship-id="alldifindingsinferredfromemployment" reverse-relationship-id="findingdiinfbyemployment" reverse-text="finding di inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_se_finding" reverse-public-id="finding_se_inf_emt" text="all se finding's inferred from employment" relationship-id="allsefindingsinferredfromemployment" reverse-relationship-id="findingseinfbyemployment" reverse-text="finding se inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_ms_finding" reverse-public-id="finding_inf_ms_emt" text="all ms finding's inferred from employment" relationship-id="allmsfindingsinferredfromemployment" reverse-relationship-id="findingmsinfbyemployment" reverse-text="finding ms inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_us_finding" reverse-public-id="finding_inf_us_emt" text="all us finding's inferred from employment" relationship-id="allusfindingsinferredfromemployment" reverse-relationship-id="findingusinfbyemployment" reverse-text="finding us inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_ld_finding" reverse-public-id="finding_inf_ld_employment" text="all ld finding's inferred from employment" relationship-id="allldfindingsinferredfromemployment" reverse-relationship-id="findingldinfbyemployment" reverse-text="finding ld inf by employment" type="OneToMany" is-computed="false" />
+    <relationship source="global" target="priorclaim" text="all instances of the prior_claim" relationship-id="allinstancesofthepriorclaim" reverse-relationship-id="priorclaimtoglobal" reverse-text="prior claim to global" type="OneToMany" is-computed="false" is-containment="true" public-id="global2_prior_claim" reverse-public-id="prior_claim2global" />
+    <relationship source="global" target="priorclaim" is-containment="false" public-id="global_prior_claim" reverse-public-id="prior_claim_global" text="the re-activated prior claim" relationship-id="reactivatedpriorclaim" reverse-relationship-id="thispriorclaimtoglobal" reverse-text="this prior claim to global" type="OneToOne" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
