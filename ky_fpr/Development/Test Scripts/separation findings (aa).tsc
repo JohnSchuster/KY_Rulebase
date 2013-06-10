@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <test-script product-version="10.4.3.23" schema-version="4">
   <test-case-set>
-    <test-case name="finding_aa_d4_01 (physically able)" notes="">
+    <test-case name="finding_aa_d4_01 (physically unable)" notes="">
       <ent-set entity-type="global" entity-text="Global">
         <ent-inst id="global 1">
           <attr-inst name="fpr_has_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
@@ -15,8 +15,11 @@
             </val>
           </attr-inst>
           <attr-inst name="fpr_finding_aa_d4_01" text="the claimant is ineligible aa_d4_01, not available (physically unable)" type="boolean">
-            <expected-val>
+            <val>
               <boolean-val>true</boolean-val>
+            </val>
+            <expected-val>
+              <unknown-val />
             </expected-val>
           </attr-inst>
           <relationship-set>
@@ -35,7 +38,7 @@
         <ent-inst id="aa_d4_01" />
       </ent-set>
     </test-case>
-    <test-case name="finding_aa_d4_02 (mentally able)" notes="">
+    <test-case name="finding_aa_d4_02 (mentally unable)" notes="">
       <ent-set entity-type="global" entity-text="Global">
         <ent-inst id="global 1">
           <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
@@ -230,6 +233,35 @@
         <ent-inst id="aa_d4_06" />
       </ent-set>
     </test-case>
+    <test-case name="finding_aa_d4_13 (disaster availability)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_natural_disaster_old" text="the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_13" text="the claimant is ineligible aa_d4_13, not available (disaster availability)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_13" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_13" />
+      </ent-set>
+    </test-case>
   </test-case-set>
   <outcome-set>
     <outcome name="fpr_finding_aa_d4_01" display-name="fpr_finding_aa_d4_01" text="the claimant is ineligible aa_d4_01, not available (physically unable)" type="boolean" entity-type="global" entity-text="Global">
@@ -258,6 +290,16 @@
       </default-change-points>
     </outcome>
     <outcome name="fpr_finding_aa_d4_06" display-name="fpr_finding_aa_d4_06" text="the claimant is ineligible aa_d4_06, not available (incarceration)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_13" display-name="fpr_finding_aa_d4_13" text="the claimant is ineligible aa_d4_13, not available (disaster availability)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_physically_able_to_work" display-name="fpr_physically_able_to_work" text="the claimant is physically able to work" type="boolean" entity-type="global" entity-text="Global">
       <default-change-points>
         <boolean-val>true</boolean-val>
       </default-change-points>
