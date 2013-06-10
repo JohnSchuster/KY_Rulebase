@@ -18,6 +18,16 @@
           <base>the claimants explanation for their behavior or conduct</base>
         </text>
       </attribute>
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the reason the employment reduced the claimants work hours</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants description of the final incident</base>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -94,6 +104,26 @@
                 </length>
                 <number-value>0</number-value>
               </greater-than>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="warning(&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.\&quot;)&quot;" folder="0" source-offset="2789">
+      <rule-xml>
+        <event action="warning(&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <and>
+              <equals>
+                <attribute attr-id="p2" />
+                <string-value>ED03</string-value>
+              </equals>
+              <less-than-equals>
+                <length>
+                  <attribute attr-id="p3" />
+                </length>
+                <number-value>0</number-value>
+              </less-than-equals>
             </and>
           </condition>
         </event>
