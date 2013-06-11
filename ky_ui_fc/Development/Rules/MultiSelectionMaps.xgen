@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
@@ -535,6 +535,24 @@
           <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment category selected by the claimant',singular),o('school employee'))</parse>
         </text>
       </attribute>
+      <attribute name="b207" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to search for new employment</base>
+          <parse>s(ver('10.4.3.23'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to search for new employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b208" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to accept a new offer of employment</base>
+          <parse>s(ver('10.4.3.23'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to accept a new offer of employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b209" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment to remain employed with another employer</base>
+          <parse>s(ver('10.4.3.23'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment to remain employed with another employer'))</parse>
+        </text>
+      </attribute>
       <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the selected currently employed status</base>
@@ -573,6 +591,11 @@
       <attribute name="p33" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the employment's special category</base>
+        </text>
+      </attribute>
+      <attribute name="p34" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimants reason for accepting an offer of work</base>
         </text>
       </attribute>
     </entity>
@@ -1886,6 +1909,60 @@
             <equals>
               <attribute attr-id="p24" />
               <string-value>QW16</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="74" name="the claimant left the employment to search for new employment" ruleburst="true" concludes="b207" folder="0" source-offset="19758">
+      <rule-xml>
+        <conclude attr-id="b207" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p34" />
+              <string-value>AO01</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="75" name="the claimant left the employment to accept a new offer of employment" ruleburst="true" concludes="b208" folder="0" source-offset="19905">
+      <rule-xml>
+        <conclude attr-id="b208" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p34" />
+              <string-value>AO02</string-value>
+            </equals>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="76" name="the claimant left the employment to remain employed with another employer" ruleburst="true" concludes="b209" folder="0" source-offset="20059">
+      <rule-xml>
+        <conclude attr-id="b209" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <equals>
+              <attribute attr-id="p34" />
+              <string-value>AO03</string-value>
             </equals>
           </condition>
           <otherwise>
