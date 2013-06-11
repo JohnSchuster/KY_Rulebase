@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-script product-version="10.4.3.23" schema-version="4">
+  <test-case-set>
+    <test-case name="finding_mc_d2_15 (incarceration)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="fpr_employer 1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="mc_d2_15" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="fpr_employment 1">
+          <attr-inst name="cat_fpr_emt_inc" text="the employment's selected discharge status is (Incarceration)" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_incarcerated_at_least_five" text="the claimant was incarcerated for at least five (5) days of work during the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_was_discharged" text="the claimant was (discharged, reduced in hours) from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_mc_d2_15" text="the employment's separation finding is mc_d2_15, (Incarceration)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="fpr_employer 1">
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="fpr_employment 1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="mc_d2_15" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_mc_d2_16 (unsatisfactory work)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="fpr_employer 1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="mc_d2_16" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="fpr_employment 1">
+          <attr-inst name="fpr_was_discharged" text="the claimant was (discharged, reduced in hours) from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_received_training" text="the claimant received training (instruction) during the employment on how to perform their duties" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_aware_of_responsibilities" text="the claimant was aware of the employment's job responsibilities" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_was_warned_before" text="the claimant had been previously warned that the employment was in jeopardy" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_uwp" text="the employment's selected discharge status is (Unsatisfactory Work or Performance)" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_mc_d2_16" text="the employment's separation finding is mc_d2_16, (Unsatisfactory Work)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="fpr_employer 1">
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="fpr_employment 1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="mc_d2_16" />
+      </ent-set>
+    </test-case>
+  </test-case-set>
+  <outcome-set>
+    <outcome name="fpr_finding_mc_d2_15" display-name="fpr_finding_mc_d2_15" text="the employment's separation finding is mc_d2_15, (Incarceration)" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_mc_d2_16" display-name="fpr_finding_mc_d2_16" text="the employment's separation finding is mc_d2_16, (Unsatisfactory Work)" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+  </outcome-set>
+</test-script>

@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test-script product-version="10.4.3.23" schema-version="4">
+  <test-case-set>
+    <test-case name="finding_aa_d4_01 (physically unable)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_has_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_physical_health_prevents_work" text="the claimant's physical health condition prevents them from working" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_01" text="the claimant is ineligible aa_d4_01, not available (physically unable)" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+            <expected-val>
+              <unknown-val />
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_01" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_01" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_02 (mentally unable)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mental_health_prevents_work" text="the claimant's mental health condition prevents them from working" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_02" text="the claimant is ineligible aa_d4_02, not available (mentally unable)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_02" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_02" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_03 (transportation)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_has_reliable_transportation" text="the claimant has a reliable means of transportation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_has_alt_trans" text="the claimant has an alternative means of transportation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_trans_no_good" text="the claimant's transportation prevents a suitable work search" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_03" text="the claimant is ineligible aa_d4_03, not available (transportation)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_03" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_03" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_04 (school, training)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_is_in_school" text="the claimant is enrolled in a (school, training) program" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_apprentice" text="the claimant is in an apprentice program" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimants_school_is_ok" text="the claimant's (school, training) has been approved by this Division" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_gives_up_school" text="the claimant is willing to give up their school or training in favor of suitable employment" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_school_no_look" text="the claimant's (school, training) prevents a suitable work search" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_04" text="the claimant is ineligible aa_d4_04, not available (school, training)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_04" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_04" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_05 (caregiving)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_cares" text="the claimant is responsible for the care of (child, elder, spouse, family member)" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_cares_alternatly" text="the claimant has an alternative means of dependent care" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_care_no_work" text="the claimant's duty of dependent care prevents obtaining (acceptance) of suitable work" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_05" text="the claimant is ineligible aa_d4_05, not available (caregiving)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_05" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_05" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_06 (incarceration)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_in_jail" text="the claimant is incarcerated" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_jail_no_work" text="the claimant's incarceration prevents obtaining (acceptance) of suitable work" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_06" text="the claimant is ineligible aa_d4_06, not available (incarceration)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_06" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_06" />
+      </ent-set>
+    </test-case>
+    <test-case name="finding_aa_d4_13 (disaster availability)" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_natural_disaster_old" text="the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_finding_aa_d4_13" text="the claimant is ineligible aa_d4_13, not available (disaster availability)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global2finding" complete="false">
+              <ent-inst-ref ref-id="aa_d4_13" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="false" />
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_finding" entity-text="the finding" inferred="yes" identifying-attribute="g01_the_finding_id">
+        <ent-inst id="aa_d4_13" />
+      </ent-set>
+    </test-case>
+  </test-case-set>
+  <outcome-set>
+    <outcome name="fpr_finding_aa_d4_01" display-name="fpr_finding_aa_d4_01" text="the claimant is ineligible aa_d4_01, not available (physically unable)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_02" display-name="fpr_finding_aa_d4_02" text="the claimant is ineligible aa_d4_02, not available (mentally unable)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_03" display-name="fpr_finding_aa_d4_03" text="the claimant is ineligible aa_d4_03, not available (transportation)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_04" display-name="fpr_finding_aa_d4_04" text="the claimant is ineligible aa_d4_04, not available (school, training)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_05" display-name="fpr_finding_aa_d4_05" text="the claimant is ineligible aa_d4_05, not available (caregiving)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_06" display-name="fpr_finding_aa_d4_06" text="the claimant is ineligible aa_d4_06, not available (incarceration)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_finding_aa_d4_13" display-name="fpr_finding_aa_d4_13" text="the claimant is ineligible aa_d4_13, not available (disaster availability)" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_physically_able_to_work" display-name="fpr_physically_able_to_work" text="the claimant is physically able to work" type="boolean" entity-type="global" entity-text="Global">
+      <default-change-points>
+        <boolean-val>true</boolean-val>
+      </default-change-points>
+    </outcome>
+  </outcome-set>
+</test-script>
