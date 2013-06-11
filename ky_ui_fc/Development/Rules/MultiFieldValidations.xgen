@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.3.23">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -11,6 +11,12 @@
         <text lang="en-US">
           <base>the claimant provided the employer with an explanation for their unsatisfactory performance</base>
           <parse>s(ver('10.4.2.18'),v(provide,t(simple,past,normal)),sb('the claimant',plural),o('the employer with an explanation for their unsatisfactory performance'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant had been previously warned or disciplined during the employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,perfect)),sb('the claimant',singular),o('previously warned or disciplined during the employment'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -26,6 +32,11 @@
       <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants description of the final incident</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claimant's description of the previous disciplinary warnings they received</base>
         </text>
       </attribute>
     </entity>
@@ -121,6 +132,23 @@
               <less-than-equals>
                 <length>
                   <attribute attr-id="p3" />
+                </length>
+                <number-value>0</number-value>
+              </less-than-equals>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please describe prior warnings or disciplinary action.\&quot;)&quot;" folder="0" source-offset="3185">
+      <rule-xml>
+        <event action="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <and>
+              <attribute attr-id="b3" />
+              <less-than-equals>
+                <length>
+                  <attribute attr-id="p4" />
                 </length>
                 <number-value>0</number-value>
               </less-than-equals>
