@@ -24,6 +24,24 @@ $(function() {  // jQuery qdiom that defers execution until the Browsers DOM rea
 	//$( "#radio" ).buttonset();
 	##// Set up a jQuery Wrapped Set for the Confirmation Div
 	var $xr_confirm = $( "#xr_confirm" );
+
+	/* XR_CS_02 custom */
+
+  	 function xr_cs_02_btn_01_click( event ) {
+                event.preventDefault();
+		        event.stopPropagation();
+
+		if ( 0 == $( "input:checked" ).length ) {
+			$( "#xr_cs_02_t01" ).effect("highlight", {color :"#FF0000"}, 5000);
+			//alert("Please select a category, then click the Continue button");
+			return false;
+		} 
+                 else
+
+                     $("#owdInterviewForm").submit(); }
+
+
+	/* XR_CS_02 custom */
 	
 	##// Synchronous Handlers
 	function xr_cs_01_btn_01_click( event ) {
@@ -55,6 +73,7 @@ $(function() {  // jQuery qdiom that defers execution until the Browsers DOM rea
 	
 	// Bind the handler to the "Continue" button's click event
 	$( "#xr_cs_01_btn_01" ).on( "click", xr_cs_01_btn_01_click );
+	$( "#xr_cs_02_btn_01" ).on( "click", xr_cs_02_btn_01_click );
 	
 	// Configure the dialog, and attach to the hidden Div by Id
 	$( $xr_confirm ).dialog( {
