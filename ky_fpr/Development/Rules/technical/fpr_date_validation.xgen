@@ -1,158 +1,173 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the base period start date</base>
-        </text>
-      </attribute>
-      <attribute name="p5" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
           <base>the filing date</base>
         </text>
       </attribute>
-      <attribute name="p15" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the base period start date</base>
+        </text>
+      </attribute>
+      <attribute name="p13" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the completion date of the claimants training program</base>
         </text>
       </attribute>
-      <attribute name="p16" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p14" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the restriction on the claimants transportation ends</base>
         </text>
       </attribute>
-      <attribute name="p17" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p15" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the restriction on the claimants transportation began</base>
         </text>
       </attribute>
-      <attribute name="p20" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p17" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the limitation due to your care of others began</base>
         </text>
       </attribute>
-      <attribute name="p21" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p18" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the requirement for caring for others will end</base>
         </text>
       </attribute>
-      <attribute name="p26" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p24" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant expects their mental health condition to end</base>
         </text>
       </attribute>
-      <attribute name="p27" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p25" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant's mental health limitation began</base>
         </text>
       </attribute>
-      <attribute name="p28" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p26" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants birthday</base>
         </text>
       </attribute>
-      <attribute name="p29" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p27" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimants physical limitation is expected end</base>
         </text>
       </attribute>
-      <attribute name="p30" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p28" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimants physical restriction began</base>
         </text>
       </attribute>
     </entity>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the employment's worked dates are sequential</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment''s worked dates',plural),o('sequential'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employment was active within the investigative period</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's worked dates are sequential</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s worked dates',plural),o('sequential'))</parse>
         </text>
       </attribute>
       <attribute name="p1" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the employment's last day worked date</base>
-        </text>
-      </attribute>
-      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
           <base>the employment's first day worked date</base>
         </text>
       </attribute>
-      <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p5" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the employment informed the claimant of the recall date</base>
         </text>
       </attribute>
-      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p6" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant was to return to the employment from the temporary layoff</base>
         </text>
       </attribute>
-      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the beginning date of the claimants most current incarceration during the employment</base>
         </text>
       </attribute>
-      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the end date of the claimants incarceration during the employment</base>
         </text>
       </attribute>
-      <attribute name="p10" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date that the labor dispute at the employment ended</base>
         </text>
       </attribute>
-      <attribute name="p12" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p10" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the last season ended with the employment</base>
         </text>
       </attribute>
-      <attribute name="p13" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p11" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the upcoming season with the employment begins</base>
         </text>
       </attribute>
-      <attribute name="p14" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p12" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date that the employment offered the claimant the new job</base>
         </text>
       </attribute>
-      <attribute name="p19" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p16" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the medical condition or injury occurred during the employment</base>
         </text>
       </attribute>
-      <attribute name="p22" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p19" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date that the claimant was laid-off from the employment</base>
         </text>
       </attribute>
-      <attribute name="p23" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p20" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date that the claimant was notified of their lay-off from the employment</base>
+        </text>
+      </attribute>
+      <attribute name="p21" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant was recalled to the employment</base>
         </text>
       </attribute>
-      <attribute name="p24" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p22" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the leave of absence from the employment started</base>
         </text>
       </attribute>
-      <attribute name="p25" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p23" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant will return to the employment after the leave of absence</base>
         </text>
       </attribute>
-      <attribute name="p31" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p29" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the off-duty water transportation period from the employment began</base>
+        </text>
+      </attribute>
+      <attribute name="p30" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the final incident occurred</base>
+        </text>
+      </attribute>
+      <attribute name="p31" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's effective separation date</base>
         </text>
       </attribute>
       <attribute name="p32" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -162,57 +177,42 @@
       </attribute>
       <attribute name="p33" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the employment's effective separation date</base>
+          <base>the date the claimant is to report to the next duty station</base>
         </text>
       </attribute>
       <attribute name="p34" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
-          <base>the date the claimant is to report to the next duty station</base>
-        </text>
-      </attribute>
-      <attribute name="p36" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
           <base>the date the non-categorized final incident occurred</base>
         </text>
       </attribute>
-      <attribute name="p37" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p35" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant was discharged</base>
         </text>
       </attribute>
-      <attribute name="p38" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the date the final incident occurred</base>
-        </text>
-      </attribute>
-      <attribute name="p39" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p36" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant received warning prior to their suspension</base>
         </text>
       </attribute>
-      <attribute name="p40" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p37" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant was suspended</base>
         </text>
       </attribute>
-      <attribute name="p41" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p38" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant discussed their concerns</base>
         </text>
       </attribute>
-      <attribute name="p42" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p39" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the claimant gave notice</base>
         </text>
       </attribute>
-      <attribute name="p43" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+      <attribute name="p40" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date the employment labor dispute started</base>
-        </text>
-      </attribute>
-      <attribute name="p44" type="date" ruleburst="true" is-used="True" default-gender="neuter">
-        <text lang="en-US">
-          <base>the date that the claimant was notified of their lay-off</base>
         </text>
       </attribute>
     </entity>
@@ -223,33 +223,33 @@
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the employment was active within the investigative period" ruleburst="true" concludes="b6" folder="0" source-offset="3">
+    <rule id="0" name="the employment was active within the investigative period" ruleburst="true" concludes="b1" folder="0" source-offset="3">
       <rule-xml>
-        <conclude attr-id="b6" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
               <less-than-equals>
-                <attribute attr-id="p4" />
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p5" />
-                </scope-for>
-              </less-than-equals>
-              <less-than-equals>
-                <attribute attr-id="p1" />
-                <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p5" />
-                </scope-for>
-              </less-than-equals>
-              <greater-than-equals>
                 <attribute attr-id="p1" />
                 <scope-for scope-ref="global0" target-entity-id="global">
                   <attribute attr-id="p2" />
                 </scope-for>
+              </less-than-equals>
+              <less-than-equals>
+                <attribute attr-id="p3" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p2" />
+                </scope-for>
+              </less-than-equals>
+              <greater-than-equals>
+                <attribute attr-id="p3" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p4" />
+                </scope-for>
               </greater-than-equals>
-              <attribute attr-id="b5" />
+              <attribute attr-id="b2" />
             </and>
           </condition>
           <otherwise>
@@ -263,22 +263,22 @@
         <event action="error(&quot;The employment must have been active within the investigation period.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
-              <attribute attr-id="b6" />
+              <attribute attr-id="b1" />
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="2" name="the employment's worked dates are sequential" ruleburst="true" concludes="b5" folder="0" source-offset="647">
+    <rule id="2" name="the employment's worked dates are sequential" ruleburst="true" concludes="b2" folder="0" source-offset="647">
       <rule-xml>
-        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+        <conclude attr-id="b2" entity-id="employment" scope-id="employment0">
           <value>
             <true-value />
           </value>
           <condition>
             <less-than-equals>
-              <attribute attr-id="p4" />
               <attribute attr-id="p1" />
+              <attribute attr-id="p3" />
             </less-than-equals>
           </condition>
           <otherwise>
@@ -292,7 +292,7 @@
         <event action="error(&quot;The first day worked, must be on or before, the last day worked.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
-              <attribute attr-id="b5" />
+              <attribute attr-id="b2" />
             </not>
           </condition>
         </event>
@@ -304,9 +304,9 @@
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p4" />
+                <attribute attr-id="p1" />
                 <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p5" />
+                  <attribute attr-id="p2" />
                 </scope-for>
               </less-than-equals>
             </not>
@@ -320,9 +320,9 @@
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p1" />
+                <attribute attr-id="p3" />
                 <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p5" />
+                  <attribute attr-id="p2" />
                 </scope-for>
               </less-than-equals>
             </not>
@@ -336,9 +336,9 @@
           <condition>
             <not>
               <greater-than-equals>
-                <attribute attr-id="p1" />
+                <attribute attr-id="p3" />
                 <scope-for scope-ref="global0" target-entity-id="global">
-                  <attribute attr-id="p2" />
+                  <attribute attr-id="p4" />
                 </scope-for>
               </greater-than-equals>
             </not>
@@ -352,7 +352,7 @@
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p6" />
+                <attribute attr-id="p5" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -366,7 +366,7 @@
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p7" />
+                <attribute attr-id="p6" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -380,7 +380,7 @@
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p8" />
+                <attribute attr-id="p7" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -394,7 +394,7 @@
           <condition>
             <not>
               <greater-than-equals>
-                <attribute attr-id="p9" />
+                <attribute attr-id="p8" />
                 <current-date />
               </greater-than-equals>
             </not>
@@ -408,6 +408,20 @@
           <condition>
             <not>
               <less-than-equals>
+                <attribute attr-id="p9" />
+                <current-date />
+              </less-than-equals>
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="error(&quot;The date that the last season ended must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the last season ended must be on or before today\&quot;)&quot;" folder="0" source-offset="3593">
+      <rule-xml>
+        <event action="error(&quot;The date that the last season ended must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <less-than-equals>
                 <attribute attr-id="p10" />
                 <current-date />
               </less-than-equals>
@@ -416,9 +430,23 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="12" name="error(&quot;The date that the last season ended must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the last season ended must be on or before today\&quot;)&quot;" folder="0" source-offset="3594">
+    <rule id="13" name="error(&quot;The date that the upcoming season begins must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the upcoming season begins must be on or after today\&quot;)&quot;" folder="0" source-offset="3892">
       <rule-xml>
-        <event action="error(&quot;The date that the last season ended must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The date that the upcoming season begins must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <greater-than-equals>
+                <attribute attr-id="p11" />
+                <current-date />
+              </greater-than-equals>
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="error(&quot;The date that the new job was offered must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the new job was offered must be on or before today\&quot;)&quot;" folder="0" source-offset="4202">
+      <rule-xml>
+        <event action="error(&quot;The date that the new job was offered must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
@@ -430,9 +458,9 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="13" name="error(&quot;The date that the upcoming season begins must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the upcoming season begins must be on or after today\&quot;)&quot;" folder="0" source-offset="3893">
+    <rule id="15" name="error(&quot;The completion date of your training program must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The completion date of your training program must be on or after today\&quot;)&quot;" folder="0" source-offset="4516">
       <rule-xml>
-        <event action="error(&quot;The date that the upcoming season begins must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The completion date of your training program must be on or after today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <greater-than-equals>
@@ -444,13 +472,27 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="14" name="error(&quot;The date that the new job was offered must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the new job was offered must be on or before today\&quot;)&quot;" folder="0" source-offset="4203">
+    <rule id="16" name="error(&quot;The date the restriction on your transportation ends must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date the restriction on your transportation ends must be on or after today\&quot;)&quot;" folder="0" source-offset="4832">
       <rule-xml>
-        <event action="error(&quot;The date that the new job was offered must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The date the restriction on your transportation ends must be on or after today&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <not>
+              <greater-than-equals>
+                <attribute attr-id="p14" />
+                <current-date />
+              </greater-than-equals>
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="17" name="error(&quot;The date the restriction on your transportation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date the restriction on your transportation began must be on or before today\&quot;)&quot;" folder="0" source-offset="5172">
+      <rule-xml>
+        <event action="error(&quot;The date the restriction on your transportation began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p14" />
+                <attribute attr-id="p15" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -458,37 +500,23 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="15" name="error(&quot;The completion date of your training program must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The completion date of your training program must be on or after today\&quot;)&quot;" folder="0" source-offset="4517">
+    <rule id="18" name="error(&quot;The date that your medical condition or injury first occurred must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your medical condition or injury first occurred must be on or before today\&quot;)&quot;" folder="0" source-offset="5520">
       <rule-xml>
-        <event action="error(&quot;The completion date of your training program must be on or after today&quot;)" entity-id="global" scope-id="global0">
+        <event action="error(&quot;The date that your medical condition or injury first occurred must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
-              <greater-than-equals>
-                <attribute attr-id="p15" />
-                <current-date />
-              </greater-than-equals>
-            </not>
-          </condition>
-        </event>
-      </rule-xml>
-    </rule>
-    <rule id="16" name="error(&quot;The date the restriction on your transportation ends must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date the restriction on your transportation ends must be on or after today\&quot;)&quot;" folder="0" source-offset="4833">
-      <rule-xml>
-        <event action="error(&quot;The date the restriction on your transportation ends must be on or after today&quot;)" entity-id="global" scope-id="global0">
-          <condition>
-            <not>
-              <greater-than-equals>
+              <less-than-equals>
                 <attribute attr-id="p16" />
                 <current-date />
-              </greater-than-equals>
+              </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="17" name="error(&quot;The date the restriction on your transportation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date the restriction on your transportation began must be on or before today\&quot;)&quot;" folder="0" source-offset="5173">
+    <rule id="19" name="error(&quot;The date that your limitation due to the care of others began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your limitation due to the care of others began must be on or before today\&quot;)&quot;" folder="0" source-offset="5892">
       <rule-xml>
-        <event action="error(&quot;The date the restriction on your transportation began must be on or before today&quot;)" entity-id="global" scope-id="global0">
+        <event action="error(&quot;The date that your limitation due to the care of others began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <less-than-equals>
@@ -500,9 +528,23 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="18" name="error(&quot;The date that your medical condition or injury first occurred must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your medical condition or injury first occurred must be on or before today\&quot;)&quot;" folder="0" source-offset="5521">
+    <rule id="20" name="error(&quot;The date that your limitation due to the care of others ends must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your limitation due to the care of others ends must be on or after today\&quot;)&quot;" folder="0" source-offset="6249">
       <rule-xml>
-        <event action="error(&quot;The date that your medical condition or injury first occurred must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The date that your limitation due to the care of others ends must be on or after today&quot;)" entity-id="global" scope-id="global0">
+          <condition>
+            <not>
+              <greater-than-equals>
+                <attribute attr-id="p18" />
+                <current-date />
+              </greater-than-equals>
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="error(&quot;The date that you were laid-off must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were laid-off must be on or before today\&quot;)&quot;" folder="0" source-offset="6599">
+      <rule-xml>
+        <event action="error(&quot;The date that you were laid-off must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
@@ -514,9 +556,9 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="19" name="error(&quot;The date that your limitation due to the care of others began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your limitation due to the care of others began must be on or before today\&quot;)&quot;" folder="0" source-offset="5893">
+    <rule id="22" name="error(&quot;The date that you were notified of your layoff must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were notified of your layoff must be on or before today\&quot;)&quot;" folder="0" source-offset="6899">
       <rule-xml>
-        <event action="error(&quot;The date that your limitation due to the care of others began must be on or before today&quot;)" entity-id="global" scope-id="global0">
+        <event action="error(&quot;The date that you were notified of your layoff must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
@@ -528,9 +570,9 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="20" name="error(&quot;The date that your limitation due to the care of others ends must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your limitation due to the care of others ends must be on or after today\&quot;)&quot;" folder="0" source-offset="6250">
+    <rule id="23" name="error(&quot;The date that you were recalled must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were recalled must be on or after today\&quot;)&quot;" folder="0" source-offset="7246">
       <rule-xml>
-        <event action="error(&quot;The date that your limitation due to the care of others ends must be on or after today&quot;)" entity-id="global" scope-id="global0">
+        <event action="error(&quot;The date that you were recalled must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <greater-than-equals>
@@ -542,9 +584,9 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="21" name="error(&quot;The date that you were laid-off must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were laid-off must be on or before today\&quot;)&quot;" folder="0" source-offset="6600">
+    <rule id="24" name="error(&quot;The date that your leave of absence started must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your leave of absence started must be on or before today\&quot;)&quot;" folder="0" source-offset="7535">
       <rule-xml>
-        <event action="error(&quot;The date that you were laid-off must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The date that your leave of absence started must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
@@ -556,9 +598,9 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="22" name="error(&quot;The date that you were recalled must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were recalled must be on or after today\&quot;)&quot;" folder="0" source-offset="6900">
+    <rule id="25" name="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you will return from your leave of absence must be on or after today\&quot;)&quot;" folder="0" source-offset="7857">
       <rule-xml>
-        <event action="error(&quot;The date that you were recalled must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <greater-than-equals>
@@ -570,41 +612,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="23" name="error(&quot;The date that your leave of absence started must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your leave of absence started must be on or before today\&quot;)&quot;" folder="0" source-offset="7189">
-      <rule-xml>
-        <event action="error(&quot;The date that your leave of absence started must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
-          <condition>
-            <not>
-              <less-than-equals>
-                <attribute attr-id="p24" />
-                <current-date />
-              </less-than-equals>
-            </not>
-          </condition>
-        </event>
-      </rule-xml>
-    </rule>
-    <rule id="24" name="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you will return from your leave of absence must be on or after today\&quot;)&quot;" folder="0" source-offset="7511">
-      <rule-xml>
-        <event action="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
-          <condition>
-            <not>
-              <greater-than-equals>
-                <attribute attr-id="p25" />
-                <current-date />
-              </greater-than-equals>
-            </not>
-          </condition>
-        </event>
-      </rule-xml>
-    </rule>
-    <rule id="25" name="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your mental health condition to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="7876">
+    <rule id="26" name="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your mental health condition to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="8222">
       <rule-xml>
         <event action="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <greater-than-equals>
-                <attribute attr-id="p26" />
+                <attribute attr-id="p24" />
                 <current-date />
               </greater-than-equals>
             </not>
@@ -612,13 +626,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="26" name="error(&quot;The date that your mental health condition began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your mental health condition began must be on or before today\&quot;)&quot;" folder="0" source-offset="8245">
+    <rule id="27" name="error(&quot;The date that your mental health condition began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your mental health condition began must be on or before today\&quot;)&quot;" folder="0" source-offset="8591">
       <rule-xml>
         <event action="error(&quot;The date that your mental health condition began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p27" />
+                <attribute attr-id="p25" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -626,13 +640,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="27" name="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits\&quot;)&quot;" folder="0" source-offset="8574">
+    <rule id="28" name="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits\&quot;)&quot;" folder="0" source-offset="8920">
       <rule-xml>
         <event action="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <less-than>
               <year-difference>
-                <attribute attr-id="p28" />
+                <attribute attr-id="p26" />
                 <current-date />
               </year-difference>
               <number-value>17</number-value>
@@ -641,13 +655,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="28" name="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your physical limitation to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="8885">
+    <rule id="29" name="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your physical limitation to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="9231">
       <rule-xml>
         <event action="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <greater-than-equals>
-                <attribute attr-id="p29" />
+                <attribute attr-id="p27" />
                 <current-date />
               </greater-than-equals>
             </not>
@@ -655,13 +669,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="29" name="error(&quot;The date that your physical limitation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your physical limitation began must be on or before today\&quot;)&quot;" folder="0" source-offset="9238">
+    <rule id="30" name="error(&quot;The date that your physical limitation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your physical limitation began must be on or before today\&quot;)&quot;" folder="0" source-offset="9584">
       <rule-xml>
         <event action="error(&quot;The date that your physical limitation began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p30" />
+                <attribute attr-id="p28" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -669,13 +683,13 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="30" name="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the off-duty period begin must be on or before today\&quot;)&quot;" folder="0" source-offset="9554">
+    <rule id="31" name="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the off-duty period begin must be on or before today\&quot;)&quot;" folder="0" source-offset="9900">
       <rule-xml>
         <event action="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p31" />
+                <attribute attr-id="p29" />
                 <current-date />
               </less-than-equals>
             </not>
@@ -683,154 +697,154 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="31" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="9886">
+    <rule id="32" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10232">
       <rule-xml>
         <event action="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p38" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p30" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="32" name="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the change occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10243">
+    <rule id="33" name="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the change occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10589">
       <rule-xml>
         <event action="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
                 <attribute attr-id="p32" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="33" name="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation\&quot;)&quot;" folder="0" source-offset="10602">
+    <rule id="34" name="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation\&quot;)&quot;" folder="0" source-offset="10948">
       <rule-xml>
         <event action="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <greater-than-equals>
-                <attribute attr-id="p34" />
                 <attribute attr-id="p33" />
+                <attribute attr-id="p31" />
               </greater-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="34" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11042">
+    <rule id="35" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11388">
       <rule-xml>
         <event action="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p36" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p34" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="35" name="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you were discharged must be the same as the date of your separation\&quot;)&quot;" folder="0" source-offset="11415">
+    <rule id="36" name="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you were discharged must be the same as the date of your separation\&quot;)&quot;" folder="0" source-offset="11761">
       <rule-xml>
         <event action="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <equals>
-                <attribute attr-id="p37" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p35" />
+                <attribute attr-id="p31" />
               </equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="36" name="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you received the warning must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11733">
+    <rule id="37" name="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you received the warning must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12079">
       <rule-xml>
         <event action="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p39" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p36" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="37" name="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were suspended must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12102">
+    <rule id="38" name="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were suspended must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12448">
       <rule-xml>
         <event action="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p40" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p37" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="38" name="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date did you discuss your concerns must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12430">
+    <rule id="39" name="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date did you discuss your concerns must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12776">
       <rule-xml>
         <event action="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p41" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p38" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="39" name="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you give notice must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12791">
+    <rule id="40" name="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you give notice must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13137">
       <rule-xml>
         <event action="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p42" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p39" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="40" name="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13111">
+    <rule id="41" name="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13457">
       <rule-xml>
         <event action="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p43" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p40" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
         </event>
       </rule-xml>
     </rule>
-    <rule id="41" name="error(&quot;the date were you notified about your lay-off must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date were you notified about your lay-off must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13469">
+    <rule id="42" name="error(&quot;the date you were notified about your lay-off must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were notified about your lay-off must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13815">
       <rule-xml>
-        <event action="error(&quot;the date were you notified about your lay-off must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;the date you were notified about your lay-off must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
-                <attribute attr-id="p44" />
-                <attribute attr-id="p33" />
+                <attribute attr-id="p20" />
+                <attribute attr-id="p31" />
               </less-than-equals>
             </not>
           </condition>
