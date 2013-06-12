@@ -1,0 +1,52 @@
+## xRulz Custom screen definition for xr_cs_02
+#set ( $xrulz_screen_id = $screen.getProperty("xRulzScreenId","") )
+##<h2>xRulz Custom Screen: $xrulz_screen_id</h2>	
+<h3><span id="xr_cs_02_t01">Please Select The Option That Best Describes Your Circumstances</span></h3>
+#set( $controlList = ${screen.getControls()} )
+<div class="radio-group" id="xr-${control.getEncodedID()}">
+	<fieldset id="xr_cs_02_fs">
+	        <legend>${control.getText()}</legend>
+			#foreach( $control in $controlList )					
+				#if( "xr02" == $control.getProperty("xRulzCustomFieldId","") )
+					#set( $listValues = ${control.getListOptions()} )
+					#foreach( $listValue in $listValues )
+						#set($id = $tabIndex)
+						<span>
+							<input  
+								type="radio" 
+								name="${control.getId()}" 
+								id="n${id}${velocityCount}"
+								value="${listValue.getValue()}" 
+								tabindex="#tabIndex()" 
+								 class="xr_cs_02_radio"
+								#if( ${listValue.getValue()}  == ${control.getDisplayValue()})
+									 checked
+								#end
+							></input>
+							#if( "QS01" == ${listValue.getValue()} )							
+								<h2 class="xr_02_sel">Personal Reasons</h2>
+								<p class="xr_02_sel">Example: Domestic Circumstances, Attending School, 
+								Military Reassignment, Voluntary Retirement, Non Work-Related Injury or Health Condition, etc.
+								</p>
+							#elseif( "QS02" == ${listValue.getValue()} )						
+								<h2 class="xr_02_sel">Work-Related Reasons</h2>
+								<p class="xr_02_sel">Example: Working Conditions, Hurt on The Job, Lack of Training, Safety Concerns,
+								Dispute in The Workplace, Harassment, etc.
+								</p>
+							#elseif( "QS03" == ${listValue.getValue()} )							
+								<h2 class="xr_02_sel">Other Employment Reasons</h2>
+								<p class="xr_02_sel">Example: Look For a New Job, Go to a New Job, Maintain Other Employment, etc.								
+								</p>																	
+							#end
+						</span>
+					#end
+				#end
+			#end  			
+	</fieldset>
+</div>
+<br>
+<hr>
+ <div class="xrulz_button">
+     <input class="button" type="button" id="xr_cs_02_btn_01" value="   Continue   ">
+ </div>
+

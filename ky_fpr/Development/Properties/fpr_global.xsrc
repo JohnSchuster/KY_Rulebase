@@ -5567,7 +5567,7 @@
       </attribute>
       <attribute name="p619" type="text" public-name="dc_selected_layoff_reason">
         <text>
-          <base>the claimants selected description of the layoff reason</base>
+          <base>the employment's layoff category code</base>
         </text>
       </attribute>
       <attribute name="b1305" type="boolean" public-name="fpr_violated_cash_handling">
@@ -6041,6 +6041,33 @@
       <attribute name="p690" type="date" public-name="dc_final_date_cwh">
         <text>
           <base>the date that the final change in work hours took place</base>
+        </text>
+      </attribute>
+      <attribute name="b1342" type="boolean" public-name="dv_layoff_date_chk">
+        <text>
+          <base>the date that the claimant was notified of their lay-off from the employment is on or earlier than the current date</base>
+          <parse>s(ver('10.4.2.18'),v(notify,t(simple,past,normal)),ob('the date that the claimant',singular),o('of their lay-off from the employment is on or earlier than the current date'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p691" type="text" public-name="dc_description_ud">
+        <text>
+          <base>the claimants explanation for their uninsurable driver behavior or conduct</base>
+        </text>
+      </attribute>
+      <attribute name="p692" type="text" public-name="dc_title_gcr">
+        <text>
+          <base>the title of the authority that gave the claimant the reason</base>
+        </text>
+      </attribute>
+      <attribute name="p693" type="text" public-name="fpr_emt_supervisor_title">
+        <text>
+          <base>the title of the claimants supervisor at the employment</base>
+        </text>
+      </attribute>
+      <attribute name="b1343" type="boolean" public-name="dc_related_to_reason">
+        <text>
+          <base>the warnings are related to the reason</base>
+          <parse>s(ver('10.4.3.23'),v(relate,t(simple,present,normal)),ob('the warnings',plural),o('to the reason'))</parse>
         </text>
       </attribute>
     </entity>
