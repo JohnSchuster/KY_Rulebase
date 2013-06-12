@@ -1925,6 +1925,12 @@
           <base>the date the next eri interview is due</base>
         </text>
       </attribute>
+      <attribute name="b1342" type="boolean" public-name="fpr_prior_claims_count_zero">
+        <text>
+          <base>the prior claims count is zero</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the prior claims count',singular),o('zero'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -4103,7 +4109,7 @@
       </attribute>
       <attribute name="p335" type="date" public-name="scr_layoff_notice_date">
         <text>
-          <base>the date that the claimant was notified of their lay-off</base>
+          <base>the date that the claimant was notified of their lay-off from the employment</base>
         </text>
       </attribute>
       <attribute name="p336" type="date" public-name="scr_layoff_date">

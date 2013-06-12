@@ -79,6 +79,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('in compliance with the divisions benefit request procedures'))</parse>
         </text>
       </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the prior claims count is zero</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the prior claims count',singular),o('zero'))</parse>
+        </text>
+      </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the filing date</base>
@@ -131,17 +137,19 @@
     <relationship type="OneToMany" relationship-id="allinstancesofthepriorclaim" reverse-relationship-id="priorclaimtoglobal" text="all instances of the prior_claim" reverse-text="prior claim to global" source="global" target="priorclaim" is-implicit="false" is-containment="true" />
   </relationships>
   <rules>
-    <rule id="0" name="the claimant has at least one active claim in Kentucky" ruleburst="true" concludes="b25" folder="0" source-offset="47">
+    <rule id="0" name="the prior claims count is zero" ruleburst="true" concludes="b28" folder="0" source-offset="57">
       <rule-xml>
-        <conclude attr-id="b25" entity-id="global" scope-id="global0">
+        <conclude attr-id="b28" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
-            <exists scope-id="priorclaim0">
-              <relationship relationship-id="allinstancesofthepriorclaim" target-entity-id="priorclaim" />
-              <attribute attr-id="b27" />
-            </exists>
+            <equals>
+              <instance-count>
+                <relationship relationship-id="allinstancesofthepriorclaim" target-entity-id="priorclaim" />
+              </instance-count>
+              <number-value>0</number-value>
+            </equals>
           </condition>
           <otherwise>
             <false-value />
@@ -149,7 +157,30 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="1" name="the prior_claim is an active claim in Kentucky" ruleburst="true" concludes="b21" folder="0" source-offset="241">
+    <rule id="1" name="the claimant has at least one active claim in Kentucky" ruleburst="true" concludes="b25" folder="0" source-offset="197">
+      <rule-xml>
+        <conclude attr-id="b25" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <not>
+                <attribute attr-id="b28" />
+              </not>
+              <exists scope-id="priorclaim0">
+                <relationship relationship-id="allinstancesofthepriorclaim" target-entity-id="priorclaim" />
+                <attribute attr-id="b27" />
+              </exists>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the prior_claim is an active claim in Kentucky" ruleburst="true" concludes="b21" folder="0" source-offset="440">
       <rule-xml>
         <conclude attr-id="b21" entity-id="priorclaim" scope-id="priorclaim0">
           <value>
@@ -157,6 +188,11 @@
           </value>
           <condition>
             <and>
+              <not>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b28" />
+                </scope-for>
+              </not>
               <not>
                 <attribute attr-id="b23" />
               </not>
@@ -169,19 +205,26 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="2" name="the prior_claim's benefit year has not expired" ruleburst="true" concludes="not b23" folder="0" source-offset="402">
+    <rule id="3" name="the prior_claim's benefit year has not expired" ruleburst="true" concludes="not b23" folder="0" source-offset="650">
       <rule-xml>
         <conclude attr-id="b23" entity-id="priorclaim" scope-id="priorclaim0">
           <value>
             <false-value />
           </value>
           <condition>
-            <less-than>
-              <attribute attr-id="p2" />
-              <scope-for scope-ref="global0" target-entity-id="global">
-                <attribute attr-id="p3" />
-              </scope-for>
-            </less-than>
+            <and>
+              <not>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b28" />
+                </scope-for>
+              </not>
+              <less-than>
+                <attribute attr-id="p2" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p3" />
+                </scope-for>
+              </less-than>
+            </and>
           </condition>
           <otherwise>
             <true-value />
@@ -189,17 +232,24 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="3" name="the prior_claim has a non-zero balance" ruleburst="true" concludes="b24" folder="0" source-offset="529">
+    <rule id="4" name="the prior_claim has a non-zero balance" ruleburst="true" concludes="b24" folder="0" source-offset="826">
       <rule-xml>
         <conclude attr-id="b24" entity-id="priorclaim" scope-id="priorclaim0">
           <value>
             <true-value />
           </value>
           <condition>
-            <greater-than>
-              <attribute attr-id="p1" />
-              <number-value>0</number-value>
-            </greater-than>
+            <and>
+              <not>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b28" />
+                </scope-for>
+              </not>
+              <greater-than>
+                <attribute attr-id="p1" />
+                <number-value>0</number-value>
+              </greater-than>
+            </and>
           </condition>
           <otherwise>
             <false-value />
@@ -207,7 +257,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="4" name="the claimant does not need to file a new claim" ruleburst="true" concludes="not b2" folder="0" source-offset="622">
+    <rule id="5" name="the claimant does not need to file a new claim" ruleburst="true" concludes="not b2" folder="0" source-offset="968">
       <rule-xml>
         <conclude attr-id="b2" entity-id="global" scope-id="global0">
           <value>
@@ -238,7 +288,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="5" name="the claimant is re-opening their existing claim" ruleburst="true" concludes="b19" folder="0" source-offset="999">
+    <rule id="6" name="the claimant is re-opening their existing claim" ruleburst="true" concludes="b19" folder="0" source-offset="1345">
       <rule-xml>
         <conclude attr-id="b19" entity-id="global" scope-id="global0">
           <value>
@@ -284,7 +334,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="6" name="the claimant's eligibility review interview is due" ruleburst="true" concludes="b11" folder="0" source-offset="1450">
+    <rule id="7" name="the claimant's eligibility review interview is due" ruleburst="true" concludes="b11" folder="0" source-offset="1796">
       <rule-xml>
         <conclude attr-id="b11" entity-id="global" scope-id="global0">
           <value>
@@ -302,7 +352,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the claimant may request a check in compliance with division requirements" ruleburst="true" concludes="b13" folder="0" source-offset="1636">
+    <rule id="8" name="the claimant may request a check in compliance with division requirements" ruleburst="true" concludes="b13" folder="0" source-offset="1982">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -329,7 +379,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="claim filing is not required of the claimant at this time" ruleburst="true" concludes="not b16" folder="0" source-offset="2027">
+    <rule id="9" name="claim filing is not required of the claimant at this time" ruleburst="true" concludes="not b16" folder="0" source-offset="2373">
       <rule-xml>
         <conclude attr-id="b16" entity-id="global" scope-id="global0">
           <value>
