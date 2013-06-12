@@ -1,0 +1,715 @@
+<root schema-version="1" product-version="10.4.3.23">
+  <entities>
+    <entity ref="global">
+      <attribute name="b11" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>a separation from employment exists</base>
+          <parse>s(ver('10.4.2.18'),v(exist,t(simple,present,normal)),sb('a separation from employment',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>there is at least one recent concurrent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('there',singular),o('at least one recent concurrent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p7" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the most recent last day worked of any employment</base>
+        </text>
+      </attribute>
+      <attribute name="p14" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the mre last day worked</base>
+        </text>
+      </attribute>
+      <attribute name="p15" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the nmre last day worked</base>
+        </text>
+      </attribute>
+      <attribute name="p17" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the maximum nmre ldw</base>
+        </text>
+      </attribute>
+      <attribute name="p18" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the maximum bptw ldw</base>
+        </text>
+      </attribute>
+      <attribute name="p20" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the visible investigation period text</base>
+        </text>
+      </attribute>
+      <attribute name="p21" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the base period start date</base>
+        </text>
+      </attribute>
+      <attribute name="p22" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the filing date</base>
+        </text>
+      </attribute>
+      <attribute name="p28" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the effective date</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the next most recent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the next most recent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is a recent concurrent employment</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('a recent concurrent employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is current</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('current'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment was active within the investigative period</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the employment',singular),o('active within the investigative period'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment is the most recent bptw</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employment',singular),o('the most recent bptw'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment</base>
+        </text>
+      </attribute>
+      <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's first day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p4" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's last day worked date</base>
+        </text>
+      </attribute>
+      <attribute name="p19" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment period's visible name</base>
+        </text>
+      </attribute>
+      <attribute name="p27" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's contributing weeks, visible text</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global">
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is a ten week employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a ten week employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is potentially chargeable</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('potentially chargeable'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant currently works for the employer</base>
+          <parse>s(ver('10.4.2.18'),v(work,t(simple,present,normal)),sb('the claimant currently',singular),o('for the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b22" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is the most recent employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b23" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is the next most recent employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the next most recent employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is the most recent bptw employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('the most recent bptw employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employer is an rce employer</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the employer',singular),o('an rce employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employer</base>
+        </text>
+      </attribute>
+      <attribute name="p24" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employer's visible date range</base>
+        </text>
+      </attribute>
+      <attribute name="p25" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employer's earliest work date in period</base>
+        </text>
+      </attribute>
+      <attribute name="p26" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employer's latest work date in period</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+    <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the employment period's visible name " ruleburst="true" concludes="p19 = p2 &amp; &quot; from &quot; &amp; p3 &amp; &quot; to &quot; &amp; p4" folder="0" source-offset="2">
+      <rule-xml>
+        <conclude attr-id="p19" entity-id="employment" scope-id="employment0">
+          <value>
+            <concatenate>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <attribute attr-id="p2" />
+              </for>
+              <string-value><![CDATA[ from ]]></string-value>
+              <attribute attr-id="p3" />
+              <string-value><![CDATA[ to ]]></string-value>
+              <attribute attr-id="p4" />
+            </concatenate>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employer's visible date range " ruleburst="true" concludes="p24 = &quot;From &quot; &amp; p25 &amp; &quot; To &quot; &amp; p26" folder="0" source-offset="198">
+      <rule-xml>
+        <conclude attr-id="p24" entity-id="employer" scope-id="employer0">
+          <value>
+            <concatenate>
+              <string-value><![CDATA[From ]]></string-value>
+              <attribute attr-id="p25" />
+              <string-value><![CDATA[ To ]]></string-value>
+              <attribute attr-id="p26" />
+            </concatenate>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employer's earliest work date in period " ruleburst="true" concludes="p25 = InstanceMaximum(allemployerinstancesofemployment,p3)" folder="0" source-offset="379">
+      <rule-xml>
+        <conclude attr-id="p25" entity-id="employer" scope-id="employer0">
+          <value>
+            <instance-maximum>
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="p3" />
+            </instance-maximum>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employer's latest work date in period " ruleburst="true" concludes="p26 = InstanceMaximum(allemployerinstancesofemployment,p4)" folder="0" source-offset="581">
+      <rule-xml>
+        <conclude attr-id="p26" entity-id="employer" scope-id="employer0">
+          <value>
+            <instance-maximum>
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+            </instance-maximum>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the visible investigation period text " ruleburst="true" concludes="p20 = p21 &amp; &quot; to &quot; &amp; p22" folder="0" source-offset="780">
+      <rule-xml>
+        <conclude attr-id="p20" entity-id="global" scope-id="global0">
+          <value>
+            <concatenate>
+              <attribute attr-id="p21" />
+              <string-value><![CDATA[ to ]]></string-value>
+              <attribute attr-id="p22" />
+            </concatenate>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the employment's contributing weeks, visible text " ruleburst="true" concludes="p27 = &quot;From &quot; &amp; Maximum(p21,p3) &amp; &quot; To &quot; &amp; Maximum(p28,p4)" folder="0" source-offset="1067">
+      <rule-xml>
+        <conclude attr-id="p27" entity-id="employment" scope-id="employment0">
+          <value>
+            <concatenate>
+              <string-value><![CDATA[From ]]></string-value>
+              <maximum>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p21" />
+                </scope-for>
+                <attribute attr-id="p3" />
+              </maximum>
+              <string-value><![CDATA[ To ]]></string-value>
+              <maximum>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p28" />
+                </scope-for>
+                <attribute attr-id="p4" />
+              </maximum>
+            </concatenate>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the employment" ruleburst="true" concludes="p1" folder="0" source-offset="1529">
+      <rule-xml>
+        <table-conclude attr-id="p1" entity-id="employment" scope-id="employment0">
+          <row>
+            <value>
+              <concatenate>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="p2" />
+                </for>
+                <string-value><![CDATA[ MRE ]]></string-value>
+                <string-value><![CDATA[ from ]]></string-value>
+                <attribute attr-id="p3" />
+                <string-value><![CDATA[ to ]]></string-value>
+                <attribute attr-id="p4" />
+              </concatenate>
+            </value>
+            <condition>
+              <attribute attr-id="b3" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <concatenate>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="p2" />
+                </for>
+                <string-value><![CDATA[ RCE ]]></string-value>
+                <string-value><![CDATA[ from ]]></string-value>
+                <attribute attr-id="p3" />
+                <string-value><![CDATA[ to ]]></string-value>
+                <attribute attr-id="p4" />
+              </concatenate>
+            </value>
+            <condition>
+              <attribute attr-id="b7" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <concatenate>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="p2" />
+                </for>
+                <string-value><![CDATA[ NMR ]]></string-value>
+                <string-value><![CDATA[ from ]]></string-value>
+                <attribute attr-id="p3" />
+                <string-value><![CDATA[ to ]]></string-value>
+                <attribute attr-id="p4" />
+              </concatenate>
+            </value>
+            <condition>
+              <attribute attr-id="b5" />
+            </condition>
+          </row>
+          <row>
+            <value>
+              <concatenate>
+                <for>
+                  <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                  <attribute attr-id="p2" />
+                </for>
+                <string-value><![CDATA[ BPTW ]]></string-value>
+                <string-value><![CDATA[ from ]]></string-value>
+                <attribute attr-id="p3" />
+                <string-value><![CDATA[ to ]]></string-value>
+                <attribute attr-id="p4" />
+              </concatenate>
+            </value>
+            <condition>
+              <attribute attr-id="b29" />
+            </condition>
+          </row>
+          <otherwise>
+            <concatenate>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <attribute attr-id="p2" />
+              </for>
+              <string-value><![CDATA[ from ]]></string-value>
+              <attribute attr-id="p3" />
+              <string-value><![CDATA[ to ]]></string-value>
+              <attribute attr-id="p4" />
+            </concatenate>
+          </otherwise>
+        </table-conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the employer is potentially chargeable" ruleburst="true" concludes="b14" folder="0" source-offset="2970">
+      <rule-xml>
+        <conclude attr-id="b14" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <attribute attr-id="b2" />
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the claimant currently works for the employer" ruleburst="true" concludes="b15" folder="0" source-offset="3058">
+      <rule-xml>
+        <conclude attr-id="b15" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="b16" />
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the employer is the most recent employer" ruleburst="true" concludes="b22" folder="0" source-offset="3308">
+      <rule-xml>
+        <conclude attr-id="b22" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="b3" />
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the employer is the next most recent employer" ruleburst="true" concludes="b23" folder="0" source-offset="3493">
+      <rule-xml>
+        <conclude attr-id="b23" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="b5" />
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the employer is the most recent bptw employer" ruleburst="true" concludes="b32" folder="0" source-offset="3689">
+      <rule-xml>
+        <conclude attr-id="b32" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="b29" />
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="the employer is an rce employer" ruleburst="true" concludes="b33" folder="0" source-offset="3875">
+      <rule-xml>
+        <conclude attr-id="b33" entity-id="employer" scope-id="employer0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <exists scope-id="employment0">
+              <relationship relationship-id="allemployerinstancesofemployment" target-entity-id="employment" />
+              <attribute attr-id="b7" />
+            </exists>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="13" name="a separation from employment exists" ruleburst="true" concludes="b11" folder="0" source-offset="4056">
+      <rule-xml>
+        <conclude attr-id="b11" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <greater-than>
+              <instance-count>
+                <relationship relationship-id="allseparationinterviewemployments" target-entity-id="employment" />
+              </instance-count>
+              <number-value>0</number-value>
+            </greater-than>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the most recent last day worked of any employment " ruleburst="true" concludes="p7 = InstanceMaximum(allinferredinstancesoftheemployment,p4)" folder="0" source-offset="4426">
+      <rule-xml>
+        <conclude attr-id="p7" entity-id="global" scope-id="global0">
+          <value>
+            <instance-maximum>
+              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+            </instance-maximum>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the maximum nmre ldw " ruleburst="true" concludes="p17 = InstanceMaximumIf(allinferredinstancesoftheemployment,p4,not b3)" folder="0" source-offset="4640">
+      <rule-xml>
+        <conclude attr-id="p17" entity-id="global" scope-id="global0">
+          <value>
+            <instance-maximum-if>
+              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+            </instance-maximum-if>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="16" name="the maximum bptw ldw " ruleburst="true" concludes="p18 = InstanceMaximum(allinferredcandidatebptw,p4)" folder="0" source-offset="4887">
+      <rule-xml>
+        <conclude attr-id="p18" entity-id="global" scope-id="global0">
+          <value>
+            <instance-maximum>
+              <relationship relationship-id="allinferredcandidatebptw" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+            </instance-maximum>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="17" name="the employment is the next most recent employment" ruleburst="true" concludes="b5" folder="0" source-offset="5049">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <instance-count>
+                    <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+                  </instance-count>
+                </scope-for>
+                <number-value>2</number-value>
+              </greater-than-equals>
+              <attribute attr-id="b17" />
+              <not>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b34" />
+                </scope-for>
+              </not>
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+              <equals>
+                <attribute attr-id="p4" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p17" />
+                </scope-for>
+              </equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="18" name="the employment is the most recent employment" ruleburst="true" concludes="b3" folder="0" source-offset="5583">
+      <rule-xml>
+        <conclude attr-id="b3" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <attribute attr-id="b17" />
+              <equals>
+                <attribute attr-id="p4" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p7" />
+                </scope-for>
+              </equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="19" name="the mre last day worked " ruleburst="true" concludes="p14 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b3)" folder="0" source-offset="5803">
+      <rule-xml>
+        <conclude attr-id="p14" entity-id="global" scope-id="global0">
+          <value>
+            <instance-value-if>
+              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+              <attribute attr-id="b3" />
+            </instance-value-if>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="20" name="the nmre last day worked " ruleburst="true" concludes="p15 = InstanceValueIf(allinferredinstancesoftheemployment,p4,b5)" folder="0" source-offset="6041">
+      <rule-xml>
+        <conclude attr-id="p15" entity-id="global" scope-id="global0">
+          <value>
+            <instance-value-if>
+              <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+              <attribute attr-id="p4" />
+              <attribute attr-id="b5" />
+            </instance-value-if>
+          </value>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="21" name="the employment is a recent concurrent employment" ruleburst="true" concludes="b7" folder="0" source-offset="6527">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <instance-count>
+                    <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+                  </instance-count>
+                </scope-for>
+                <number-value>2</number-value>
+              </greater-than-equals>
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+              <attribute attr-id="b17" />
+              <less-than-equals>
+                <week-difference-inclusive>
+                  <attribute attr-id="p4" />
+                  <scope-for scope-ref="global0" target-entity-id="global">
+                    <attribute attr-id="p14" />
+                  </scope-for>
+                </week-difference-inclusive>
+                <number-value>10</number-value>
+              </less-than-equals>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="22" name="the employment is the most recent bptw" ruleburst="true" concludes="b29" folder="0" source-offset="6968">
+      <rule-xml>
+        <conclude attr-id="b29" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <and>
+              <greater-than-equals>
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <instance-count>
+                    <relationship relationship-id="allinferredinstancesoftheemployment" target-entity-id="employment" />
+                  </instance-count>
+                </scope-for>
+                <number-value>3</number-value>
+              </greater-than-equals>
+              <for>
+                <relationship relationship-id="employmenttoemployerinstance" target-entity-id="employer" />
+                <attribute attr-id="b2" />
+              </for>
+              <equals>
+                <attribute attr-id="p4" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="p18" />
+                </scope-for>
+              </equals>
+              <attribute attr-id="b17" />
+              <not>
+                <attribute attr-id="b3" />
+              </not>
+              <not>
+                <attribute attr-id="b5" />
+              </not>
+              <not>
+                <attribute attr-id="b7" />
+              </not>
+            </and>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

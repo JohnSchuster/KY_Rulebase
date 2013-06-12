@@ -19,6 +19,12 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,perfect)),sb('the claimant',singular),o('previously warned or disciplined during the employment'))</parse>
         </text>
       </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the dispute in the workplace was the final incident that caused the claimant to quit</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,past,normal)),sb('the dispute in the workplace',singular),o('the final incident that caused the claimant to quit'))</parse>
+        </text>
+      </attribute>
       <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimants explanation for their behavior or conduct</base>
@@ -37,6 +43,16 @@
       <attribute name="p4" type="text" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the claimant's description of the previous disciplinary warnings they received</base>
+        </text>
+      </attribute>
+      <attribute name="p8" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the date the final incident occurred during the employment</base>
+        </text>
+      </attribute>
+      <attribute name="p9" type="date" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's effective separation date</base>
         </text>
       </attribute>
     </entity>
@@ -65,7 +81,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="1" name="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.\&quot;)&quot;" folder="0" source-offset="364">
+    <rule id="1" name="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.\&quot;)&quot;" folder="0" source-offset="483">
       <rule-xml>
         <event action="error(&quot;You have entered an explanation, but indicated that there was no change to your job duties or customary workload.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -84,7 +100,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="2" name="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please enter the explanation you provided to your employer.\&quot;)&quot;" folder="0" source-offset="1258">
+    <rule id="2" name="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please enter the explanation you provided to your employer.\&quot;)&quot;" folder="0" source-offset="1543">
       <rule-xml>
         <event action="warning(&quot;Please enter the explanation you provided to your employer.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -101,7 +117,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="3" name="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.\&quot;)&quot;" folder="0" source-offset="1500">
+    <rule id="3" name="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.\&quot;)&quot;" folder="0" source-offset="1896">
       <rule-xml>
         <event action="error(&quot;You have entered an explanation, but indicated that there was no explanation provided to the employer.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -120,7 +136,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="4" name="warning(&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.\&quot;)&quot;" folder="0" source-offset="2238">
+    <rule id="4" name="warning(&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.\&quot;)&quot;" folder="0" source-offset="2789">
       <rule-xml>
         <event action="warning(&quot;You have selected ‘Other', please enter the reason your employer reduced your hours of work.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -140,11 +156,7 @@
         </event>
       </rule-xml>
     </rule>
-<<<<<<< sd_baseline
-    <rule id="5" name="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please describe prior warnings or disciplinary action.\&quot;)&quot;" folder="0" source-offset="3185">
-=======
-    <rule id="5" name="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please describe prior warnings or disciplinary action.\&quot;)&quot;" folder="0" source-offset="2477">
->>>>>>> local
+    <rule id="5" name="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;Please describe prior warnings or disciplinary action.\&quot;)&quot;" folder="0" source-offset="3181">
       <rule-xml>
         <event action="warning(&quot;Please describe prior warnings or disciplinary action.&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -161,9 +173,7 @@
         </event>
       </rule-xml>
     </rule>
-<<<<<<< sd_baseline
-=======
-    <rule id="6" name="warning(&quot;The date that the final incident took place must be on or before your last day worked&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;The date that the final incident took place must be on or before your last day worked\&quot;)&quot;" folder="0" source-offset="2719">
+    <rule id="6" name="warning(&quot;The date that the final incident took place must be on or before your last day worked&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;The date that the final incident took place must be on or before your last day worked\&quot;)&quot;" folder="0" source-offset="3529">
       <rule-xml>
         <event action="warning(&quot;The date that the final incident took place must be on or before your last day worked&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -182,26 +192,5 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="7" name="warning(&quot;You have selected ‘Other', please enter the reason that the employer gave you for the layoff.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You have selected ‘Other', please enter the reason that the employer gave you for the layoff.\&quot;)&quot;" folder="0" source-offset="3054">
-      <rule-xml>
-        <event action="warning(&quot;You have selected ‘Other', please enter the reason that the employer gave you for the layoff.&quot;)" entity-id="employment" scope-id="employment0">
-          <condition>
-            <and>
-              <equals>
-                <attribute attr-id="p7" />
-                <string-value>LC07</string-value>
-              </equals>
-              <less-than-equals>
-                <length>
-                  <attribute attr-id="p6" />
-                </length>
-                <number-value>0</number-value>
-              </less-than-equals>
-            </and>
-          </condition>
-        </event>
-      </rule-xml>
-    </rule>
->>>>>>> local
   </rules>
 </root>

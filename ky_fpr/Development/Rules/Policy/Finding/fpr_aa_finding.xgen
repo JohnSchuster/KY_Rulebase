@@ -1,0 +1,975 @@
+<root schema-version="1" product-version="10.4.3.23">
+  <entities>
+    <entity ref="global">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claim has at least one able and available finding</base>
+          <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claim',singular),o('at least one able and available finding'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible (aa_d3_01, physically able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_01, physically able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible (aa_d3_02, mentally able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_02, mentally able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible (aa_d3_03, available)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_03, available)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible (aa_d3_04, adequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible (aa_d3_04, adequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b14" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claim's asserted nod finding code is defined</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claim''s asserted nod finding code',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b15" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's status meets the conditions of eligibility</base>
+          <parse>s(ver('10.4.2.18'),v(meet,t(simple,present,normal)),sb('the claimant''s status',singular),o('the conditions of eligibility'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b16" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is physically able to work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('physically able to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b17" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is mentally able to work</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('mentally able to work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b19" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's alien status restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s alien status',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b20" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unemployed as a result of a natural disaster that occurred on or about the facility where they were employed</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed as a result of a natural disaster that occurred on or about the facility where they were employed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b27" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible aa_d3_01, (physically able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible aa_d3_01, (physically able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b28" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible aa_d3_02, (mentally able)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible aa_d3_02, (mentally able)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b29" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible aa_d3_03, (available)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible aa_d3_03, (available)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b30" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is eligible aa_d3_04, (adequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('eligible aa_d3_04, (adequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b31" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_01, not available (physically unable)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_01, not available (physically unable)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b32" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_02, not available (mentally unable)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_02, not available (mentally unable)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b33" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_03, not available (transportation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_03, not available (transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b34" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (transportation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b35" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_04, not available (school, training)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_04, not available (school, training)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b36" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (school, training)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (school, training)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b37" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_05, not available (caregiving)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_05, not available (caregiving)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b38" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (caregiving)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (caregiving)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_06, not available (incarceration)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_06, not available (incarceration)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (incarceration)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (incarceration)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b41" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_07, not available (self-employment, commission)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_07, not available (self-employment, commission)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b42" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (self-employment, commission)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (self-employment, commission)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b43" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_08, not available (officer in closely-held corporation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_08, not available (officer in closely-held corporation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b44" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (officer in closely-held corporation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (officer in closely-held corporation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b45" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_09, not available (other)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_09, not available (other)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b46" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is available (other)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('available (other)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b47" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_10, not available (inadequate work search)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_10, not available (inadequate work search)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_11, not available (alien status)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_11, not available (alien status)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_12, not available (disaster roads or transportation)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_12, not available (disaster roads or transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_13, not available (disaster availability)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_13, not available (disaster availability)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b51" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is ineligible aa_d4_14, not available (dua)</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('ineligible aa_d4_14, not available (dua)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b53" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's transportation restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s transportation',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b54" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's (school, training) restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (school, training)',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b55" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's duty of dependent care restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s duty of dependent care',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b56" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's incarceration restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s incarceration',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b57" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.2.18'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, corporate officer position, commission work)',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b58" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a corporate officer is a closely-held corporation</base>
+          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer is a closely-held corporation'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the claim's asserted nod finding code</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
+      <attribute name="p3" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the finding's id</base>
+        </text>
+      </attribute>
+    </entity>
+  </entities>
+  <relationships>
+    <relationship type="ManyToMany" relationship-id="allfindingsinferredfromclaim" reverse-relationship-id="claiminferringthisfinding" text="all findings inferred from claim" reverse-text="the claim inferring this finding" source="global" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" text="all instances of the finding" reverse-text="each findings instance of global" source="global" target="finding" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the claim has at least one able and available finding" ruleburst="true" concludes="b1" folder="0" source-offset="580">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <attribute attr-id="b2" />
+              <attribute attr-id="b3" />
+              <attribute attr-id="b4" />
+              <attribute attr-id="b5" />
+              <attribute attr-id="b31" />
+              <attribute attr-id="b32" />
+              <attribute attr-id="b33" />
+              <attribute attr-id="b35" />
+              <attribute attr-id="b37" />
+              <attribute attr-id="b39" />
+              <attribute attr-id="b41" />
+              <attribute attr-id="b43" />
+              <attribute attr-id="b45" />
+              <attribute attr-id="b47" />
+              <attribute attr-id="b48" />
+              <attribute attr-id="b49" />
+              <attribute attr-id="b50" />
+              <attribute attr-id="b51" />
+            </or>
+          </condition>
+          <otherwise>
+            <false-value />
+          </otherwise>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the claimant is eligible aa_d3_01, (physically able)" ruleburst="true" concludes="b27" folder="0" source-offset="2020" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b27" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d3_01</string-value>
+                </equals>
+              </and>
+              <not>
+                <attribute attr-id="b31" />
+              </not>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the claimant is eligible aa_d3_02, (mentally able)" ruleburst="true" concludes="b28" folder="0" source-offset="2319" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b28" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d3_02</string-value>
+                </equals>
+              </and>
+              <not>
+                <attribute attr-id="b32" />
+              </not>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the claimant is eligible aa_d3_03, (available)" ruleburst="true" concludes="b29" folder="0" source-offset="2615" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b29" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d3_03</string-value>
+                </equals>
+              </and>
+              <false-value />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="the claimant is eligible aa_d3_04, (adequate work search)" ruleburst="true" concludes="b30" folder="0" source-offset="2838" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b30" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d3_04</string-value>
+                </equals>
+              </and>
+              <attribute attr-id="b47" />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="5" name="the claimant is ineligible aa_d4_01, not available (physically unable)" ruleburst="true" concludes="b31" folder="0" source-offset="3140" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b31" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_01</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <unknown>
+                    <attribute attr-id="b16" />
+                  </unknown>
+                </not>
+                <not>
+                  <attribute attr-id="b16" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="6" name="the claimant is ineligible aa_d4_02, not available (mentally unable)" ruleburst="true" concludes="b32" folder="0" source-offset="3658" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b32" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_02</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <unknown>
+                    <attribute attr-id="b17" />
+                  </unknown>
+                </not>
+                <not>
+                  <attribute attr-id="b17" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="7" name="the claimant is ineligible aa_d4_03, not available (transportation)" ruleburst="true" concludes="b33" folder="0" source-offset="4171" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b33" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_03</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b34" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b53" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="8" name="the claimant is ineligible aa_d4_04, not available (school, training)" ruleburst="true" concludes="b35" folder="0" source-offset="4622" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b35" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_04</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b36" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b54" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="9" name="the claimant is ineligible aa_d4_05, not available (caregiving)" ruleburst="true" concludes="b37" folder="0" source-offset="5081" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b37" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_05</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b38" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b55" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="10" name="the claimant is ineligible aa_d4_06, not available (incarceration)" ruleburst="true" concludes="b39" folder="0" source-offset="5532" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b39" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_06</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b40" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b56" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="11" name="the claimant is ineligible aa_d4_07, not available (self-employment, commission)" ruleburst="true" concludes="b41" folder="0" source-offset="5980" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b41" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_07</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b42" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b57" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="12" name="the claimant is ineligible aa_d4_08, not available (officer in closely-held corporation)" ruleburst="true" concludes="b43" folder="0" source-offset="6505" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b43" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_08</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <conclude attr-id="b44" entity-id="global" scope-id="global0">
+                    <value>
+                      <false-value />
+                    </value>
+                    <condition>
+                      <attribute attr-id="b58" />
+                    </condition>
+                    <otherwise>
+                      <true-value />
+                    </otherwise>
+                  </conclude>
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="13" name="the claimant is ineligible aa_d4_09, not available (other)" ruleburst="true" concludes="b45" folder="0" source-offset="6987" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b45" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_09</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b15" />
+                </not>
+                <not>
+                  <attribute attr-id="b46" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="14" name="the claimant is ineligible aa_d4_10, not available (inadequate work search)" ruleburst="true" concludes="b47" folder="0" source-offset="7337" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b47" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_04</string-value>
+                </equals>
+              </and>
+              <false-value />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="15" name="the claimant is ineligible aa_d4_11, not available (alien status)" ruleburst="true" concludes="b48" folder="0" source-offset="7589" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b48" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_11</string-value>
+                </equals>
+              </and>
+              <attribute attr-id="b19" />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="16" name="the claimant is ineligible aa_d4_12, not available (disaster roads or transportation)" ruleburst="true" concludes="b49" folder="0" source-offset="7898" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b49" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_12</string-value>
+                </equals>
+              </and>
+              <false-value />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="17" name="the claimant is ineligible aa_d4_13, not available (disaster availability)" ruleburst="true" concludes="b50" folder="0" source-offset="8160" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b50" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_13</string-value>
+                </equals>
+              </and>
+              <attribute attr-id="b20" />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="18" name="the claimant is ineligible aa_d4_14, not available (dua)" ruleburst="true" concludes="b51" folder="0" source-offset="8528" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b51" entity-id="global" scope-id="global0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b14" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>aa_d4_14</string-value>
+                </equals>
+              </and>
+              <false-value />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="19" name="all findings inferred from claim" ruleburst="true" concludes="InferInstance(allfindingsinferredfromclaim)" folder="0" source-offset="9358" question-search="false">
+      <rule-xml>
+        <table-conclude-instance relationship-id="allfindingsinferredfromclaim" source="global" source-scope-id="global0">
+          <row>
+            <identity>
+              <string-value>aa_d3_01</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b27" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_02</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b28" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_03</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b29" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d3_04</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b30" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_01</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b31" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_02</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b32" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_03</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b33" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_04</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b35" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_05</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b37" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_06</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b39" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_07</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b41" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_08</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b43" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_09</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b45" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_10</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b47" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_11</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b48" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_12</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b49" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_13</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b50" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>aa_d4_14</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b51" />
+            </condition>
+          </row>
+        </table-conclude-instance>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
