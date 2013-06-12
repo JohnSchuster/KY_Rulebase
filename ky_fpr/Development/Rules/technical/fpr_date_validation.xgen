@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.3.23">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
       <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -213,6 +213,12 @@
       <attribute name="p44" type="date" ruleburst="true" is-used="True" default-gender="neuter">
         <text lang="en-US">
           <base>the date that the claimant was notified of their lay-off</base>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the date that the claimant was notified of their lay-off from the employment is on or earlier than the current date</base>
+          <parse>s(ver('10.4.2.18'),v(notify,t(simple,past,normal)),ob('the date that the claimant',singular),o('of their lay-off from the employment is on or earlier than the current date'))</parse>
         </text>
       </attribute>
     </entity>
@@ -556,7 +562,18 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="22" name="error(&quot;The date that you were recalled must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were recalled must be on or after today\&quot;)&quot;" folder="0" source-offset="6900">
+    <rule id="22" name="error(&quot;The date that you were notified of your layoff must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were notified of your layoff must be on or before today\&quot;)&quot;" folder="0" source-offset="6900">
+      <rule-xml>
+        <event action="error(&quot;The date that you were notified of your layoff must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <not>
+              <attribute attr-id="b7" />
+            </not>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
+    <rule id="23" name="error(&quot;The date that you were recalled must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you were recalled must be on or after today\&quot;)&quot;" folder="0" source-offset="7120">
       <rule-xml>
         <event action="error(&quot;The date that you were recalled must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -570,7 +587,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="23" name="error(&quot;The date that your leave of absence started must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your leave of absence started must be on or before today\&quot;)&quot;" folder="0" source-offset="7189">
+    <rule id="24" name="error(&quot;The date that your leave of absence started must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your leave of absence started must be on or before today\&quot;)&quot;" folder="0" source-offset="7409">
       <rule-xml>
         <event action="error(&quot;The date that your leave of absence started must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -584,7 +601,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="24" name="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you will return from your leave of absence must be on or after today\&quot;)&quot;" folder="0" source-offset="7511">
+    <rule id="25" name="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you will return from your leave of absence must be on or after today\&quot;)&quot;" folder="0" source-offset="7731">
       <rule-xml>
         <event action="error(&quot;The date that you will return from your leave of absence must be on or after today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -598,7 +615,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="25" name="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your mental health condition to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="7876">
+    <rule id="26" name="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your mental health condition to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="8096">
       <rule-xml>
         <event action="error(&quot;The date that you expect your mental health condition to improve must be on or after today&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -612,7 +629,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="26" name="error(&quot;The date that your mental health condition began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your mental health condition began must be on or before today\&quot;)&quot;" folder="0" source-offset="8245">
+    <rule id="27" name="error(&quot;The date that your mental health condition began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your mental health condition began must be on or before today\&quot;)&quot;" folder="0" source-offset="8465">
       <rule-xml>
         <event action="error(&quot;The date that your mental health condition began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -626,7 +643,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="27" name="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits\&quot;)&quot;" folder="0" source-offset="8574">
+    <rule id="28" name="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits\&quot;)&quot;" folder="0" source-offset="8794">
       <rule-xml>
         <event action="error(&quot;You must be at least 17 years old to file a claim for Unemployment Insurance Benefits&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -641,7 +658,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="28" name="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your physical limitation to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="8885">
+    <rule id="29" name="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that you expect your physical limitation to improve must be on or after today\&quot;)&quot;" folder="0" source-offset="9105">
       <rule-xml>
         <event action="error(&quot;The date that you expect your physical limitation to improve must be on or after today&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -655,7 +672,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="29" name="error(&quot;The date that your physical limitation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your physical limitation began must be on or before today\&quot;)&quot;" folder="0" source-offset="9238">
+    <rule id="30" name="error(&quot;The date that your physical limitation began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your physical limitation began must be on or before today\&quot;)&quot;" folder="0" source-offset="9458">
       <rule-xml>
         <event action="error(&quot;The date that your physical limitation began must be on or before today&quot;)" entity-id="global" scope-id="global0">
           <condition>
@@ -669,7 +686,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="30" name="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the off-duty period begin must be on or before today\&quot;)&quot;" folder="0" source-offset="9554">
+    <rule id="31" name="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the off-duty period begin must be on or before today\&quot;)&quot;" folder="0" source-offset="9774">
       <rule-xml>
         <event action="error(&quot;The date that the off-duty period begin must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -683,7 +700,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="31" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="9886">
+    <rule id="32" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10106">
       <rule-xml>
         <event action="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -697,7 +714,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="32" name="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the change occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10243">
+    <rule id="33" name="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the change occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="10463">
       <rule-xml>
         <event action="error(&quot;The date that the change occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -711,7 +728,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="33" name="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation\&quot;)&quot;" folder="0" source-offset="10602">
+    <rule id="34" name="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation\&quot;)&quot;" folder="0" source-offset="10822">
       <rule-xml>
         <event action="error(&quot;The date that your spouse is scheduled to report to the next duty station must be on or after the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -725,7 +742,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="34" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11042">
+    <rule id="35" name="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date that the final incident occurred must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11262">
       <rule-xml>
         <event action="error(&quot;The date that the final incident occurred must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -739,7 +756,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="35" name="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you were discharged must be the same as the date of your separation\&quot;)&quot;" folder="0" source-offset="11415">
+    <rule id="36" name="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you were discharged must be the same as the date of your separation\&quot;)&quot;" folder="0" source-offset="11635">
       <rule-xml>
         <event action="error(&quot;The date you were discharged must be the same as the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -753,7 +770,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="36" name="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you received the warning must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11733">
+    <rule id="37" name="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;The date you received the warning must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="11953">
       <rule-xml>
         <event action="error(&quot;The date you received the warning must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -767,7 +784,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="37" name="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were suspended must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12102">
+    <rule id="38" name="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were suspended must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12322">
       <rule-xml>
         <event action="error(&quot;the date you were suspended must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -781,7 +798,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="38" name="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date did you discuss your concerns must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12430">
+    <rule id="39" name="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date did you discuss your concerns must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12650">
       <rule-xml>
         <event action="error(&quot;the date did you discuss your concerns must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -795,7 +812,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="39" name="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you give notice must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="12791">
+    <rule id="40" name="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you give notice must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13011">
       <rule-xml>
         <event action="error(&quot;the date you give notice must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -809,7 +826,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="40" name="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13111">
+    <rule id="41" name="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13331">
       <rule-xml>
         <event action="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
@@ -823,7 +840,7 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="41" name="error(&quot;the date were you notified about your lay-off must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date were you notified about your lay-off must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13469">
+    <rule id="42" name="error(&quot;the date were you notified about your lay-off must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date were you notified about your lay-off must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13689">
       <rule-xml>
         <event action="error(&quot;the date were you notified about your lay-off must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
