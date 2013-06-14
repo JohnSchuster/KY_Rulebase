@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.3.23">
+<root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity ref="global">
       <attribute name="p2" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -823,28 +823,14 @@
         </event>
       </rule-xml>
     </rule>
-    <rule id="41" name="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13457">
+    <rule id="41" name="error(&quot;the date that the labor dispute began must be on or before today&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date that the labor dispute began must be on or before today\&quot;)&quot;" folder="0" source-offset="13457">
       <rule-xml>
-        <event action="error(&quot;the date that the labor dispute began must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
+        <event action="error(&quot;the date that the labor dispute began must be on or before today&quot;)" entity-id="employment" scope-id="employment0">
           <condition>
             <not>
               <less-than-equals>
                 <attribute attr-id="p40" />
-                <attribute attr-id="p31" />
-              </less-than-equals>
-            </not>
-          </condition>
-        </event>
-      </rule-xml>
-    </rule>
-    <rule id="42" name="error(&quot;the date you were notified about your lay-off must be on or before the date of your separation&quot;)" ruleburst="true" concludes="raiseevent &quot;error(\&quot;the date you were notified about your lay-off must be on or before the date of your separation\&quot;)&quot;" folder="0" source-offset="13815">
-      <rule-xml>
-        <event action="error(&quot;the date you were notified about your lay-off must be on or before the date of your separation&quot;)" entity-id="employment" scope-id="employment0">
-          <condition>
-            <not>
-              <less-than-equals>
-                <attribute attr-id="p20" />
-                <attribute attr-id="p31" />
+                <current-date />
               </less-than-equals>
             </not>
           </condition>
