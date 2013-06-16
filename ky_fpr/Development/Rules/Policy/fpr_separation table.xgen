@@ -27,12 +27,6 @@
           <parse>s(ver('10.4.2.18'),v(be,t(simple,past,normal)),sb('the claimant',singular),o('(discharged, suspended, reduced in hours) from the employment due to dishonesty'))</parse>
         </text>
       </attribute>
-      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant voluntarily left the employment without good cause attributable to the employment</base>
-          <parse>s(ver('10.4.2.18'),v(leave,t(simple,past,normal)),sb('the claimant voluntarily',plural),o('the employment without good cause attributable to the employment'))</parse>
-        </text>
-      </attribute>
       <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the employment was suitable</base>
@@ -75,6 +69,12 @@
           <parse>s(ver('10.4.2.18'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('a quit exception from the employment'))</parse>
         </text>
       </attribute>
+      <attribute name="b18" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant left the employment ( voluntarily ) without good cause attributable to the employment</base>
+          <parse>s(ver('10.4.3.23'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment ( voluntarily ) without good cause attributable to the employment'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
   </entities>
@@ -98,7 +98,7 @@
                 <attribute attr-id="b3" />
                 <attribute attr-id="b4" />
                 <and>
-                  <attribute attr-id="b5" />
+                  <attribute attr-id="b18" />
                   <attribute attr-id="b6" />
                 </and>
               </or>
