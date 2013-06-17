@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
       <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
@@ -275,6 +275,24 @@
         <text lang="en-US">
           <base>the claimant left the employment ( voluntarily ) without good cause attributable to the employment</base>
           <parse>s(ver('10.4.3.23'),v(leave,t(simple,past,normal)),sb('the claimant',plural),o('the employment ( voluntarily ) without good cause attributable to the employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b48" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is vq_d1_01, (Payable Contract of Employment)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d1_01, (Payable Contract of Employment)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b49" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment status selected by claimant is quit</base>
+          <parse>s(ver('10.4.3.23'),v(quit,t(simple,present,normal)),ob('the employment status selected by claimant',singular))</parse>
+        </text>
+      </attribute>
+      <attribute name="b50" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is vq_d1_02, (Payable Dispute in the Workplace)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d1_02, (Payable Dispute in the Workplace)'))</parse>
         </text>
       </attribute>
       <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
@@ -806,7 +824,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="21" name="the employment's separation finding is vq_d2_27, (Personal Reasons- Relocate)" ruleburst="true" concludes="b44" folder="0" source-offset="9567" question-search="false">
+    <rule id="21" name="the employment's separation finding is vq_d2_27, (Personal Reasons- Relocate)" ruleburst="true" concludes="b44" folder="0" source-offset="9568" question-search="false">
       <rule-xml>
         <conclude attr-id="b44" entity-id="employment" scope-id="employment0">
           <value>
@@ -830,7 +848,64 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="22" name="all vq finding's inferred from employment" ruleburst="true" concludes="InferInstance(allvqfindingsinferredfromemployment)" folder="0" source-offset="10786" question-search="false">
+    <rule id="22" name="the employment's separation finding is vq_d1_01, (Payable Contract of Employment)" ruleburst="true" concludes="b48" folder="0" source-offset="10019" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b48" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b12" />
+                <equals>
+                  <attribute attr-id="p2" />
+                  <string-value>vq_d1_01</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b49" />
+                <not>
+                  <attribute attr-id="b47" />
+                </not>
+                <not>
+                  <attribute attr-id="b14" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="23" name="the employment's separation finding is vq_d1_02, (Payable Dispute in the Workplace)" ruleburst="true" concludes="b50" folder="0" source-offset="10556" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b50" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b12" />
+                <equals>
+                  <attribute attr-id="p2" />
+                  <string-value>vq_d1_02</string-value>
+                </equals>
+              </and>
+              <and>
+                <not>
+                  <attribute attr-id="b47" />
+                </not>
+                <not>
+                  <attribute attr-id="b16" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="24" name="all vq finding's inferred from employment" ruleburst="true" concludes="InferInstance(allvqfindingsinferredfromemployment)" folder="0" source-offset="11022" question-search="false">
       <rule-xml>
         <table-conclude-instance relationship-id="allvqfindingsinferredfromemployment" source="employment" source-scope-id="employment0">
           <row>
@@ -838,12 +913,7 @@
               <string-value>vq_d2_01</string-value>
             </identity>
             <condition>
-              <and>
-                <known>
-                  <attribute attr-id="b1" />
-                </known>
-                <attribute attr-id="b1" />
-              </and>
+              <attribute attr-id="b1" />
             </condition>
           </row>
           <row>
@@ -851,12 +921,7 @@
               <string-value>vq_d2_02</string-value>
             </identity>
             <condition>
-              <and>
-                <known>
-                  <attribute attr-id="b10" />
-                </known>
-                <attribute attr-id="b10" />
-              </and>
+              <attribute attr-id="b10" />
             </condition>
           </row>
           <row>
@@ -864,12 +929,7 @@
               <string-value>vq_d2_03</string-value>
             </identity>
             <condition>
-              <and>
-                <known>
-                  <attribute attr-id="b2" />
-                </known>
-                <attribute attr-id="b2" />
-              </and>
+              <attribute attr-id="b2" />
             </condition>
           </row>
         </table-conclude-instance>
