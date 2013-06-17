@@ -33,7 +33,7 @@
 			## xRulz End
         #else
             #if($control.getLineCount() < 2)
-                <input type="text" id="${control.getEncodedID()}" name="${control.getId()}" ${readOnlyString} value="${control.getDisplayValue()}" alt="${control.getText()}" tabindex="#tabIndex()" size="${text-control-width}" ${styleAttribute} ${classAttribute}>
+                <input type="text" id="${control.getEncodedID()}" name="${control.getId()}" ${readOnlyString} value="${control.getDisplayValue()}" alt='"${control.getText()}"' tabindex="#tabIndex()" size="${text-control-width}" ${styleAttribute} ${classAttribute}>
             #else
                 <textarea rows="${control.getLineCount()}" cols="${text-area-cols}" id="${control.getEncodedID()}" name="${control.getId()}" ${readOnlyString} tabindex="#tabIndex()" ${styleAttribute} ${classAttribute}>${control.getDisplayValue()}</textarea>
             #end
