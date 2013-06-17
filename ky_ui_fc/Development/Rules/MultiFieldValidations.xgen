@@ -222,5 +222,22 @@
         </event>
       </rule-xml>
     </rule>
+    <rule id="8" name="warning(&quot;You have selected ‘Other', please describe previous warnings or disciplinary actions.&quot;)" ruleburst="true" concludes="raiseevent &quot;warning(\&quot;You have selected ‘Other', please describe previous warnings or disciplinary actions.\&quot;)&quot;" folder="0" source-offset="4663">
+      <rule-xml>
+        <event action="warning(&quot;You have selected ‘Other', please describe previous warnings or disciplinary actions.&quot;)" entity-id="employment" scope-id="employment0">
+          <condition>
+            <and>
+              <attribute attr-id="b3" />
+              <less-than-equals>
+                <length>
+                  <attribute attr-id="p4" />
+                </length>
+                <number-value>0</number-value>
+              </less-than-equals>
+            </and>
+          </condition>
+        </event>
+      </rule-xml>
+    </rule>
   </rules>
 </root>
