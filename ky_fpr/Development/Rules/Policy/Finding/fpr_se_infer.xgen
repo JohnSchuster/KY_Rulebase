@@ -1,0 +1,223 @@
+<root schema-version="1" product-version="10.4.3.23">
+  <entities>
+    <entity ref="global">
+      <attribute name="b9" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a full-time school employee who is not considered unemployed during a period of inclement weather</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a full-time school employee who is not considered unemployed during a period of inclement weather'))</parse>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is se_d3_01, (Eligible, No Reasonable Assurance)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_01, (Eligible, No Reasonable Assurance)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's asserted nod finding code is defined</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s asserted nod finding code',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment category selected by the claimant is school employee</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment category selected by the claimant',singular),o('school employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant has reasonable assurance of returning to the employment performing same or similar work during the next term</base>
+          <parse>s(ver('10.4.3.23'),v(have,t(simple,present,normal)),sb('the claimant',singular),o('reasonable assurance of returning to the employment performing same or similar work during the next term'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is se_d3_02, (Eligible, Non-Education Institution, Non-Educational Service Agency)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_02, (Eligible, Non-Education Institution, Non-Educational Service Agency)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b6" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment that the claimant works for is an educational institution or an educational service agency</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment that the claimant works for',singular),o('an educational institution or an educational service agency'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b7" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is se_d3_03, (Eligible, Non-Education Institution, Non-Educational Service Agency)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_03, (Eligible, Non-Education Institution, Non-Educational Service Agency)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b8" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's asserted nod finding code</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the finding's id</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
+  </entities>
+  <relationships>
+    <relationship type="ManyToMany" relationship-id="allsefindingsinferredfromemployment" reverse-relationship-id="findingseinfbyemployment" text="all se finding's inferred from employment" reverse-text="finding se inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" text="all instances of the finding" reverse-text="each findings instance of global" source="global" target="finding" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the employment's separation finding is se_d3_01, (Eligible, No Reasonable Assurance)" ruleburst="true" concludes="b1" folder="0" source-offset="597" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>se_d3_01</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b3" />
+                <not>
+                  <attribute attr-id="b4" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employment's separation finding is se_d3_02, (Eligible, Non-Education Institution, Non-Educational Service Agency)" ruleburst="true" concludes="b5" folder="0" source-offset="1070" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>se_d3_02</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b3" />
+                <not>
+                  <attribute attr-id="b6" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="the employment's separation finding is se_d3_03, (Eligible, Non-Education Institution, Non-Educational Service Agency)" ruleburst="true" concludes="b7" folder="0" source-offset="1558" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b7" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>se_d3_03</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b3" />
+                <false-value />
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="3" name="the employment's separation finding is se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)" ruleburst="true" concludes="b8" folder="0" source-offset="1939" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b8" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>se_d4_02</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b3" />
+                <scope-for scope-ref="global0" target-entity-id="global">
+                  <attribute attr-id="b9" />
+                </scope-for>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="4" name="all se finding's inferred from employment" ruleburst="true" concludes="InferInstance(allsefindingsinferredfromemployment)" folder="0" source-offset="2818">
+      <rule-xml>
+        <table-conclude-instance relationship-id="allsefindingsinferredfromemployment" source="employment" source-scope-id="employment0">
+          <row>
+            <identity>
+              <string-value>se_d3_01</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b1" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>se_d3_02</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b5" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>se_d3_03</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b7" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>se_d4_02</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b8" />
+            </condition>
+          </row>
+        </table-conclude-instance>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>

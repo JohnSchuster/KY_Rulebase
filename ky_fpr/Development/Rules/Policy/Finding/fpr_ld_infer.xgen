@@ -1,0 +1,127 @@
+<root schema-version="1" product-version="10.4.3.23">
+  <entities>
+    <entity name="the employment" id="employment" containment-relationship-id="allemployerinstancesofemployment" containment-parent-id="employer">
+      <attribute name="b1" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is ld_d1_01, (Payable Labor Dispute)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ld_d1_01, (Payable Labor Dispute)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b2" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's asserted nod finding code is defined</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s asserted nod finding code',singular),o('defined'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b3" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment status selected by claimant is labor dispute</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment status selected by claimant',singular),o('labor dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b4" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is unemployed from the employment, as a result of a bona fide labor dispute in active progress</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('unemployed from the employment, as a result of a bona fide labor dispute in active progress'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the employment's separation finding is ld_d2_01, (Labor Dispute)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ld_d2_01, (Labor Dispute)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p1" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the employment's asserted nod finding code</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity name="the finding" id="finding" containment-relationship-id="allinstancesofthefinding" containment-parent-id="global">
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the finding's id</base>
+        </text>
+      </attribute>
+    </entity>
+    <entity ref="global" />
+    <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
+  </entities>
+  <relationships>
+    <relationship type="ManyToMany" relationship-id="allldfindingsinferredfromemployment" reverse-relationship-id="findingldinfbyemployment" text="all ld finding's inferred from employment" reverse-text="finding ld inf by employment" source="employment" target="finding" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
+    <relationship type="OneToMany" relationship-id="allinstancesofthefinding" reverse-relationship-id="eachfindingsinstanceofglobal" text="all instances of the finding" reverse-text="each findings instance of global" source="global" target="finding" is-implicit="false" is-containment="true" />
+  </relationships>
+  <rules>
+    <rule id="0" name="the employment's separation finding is ld_d1_01, (Payable Labor Dispute)" ruleburst="true" concludes="b1" folder="0" source-offset="189" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b1" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>ld_d1_01</string-value>
+                </equals>
+              </and>
+              <and>
+                <attribute attr-id="b3" />
+                <not>
+                  <attribute attr-id="b4" />
+                </not>
+              </and>
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="1" name="the employment's separation finding is ld_d2_01, (Labor Dispute)" ruleburst="true" concludes="b5" folder="0" source-offset="623" question-search="false">
+      <rule-xml>
+        <conclude attr-id="b5" entity-id="employment" scope-id="employment0">
+          <value>
+            <true-value />
+          </value>
+          <condition>
+            <or>
+              <and>
+                <attribute attr-id="b2" />
+                <equals>
+                  <attribute attr-id="p1" />
+                  <string-value>ld_d2_01</string-value>
+                </equals>
+              </and>
+              <attribute attr-id="b4" />
+            </or>
+          </condition>
+        </conclude>
+      </rule-xml>
+    </rule>
+    <rule id="2" name="all ld finding's inferred from employment" ruleburst="true" concludes="InferInstance(allldfindingsinferredfromemployment)" folder="0" source-offset="1204">
+      <rule-xml>
+        <table-conclude-instance relationship-id="allldfindingsinferredfromemployment" source="employment" source-scope-id="employment0">
+          <row>
+            <identity>
+              <string-value>ld_d1_01</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b1" />
+            </condition>
+          </row>
+          <row>
+            <identity>
+              <string-value>ld_d2_01</string-value>
+            </identity>
+            <condition>
+              <attribute attr-id="b5" />
+            </condition>
+          </row>
+        </table-conclude-instance>
+      </rule-xml>
+    </rule>
+  </rules>
+</root>
