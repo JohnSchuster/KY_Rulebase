@@ -1931,6 +1931,12 @@
           <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the prior claims count',singular),o('zero'))</parse>
         </text>
       </attribute>
+      <attribute name="b1409" type="boolean" public-name="fpr_can_do_physicasl_work">
+        <text>
+          <base>the claimant can perform physical work in some capacity</base>
+          <parse>s(ver('10.4.3.23'),v(perform+can,t(simple,modal,normal)),sb('the claimant',plural),o('physical work in some capacity'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -6189,6 +6195,220 @@
         <text>
           <base>the employment's separation finding is vq_d1_09, (Payable Working Conditions)</base>
           <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d1_09, (Payable Working Conditions)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1380" type="boolean" public-name="fpr_finding_vq_d1_11">
+        <text>
+          <base>the employment's separation finding is vq_d1_11, (Payable Disciplinary Action)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d1_11, (Payable Disciplinary Action)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1381" type="boolean" public-name="fpr_finding_vq_d1_12">
+        <text>
+          <base>the employment's separation finding is vq_d1_12, (Payable Disciplinary Action)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('vq_d1_12, (Payable Disciplinary Action)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1382" type="boolean" public-name="fpr_finding_id_d1_01">
+        <text>
+          <base>the employment's separation finding is ld_d1_01, (Payable Labor Dispute)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ld_d1_01, (Payable Labor Dispute)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1383" type="boolean" public-name="fpr_finding_id_d2_01">
+        <text>
+          <base>the employment's separation finding is ld_d2_01, (Labor Dispute)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ld_d2_01, (Labor Dispute)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1384" type="boolean" public-name="fpr_finding_ms_d4_04">
+        <text>
+          <base>the employment's separation finding is ms_d4_04, (Full Time Employee)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ms_d4_04, (Full Time Employee)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1385" type="boolean" public-name="fpr_finding_ms_d4_06">
+        <text>
+          <base>the employment's separation finding is ms_d4_06, (Leave of Absence)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ms_d4_06, (Leave of Absence)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1386" type="boolean" public-name="dc_accepted_work">
+        <text>
+          <base>the claimant accepted an offer of new work</base>
+          <parse>s(ver('10.4.3.23'),v(accept,t(simple,past,normal)),sb('the claimant',plural),o('an offer of new work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p707" type="text" public-name="dc_other_labor_dispute">
+        <text>
+          <base>the result of the labor dispute other than strike or lockout</base>
+        </text>
+      </attribute>
+      <attribute name="p708" type="text" public-name="emr_athletic_org_address">
+        <text>
+          <base>the address of the organization the claimant intends to participate with in the upcoming season</base>
+        </text>
+      </attribute>
+      <attribute name="p709" type="text" public-name="emr_athletic_org_phone">
+        <text>
+          <base>the phone number of the organization the claimant intends to participate with in the upcoming season</base>
+        </text>
+      </attribute>
+      <attribute name="b1387" type="boolean" public-name="dc_continue_during_strike">
+        <text>
+          <base>the claimant could have continued to work or returned to work during the dispute</base>
+          <parse>s(ver('10.4.3.23'),v(continue+could,t(simple,modal,perfect)),sb('the claimant',singular),o('to work or returned to work during the dispute'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p710" type="text" public-name="dc_no_work_strike">
+        <text>
+          <base>the reason the claimant did not continue to work or return to work during the dispute</base>
+        </text>
+      </attribute>
+      <attribute name="p711" type="text" public-name="dc_buyout_details">
+        <text>
+          <base>the details that the claimant provided regarding the reduction in workforce buyout</base>
+        </text>
+      </attribute>
+      <attribute name="b1388" type="boolean" public-name="dc_labor_return_date_known">
+        <text>
+          <base>the claimant knows the date they are to return to work once the labor dispute has ended</base>
+          <parse>s(ver('10.4.3.23'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('the date they are to return to work once the labor dispute has ended'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p712" type="date" public-name="dc_labor_return_date">
+        <text>
+          <base>the date the claimant is to return to work once the labor dispute has ended</base>
+        </text>
+      </attribute>
+      <attribute name="b1389" type="boolean" public-name="dc_suspension_return_known">
+        <text>
+          <base>the claimant knows the date they are to return to work once the suspension has ended</base>
+          <parse>s(ver('10.4.3.23'),v(know,t(simple,present,normal)),sb('the claimant',singular),o('the date they are to return to work once the suspension has ended'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p713" type="date" public-name="dc_suspension_end_date">
+        <text>
+          <base>the date the claimant is to return to work once the suspension has ended</base>
+        </text>
+      </attribute>
+      <attribute name="p714" type="text" public-name="dc_job_awareness">
+        <text>
+          <base>the way in which the claimant was made aware of their job responsibilities</base>
+        </text>
+      </attribute>
+      <attribute name="b1390" type="boolean" public-name="fpr_finding_di_d5_01">
+        <text>
+          <base>the employment's separation finding is di_d5_01, (Deductible, Pension Monthly)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_01, (Deductible, Pension Monthly)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1391" type="boolean" public-name="fpr_finding_di_d5_03">
+        <text>
+          <base>the employment's separation finding is di_d5_03, (Deductible, Lump Sum Pension-Separation Pay, with no option)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_03, (Deductible, Lump Sum Pension-Separation Pay, with no option)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1392" type="boolean" public-name="fpr_finding_di_d5_04">
+        <text>
+          <base>the employment's separation finding is di_d5_04, (Deductible, Pension with Option for Monthly Payments)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_04, (Deductible, Pension with Option for Monthly Payments)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1393" type="boolean" public-name="fpr_finding_di_d5_05">
+        <text>
+          <base>the employment's separation finding is di_d5_05, (Deductible, WARN)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_05, (Deductible, WARN)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1394" type="boolean" public-name="fpr_finding_di_d5_06">
+        <text>
+          <base>the employment's separation finding is di_d5_06, (Deductible, Wages in Lieu of Notice)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_06, (Deductible, Wages in Lieu of Notice)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1395" type="boolean" public-name="fpr_finding_di_d5_08">
+        <text>
+          <base>the employment's separation finding is di_d5_08, (Deductible, Allocation of Vacation Pay)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d5_08, (Deductible, Allocation of Vacation Pay)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1396" type="boolean" public-name="fpr_finding_di_d6_03">
+        <text>
+          <base>the employment's separation finding is di_d6_03, (Severance Pay)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d6_03, (Severance Pay)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1397" type="boolean" public-name="fpr_finding_di_d6_04">
+        <text>
+          <base>the employment's separation finding is di_d6_04, (Allocation of Vacation Pay)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('di_d6_04, (Allocation of Vacation Pay)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1398" type="boolean" public-name="fpr_finding_mc_d1_20">
+        <text>
+          <base>the employment's separation finding is mc_d1_20 (Payable Violation of Rule)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_20 (Payable Violation of Rule)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1399" type="boolean" public-name="fpr_finding_mc_d1_21">
+        <text>
+          <base>the employment's separation finding is mc_d1_21 (Payable Involuntary Retirement)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_21 (Payable Involuntary Retirement)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1400" type="boolean" public-name="fpr_finding_mc_d1_22">
+        <text>
+          <base>the employment's separation finding is mc_d1_22 (Payable Dangerous Conduct)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_22 (Payable Dangerous Conduct)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1401" type="boolean" public-name="fpr_finding_mc_d1_23">
+        <text>
+          <base>the employment's separation finding is mc_d1_23 (Payable Gross Negligence, Property Damage)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('mc_d1_23 (Payable Gross Negligence, Property Damage)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1402" type="boolean" public-name="fpr_finding_ms_d4_02">
+        <text>
+          <base>the employment's separation finding is ms_d4_02, (Water Transportation)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ms_d4_02, (Water Transportation)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1403" type="boolean" public-name="fpr_finding_ms_d4_05">
+        <text>
+          <base>the employment's separation finding is ms_d4_05, (Federal Shut Down)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('ms_d4_05, (Federal Shut Down)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1404" type="boolean" public-name="fpr_finding_se_d3_01">
+        <text>
+          <base>the employment's separation finding is se_d3_01, (Eligible, No Reasonable Assurance)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_01, (Eligible, No Reasonable Assurance)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1405" type="boolean" public-name="fpr_is_school_employee">
+        <text>
+          <base>the employment category selected by the claimant is school employee</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment category selected by the claimant',singular),o('school employee'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1406" type="boolean" public-name="fpr_finding_se_d3_02">
+        <text>
+          <base>the employment's separation finding is se_d3_02, (Eligible, Non-Education Institution, Non-Educational Service Agency)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_02, (Eligible, Non-Education Institution, Non-Educational Service Agency)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1407" type="boolean" public-name="fpr_finding_se_d3_03">
+        <text>
+          <base>the employment's separation finding is se_d3_03, (Eligible, Non-Education Institution, Non-Educational Service Agency)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d3_03, (Eligible, Non-Education Institution, Non-Educational Service Agency)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1408" type="boolean" public-name="fpr_finding_se_d4_02">
+        <text>
+          <base>the employment's separation finding is se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)'))</parse>
         </text>
       </attribute>
     </entity>
