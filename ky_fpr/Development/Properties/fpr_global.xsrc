@@ -1937,6 +1937,18 @@
           <parse>s(ver('10.4.3.23'),v(perform+can,t(simple,modal,normal)),sb('the claimant',plural),o('physical work in some capacity'))</parse>
         </text>
       </attribute>
+      <attribute name="b1410" type="boolean" public-name="fpr_claimant_opt_m_pay">
+        <text>
+          <base>the claimant had an option to receive monthly payments</base>
+          <parse>s(ver('10.4.3.23'),v(have,t(simple,past,normal)),sb('the claimant',plural),o('an option to receive monthly payments'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1411" type="boolean" public-name="fpr_claimant_chose_lump_sum">
+        <text>
+          <base>the claimant chose to receive a lump sum rather than monthly payments</base>
+          <parse>s(ver('10.4.3.23'),v(choose,t(simple,past,normal)),sb('the claimant',plural),o('to receive a lump sum rather than monthly payments'))</parse>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2298,6 +2310,36 @@
         <text>
           <base>the claimant is receiving a monthly pension from the employer (potentially chargeable, base-period)</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving a monthly pension from the employer (potentially chargeable, base-period)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1414" type="boolean" public-name="fpr_claimant_monthly_pension">
+        <text>
+          <base>the claimant is receiving, (received) a monthly pension from the employer</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving, (received) a monthly pension from the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1415" type="boolean" public-name="fpr_claimant_contrib_pp">
+        <text>
+          <base>the claimant contributed to the employer's pension plan</base>
+          <parse>s(ver('10.4.3.23'),v(contribute,t(simple,past,normal)),sb('the claimant',plural),o('to the employer''s pension plan'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1416" type="boolean" public-name="fpr_emr_base_period">
+        <text>
+          <base>the employer is a base period employer</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employer',singular),o('a base period employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1417" type="boolean" public-name="fpr_claimant_rec_l_sum_p">
+        <text>
+          <base>the claimant is receiving, (received) a lump sum pension from the employer</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving, (received) a lump sum pension from the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1418" type="boolean" public-name="fpr_inc_recompense">
+        <text>
+          <base>the claimant's income were intended by the employer to recompense for lack of notice</base>
+          <parse>s(ver('10.4.3.23'),v(intend,t(simple,past,normal)),ob('the claimant''s income',plural),o('by the employer to recompense for lack of notice'))</parse>
         </text>
       </attribute>
     </entity>
@@ -6409,6 +6451,18 @@
         <text>
           <base>the employment's separation finding is se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)</base>
           <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the employment''s separation finding',singular),o('se_d4_02, (Ineligible: School Employee Bad Weather, Full-Time)'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1412" type="boolean" public-name="fpr_received_warn_benefits">
+        <text>
+          <base>the claimant is receiving, (received) warn benefits, based on the employment during a period in which unemployment benefits were claimed</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving, (received) warn benefits, based on the employment during a period in which unemployment benefits were claimed'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1413" type="boolean" public-name="fpr_claimant_receiving_income">
+        <text>
+          <base>the claimant is receiving income from the employment</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving income from the employment'))</parse>
         </text>
       </attribute>
     </entity>
