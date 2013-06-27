@@ -6357,6 +6357,18 @@
         </text>
       </attribute>
     </entity>
+    <entity id="issuetype" name="the issue_type" identifying-attribute-name="fpr_the_issue_type" identifying-attribute-text="the issue_type" containment-relationship-id="allinstancesoftheissuetype" containment-parent-id="global" public-id="fpr_the_issue_type">
+      <attribute name="p715" type="text" substitutable="true" default-gender="generic" public-name="fpr_the_issue_type">
+        <text>
+          <base>the issue_type</base>
+        </text>
+      </attribute>
+      <attribute name="p716" type="text" public-name="fpr_issue_type_rbc">
+        <text>
+          <base>the issue_type's rulebase category</base>
+        </text>
+      </attribute>
+    </entity>
   </entities>
   <relationships>
     <relationship source="global" target="employer" text="all instances of the employer" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" reverse-text="employer global instance" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global_c_emr" reverse-public-id="fpr_emr_cby_global" />
@@ -6384,6 +6396,10 @@
     <relationship source="employment" target="finding" is-containment="false" public-id="emt_inf_ld_finding" reverse-public-id="finding_inf_ld_employment" text="all ld finding's inferred from employment" relationship-id="allldfindingsinferredfromemployment" reverse-relationship-id="findingldinfbyemployment" reverse-text="finding ld inf by employment" type="ManyToMany" is-computed="false" />
     <relationship source="global" target="priorclaim" text="all instances of the prior_claim" relationship-id="allinstancesofthepriorclaim" reverse-relationship-id="priorclaimtoglobal" reverse-text="prior claim to global" type="OneToMany" is-computed="false" is-containment="true" public-id="global2_prior_claim" reverse-public-id="prior_claim2global" />
     <relationship source="global" target="priorclaim" is-containment="false" public-id="global_prior_claim" reverse-public-id="prior_claim_global" text="the re-activated prior claim" relationship-id="reactivatedpriorclaim" reverse-relationship-id="thispriorclaimtoglobal" reverse-text="this prior claim to global" type="OneToOne" is-computed="false" />
+    <relationship source="global" target="issuetype" text="all instances of the issue_type" relationship-id="allinstancesoftheissuetype" reverse-relationship-id="issuetypetoglobal" reverse-text="issue_type to global" type="OneToMany" is-computed="false" is-containment="true" public-id="fpr_global2issuetype" reverse-public-id="fpr_issuetype2global" />
+    <relationship source="global" target="issuetype" is-containment="false" public-id="claimant_inf_issuetype" reverse-public-id="issuetype_claimant" text="all issue_type's inferred from claimant status" relationship-id="allissuetypesinferredfromclaimantstatus" reverse-relationship-id="issuetypetoclaimant" reverse-text="issue_type to claimant" type="ManyToMany" is-computed="false" />
+    <relationship source="issuetype" target="finding" is-containment="false" public-id="issue_type2finding" reverse-public-id="finding2issue_type" text="the finding raised for this issue_type" relationship-id="findingraisedforthisissuetype" reverse-relationship-id="thisfindingsissuetype" reverse-text="this finding's issue_type" type="ManyToMany" is-computed="false" />
+    <relationship source="employment" target="issuetype" is-containment="false" public-id="emt2issue_type" reverse-public-id="issuetype2emt" text="the employment's inferred issue_type" relationship-id="employmentsinferredissuetype" reverse-relationship-id="issuetypesemployment" reverse-text="the issue_types employment" type="ManyToMany" is-computed="false" />
   </relationships>
   <rules />
   <interactive-items>
