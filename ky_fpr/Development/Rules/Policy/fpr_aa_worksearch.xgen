@@ -181,12 +181,6 @@
           <parse>s(ver('10.4.2.18'),v(employ,t(simple,present,normal)),ob('the claimant',singular),o('on a commission basis'))</parse>
         </text>
       </attribute>
-      <attribute name="b39" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant is a corporate officer is a closely-held corporation</base>
-          <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer is a closely-held corporation'))</parse>
-        </text>
-      </attribute>
       <attribute name="b40" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant's (self-employment, corporate officer position, commission work) prevents a suitable work search</base>
@@ -553,12 +547,6 @@
           <parse>s(ver('10.4.3.23'),v(restrict,t(simple,present,normal)),sb('the claimant''s (self-employment, commission work)',singular),o('their availability for suitable work'))</parse>
         </text>
       </attribute>
-      <attribute name="b152" type="boolean" ruleburst="true" is-used="True">
-        <text lang="en-US">
-          <base>the claimant's  corporate officer position restricts their availability for suitable work</base>
-          <parse>s(ver('10.4.3.23'),v(restrict,t(simple,present,normal)),sb('the claimant''s  corporate officer position',singular),o('their availability for suitable work'))</parse>
-        </text>
-      </attribute>
       <attribute name="b153" type="boolean" ruleburst="true" is-used="True">
         <text lang="en-US">
           <base>the claimant can perform physical work in some capacity</base>
@@ -569,6 +557,18 @@
         <text lang="en-US">
           <base>the claimant can perform mental work in some capacity</base>
           <parse>s(ver('10.4.3.23'),v(perform+can,t(simple,modal,normal)),sb('the claimant',plural),o('mental work in some capacity'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b155" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant's corporate officer position restricts their availability for suitable work</base>
+          <parse>s(ver('10.4.3.23'),v(restrict,t(simple,present,normal)),sb('the claimant''s corporate officer position',singular),o('their availability for suitable work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b156" type="boolean" ruleburst="true" is-used="True">
+        <text lang="en-US">
+          <base>the claimant is a corporate officer in a closely-held corporation</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('a corporate officer in a closely-held corporation'))</parse>
         </text>
       </attribute>
       <attribute name="p3" type="date" ruleburst="true" is-used="True" default-gender="neuter">
@@ -888,15 +888,15 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the claimant's  corporate officer position restricts their availability for suitable work" ruleburst="true" concludes="b152" folder="0" source-offset="4076">
+    <rule id="11" name="the claimant's corporate officer position restricts their availability for suitable work" ruleburst="true" concludes="b155" folder="0" source-offset="4076">
       <rule-xml>
-        <conclude attr-id="b152" entity-id="global" scope-id="global0">
+        <conclude attr-id="b155" entity-id="global" scope-id="global0">
           <value>
             <true-value />
           </value>
           <condition>
             <and>
-              <attribute attr-id="b39" />
+              <attribute attr-id="b156" />
               <or>
                 <attribute attr-id="b40" />
                 <attribute attr-id="b41" />
