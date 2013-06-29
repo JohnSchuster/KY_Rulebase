@@ -1,4 +1,4 @@
-<root schema-version="1" product-version="10.4.2.18">
+<root schema-version="1" product-version="10.4.3.23">
   <entities>
     <entity ref="global">
       <attribute name="b5" type="boolean" ruleburst="true" is-used="True">
@@ -80,8 +80,8 @@
   </entities>
   <relationships>
     <relationship type="ManyToMany" relationship-id="allinferredinstancesoftheemployment" reverse-relationship-id="eachinferredemploymenttoglobal" text="all inferred instances of the employment" reverse-text="each inferred employment to global" source="global" target="employment" is-implicit="false" is-containment="false" />
-    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allseparationinterviewemployments" reverse-relationship-id="eachseparationtoglobal" text="all separation interview employments" reverse-text="each separation to global" source="global" target="employment" is-implicit="false" is-containment="false" />
+    <relationship type="OneToMany" relationship-id="allemployerinstancesofemployment" reverse-relationship-id="employmenttoemployerinstance" text="all employer instances of employment" reverse-text="employment to employer instance" source="employer" target="employment" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allinferredinstancesexceptmre" reverse-relationship-id="eachexcmretoglobal" text="all inferred instances except mre" reverse-text="each exc mre to global" source="global" target="employment" is-implicit="false" is-containment="false" />
     <relationship type="OneToMany" relationship-id="allinstancesoftheemployer" reverse-relationship-id="employerglobalinstance" text="all instances of the employer" reverse-text="employer global instance" source="global" target="employer" is-implicit="false" is-containment="true" />
     <relationship type="ManyToMany" relationship-id="allinferredcandidatebptw" reverse-relationship-id="eachbptwtoglobal" text="all inferred candidate bptw" reverse-text="each bptw to global" source="global" target="employment" is-implicit="false" is-containment="false" />
@@ -243,7 +243,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the bptw is potentially chargeable" ruleburst="true" concludes="b13" folder="0" source-offset="4936">
+    <rule id="8" name="the bptw is potentially chargeable" ruleburst="true" concludes="b13" folder="0" source-offset="4937">
       <rule-xml>
         <conclude attr-id="b13" entity-id="global" scope-id="global0">
           <value>
@@ -267,7 +267,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="5251">
+    <rule id="9" name="the employment should be investigated in a separation interview" ruleburst="true" concludes="b9" folder="0" source-offset="5252">
       <rule-xml>
         <conclude attr-id="b9" entity-id="employment" scope-id="employment0">
           <value>
