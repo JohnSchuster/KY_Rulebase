@@ -3437,7 +3437,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p class="pbs"&gt;Please provide the mailing address of your employer's corporate office.&lt;br&gt;If that is unknown, please provide the address listed on your paycheck or your work location.&lt;/p&gt;</caption>
+            <caption>&lt;p class="pbs"&gt;Please provide the mailing address of your employer's corporate office.&lt;br&gt;If that is unknown, please provide the address listed on your paycheck.&lt;/p&gt;</caption>
           </label>
           <label visible-by-default="true">
             <control-properties>
@@ -3460,7 +3460,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the employers street address">
-              <doc-attr id="p104@kyfpr_rmod" />
+              <doc-attr id="p100@kyfpr_rmod" />
               <doc-attr id="emr_street_address" />
             </input-attr>
             <caption>&lt;p&gt;Street Address:&lt;/p&gt;
@@ -3487,7 +3487,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="lines" type="integer">1</property>
             </control-properties>
             <input-attr text="the employers city">
-              <doc-attr id="p105@kyfpr_rmod" />
+              <doc-attr id="p101@kyfpr_rmod" />
               <doc-attr id="emr_city" />
             </input-attr>
             <caption>&lt;p&gt;City:&lt;/p&gt;</caption>
@@ -3503,7 +3503,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               </property>
             </control-properties>
             <input-attr text="the employer state">
-              <doc-attr id="p106@kyfpr_rmod" />
+              <doc-attr id="p102@kyfpr_rmod" />
               <doc-attr id="emr_state" />
             </input-attr>
             <caption>&lt;p&gt;State:&lt;/p&gt;</caption>
@@ -3572,7 +3572,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employer zip code">
-              <doc-attr id="p107@kyfpr_rmod" />
+              <doc-attr id="p103@kyfpr_rmod" />
               <doc-attr id="emr_zip" />
             </input-attr>
             <caption>&lt;p&gt;Zip Code:&lt;/p&gt;</caption>
@@ -3586,7 +3586,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the employer phone number">
-              <doc-attr id="p108@kyfpr_rmod" />
+              <doc-attr id="p104@kyfpr_rmod" />
               <doc-attr id="emr_phone" />
             </input-attr>
             <caption>&lt;p&gt;Phone Number:&lt;/p&gt;
@@ -3612,7 +3612,7 @@ and correct to the best of my knowledge.&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="you are receiving (received) a non-deductible pension from the employer">
-              <doc-attr id="b383@kyfpr_rmod" />
+              <doc-attr id="b268@kyfpr_rmod" />
               <doc-attr id="emr_receiving_pension" />
             </input-attr>
             <caption>&lt;p&gt;Are you receiving a pension from this employer?&lt;/p&gt;</caption>
@@ -9417,8 +9417,31 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s189" name="Required Retirement Details for %fpr_emt_visible_name%" public-id="" folder="34" order="2" entity="fpr_employment">
+      <screen type="Question" id="s189" name="Mandatory Retirement Details for %fpr_emt_visible_name%" public-id="" folder="34" order="2" entity="fpr_employment">
         <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p class="pbs"&gt;You have indicated your employer had a mandatory retirement policy.&lt;/p&gt;
+</caption>
+          </label>
           <label visible-by-default="true">
             <control-properties>
               <property name="text-style" type="string">Normal</property>
@@ -9438,23 +9461,9 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the employment's mandatory policy included retirement benefits (per the claimant)">
-              <doc-attr id="b449@kyfpr_rmod" />
-              <doc-attr id="fpr_emt_pol_inc_ret_ben" />
-            </input-attr>
-            <caption>&lt;p&gt;Did the employer's mandatory policy include retirement benefits?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
             <input-attr text="the claimant agreed to the retirement policy at the time of their hire">
-              <doc-attr id="b488@kyfpr_rmod" />
-              <doc-attr id="scr_mandatory_retirement_agreement" />
+              <doc-attr id="b487@kyfpr_rmod" />
+              <doc-attr id="scr_agreed_on_hire" />
             </input-attr>
             <caption>&lt;p&gt;Did you agree to the mandatory retirement policy at the time of your hire?&lt;/p&gt;</caption>
           </input>
@@ -9467,7 +9476,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant agreed to the mandatory retirement as a condition of continued employment">
-              <doc-attr id="b489@kyfpr_rmod" />
+              <doc-attr id="b488@kyfpr_rmod" />
               <doc-attr id="fpr_emt_agree_m_retirement" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp  &amp;nbsp  &amp;nbsp If No, did you agree to the mandatory retirement as a condition of continued employment?&lt;/p&gt;</caption>
@@ -9481,8 +9490,8 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant was subject to mandatory retirement during the employment">
-              <doc-attr id="b453@kyfpr_rmod" />
-              <doc-attr id="fpr_mandatory_retirement_subject" />
+              <doc-attr id="b452@kyfpr_rmod" />
+              <doc-attr id="fpr_mandatory_retirement" />
             </input-attr>
             <caption>&lt;p&gt;Does your employer have a mandatory retirement age?&lt;/p&gt;</caption>
           </input>
@@ -9495,7 +9504,7 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant retired as a result of reaching the mandatory retirement age">
-              <doc-attr id="b756@kyfpr_rmod" />
+              <doc-attr id="b755@kyfpr_rmod" />
               <doc-attr id="dc_reached_the_age" />
             </input-attr>
             <caption>&lt;p&gt;Did you retire as a result of reaching the mandatory retirement age?&lt;/p&gt;</caption>
@@ -9509,12 +9518,12 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
             <input-attr text="the claimant agreed to the mandated retirement age as part of their employment contract">
-              <doc-attr id="b757@kyfpr_rmod" />
+              <doc-attr id="b756@kyfpr_rmod" />
               <doc-attr id="dc_age_agreement" />
             </input-attr>
             <caption>&lt;p&gt; &amp;nbsp &amp;nbsp &amp;nbsp If Yes, did you agree to the mandated retirement age as part of your employment contract?&lt;/p&gt;</caption>
           </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" type="default">
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
             <control-properties>
               <property name="StyleOverride" type="string">
               </property>
@@ -9522,11 +9531,11 @@ why do you believe that you have been laid off from this employment?&lt;/p&gt;
               </property>
               <property name="IsHTML" type="boolean">true</property>
             </control-properties>
-            <input-attr text="the claimant received a retirement package as part of their employment contract">
-              <doc-attr id="b758@kyfpr_rmod" />
-              <doc-attr id="dc_packaged_retirement" />
+            <input-attr text="the employment's mandatory policy included retirement benefits (per the claimant)">
+              <doc-attr id="b448@kyfpr_rmod" />
+              <doc-attr id="fpr_emt_pol_inc_ret_ben" />
             </input-attr>
-            <caption>&lt;p&gt;Did you receive a retirement package as part of your employment contract?&lt;/p&gt;</caption>
+            <caption>&lt;p&gt;Did the employer's mandatory policy include retirement benefits?&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
@@ -14076,15 +14085,28 @@ for the substance(s) for which you tested positive?&lt;/p&gt;</caption>
         </connections>
       </flow>
       <flow order="40" name="The Leave of Absence Investigation" id="f127" entity="fpr_employment" public-id="" error="false" entry-node-id="0" folder="3">
-        <diagram><![CDATA[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]]></diagram>
+        <diagram><![CDATA[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]]></diagram>
         <nodes>
           <node node-id="0" node-type="start" />
           <node node-id="1" node-type="end" />
           <node node-id="2" node-type="screen" screen-id="s169" mandatory="true" />
+          <node node-id="3" node-type="decision" attribute-id="the claimant has a return to work from leave of absence date" />
+          <node node-id="4" node-type="screen" screen-id="s170" mandatory="true" />
         </nodes>
         <connections>
           <connection from="0" to="2" />
-          <connection from="2" to="1" />
+          <connection from="2" to="3" />
+          <connection from="3" to="4">
+            <condition operator="equals">
+              <boolean-val>true</boolean-val>
+            </condition>
+          </connection>
+          <connection from="3" to="1">
+            <condition operator="equals">
+              <boolean-val>false</boolean-val>
+            </condition>
+          </connection>
+          <connection from="4" to="1" />
         </connections>
       </flow>
       <flow order="47" name="Final Collection" id="f130" entity="global" public-id="" error="false" entry-node-id="0" folder="3">
