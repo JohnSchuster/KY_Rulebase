@@ -1,5 +1,1961 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <test-script product-version="10.4.3.23" schema-version="4">
-  <test-case-set />
-  <outcome-set />
+  <test-case-set>
+    <test-case name="MRE_NMR_Q_LO" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_in_jail" text="the claimant is incarcerated" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_test_flow" text="the test flow should be used" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_ss_disability_approve" text="the claimant received (approved for) Social Security disability payments within the last twelve months" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_applied_ss_disability" text="the claimant has applied for social security disability benefits" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_in_school" text="the claimant is enrolled in a (school, training) program" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_aa_additional_reason" text="the claimant has an additional reason that limits their availability for work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_cares" text="the claimant is responsible for the care of (child, elder, spouse, family member)" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_reliable_trans" text="the claimant has a reliable means of transportation" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_asserted_byed" text="the asserted most recent benefit year end date" type="date">
+            <val>
+              <date-val>2012-06-01</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_closely_held" text="the claimant is a corporate officer in a closely-held corporation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_work_restricts_avail" text="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_si_g01_assert_date" text="the asserted processing override date" type="date">
+            <val>
+              <date-val>2013-06-24</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="#2" />
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global2issuetype" complete="false">
+              <ent-inst-ref ref-id="LO" />
+              <ent-inst-ref ref-id="VQ" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global2finding" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="true">
+              <ent-inst-ref ref-id="Last One Inn MRE 412A" />
+              <ent-inst-ref ref-id="First One Inn RCE 412A" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="#2">
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_reduction_package" text="the claimant accepted a reduction in workforce package" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_volunteer" text="the claimant Volunteered to be laid off" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_date" text="the date that the claimant was laid-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_is_temporary" text="the claimant is on temporary layoff" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_lo" text="the name of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Joe </text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_layoff_code" text="the employment's layoff category code" type="text">
+            <val>
+              <text-val>LC03</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_notice_date" text="the date that the claimant was notified of their lay-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-13</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lr" text="the claimants description of the layoff reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_laid_off_from_employment" text="the claimant was laid off from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2013-02-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_given_def_rtw_date" text="the claimant was given a definite return to work date for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_lo" text="the title of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES07</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_early_retirement" text="the claimant accepted an early retirement" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="scr_notice_given_person" text="the person to whom the claimant gave notice" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_no_explanation_apl" text="the claimants reason for not explaining their alternatives prior to leaving behavior or conduct" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed_date" text="the date the claimant discussed their concerns" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_notice_given_date" text="the date the claimant gave notice" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_terminate_or_quit" text="the claimant would have been terminated had they not resigned" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_dc" text="the title of the authority with whom the claimant discussed concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_selected_quit_status" text="the selected quit status" type="text">
+            <val>
+              <text-val>QS01</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed" text="the claimant expressed concerns regarding the reason for quitting with the employer" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_gn" text="the title of the authority to whom the claimant gave notice" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed_with" text="the name of the person with whom the claimant discussed concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_opr" text="the claimants description of the other personal reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_notice_given" text="the claimant gave notice prior to leaving" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2012-08-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_pursued_alt_prior" text="the claimant pursued alternatives prior to leaving the employment" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_quit_personal_status" text="the selected personal quit status" type="text">
+            <val>
+              <text-val>QP01</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_allowed_until_notice_end" text="the claimant was allowed to work until the end of notice" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_aptl" text="the claimants explanation for their alternatives prior to leaving behavior or conduct" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_action_employer_took" text="the specific actions the employer took to address the concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_emp_request_resignation" text="the employment requested the claimant's resignation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_sep_cat_quit" text="the employment's separation category is quit" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_sep_desc_quit_wnhbt" text="the employment's separation description is (quit-would-not-have-been-terminated)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_412a" entity-text="the 412A" inferred="yes" identifying-attribute="the_412a">
+        <ent-inst id="First One Inn RCE 412A" />
+        <ent-inst id="Last One Inn MRE 412A" />
+      </ent-set>
+      <ent-set entity-type="fpr_the_issue_type" entity-text="the issue_type" inferred="yes" identifying-attribute="fpr_the_issue_type">
+        <ent-inst id="LO" />
+        <ent-inst id="VQ" />
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="#2">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>Last One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#2" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>First One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+    </test-case>
+    <test-case name="MRE_NMR_LO_LO" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_in_jail" text="the claimant is incarcerated" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_test_flow" text="the test flow should be used" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_ss_disability_approve" text="the claimant received (approved for) Social Security disability payments within the last twelve months" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_applied_ss_disability" text="the claimant has applied for social security disability benefits" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_in_school" text="the claimant is enrolled in a (school, training) program" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_aa_additional_reason" text="the claimant has an additional reason that limits their availability for work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_cares" text="the claimant is responsible for the care of (child, elder, spouse, family member)" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_reliable_trans" text="the claimant has a reliable means of transportation" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_asserted_byed" text="the asserted most recent benefit year end date" type="date">
+            <val>
+              <date-val>2012-06-01</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_closely_held" text="the claimant is a corporate officer in a closely-held corporation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_work_restricts_avail" text="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_si_g01_assert_date" text="the asserted processing override date" type="date">
+            <val>
+              <date-val>2013-06-24</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="#2" />
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global2issuetype" complete="false">
+              <ent-inst-ref ref-id="LO" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global2finding" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="true">
+              <ent-inst-ref ref-id="Last One Inn MRE 412A" />
+              <ent-inst-ref ref-id="First One Inn RCE 412A" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_the_issue_type" entity-text="the issue_type" inferred="yes" identifying-attribute="fpr_the_issue_type">
+        <ent-inst id="LO" />
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="#2">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>Last One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#2" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>First One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="#2">
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_reduction_package" text="the claimant accepted a reduction in workforce package" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_volunteer" text="the claimant Volunteered to be laid off" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_date" text="the date that the claimant was laid-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_is_temporary" text="the claimant is on temporary layoff" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_lo" text="the name of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Joe</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_layoff_code" text="the employment's layoff category code" type="text">
+            <val>
+              <text-val>LC03</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_notice_date" text="the date that the claimant was notified of their lay-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lr" text="the claimants description of the layoff reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_laid_off_from_employment" text="the claimant was laid off from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2013-02-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_given_def_rtw_date" text="the claimant was given a definite return to work date for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_lo" text="the title of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES07</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_early_retirement" text="the claimant accepted an early retirement" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_reduction_package" text="the claimant accepted a reduction in workforce package" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_volunteer" text="the claimant Volunteered to be laid off" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_date" text="the date that the claimant was laid-off from the employment" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_is_temporary" text="the claimant is on temporary layoff" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_lo" text="the name of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Joe</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_layoff_code" text="the employment's layoff category code" type="text">
+            <val>
+              <text-val>LC03</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_notice_date" text="the date that the claimant was notified of their lay-off from the employment" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lr" text="the claimants description of the layoff reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_laid_off_from_employment" text="the claimant was laid off from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2012-08-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_given_def_rtw_date" text="the claimant was given a definite return to work date for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_lo" text="the title of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES07</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_early_retirement" text="the claimant accepted an early retirement" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_412a" entity-text="the 412A" inferred="yes" identifying-attribute="the_412a">
+        <ent-inst id="First One Inn RCE 412A" />
+        <ent-inst id="Last One Inn MRE 412A" />
+      </ent-set>
+    </test-case>
+    <test-case name="MRE_NMR_R_LO" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_in_jail" text="the claimant is incarcerated" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_test_flow" text="the test flow should be used" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_ss_disability_approve" text="the claimant received (approved for) Social Security disability payments within the last twelve months" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_applied_ss_disability" text="the claimant has applied for social security disability benefits" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_in_school" text="the claimant is enrolled in a (school, training) program" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_aa_additional_reason" text="the claimant has an additional reason that limits their availability for work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_cares" text="the claimant is responsible for the care of (child, elder, spouse, family member)" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_reliable_trans" text="the claimant has a reliable means of transportation" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_asserted_byed" text="the asserted most recent benefit year end date" type="date">
+            <val>
+              <date-val>2012-06-01</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_closely_held" text="the claimant is a corporate officer in a closely-held corporation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_work_restricts_avail" text="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_si_g01_assert_date" text="the asserted processing override date" type="date">
+            <val>
+              <date-val>2013-06-24</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global2finding" complete="false" />
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global2issuetype" complete="false">
+              <ent-inst-ref ref-id="LO" />
+              <ent-inst-ref ref-id="VQ" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="#2" />
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="true">
+              <ent-inst-ref ref-id="Last One Inn MRE 412A" />
+              <ent-inst-ref ref-id="First One Inn RCE 412A" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="#2">
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_reduction_package" text="the claimant accepted a reduction in workforce package" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_volunteer" text="the claimant Volunteered to be laid off" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_date" text="the date that the claimant was laid-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_is_temporary" text="the claimant is on temporary layoff" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_lo" text="the name of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Joe</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_layoff_code" text="the employment's layoff category code" type="text">
+            <val>
+              <text-val>LC03</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_notice_date" text="the date that the claimant was notified of their lay-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lr" text="the claimants description of the layoff reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_laid_off_from_employment" text="the claimant was laid off from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2013-02-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_given_def_rtw_date" text="the claimant was given a definite return to work date for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_lo" text="the title of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES07</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_early_retirement" text="the claimant accepted an early retirement" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="scr_notice_given_person" text="the person to whom the claimant gave notice" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_rd" text="the claimants description of the retired details final incident" type="text">
+            <val>
+              <text-val>retired</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_no_explanation_apl" text="the claimants reason for not explaining their alternatives prior to leaving behavior or conduct" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed_date" text="the date the claimant discussed their concerns" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_notice_given_date" text="the date the claimant gave notice" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_dc" text="the title of the authority with whom the claimant discussed concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_selected_quit_status" text="the selected quit status" type="text">
+            <val>
+              <text-val>QS01</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_able_to_continue" text="the claimant would have been able to continue working for this employer had they not retired" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed" text="the claimant expressed concerns regarding the reason for quitting with the employer" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_gn" text="the title of the authority to whom the claimant gave notice" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_concerns_expressed_with" text="the name of the person with whom the claimant discussed concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_opr" text="the claimants description of the other personal reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_notice_given" text="the claimant gave notice prior to leaving" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2012-08-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_pursued_alt_prior" text="the claimant pursued alternatives prior to leaving the employment" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_quit_personal_status" text="the selected personal quit status" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_allowed_until_notice_end" text="the claimant was allowed to work until the end of notice" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_aptl" text="the claimants explanation for their alternatives prior to leaving behavior or conduct" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_action_employer_took" text="the specific actions the employer took to address the concerns" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES05</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mandatory_retirement" text="the claimant was subject to mandatory retirement during the employment" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_sep_desc_retired" text="the employment's separation description is (retired)" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_sep_cat_quit" text="the employment's separation category is quit" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="#2">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>Last One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#2" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>First One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_412a" entity-text="the 412A" inferred="yes" identifying-attribute="the_412a">
+        <ent-inst id="First One Inn RCE 412A" />
+        <ent-inst id="Last One Inn MRE 412A" />
+      </ent-set>
+      <ent-set entity-type="fpr_the_issue_type" entity-text="the issue_type" inferred="yes" identifying-attribute="fpr_the_issue_type">
+        <ent-inst id="VQ" />
+        <ent-inst id="LO" />
+      </ent-set>
+    </test-case>
+    <test-case name="MRE_NMR_D_LO" notes="">
+      <ent-set entity-type="global" entity-text="Global">
+        <ent-inst id="global 1">
+          <attr-inst name="fpr_claimant_in_jail" text="the claimant is incarcerated" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_mental_health_issues" text="the claimant has a mental health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_test_flow" text="the test flow should be used" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_ss_disability_approve" text="the claimant received (approved for) Social Security disability payments within the last twelve months" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_applied_ss_disability" text="the claimant has applied for social security disability benefits" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_in_school" text="the claimant is enrolled in a (school, training) program" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_aa_additional_reason" text="the claimant has an additional reason that limits their availability for work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_cares" text="the claimant is responsible for the care of (child, elder, spouse, family member)" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_reliable_trans" text="the claimant has a reliable means of transportation" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_asserted_byed" text="the asserted most recent benefit year end date" type="date">
+            <val>
+              <date-val>2012-06-01</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_claimant_is_closely_held" text="the claimant is a corporate officer in a closely-held corporation" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_work_restricts_avail" text="the claimant's (self-employment, corporate officer position, commission work) restricts their availability for suitable work" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_si_g01_assert_date" text="the asserted processing override date" type="date">
+            <val>
+              <date-val>2013-06-24</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_physical_health_issue" text="the claimant has a physical health condition" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_global2finding" complete="false" />
+            <relationship-inst type="fpr_global_c_nod" complete="false" />
+            <relationship-inst type="global2_prior_claim" complete="false" />
+            <relationship-inst type="fpr_global2issuetype" complete="false">
+              <ent-inst-ref ref-id="LO" />
+              <ent-inst-ref ref-id="MC" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_emr" complete="true">
+              <ent-inst-ref ref-id="#2" />
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+            <relationship-inst type="fpr_global_c_action" complete="false" />
+            <relationship-inst type="fpr_global_c_412a" complete="true">
+              <ent-inst-ref ref-id="Last One Inn MRE 412A" />
+              <ent-inst-ref ref-id="First One Inn RCE 412A" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_the_issue_type" entity-text="the issue_type" inferred="yes" identifying-attribute="fpr_the_issue_type">
+        <ent-inst id="LO" />
+        <ent-inst id="MC" />
+      </ent-set>
+      <ent-set entity-type="fpr_412a" entity-text="the 412A" inferred="yes" identifying-attribute="the_412a">
+        <ent-inst id="Last One Inn MRE 412A" />
+        <ent-inst id="First One Inn RCE 412A" />
+      </ent-set>
+      <ent-set entity-type="fpr_employment" entity-text="the employment">
+        <ent-inst id="#2">
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_reduction_package" text="the claimant accepted a reduction in workforce package" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_volunteer" text="the claimant Volunteered to be laid off" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_date" text="the date that the claimant was laid-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_is_temporary" text="the claimant is on temporary layoff" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_lo" text="the name of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Joe</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_layoff_code" text="the employment's layoff category code" type="text">
+            <val>
+              <text-val>LC03</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_notice_date" text="the date that the claimant was notified of their lay-off from the employment" type="date">
+            <val>
+              <date-val>2013-06-21</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lr" text="the claimants description of the layoff reason final incident" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_laid_off_from_employment" text="the claimant was laid off from the employment" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2013-02-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_given_def_rtw_date" text="the claimant was given a definite return to work date for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_lo" text="the title of the authority who told the claimant that they were laid-off" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES07</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_layoff_early_retirement" text="the claimant accepted an early retirement" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="fpr_emr_corrective_action" text="the action that the claimant took to (correct,maintain) the employment" type="text">
+            <val>
+              <text-val>none</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_last_day_worked_date" text="the employment's last day worked date" type="date">
+            <val>
+              <date-val>2013-05-17</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_wp" text="the title of the authority who gave the claimant warning prior to their discharge" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_type" text="the employment's wage type" type="text">
+            <val>
+              <text-val>Hourly</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_rate_of_pay" text="the claimant's rate of pay with the employment" type="currency">
+            <val>
+              <currency-val>10.0</currency-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_aware" text="the claimant was aware that their job was in jeopardy prior to discharge" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_handbook" text="the claimant was provided an employee hand book" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_dc_warning_person" text="the name of the person who gave the claimant warning prior to their discharge" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_name_gcr" text="the name of the authority that gave the claimant the reason" type="text">
+            <val>
+              <text-val>Charlie Fotzapple</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_dc_warning" text="the claimant received a warning prior to their discharge" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_dc_warning_date" text="the date the claimant received warning prior to their discharge" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_drivers_license_required" text="the claimant was required to maintain a valid driver's license for the employment" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_work_perf_in_ky" text="the employment's work was performed in Kentucky" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_duties" text="the employment job duties" type="text">
+            <val>
+              <text-val>Work</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_sc_aware" text="the claimant was aware of their duties and expectations" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_date_memory" text="the claimant knows the date they were discharged" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_gcw" text="the title of the authority that gave the claimant the reason" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_explanation_for_status" text="the claimants explanation for the selected employment status" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_date" text="the date the claimant was discharged" type="date">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_supervisor_name" text="the name of the claimants supervisor at the employment" type="text">
+            <val>
+              <text-val>Charlie Fotzapple</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_type" text="the employment type" type="text">
+            <val>
+              <text-val>Full-Time</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_final_incident_lodl" text="the claimants description of the loss of drivers license final incident" type="text">
+            <val>
+              <text-val>no</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_status" text="the selected discharge status" type="text">
+            <val>
+              <text-val>DS08</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_special_category" text="the employment's special category" type="text">
+            <val>
+              <text-val>SC04</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_first_day_worked_date" text="the employment's first day worked date" type="date">
+            <val>
+              <date-val>2012-08-06</date-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_related_to_reason" text="the warnings are related to the reason" type="boolean">
+            <val>
+              <uncertain-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="emt_job_title" text="the employment's job title" type="text">
+            <val>
+              <text-val>Worker</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_su_license_required" text="the claimants duties require them to operate a motor vehicle" type="boolean">
+            <val>
+              <boolean-val>true</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="fpr_emt_wage_frequency" text="the employment wage frequency" type="text">
+            <val>
+              <text-val>Per/hour</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_employment_status" text="the selected employment status" type="text">
+            <val>
+              <text-val>ES06</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="dc_title_sate" text="the title of the claimants supervisor at the employment" type="text">
+            <val>
+              <text-val>Boss</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="scr_discharge_control" text="the reason the claimant was discharged" type="text">
+            <val>
+              <text-val />
+            </val>
+          </attr-inst>
+          <attr-inst name="cat_discharged" text="the employment's separation category is discharged" type="boolean">
+            <expected-val>
+              <boolean-val>true</boolean-val>
+            </expected-val>
+          </attr-inst>
+        </ent-inst>
+      </ent-set>
+      <ent-set entity-type="fpr_employer" entity-text="the employer">
+        <ent-inst id="#2">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>Last One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#2" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+        <ent-inst id="#1">
+          <attr-inst name="emr_street_address" text="the employers street address" type="text">
+            <val>
+              <text-val>702 Capital Ave</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_phone" text="the employer phone number" type="number">
+            <val>
+              <number-val>5551212.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_zip" text="the employer zip code" type="number">
+            <val>
+              <number-val>40601.0</number-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_receiving_pension" text="you are receiving (received) a non-deductible pension from the employer" type="boolean">
+            <val>
+              <boolean-val>false</boolean-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_emp_categorization_code" text="the employer's categorization code" type="text">
+            <val>
+              <text-val>Other</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="g01_fpr_employer_instance_id" text="the employer" type="text">
+            <val>
+              <text-val>First One Inn</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_city" text="the employers city" type="text">
+            <val>
+              <text-val>Frankfort</text-val>
+            </val>
+          </attr-inst>
+          <attr-inst name="emr_state" text="the employer state" type="text">
+            <val>
+              <text-val>KY</text-val>
+            </val>
+          </attr-inst>
+          <relationship-set>
+            <relationship-inst type="fpr_emr_c_emt" complete="true">
+              <ent-inst-ref ref-id="#1" />
+            </relationship-inst>
+          </relationship-set>
+        </ent-inst>
+      </ent-set>
+    </test-case>
+  </test-case-set>
+  <outcome-set>
+    <outcome name="cat_fpr_emt_sep_cat_layoff" display-name="cat_fpr_emt_sep_cat_layoff" text="the employment's separation category is layoff" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_emt_sep_cat_quit" display-name="fpr_emt_sep_cat_quit" text="the employment's separation category is quit" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_emt_sep_desc_quit_wnhbt" display-name="fpr_emt_sep_desc_quit_wnhbt" text="the employment's separation description is (quit-would-not-have-been-terminated)" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="fpr_emt_sep_desc_retired" display-name="fpr_emt_sep_desc_retired" text="the employment's separation description is (retired)" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+    <outcome name="cat_discharged" display-name="cat_discharged" text="the employment's separation category is discharged" type="boolean" entity-type="fpr_employment" entity-text="the employment">
+      <default-change-points>
+        <unknown-val />
+      </default-change-points>
+    </outcome>
+  </outcome-set>
 </test-script>
