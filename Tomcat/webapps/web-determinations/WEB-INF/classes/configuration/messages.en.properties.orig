@@ -1,0 +1,164 @@
+# #############################################################################
+# Screen Text
+# #############################################################################
+application-name        =Kentucky Unemployment Insurance Claim Filing
+support-email           =support@domain.local
+
+#localized formats for input values
+pagedir-right-to-left     =false
+date-field-length         =10
+date-field-max-length     =12
+datetime-field-length     =18
+datetime-field-max-length =30
+
+# localized text for input controls
+month-jan                 =January
+month-feb                 =February
+month-mar                 =March
+month-apr                 =April
+month-may                 =May
+month-jun                 =June
+month-jul                 =July
+month-aug                 =August
+month-sep                 =September
+month-oct                 =October
+month-nov                 =November
+month-dec                 =December
+
+boolean-true             =Yes
+boolean-false            =No
+boolean-uncertain        =Uncertain
+boolean-unknown          =Unknown
+
+delete-check-box-text    =Remove
+delete-button-text       =Remove Instance(s)
+add-button-text          =Add New Instance
+submit-button-text       =Continue
+ok-button-text           =Ok
+end-session-button-text  =End session
+cancel-button-text       =Cancel
+save-case-label          =Save as case ID
+save-button-text         =Save
+continue-button-text     =Continue
+
+# displayed as control alt information
+second-selection-alt     =seconds input
+minute-selection-alt     =minutes input
+hour-selection-alt       =hours input
+day-selection-alt        =day input
+month-selection-alt      =month input
+year-selection-alt       =year input
+date-selection-alt       =date input; MM-DD-YYYY
+time-selection-alt       =time input; HH:MM:SS
+mandatory-text           =*
+
+output-temporal-separator=from
+
+
+save-text                =Save
+save-as-text             =Save As
+load-text                =Load
+close-text               =Close
+restart-text             =Restart
+summary-text             =Summary
+data-review-text         =Data Review
+
+case-id-text                  =Case ID:
+rulebase-text                 =Rulebase:
+locale-text                   =Locale:
+user-id-text                  =User ID:
+rulebase-version-text         =Rulebase Version:
+rulebase-build-time-text      =Rulebase Build Time:
+policy-modeling-version-text  =Policy Modeling Version:
+
+tree-leaf-alt      =Leaf node
+tree-collapse-alt  =Click to collapse node
+tree-expand-alt    =Click to expand node
+
+decision-report-why-text      =[Why?]
+decision-report-already-proven=(see above for proof)
+
+data-review-no-data    =No data has been collected in this investigation.
+data-review-no-controls=None
+
+frame-interview-title  =Permits entry and amendment of answers to questions presented by the web determinations interview
+frame-commentary-title =Displays context-sensitive commentary pertaining to questions presented in the adjacent frame
+
+select-rulebase-screen-title =Select the rulebase in which to conduct an investigation:
+LocaleSelectionTitleInfoMessage=Select locale for ${message.getRulebaseName()}:
+
+# Screen Text
+confirm-end-session-text    =By ending this session all unsaved changes will be lost. Do you wish to continue?
+save-failed-title           =Save Failed
+save-failed-label           =Your data could not be saved.
+case-saved-title            =Save Successful
+case-saved-label            =Your session has been saved.  To return to this session in the future\, copy or bookmark this link:
+RestoreCaseLabelInfoMessage =Return to investigation for case '${message.getCaseID()}'
+SavedCasesAvailableForUserInfoMessage=Saved cases available for user '${message.getUser()}':
+NoSavedCasesAvailableForUserInfoMessage=No saved cases are available for user '${message.getUser()}'.
+load-failed-title           =Load Failed
+load-case-title             =Load Case
+auto-screen-title           =Automatic Screen
+searching-combo-trigger-tooltip =Show all items
+searching-combo-more-results =...
+
+
+unsubmitted-text-label      =This screen may have data that has not been submitted.
+
+footer-left-text            =Kentucky Office of Employment and Training
+footer-right-text           =Alpha: 2013-04-16
+
+# #############################################################################
+# Errors and Warnings
+# #############################################################################
+ControlValueFormatError             =This value is in an invalid format.
+
+AttributeValueTypeError             =This value is of the wrong type.
+AttributeValidationError            =${message.getUserDefinedMessage()}
+AttributeValueError                 =This value is invalid.
+MissingValueError                   =This value is mandatory.
+UnknownAttributeError               =Can not find attribute '${message.getAttributeId()}' in entity '${message.getEntityInstanceIdentifier().getEntityId()}'.
+
+UnknownEntityError                  =Can not find entity '${message.getEntityID()}'.
+UnknownEntityInstanceError          =Can not find an instance of entity '${message.getEntityID()}' named '${message.getInstanceName()}'.
+DuplicateEntityInstanceError        =An instance of the entity '${message.getEntityId()}' named '${message.getInstanceName()}' already exists.
+
+InvalidRelationshipInstanceError    =${message.getMessage()}
+UnknownRelationshipError            =${message.getMessage()}
+UnknownRelationshipInstanceError    =${message.getMessage()}
+
+GenericError                        =${message.getMessage()}
+
+InvalidValueChangeWarning           =${message.getMessage()}
+
+StalePageError                      =${message.getMessage()}
+
+FailedToLoadCaseError               =An error occurred while loading case ID '${message.getCaseId()}'.<br/>This error has been logged and is available in the application logs.<br/><br/>For support and assistance please contact ${support-email}.
+# #############################################################################
+# Document Generation messages
+# #############################################################################
+NullTemplateError                   =The document '${message.getDocumentName()}' can not be used with the default document generator because no template file is associated with it\, or because the given template file is empty.
+DocumentGenerationServerError       =The Document Generation Server did not respond when attempting to use the URL '${message.getTargetUrl()}'. Please ensure the application is correctly deployed and executing.
+MissingTemplateError                =Unable to generate report. Reason: Can not find template for document '${message.getDocumentName()}' for locale '${message.getLocale()}'.
+
+# #############################################################################
+# XDS Data Adaptor messages
+# #############################################################################
+CaseIDNotValidError                 =The case ID '${message.getCaseID()}' is not a valid filename.
+CaseIDNotFoundError                 =The case ID '${message.getCaseID()}' could not be found.
+FailedSavingCaseFileError           =The case ID '${message.getCaseID()}' could not be saved.
+
+#Fatal Messages
+InvalidActionError                  =Unrecognised action ${message.getAction()}
+InvalidRequestError                 =Invalid value '${message.getValue()}' for parameter '${message.getParam()}' in request.
+InvalidScreenTemplateError          =The template '${message.getTemplateName()}' is not a valid screen template.
+TemplateParseError                  =Could not parse template '${message.getTemplateName()}'.
+MissingResourceError                =Could not find required resource file '${message.getFileName()}'.
+ResourceLoadError                   =Could not load required resource file '${message.getFileName()}'.
+NoActiveSessionError                =An interactive session is required to perform this action.  You may see this message because your session has expired\, or because cookies have been disabled in your web browser\, or because you are following a link or bookmark to an expired session in progress.
+NoSuchMessageError                  =Could not find required message '${message.getMsgKey()}' for locale '${message.getLocale()}'.
+NoResourcesForLocaleError           =Could not start session because at least one of the required resource bundles for locale '${message.getLocale()}' is missing.<br/><br/>Please see the Oracle Policy Modeling user guide for details on how to create the expected resource file '${message.getPropertiesFileName()}'.
+GenericErrorMessage                 =An error occurred trying to process your request.  <br/>This error has been logged and is available in the application logs.<br/><br/>For support and assistance please contact ${support-email}.
+SaveCaseError                       =An error occurred trying to save the session.  <br/>This error has been logged and is available in the application logs.<br/><br/>For support and assistance please contact ${support-email}.
+RenderScreenError                   =Unable to render screen: '${message.getDescription()}'
+CookiesDisabledError                =Web Determinations has detected that cookies are not enabled for this site which will prevent this application from running. Please enable cookies and click <a href="${message.getUrl()}">here</a> to try again.
