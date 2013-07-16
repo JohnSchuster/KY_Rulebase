@@ -1,17 +1,6 @@
 <root schema-version="1" product-version="10.4.2.18">
   <entities>
     <entity id="ent1" ref="global" name="Global">
-      <attribute name="b1" type="boolean">
-        <text>
-          <base>the screen 'Physical Limitation Information' has been displayed</base>
-          <parse>
-          </parse>
-          <override>
-            <q>has the screen 'Physical Limitation Information' been displayed?</q>
-            <p>the screen 'Physical Limitation Information' has been displayed</p>
-          </override>
-        </text>
-      </attribute>
       <attribute name="b2" type="boolean">
         <text>
           <base>the screen 'Mental Health Limitation Information' has been displayed</base>
@@ -34,6 +23,17 @@
           </override>
         </text>
       </attribute>
+      <attribute name="b4" type="boolean">
+        <text>
+          <base>the screen 'Physical Limitation Information' has been displayed</base>
+          <parse>
+          </parse>
+          <override>
+            <q>has the screen 'Physical Limitation Information' been displayed?</q>
+            <p>the screen 'Physical Limitation Information' has been displayed</p>
+          </override>
+        </text>
+      </attribute>
     </entity>
   </entities>
   <relationships />
@@ -50,8 +50,8 @@
       <folder id="9" text="Preamble" order="3" parent="1" />
       <folder id="10" text="Personal Information" order="5" parent="1" />
       <folder id="12" text="Able and Available" parent="1" order="8" />
-      <folder id="13" text="Ability to Work" parent="1" order="9" />
-      <folder id="16" text="Final" parent="1" order="10" />
+      <folder id="13" text="Ability to Work" parent="1" order="10" />
+      <folder id="16" text="Final" parent="1" order="11" />
       <folder id="19" text="Employment Information" order="3" parent="5" />
       <folder id="20" text="Quit Screens" order="5" parent="8" />
       <folder id="21" text="Quit Details (Personal)" parent="20" order="5" />
@@ -2681,78 +2681,7 @@ during your benefit year.&lt;/p&gt;</caption>
           </input>
         </controls>
       </screen>
-      <screen type="Question" id="s42" name="Your Ability to Work" public-id="" order="2" screen-attr="" folder="13">
-        <controls>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant has a physical health condition">
-              <doc-attr id="b33@kyfpr_rmod" />
-              <doc-attr id="fpr_has_physical_health_issue" />
-            </input-attr>
-            <caption>&lt;p&gt;Do you have a physical condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant has a mental health condition">
-              <doc-attr id="b34@kyfpr_rmod" />
-              <doc-attr id="fpr_mental_health_issues" />
-            </input-attr>
-            <caption>&lt;p&gt;Do you have a mental health condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant received (approved for) Social Security disability payments within the last twelve months">
-              <doc-attr id="b296@kyfpr_rmod" />
-              <doc-attr id="fpr_ss_disability_last_twelve" />
-            </input-attr>
-            <caption>&lt;p&gt;Are you receiving or been approved for Social Security disability payments in the last 12 months?&lt;/p&gt;</caption>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant has applied for social security disability benefits">
-              <doc-attr id="b297@kyfpr_rmod" />
-              <doc-attr id="fpr_applied_ss_disability" />
-            </input-attr>
-            <caption>&lt;p&gt;Do you have an application in progress for Social Security disability payments?&lt;/p&gt;</caption>
-          </input>
-        </controls>
-      </screen>
-      <screen type="Question" id="s43" name="Physical Limitation Information" public-id="" order="3" screen-attr="b1" folder="13">
+      <screen type="Question" id="s43" name="Physical Limitation Information" public-id="" order="3" screen-attr="b4" folder="13">
         <controls>
           <label visible-by-default="true">
             <control-properties>
@@ -2831,6 +2760,28 @@ during your benefit year.&lt;/p&gt;</caption>
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;p&gt;What are your physical limitation? Check all that apply.&lt;/p&gt;</caption>
+          </label>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
             <caption>&lt;hr&gt;</caption>
           </label>
           <label visible-by-default="true">
@@ -2842,8 +2793,227 @@ during your benefit year.&lt;/p&gt;</caption>
               <property name="StyleOverride" type="string">
               </property>
             </control-properties>
-            <caption>&lt;p&gt;What is your physical limitation? Check all that apply.&lt;/p&gt;</caption>
+            <caption>&lt;br&gt;</caption>
+            <props>
+              <prop name="xRulzButtonSetStart">true</prop>
+            </props>
           </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can lift">
+              <doc-attr id="b235@kyfpr_rmod" />
+              <doc-attr id="fpr_lifting" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>Lifting</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can stand">
+              <doc-attr id="b236@kyfpr_rmod" />
+              <doc-attr id="fpr_standing" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>standing</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can do repetitive motion">
+              <doc-attr id="b237@kyfpr_rmod" />
+              <doc-attr id="fpr_rep_motion" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>rep motion</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can bend">
+              <doc-attr id="b238@kyfpr_rmod" />
+              <doc-attr id="fpr_bending" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>bending</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can twist">
+              <doc-attr id="b239@kyfpr_rmod" />
+              <doc-attr id="fpr_twisting" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>twisting</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can reach">
+              <doc-attr id="b240@kyfpr_rmod" />
+              <doc-attr id="fpr_reaching" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>reaching</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can pull">
+              <doc-attr id="b241@kyfpr_rmod" />
+              <doc-attr id="fpr_pulling" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>pulling</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can push">
+              <doc-attr id="b242@kyfpr_rmod" />
+              <doc-attr id="fpr_push" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>pushing</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can run">
+              <doc-attr id="b243@kyfpr_rmod" />
+              <doc-attr id="fpr_running" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>running</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can sit">
+              <doc-attr id="b244@kyfpr_rmod" />
+              <doc-attr id="fpr_sitting" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>sitting</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant can drive">
+              <doc-attr id="b245@kyfpr_rmod" />
+              <doc-attr id="fpr_driving" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>driving</caption>
+            <mandatory-attr text="" />
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">false</property>
+            </control-properties>
+            <input-attr text="the claimant hours are limited">
+              <doc-attr id="b246@kyfpr_rmod" />
+              <doc-attr id="fpr_limited_hours" />
+            </input-attr>
+            <props>
+              <prop name="xRulzButtonSetMember">true</prop>
+            </props>
+            <caption>ltd hours</caption>
+            <mandatory-attr text="" />
+          </input>
           <label visible-by-default="true">
             <control-properties>
               <property name="text-style" type="string">Normal</property>
@@ -2854,89 +3024,8 @@ during your benefit year.&lt;/p&gt;</caption>
               </property>
             </control-properties>
             <caption>&lt;br&gt;</caption>
-          </label>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;hr class="buttonsetstart"&gt;</caption>
             <props>
-              <prop name="xRulzButtonSetWrapper">start</prop>
-            </props>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claiment can not lift more than fifty pounds">
-              <doc-attr id="b225@kyfpr_rmod" />
-              <doc-attr id="fpr_lift_fifty" />
-            </input-attr>
-            <caption>&lt;p&gt;Lifting Restriction&lt;/p&gt;</caption>
-            <mandatory-attr text="" />
-            <props>
-              <prop name="xRulzButtonSetMember">true</prop>
-            </props>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant is not capable of repetitive motion">
-              <doc-attr id="b226@kyfpr_rmod" />
-              <doc-attr id="fpr_repetitive_motion" />
-            </input-attr>
-            <caption>&lt;p&gt;Repetitive Motion&lt;/p&gt;
-</caption>
-            <mandatory-attr text="" />
-            <props>
-              <prop name="xRulzButtonSetMember">true</prop>
-            </props>
-          </input>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true" type="checkbox">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the claimant is not capable of standing for prolonged periods of time">
-              <doc-attr id="b227@kyfpr_rmod" />
-              <doc-attr id="fpr_standing_long" />
-            </input-attr>
-            <caption>&lt;p&gt;Standing&lt;/p&gt;
-</caption>
-            <mandatory-attr text="" />
-            <props>
-              <prop name="xRulzButtonSetMember">true</prop>
-            </props>
-          </input>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;hr class="buttonsetend"&gt;</caption>
-            <props>
-              <prop name="xRulzButtonSetWrapper">end</prop>
+              <prop name="xRulzbuttonSetEnd">true</prop>
             </props>
           </label>
           <input default-visibility="enabled" read-only-expr="false" allow-uncertain="true">
@@ -2946,47 +3035,20 @@ during your benefit year.&lt;/p&gt;</caption>
               <property name="ClassOverride" type="string">
               </property>
               <property name="IsHTML" type="boolean">true</property>
-              <property name="lines" type="integer">1</property>
+              <property name="lines" type="integer">2</property>
             </control-properties>
             <input-attr text="the claimants restricted work hours">
               <doc-attr id="p89@kyfpr_rmod" />
               <doc-attr id="fpr_restricted_hours" />
             </input-attr>
-            <caption>&lt;p&gt;Limited Hours (please provide the number of work hours restricted to) &lt;/p&gt;
+            <caption>&lt;p&gt;Please provide additional detail (if needed) for the limitations you have selected&lt;/p&gt;
 </caption>
           </input>
         </controls>
-      </screen>
-      <screen type="Question" id="s44" name="Physical Limitation Expected End Date" public-id="" order="4" screen-attr="" folder="13">
-        <controls>
-          <label visible-by-default="true">
-            <control-properties>
-              <property name="text-style" type="string">Normal</property>
-              <property name="IsHTML" type="boolean">true</property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="StyleOverride" type="string">
-              </property>
-            </control-properties>
-            <caption>&lt;br&gt;</caption>
-          </label>
-          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
-            <control-properties>
-              <property name="StyleOverride" type="string">
-              </property>
-              <property name="ClassOverride" type="string">
-              </property>
-              <property name="IsHTML" type="boolean">true</property>
-            </control-properties>
-            <input-attr text="the date the claimants physical limitation is expected end">
-              <doc-attr id="p90@kyfpr_rmod" />
-              <doc-attr id="fpr_physical_limit_end_date" />
-            </input-attr>
-            <caption>&lt;p&gt;When do you expect your physical limitation to end?&lt;/p&gt;
-
-</caption>
-          </input>
-        </controls>
+        <props>
+          <prop name="xRulzCustomScreen">true</prop>
+          <prop name="xRulzScreenId">xr_cs_03</prop>
+        </props>
       </screen>
       <screen type="Question" id="s45" name="Mental Health Limitation Information" public-id="" order="5" screen-attr="b2" folder="13">
         <controls>
@@ -12665,6 +12727,108 @@ for the substance(s) for which you tested positive?&lt;/p&gt;</caption>
               <doc-attr id="scr_layoff_recall_notification" />
             </input-attr>
             <caption>&lt;p&gt;How were you made aware of the return to work/recall date?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s42" name="Your Ability to Work" public-id="" order="9" screen-attr="" folder="1">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has a physical health condition">
+              <doc-attr id="b33@kyfpr_rmod" />
+              <doc-attr id="fpr_has_physical_health_issue" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have a physical condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has a mental health condition">
+              <doc-attr id="b34@kyfpr_rmod" />
+              <doc-attr id="fpr_mental_health_issues" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have a mental health condition that limits your ability to look for or accept work?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant received (approved for) Social Security disability payments within the last twelve months">
+              <doc-attr id="b296@kyfpr_rmod" />
+              <doc-attr id="fpr_ss_disability_last_twelve" />
+            </input-attr>
+            <caption>&lt;p&gt;Are you receiving or been approved for Social Security disability payments in the last 12 months?&lt;/p&gt;</caption>
+          </input>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false" default-value="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the claimant has applied for social security disability benefits">
+              <doc-attr id="b297@kyfpr_rmod" />
+              <doc-attr id="fpr_applied_ss_disability" />
+            </input-attr>
+            <caption>&lt;p&gt;Do you have an application in progress for Social Security disability payments?&lt;/p&gt;</caption>
+          </input>
+        </controls>
+      </screen>
+      <screen type="Question" id="s44" name="Physical Limitation Expected End Date" public-id="" order="4" screen-attr="" folder="13">
+        <controls>
+          <label visible-by-default="true">
+            <control-properties>
+              <property name="text-style" type="string">Normal</property>
+              <property name="IsHTML" type="boolean">true</property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="StyleOverride" type="string">
+              </property>
+            </control-properties>
+            <caption>&lt;br&gt;</caption>
+          </label>
+          <input default-visibility="enabled" read-only-expr="false" allow-uncertain="false">
+            <control-properties>
+              <property name="StyleOverride" type="string">
+              </property>
+              <property name="ClassOverride" type="string">
+              </property>
+              <property name="IsHTML" type="boolean">true</property>
+            </control-properties>
+            <input-attr text="the date the claimants physical limitation is expected end">
+              <doc-attr id="p20@kyfpr_rmod" />
+              <doc-attr id="fpr_physical_limit_end_date" />
+            </input-attr>
+            <caption>&lt;p&gt;When do you expect your physical limitation to end?&lt;/p&gt;
+
+</caption>
           </input>
         </controls>
       </screen>
