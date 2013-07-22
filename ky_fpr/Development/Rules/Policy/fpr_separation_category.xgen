@@ -246,6 +246,11 @@
           <base>the employment's separation category description</base>
         </text>
       </attribute>
+      <attribute name="p2" type="text" ruleburst="true" is-used="True" default-gender="neuter">
+        <text lang="en-US">
+          <base>the reason the employment reduced the claimants work hours</base>
+        </text>
+      </attribute>
     </entity>
     <entity ref="global" />
     <entity name="the employer" id="employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" />
@@ -422,7 +427,7 @@
           </row>
           <row>
             <value>
-              <string-value>Would Have Been Terminated</string-value>
+              <string-value>You Would Have Been Terminated</string-value>
             </value>
             <condition>
               <attribute attr-id="b51" />
@@ -474,7 +479,7 @@
         </table-conclude>
       </rule-xml>
     </rule>
-    <rule id="7" name="the employment's separation category is layoff" ruleburst="true" concludes="b39" folder="0" source-offset="4794">
+    <rule id="7" name="the employment's separation category is layoff" ruleburst="true" concludes="b39" folder="0" source-offset="4802">
       <rule-xml>
         <conclude attr-id="b39" entity-id="employment" scope-id="employment0">
           <value>
@@ -489,7 +494,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="8" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="5084">
+    <rule id="8" name="the employment's separation category is fully employed" ruleburst="true" concludes="b27" folder="0" source-offset="5092">
       <rule-xml>
         <conclude attr-id="b27" entity-id="employment" scope-id="employment0">
           <value>
@@ -513,7 +518,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="9" name="the employment's separation category is always part time" ruleburst="true" concludes="b45" folder="0" source-offset="5494">
+    <rule id="9" name="the employment's separation category is always part time" ruleburst="true" concludes="b45" folder="0" source-offset="5502">
       <rule-xml>
         <conclude attr-id="b45" entity-id="employment" scope-id="employment0">
           <value>
@@ -534,7 +539,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="10" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="6105">
+    <rule id="10" name="the employment's separation category is quit" ruleburst="true" concludes="b11" folder="0" source-offset="6113">
       <rule-xml>
         <conclude attr-id="b11" entity-id="employment" scope-id="employment0">
           <value>
@@ -640,7 +645,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="11" name="the employment's separation category is labor dispute" ruleburst="true" concludes="b38" folder="0" source-offset="7620">
+    <rule id="11" name="the employment's separation category is labor dispute" ruleburst="true" concludes="b38" folder="0" source-offset="7628">
       <rule-xml>
         <conclude attr-id="b38" entity-id="employment" scope-id="employment0">
           <value>
@@ -660,7 +665,7 @@
         </conclude>
       </rule-xml>
     </rule>
-    <rule id="12" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="7838">
+    <rule id="12" name="the employment's separation category is discharged" ruleburst="true" concludes="b19" folder="0" source-offset="7846">
       <rule-xml>
         <conclude attr-id="b19" entity-id="employment" scope-id="employment0">
           <value>
@@ -711,9 +716,15 @@
                         <attribute attr-id="b27" />
                       </not>
                     </and>
-                    <not>
-                      <attribute attr-id="b22" />
-                    </not>
+                    <and>
+                      <not>
+                        <attribute attr-id="b22" />
+                      </not>
+                      <equals>
+                        <attribute attr-id="p2" />
+                        <string-value>ED02</string-value>
+                      </equals>
+                    </and>
                   </and>
                 </condition>
                 <otherwise>
