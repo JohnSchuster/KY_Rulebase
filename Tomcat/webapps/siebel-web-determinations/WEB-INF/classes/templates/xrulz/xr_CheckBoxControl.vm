@@ -1,0 +1,17 @@
+#if( $control.isVisible() )
+    #parse( "investigation/controlMessages.vm" )
+    #if( $control.isChecked() )
+        #set( $checkedString = "checked" )
+    #else
+        #set( $checkedString = "" )
+    #end
+    #if( $control.isReadOnly() )
+        #set( $disabledString = "disabled" )
+    #else
+        #set( $disabledString = "" )
+    #end
+    #parse( "investigation/input-style-overrides.vm" )
+ 
+    <input type="checkbox" id="${control.getEncodedID()}" /><label for="${control.getEncodedID()}">#parse("investigation/control-text.vm")</label> 
+   
+#end

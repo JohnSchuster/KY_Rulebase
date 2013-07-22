@@ -1,0 +1,24 @@
+## VTL codhhe to loop through the question controls on the Screen object. We do this by rendering
+## each QuestionControl in turn.
+## Grab the list of controls from the screen
+
+ #set( $controlList = ${screen.getControls()} )
+ #foreach( $control in $controlList )
+
+
+        #if ( "true" == $control.getProperty("xRulzButtonSetStart","") ) 
+             <div id="checkbox_wrapper">
+			 <div id="xr03_buttonset">
+        #elseif ( "true" == $control.getProperty("xRulzButtonSetMember","") )     
+             #parse("xrulz/xr_CheckBoxControl.vm")
+        #elseif ( "true" == $control.getProperty("xRulzButtonSetEnd","") )
+              </div><br></div>   
+        #else 
+            <div class="control-item">
+                 #parse( "controls/${control.getControlType()}.vm" )
+            </div>
+            <span class="control-clear"></span>
+        #end
+		
+  #end
+  
