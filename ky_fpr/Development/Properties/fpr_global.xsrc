@@ -1942,6 +1942,16 @@
           <parse>s(ver('10.4.3.23'),v(limit,t(simple,present,normal)),ob('the claimant hours',plural))</parse>
         </text>
       </attribute>
+      <attribute name="p723" type="text" public-name="scr_extra_limit_desc">
+        <text>
+          <base>the claimant's additional description of their physical limitation</base>
+        </text>
+      </attribute>
+      <attribute name="p724" type="text" public-name="scr_unlisted_limitation">
+        <text>
+          <base>the claimant's physical limitation that is not listed</base>
+        </text>
+      </attribute>
     </entity>
     <entity id="employer" name="the employer" identifying-attribute-name="g01_fpr_employer_instance_id" identifying-attribute-text="the employer" containment-relationship-id="allinstancesoftheemployer" containment-parent-id="global" public-id="fpr_employer">
       <attribute name="p2" type="text" substitutable="true" default-gender="generic" public-name="g01_fpr_employer_instance_id">
@@ -2237,6 +2247,51 @@
         <text>
           <base>the claimant is receiving income from the employer</base>
           <parse>s(ver('10.4.2.18'),v(be,t(simple,present,normal)),sb('the claimant',singular),o('receiving income from the employer'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1445" type="boolean" public-name="emr_mil_sep_other_state">
+        <text>
+          <base>the claimant has filed a claim in a state other than Kentucky based on a previous separation from their Military employment</base>
+          <parse>s(ver('10.4.3.23'),v(file,t(simple,present,perfect)),sb('the claimant',singular),o('a claim in a state other than Kentucky based on a previous separation from their Military employment'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p721" type="text" public-name="emr_other_mil_sep_state">
+        <text>
+          <base>the state that the claimant previously filed a claim in for a military separation</base>
+        </text>
+      </attribute>
+      <attribute name="p722" type="text" public-name="emr_prev_postal_state">
+        <text>
+          <base>the state that the claimants previous Federal or Postal workstation was in</base>
+        </text>
+      </attribute>
+      <attribute name="b1446" type="boolean" public-name="emr_last_workstation_in_ky">
+        <text>
+          <base>the claimant's last federal or postal workstation was in a state other than Kentucky</base>
+          <parse>s(ver('10.4.3.23'),v(be,t(simple,past,normal)),sb('the claimant''s last federal or postal workstation',singular),o('in a state other than Kentucky'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1447" type="boolean" public-name="emr_work_elsewhere">
+        <text>
+          <base>the claimant has worked elsewhere since their Federal/Postal work</base>
+          <parse>s(ver('10.4.3.23'),v(work,t(simple,present,perfect)),sb('the claimant',singular),o('elsewhere since their Federal/Postal work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1448" type="boolean" public-name="emr_work_since_postal_fed">
+        <text>
+          <base>the claimant has worked in Kentucky since their Federal/Postal work</base>
+          <parse>s(ver('10.4.3.23'),v(work,t(simple,present,perfect)),sb('the claimant',singular),o('in Kentucky since their Federal/Postal work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="b1449" type="boolean" public-name="emr_military_since_postal">
+        <text>
+          <base>the claimant has worked for the Military since their Federal/Postal work</base>
+          <parse>s(ver('10.4.3.23'),v(work,t(simple,present,perfect)),sb('the claimant',singular),o('for the Military since their Federal/Postal work'))</parse>
+        </text>
+      </attribute>
+      <attribute name="p725" type="text" public-name="emr_suite">
+        <text>
+          <base>the employers suite or appt</base>
         </text>
       </attribute>
     </entity>
@@ -3752,8 +3807,8 @@
       </attribute>
       <attribute name="b819" type="boolean" public-name="scr_submitted_to_drug_test">
         <text>
-          <base>the claimant submitted to a drug test as required by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug test as required by the employer'))</parse>
+          <base>the claimant submitted to a drug test as required by the employment</base>
+          <parse>s(ver('10.4.3.23'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug test as required by the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b822" type="boolean" public-name="scr_valid_prescription">
@@ -4316,14 +4371,8 @@
       </attribute>
       <attribute name="b1075" type="boolean" public-name="scr_alcohol_test">
         <text>
-          <base>the claimant submitted to an alcohol test as required by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to an alcohol test as required by the employer'))</parse>
-        </text>
-      </attribute>
-      <attribute name="b1076" type="boolean" public-name="scr_drug_alcohol_submit">
-        <text>
-          <base>the claimant submitted to a drug or alcohol test on the day of the final incident, as required by the employer</base>
-          <parse>s(ver('10.4.2.18'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug or alcohol test on the day of the final incident, as required by the employer'))</parse>
+          <base>the claimant submitted to an alcohol test as required by the employment</base>
+          <parse>s(ver('10.4.3.23'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to an alcohol test as required by the employment'))</parse>
         </text>
       </attribute>
       <attribute name="b1077" type="boolean" public-name="scr_dc_warning">
@@ -6337,6 +6386,12 @@
       <attribute name="p720" type="text" public-name="fpr_quit_status">
         <text>
           <base>the personal quit status from the employment</base>
+        </text>
+      </attribute>
+      <attribute name="b1450" type="boolean" public-name="fpr_submit_on_final">
+        <text>
+          <base>the claimant submitted to a drug or alcohol test on the day of the final incident, as required by the employment</base>
+          <parse>s(ver('10.4.3.23'),v(submit,t(simple,past,normal)),sb('the claimant',plural),o('to a drug or alcohol test on the day of the final incident, as required by the employment'))</parse>
         </text>
       </attribute>
     </entity>
