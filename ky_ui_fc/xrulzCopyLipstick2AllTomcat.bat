@@ -5,7 +5,7 @@ rem SD: 2013-07-05
 rem --------
 echo ---
 echo Changes made to how this cross-copies lipstick to web-determinations
-echo Copies Lipstick, to Tomcat 8.0 siebel-web-determinations, web-determinations, and OPM Release
+echo Copies Lipstick, to Tomcat 7.0 siebel-web-determinations, web-determinations, and OPM Release
 echo Note: Synchronizes siebel-web-determinations (baseline) to web-determinations (sync target)
 echo ---
 SET /P ANSWER=Continue (y)?
@@ -21,13 +21,13 @@ set sourcePath2=C:\Dev\RB\KY_Rulebase\Tomcat\webapps\web-determinations\WEB-INF
 set sourcePath3=C:\Dev\RB\KY_Rulebase\Tomcat\lib
 
 set targetPath_00=C:\Dev\RB\KY_Rulebase\Tomcat\webapps\web-determinations\WEB-INF\classes
-set targetPath_01="C:\Program Files\Apache Software Foundation\Tomcat 8.0\webapps\siebel-web-determinations\WEB-INF"
+set targetPath_01="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF"
 set targetPath_02="C:\Dev\RB\KY_Rulebase\ky_ui_fc\Release\web-determinations\WEB-INF"
-set targetPath_03="C:\Program Files\Apache Software Foundation\Tomcat 8.0\webapps\web-determinations\WEB-INF"
-set targetPath_04="C:\Program Files\Apache Software Foundation\Tomcat 8.0\lib"
+set targetPath_03="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\web-determinations\WEB-INF"
+set targetPath_04="C:\Program Files\Apache Software Foundation\Tomcat 7.0\lib"
 
-set exclude_01="C:\Program Files\Apache Software Foundation\Tomcat 8.0\webapps\siebel-web-determinations\WEB-INF\classes\rulebases"
-set exclude_02="C:\Program Files\Apache Software Foundation\Tomcat 8.0\webapps\siebel-web-determinations\WEB-INF\classes\plugins"
+set exclude_01="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF\classes\rulebases"
+set exclude_02="C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\siebel-web-determinations\WEB-INF\classes\plugins"
 
 rem --------
 echo Synchronizing From Git To Local Tomcat Deployment
